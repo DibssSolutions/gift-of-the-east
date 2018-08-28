@@ -21,7 +21,6 @@ const template = data => {
   if (data.similar) {
     tamplate += `<div class="title-sm">${data.similar.title}</div>`;
     for (let i = 0; i <= data.similar.list.length - 1; i++) {
-      console.log(tamplate);
       tamplate += ` 
       <div class="interior__product product">
         <div class="product__img">

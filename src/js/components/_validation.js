@@ -1,12 +1,11 @@
-import validate from 'jquery-form-validator';
-import 'jquery-form-validator/form-validator/toggleDisabled.js';
+import validate from '../lib/jquery.form-validator.js';
+import '../lib/toggleDisabled.js';
 import Inputmask from 'inputmask';
-import { BODY } from '../constants'; 
+import { BODY } from '../constants';
 
 BODY.on('focus', 'input', function() {
   Inputmask().mask(this);
 });
-
 
 const number = $('.js-input-number');
 number.each((i,el) => {
