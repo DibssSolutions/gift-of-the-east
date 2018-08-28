@@ -1,0 +1,42 @@
+<!-- begin interior-day -->
+<div class="section text-center">
+	<div class="inner">
+		<h2 class="title">Интерьер дня</h2>
+		<!-- begin interior -->
+		<div class="interior js-interior">
+			<img class="interior__bg" src="./img/interior-home.jpg" alt="img">
+			{% for trigger in [
+				{
+					top: '23%', left: '47.65%',
+					json: './json/interior-data.json'
+				},
+				{
+					top: '33%', left: '52.1%',
+					json: './json/iterior-data-second.json'
+				},
+				{
+					top: '37.7%', left: '89.5%',
+					json: './json/interior-data.json'
+				},
+				{
+					top: '49.9%', left: '81.4%',
+					json: './json/iterior-data-second.json'
+				},
+				{
+					top: '60.9%', left: '55.85%',
+					json: './json/interior-data.json'
+				}
+				] -%}
+			<button class="interior__trigger js-interior-trigger" data-modal-control="interior-modal" data-json="{{ trigger.json }}" type="button" style="top: {{ trigger.top }}; left: {{ trigger.left }}"><span></span></button>
+			{%- endfor %}
+			<div class="interior__popup js-interior-popup" data-modal="interior-modal">
+				<button class="interior__popup-close js-interior-popup-close" data-modal-close>
+					{{mixins.icon('close')}}
+				</button>
+				<div class="interior__wrap js-interior-popup-wrap" data-modal-container></div>
+			</div>
+		</div>
+		<!-- end interior -->
+	</div>
+</div>
+<!-- end interior-day -->

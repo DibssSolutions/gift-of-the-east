@@ -1,0 +1,52 @@
+.notice
+	vertical-align: top
+	display: inline-block
+	+hover
+		.notice__text
+			border-bottom: 1px solid currentColor 
+	.icon
+		margin-right: 10px
+		color: $lightBrown
+		font-size: 19px
+		vertical-align: middle
+		display: inline-block
+		+sm
+			margin-right: 5px
+			font-size: 16px
+	&__text
+		color: $black
+		transition: border-color .3s 
+		border-bottom: 1px solid transparent 
+
+.tags
+	font-size: 0
+
+.tag
+	margin: 0 4px 8px
+	padding: 8px 12px
+	color: $white 
+	font-family: $montserrat
+	+f(11px,400,1.28)
+	text-transform: uppercase
+	background-color: $blue
+	vertical-align: top
+	transition: opacity .3s
+	display: inline-block 
+	+hover
+		opacity: 0.8
+	&_orange
+		background-color: $orange
+	&_black
+		background-color: $black
+	&_red
+		background-color: $red
+	&_yellow
+		background-color: $yellow
+	&_beige
+		background-color: $beige
+	&_purple
+		background-color: $purple
+	&_turquoise
+		background-color: $turquoise
+	&_green
+		background-color: $green

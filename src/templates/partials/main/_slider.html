@@ -1,0 +1,43 @@
+<!-- begin slider -->
+<div class="main-slider js-main-slider-wrap">
+	<button class="main-slider__prev js-main-slider-prev">
+		<span class="main-slider__arrow-inner">
+			<span class="main-slider__circle">
+				<span class="main-slider__svg">
+					<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+			  		    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			  		        <circle stroke="#000" stroke-width="1" cx="17" cy="17" r="16"></circle>
+			  		    </g>
+			  		</svg>
+				</span>
+				<span class="main-slider__direction">
+					{{ mixins.icon('arrow-left') }}
+				</span>
+			</span>
+			<span class="main-slider__text">Предыдущее</span>
+		</span>
+	</button>
+	<button class="main-slider__next js-main-slider-next">
+		<span class="main-slider__arrow-inner">
+			<span class="main-slider__circle">
+				<span class="main-slider__svg">
+					<svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+			  		    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			  		        <circle stroke="#000" stroke-width="1" cx="17" cy="17" r="16"></circle>
+			  		    </g>
+			  		</svg>
+				</span>
+				<span class="main-slider__direction">
+					{{ mixins.icon('arrow-right') }}
+				</span>
+			</span>
+			<span class="main-slider__text">Следующее</span>
+		</span>
+	</button>
+	<div class="main-slider__inner js-main-slider">
+		<div class="main-slider__slide" style="background-image: url('./img/main-slide.jpg');"></div>
+		<div class="main-slider__slide" style="background-image: url('./img/main-slide.jpg');"></div>
+		<div class="main-slider__slide" style="background-image: url('./img/main-slide.jpg');"></div>
+	</div>
+</div>
+<!-- end slider -->

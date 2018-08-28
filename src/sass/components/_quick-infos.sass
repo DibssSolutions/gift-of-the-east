@@ -1,0 +1,61 @@
+.quick-infos
+	padding: 28px 0 38px
+.quick-info
+	text-align: center
+	font-size: 16px
+	line-height: 1.6
+	+sm
+		font-size: 14px
+		line-height: 1.4
+	&__wrap
+		position: relative
+		margin: 0 auto
+		padding: 0 60px
+		max-width: 810px
+		+sm
+			padding: 0
+		&:before
+			content: "«" 
+			top: -34px
+			left: 0
+		&:after
+			content: "»" 
+			bottom: -34px
+			right: 0
+			line-height: 1
+		&:before,
+		&:after
+			position: absolute
+			font-weight: 400 
+			color: $gallery 
+			font-size: 105px
+			+sm
+				display: none
+	&__collaborator
+		&:not(:first-child)
+			margin-top: 40px
+			+sm
+				margin-top: 20px
+.collaborator
+	position: relative
+	text-align: left
+	vertical-align: top
+	display: inline-block
+	font-size: 13px
+	line-height: 1.4
+	+clr
+	&__img
+		float: left
+		width: 64px
+		height: 64px
+		border-radius: 50% 
+		background-position: 50% 50% 
+		background-size: cover
+	&__wrap
+		padding-left: 16px
+		overflow: hidden
+	&__name
+		margin: 12px 0 8px
+		color: $black 
+		font-family: $montserrat
+		+f(16px, 500, 1.25)

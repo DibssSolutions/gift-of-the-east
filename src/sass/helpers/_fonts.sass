@@ -1,0 +1,95 @@
+//FONTS
+=fontpath($name, $name1, $file)
+	src: local($name), local($name1), url("../fonts/" + $file + ".woff2") format("woff2"), url("../fonts/" + $file + ".woff") format("woff")
+=fontdefault($style, $weight, $name)
+	font-family: $name
+	font-style: $style
+	font-weight: $weight
+
+$familyMontserrat: 'Montserrat'
+
+@font-face
+	+fontdefault(normal, 900, $familyMontserrat)
+	+fontpath('Montserrat Black', 'montserrat-black', montserrat-black)
+@font-face
+	+fontdefault(italic, 900, $familyMontserrat)
+	+fontpath('Montserrat Black Italic', 'montserrat-blackitalic', montserrat-blackitalic)
+
+@font-face
+	+fontdefault(normal, 800, $familyMontserrat)
+	+fontpath('Montserrat Extra Bold', 'montserrat-extrabold', montserrat-extrabold)
+@font-face
+	+fontdefault(italic, 800, $familyMontserrat)
+	+fontpath('Montserrat Extra Bold Italic', 'montserrat-extrabolditalic', montserrat-extrabolditalic)
+
+@font-face
+	+fontdefault(normal, 700, $familyMontserrat)
+	+fontpath('Montserrat Bold', 'montserrat-bold', montserrat-bold)
+@font-face
+	+fontdefault(italic, 700, $familyMontserrat)
+	+fontpath('Montserrat Bold Italic', 'montserrat-bolditalic', montserrat-bolditalic)
+
+@font-face
+	+fontdefault(normal, 600, $familyMontserrat)
+	+fontpath('Montserrat Semibold', 'montserrat-semibold', montserrat-semibold)
+@font-face
+	+fontdefault(italic, 600, $familyMontserrat)
+	+fontpath('Montserrat Semi Bold Italic', 'montserrat-semibolditalic', montserrat-semibolditalic)
+
+@font-face
+	+fontdefault(normal, 500, $familyMontserrat)
+	+fontpath('Montserrat Medium', 'Montserrat-Medium', montserrat-medium)
+@font-face
+	+fontdefault(italic, 500, $familyMontserrat)
+	+fontpath('Montserrat Medium Italic', 'Montserrat-MediumItalic', montserrat-mediumitalic)
+	
+@font-face
+	+fontdefault(normal, 400, $familyMontserrat)
+	+fontpath('Montserrat', 'montserrat-regular', montserrat-regular)
+@font-face
+	+fontdefault(italic, 400, $familyMontserrat)
+	+fontpath('Montserrat Italic', 'montserrat-italic', montserrat-italic)
+
+@font-face
+	+fontdefault(normal, 300, $familyMontserrat)
+	+fontpath('Montserrat Light', 'montserrat-light', montserrat-light)
+@font-face
+	+fontdefault(italic, 300, $familyMontserrat)
+	+fontpath('Montserrat Light Italic', 'montserrat-lightitalic', montserrat-lightitalic)
+
+@font-face
+	+fontdefault(normal, 200, $familyMontserrat)
+	+fontpath('Montserrat Extra Light', 'montserrat-extralight', montserrat-extralight)
+@font-face
+	+fontdefault(italic, 200, $familyMontserrat)
+	+fontpath('Montserrat Extra Light Italic', 'montserrat-extralightitalic', montserrat-extralightitalic)
+	
+@font-face
+	+fontdefault(normal, 100, $familyMontserrat)
+	+fontpath('Montserrat Thin', 'montserrat-thin', montserrat-thin)
+@font-face
+	+fontdefault(italic, 100, $familyMontserrat)
+	+fontpath('Montserrat Thin Italic', 'montserrat-thinitalic', montserrat-thinitalic)
+	
+
+// LemonTuesday
+$lemonTuesday: 'LemonTuesday'
+
+@font-face
+	+fontdefault(normal, 400, $lemonTuesday)
+	+fontpath('LemonTuesday', 'LemonTuesday', LemonTuesday)
+
+// Prata
+$prata: 'Prata'
+
+@font-face
+	+fontdefault(normal, 400, $prata)
+	+fontpath('Prata', 'Prata-Regular', Prata-Regular)
+
+// SegoeUI
+$segoeUI: 'SegoeUI'
+
+@font-face
+	+fontdefault(normal, 400, $segoeUI)
+	+fontpath('SegoeUI', 'SegoeUI', SegoeUI)
+

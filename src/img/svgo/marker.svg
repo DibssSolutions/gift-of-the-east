@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="68px" height="68px" viewBox="0 0 68 68" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>location</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="28" cy="28" r="28"></circle>
+        <filter x="-19.6%" y="-14.3%" width="139.3%" height="139.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="location" transform="translate(6.000000, 3.000000)">
+            <g id="Oval">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use stroke="#FFFFFF" stroke-width="1" fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <path d="M27.8705882,14 C32.7882353,14 36.8,18.1333333 36.8,23.2 C36.8,28.5333333 31.2352941,36.6666667 27.8705882,40.9333333 C24.5058824,36.6666667 18.9411765,28.5333333 18.9411765,23.2 C18.9411765,18.1333333 22.9529412,14 27.8705882,14 Z M27.8705882,12 C21.9176471,12 17,17.0666667 17,23.2 C17,31.6 27.8705882,44 27.8705882,44 C27.8705882,44 38.7411765,31.6 38.7411765,23.2 C38.7411765,17.0666667 33.8235294,12 27.8705882,12 Z M27.8705882,28.1333333 C25.1529412,28.1333333 22.9529412,25.8666667 22.9529412,23.0666667 C22.9529412,20.2666667 25.1529412,18 27.8705882,18 C30.5882353,18 32.7882353,20.2666667 32.7882353,23.0666667 C32.7882353,25.8666667 30.5882353,28.1333333 27.8705882,28.1333333 Z M27.8705882,20.1333333 C26.3176471,20.1333333 24.8941176,21.4666667 24.8941176,23.2 C24.8941176,24.9333333 26.1882353,26.2666667 27.8705882,26.2666667 C29.5529412,26.2666667 30.8470588,24.9333333 30.8470588,23.2 C30.8470588,21.4666667 29.4235294,20.1333333 27.8705882,20.1333333 Z" id="Shape" fill="#C8A480" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

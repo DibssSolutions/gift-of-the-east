@@ -1,0 +1,302 @@
+.main-slider
+	position: relative
+	overflow: hidden
+	opacity: 0
+	transition: opacity 0.8s
+	transition-delay: 0.8s
+	&.is-init
+		opacity: 1
+	
+	$delay: 0.4s
+
+	&__prev,
+	&__next
+		position: absolute
+		top: 0
+		z-index: 1
+		height: 100%
+		width: 15%
+		color: $white 
+		background-color: rgba($gray, 0.5) 
+		+vertical
+		+md
+			display: none !important
+		+hover
+			.main-slider__svg
+				+rotate(-180)
+				circle
+					stroke-dashoffset: 0
+			.main-slider__text
+				transform: translateX(0)
+			.main-slider__direction
+				transform: translateX(0)
+				opacity: 1
+		svg circle
+			stroke: $white
+	&__prev
+		left: 0
+	&__next
+		left: 85%
+	&__arrow-inner
+		position: relative
+		font-size: 13px
+		vertical-align: middle
+		display: inline-block
+	&__text
+		position: relative
+		transition: transform $delay ease-in-out
+		display: block
+	&__circle
+		position: relative
+		width: 34px
+		height: 34px
+		font-size: 0
+		display: inline-block
+		.main-slider__next &
+			right: 0
+		.main-slider__prev &
+			left: 0
+	&__svg
+		position: relative
+		transition: transform $delay ease-in-out
+		display: block
+		svg
+			.main-slider__next &
+				transform: scale(-1)
+		circle
+			stroke-dasharray: 100
+			stroke-dashoffset: 100
+			transition: stroke-dashoffset $delay ease-in-out
+	&__direction
+		position: absolute
+		top: 50%
+		margin-top: -6px
+		font-size: 0
+		opacity: 0
+		transition: transform $delay ease-in-out, opacity $delay ease-in-out
+		.main-slider__next &
+			right: 10px
+			transform: translateX(-20px)
+		.main-slider__prev &
+			left: 10px
+			transform: translateX(20px)
+		.icon
+			font-size: 12px
+	&__inner
+		margin: 0 auto
+		width: 70%
+		+clr
+		+md
+			width: 100%
+		.slick-dots
+			position: absolute
+			bottom: 30px
+			left: 0
+			right: 0
+			font-size: 0
+			text-align: center
+			+sm
+				bottom: 5px
+			li
+				vertical-align: top
+				display: inline-block
+				&:not(:first-child)
+					margin-left: 5px
+		.slick-list
+			overflow: visible
+	&__slide
+		float: left
+		height: 567px
+		background-size: cover
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		+md
+			height: auto
+			padding-bottom: 50%
+	&__dot
+		position: relative
+		width: 34px
+		height: 34px
+		background-color: transparent
+		+sm
+			width: 12px
+			height: 12px
+		&:before
+			position: absolute
+			content: "" 
+			top: 1px
+			left: 1px
+			width: 32px
+			height: 32px
+			border: 1px solid $white
+			border-radius: 50% 
+			opacity: 0
+			transition: opacity .5s
+			transition-delay: 0.8s
+			+sm
+				display: none
+			.slick-initialized li.slick-active &
+				transition-delay: 0
+				opacity: 1
+		&:after
+			position: absolute
+			content: "" 
+			top: 50%
+			left: 50%
+			margin: -4px 0 0 -4px
+			width: 8px
+			height: 8px
+			opacity: 0.7
+			transition: opacity .5s
+			border-radius: 50%
+			background-color: $white 
+			.slick-initialized li.slick-active &
+				opacity: 1
+		svg
+			position: absolute
+			top: 0
+			left: 0
+			+rotate(-90)
+			+sm
+				display: none
+			circle
+				stroke: $white
+				.slick-initialized &
+					stroke-dasharray: 100
+					stroke-dashoffset: 0
+					animation: dashRevers 0.8s ease alternate forwards
+				.slick-initialized li.slick-active &
+					animation: dashPlay 4s ease alternate forwards
+@keyframes dashPlay
+	from
+		stroke-dashoffset: 100
+	to
+		stroke-dashoffset: 0
+@keyframes dashRevers
+	from
+		stroke-dashoffset: 0
+	to
+		stroke-dashoffset: 100
+
+.slider
+	opacity: 0
+	transition: opacity 0.8s
+	transition-delay: 0.8s
+	&.is-init
+		opacity: 1
+	&__wrap
+		position: relative
+	&__inner
+		position: relative
+		padding-bottom: 78px
+		overflow: hidden
+		+sm
+			padding-bottom: 20px 
+		.slick-list
+			margin: 0 -16px
+		.slick-dots
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			font-size: 0
+			text-align: center
+			li
+				vertical-align: top
+				display: inline-block
+				&:not(:first-child)
+					margin-left: 5px
+	&__slide
+		float: left
+	&__prev,
+	&__next
+		position: absolute
+		content: "" 
+		z-index: 2
+		top: 38%
+		width: 56px
+		height: 56px
+		color: $black
+		margin-top: -28px
+		border-radius: 50%
+		background-color: rgba($white, 0.5) 
+		transition: background-color .3s ease-in-out
+		+md
+			display: none !important
+		+hover
+			color: $lightBrown 
+			background-color: $white 
+		&.slick-disabled
+			cursor: default
+			+hover
+				background-color: rgba($white, 0.5) 
+			.icon
+				color: $gray
+		.icon
+			position: absolute
+			top: 50%
+			left: 50%
+			margin: -8px 0 0 -8px
+			font-size: 16px 
+			transition: color .3s ease-in-out
+	&__prev
+		left: -28px
+	&__next
+		right: -28px
+	&__dot
+		position: relative
+		width: 34px
+		height: 34px
+		background-color: transparent
+		+sm
+			width: 10px
+			height: 10px
+		&:before
+			position: absolute
+			content: "" 
+			top: 1px
+			left: 1px
+			width: 32px
+			height: 32px
+			border: 1px solid $silver
+			border-radius: 50% 
+			opacity: 0
+			transition: opacity .5s
+			transition-delay: 1s
+			+sm
+				display: none
+			.slick-initialized li.slick-active &
+				transition-delay: 0
+				opacity: 1
+		&:after
+			position: absolute
+			content: "" 
+			top: 50%
+			left: 50%
+			margin: -4px 0 0 -4px
+			width: 8px
+			height: 8px
+			opacity: 0.7
+			transition: opacity .5s
+			border-radius: 50%
+			background-color: $silver 
+			.slick-initialized li.slick-active &
+				opacity: 1
+		svg
+			position: absolute
+			top: 0
+			left: 0
+			+rotate(-90)
+			+sm
+				display: none
+			circle
+				stroke: $silver
+				.slick-initialized &
+					stroke-dasharray: 100
+					stroke-dashoffset: 0
+					animation: dashRevers 0.8s ease alternate forwards
+				.slick-initialized li.slick-active &
+					animation: dashPlay 0.8s ease alternate forwards
+					
+	&__slide
+		padding: 0 16px

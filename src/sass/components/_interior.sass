@@ -1,0 +1,105 @@
+.interior
+	position: relative
+	&__bg
+		max-width: 100%
+		display: block
+	&__trigger
+		position: absolute
+		z-index: 2
+		width: 24px
+		height: 24px
+		border-radius: 50% 
+		background-color: $white
+		&.is-active
+			&:before,
+			&:after
+				transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+				transform: translate(-50%, -50%) scale(1)
+			span:after
+				opacity: 0
+		+hover
+			&:before,
+			&:after
+				transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+				transform: translate(-50%, -50%) scale(1)
+		&:before,
+		&:after
+			position: absolute
+			z-index: -1
+			content: "" 
+			top: 50%
+			left: 50%
+			opacity: 0.3
+			transition: transform .4s cubic-bezier(0.6, -0.28, 0.735, 0.045)
+			transform: translate(-50%, -50%) scale(0)
+			border-radius: 50%
+			background-color: $white 
+		&:before
+			width: 36px
+			height: 36px
+		&:after
+			width: 48px
+			height: 48px
+		span
+			&:before
+				position: absolute
+				content: "" 
+				top: 50%
+				left: 50%
+				height: 2px
+				width: 14px
+				margin: -1px 0 0 -7px
+				background-color: $black 
+			&:after
+				position: absolute
+				content: "" 
+				top: 50%
+				left: 50%
+				height: 14px
+				width: 2px
+				margin: -7px 0 0 -1px
+				transition: opacity .4s cubic-bezier(0.6, -0.28, 0.735, 0.045)
+				background-color: $black 
+	&__popup
+		position: absolute
+		top: 8px
+		left: 8px
+		bottom: 8px
+		z-index: 4
+		width: 288px
+		background-color: rgba($white, 0.9) 
+		+sm
+			top: 0
+			left: 0
+			bottom: 0
+			width: 260px 
+		&:before
+			display: none
+	&__wrap
+		position: relative
+		padding: 24px 40px 24px 24px
+		height: 100%
+		overflow: auto
+		display: block
+		+md
+			padding: 24px 30px 24px 10px 
+	&__popup-close
+		top: 8px
+		right: -20px
+		width: 40px
+		height: 40px
+		z-index: 10
+		border-radius: 50%
+		transition: color .3s
+		box-shadow: 0 3px 6px rgba(#000, 0.16)
+		background-color: $white 
+		+hover
+			color: #c8a480 
+	&__product
+		&:not(:last-child)
+			margin-bottom: 60px
+			+sm
+				margin-bottom: 30px
+		&:nth-last-of-type(3)
+			.interior__wrap.ps &
+				margin-bottom: 0

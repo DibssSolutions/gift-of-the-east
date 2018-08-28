@@ -1,0 +1,36 @@
+---
+title: home-registration-phone-text
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{{ header.block() }}
+	{% include "partials/main/_quick-infos.html" %}
+	{% include "partials/main/_slider.html" %}
+	{% include "partials/main/_holiday-day.html" %}
+	{% include "partials/main/_new-collections.html" %}
+	{% include "partials/main/_articles.html" %}
+	{% include "partials/main/_posts.html" %}
+	{% include "partials/main/_interior-day.html" %}
+	{% include "partials/main/_about.html" %}
+	{% include "partials/main/_joinus.html" %}
+	{% include "partials/_footer.html" %}
+	{% include "partials/main/_modals.html" %}
+	<!-- begin modal -->
+	<div class="modal is-open" data-modal="registration-phone-text">
+		<div class="modal__container" data-modal-container>
+			<button class="modal__close" data-modal-close>
+				{{mixins.icon('close')}}
+			</button>
+			<form action="/" class="modal__form form">
+				<div class="modal__title">Регистрация</div>
+				<div class="form__text">На anna_neanna@mail.ru отправлено письмо. Перейдите по ссылке из письма, чтобы начать получать привилегии члена Клуба</div>
+				<div class="form__text form__text_gray">Письмо не пришло? <br>Убедитесь,что письмо не попало в спам</div>
+				<div class="form-footer"><a href="#" class="link">Отправить еще раз</a></div>
+			</form>
+		</div>
+	</div>
+	<!-- end modal -->
+
+{% endblock %}

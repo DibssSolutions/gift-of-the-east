@@ -1,0 +1,55 @@
+.title
+	margin-bottom: 40px
+	font-family: $prata
+	+f(32px, 400, 1.3125)
+	color: $lightBlack 
+	+sm
+		margin-bottom: 15px
+		font-size: 24px
+.title-md
+	font-family: $prata
+	+f(24px, 400, 1.25)
+	color: $lightBlack 
+	+sm
+		font-size: 20px 
+	&:not(:last-child)
+		margin-bottom: 15px
+
+.title-sm
+	font-family: $prata
+	color: $lightBlack 
+	+f(20px, 400, 1.4)
+	&:not(:last-child)
+		margin-bottom: 13px
+
+.description
+	text-align: center
+	margin: 0 auto 
+	max-width: 960px
+	font-size: 17px
+	line-height: 1.6
+	+sm
+		font-size: 16px
+	&:not(:last-child)
+		margin-bottom: 44px
+		+sm
+			margin-bottom: 20px
+
+.link
+	+f(13px,400,1.38)
+	color: $lightBrown
+	border-bottom: 1px solid 
+	transition: border-color .3s
+	+hover
+		border-color: transparent
+	&_current
+		color: currentColor 
+
+.text-left
+	text-align: left
+
+.text-center
+	text-align: center
+
+.text-gray
+	color: $silver 

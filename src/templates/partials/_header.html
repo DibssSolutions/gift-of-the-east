@@ -1,0 +1,157 @@
+{% import "partials/_mixins.html" as mixins %}
+{% macro block() %}
+<!-- begin header -->
+<header class="header">
+	<div class="header__top">
+		<div class="header__inner inner">
+			<div class="header__contact">
+				<a href="#" class="header__shops">{{ mixins.icon('location') }}<span>Магазины</span></a>
+				<a href="tel:+74565678795" class="header__phone">+7 (456) 567 87 95</a>
+			</div>
+			<div class="header__logo">
+				<!-- begin logo -->
+				<a href="/" class="logo">
+					<img src="./img/logo.png" alt="logo">
+				</a>
+				<!-- end logo -->
+			</div>
+			<div class="header__cabin">
+				<!-- begin signin -->
+				<div class="signin">
+					<a href="#" class="signin__item" data-modal-control="login">{{mixins.icon('account')}}<span>Войти</span></a>
+					<span class="signin__slash">/</span>
+					<a href="#" class="signin__item" data-modal-control="registration"><span>Регистрация</span></a>
+					<div class="signin__drop">
+						<div class="signin__head">Добро пожаловать, Анна</div>
+						<ul class="signin__list">
+							{% for item in [
+								{
+									text: "Личные данные"
+								},
+								{
+									class: "has-inf",
+									text: "Сообщения",
+									sub: "3"
+								},
+								{
+									text: "История покупок"
+								},
+								{
+									class: "has-inf",
+									text: "Персональные предложения",
+									sub: "4"
+								},
+								{
+									text: "Избранное"
+								},
+								{
+									text: "Клубная карта"
+								},
+								{
+									text: "Пригласить друзей"
+								}
+							] %}
+							<li {% if item.class %}class="{{ item.class }}"{% endif %}>
+								<a href="#">{{ item.text }}{% if item.sub %} <span class="text-gray">{{ item.sub }}</span>{% endif %}</a>
+							</li>
+							{% endfor %}
+						</ul>
+						<div class="signin__footer">
+							<a href="#" class="signin__exit">Выйти</a>
+						</div>
+					</div>
+				</div>
+				<!-- end signin -->
+				<!-- begin basket -->
+				<div class="basket">
+					<a href="#" class="basket__trigger">{{mixins.icon('shopping-bag')}}<span>Корзина</span></a>
+					<div class="basket__drop">
+						<div class="basket__head">Корзина (1)</div>
+						<div class="basket__product js-basket-product">
+							<div class="basket__product-inner">
+								<div class="basket__img" style="background-image: url(./img/vase.jpg);"></div>
+								<div class="basket__text">
+									<a href="#" class="basket__name">Ваза из стекла с разноцветным узором</a>
+									<div class="basket__quantity">Кол–во: 2</div>
+								</div>
+								<div class="basket__right">
+									<div class="basket__price"><span>2000 ₽</span><span class="is-old">2800 ₽</span></div>
+									<div class="basket__benefit">Ваша выгода 800 ₽</div>
+								</div>
+							</div>
+							<button class="basket__remove" type="button">{{ mixins.icon('close') }}</button>
+						</div>
+						<div class="basket__footer">
+							<div class="basket__total"><strong>Итого:</strong> 2000 ₽</div>
+							<div class="basket__button">
+								<a href="#" class="btn btn_md btn_bord btn_anim">
+									<span class="btn__text">Перейти в корзину</span>
+									<span class="btn__icon">
+										{{mixins.icon('arrow-right')}}
+									</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end basket -->
+			</div>
+		</div>
+	</div>
+	<div class="header__bottom">
+		<div class="header__inner inner">
+			<!-- begin search -->
+			<div class="header__search search">
+				<form action="/" class="search__form">
+					<button class="search__btn" type="button">{{ mixins.icon('search') }}</button>
+					<input type="text" class="search__input" placeholder="Поиск">
+				</form>
+			</div>
+			<!-- end search -->
+			<nav class="header__nav nav">
+				<ul class="nav__list">
+					{% for item in [
+						{
+							text: 'КАТАЛОГ',
+							inner: {
+								list: ['Изделия из натуральных камней', 'Муранское стекло', 'Предметы интерьера', 'Питьевая посуда, фляжки, <br>бочки для вина', 'Подсвечники', 'Посуда и сервировка', 'Статуэтки, куклы', 'Принадлежности для письма', 'Кальяны, курительные принадлежности', 'Настольные игры', 'Сувенирное оружие', 'Фэн-шуй', 'Религиозные подарки', 'Сувенирные изделия, копилки, антистрессы', 'Символы г. Омска', 'Вазы', 'Музыкальные ретро центры, <br>ретро телефоны', 'Картины, декоративные тарелки', 'Фоторамки', 'Светильники', 'Подсвечники', 'Фонтаны', 'Часы', 'Шкатулки, книги-сейфы, <br>ключницы', 'Мебель, глобус-бары', 'Барометры', 'Корабли'],
+								img: 'nav-img@2x.jpg'
+							}
+						},
+						{
+							text: 'КОЛЛЕКЦИИ'
+						},
+						{
+							text: 'АКЦИИ'
+						},
+						{
+							text: 'ЖУРНАЛ'
+						}] %}
+					<li class="nav__item js-nav-item">
+						<a href="#" class="nav__link">
+							<span class="nav__text">{{ item.text }}</span>
+							<span class="nav__line"><span></span></span>
+						</a>
+						{% if item.inner %}
+						<span class="nav__wrap js-nav-wrap">
+							<span class="nav__inner inner">
+								<ul class="nav__items">
+									{% for text in item.inner.list %}
+									<li><a href="#">{{ text | safe }}</a></li>
+									{% endfor %}
+								</ul>
+								<span class="nav__img">
+									<img src="./img/{{ item.inner.img }}" alt="img">
+								</span>
+							</span>
+						</span>
+						{% endif %}
+					</li>
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+<!-- end header -->
+{% endmacro %}

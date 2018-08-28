@@ -1,0 +1,42 @@
+{
+    "current": {
+        "img": "./img/vase-2.jpg",
+        "imgAlt": "img",
+        "name": "Наименование товара",
+        "price": "1000 ₽",
+        "btnText": "в корзину"
+    },
+    "similar": {
+        "title": "Похожие товары",
+        "list": [
+            {
+                "img": "./img/vase-2.jpg",
+                "imgAlt": "img",
+                "name": "Наименование товара",
+                "price": "1000 ₽",
+                "btnText": "в корзину"
+            },
+            {
+                "img": "./img/vase-2.jpg",
+                "imgAlt": "img",
+                "name": "Наименование товара",
+                "price": "1000 ₽",
+                "btnText": "в корзину"
+            },
+            {
+                "img": "./img/vase-2.jpg",
+                "imgAlt": "img",
+                "name": "Наименование товара",
+                "price": "1000 ₽",
+                "btnText": "в корзину"
+            },
+            {
+                "img": "./img/vase-2.jpg",
+                "imgAlt": "img",
+                "name": "Наименование товара",
+                "price": "1000 ₽",
+                "btnText": "в корзину"
+            }
+        ]
+    }
+}

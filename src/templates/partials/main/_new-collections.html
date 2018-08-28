@@ -1,0 +1,85 @@
+<!-- begin section -->
+<div class="section section_gray">
+	<div class="inner">
+		<div class="head">
+			<h2 class="title">Новые коллекции</h2>
+			<a href="#" class="head__btn btn btn_md btn_bord btn_anim">
+				<span class="btn__text">Все коллекции</span>
+				<span class="btn__icon">
+					{{mixins.icon('arrow-right')}}
+				</span>
+			</a>
+		</div>
+		<div class="row">
+			<div class="col col-58 col-md-50 col-sm-100">
+				{% for collection in [
+					{
+						img: 'pexels-photo.jpg',
+						title: 'Изысканная элегантность',
+						text: 'Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике.'
+					},
+					{
+						img: 'stagin.jpg',
+						title: 'Искусство в миниатюре',
+						text: 'Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике.'
+					},
+					{
+						img: 'living-room.jpg',
+						title: 'Геометрия',
+						text: 'Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике.'
+					}
+					] %}
+				<!-- begin collection -->
+				<div class="collection">
+					<div class="collection__img">
+						<img src="./img/{{ collection.img }}" alt="img">
+					</div>
+					<div class="collection__wrap">
+						<h3 class="collection__title-md title-md">{{ collection.title }}</h3>
+						<div class="collection__text">{{ collection.text }}</div>
+						<div class="collection__footer">
+							<a href="#" class="btn btn_sm btn_bord"><span class="btn__text">Смотреть</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- end collection -->
+				{% endfor %}
+			</div>
+			<div class="col col-42 col-md-50 col-sm-100">
+				{% for collection in [
+					{
+						img: 'living-room-2.png',
+						title: 'Красота в деталях',
+						text: 'Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается'
+					},
+					{
+						img: 'othmar-ortner.png',
+						title: 'Роскошь во всем',
+						text: 'Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается'
+					},
+					{
+						img: 'othmar-ortner.png',
+						title: 'Греческие мотивы',
+						text: 'Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается '
+					}
+					] %}
+				<!-- begin collection -->
+				<div class="collection collection_sm">
+					<div class="collection__img">
+						<img src="./img/{{ collection.img }}" alt="img">
+					</div>
+					<div class="collection__wrap">
+						<h3 class="collection__title-md title-md">{{ collection.title }}</h3>
+						<div class="collection__text">{{ collection.text }}</div>
+						<div class="collection__footer">
+							<a href="#" class="btn btn_sm btn_bord"><span class="btn__text">Смотреть</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- end collection -->
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end section -->

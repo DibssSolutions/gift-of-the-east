@@ -1,0 +1,52 @@
+<!-- begin articles -->
+<div class="section">
+	<div class="inner">
+		<div class="row">
+			<div class="col col-66 col-md-50 col-sm-100">
+				{{ mixins.article({
+					img: "article-img.jpg",
+					title: "Журнал",
+					text: "Каждую неделю мы публикуем интересные материалы специально для вас. Подключи уведомления в своем браузере чтобы первым узнавать об обновлениях в Журнале.",
+					notice: true
+				}) }}
+			</div>
+			<div class="col col-33 col-md-50 col-sm-100">
+				{% for article in [
+					{
+						img: "businesswoman-call-career-789822@2x.png",
+						tags: [
+							{
+								text: 'РАБОТА'
+							}
+						],
+						title: "Заголовок статьи, желательно, чтобы это были две–три строчки",
+						text: "Здесь будет две строчки текста, который является подзаголовком к статье..."
+					},
+					{
+						img: "rodolfo-sanches-carvalho-1.jpg",
+						tags: [
+							{
+								class: 'tag_orange',
+								text: 'РАЗВЛЕЧЕНИЯ'
+							},
+							{
+								class: 'tag_orange',
+								text: 'ТЕСТЫ'
+							}
+						],
+						title: "Заголовок статьи, желательно, чтобы это были две–три строчки",
+						text: "Здесь будет две строчки текста, который является подзаголовком к статье..."
+					}
+				] %}
+				{{ mixins.articleSmall({
+					img: article.img,
+					tags: article.tags,
+					title: article.title,
+					text: article.text
+				}) }}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end articles -->

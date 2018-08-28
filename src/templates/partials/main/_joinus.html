@@ -1,0 +1,31 @@
+<!-- begin joinus -->
+<div class="joinus section">
+	<div class="joinus__inner inner">
+		<h2 class="joinus__title title">Присоединяйтесь к нам в соцсетях</h2>
+		<ul class="joinus__list">
+			{% for item in [{
+					icon: "facebook",
+					img: "bedroom-bulb@2x"
+				}, 
+				{
+					icon: "vk",
+					img: "apartment-bed@2x"
+				}, 
+				{
+					icon: "instagram",
+					img: "chairs-comfort@2x"
+				}, 
+				{
+					icon: "classmates",
+					img: "pexels-photo@2x"
+			}] %}
+			<li class="joinus__item">
+				<a href="#" class="joinus__link" style="background-image: url(./img/{{ item.img }}.jpg);">
+					<span class="joinus__icon"><img src="./img/{{ item.icon }}.png" alt="img"></span>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+<!-- end joinus -->

@@ -1,0 +1,219 @@
+{% macro icon(i) %}
+<svg class="icon icon-{{i}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
+{% endmacro %}
+{% macro articleSmall(props) %}
+<!-- begin article -->
+<div class="article article_sm">
+	<div class="article__img">
+		<img src="./img/{{ props.img }}" alt="img">
+	</div>
+	<div class="article__wrap">
+		<div class="article__tags tags">
+			{% for tag in props.tags %}
+			<a href="#" class="tag{% if tag.class %} {{tag.class}}{% endif %}">{{ tag.text }}</a>
+			{% endfor %}
+		</div>
+		<a href="#" class="article__title-md title-md">{{ props.title }}</a>
+		<div class="article__text">{{ props.text }}</div>
+	</div>
+</div>
+<!-- end article -->
+{% endmacro %}
+
+{% macro article(props) %}
+<!-- begin article -->
+<div class="article">
+	<div class="article__img">
+		<img src="./img/{{ props.img }}" alt="img">
+	</div>
+	<div class="article__wrap">
+		<div class="article__head">
+			<a href="#" class="article__title title">{{ props.title }}</a>
+			<div class="article__button">
+				<a href="#" class="btn btn_sm btn_bord btn_anim">
+					<span class="btn__text">Все статьи</span>
+					<span class="btn__icon">
+						<svg class="icon icon-arrow-right"><use xlink:href="img/sprite.svg#icon-arrow-right"></use></svg>
+					</span>
+				</a>
+			</div>
+		</div>
+		<div class="article__text">{{ props.text }}</div>
+		{% if props.notice %}
+		<a href="#" class="notice">
+			<svg class="icon icon-bell"><use xlink:href="img/sprite.svg#icon-bell"></use></svg>
+			<span class="notice__text">Подключить уведомления</span>
+		</a>
+		{% endif %}
+	</div>
+</div>
+<!-- end article -->
+{% endmacro %}
+
+{% macro post(props) %}
+<!-- begin post -->
+<div class="post">
+	<div class="post__head">
+		<div class="post__user">
+			<!-- begin user -->
+			<a href="#" class="user">
+				<span class="user__img" style="background-image: url(./img/{{ props.userLogo or 'rodolfo-sanches-carvalho-1.jpg' }});"></span>
+				<span class="user__name">{{ props.userName or 'KaterinaMihaylova' }}</span>
+			</a>
+			<!-- end user -->
+		</div>
+		<div class="post__button">
+			<a href="#" class="btn btn_xs btn_blue btn_rad">Подписаться</a>
+		</div>
+	</div>
+	<div class="post__img" style="background-image: url(./img/{{ props.img or 'living-room-3.png' }});"></div>
+	<div class="post__body">
+		<div class="post__soc">
+			<div class="post__soc-top">
+				<ul class="soc">
+					<li class="soc__item">
+						<a href="#" class="soc__link"><svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg></a>
+					</li>
+					<li class="soc__item">
+						<a href="#" class="soc__link"><svg class="icon icon-comment"><use xlink:href="img/sprite.svg#icon-comment"></use></svg></a>
+					</li>
+				</ul>
+			</div>
+			<div class="post__info">45 отметок «Нравится»</div>
+		</div>
+		<div class="post__share">
+			<a href="#" class="share"><svg class="icon icon-share"><use xlink:href="img/sprite.svg#icon-share"></use></svg></a>
+		</div>
+	</div>
+	<div class="post__footer">
+		<div class="post__time">1 неделю назад</div>
+		<a href="#" class="post__inst"><svg class="icon icon-instagram"><use xlink:href="img/sprite.svg#icon-instagram"></use></svg></a>
+	</div>
+</div>
+<!-- end post -->
+{% endmacro %}
+<!-- ------------------------------ BASKET ------------------------------ -->
+{% macro breadcrumbs(props) %}
+<!-- begin breadcrumbs -->
+<ul class="breadcrumbs{% if props.class %}{{ props.class }}{% endif %}">
+	{% for item in props.list %}
+		{% if loop.first %}
+		<li class="breadcrumbs__item">
+			<a href="#"><svg class="icon icon-chevron-left"><use xlink:href="img/sprite.svg#icon-chevron-left"></use></svg>{{ item }}</a>
+		</li>
+		{% else %}
+			{% if loop.last %}
+			<li class="breadcrumbs__item">
+				<span>{{ item }}</span>
+			</li>
+			{% else %}
+			<li class="breadcrumbs__item">
+				<a href="#">{{ item }}</a>
+			</li>
+			{% endif %}
+		{% endif %}
+	{% endfor %}
+	
+</ul>
+<!-- end breadcrumbs -->
+{% endmacro %}
+
+{% macro baskethead(props) %}
+<!-- begin baskethead -->
+<div class="baskethead">
+	<h2 class="baskethead__title title">{{ props.title or 'Ваша корзина' }}{% if props.product %} <span class="baskethead__product">{{ props.product }}</span>{% endif %}</h2>
+	{% if props.link %}
+	<div class="baskethead__right">
+		<a href="#" class="baskethead__link">{{ props.link }}</a>
+	</div>
+	{% endif %}
+</div>
+<!-- end baskethead -->
+{% endmacro %}
+
+{% macro basketlist(props) %}
+<!-- begin basketlist -->
+<ul class="basketlist">
+	{% for item in props.list %}
+	<li class="basketlist__item{% if loop.index === props.active %} is-active{% endif %}">
+		<a href="#" class="basketlist__link">
+			<span class="basketlist__icon">
+				<svg class="icon icon-{{ item.icon }}"><use xlink:href="img/sprite.svg#icon-{{ item.icon }}"></use></svg>
+			</span>
+			<span class="basketlist__title">{{ item.title }}</span>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+<!-- end basketlist -->
+{% endmacro %}
+
+{% macro notavailable() %}
+<!-- begin notavailable -->
+<div class="notavailable">
+	<div class="notavailable__text">
+		<svg class="notavailable__icon icon icon-warning"><use xlink:href="img/sprite.svg#icon-warning"></use></svg>
+		К сожалению, некоторых товаров из корзины больше нет в наличии.
+	</div>
+	<div class="notavailable__footer">
+		<a href="#" class="btn btn_bord"><span class="btn__text">Показать</span></a>
+	</div>
+</div>
+<!-- end notavailable -->
+{% endmacro %}
+{% macro card() %}
+<!-- begin card -->
+<div class="card">
+	<div class="card__img" style="background-image: url(./img/{{ props.img }});"></div>
+	<div class="card__wrap">
+		<div class="card__table">
+			<div class="card__center">
+				<div class="card__vendorcode vendorcode">{{ props.article or 'Артикул: 45678' }}</div>
+				<a href="#" class="card__title">{{ props.title or 'Ваза из стекла с разноцветным узором' }}</a>
+				{% if props.quantity %}
+				<div class="card__quantity">
+					<span>Кол–во:</span>
+					{% if props.quantity.select %}
+					<div class="card__seclect">
+						<select class="select js-seclect">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+					</div>
+					{% else %}
+					<span class="card__size">1</span>
+					{% endif %}
+				</div>
+				{% endif %}
+			</div>
+			<div class="card__right">
+				{% if props.price %}
+				<div class="card__price">
+					<span>{{ props.price or '1000 ₽' }}</span>
+					{% if props.priceOld %}<span class="is-old">{{ props.price or '1400 ₽' }}</span>{% endif %}
+				</div>
+				{% endif %}
+				{% if props.benefit %}<div class="card__benefit">Ваша выгода 400 ₽</div>{% endif %}
+			</div>
+		</div>
+		<div class="card__footer">
+			<button class="card__close"><svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg></button>
+			{% if props.like %}
+			<button class="card__like like" type="button"><svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg></button>
+			{% endif %}
+			{% if props.subscribe %}
+			<a href="#" class="card__subscribe subscribe-link">
+				<svg class="icon icon-email-outline"><use xlink:href="img/sprite.svg#icon-email-outline"></use></svg>
+				Подписаться
+			</a>
+			{% endif %}
+			{% if props.availability %}<div class="card__availability">{{ props.availability }}</div>{% endif %}
+		</div>
+	</div>
+</div>
+<!-- end card -->
+{% endmacro %}
+<!-- ------------------------------ END BASKET ------------------------------ -->

@@ -1,0 +1,128 @@
+.form
+	&__text
+		margin: 20px -27px 0
+		font-size: 14px
+		&_gray
+			color: $gray 
+.form-control
+	position: relative
+	&:not(:first-child)
+		margin-top: 24px
+.form-question
+	margin-right: -16px
+	text-align: right
+	&:not(:first-child)
+		margin-top: 20px
+.input
+	padding: 12px
+	height: 40px
+	width: 100%
+	color: $black 
+	font-family: $montserrat
+	+f(14px, 400, 1.285)
+	border: 1px solid $silver 
+	transition: border-color .3s
+	display: block
+	&::placeholder
+		color: #A29F9F 
+	&:focus
+		&::placeholder
+			font-size: 0
+	&.error
+		border-color: $red !important
+	&_password
+		padding-right: 38px
+.password-show
+	position: absolute
+	top: 50%
+	right: 12px
+	margin-top: -11px
+	font-size: 0
+	color: #C0C0C0
+	transition: color .3s
+	+hover
+		color: $black
+	.icon
+		font-size: 22px
+		line-height: 1
+		&-eye-closed
+			.form-control.is-show &
+				display: none
+		&-eye-opened
+			display: none
+			.form-control.is-show &
+				display: block
+.form-social
+	text-align: center
+	&:not(:first-child)
+		margin-top: 34px
+.form-footer
+	&:not(:first-child)
+		margin-top: 22px
+	&_lg
+		&:not(:first-child)
+			margin-top: 30px
+
+.form-checkbox
+	margin-right: -60px
+	text-align: right
+	&:not(:first-child)
+		margin-top: 20px
+.checkbox
+	position: relative
+	padding-left: 28px
+	text-align: left
+	+f(13px,400,1.38)
+	color: $gray 
+	cursor: pointer
+	user-select: none
+	display: block
+	input
+		position: absolute
+		left: 0
+		top: -1px
+		opacity: 0
+		width: 16px
+		height: 16px
+		&:checked ~ .checkbox__icon
+			opacity: 1
+	&__text
+		&:before
+			position: absolute
+			content: ""
+			top: 0
+			left: 0
+			width: 16px
+			height: 16px
+			border: 1px solid $silver 
+		.link 
+			color: $black 
+	&__icon
+		position: absolute
+		top: 4px
+		left: 3px
+		font-size: 0
+		opacity: 0
+		transition: opacity .3s
+		.icon
+			font-size: 8px 
+			color: $lightBrown 
+
+.reg-number
+	margin: 20px -22px 0
+	font-size: 0
+	&__text
+		+f(17px,400,1.3)
+		color: #CFC7C7 
+		vertical-align: top
+		display: inline-block
+	&__input
+		padding: 0
+		height: 24px
+		width: 24px
+		font-size: 20px
+		text-align: center
+		vertical-align: top
+		display: inline-block
+		&:not(:first-child)
+			margin-left: 8px

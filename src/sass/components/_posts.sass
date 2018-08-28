@@ -1,0 +1,161 @@
+.posts
+	margin-top: 220px
+	+sm
+		margin-top: 0
+	&__row
+		margin-bottom: -32px
+	&__col
+		margin-bottom: 32px
+		+sm
+			margin-bottom: 20px
+
+.posts-info
+	margin: -260px auto 40px
+	padding: 40px 16px 25px
+	max-width: 800px
+	text-align: center
+	background-color: $white 
+	+sm
+		margin: 0 0 20px
+	&__title
+		&:not(:last-child)
+			margin-bottom: 60px
+			+sm
+				margin-bottom: 20px
+	&__hashtag
+		margin-bottom: 32px
+		font-family: $lemonTuesday
+		font-size: 80px
+		line-height: 1
+		color: $lightBrown 
+		display: block
+		+sm
+			margin-bottom: 15px
+			font-size: 30px
+	&__user
+		text-align: center
+		&:not(:last-child)
+			margin-bottom: 16px
+			+sm
+				margin-bottom: 10px
+	&__user-link
+		font-size: 16px
+		line-height: 32px 
+		color: $gray 
+		transition: color .3s
+		vertical-align: top
+		display: inline-block
+		+sm
+			font-size: 14px
+			line-height: 20px
+		+hover
+			color: $black
+			.icon-instagram
+				color: $lightBrown
+		.icon-instagram
+			margin-right: 5px
+			font-size: 32px
+			vertical-align: middle
+			color: $silver 
+			transition: color .3s
+			display: inline-block
+			+sm
+				font-size: 20px
+	&__text
+		margin: 0 auto
+		max-width: 590px
+		font-size: 14px
+		color: $black 
+		line-height: 1.3
+		a
+			color: $lightBrown
+			border-bottom: 1px solid transparent
+			transition: border-color .3s
+			+hover
+				border-color: currentColor 
+
+.post
+	box-shadow: 0 3px 6px rgba(#000, 0.16) 
+	background-color: $white 
+	&__head
+		padding: 16px 9px 9px 12px
+		width: 100%
+		display: table
+	&__user,
+	&__button
+		vertical-align: middle
+		display: table-cell
+	&__button
+		text-align: right
+	&__img
+		padding-bottom: 100%
+		background-position: 50% 50%
+		background-size: cover
+		background-repeat: no-repeat
+		+sm
+			padding-bottom: 80%
+	&__body
+		padding: 9px 19px 10px 9px
+		width: 100%
+		display: table
+	&__soc
+		vertical-align: top
+		display: table-cell
+	&__info
+		margin-top: 10px
+		font-size: 10px
+		color: $black 
+	&__share
+		text-align: right
+		vertical-align: top
+		display: table-cell
+	&__footer
+		padding: 5px 15px 4px 9px
+		width: 100%
+		border-top: 1px solid $gallery 
+		display: table
+	&__time
+		font-size: 10px
+		vertical-align: middle
+		display: table-cell
+	&__inst
+		text-align: right
+		vertical-align: top
+		font-size: 23px
+		line-height: 1
+		color: $black 
+		display: table-cell
+.user
+	font-weight: 500 
+	font-size: 12px
+	color: $black 
+	display: table
+	&__img
+		height: 32px
+		width: 32px
+		border-radius: 50% 
+		background-repeat: no-repeat
+		background-position: 50% 50% 
+		background-size: cover
+		display: table-cell
+	&__name
+		padding-left: 12px
+		vertical-align: middle
+		display: table-cell
+.soc
+	font-size: 0
+	&__item
+		vertical-align: middle
+		display: inline-block
+		&:not(:first-child)
+			margin-left: 17px
+	&__link
+		color: $black 
+		.icon
+			font-size: 19px
+.share
+	vertical-align: top
+	color: $black 
+	display: inline-block
+	.icon
+		font-size: 19px

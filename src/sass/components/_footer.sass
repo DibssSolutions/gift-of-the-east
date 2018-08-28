@@ -1,0 +1,82 @@
+.footer
+	margin-top: 80px
+	padding: 40px 0
+	background-color: rgba(#EFEFEF, .5) 
+	+md
+		margin-top: 30px
+	+sm
+		padding-bottom: 8px
+		text-align: center
+	&__col
+		+md
+			margin-bottom: 32px
+	&__title
+		margin-bottom: 17px
+		color: $black 
+		font-size: 13px
+		font-weight: 500 
+		line-height: 1.38
+		transition: color .3s
+		text-transform: uppercase
+		display: block
+		+hover
+			color: $lightBrown 
+	&__item
+		display: block
+		&:not(:first-child)
+			margin-top: 9px
+	&__tel
+		margin-bottom: 9px
+		color: $black 
+		+f(20px,400,1)
+		display: block
+	&__list
+		&_contact
+			font-size: 13px
+	&__link
+		color: $gray
+		transition: color .3s
+		+hover
+			color: $black
+	&__social
+		margin-top: 12px
+	&__hashtag
+		margin-top: 12px
+		color: $black 
+		+f(20px,400,1)
+		display: block
+.social
+	font-size: 0
+	&__link
+		margin: 0 12px 12px 0 
+		width: 40px
+		height: 40px
+		color: $white 
+		text-align: center
+		line-height: 40px
+		transition: opacity .3s
+		vertical-align: top
+		display: inline-block
+		background-color: #168DE2
+		+hover
+			opacity: 0.8
+		&_vk
+			background-color: #697FA1
+		&_facebook
+			background-color: #4F63A6
+		&_odnoklassniki
+			background-color: #F58220
+		&_instagram
+			background-color: #168DE2
+		&_google-plus
+			background: #D53F35 
+		.icon
+			font-size: 20px
+			vertical-align: middle
+			display: inline-block
+		.icon-vk
+			font-size: 12px
+		.icon-facebook
+			font-size: 18px
+		.icon-google-plus
+			font-size: 14px 

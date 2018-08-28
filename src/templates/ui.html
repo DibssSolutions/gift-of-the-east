@@ -1,0 +1,48 @@
+---
+title: UI
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="inner">
+		<div class="row" style="margin-top: 20px;">
+			{% for slide in [
+				{
+					img: "art-background-beautiful.png",
+					title: "Уникальные светильники",
+					text: "Наши светильники поразят своим необычным внешним видом и привнесут "
+				},
+				{
+					img: "sudhith-xavier.png",
+					title: "Ретро-центры",
+					text: "Ретро снова в моде! Не оставайтесь в стороне от уникальной возможности "
+				}
+				] %}
+			<div class="col col-50">
+				<!-- begin holiday -->
+				<div class="holiday">
+					<div class="holiday__img">
+						<img src="./img/{{slide.img}}" alt="img">
+					</div>
+					<div class="holiday__wrap">
+						<div class="holiday__title title-sm">{{slide.title}}</div>
+						<p>{{slide.text}}</p>
+					</div>
+				</div>
+				<!-- end holiday -->
+			</div>
+			{% endfor %}
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col col-100">
+				<div class="tags">
+					{% for tagClass in ['', 'orange', 'black', 'red', 'yellow', 'beige', 'purple', 'turquoise', 'green'] %}
+					<a href="#" class="tag tag_{{ tagClass }}">text</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

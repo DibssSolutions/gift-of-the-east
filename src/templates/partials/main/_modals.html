@@ -1,0 +1,76 @@
+<!-- begin modal -->
+<div class="modal" data-modal="login">
+	<div class="modal__container" data-modal-container>
+		<form action="/" class="modal__form form">
+			<div class="modal__title">Вход в аккаунт</div>
+			<div class="form-control js-form-control">
+				<input type="text" class="input" placeholder="Номер телефона или email" data-validation="required" data-validation-event="keyup change">
+			</div>
+			<div class="form-control js-form-control">
+				<input type="password" class="input input_password" placeholder="Пароль" data-validation="required" data-validation-event="keyup change">
+				<button class="password-show js-password-show" type="button">
+					{{ mixins.icon('eye-closed') }}
+					{{ mixins.icon('eye-opened') }}
+				</button>
+			</div>
+			<div class="form-question">
+				<a href="#" class="link link_current">Забыли пароль?</a>
+			</div>
+			<div class="form-control">
+				<button class="btn btn_full" type="submit" disabled>ВОЙТИ</button>
+			</div>
+			<div class="form-social social">
+				{% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
+				<a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
+				{% endfor %}
+			</div>
+			<div class="form-footer">Еще не член клуба? <a href="#" class="link link_current">Зарегистрироваться</a></div>
+		</form>
+	</div>
+</div>
+<!-- end modal -->
+<!-- begin modal -->
+<div class="modal" data-modal="registration">
+	<div class="modal__container" data-modal-container>
+		<form action="/" class="modal__form form">
+			<div class="modal__title">Регистрация</div>
+			<div class="form-control js-form-control">
+				<input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+			</div>
+			<div class="form-control js-form-control">
+				<input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
+			</div>
+			<div class="form-control js-form-control">
+				<input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change">
+				<button class="password-show js-password-show" type="button">
+					{{ mixins.icon('eye-closed') }}
+					{{ mixins.icon('eye-opened') }}
+				</button>
+			</div>
+			<div class="form-question">
+				<a href="#" class="link">Использовать email для регистрации</a>
+			</div>
+			<div class="form-checkbox">
+				<label class="checkbox">
+					<input type="checkbox" data-validation="required">
+					<span class="checkbox__text">
+						Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+					</span>
+					<span class="checkbox__icon">
+						{{ mixins.icon('check') }}
+					</span>
+				</label>
+			</div>
+			<div class="form-control">
+				<button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
+			</div>
+			<div class="form-social social">
+				{% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
+				<a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
+				{% endfor %}
+			</div>
+			<div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
+		</form>
+	</div>
+</div>
+<!-- end modal -->

@@ -1,0 +1,46 @@
+---
+title: Basket
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{{ header.block() }}
+	<div class="inner">
+		{{ mixins.breadcrumbs({
+			list: ['Назад','Главная','Корзина']
+		}) }}
+		<div class="row">
+			<div class="col col-66">
+				{{ mixins.baskethead({ product: '1 товар' }) }}
+				{{ mixins.basketlist({ 
+					active: 1,
+					list: [
+						{
+							icon: 'shopping-full',
+							title: 'КОРЗИНА'
+						},
+						{
+							icon: 'home-map-marker',
+							title: 'САМОВЫВОЗ / ДОСТАВКА'
+						},
+						{
+							icon: 'wallet',
+							title: 'ОПЛАТА'
+						},
+						{
+							icon: 'approval',
+							title: 'ПОДТВЕРЖДЕНИЕ'
+						}
+					]
+				}) }}
+				{{ mixins.notavailable() }}
+				{{ mixins.card() }}
+			</div>
+			<div class="col col-33">
+				
+			</div>
+		</div>
+	</div>
+	{% include "partials/_footer.html" %}
+{% endblock %}

@@ -1,0 +1,32 @@
+.breadcrumbs
+	margin: 24px 0 32px
+	&__item
+		position: relative
+		vertical-align: top
+		display: inline-block
+		&:not(:first-child)
+			padding-left: 26px
+			&:before
+				position: absolute
+				content: "/" 
+				top: 0
+				left: 8px
+				font-size: 16px
+				color: $silver 
+				+rotate(10)
+		a
+			position: relative
+			color: $black 
+			transition: color .3s
+			display: block
+			+hover
+				color: $lightBrown 
+				.icon-chevron-left
+					color: $lightBrown 
+		.icon-chevron-left
+			margin: 4px 8px 0 0
+			font-size: 9px
+			color: $silver 
+			transition: color .3s
+			vertical-align: top
+			display: inline-block

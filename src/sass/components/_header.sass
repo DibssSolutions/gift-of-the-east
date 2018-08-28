@@ -1,0 +1,431 @@
+.header
+	position: relative
+	z-index: 10
+	color: $black 
+	&__top
+		height: 88px
+		border-bottom: 1px solid rgba($silver, 0.5)
+	&__bottom
+		position: relative
+		height: 64px
+		border-bottom: 1px solid rgba($silver, 0.5)
+	&__contact
+		float: left
+		margin-top: 47px
+	&__shops
+		position: relative
+		padding-left: 30px
+		font-size: 13px
+		color: $black 
+		vertical-align: top
+		display: inline-block
+		+hover
+			span
+				border-color: currentColor 
+		span
+			transition: border-color .3s
+			border-bottom: 1px solid transparent 
+		.icon
+			position: absolute
+			left: 0
+			bottom: 2px
+			font-size: 24px
+			color: $lightBrown 
+	&__phone
+		color: $gray
+		transition: border-color .3s
+		border-bottom: 1px solid transparent
+		+hover
+			border-color: currentColor 
+		&:not(:first-child) 
+			margin-left: 5px
+	&__logo
+		position: absolute
+		top: 32px
+		left: 50%
+		margin: 0 0 0 -111px
+	&__cabin
+		float: right
+		margin-top: 40px
+	&__search
+		position: absolute
+		top: 20px
+		left: 15px
+	&__nav
+		padding-top: 24px
+.logo
+	width: 222px
+	display: inline-block
+	img
+		max-width: 100%
+		display: block
+.signin
+	position: relative
+	vertical-align: top
+	display: inline-block
+	&:before
+		position: absolute
+		content: ""
+		top: 100%
+		left: 0
+		right: 0
+		height: 22px
+	+hover
+		.signin__drop
+			opacity: 1
+			visibility: visible
+	&__item
+		position: relative
+		font-size: 13px
+		color: $black 
+		display: inline-block
+		+hover
+			span
+				border-color: currentColor 
+		span
+			transition: border-color .3s
+			border-bottom: 1px solid transparent 
+		.icon
+			position: relative
+			margin-right: 8px
+			font-size: 24px
+			color: $lightBrown 
+			vertical-align: text-bottom
+			display: inline-block 
+	&__slash
+		color: $silver 
+	&__drop
+		position: absolute
+		top: 100%
+		right: 0
+		margin-top: 22px 
+		width: 311px
+		z-index: 2
+		visibility: hidden
+		opacity: 0
+		color: $black
+		font-size: 14px 
+		transition: visibility .3s, opacity .3s
+		box-shadow: 0 6px 12px rgba(#000, .2) 
+		background-color: $white 
+		a
+			transition: color .3s
+			+hover
+				color: $lightBrown 
+	&__head
+		padding: 25px 16px 16px 28px
+		border-bottom: 1px solid rgba($silver, 0.5) 
+	&__list
+		padding: 16px 16px 16px 18px
+		border-bottom: 1px solid rgba($silver, 0.5) 
+		display: block
+		li
+			display: block
+			&:not(:first-child)
+				margin-top: 14px
+			&.has-inf a
+				&:before
+					position: absolute
+					content: "" 
+					top: 7px
+					left: 0
+					width: 4px
+					height: 4px
+					border-radius: 50%
+					background-color: $red 
+		a
+			position: relative
+			padding-left: 12px
+			display: block
+	&__footer
+		padding: 20px 16px 24px 28px
+.basket
+	position: relative
+	vertical-align: top
+	display: inline-block
+	&:before
+		position: absolute
+		content: ""
+		top: 100%
+		left: 0
+		right: 0
+		height: 22px  
+	+hover
+		.basket__drop
+			opacity: 1
+			visibility: visible
+		.basket__trigger span
+			border-color: currentColor 
+	&:not(:first-child) 
+		margin-left: 6px
+	&__trigger
+		font-size: 13px
+		color: $black 
+		span
+			transition: border-color .3s
+			border-bottom: 1px solid transparent 
+		.icon
+			position: relative
+			margin-right: 8px
+			font-size: 24px
+			color: $lightBrown 
+			vertical-align: text-bottom
+			display: inline-block 
+	&__drop
+		position: absolute
+		top: 100%
+		right: 0
+		margin-top: 22px 
+		width: 488px
+		z-index: 2
+		line-height: 1.3
+		visibility: hidden
+		opacity: 0
+		color: $black
+		font-size: 14px 
+		transition: visibility .3s, opacity .3s
+		box-shadow: 0 6px 12px rgba(#000, .2) 
+		background-color: $white 
+	&__head
+		padding: 24px 12px 16px
+		border-bottom: 1px solid rgba($silver, .5) 
+	&__product
+		position: relative
+		padding: 16px
+		border-bottom: 1px solid rgba($silver, .5) 
+	&__product-inner
+		width: 100%
+		table-layout: fixed
+		display: table
+	&__img
+		width: 72px
+		height: 72px
+		background-position: 50% 50% 
+		background-size: cover
+		background-repeat: no-repeat
+		vertical-align: top
+		display: table-cell
+	&__text
+		padding-left: 16px
+		vertical-align: top
+		display: table-cell
+	&__name
+		transition: color .3s
+		+hover
+			color: $lightBrown 
+	&__quantity
+		margin-top: 10px
+	&__right
+		padding-bottom: 20px
+		text-align: right
+		vertical-align: top
+		display: table-cell
+	&__price
+		span
+			position: relative
+			vertical-align: top
+			display: inline-block
+			&:not(:first-child)
+				margin-left: 10px
+			&.is-old
+				color: $gray 
+				&:before
+					position: absolute
+					content: ""
+					top: 50%
+					left: 0
+					right: 0
+					height: 1px
+					margin-top: -1px
+					border-bottom: 1px solid  
+	&__benefit
+		margin-top: 4px
+		font-size: 11px
+		color: $red 
+	&__remove
+		position: absolute
+		right: 16px
+		bottom: 16px
+		font-size: 0
+		color: $gray 
+		transition: color .3s
+		background-color: transparent 
+		+hover
+			color: $lightBrown 
+		.icon
+			font-size: 12px
+	&__footer
+		padding: 16px
+		width: 100%
+		table-layout: fixed
+		display: table
+	&__total
+		vertical-align: middle
+		display: table-cell
+	&__button
+		text-align: right
+		vertical-align: top
+		display: table-cell
+
+.search
+	&__form
+		position: relative
+		padding-left: 32px
+		font-size: 0
+		width: 200px
+	&__btn
+		position: absolute
+		top: 0
+		left: 0
+		color: $silver
+		font-size: 0
+		background-color: transparent 
+		.icon
+			font-size: 20px
+			line-height: 1
+	&__input
+		width: 100%
+		height: 20px
+		font-family: $montserrat
+		+f(13px, 400, 1.4)
+		color: $black
+		display: block
+		&::placeholder
+			color: $gray
+		&:focus
+			&::placeholder
+				font-size: 0
+.nav
+	&__list
+		font-size: 0
+		text-align: center
+	&__item
+		vertical-align: top
+		display: inline-block
+		+hover
+			.nav__wrap
+				opacity: 1
+				visibility: visible
+			.nav__line span
+				animation: lineOn 0.4s ease alternate forwards
+			.nav__text
+				&:before,
+				&:after
+					opacity: 1
+		&:not(:first-child)
+			margin-left: 58px
+	&__link
+		position: relative
+		padding: 0 16px
+		font-size: 14px
+		font-weight: 500 
+		text-transform: uppercase
+		transition: border-color .3s
+		display: block
+		&:before
+			position: absolute
+			content: "" 
+			top: -21px
+			left: 0
+			right: 0
+			bottom: -21px
+		&:after
+			position: absolute
+			content: ""
+			top: 39px
+			height: 11px
+			left: 0
+			width: 100%
+			background-color: transparent  
+	&__text
+		.nav__item.has-list &
+			&:before,
+			&:after
+				position: absolute
+				content: ''
+				transition: opacity .4s
+			&:before
+				top: 42px
+				left: 50%
+				margin-left: -7px
+				z-index: 1
+				opacity: 0
+				+arr(14,9,$white,t)
+			&:after
+				top: 40px
+				left: 50%
+				margin-left: -8px
+				opacity: 0
+				+arr(16,11,rgba($silver, .5),t)
+	&__line
+		position: absolute
+		left: 0
+		right: 0
+		bottom: -21px
+		overflow: hidden
+		height: 2px
+		span
+			position: relative
+			height: 2px
+			animation: lineOut 0.4s ease alternate forwards
+			background-color: $lightBrown 
+			display: block
+	&__wrap
+		position: absolute
+		top: 74px
+		left: 50%
+		margin-left: -50vw
+		width: 100vw
+		padding: 24px 0 32px
+		opacity: 0
+		visibility: hidden
+		border-top: 1px solid rgba($silver, .5)
+		transition: opacity .4s, visibility .4s
+		background-color: $white 
+	&__inner
+		text-align: left
+		display: block
+	&__items
+		float: left
+		position: relative
+		padding-right: 20px
+		width: 60%
+		font-size: 14px
+		line-height: 1.29
+		column-count: 2
+		column-gap: 16.8%
+		&:before
+			position: absolute
+			content: ""
+			top: 0
+			left: 44%
+			bottom: 0
+			width: 1px
+			background-color: rgba($silver, 0.5)
+		li
+			display: block
+			&:not(:first-child)
+				margin-top: 17px
+		a
+			transition: color .3s
+			&:hover
+				color: $lightBrown 
+	&__img
+		float: left
+		width: 40%
+		img
+			max-width: 100%
+			display: block
+
+@keyframes lineOn
+	0%
+		transform: translateX(-101%)
+	1%
+		transform: translateX(-101%)
+	100%
+		transform: translateX(0)
+@keyframes lineOut
+	0%
+		transform: translateX(0)
+	100%
+		transform: translateX(101%)

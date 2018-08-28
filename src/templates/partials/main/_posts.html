@@ -1,0 +1,24 @@
+<!-- begin posts -->
+<div class="posts section">
+	<div class="section__background" style="background-image: url(./img/gold.jpg);"></div>
+	<div class="posts__inner inner">
+		<!-- begin posts-info -->
+		<div class="posts-info">
+			<h2 class="posts-info__title title">Товары в интерьере покупателей</h2>
+			<a href="#" class="posts-info__hashtag">#Дары_Востока</a>
+			<div class="posts-info__user">
+				<a href="#" class="posts-info__user-link">{{ mixins.icon('instagram') }}@DaryVostoka</a>
+			</div>
+			<div class="posts-info__text">Выставляй свои фото в своем инстаграме с нашим хештегом #Дары_Востока и попади на главную страницу. А также заходи в наш инстаграм <a href="#">@DaryVostoka</a> за ежедневной порцией вдохновения, а также участвуй в конкурсах с призами!</div>
+		</div>
+		<!-- end posts-info -->
+		<div class="posts__row row">
+			{% for i in range(0,6) %}
+			<div class="posts__col col col-33 col-md-50 col-sm-100">
+				{{ mixins.post() }}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- end posts -->

@@ -1,0 +1,56 @@
+<!-- begin footer -->
+<footer class="footer">
+	<div class="footer__inner inner">
+		<div class="footer__row row">
+			{% for col in [
+				{
+					title: "КЛУБ ДАРЫ ВОСТОКА",
+					list: ["О клубе", "Каталог", "Программа лояльности", "Адреса магазинов", "Сотрудничество/Оптовым"]
+				},
+				{
+					title: "ДЛЯ ПОКУПАТЕЛЕЙ",
+					list: ["Доставка и самовывоз", "Оплата", "Обратная связь", "Общие вопросы"]
+				},
+				{
+					title: "ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ",
+					list: ["Политика безопасности", "Оферта", "Обмен/Возврат товара"]
+				},
+				{
+					title: "КОНТАКТЫ",
+					tel: "+7 (495) 661 - 0101",
+					listCont: ["Служба клиентской поддержки", "пн–вс 9:00 до 18:00", "сб 9:00 до 16:00"],
+					soc: ['vk', 'facebook','odnoklassniki','instagram'],
+					hashtag: "#Дары_Востока"
+				}
+				] %}
+			<div class="footer__col col col-25 col-md-50 col-sm-100">
+				<a href="#" class="footer__title">{{ col.title }}</a>
+				{% if col.tel %} <div class="footer__item"><a href="#" class="footer__tel">{{ col.tel }}</a></div>{% endif %}
+				{% if col.list %}
+				<ul class="footer__list">
+					{% for text in col.list %}
+					<li class="footer__item"><a href="#" class="footer__link">{{ text }}</a></li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+				{% if col.listCont %}
+				<ul class="footer__list footer__list_contact">
+					{% for text in col.listCont %}
+					<li class="footer__item">{{ text }}</li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+				{% if col.soc %}
+				<div class="footer__social social">
+					{% for name in col.soc %}
+					<a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
+					{% endfor %}
+				</div>
+				{% endif %}
+				{% if col.hashtag %}<a href="#" class="footer__hashtag">{{ col.hashtag }}</a>{% endif %}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</footer>
+<!-- end footer -->

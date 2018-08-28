@@ -1,0 +1,52 @@
+.joinus
+	&__title
+		text-align: center
+	&__list
+		margin: 0 -26px
+		font-size: 0
+		+md
+			margin: 0 -16px
+	&__item
+		padding: 0 26px
+		width: 25%
+		vertical-align: top
+		display: inline-block
+		+md
+			margin-bottom: 32px
+			padding: 0 16px
+			width: 50%
+		+xs
+			margin-bottom: 16px
+			width: 100%
+	&__link
+		position: relative
+		height: 395px
+		background-position: 50% 50%
+		background-size: cover
+		display: block
+		+vertical
+		+hover
+			&:after
+				opacity: 0
+		&:after
+			position: absolute
+			content: "" 
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 1
+			transition: opacity .3s 
+			background-color: rgba($white, .3) 
+	&__icon
+		position: relative
+		z-index: 2
+		width: 104px
+		height: 104px
+		line-height: 104px
+		border-radius: 20px 
+		vertical-align: middle
+		background-color: rgba($white, .9) 
+		display: inline-block
+		img
+			vertical-align: middle
