@@ -43,6 +43,88 @@ title: UI
 				</div>
 			</div>
 		</div>
+		<div class="row" style="margin-top: 20px;">
+			{% for cardcatalog in [
+				{
+					img: "amethyst-1920@2x.jpg",
+					title: "Изделия из натуральных камней"
+				},
+				{
+					img: "thumb_cover_header@2x.jpg",
+					title: "Муранское стекло"
+				},
+				{
+					img: "nav-img@2x.jpg",
+					title: "Предметы интерьера"
+				}
+				] %}
+			<div class="col col-33">
+				{{ mixins.cardcatalog({
+					img: cardcatalog.img,
+					title: cardcatalog.title
+				}) }}
+			</div>
+			{% endfor %}
+		</div>
+		<div class="cardcolaction" style="margin-top: 20px;">
+			{% for cardcolaction in [
+				{
+					img: "derek-story-unsplash@2x.jpg",
+					title: "Коллекция Восточные сказки",
+					icon: "mixins.icon('arrow-right')"
+				}
+				] %}
+				{{ mixins.cardcolaction({
+					img: cardcolaction.img,
+					title: cardcolaction.title,
+					icon: cardcolaction.icon
+				}) }}
+			{% endfor %}
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			{% for cardarticle in [
+				{
+					img: "pexels-photo-698171@2x.jpg",
+					title: "Заголовок статьи, желательно, чтобы это были две–три строчки"
+				}
+				] %}
+				<div class="col col-50">
+				{{ mixins.cardarticle({
+					img: cardarticle.img,
+					title: cardarticle.title
+				}) }}
+				</div>
+			{% endfor %}
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			{% for rating in [
+				{
+					textrating: "2 Отзыва",
+					textviews: "12 Просмотров",
+					textvendorcode: "Артикул: 45675"
+				}
+				] %}
+				<div class="col col-50">
+				{{ mixins.rating({
+					textrating: rating.textrating,
+					textviews: rating.textviews,
+					textvendorcode: rating.textvendorcode
+				}) }}
+				</div>
+			{% endfor %}
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			{% for checkbox in [
+				{
+					textlabel: "С фото"
+				}
+				] %}
+				<div class="col col-50">
+				{{ mixins.checkbox( checkbox.textlabel) }}
+				</div>
+			{% endfor %}
+		</div>
 	</div>
+	
 
 {% endblock %}

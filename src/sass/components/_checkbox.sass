@@ -1,0 +1,36 @@
+.checkbox
+	position: relative
+	padding-left: 40px
+	display: block
+	user-select: none
+	input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		&:checked ~ .checkbox__text
+			&:before
+				background-color: $green
+			&:after
+				transform: translateX(16px)
+	&__text
+		&:before,
+		&:after
+			position: absolute
+			content: ''
+		&:before
+			left: 0
+			top: 0
+			width: 32px
+			background-color: $gray
+			outline: none
+			border-radius: 20px
+			transition: background-color .3s
+		&:after
+			width: 12px
+			height: 12px
+			border-radius: 50%
+			top: 2px
+			left: 2px
+			background-color: $white
+			transition: transform .3s

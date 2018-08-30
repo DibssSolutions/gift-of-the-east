@@ -1,0 +1,75 @@
+.card-catalog
+	background-color: $gallery
+	&__img
+		height: 208px
+	&__wrap
+		padding: 17px 16px
+		height: 72px
+		overflow: hidden
+	&__title
+		text-transform: uppercase
+		font-size: 13px
+		font-weight: 400
+		color: $black
+
+
+.img-bg
+	width: 100%
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: 50% 50%
+
+
+.card-colaction
+	display: flex
+	align-items: center
+	+md
+		justify-content: center
+		flex-wrap: wrap
+	&__left-col
+		flex: 0 0 57.2%
+		+md
+			flex: 0 0 100%
+	&__right-col
+		flex: 0 0 43%
+		+md	
+			flex: 0 0 100%	
+			order: -1
+	&__img
+		padding-bottom: 84%
+	.head
+		background-color: $white
+		margin-left: -72px
+		margin-bottom: 0
+		padding: 84px 55px 60px
+		+md
+			margin-left: 0
+			text-align: center
+		.title
+			margin-bottom: 24px	
+		&__btn
+			position: relative
+			display: inline-block
+
+.card-article
+	&__img
+		position: relative
+		height: 368px
+		padding: 15px 32px 24px 24px
+		&:after
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			content: ''
+			background-color: rgba(0,0,0,.3)
+	&__title
+		position: absolute
+		left: 24px
+		right: 32px
+		bottom: 24px
+		margin-bottom: 0
+		font-size: 24px
+		color: $white
+		z-index: 1	
