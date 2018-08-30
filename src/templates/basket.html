@@ -12,7 +12,7 @@ title: Basket
 		}) }}
 		<div class="row">
 			<div class="col col-66">
-				{{ mixins.baskethead({ product: '1 товар' }) }}
+				{{ mixins.theadsimple({ product: '1 товар' }) }}
 				{{ mixins.basketlist({ 
 					active: 1,
 					list: [
@@ -34,8 +34,32 @@ title: Basket
 						}
 					]
 				}) }}
+
 				{{ mixins.notavailable() }}
-				{{ mixins.card() }}
+
+				{% for card in [
+					{
+						img: 'vase-2.jpg',
+						price: '1000 ₽',
+						priceOld: '1400 ₽',
+						quantity: { select: true },
+						benefit: true
+					}
+				] %}
+
+				{{ mixins.card({
+					img: card.img,
+					price: card.price,
+					priceOld: card.priceOld,
+					quantity: { select: card.quantity.select },
+					benefit: card.benefit,
+					like: true,
+					subscribe: true,
+					availability: 'Осталось в наличии: 2'
+				}) }}
+
+				{% endfor %}
+
 			</div>
 			<div class="col col-33">
 				

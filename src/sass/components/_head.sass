@@ -18,3 +18,28 @@
 		+sm
 			position: relative
 			display: inline-block
+
+.headsimple
+	width: 100%
+	display: table
+	&:not(:last-child)
+		margin-bottom: 40px
+	&__title
+		vertical-align: top
+		display: table-cell
+	&__product
+		margin-left: 5px
+		font-size: 14px
+		color: $gray
+		font-weight: 400  
+	&__right
+		padding-top: 1.22em
+		text-align: right
+		vertical-align: top
+		display: table-cell
+	&__link
+		border-bottom: 1px solid
+		transition: border-color .3s 
+		color: $gray
+		+hover
+			border-color: transparent 
