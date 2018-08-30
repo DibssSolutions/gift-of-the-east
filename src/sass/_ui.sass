@@ -50,3 +50,32 @@
 		background-color: $turquoise
 	&_green
 		background-color: $green
+		
+
+.like
+	color: $gray
+	transition: color .3s
+	vertical-align: top
+	line-height: 1
+	font-size: 0
+	background-color: transparent 
+	display: inline-block
+	+hover
+		color: $red !important
+	&.is-check
+		color: $red 
+	.icon
+		font-size: 20px
+
+.subscribe-link
+	font-size: 14px
+	line-height: 1.2
+	color: $gray 
+	transition: color .3s
+	+hover
+		color: $lightBrown
+	.icon-email-outline
+		margin-right: 2px
+		font-size: 16px
+		vertical-align: top
+		
