@@ -284,9 +284,9 @@
 
 {% macro checkbox(text, radio) %}
 <!-- Start checkbox -->
-<label class="checkbox">
+<label class="toggler">
 	<input type="{{radio or 'checkbox'}}" name="checkbox">
-	<span class="checkbox__text">{{ text }}</span>
+	<span class="toggler__text">{{ text }}</span>
 </label>
 <!-- End checkbox -->
 {% endmacro %}
