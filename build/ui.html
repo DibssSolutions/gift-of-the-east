@@ -320,7 +320,7 @@
             <!-- Start rating -->
             <div class="rating-stars">
               <input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="2" />
-              <label class="rating-stars__text rating-stars__text--review" for="stars">2 Отзыва</label> / <span class="rating-stars__text views">12 Просмотров</span> / <span class="rating-stars__text vendor-code">Артикул: 45675</span>
+              <label class="rating-stars__text rating-stars__text--review" for="stars"></label> / <span class="rating-stars__text views">12 Просмотров</span> / <span class="rating-stars__text vendor-code">Артикул: 45675</span>
             </div>
             <!-- End rating -->
           </div>
@@ -348,30 +348,52 @@
         <div class="row" style="margin-top: 20px;">
           <!-- Start table -->
           <div class="table">
-            <table>
-              <tr>
-                <th>Магазин</th>
-                <th>Дата самовывоза</th>
-              </tr>
-              <tr>
-                <td>
-                  <span class="table__text table__text--up"> Континент 2 </span>
+            <div class="table__head">
+              <div class="table__row">
+                <div class="table__cell"> Магазин </div>
+                <div class="table__cell"> Дата самовывоза </div>
+                <div class="table__cell">
+                </div>
+              </div>
+            </div>
+            <div class="table__body">
+              <div class="table__row">
+                <div class="table__cell table__cell_col" data-title="Магазин">
+                  <span class="table__text table__text_up"> Континент 2 </span>
                   <span class="table__text"> 70 лет Октября, 25 к.2 </span>
-                </td>
-                <td>
-                  <span class="table__text table__text--up"> Сегодня с 17:00 </span>
+                </div>
+                <div class="table__cell table__cell_col" data-title="Дата самовывоза">
+                  <span class="table__text table__text_up"> Сегодня с 17:00 </span>
                   <span class="table__text"> пн–вс 10:00–21:00 </span>
-                </td>
-                <td>
+                </div>
+                <div class="table__cell table__cell_col">
                   <!-- Start checked-btn -->
                   <label class="checked-btn">
                     <input type="checkbox" name="checkbox-btn">
                     <span class="checked-btn__text">Выбран</span>
                   </label>
                   <!-- End checked-btn -->
-                </td>
-              </tr>
-            </table>
+                </div>
+              </div>
+              <div class="table__row">
+                <div class="table__cell table__cell_col" data-title="Магазин">
+                  <span class="table__text table__text_up"> Континент 2 </span>
+                  <span class="table__text"> 70 лет Октября, 25 к.2 </span>
+                </div>
+                <div class="table__cell table__cell_col" data-title="Дата самовывоза">
+                  <span class="table__text table__text_up"> Сегодня с 17:00 </span>
+                  <span class="table__text"> пн–вс 10:00–21:00 </span>
+                </div>
+                <div class="table__cell table__cell_col">
+                  <!-- Start checked-btn -->
+                  <label class="checked-btn">
+                    <input type="checkbox" name="checkbox-btn">
+                    <span class="checked-btn__text">Выбран</span>
+                  </label>
+                  <!-- End checked-btn -->
+                </div>
+              </div>
+            </div>
           </div>
           <!-- End table -->
         </div>

@@ -1,24 +1,85 @@
 .table
 	width: 100%
-	tr
-		margin: 0 8px
-		&:not(:first-child)
+	display: table
+	+sm
+		display: block
+	&__head
+		display: table-header-group
+		+sm
+			display: none
+		.table__cell
+			border-bottom: 1px solid $silver
+	&__body
+		display: table-row-group
+		+sm
+			display: block		
+	// &__row_header
+	// 	font-size: 14px
+	// 	font-weight: 400
+	// 	text-align: left
+	// 	.table__cell
+	// 		vertical-align: top
+	// 		padding: 0
+	// 		padding: 26px 18px 8px
+	// 		font-size: 16px		
+	&__row
+		position: relative
+		display: table-row
+		+sm
 			border-top: 1px solid $silver
-	th
+			display: block
+		&:not(:first-child)
+			+sm
+				border-bottom: 1px solid $silver
+			.table__cell
+				&:after
+					position: absolute
+					content: ''
+					top: 0
+					left: 0
+					right: 0
+					height: 1px
+					background-color: $silver
+					+sm
+						display: none
+		// 	.table__cell
+		// +sm
+		// 	border-bottom: 1px solid $silver
+		// 	display: block			
+	&__cell
+		position: relative
 		padding: 26px 18px 8px
-		font-size: 14px
-		font-weight: 400
-		text-align: left		
-	td	
+		display: table-cell
+		+sm
+			display: block
+			margin-bottom: 10px
+			&:before
+				margin-bottom: 10px
+				content: attr(data-title)
+				font-size: 16px
+				display: block
+				color: black
+				font-weight: 500
+	&__cell_col								
 		vertical-align: top
 		padding: 0
 		padding: 26px 18px 24px
 		font-size: 16px
+		+sm
+			padding-top: 0
+			padding-bottom: 10px
+			font-size: 14px
 		&:last-child
 			text-align: right
+			+sm
+				text-align: left	
 	&__text
 		display: block
+		+sm
+			display: inline
 		&:not(:last-child)
 			margin-bottom: 5px
-	&__text--up
+	&__text_up
+		+sm
+			margin-right: 8px
 		color: $black		
