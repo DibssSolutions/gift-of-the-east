@@ -1,5 +1,4 @@
 .order-form
-    font-family: $montserrat
     font-size: 13px
     &__group
         padding: 24px 16px
@@ -28,7 +27,7 @@
         &--delivery
             background-color: $gallery
             color: $black
-            
+            cursor: default
             +hover
                 background-color: $gallery
     &__card-group
@@ -72,3 +71,83 @@
             margin-top: 16px
         &--bottom 
             margin-bottom: 24px
+
+.order-checkbox
+    margin-top: 16px
+    margin-bottom: 24px
+    font-family: $montserrat
+    color: $black
+    input[type="checkbox"]
+        position: absolute
+        opacity: 0
+        right: 2000px
+        &:checked + label
+            .check-icon .icon
+                display: block
+    input[type="checkbox"] + label
+        position: relative
+        padding-left: 28px
+        cursor: pointer
+        display: block
+        .check-icon
+            position: absolute
+            display: inline-block
+            left: 0
+            top: 0
+            height: 20px
+            width: 20px
+            border: 1px solid $silver
+            text-align: center
+            font-size: 0
+            // background-color: $lightBrown
+            .icon
+                display: none
+                font-size: 12px
+                +vcenter
+                fill: $lightBrown
+    a 
+        text-decoration: underline
+
+.order-calculation
+    &__btn
+        border-bottom: 1px solid $silver
+        border-top: 1px solid $silver
+        width: 100%
+        text-transform: uppercase 
+        vertical-align: top
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-size: 0
+        font-weight: 500
+        padding: 14px 
+        background-color: transparent
+        position: relative
+        &:after, 
+        &:before
+            position: absolute
+            content: ''
+            top: 100%
+            height: 100%
+            background-color: $silver
+        &:after
+            right: 0
+        &:before
+            left: 0
+
+        span 
+            font-size: 13px
+        .icon
+            font-size: 20px
+            fill: $silver
+            transition: transform 0.4s
+        &.is-open .icon
+            +rotate(180)
+    &__form
+        padding: 24px 52px
+        border: 1px solid $silver
+        border-top: none
+
+.delivery-calculation
+    input
+        margin-bottom: 16px
