@@ -176,7 +176,7 @@
 					<span>Кол–во:</span>
 					{% if props.quantity.select %}
 					<div class="card__seclect">
-						<select class="select js-select">
+						<select class="select js-select" multiple data-actions-box="true" data-width="100%">
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -273,7 +273,7 @@
 <!-- Start rating -->
 <div class="rating-stars">
 	<input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="2"/>
-	<label class="rating-stars__text rating-stars__text--review" for="stars">{{ props.textrating }}</label>
+	<label class="rating-stars__text rating-stars__text--review" for="stars">{{ props.texdivating }}</label>
 	/
 	<span class="rating-stars__text views">{{ props.textviews }}</span>
 	/
@@ -284,9 +284,9 @@
 
 {% macro checkbox(text, radio) %}
 <!-- Start checkbox -->
-<label class="checkbox">
+<label class="toggler">
 	<input type="{{radio or 'checkbox'}}" name="checkbox">
-	<span class="checkbox__text">{{ text }}</span>
+	<span class="toggler__text">{{ text }}</span>
 </label>
 <!-- End checkbox -->
 {% endmacro %}
@@ -303,34 +303,62 @@
 {% macro table(props) %}
 <!-- Start table -->
 <div class="table">
-	<table>
-		<tr>
-			<th>{{ props.thTitle1 }}</th>
-			<th>{{ props.thTitle2 }}</th>
-		</tr>
-		<tr>
-			<td>
-				<span class="table__text table__text--up">
+	<div class="table__head">
+		<div class="table__row">
+			<div class="table__cell">
+				{{ props.thTitle1 }}
+			</div>
+			<div class="table__cell">
+				{{ props.thTitle2 }}
+			</div>
+			<div class="table__cell">
+			</div>
+		</div>
+	</div>
+	<div class="table__body">
+		<div class="table__row">
+			<div class="table__cell table__cell_col" data-title="{{ props.thTitle1 }}">
+				<span class="table__text table__text_up">
 					{{ props.tdTitle1 }}
 				</span>
 				<span class="table__text">
 					{{ props.tdDscpt1 }}
 				</span>
-			</td>
-			<td>
-				<span class="table__text table__text--up">
+			</div>
+			<div class="table__cell table__cell_col" data-title="{{ props.thTitle2 }}">
+				<span class="table__text table__text_up">
 					{{ props.tdTitle2 }}
 				</span>
 				<span class="table__text">
 					{{ props.tdDscpt2 }}
 				</span>
-			</td>
-			<td>
+			</div>
+			<div class="table__cell table__cell_col">
 				{{ checkedbtn(props.textBtn) }}
-			</td>
-
-		</tr>
-	</table>
+			</div>
+		</div>
+		<div class="table__row">
+			<div class="table__cell table__cell_col" data-title="{{ props.thTitle1 }}">
+				<span class="table__text table__text_up">
+					{{ props.tdTitle1 }}
+				</span>
+				<span class="table__text">
+					{{ props.tdDscpt1 }}
+				</span>
+			</div>
+			<div class="table__cell table__cell_col" data-title="{{ props.thTitle2 }}">
+				<span class="table__text table__text_up">
+					{{ props.tdTitle2 }}
+				</span>
+				<span class="table__text">
+					{{ props.tdDscpt2 }}
+				</span>
+			</div>
+			<div class="table__cell table__cell_col">
+				{{ checkedbtn(props.textBtn) }}
+			</div>
+		</div>
+	</div>
 </div>
 <!-- End table -->
 {% endmacro %}

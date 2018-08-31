@@ -1,6 +1,7 @@
-.checkbox
+.toggler
 	position: relative
 	padding-left: 40px
+	cursor: pointer
 	display: block
 	user-select: none
 	input
@@ -8,7 +9,7 @@
 		top: 0
 		left: 0
 		opacity: 0
-		&:checked ~ .checkbox__text
+		&:checked ~ .toggler__text
 			&:before
 				background-color: $green
 			&:after
@@ -22,6 +23,7 @@
 			left: 0
 			top: 0
 			width: 32px
+			height: 16px
 			background-color: $silver
 			outline: none
 			border-radius: 20px
@@ -35,12 +37,6 @@
 			background-color: $white
 			transition: transform .3s
 
-
-// .checkbox-btn
-// 	position: relative
-// 	padding-left: 40px
-// 	display: block
-// 	user-select: none
 .checked-btn
 	position: relative
 	display: inline-block
@@ -75,6 +71,8 @@
 		padding: 18px 16px	16px 94px
 		transition: background-color .3s
 		cursor: pointer
+		+sm
+			width: 100%
 		span
 			display: block
 		&.is-active
