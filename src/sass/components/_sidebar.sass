@@ -1,0 +1,65 @@
+.sidebar
+    border: 1px solid $silver
+    position: relative
+    &__title
+        position: relative
+        z-index: 20
+        display: inline-block
+        vertical-align: top
+        padding: 0 24px 0 10px
+        margin-top: -12px
+        margin-left: 14px
+        font-family: $prata
+        font-size: 24px
+        font-weight: 400
+        line-height: 1.25
+        background-color: $white
+        .sidebar__table & 
+            margin-left: 10px
+
+.sidebar-list
+    font-family: $montserrat
+    padding: 10px 10px 15px 24px
+    &__item
+        margin-bottom: 17px
+    &__list
+        a
+            font-size: 13px
+            color: $black
+            font-weight: 500
+            text-transform: uppercase
+            line-height: 1.4
+            
+    &__secondary-list
+        position: relative
+        padding-left: 16px
+        display: none
+        margin-top: 16px
+        margin-bottom: 30px
+        .is-open &
+            display: block
+        &:before
+            position: absolute
+            content: ''
+            top: -7px
+            bottom: -16px
+            left: 0
+            width: 2px
+            background-color: $gallery
+        .sidebar-list__item.is-active
+            position: relative
+            &:before
+                position: absolute
+                content: ''
+                top: -7px
+                bottom: -7px
+                left: -16px
+                width: 2px
+                background-color: $lightBrown
+            &:last-child
+                &:before
+                    bottom: -16px
+        a
+            font-size: 14px
+            font-weight: 400
+            text-transform: none

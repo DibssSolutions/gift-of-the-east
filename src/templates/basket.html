@@ -1,18 +1,20 @@
----
-title: Basket
----
+--- title: Basket ---
+
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
 
-	<div class="inner">
+    
+    <div class="inner">
+
 		{{ mixins.breadcrumbs({
+
 			list: ['Назад','Главная','Корзина']
 		}) }}
-		<div class="row">
-			<div class="col col-66">
-				{{ mixins.theadsimple({ product: '1 товар' }) }}
-				{{ mixins.basketlist({ 
+        <div class="row">
+            <div class="col col-66">
+                {{ mixins.theadsimple({ product: '1 товар' }) }}
+                {{ mixins.basketlist({ 
 					active: 1,
 					list: [
 						{
@@ -34,19 +36,21 @@ title: Basket
 					]
 				}) }}
 
-				{{ mixins.notavailable() }}
+                {{ mixins.notavailable() }}
 
-				{% for card in [
-					{
-						img: 'vase-2.jpg',
-						price: '1000 ₽',
-						priceOld: '1400 ₽',
-						quantity: { select: true },
-						benefit: true
-					}
-				] %}
+                {% for card in[
+                    {
+                        img: 'vase-2.jpg',
+                        price: '1000 ₽',
+                        priceOld: '1400 ₽',
+                        quantity: {
+                            select: true
+                        },
+                        benefit: true
+                    }
+                ] %}
 
-				{{ mixins.card({
+                    {{ mixins.card({
 					img: card.img,
 					price: card.price,
 					priceOld: card.priceOld,
@@ -57,12 +61,17 @@ title: Basket
 					availability: 'Осталось в наличии: 2'
 				}) }}
 
-				{% endfor %}
+                {% endfor %}
 
-			</div>
-			<div class="col col-33">
-				
-			</div>
-		</div>
-	</div>
+            </div>
+            <div class="col col-33">
+                {# {{order.ordered_shop()}} #}
+                {# {{order.basket_ref()}} #}
+                {# {{order.self_delivery()}} #}
+                {{order.self_delivery_payment()}}
+            </div>
+        </div>
+    </div>
+    {% include "partials/_footer.html" %}
+
 {% endblock %}
