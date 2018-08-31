@@ -124,6 +124,17 @@ title: UI
 				</div>
 			{% endfor %}
 		</div>
+		<div class="row" style="margin-top: 20px;">
+			{% for checkbox in [
+				{
+					textlabel: "С фото"
+				}
+				] %}
+				<div class="col col-50">
+				{{ mixins.checkbox( checkbox.textlabel) }}
+				</div>
+			{% endfor %}
+		</div>
 	</div>
 	
 
