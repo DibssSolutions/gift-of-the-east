@@ -22,7 +22,7 @@
 			left: 0
 			top: 0
 			width: 32px
-			background-color: $gray
+			background-color: $silver
 			outline: none
 			border-radius: 20px
 			transition: background-color .3s
@@ -35,39 +35,111 @@
 			background-color: $white
 			transition: transform .3s
 
-.checkbox-btn
+
+// .checkbox-btn
+// 	position: relative
+// 	padding-left: 40px
+// 	display: block
+// 	user-select: none
+.checked-btn
 	position: relative
-	padding-left: 40px
-	display: block
-	user-select: none
+	display: inline-block
+	&__text
+		display: inline-block
+		background-color: $white
+		padding: 13px 30px 12px
+		user-select: none
+		border: 1px solid $lightBrown
+		transition: background-color .3s, color .3s
+		font-size: 16px
+		cursor: pointer
 	input
 		position: absolute
 		top: 0
 		left: 0
 		opacity: 0
-		&:checked ~ .checkbox-btn__text
-			&:before
-				background-color: $green
+		&:checked ~ .checked-btn__text,
+		&:checked ~ .checked-btn
+			color: $white
+			background-color: $lightBrown
+
+.radio-tab
+	display: flex
+	align-items: flex-start
+	justify-content: center
+	flex-wrap: wrap
+	&__label
+		position: relative
+		display: block
+		background-color: $white
+		padding: 18px 16px	16px 94px
+		transition: background-color .3s
+		cursor: pointer
+		span
+			display: block
+		&.is-active
+			background-color: $gallery
+	input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		&:checked ~ .radio-tab__title
+			color: $black
 			&:after
-				transform: translateX(16px)
-	&__text
-		&:before,
+				opacity: 1
+	&__title
+		font-size: 20px
+		transition: color .3s
+		margin-bottom: 5px
+		&:before
+			position: absolute
+			content: ''
+			left: 65px
+			top: 23px
+			width: 16px
+			height: 16px
+			border: 1px solid $lightBrown
+			border-radius: 50%
+			box-sizing: border-box
 		&:after
 			position: absolute
 			content: ''
-		&:before
-			left: 0
-			top: 0
-			width: 32px
-			background-color: $gray
-			outline: none
-			border-radius: 20px
-			transition: background-color .3s
-		&:after
-			width: 12px
-			height: 12px
+			left: 69px
+			top: 27px
+			width: 8px
+			height: 8px
+			background-color: $lightBrown
+			transition: opacity .3s
 			border-radius: 50%
-			top: 2px
-			left: 2px
+			opacity: 0
+	&__dscr
+		font-size: 14px
+		color: $gray		
+
+.radio-btn
+	background-color: $gallery
+	padding: 4px
+	display: flex
+	&__label
+		position: relative
+		display: flex
+		align-items: center
+		padding: 8px 14px 4px 22px
+		transition: background-color .3s, border-color .3s
+		border: 1px solid transparent
+		cursor: pointer
+		font-size: 14px
+		&.is-active
 			background-color: $white
-			transition: transform .3s
+			border: 1px solid $lightBrown
+	&__icon
+		margin-right: 8px
+	&__title
+		line-height: 1
+		margin-bottom: 4px			
+	input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0

@@ -1,0 +1,24 @@
+.table
+	width: 100%
+	tr
+		margin: 0 8px
+		&:not(:first-child)
+			border-top: 1px solid $silver
+	th
+		padding: 26px 18px 8px
+		font-size: 14px
+		font-weight: 400
+		text-align: left		
+	td	
+		vertical-align: top
+		padding: 0
+		padding: 26px 18px 24px
+		font-size: 16px
+		&:last-child
+			text-align: right
+	&__text
+		display: block
+		&:not(:last-child)
+			margin-bottom: 5px
+	&__text--up
+		color: $black		
