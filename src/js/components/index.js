@@ -9,3 +9,4 @@ import './_menu';
 import './_init-rating';
 import './_drop';
 import './_custom';
+import './_initSelect';

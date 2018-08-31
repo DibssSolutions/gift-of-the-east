@@ -23,6 +23,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-runtime": "^5.0.0",
+    "bootstrap-select": "^1.13.2",
     "browser-sync": "^2.10.0",
     "css-mqpacker": "^5.0.1",
     "del": "^2.2.0",
@@ -71,5 +72,9 @@
     "tooltip": "^1.6.1",
     "webpack": "^2.2.1",
     "webpack-bundle-analyzer": "^1.5.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "popper.js": "^1.14.4"
   }
 }
