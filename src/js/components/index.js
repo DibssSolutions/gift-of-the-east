@@ -6,4 +6,5 @@ import './_map';
 import './_show-password';
 import './_validation';
 import './_menu';
+import './_init-rating';
 import './_drop';

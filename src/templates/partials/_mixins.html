@@ -218,3 +218,75 @@
 <!-- end card -->
 {% endmacro %}
 <!-- ------------------------------ END BASKET ------------------------------ -->
+
+
+
+
+
+<!-- ------------------------------ CARDS ------------------------------ -->
+{% macro cardcatalog(props) %}
+<!-- Start card-catalog -->
+<div class="card-catalog">
+	<div class="card-catalog__img img-bg" style="background-image: url(./img/{{ props.img }});">
+	</div>
+	<div class="card-catalog__wrap">
+		<h4 class="card-catalog__title">{{ props.title }}</h4>
+	</div>
+</div>
+<!-- End card-catalog -->
+{% endmacro %}
+
+{% macro cardcolaction(props) %}
+<!-- Start card-colaction -->
+<div class="card-colaction">
+	<div class="card-colaction__left-col">
+		<div class="card-colaction__img img-bg" style="background-image: url(./img/{{ props.img }});">
+		</div>
+	</div>
+	<div class="card-colaction__right-col">
+		<div class="head">
+			<h2 class="title">{{ props.title }}</h2>
+			<a href="#" class="head__btn btn btn_md btn_bord btn_anim">
+				<span class="btn__text">Смотреть</span>
+				<span class="btn__icon">
+					{{icon('arrow-right')}}
+				</span>
+			</a>
+		</div>
+	</div>
+</div>
+<!-- End card-catalog -->
+{% endmacro %}
+
+{% macro cardarticle(props) %}
+<!-- Start card-article -->
+<div class="card-article">
+	<div class="card-article__img img-bg" style="background-image: url(./img/{{ props.img }});">
+		<h5 class="card-article__title title">{{ props.title }}</h5>
+	</div>
+</div>
+<!-- End card-article -->
+{% endmacro %}
+<!-- ------------------------------ END CARDS ------------------------------ -->
+
+{% macro rating(props) %}
+<!-- Start rating -->
+<div class="rating-stars">
+	<input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="2"/>
+	<label class="rating-stars__text rating-stars__text--review" for="stars">{{ props.textrating }}</label>
+	/
+	<span class="rating-stars__text views">{{ props.textviews }}</span>
+	/
+	<span class="rating-stars__text vendor-code">{{ props.textvendorcode }}</span>
+</div>
+<!-- End rating -->
+{% endmacro %}
+
+{% macro checkbox(text, radio) %}
+<!-- Start checkbox -->
+<label class="checkbox">
+	<input type="{{radio or 'checkbox'}}">
+	<span class="span checkbox__text">{{ text }}</span>
+</label>
+<!-- End checkbox -->
+{% endmacro %}
