@@ -11,3 +11,5 @@ PageList:
   ready: 100
 - file: basket.html
   ready: 100
+- file: catalog.html
+  ready: 100

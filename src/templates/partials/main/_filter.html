@@ -1,0 +1,48 @@
+{% import "partials/_mixins.html" as mixins %}
+<section class="filter js-drop">
+    <div class="filter__top js-drop-shows">
+        <button class="filter__btn filter__btn--main js-open-drop">
+            <span>Фильтры</span>
+            {{mixins.icon('chevron-up')}}
+        </button>
+        <button class="filter__btn filter__btn--reset">
+            {{mixins.icon('refresh')}}
+            <span>Сбросить фильтры</span>
+        </button>
+        <div class="select">
+            Упорядочить
+        </div>
+    </div>
+    <div class="filter__bottom js-drop-hidden" style="display: none;">
+        <div class="filter__select">
+            lorem
+        </div>
+        <div class="filter__select">
+            lorem
+        </div>
+        <div class="filter__select">
+            lorem
+        </div>
+        <div class="filter__select">
+            lorem
+        </div>
+        <div class="filter__select">
+            lorem
+        </div>
+        <div class="filter__select">
+            lorem
+        </div>
+        <div class="filter__select">
+            lorem
+        </div>
+        <div class="filter__select">
+            lorem
+        </div>
+        <div class="filter__select">
+            lorem
+        </div>
+        <div class="filter__products-number">
+            48 товаров
+        </div>
+    </div>
+</section>
