@@ -5,7 +5,6 @@ title: Basket
 
 {% block content %}
 
-	{{ header.block() }}
 	<div class="inner">
 		{{ mixins.breadcrumbs({
 			list: ['Назад','Главная','Корзина']
@@ -66,5 +65,4 @@ title: Basket
 			</div>
 		</div>
 	</div>
-	{% include "partials/_footer.html" %}
 {% endblock %}
