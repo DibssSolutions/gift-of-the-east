@@ -285,8 +285,95 @@
 {% macro checkbox(text, radio) %}
 <!-- Start checkbox -->
 <label class="checkbox">
-	<input type="{{radio or 'checkbox'}}">
-	<span class="span checkbox__text">{{ text }}</span>
+	<input type="{{radio or 'checkbox'}}" name="checkbox">
+	<span class="checkbox__text">{{ text }}</span>
 </label>
 <!-- End checkbox -->
+{% endmacro %}
+
+{% macro checkedbtn(text) %}
+<!-- Start checked-btn -->
+<label class="checked-btn">
+	<input type="checkbox" name="checkbox-btn">
+	<span class="checked-btn__text">{{ text }}</span>
+</label>
+<!-- End checked-btn -->
+{% endmacro %}
+
+{% macro table(props) %}
+<!-- Start table -->
+<div class="table">
+	<table>
+		<tr>
+			<th>{{ props.thTitle1 }}</th>
+			<th>{{ props.thTitle2 }}</th>
+		</tr>
+		<tr>
+			<td>
+				<span class="table__text table__text--up">
+					{{ props.tdTitle1 }}
+				</span>
+				<span class="table__text">
+					{{ props.tdDscpt1 }}
+				</span>
+			</td>
+			<td>
+				<span class="table__text table__text--up">
+					{{ props.tdTitle2 }}
+				</span>
+				<span class="table__text">
+					{{ props.tdDscpt2 }}
+				</span>
+			</td>
+			<td>
+				{{ checkedbtn(props.textBtn) }}
+			</td>
+
+		</tr>
+	</table>
+</div>
+<!-- End table -->
+{% endmacro %}
+
+{% macro radiotab(props) %}
+<!-- Start radio-tab -->
+<div class="radio-tab">
+	<label class="radio-tab__label js-tab is-active">
+		<input type="radio" name="radio-tab" checked>
+		<span class="radio-tab__title">{{ props.title1 }}</span>
+		<span class="radio-tab__dscr">{{ props.dscr1 }}</span>
+	</label>
+	<label class="radio-tab__label js-tab">
+		<input type="radio" name="radio-tab">
+		<span class="radio-tab__title">{{ props.title2 }}</span>
+		<span class="radio-tab__dscr">{{ props.dscr2 }}</span>
+	</label>
+</div>
+<!-- End radio-tab -->
+{% endmacro %}
+
+{% macro radiobtn(props) %}
+<!-- Start radio-btn -->
+<div class="radio-btn">
+	<label class="radio-btn__label js-tab is-active">
+		<input type="radio" name="radio-btn">
+		<span class="radio-btn__icon">{{ icon('format-list-bulleted') }}</span>
+		<span class="radio-btn__title">{{ props.title1 }}</span>
+	</label>
+	<label class="radio-btn__label js-tab">
+		<input type="radio" name="radio-btn">
+		<span class="radio-btn__icon">{{ icon('map') }}</span>
+		<span class="radio-btn__title">{{ props.title2 }}</span>
+	</label>
+</div>
+<!-- End radio-btn -->
+{% endmacro %}
+
+{% macro newsearch(placeholder) %}
+<!-- Start new-search -->
+<label class="new-search">
+	<input class="new-search__input" type="text" name="new-search" placeholder="{{ placeholder }}">
+	<span class="new-search__icon">{{ icon('search') }}</span>
+</label>
+<!-- End new-search -->
 {% endmacro %}
