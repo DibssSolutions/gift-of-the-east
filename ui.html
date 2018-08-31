@@ -329,11 +329,103 @@
           <div class="col col-50">
             <!-- Start checkbox -->
             <label class="checkbox">
-              <input type="checkbox">
-              <span class="span checkbox__text">С фото</span>
+              <input type="checkbox" name="checkbox">
+              <span class="checkbox__text">С фото</span>
             </label>
             <!-- End checkbox -->
           </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col col-50">
+            <!-- Start checked-btn -->
+            <label class="checked-btn">
+              <input type="checkbox" name="checkbox-btn">
+              <span class="checked-btn__text">Выбран</span>
+            </label>
+            <!-- End checked-btn -->
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <!-- Start table -->
+          <div class="table">
+            <table>
+              <tr>
+                <th>Магазин</th>
+                <th>Дата самовывоза</th>
+              </tr>
+              <tr>
+                <td>
+                  <span class="table__text table__text--up"> Континент 2 </span>
+                  <span class="table__text"> 70 лет Октября, 25 к.2 </span>
+                </td>
+                <td>
+                  <span class="table__text table__text--up"> Сегодня с 17:00 </span>
+                  <span class="table__text"> пн–вс 10:00–21:00 </span>
+                </td>
+                <td>
+                  <!-- Start checked-btn -->
+                  <label class="checked-btn">
+                    <input type="checkbox" name="checkbox-btn">
+                    <span class="checked-btn__text">Выбран</span>
+                  </label>
+                  <!-- End checked-btn -->
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- End table -->
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <!-- Start radio-tab -->
+          <div class="radio-tab">
+            <label class="radio-tab__label js-tab is-active">
+              <input type="radio" name="radio-tab" checked>
+              <span class="radio-tab__title">Самовывоз из магазина</span>
+              <span class="radio-tab__dscr">Бесплатно</span>
+            </label>
+            <label class="radio-tab__label js-tab">
+              <input type="radio" name="radio-tab">
+              <span class="radio-tab__title">Доставка домой или в офис</span>
+              <span class="radio-tab__dscr">от 100 ₽</span>
+            </label>
+          </div>
+          <!-- End radio-tab -->
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <!-- Start radio-btn -->
+          <div class="radio-btn">
+            <label class="radio-btn__label js-tab is-active">
+              <input type="radio" name="radio-btn">
+              <span class="radio-btn__icon">
+                <svg class="icon icon-format-list-bulleted">
+                  <use xlink:href="img/sprite.svg#icon-format-list-bulleted"></use>
+                </svg>
+              </span>
+              <span class="radio-btn__title">Список</span>
+            </label>
+            <label class="radio-btn__label js-tab">
+              <input type="radio" name="radio-btn">
+              <span class="radio-btn__icon">
+                <svg class="icon icon-map">
+                  <use xlink:href="img/sprite.svg#icon-map"></use>
+                </svg>
+              </span>
+              <span class="radio-btn__title">Карта</span>
+            </label>
+          </div>
+          <!-- End radio-btn -->
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <!-- Start new-search -->
+          <label class="new-search">
+            <input class="new-search__input" type="text" name="new-search" placeholder="Город, адрес, название ТЦ">
+            <span class="new-search__icon">
+              <svg class="icon icon-search">
+                <use xlink:href="img/sprite.svg#icon-search"></use>
+              </svg>
+            </span>
+          </label>
+          <!-- End new-search -->
         </div>
       </div>
       <!-- begin footer -->
