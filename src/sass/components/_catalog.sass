@@ -1,0 +1,60 @@
+.catalog-cards
+    .card-catalog
+        margin-bottom: 32px
+
+.filter
+    width: 100%
+    &__top
+        display: flex
+        align-items: center
+        padding-bottom: 16px
+        border-bottom: 1px solid $silver
+        .select
+            margin-left: auto
+    &__bottom
+        padding: 16px 0 4px
+        // margin: 0 -6px
+        position: relative
+        border-bottom: 2px solid $lightBrown
+    &__btn
+        position: relative
+        padding: 10px 16px 8px 16px
+        font-family: $montserrat
+        font-size: 0
+        line-height: 20px
+        transition: background-color .4s, padding-right .4s, color .4s
+        span 
+            +f(14px, 400, 1.42857)
+            vertical-align: middle
+        .icon
+            vertical-align: middle
+            fill: $silver
+        &--main 
+            background-color: $gallery
+            .icon
+                font-size: 8px
+                margin-left: 15px
+                transition: transform 0.4s
+        &--reset 
+            background-color: transparent
+            transition: background-color .4s
+            .icon
+                font-size: 20px
+                margin-right: 8px
+            +hover
+                background-color: $orange
+    &__select
+        display: inline-block
+        margin: 0 12px 12px 0
+        border: 1px solid red
+        padding: 10px
+        min-width: 150px
+        &:nth-last-child(2)
+            margin-right: 100px
+    &__products-number
+        position: absolute
+        bottom: 12px
+        right: 0
+
+.filter__btn--main.is-open .icon
+    +rotate(180)
