@@ -4,9 +4,11 @@
 
 {% block content %}
 
-    {{ header.block() }}
+    
     <div class="inner">
-        {{ mixins.breadcrumbs({
+
+		{{ mixins.breadcrumbs({
+
 			list: ['Назад','Главная','Корзина']
 		}) }}
         <div class="row">
@@ -71,4 +73,5 @@
         </div>
     </div>
     {% include "partials/_footer.html" %}
+
 {% endblock %}
