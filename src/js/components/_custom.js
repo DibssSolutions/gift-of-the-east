@@ -6,3 +6,11 @@
     $(this).addClass('is-active').siblings().removeClass('is-active');
   });
 })(jQuery);
+
+
+// change text btn
+$(document).ready(function() {
+  $('.js-change-text').click(function() {
+    $(this).text('Закрыт');                   
+  });
+});
