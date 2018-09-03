@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>UI</title>
+    <title>Template</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
@@ -326,6 +326,56 @@
           </div>
         </div>
         <div class="row" style="margin-top: 20px;">
+          <div class="col-100">
+            <div class="title text-center">FORM ITEMS</div>
+            <a href="https://developer.snapappointments.com/bootstrap-select/examples/">bootstrap-select LINK</a>
+            <p>simple</p>
+            <select class="select js-select" data-width="100%">
+              <option value="Cначала новинки">Cначала новинки</option>
+              <option value="Цена по возрастанию">Цена по возрастанию</option>
+              <option value="Цена по убыванию">Цена по убыванию</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-100">
+            <p>multiple</p>
+            <select class="select js-select" data-width="100%" multiple>
+              <option value="Cначала новинки">Cначала новинки</option>
+              <option value="Цена по возрастанию">Цена по возрастанию</option>
+              <option value="Цена по убыванию">Цена по убыванию</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-100">
+            <p>multiple + actions</p>
+            <select class="select js-select" data-width="100%" multiple data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
+              <option value="Cначала новинки">Cначала новинки</option>
+              <option value="Цена по возрастанию">Цена по возрастанию</option>
+              <option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-100">
+            <p>multiple/color/text-format-count</p>
+            <select class="select select_color js-select" data-width="101" multiple title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} с {1}" data-actions-box="true" data-actions-selected-all-text="Выбрано"
+              data-actions-deselected-all-text="Все">
+              <option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
+              <option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
+              <option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
+              <option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
+              <option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
+              <option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
+              <option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
+              <option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
+              <option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
+              <option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
           <div class="col col-50">
             <!-- Start checkbox -->
             <label class="toggler">
@@ -344,58 +394,6 @@
             </label>
             <!-- End checked-btn -->
           </div>
-        </div>
-        <div class="row" style="margin-top: 20px;">
-          <!-- Start table -->
-          <div class="table">
-            <div class="table__head">
-              <div class="table__row">
-                <div class="table__cell"> Магазин </div>
-                <div class="table__cell"> Дата самовывоза </div>
-                <div class="table__cell">
-                </div>
-              </div>
-            </div>
-            <div class="table__body">
-              <div class="table__row">
-                <div class="table__cell table__cell_col" data-title="Магазин">
-                  <span class="table__text table__text_up"> Континент 2 </span>
-                  <span class="table__text"> 70 лет Октября, 25 к.2 </span>
-                </div>
-                <div class="table__cell table__cell_col" data-title="Дата самовывоза">
-                  <span class="table__text table__text_up"> Сегодня с 17:00 </span>
-                  <span class="table__text"> пн–вс 10:00–21:00 </span>
-                </div>
-                <div class="table__cell table__cell_col">
-                  <!-- Start checked-btn -->
-                  <label class="checked-btn">
-                    <input type="checkbox" name="checkbox-btn">
-                    <span class="checked-btn__text">Выбран</span>
-                  </label>
-                  <!-- End checked-btn -->
-                </div>
-              </div>
-              <div class="table__row">
-                <div class="table__cell table__cell_col" data-title="Магазин">
-                  <span class="table__text table__text_up"> Континент 2 </span>
-                  <span class="table__text"> 70 лет Октября, 25 к.2 </span>
-                </div>
-                <div class="table__cell table__cell_col" data-title="Дата самовывоза">
-                  <span class="table__text table__text_up"> Сегодня с 17:00 </span>
-                  <span class="table__text"> пн–вс 10:00–21:00 </span>
-                </div>
-                <div class="table__cell table__cell_col">
-                  <!-- Start checked-btn -->
-                  <label class="checked-btn">
-                    <input type="checkbox" name="checkbox-btn">
-                    <span class="checked-btn__text">Выбран</span>
-                  </label>
-                  <!-- End checked-btn -->
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End table -->
         </div>
         <div class="row" style="margin-top: 20px;">
           <!-- Start radio-tab -->
@@ -449,55 +447,551 @@
           </label>
           <!-- End new-search -->
         </div>
+        <!-- ******************************* Order ******************************* -->
+        <div class="title text-center" style="margin-top: 20px;">Order</div>
         <div class="row" style="margin-top: 20px;">
-          <div class="col-100">
-            <div class="title text-center">START SELECT</div>
-            <a href="https://developer.snapappointments.com/bootstrap-select/examples/">bootstrap-select LINK</a>
-            <p>simple</p>
-            <select class="select js-select" data-width="100%">
-              <option value="Cначала новинки">Cначала новинки</option>
-              <option value="Цена по возрастанию">Цена по возрастанию</option>
-              <option value="Цена по убыванию">Цена по убыванию</option>
-            </select>
+          <!-- Start table -->
+          <div class="table">
+            <div class="table__head">
+              <div class="table__row">
+                <div class="table__cell"> Магазин </div>
+                <div class="table__cell"> Дата самовывоза </div>
+                <div class="table__cell">
+                </div>
+              </div>
+            </div>
+            <div class="table__body">
+              <div class="table__row">
+                <div class="table__cell table__cell_col" data-title="Магазин">
+                  <span class="table__text table__text_up"> Континент 2 </span>
+                  <span class="table__text"> 70 лет Октября, 25 к.2 </span>
+                </div>
+                <div class="table__cell table__cell_col" data-title="Дата самовывоза">
+                  <span class="table__text table__text_up"> Сегодня с 17:00 </span>
+                  <span class="table__text"> пн–вс 10:00–21:00 </span>
+                </div>
+                <div class="table__cell table__cell_col">
+                  <!-- Start checked-btn -->
+                  <label class="checked-btn">
+                    <input type="checkbox" name="checkbox-btn">
+                    <span class="checked-btn__text">Выбран</span>
+                  </label>
+                  <!-- End checked-btn -->
+                </div>
+              </div>
+              <div class="table__row">
+                <div class="table__cell table__cell_col" data-title="Магазин">
+                  <span class="table__text table__text_up"> Континент 2 </span>
+                  <span class="table__text"> 70 лет Октября, 25 к.2 </span>
+                </div>
+                <div class="table__cell table__cell_col" data-title="Дата самовывоза">
+                  <span class="table__text table__text_up"> Сегодня с 17:00 </span>
+                  <span class="table__text"> пн–вс 10:00–21:00 </span>
+                </div>
+                <div class="table__cell table__cell_col">
+                  <!-- Start checked-btn -->
+                  <label class="checked-btn">
+                    <input type="checkbox" name="checkbox-btn">
+                    <span class="checked-btn__text">Выбран</span>
+                  </label>
+                  <!-- End checked-btn -->
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- End table -->
         </div>
         <div class="row" style="margin-top: 20px;">
-          <div class="col-100">
-            <p>multiple</p>
-            <select class="select js-select" data-width="100%" multiple>
-              <option value="Cначала новинки">Cначала новинки</option>
-              <option value="Цена по возрастанию">Цена по возрастанию</option>
-              <option value="Цена по убыванию">Цена по убыванию</option>
-            </select>
+          <div class="col col-33" style="margin-top: 20px;">
+            <div class="sidebar sidebar__table">
+              <h4 class="sidebar__title"> Каталог </h4>
+              <div action="" class="order-form">
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> ТОВАРЫ НА СУММУ </span>
+                    <span class="order-form__text order-form__text--red"> 3600 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group order-form__card-group">
+                  <div class="card">
+                    <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+                    <div class="card__wrap">
+                      <div class="card__vendorcode">Артикул: 45678</div>
+                      <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                      <div class="card__quantity"> Кол–во: <span>1</span>
+                      </div>
+                      <div class="card__price">
+                        <span>1000 ₽</span>
+                        <span class="is-old">1400 ₽</span>
+                      </div>
+                      <div class="card__benefit">Ваша выгода 400 ₽</div>
+                    </div>
+                  </div>
+                  <div class="order-form__divider order-form__divider--top"></div>
+                  <a href="#" class="order-form__more">Еще 2 товара</a>
+                  <div class="order-form__divider order-form__divider--bottom"></div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> РЕФЕРАЛЬНАЯ СКИДКА </span>
+                    <span class="order-form__text order-form__text--red"> 500 ₽ </span>
+                  </div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Скидка </span>
+                    <span class="order-form__text order-form__text--red"> 400 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Самовывоз </span>
+                    <span class="order-form__text"> Бесплатно </span>
+                  </div>
+                  <div class="order-form__row"> 70 лет Октября, 25 к.2, сегодня с 17:00 </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big"> Всего </span>
+                    <span class="order-form__text order-form__text--big"> 400 ₽ </span>
+                  </div>
+                  <div class="order-form__row order-form__row--submit">
+                    <button type="submit" class="btn btn_full">Перейти к оплате</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row" style="margin-top: 20px;">
-          <div class="col-100">
-            <p>multiple + actions</p>
-            <select class="select js-select" data-width="100%" multiple data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
-              <option value="Cначала новинки">Cначала новинки</option>
-              <option value="Цена по возрастанию">Цена по возрастанию</option>
-              <option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
-            </select>
+          <div class="col col-33" style="margin-top: 20px;">
+            <div class="sidebar sidebar__table">
+              <h4 class="sidebar__title"> Ваш заказ </h4>
+              <div action="" class="order-form">
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> ТОВАРЫ НА СУММУ </span>
+                    <span class="order-form__text order-form__text--red"> 3600 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group order-form__card-group">
+                  <div class="card">
+                    <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+                    <div class="card__wrap">
+                      <div class="card__vendorcode">Артикул: 45678</div>
+                      <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                      <div class="card__quantity"> Кол–во: <span>1</span>
+                      </div>
+                      <div class="card__price">
+                        <span>1000 ₽</span>
+                        <span class="is-old">1400 ₽</span>
+                      </div>
+                      <div class="card__benefit">Ваша выгода 400 ₽</div>
+                    </div>
+                  </div>
+                  <div class="order-form__divider order-form__divider--top"></div>
+                  <a href="#" class="order-form__more">Еще 2 товара</a>
+                  <div class="order-form__divider order-form__divider--bottom"></div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> РЕФЕРАЛЬНАЯ СКИДКА </span>
+                    <span class="order-form__text order-form__text--red"> 500 ₽ </span>
+                  </div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Скидка </span>
+                    <span class="order-form__text order-form__text--red"> 400 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big"> Всего </span>
+                    <span class="order-form__text order-form__text--big"> 400 ₽ </span>
+                  </div>
+                  <div class="order-form__row order-form__row--submit">
+                    <button type="submit" class="btn btn_full">Перейти к оплате</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row" style="margin-top: 20px;">
-          <div class="col-100">
-            <p>multiple/color/text-format-count</p>
-            <select class="select select_color js-select" data-width="101" multiple title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} с {1}" data-actions-box="true" data-actions-selected-all-text="Выбрано"
-              data-actions-deselected-all-text="Все">
-              <option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
-              <option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
-              <option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
-              <option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
-              <option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
-              <option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
-              <option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
-              <option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
-              <option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
-              <option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
-            </select>
-            <div class="title text-center" style="margin-top: 20px;">END SELECT</div>
+          <div class="col col-33" style="margin-top: 20px;">
+            <div class="sidebar sidebar__table">
+              <h4 class="sidebar__title"> Каталог </h4>
+              <div action="" class="order-form">
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> ТОВАРЫ НА СУММУ </span>
+                    <span class="order-form__text order-form__text--red"> 3600 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> РЕФЕРАЛЬНАЯ СКИДКА </span>
+                    <span class="order-form__text order-form__text--red"> 500 ₽ </span>
+                  </div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Скидка </span>
+                    <span class="order-form__text order-form__text--red"> 400 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big"> Всего </span>
+                    <span class="order-form__text order-form__text--big"> 400 ₽ </span>
+                  </div>
+                  <div class="order-form__row order-form__row--submit">
+                    <button type="submit" class="btn btn_full">ОФОРМИТЬ ЗАКАЗ</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-checkbox order-checkbox">
+              <label class="checkbox">
+                <input type="checkbox" data-validation="required">
+                <span class="checkbox__text"> Я согласен с <a href="#" class="link">условиями покупки</a> и ознакомился с <a href="#" class="link">условиями возврата</a>. </span>
+                <span class="checkbox__icon">
+                  <svg class="icon icon-check">
+                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                  </svg>
+                </span>
+              </label>
+            </div>
+            <div class="order-calculation js-drop">
+              <button class=" order-calculation__btn js-open-drop js-drop-shows">
+                <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
+                <svg class="icon icon-chevron-down">
+                  <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
+                </svg>
+              </button>
+              <div class="js-drop-hidden order-calculation__form" style="display: none;">
+                <form action="" class="delivery-calculation">
+                  <div class="delivery-calculation__input-group">
+                    <input class="input" type="text" placeholder="Регион">
+                    <input class="input" type="number" placeholder="Индекс">
+                    <button type="button" class="btn btn_bord btn_full">
+                      <span> Рассчитать стоимость</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col col-33" style="margin-top: 20px;">
+            <div class="sidebar sidebar__table">
+              <h4 class="sidebar__title"> Каталог </h4>
+              <div action="" class="order-form">
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> ТОВАРЫ НА СУММУ </span>
+                    <span class="order-form__text order-form__text--red"> 3600 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row order-form__row--highlighted">
+                    <span class="order-form__text"> РЕФЕРАЛЬНАЯ СКИДКА </span>
+                    <span class="order-form__text order-form__text--red"> 500 ₽ </span>
+                    <div class="order-form__text--full"> Чтобы воспользоваться скидкой наберите товаров на сумму 3500 ₽ <a href="#" class="link">Подробнее</a>
+                    </div>
+                  </div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Скидка </span>
+                    <span class="order-form__text order-form__text--red"> 400 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big"> Всего </span>
+                    <span class="order-form__text order-form__text--big"> 400 ₽ </span>
+                  </div>
+                  <div class="order-form__row order-form__row--submit">
+                    <button type="submit" class="btn btn_full">ОФОРМИТЬ ЗАКАЗ</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-checkbox order-checkbox">
+              <label class="checkbox">
+                <input type="checkbox" data-validation="required">
+                <span class="checkbox__text"> Я согласен с <a href="#" class="link">условиями покупки</a> и ознакомился с <a href="#" class="link">условиями возврата</a>. </span>
+                <span class="checkbox__icon">
+                  <svg class="icon icon-check">
+                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                  </svg>
+                </span>
+              </label>
+            </div>
+            <div class="order-calculation js-drop">
+              <button class=" order-calculation__btn js-open-drop js-drop-shows">
+                <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
+                <svg class="icon icon-chevron-down">
+                  <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
+                </svg>
+              </button>
+              <div class="js-drop-hidden order-calculation__form" style="display: none;">
+                <form action="" class="delivery-calculation">
+                  <div class="delivery-calculation__input-group">
+                    <input class="input" type="text" placeholder="Регион">
+                    <input class="input" type="number" placeholder="Индекс">
+                    <button type="button" class="btn btn_bord btn_full">
+                      <span> Рассчитать стоимость</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col col-33" style="margin-top: 20px;">
+            <div class="sidebar sidebar__table">
+              <h4 class="sidebar__title"> Каталог </h4>
+              <div action="" class="order-form">
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> ТОВАРЫ НА СУММУ </span>
+                    <span class="order-form__text order-form__text--red"> 3600 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group order-form__card-group">
+                  <div class="card">
+                    <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+                    <div class="card__wrap">
+                      <div class="card__vendorcode">Артикул: 45678</div>
+                      <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                      <div class="card__quantity"> Кол–во: <span>1</span>
+                      </div>
+                      <div class="card__price">
+                        <span>1000 ₽</span>
+                        <span class="is-old">1400 ₽</span>
+                      </div>
+                      <div class="card__benefit">Ваша выгода 400 ₽</div>
+                    </div>
+                  </div>
+                  <div class="order-form__divider order-form__divider--top"></div>
+                  <a href="#" class="order-form__more">Еще 2 товара</a>
+                  <div class="order-form__divider order-form__divider--bottom"></div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> РЕФЕРАЛЬНАЯ СКИДКА </span>
+                    <span class="order-form__text order-form__text--red"> 500 ₽ </span>
+                  </div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Скидка </span>
+                    <span class="order-form__text order-form__text--red"> 400 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Самовывоз </span>
+                    <span class="order-form__text"> Бесплатно </span>
+                  </div>
+                  <div class="order-form__row"> 70 лет Октября, 25 к.2, сегодня с 17:00 </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big"> Всего </span>
+                    <span class="order-form__text order-form__text--big"> 400 ₽ </span>
+                  </div>
+                  <div class="order-form__row order-form__row--submit">
+                    <button type="submit" class="btn btn_full">купить</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-33" style="margin-top: 20px;">
+            <div class="sidebar sidebar__table">
+              <h4 class="sidebar__title"> Каталог </h4>
+              <div action="" class="order-form">
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> ТОВАРЫ НА СУММУ </span>
+                    <span class="order-form__text order-form__text--red"> 3600 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group order-form__card-group">
+                  <div class="card">
+                    <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+                    <div class="card__wrap">
+                      <div class="card__vendorcode">Артикул: 45678</div>
+                      <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                      <div class="card__quantity"> Кол–во: <span>1</span>
+                      </div>
+                      <div class="card__price">
+                        <span>1000 ₽</span>
+                        <span class="is-old">1400 ₽</span>
+                      </div>
+                      <div class="card__benefit">Ваша выгода 400 ₽</div>
+                    </div>
+                  </div>
+                  <div class="order-form__divider order-form__divider--top"></div>
+                  <a href="#" class="order-form__more">Еще 2 товара</a>
+                  <div class="order-form__divider order-form__divider--bottom"></div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> РЕФЕРАЛЬНАЯ СКИДКА </span>
+                    <span class="order-form__text order-form__text--red"> 500 ₽ </span>
+                  </div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Скидка </span>
+                    <span class="order-form__text order-form__text--red"> 400 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Самовывоз </span>
+                    <span class="order-form__text"> Бесплатно </span>
+                  </div>
+                  <div class="order-form__row"> 70 лет Октября, 25 к.2, сегодня с 17:00 </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> ОПЛАТА </span>
+                  </div>
+                  <div class="order-form__row"> Наличный расчет при получении в магазине </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big"> Всего </span>
+                    <span class="order-form__text order-form__text--big"> 400 ₽ </span>
+                  </div>
+                  <div class="order-form__row order-form__row--submit">
+                    <button type="submit" class="btn btn_full">купить</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-33" style="margin-top: 20px;">
+            <div class="sidebar sidebar__table">
+              <h4 class="sidebar__title"> Ваш заказ </h4>
+              <div class="order-form">
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> НОМЕР ЗАКАЗА </span>
+                    <span class="order-form__text"> 34567 </span>
+                  </div>
+                  <div class="order-form__row"> Сообщите номер заказа продавцу в магазине </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Стоимость </span>
+                    <span class="order-form__text"> 2700 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Самовывоз </span>
+                  </div>
+                  <div class="order-form__row"> 70 лет Октября, 25 к.2, сегодня с 17:00 </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> ОПЛАТА </span>
+                  </div>
+                  <div class="order-form__row"> Наличный расчет при получении в магазине </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row order-form__row--highlighted">
+                    <span class="order-form__text"> ДАННЫЕ ПОКУПАТЕЛЯ </span>
+                    <div class="order-form__text--full">
+                      <span class="order-form__text-lower order-form__text-lower--bold"> Получатель </span>
+                      <span class="order-form__text-lower"> Анна </span>
+                    </div>
+                    <div class="order-form__text--full">
+                      <span class="order-form__text-lower order-form__text-lower--bold"> Телефон </span>
+                      <span class="order-form__text-lower"> +7 (961) 678 – 87 – 56 </span>
+                    </div>
+                    <div class="order-form__text--full">
+                      <span class="order-form__text-lower order-form__text-lower--bold"> Email </span>
+                      <span class="order-form__text-dark"> не указан </span>
+                    </div>
+                  </div>
+                  <div class="order-form__row order-form__row--submit">
+                    <button type="submit" class="btn btn_full">подробная информация</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-33" style="margin-top: 20px;">
+            <div class="sidebar sidebar__table">
+              <h4 class="sidebar__title"> Ваш заказ </h4>
+              <div class="order-form">
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text"> ТОВАРЫ НА СУММУ </span>
+                    <span class="order-form__text order-form__text--red"> 1400 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row order-form__row--highlighted">
+                    <span class="order-form__text"> РЕФЕРАЛЬНАЯ СКИДКА </span>
+                    <span class="order-form__text order-form__text--red"> 500 ₽ </span>
+                    <div class="order-form__text--full"> Чтобы воспользоваться скидкой наберите товаров на сумму 3500 ₽ <a href="#" class="link">Подробнее</a>
+                    </div>
+                  </div>
+                  <div class="order-form__row">
+                    <span class="order-form__text"> Скидка </span>
+                    <span class="order-form__text order-form__text--red"> -400 ₽ </span>
+                  </div>
+                </div>
+                <div class="order-form__group">
+                  <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big"> Всего </span>
+                    <span class="order-form__text order-form__text--big"> 400 ₽ </span>
+                  </div>
+                  <div class="order-form__row order-form__row--submit">
+                    <button type="submit" class="btn btn_full">ОФОРМИТЬ ЗАКАЗ</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-checkbox order-checkbox">
+              <label class="checkbox">
+                <input type="checkbox" data-validation="required">
+                <span class="checkbox__text"> Я согласен с <a href="#" class="link">условиями покупки</a> и ознакомился с <a href="#" class="link">условиями возврата</a>. </span>
+                <span class="checkbox__icon">
+                  <svg class="icon icon-check">
+                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                  </svg>
+                </span>
+              </label>
+            </div>
+            <div class="order-calculation js-drop">
+              <button class=" order-calculation__btn js-open-drop js-drop-shows">
+                <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
+                <svg class="icon icon-chevron-down">
+                  <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
+                </svg>
+              </button>
+              <div class="js-drop-hidden order-calculation__form" style="display: none;">
+                <form action="" class="delivery-calculation">
+                  <div class="delivery-calculation__filter">
+                    <span>Найдено 2</span>
+                    <button class="filter-btn filter-btn-reset">
+                      <svg class="icon icon-refresh">
+                        <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                      </svg>
+                      <span>Сбросить</span>
+                    </button>
+                  </div>
+                  <div class="delivery-calculation__city"> Омская область, г.Омск </div>
+                  <div class="delivery-calculation__check-group">
+                    <div class="radio-tab">
+                      <label class="radio-tab__label js-tab is-active">
+                        <input type="radio" name="radio-tab" checked>
+                        <span class="radio-tab__title">Стоимость доставки – 400 рублей. </span>
+                        <span class="radio-tab__dscr">Ближайшая дата доставки 15 июля;</span>
+                      </label>
+                    </div>
+                    <div class="radio-tab">
+                      <label class="radio-tab__label js-tab is-active">
+                        <input type="radio" name="radio-tab" checked>
+                        <span class="radio-tab__title">Стоимость доставки – 400 рублей. </span>
+                        <span class="radio-tab__dscr">Ближайшая дата доставки 15 июля;</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="delivery-calculation__input-group">
+                    <input class="input" type="text" placeholder="Омская область, г.Омск">
+                    <input class="input" type="number" placeholder="644039">
+                    <button type="button" class="btn btn_bord btn_full">
+                      <span>Рассчитать стоимость</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
