@@ -81,6 +81,11 @@
 	font-size: 16px
 	table-layout: fixed
 	display: table
+	&_simple
+		padding: 16px
+		background-color: $white 
+		&:not(:first-child)
+			margin-top: 16px
 	&__img
 		position: relative
 		vertical-align: top
@@ -91,6 +96,9 @@
 		background-size: cover
 		background-repeat: no-repeat
 		background-color: #F7F7F7 
+		.card_simple &
+			width: 144px
+			height: 144px
 	&__wrap
 		position: relative
 		height: 100%
@@ -98,6 +106,8 @@
 		padding-bottom: 32px 
 		vertical-align: top
 		display: table-cell
+		.card_simple &
+			padding-left: 16px
 	&__table
 		width: 100%
 		display: table
