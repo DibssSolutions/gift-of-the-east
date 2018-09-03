@@ -197,6 +197,56 @@ title: UI
 					{{ mixins.newsearch(newsearch.placeholder) }}
 			{% endfor %}
 		</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-100">
+				<div class="title text-center">START SELECT</div>
+				<a href="https://developer.snapappointments.com/bootstrap-select/examples/">bootstrap-select LINK</a>
+				<p>simple</p>
+				<select class="select js-select" data-width="100%">
+					<option value="Cначала новинки">Cначала новинки</option>
+					<option value="Цена по возрастанию">Цена по возрастанию</option>
+					<option value="Цена по убыванию">Цена по убыванию</option>
+				</select>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-100">
+				<p>multiple</p>
+				<select class="select js-select" data-width="100%" multiple>
+					<option value="Cначала новинки">Cначала новинки</option>
+					<option value="Цена по возрастанию">Цена по возрастанию</option>
+					<option value="Цена по убыванию">Цена по убыванию</option>
+				</select>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-100">
+				<p>multiple + actions</p>
+				<select class="select js-select" data-width="100%" multiple data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
+					<option value="Cначала новинки">Cначала новинки</option>
+					<option value="Цена по возрастанию">Цена по возрастанию</option>
+					<option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
+				</select>
+			</div>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-100">
+				<p>multiple/color/text-format-count</p>
+				<select class="select select_color js-select" data-width="101" multiple title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} с {1}" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все">
+					<option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
+					<option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
+					<option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
+					<option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
+					<option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
+					<option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
+					<option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
+					<option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
+					<option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
+					<option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
+				</select>
+				<div class="title text-center" style="margin-top: 20px;">END SELECT</div>
+			</div>
+		</div>
 	</div>
 	
 
