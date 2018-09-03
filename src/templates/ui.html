@@ -50,103 +50,11 @@
 		</div>
 		{% endfor %}
 	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for rating in [
-			{
-				textdivating: "2 Отзыва",
-				textviews: "12 Просмотров",
-				textvendorcode: "Артикул: 45675"
-			}
-			] %}
-			<div class="col col-50">
-			{{ mixins.rating({
-				textdivating: rating.textdivating,
-				textviews: rating.textviews,
-				textvendorcode: rating.textvendorcode
-			}) }}
-			</div>
-		{% endfor %}
+	<div class="row">
+		<!--Start slider-products -->
+		{% include "partials/_slider-products.html" %}
+		<!-- End slider-products-->
 	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for checkbox in [ { text: "С фото" } ] %}
-		<div class="col col-50">
-			{{ mixins.checkbox( checkbox.text) }}
-		</div>
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for checkedbtn in [ { text: "Выбран" } ] %}
-		<div class="col col-50">
-			{{ mixins.checkedbtn( checkedbtn.text) }}
-		</div>
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for price in [
-			{
-				price: "1000 ₽",
-				text: "Цена для Вас"
-			}
-			] %}
-				{{ mixins.price({
-					price: price.price,
-					text: price.text
-				}) }}
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for newprice in [
-			{
-				price: "1400 ₽",
-				text: "Розничная цена"
-			}
-			] %}
-				{{ mixins.newprice({
-					price: newprice.price,
-					text: newprice.text
-				}) }}
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for availability in [
-			{
-				text: "Розничная цена"
-			}
-			] %}
-				{{ mixins.availability( availability.text) }}
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for share in [
-			{
-				text: "Поделиться с друзьями"
-			}
-			] %}
-				{{ mixins.share( share.text) }}
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for radiotab in [ { title1: "Самовывоз из магазина", dscr1: "Бесплатно", title2: "Доставка домой или в офис", dscr2: "от
-		100 ₽" } ] %} {{ mixins.radiotab({ title1: radiotab.title1, dscr1: radiotab.dscr1, title2: radiotab.title2, dscr2: radiotab.dscr2
-		}) }} {% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for radiobtn in [ { title1: "Список", title2: "Карта" } ] %} {{ mixins.radiobtn({ title1: radiobtn.title1, title2: radiobtn.title2
-		}) }} {% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for newsearch in [ { placeholder: "Город, адрес, название ТЦ" } ] %} {{ mixins.newsearch(newsearch.placeholder) }} {%
-		endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for table in [ { thTitle1: "Магазин", thTitle2: "Дата самовывоза", tdTitle1: "Континент 2", tdDscpt1: "70 лет Октября,
-		25 к.2", tdTitle2: "Сегодня с 17:00", tdDscpt2: "пн–вс 10:00–21:00", textBtn: "Выбран" } ] %} {{ mixins.table({ thTitle1:
-		table.thTitle1, thTitle2: table.thTitle2, tdTitle1: table.tdTitle1, tdDscpt1: table.tdDscpt1, tdTitle2: table.tdTitle2,
-		tdDscpt2: table.tdDscpt2, textBtn: table.textBtn }) }} {% endfor %}
-	</div>
-	<!--Start slider-products -->
-	{% include "partials/_slider-products.html" %}
-	<!-- End slider-products-->
 	<div class="row" style="margin-top: 20px;">
 		<div class="col-100">
 			<div class="title text-center">FORM ITEMS</div>
@@ -196,9 +104,103 @@
 			</select>
 		</div>
 	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for rating in [
+			{
+				textdivating: "2 Отзыва",
+				textviews: "12 Просмотров",
+				textvendorcode: "Артикул: 45675"
+			}
+			] %}
+			<div class="col col-50">
+			{{ mixins.rating({
+				textdivating: rating.textdivating,
+				textviews: rating.textviews,
+				textvendorcode: rating.textvendorcode
+			}) }}
+			</div>
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for checkbox in [ { text: "С фото" } ] %}
+		<div class="col col-50">
+			{{ mixins.checkbox( checkbox.text) }}
+		</div>
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for checkedbtn in [ { text: "Выбран" } ] %}
+		<div class="col col-50">
+			{{ mixins.checkedbtn( checkedbtn.text) }}
+		</div>
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for radiotab in [ { title1: "Самовывоз из магазина", dscr1: "Бесплатно", title2: "Доставка домой или в офис", dscr2: "от
+		100 ₽" } ] %} {{ mixins.radiotab({ title1: radiotab.title1, dscr1: radiotab.dscr1, title2: radiotab.title2, dscr2: radiotab.dscr2
+		}) }} {% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for radiobtn in [ { title1: "Список", title2: "Карта" } ] %} {{ mixins.radiobtn({ title1: radiobtn.title1, title2: radiobtn.title2
+		}) }} {% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for newsearch in [ { placeholder: "Город, адрес, название ТЦ" } ] %} {{ mixins.newsearch(newsearch.placeholder) }} {%
+		endfor %}
+	</div>
 
 	<!-- ******************************* Order ******************************* -->
 	<div class="title text-center" style="margin-top: 20px;">Order</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for table in [ { thTitle1: "Магазин", thTitle2: "Дата самовывоза", tdTitle1: "Континент 2", tdDscpt1: "70 лет Октября,
+		25 к.2", tdTitle2: "Сегодня с 17:00", tdDscpt2: "пн–вс 10:00–21:00", textBtn: "Выбран" } ] %} {{ mixins.table({ thTitle1:
+		table.thTitle1, thTitle2: table.thTitle2, tdTitle1: table.tdTitle1, tdDscpt1: table.tdDscpt1, tdTitle2: table.tdTitle2,
+		tdDscpt2: table.tdDscpt2, textBtn: table.textBtn }) }} {% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for price in [
+			{
+				price: "1000 ₽",
+				text: "Цена для Вас"
+			}
+			] %}
+				{{ mixins.price({
+					price: price.price,
+					text: price.text
+				}) }}
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for newprice in [
+			{
+				price: "1400 ₽",
+				text: "Розничная цена"
+			}
+			] %}
+				{{ mixins.newprice({
+					price: newprice.price,
+					text: newprice.text
+				}) }}
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for availability in [
+			{
+				text: "Розничная цена"
+			}
+			] %}
+				{{ mixins.availability( availability.text) }}
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for share in [
+			{
+				text: "Поделиться с друзьями"
+			}
+			] %}
+				{{ mixins.share( share.text) }}
+		{% endfor %}
+	</div>
 	<div class="row" style="margin-top: 20px;">
 		<div class="col col-33" style="margin-top: 20px;">{{order.ordered_shop()}}</div>
 		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery()}}</div>

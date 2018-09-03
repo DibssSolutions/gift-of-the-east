@@ -315,6 +315,72 @@
             <!-- End card-article -->
           </div>
         </div>
+        <div class="row">
+          <!--Start slider-products -->
+          <div class="slider-products">
+            <div class="slider-products__show js-slider-products">
+              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
+              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
+              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
+            </div>
+            <div class="slider-products__nav js-slider-products-nav">
+              <div class="slider-products__slide-nav" style="background-image: url(./img/vase.jpg);"></div>
+              <div class="slider-products__slide-nav" style="background-image: url(./img/vase.jpg);"></div>
+              <div class="slider-products__slide-nav" style="background-image: url(./img/vase.jpg);"></div>
+            </div>
+          </div>
+          <!-- End slider-products-->
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-100">
+            <div class="title text-center">FORM ITEMS</div>
+            <a href="https://developer.snapappointments.com/bootstrap-select/examples/">bootstrap-select LINK</a>
+            <p>simple</p>
+            <select class="select js-select" data-width="100%">
+              <option value="Cначала новинки">Cначала новинки</option>
+              <option value="Цена по возрастанию">Цена по возрастанию</option>
+              <option value="Цена по убыванию">Цена по убыванию</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-100">
+            <p>multiple</p>
+            <select class="select js-select" data-width="100%" multiple>
+              <option value="Cначала новинки">Cначала новинки</option>
+              <option value="Цена по возрастанию">Цена по возрастанию</option>
+              <option value="Цена по убыванию">Цена по убыванию</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-100">
+            <p>multiple + actions</p>
+            <select class="select js-select" data-width="100%" multiple data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
+              <option value="Cначала новинки">Cначала новинки</option>
+              <option value="Цена по возрастанию">Цена по возрастанию</option>
+              <option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-100">
+            <p>multiple/color/text-format-count</p>
+            <select class="select select_color js-select" data-width="101" multiple title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} с {1}" data-actions-box="true" data-actions-selected-all-text="Выбрано"
+              data-actions-deselected-all-text="Все">
+              <option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
+              <option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
+              <option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
+              <option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
+              <option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
+              <option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
+              <option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
+              <option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
+              <option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
+              <option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
+            </select>
+          </div>
+        </div>
         <div class="row" style="margin-top: 20px;">
           <div class="col col-50">
             <!-- Start rating -->
@@ -344,46 +410,6 @@
             </label>
             <!-- End checked-btn -->
           </div>
-        </div>
-        <div class="row" style="margin-top: 20px;">
-          <!-- Start price -->
-          <div class="price">
-            <span class="price__number"> 1000 ₽ </span>
-            <span class="price__text">Цена для Вас</span>
-          </div>
-          <!-- End price -->
-        </div>
-        <div class="row" style="margin-top: 20px;">
-          <!-- Start newprice -->
-          <div class="price price_mod">
-            <span class="price__number"> 1400 ₽ </span>
-            <span class="price__text">Розничная цена</span>
-          </div>
-          <!-- End newprice -->
-        </div>
-        <div class="row" style="margin-top: 20px;">
-          <!-- Start availability -->
-          <a href="#" class="availability">
-            <span class="availability__icon">
-              <svg class="icon icon-location">
-                <use xlink:href="img/sprite.svg#icon-location"></use>
-              </svg>
-            </span>
-            <span class="availability__text">Розничная цена</span>
-          </a>
-          <!-- End availability -->
-        </div>
-        <div class="row" style="margin-top: 20px;">
-          <!-- Start share -->
-          <a href="#" class="share">
-            <span class="share__icon">
-              <svg class="icon icon-share-variant">
-                <use xlink:href="img/sprite.svg#icon-share-variant"></use>
-              </svg>
-            </span>
-            <span class="share__text">Поделиться с друзьями</span>
-          </a>
-          <!-- End share -->
         </div>
         <div class="row" style="margin-top: 20px;">
           <!-- Start radio-tab -->
@@ -439,6 +465,8 @@
           </form>
           <!-- End new-search -->
         </div>
+        <!-- ******************************* Order ******************************* -->
+        <div class="title text-center" style="margin-top: 20px;">Order</div>
         <div class="row" style="margin-top: 20px;">
           <!-- Start table -->
           <div class="table">
@@ -491,72 +519,46 @@
           </div>
           <!-- End table -->
         </div>
-        <!--Start slider-products -->
-        <div class="slider-products">
-          <div class="slider-products__show js-slider-products">
-            <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
-            <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
-            <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
-          </div>
-          <div class="slider-products__nav js-slider-products-nav">
-            <div class="slider-products__slide-nav" style="background-image: url(./img/vase.jpg);"></div>
-            <div class="slider-products__slide-nav" style="background-image: url(./img/vase.jpg);"></div>
-            <div class="slider-products__slide-nav" style="background-image: url(./img/vase.jpg);"></div>
-          </div>
-        </div>
-        <!-- End slider-products-->
         <div class="row" style="margin-top: 20px;">
-          <div class="col-100">
-            <div class="title text-center">FORM ITEMS</div>
-            <a href="https://developer.snapappointments.com/bootstrap-select/examples/">bootstrap-select LINK</a>
-            <p>simple</p>
-            <select class="select js-select" data-width="100%">
-              <option value="Cначала новинки">Cначала новинки</option>
-              <option value="Цена по возрастанию">Цена по возрастанию</option>
-              <option value="Цена по убыванию">Цена по убыванию</option>
-            </select>
+          <!-- Start price -->
+          <div class="price">
+            <span class="price__number"> 1000 ₽ </span>
+            <span class="price__text">Цена для Вас</span>
           </div>
+          <!-- End price -->
         </div>
         <div class="row" style="margin-top: 20px;">
-          <div class="col-100">
-            <p>multiple</p>
-            <select class="select js-select" data-width="100%" multiple>
-              <option value="Cначала новинки">Cначала новинки</option>
-              <option value="Цена по возрастанию">Цена по возрастанию</option>
-              <option value="Цена по убыванию">Цена по убыванию</option>
-            </select>
+          <!-- Start newprice -->
+          <div class="price price_mod">
+            <span class="price__number"> 1400 ₽ </span>
+            <span class="price__text">Розничная цена</span>
           </div>
+          <!-- End newprice -->
         </div>
         <div class="row" style="margin-top: 20px;">
-          <div class="col-100">
-            <p>multiple + actions</p>
-            <select class="select js-select" data-width="100%" multiple data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
-              <option value="Cначала новинки">Cначала новинки</option>
-              <option value="Цена по возрастанию">Цена по возрастанию</option>
-              <option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
-            </select>
-          </div>
+          <!-- Start availability -->
+          <a href="#" class="availability">
+            <span class="availability__icon">
+              <svg class="icon icon-location">
+                <use xlink:href="img/sprite.svg#icon-location"></use>
+              </svg>
+            </span>
+            <span class="availability__text">Розничная цена</span>
+          </a>
+          <!-- End availability -->
         </div>
         <div class="row" style="margin-top: 20px;">
-          <div class="col-100">
-            <p>multiple/color/text-format-count</p>
-            <select class="select select_color js-select" data-width="101" multiple title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} с {1}" data-actions-box="true" data-actions-selected-all-text="Выбрано"
-              data-actions-deselected-all-text="Все">
-              <option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
-              <option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
-              <option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
-              <option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
-              <option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
-              <option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
-              <option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
-              <option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
-              <option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
-              <option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
-            </select>
-          </div>
+          <!-- Start share -->
+          <a href="#" class="share">
+            <span class="share__icon">
+              <svg class="icon icon-share-variant">
+                <use xlink:href="img/sprite.svg#icon-share-variant"></use>
+              </svg>
+            </span>
+            <span class="share__text">Поделиться с друзьями</span>
+          </a>
+          <!-- End share -->
         </div>
-        <!-- ******************************* Order ******************************* -->
-        <div class="title text-center" style="margin-top: 20px;">Order</div>
         <div class="row" style="margin-top: 20px;">
           <div class="col col-33" style="margin-top: 20px;">
             <div class="sidebar sidebar__table">
