@@ -176,7 +176,7 @@
 					<span>Кол–во:</span>
 					{% if props.quantity.select %}
 					<div class="card__seclect">
-						<select class="select js-select">
+						<select class="select js-select" multiple data-actions-box="true" data-width="100%">
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -284,9 +284,9 @@
 
 {% macro checkbox(text, radio) %}
 <!-- Start checkbox -->
-<label class="checkbox">
+<label class="toggler">
 	<input type="{{radio or 'checkbox'}}" name="checkbox">
-	<span class="checkbox__text">{{ text }}</span>
+	<span class="toggler__text">{{ text }}</span>
 </label>
 <!-- End checkbox -->
 {% endmacro %}
