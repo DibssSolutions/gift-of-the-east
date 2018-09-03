@@ -315,15 +315,21 @@
             <!-- End card-article -->
           </div>
         </div>
-        <div class="row" style="margin-top: 20px;">
-          <div class="col col-50">
-            <!-- Start rating -->
-            <div class="rating-stars">
-              <input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="2" />
-              <label class="rating-stars__text rating-stars__text--review" for="stars"></label> / <span class="rating-stars__text views">12 Просмотров</span> / <span class="rating-stars__text vendor-code">Артикул: 45675</span>
+        <div class="row">
+          <!--Start slider-products -->
+          <div class="slider-products">
+            <div class="slider-products__show js-slider-products">
+              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
+              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
+              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
             </div>
-            <!-- End rating -->
+            <div class="slider-products__nav js-slider-products-nav">
+              <div class="slider-products__slide-nav" style="background-image: url(./img/vase.jpg);"></div>
+              <div class="slider-products__slide-nav" style="background-image: url(./img/vase.jpg);"></div>
+              <div class="slider-products__slide-nav" style="background-image: url(./img/vase.jpg);"></div>
+            </div>
           </div>
+          <!-- End slider-products-->
         </div>
         <div class="row" style="margin-top: 20px;">
           <div class="col-100">
@@ -373,6 +379,16 @@
               <option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
               <option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
             </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col col-50">
+            <!-- Start rating -->
+            <div class="rating-stars">
+              <input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="2" />
+              <a href="#" class="rating-stars__text rating-stars__text--review">2 Отзыва</a> / <span class="rating-stars__text views">12 Просмотров</span> / <span class="rating-stars__text vendor-code">Артикул: 45675</span>
+            </div>
+            <!-- End rating -->
           </div>
         </div>
         <div class="row" style="margin-top: 20px;">
@@ -437,14 +453,16 @@
         </div>
         <div class="row" style="margin-top: 20px;">
           <!-- Start new-search -->
-          <label class="new-search">
-            <input class="new-search__input" type="text" name="new-search" placeholder="Город, адрес, название ТЦ">
-            <span class="new-search__icon">
-              <svg class="icon icon-search">
-                <use xlink:href="img/sprite.svg#icon-search"></use>
-              </svg>
-            </span>
-          </label>
+          <form class="new-search" action="/">
+            <label class="new-search__label">
+              <input class="new-search__input" type="text" name="new-search" placeholder="Город, адрес, название ТЦ">
+              <button type="submit" class="new-search__btn">
+                <svg class="icon icon-search">
+                  <use xlink:href="img/sprite.svg#icon-search"></use>
+                </svg>
+              </button>
+            </label>
+          </form>
           <!-- End new-search -->
         </div>
         <!-- ******************************* Order ******************************* -->
@@ -502,7 +520,47 @@
           <!-- End table -->
         </div>
         <div class="row" style="margin-top: 20px;">
-          <div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">
+          <!-- Start price -->
+          <div class="price">
+            <span class="price__number"> 1000 ₽ </span>
+            <span class="price__text">Цена для Вас</span>
+          </div>
+          <!-- End price -->
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <!-- Start newprice -->
+          <div class="price price_mod">
+            <span class="price__number"> 1400 ₽ </span>
+            <span class="price__text">Розничная цена</span>
+          </div>
+          <!-- End newprice -->
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <!-- Start availability -->
+          <a href="#" class="availability">
+            <span class="availability__icon">
+              <svg class="icon icon-location">
+                <use xlink:href="img/sprite.svg#icon-location"></use>
+              </svg>
+            </span>
+            <span class="availability__text">Розничная цена</span>
+          </a>
+          <!-- End availability -->
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <!-- Start share -->
+          <a href="#" class="share">
+            <span class="share__icon">
+              <svg class="icon icon-share-variant">
+                <use xlink:href="img/sprite.svg#icon-share-variant"></use>
+              </svg>
+            </span>
+            <span class="share__text">Поделиться с друзьями</span>
+          </a>
+          <!-- End share -->
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col col-33" style="margin-top: 20px;">
             <div class="sidebar sidebar__table">
               <h4 class="sidebar__title"> Каталог </h4>
               <div action="" class="order-form">
@@ -558,7 +616,7 @@
               </div>
             </div>
           </div>
-          <div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">
+          <div class="col col-33" style="margin-top: 20px;">
             <div class="sidebar sidebar__table">
               <h4 class="sidebar__title"> Ваш заказ </h4>
               <div action="" class="order-form">
@@ -607,7 +665,7 @@
               </div>
             </div>
           </div>
-          <div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">
+          <div class="col col-33" style="margin-top: 20px;">
             <div class="sidebar sidebar__table">
               <h4 class="sidebar__title"> Каталог </h4>
               <div action="" class="order-form">
@@ -669,7 +727,7 @@
               </div>
             </div>
           </div>
-          <div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">
+          <div class="col col-33" style="margin-top: 20px;">
             <div class="sidebar sidebar__table">
               <h4 class="sidebar__title"> Каталог </h4>
               <div action="" class="order-form">
@@ -733,7 +791,7 @@
               </div>
             </div>
           </div>
-          <div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">
+          <div class="col col-33" style="margin-top: 20px;">
             <div class="sidebar sidebar__table">
               <h4 class="sidebar__title"> Каталог </h4>
               <div action="" class="order-form">
@@ -789,7 +847,7 @@
               </div>
             </div>
           </div>
-          <div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">
+          <div class="col col-33" style="margin-top: 20px;">
             <div class="sidebar sidebar__table">
               <h4 class="sidebar__title"> Каталог </h4>
               <div action="" class="order-form">
@@ -851,7 +909,7 @@
               </div>
             </div>
           </div>
-          <div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">
+          <div class="col col-33" style="margin-top: 20px;">
             <div class="sidebar sidebar__table">
               <h4 class="sidebar__title"> Ваш заказ </h4>
               <div class="order-form">
@@ -903,7 +961,7 @@
               </div>
             </div>
           </div>
-          <div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">
+          <div class="col col-33" style="margin-top: 20px;">
             <div class="sidebar sidebar__table">
               <h4 class="sidebar__title"> Ваш заказ </h4>
               <div class="order-form">
