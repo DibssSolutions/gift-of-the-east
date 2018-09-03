@@ -1,0 +1,63 @@
+.price
+	display: flex
+	align-items: center
+	&__number
+		font-size: 28px
+		color: $black
+	&__text
+		margin-left: 18px
+		font-size: 14px
+		color: $gray
+
+.price_mod
+	.price__number
+		position: relative
+		font-size: 20px
+		color: $gray
+		&:after
+			position: absolute
+			top: 50%
+			left: -5%
+			content: ''
+			width: 110%
+			height: 1px
+			background-color: $gray
+
+.availability
+	display: flex
+	align-items: center
+	&__icon
+		.icon
+			transition: fill .3s
+			font-size: 24px
+			fill: $silver
+	&__text
+		margin-left: 12px
+		font-size: 16px
+		color: $black
+		transition: color .3s
+	&:hover
+		.availability__icon
+			.icon
+				fill: $lightBrown
+		.availability__text		
+			color: $lightBrown
+.share
+	display: flex
+	align-items: center
+	&__icon
+		.icon
+			transition: fill .3s
+			font-size: 24px
+			fill: $silver
+	&__text
+		margin-left: 12px
+		font-size: 16px
+		color: $black
+		transition: color .3s
+	&:hover
+		.share__icon
+			.icon
+				fill: $lightBrown
+		.share__text		
+			color: $lightBrown

@@ -50,12 +50,10 @@
 		</div>
 		{% endfor %}
 	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for rating in [ { textrating: "2 Отзыва", textviews: "12 Просмотров", textvendorcode: "Артикул: 45675" } ] %}
-		<div class="col col-50">
-			{{ mixins.rating({ textrating: rating.textrating, textviews: rating.textviews, textvendorcode: rating.textvendorcode }) }}
-		</div>
-		{% endfor %}
+	<div class="row">
+		<!--Start slider-products -->
+		{% include "partials/_slider-products.html" %}
+		<!-- End slider-products-->
 	</div>
 	<div class="row" style="margin-top: 20px;">
 		<div class="col-100">
@@ -107,6 +105,23 @@
 		</div>
 	</div>
 	<div class="row" style="margin-top: 20px;">
+		{% for rating in [
+			{
+				textdivating: "2 Отзыва",
+				textviews: "12 Просмотров",
+				textvendorcode: "Артикул: 45675"
+			}
+			] %}
+			<div class="col col-50">
+			{{ mixins.rating({
+				textdivating: rating.textdivating,
+				textviews: rating.textviews,
+				textvendorcode: rating.textvendorcode
+			}) }}
+			</div>
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
 		{% for checkbox in [ { text: "С фото" } ] %}
 		<div class="col col-50">
 			{{ mixins.checkbox( checkbox.text) }}
@@ -143,14 +158,60 @@
 		tdDscpt2: table.tdDscpt2, textBtn: table.textBtn }) }} {% endfor %}
 	</div>
 	<div class="row" style="margin-top: 20px;">
-		<div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">{{order.ordered_shop()}}</div>
-		<div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">{{order.self_delivery()}}</div>
-		<div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">{{order.basket_ref()}}</div>
-		<div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">{{order.basket_1()}}</div>
-		<div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">{{order.self_delivery_payment(null)}}</div>
-		<div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">{{order.self_delivery_payment(type=true)}}</div>
-		<div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">{{order.confirmation()}}</div> 
-		<div class="col col-33 col-sm-100 col-md-50" style="margin-top: 20px;">{{order.basket_2()}}</div> 
+
+		{% for price in [
+			{
+				price: "1000 ₽",
+				text: "Цена для Вас"
+			}
+			] %}
+				{{ mixins.price({
+					price: price.price,
+					text: price.text
+				}) }}
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for newprice in [
+			{
+				price: "1400 ₽",
+				text: "Розничная цена"
+			}
+			] %}
+				{{ mixins.newprice({
+					price: newprice.price,
+					text: newprice.text
+				}) }}
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for availability in [
+			{
+				text: "Розничная цена"
+			}
+			] %}
+				{{ mixins.availability( availability.text) }}
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for share in [
+			{
+				text: "Поделиться с друзьями"
+			}
+			] %}
+				{{ mixins.share( share.text) }}
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<div class="col col-33" style="margin-top: 20px;">{{order.ordered_shop()}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery()}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.basket_ref()}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.basket_1()}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(null)}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(type=true)}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.confirmation()}}</div> 
+		<div class="col col-33" style="margin-top: 20px;">{{order.basket_2()}}</div> 
+
 	</div>
 </div>
 
