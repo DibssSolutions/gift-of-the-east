@@ -1,503 +1,466 @@
-{% import "partials/_mixins.html" as mixins %} {% macro submit(submit_text) %}
-<div class="order-form__group">
-    <div class="order-form__row">
-        <span class="order-form__text order-form__text--big">
-            Всего
-        </span>
-        <span class="order-form__text order-form__text--big">
-            400 ₽
-        </span>
-    </div>
-    <div class="order-form__row order-form__row--submit">
-        <button type="submit" class="btn btn_full">{{submit_text}}</button>
-    </div>
-</div>
-{% endmacro %} {% macro order_check_box() %}
-<div class="form-checkbox order-checkbox">
-    <label class="checkbox">
-        <input type="checkbox" data-validation="required">
-        <span class="checkbox__text">
-            Я согласен с
-            <a href="#" class="link">условиями покупки</a>
-            и ознакомился с
-            <a href="#" class="link">условиями возврата</a>.
-        </span>
-        <span class="checkbox__icon">
-            {{ mixins.icon('check') }}
-        </span>
-    </label>
-</div>
-{% endmacro %} {% macro calc(open) %}
-<div class="order-calculation js-drop">
-    <button class="{% if open %}is-open{% endif %} order-calculation__btn js-open-drop js-drop-shows">
-        <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
-        {{mixins.icon('chevron-down')}}
-    </button>
-    <div class="js-drop-hidden order-calculation__form" style="display: none;">
-        <form action="" class="delivery-calculation">
-            <div class="delivery-calculation__input-group">
-                <input class="input" type="text" placeholder="Регион">
-                <input class="input" type="number" placeholder="Индекс">
-                <button type="button" class="btn btn_bord btn_full">
-                    <span>
-                        Рассчитать стоимость</span>
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-{% endmacro %} {% macro calc_big(open) %}
-<div class="order-calculation js-drop">
-    <button class="{% if open %}is-open{% endif %} order-calculation__btn js-open-drop js-drop-shows">
-        <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
-        {{mixins.icon('chevron-down')}}
-    </button>
-    <div class="js-drop-hidden order-calculation__form" style="display: none;">
-        <form action="" class="delivery-calculation">
-            <div class="delivery-calculation__filter">
-                <span>Найдено 2</span>
-                <button class="filter-btn filter-btn-reset">
-                    {{mixins.icon('refresh')}}
-                    <span>Сбросить</span>
-                </button>
-            </div>
-            <div class="delivery-calculation__city">
-                Омская область, г.Омск
-            </div>
-            <div class="delivery-calculation__check-group">
-                <div class="radio-tab">
-                    <label class="radio-tab__label js-tab is-active">
-                        <input type="radio" name="radio-tab" checked>
-                        <span class="radio-tab__title">Стоимость доставки – 400 рублей. </span>
-                        <span class="radio-tab__dscr">Ближайшая дата доставки 15 июля;</span>
-                    </label>
-                </div>
-                <div class="radio-tab">
-                    <label class="radio-tab__label js-tab is-active">
-                        <input type="radio" name="radio-tab" checked>
-                        <span class="radio-tab__title">Стоимость доставки – 400 рублей. </span>
-                        <span class="radio-tab__dscr">Ближайшая дата доставки 15 июля;</span>
-                    </label>
-                </div>
-            </div>
-            <div class="delivery-calculation__input-group">
-                <input class="input" type="text" placeholder="Омская область, г.Омск">
-                <input class="input" type="number" placeholder="644039">
-                <button type="button" class="btn btn_bord btn_full">
-                    <span>Рассчитать стоимость</span>
-                </button>
-            </div>
-        </form>
-    </div>
-</div>
-{% endmacro %} {% macro ordered_shop() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Каталог
-    </h4>
-    <div action="" class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    3600 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group order-form__card-group">
-            <div class="card">
-                <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
-                <div class="card__wrap">
-                    <div class="card__vendorcode">Артикул: 45678</div>
-                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
-                    <div class="card__quantity">
-                        Кол–во:
-                        <span>1</span>
-                    </div>
-                    <div class="card__price">
-                        <span>1000 ₽</span>
-                        <span class="is-old">1400 ₽</span>
-                    </div>
-                    <div class="card__benefit">Ваша выгода 400 ₽</div>
-                </div>
-            </div>
-            <div class="order-form__divider order-form__divider--top"></div>
-            <a href="#" class="order-form__more">Еще 2 товара</a>
-            <div class="order-form__divider order-form__divider--bottom"></div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
-            </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    400 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Самовывоз
-                </span>
-                <span class="order-form__text">
-                    Бесплатно
-                </span>
-            </div>
-            <div class="order-form__row">
-                70 лет Октября, 25 к.2, сегодня с 17:00
-            </div>
-        </div>
-        {{submit('Перейти к оплате')}}
-    </div>
-</div>
-{% endmacro %} {% macro self_delivery() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Ваш заказ
-    </h4>
-    <div action="" class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    3600 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group order-form__card-group">
-            <div class="card">
-                <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
-                <div class="card__wrap">
-                    <div class="card__vendorcode">Артикул: 45678</div>
-                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
-                    <div class="card__quantity">
-                        Кол–во:
-                        <span>1</span>
-                    </div>
-                    <div class="card__price">
-                        <span>1000 ₽</span>
-                        <span class="is-old">1400 ₽</span>
-                    </div>
-                    <div class="card__benefit">Ваша выгода 400 ₽</div>
-                </div>
-            </div>
-            <div class="order-form__divider order-form__divider--top"></div>
-            <a href="#" class="order-form__more">Еще 2 товара</a>
-            <div class="order-form__divider order-form__divider--bottom"></div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
-            </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    400 ₽
-                </span>
-            </div>
-        </div>
-        {{submit('Перейти к оплате')}}
-    </div>
-</div>
-{% endmacro %} {% macro self_delivery_payment(type) %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Каталог
-    </h4>
-    <div action="" class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    3600 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group order-form__card-group">
-            <div class="card">
-                <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
-                <div class="card__wrap">
-                    <div class="card__vendorcode">Артикул: 45678</div>
-                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
-                    <div class="card__quantity">
-                        Кол–во:
-                        <span>1</span>
-                    </div>
-                    <div class="card__price">
-                        <span>1000 ₽</span>
-                        <span class="is-old">1400 ₽</span>
-                    </div>
-                    <div class="card__benefit">Ваша выгода 400 ₽</div>
-                </div>
-            </div>
-            <div class="order-form__divider order-form__divider--top"></div>
-            <a href="#" class="order-form__more">Еще 2 товара</a>
-            <div class="order-form__divider order-form__divider--bottom"></div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
-            </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    400 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Самовывоз
-                </span>
-                <span class="order-form__text">
-                    Бесплатно
-                </span>
-            </div>
-            <div class="order-form__row">
-                70 лет Октября, 25 к.2, сегодня с 17:00
-            </div>
-        </div>
-        {% if type %}
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ОПЛАТА
-                </span>
-            </div>
-            <div class="order-form__row">
-                Наличный расчет при получении в магазине
-            </div>
-        </div>
-        {% endif %} {{submit('купить')}}
-    </div>
-</div>
-{% endmacro %} {% macro basket_ref() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Каталог
-    </h4>
-    <div action="" class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    3600 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
-            </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    400 ₽
-                </span>
-            </div>
-        </div>
-        {{submit('ОФОРМИТЬ ЗАКАЗ')}}
-    </div>
-</div>
-{{order_check_box()}} {{calc()}} {% endmacro %} {% macro basket_1() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Каталог
-    </h4>
-    <div action="" class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    3600 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row order-form__row--highlighted">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
-                <div class="order-form__text--full">
-                    Чтобы воспользоваться скидкой наберите товаров на сумму 3500 ₽
-                    <a href="#" class="link">Подробнее</a>
-                </div>
-            </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    400 ₽
-                </span>
-            </div>
-        </div>
-        {{submit('ОФОРМИТЬ ЗАКАЗ')}}
-    </div>
-</div>
-{{order_check_box()}} {{calc()}} {% endmacro %} {% macro confirmation() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Ваш заказ
-    </h4>
-    <div class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    НОМЕР ЗАКАЗА
-                </span>
-                <span class="order-form__text">
-                    34567
-                </span>
-            </div>
-            <div class="order-form__row">
-                Сообщите номер заказа продавцу в магазине
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Стоимость
-                </span>
-                <span class="order-form__text">
-                    2700 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Самовывоз
-                </span>
-            </div>
-            <div class="order-form__row">
-                70 лет Октября, 25 к.2, сегодня с 17:00
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ОПЛАТА
-                </span>
-            </div>
-            <div class="order-form__row">
-                Наличный расчет при получении в магазине
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row order-form__row--highlighted">
-                <span class="order-form__text">
-                    ДАННЫЕ ПОКУПАТЕЛЯ
-                </span>
-                <div class="order-form__text--full">
-                    <span class="order-form__text-lower order-form__text-lower--bold">
-                        Получатель
-                    </span>
-                    <span class="order-form__text-lower">
-                        Анна
-                    </span>
-                </div>
-                <div class="order-form__text--full">
-                    <span class="order-form__text-lower order-form__text-lower--bold">
-                        Телефон
-                    </span>
-                    <span class="order-form__text-lower">
-                        +7 (961) 678 – 87 – 56
-                    </span>
-                </div>
-                <div class="order-form__text--full">
-                    <span class="order-form__text-lower order-form__text-lower--bold">
-                        Email
-                    </span>
-                    <span class="order-form__text-dark">
+{% import "partials/_mixins.html" as mixins %}
 
-                        не указан
+{% macro submit(submit_text) %}
+    <div class="order-form__group">
+        <div class="order-form__row">
+            <span class="order-form__text order-form__text--big">
+                Всего
+            </span>
+            <span class="order-form__text order-form__text--big">
+                400 ₽
+            </span>
+        </div>
+        <div class="order-form__row order-form__row--submit">
+            <button type="submit" class="btn btn_full">{{submit_text}}</button>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro order_check_box() %}
+    <div class="form-checkbox order-checkbox">
+        <label class="checkbox">
+            <input type="checkbox" data-validation="required">
+            <span class="checkbox__text">
+                Я согласен с
+                <a href="#" class="link">условиями покупки</a>
+                и ознакомился с
+                <a href="#" class="link">условиями возврата</a>.
+            </span>
+            <span class="checkbox__icon">
+                {{ mixins.icon('check') }}
+            </span>
+        </label>
+    </div>
+{% endmacro %}
+
+{% macro calc(open) %}
+    <div class="order-calculation js-drop">
+        <button class="{% if open %}is-open{% endif %} order-calculation__btn vertical-line-animation js-open-drop js-drop-shows">
+            <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
+            {{mixins.icon('chevron-down')}}
+        </button>
+        <div class="js-drop-hidden order-calculation__form" style="display: none;">
+            <form action="" class="delivery-calculation">
+                <div class="delivery-calculation__input-group">
+                    <input class="input" type="text" placeholder="Регион">
+                    <input class="input" type="number" placeholder="Индекс">
+                    <button type="button" class="btn btn_bord btn_full">
+                        <span class="btn__text">
+                            Рассчитать стоимость</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro calc_big(open) %}
+    <div class="order-calculation js-drop">
+        <button class="{% if open %}is-open{% endif %} order-calculation__btn vertical-line-animation js-open-drop js-drop-shows">
+            <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
+            {{mixins.icon('chevron-down')}}
+        </button>
+        <div class="js-drop-hidden order-calculation__form" style="display: none;">
+            <form action="" class="delivery-calculation">
+                <div class="delivery-calculation__filter">
+                    <span>Найдено 2</span>
+                    <button type="button" class="js-reset-button btn-reset">
+                        {{mixins.icon('refresh')}}
+                        <span>Сбросить</span>
+                    </button>
+                </div>
+                <div class="delivery-calculation__city">
+                    Омская область, г.Омск
+                </div>
+                <div class="delivery-calculation__check-group">
+                    <div class="radio-tab">
+                        <label class="radio-tab__label js-tab is-active">
+                            <input type="radio" name="radio-tab" checked="checked">
+                            <span class="radio-tab__title">Стоимость доставки – 400 рублей.
+                            </span>
+                            <span class="radio-tab__dscr">Ближайшая дата доставки 15 июля;</span>
+                        </label>
+                    </div>
+                    <div class="radio-tab">
+                        <label class="radio-tab__label js-tab is-active">
+                            <input type="radio" name="radio-tab" checked="checked">
+                            <span class="radio-tab__title">Стоимость доставки – 400 рублей.
+                            </span>
+                            <span class="radio-tab__dscr">Ближайшая дата доставки 15 июля;</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="delivery-calculation__input-group">
+                    <input class="input" type="text" placeholder="Омская область, г.Омск">
+                    <input class="input" type="number" placeholder="644039">
+                    <button type="button" class="btn btn_bord btn_full">
+                        <span class="btn__text">Рассчитать стоимость</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro cardGroup() %}
+    <div class="order-form__group order-form__card-group">
+        <div class="card">
+            <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+            <div class="card__wrap">
+                <div class="card__vendorcode">Артикул: 45678</div>
+                <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                <div class="card__quantity">
+                    Кол–во:
+                    <span>1</span>
+                </div>
+                <div class="card__price">
+                    <span>1000 ₽</span>
+                    <span class="is-old">1400 ₽</span>
+                </div>
+                <div class="card__benefit">Ваша выгода 400 ₽</div>
+            </div>
+        </div>
+        <div class="order-form__divider order-form__divider--top"></div>
+        <a href="#" class="order-form__more">Еще 2 товара</a>
+        <div class="order-form__divider order-form__divider--bottom"></div>
+        <div class="order-form__row">
+            <span class="order-form__text">
+                РЕФЕРАЛЬНАЯ СКИДКА
+            </span>
+            <span class="order-form__text order-form__text--red">
+                500 ₽
+            </span>
+        </div>
+        <div class="order-form__row">
+            <span class="order-form__text">
+                Скидка
+            </span>
+            <span class="order-form__text order-form__text--red">
+                400 ₽
+            </span>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro ordered_shop() %}
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Каталог
+        </h4>
+        <div action="" class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        3600 ₽
                     </span>
                 </div>
             </div>
-            <div class="order-form__row order-form__row--submit">
-                <button type="submit" class="btn btn_full">подробная информация</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% endmacro %} {% macro basket_2() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Ваш заказ
-    </h4>
-    <div class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    1400 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row order-form__row--highlighted">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
-                <div class="order-form__text--full">
-                    Чтобы воспользоваться скидкой наберите товаров на сумму 3500 ₽
-                    <a href="#" class="link">Подробнее</a>
+            {{cardGroup()}}
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Самовывоз
+                    </span>
+                    <span class="order-form__text">
+                        Бесплатно
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    70 лет Октября, 25 к.2, сегодня с 17:00
                 </div>
             </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    -400 ₽
-                </span>
+            {{submit('Перейти к оплате')}}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro self_delivery() %}
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Ваш заказ
+        </h4>
+        <div action="" class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        3600 ₽
+                    </span>
+                </div>
+            </div>
+            {{cardGroup()}}
+            {{submit('Перейти к оплате')}}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro self_delivery_payment(type) %}
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Каталог
+        </h4>
+        <div action="" class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        3600 ₽
+                    </span>
+                </div>
+            </div>
+            {{cardGroup()}}
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Самовывоз
+                    </span>
+                    <span class="order-form__text">
+                        Бесплатно
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    70 лет Октября, 25 к.2, сегодня с 17:00
+                </div>
+            </div>
+            {% if type %}
+                <div class="order-form__group">
+                    <div class="order-form__row">
+                        <span class="order-form__text">
+                            ОПЛАТА
+                        </span>
+                    </div>
+                    <div class="order-form__row">
+                        Наличный расчет при получении в магазине
+                    </div>
+                </div>
+            {% endif %}
+            {{submit('купить')}}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro basket_ref() %}
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Каталог
+        </h4>
+        <div action="" class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        3600 ₽
+                    </span>
+                </div>
+            </div>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        РЕФЕРАЛЬНАЯ СКИДКА
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        500 ₽
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Скидка
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        400 ₽
+                    </span>
+                </div>
+            </div>
+            {{submit('ОФОРМИТЬ ЗАКАЗ')}}
+        </div>
+    </div>
+    {{order_check_box()}}
+    {{calc()}}
+{% endmacro %}
+
+{% macro basket_1() %}
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Каталог
+        </h4>
+        <div action="" class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        3600 ₽
+                    </span>
+                </div>
+            </div>
+            <div class="order-form__group">
+                <div class="order-form__row order-form__row--highlighted">
+                    <span class="order-form__text">
+                        РЕФЕРАЛЬНАЯ СКИДКА
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        500 ₽
+                    </span>
+                    <div class="order-form__text--full">
+                        Чтобы воспользоваться скидкой наберите товаров на сумму 3500 ₽
+                        <a href="#" class="link">Подробнее</a>
+                    </div>
+                </div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Скидка
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        400 ₽
+                    </span>
+                </div>
+            </div>
+            {{submit('ОФОРМИТЬ ЗАКАЗ')}}
+        </div>
+    </div>
+    {{order_check_box()}}
+    {{calc()}}
+{% endmacro %}
+
+{% macro confirmation() %}
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Ваш заказ
+        </h4>
+        <div class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        НОМЕР ЗАКАЗА
+                    </span>
+                    <span class="order-form__text">
+                        34567
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    Сообщите номер заказа продавцу в магазине
+                </div>
+            </div>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Стоимость
+                    </span>
+                    <span class="order-form__text">
+                        2700 ₽
+                    </span>
+                </div>
+            </div>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Самовывоз
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    70 лет Октября, 25 к.2, сегодня с 17:00
+                </div>
+            </div>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ОПЛАТА
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    Наличный расчет при получении в магазине
+                </div>
+            </div>
+            <div class="order-form__group">
+                <div class="order-form__row order-form__row--highlighted">
+                    <span class="order-form__text">
+                        ДАННЫЕ ПОКУПАТЕЛЯ
+                    </span>
+                    <div class="order-form__text--full">
+                        <span class="order-form__text-lower order-form__text-lower--bold">
+                            Получатель
+                        </span>
+                        <span class="order-form__text-lower">
+                            Анна
+                        </span>
+                    </div>
+                    <div class="order-form__text--full">
+                        <span class="order-form__text-lower order-form__text-lower--bold">
+                            Телефон
+                        </span>
+                        <span class="order-form__text-lower">
+                            +7 (961) 678 – 87 – 56
+                        </span>
+                    </div>
+                    <div class="order-form__text--full">
+                        <span class="order-form__text-lower order-form__text-lower--bold">
+                            Email
+                        </span>
+                        <span class="order-form__text-dark">
+
+                            не указан
+                        </span>
+                    </div>
+                </div>
+                <div class="order-form__row order-form__row--submit">
+                    <button type="submit" class="btn btn_full">подробная информация</button>
+                </div>
             </div>
         </div>
-        {{submit('ОФОРМИТЬ ЗАКАЗ')}}
     </div>
-</div>
-{{order_check_box()}} {{calc_big()}} {% endmacro %}
+{% endmacro %}
+
+{% macro basket_2() %}
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Ваш заказ
+        </h4>
+        <div class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        1400 ₽
+                    </span>
+                </div>
+            </div>
+            <div class="order-form__group">
+                <div class="order-form__row order-form__row--highlighted">
+                    <span class="order-form__text">
+                        РЕФЕРАЛЬНАЯ СКИДКА
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        500 ₽
+                    </span>
+                    <div class="order-form__text--full">
+                        Чтобы воспользоваться скидкой наберите товаров на сумму 3500 ₽
+                        <a href="#" class="link">Подробнее</a>
+                    </div>
+                </div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Скидка
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        -400 ₽
+                    </span>
+                </div>
+            </div>
+            {{submit('ОФОРМИТЬ ЗАКАЗ')}}
+        </div>
+    </div>
+    {{order_check_box()}}
+    {{calc_big()}}
+{% endmacro %}

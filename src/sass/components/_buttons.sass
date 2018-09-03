@@ -104,6 +104,7 @@
 		.icon-arrow-right
 			position: relative
 			color: $silver
+
 @keyframes arrowRight
 	0%
 		transform: translateX(-105%)
@@ -159,3 +160,47 @@
 		font-size: 20px
 		vertical-align: middle
 		display: inline-block
+
+.btn-reset
+	position: relative
+	padding: 10px 16px 8px 16px
+	font-family: $montserrat
+	font-size: 0
+	line-height: 20px
+	background-color: transparent
+	span 
+		+f(14px, 400, 1.42857)
+		vertical-align: middle
+	.icon
+		vertical-align: middle
+		fill: $silver
+		font-size: 20px
+		margin-right: 8px
+
+.vertical-line-animation
+	position: relative
+	overflow: hidden
+	&:after,
+	&:before
+		position: absolute
+		content: ''
+		height: 100%
+		background-color: $silver
+		width: 1px
+	&:after
+		right: 0
+		top: 0
+		transform: translateY(101%)
+		transition: transform 0.4s
+	&:before
+		left: 0
+		bottom: 0
+		transform: translateY(-101%)
+		transition: transform 0.4s 0.4s
+	+hover
+		&:after
+			+gpu
+			transition: transform 0.4s 0.4s
+		&:before
+			+gpu
+			transition: transform 0.4s

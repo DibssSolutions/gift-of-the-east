@@ -507,7 +507,7 @@
                     <use xlink:href="img/sprite.svg#icon-chevron-up"></use>
                   </svg>
                 </button>
-                <button class="filter-btn filter-btn-reset">
+                <button class="btn-reset">
                   <svg class="icon icon-refresh">
                     <use xlink:href="img/sprite.svg#icon-refresh"></use>
                   </svg>
@@ -516,8 +516,20 @@
                 <div class="select"> Упорядочить </div>
               </div>
               <div class="filter__bottom js-drop-hidden" style="display: none;">
-                <div class="filter__select"> lorem </div>
-                <div class="filter__select"> lorem </div>
+                <div class="filter__select">
+                  <select class="select js-select" data-width="100%">
+                    <option value="Цена">Цена</option>
+                    <option value="Цена по возрастанию">Цена по возрастанию</option>
+                    <option value="Цена по убыванию">Цена по убыванию</option>
+                  </select>
+                </div>
+                <div class="filter__select">
+                  <select class="select js-select" data-width="100%">
+                    <option value="Категория товара">Категория товара</option>
+                    <option value="Цена по возрастанию">Цена по возрастанию</option>
+                    <option value="Цена по убыванию">Цена по убыванию</option>
+                  </select>
+                </div>
                 <div class="filter__select"> lorem </div>
                 <div class="filter__select"> lorem </div>
                 <div class="filter__select"> lorem </div>
