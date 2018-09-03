@@ -146,26 +146,14 @@
 <!-- end basketlist -->
 {% endmacro %}
 
-{% macro notavailable() %}
-<!-- begin notavailable -->
-<div class="notavailable js-drop">
-	<div class="notavailable__text js-drop-shows">
-		<svg class="notavailable__icon icon icon-warning"><use xlink:href="img/sprite.svg#icon-warning"></use></svg>
-		К сожалению, некоторых товаров из корзины больше нет в наличии.
-	</div>
-	<div class="notavailable__button">
-		<a href="#" class="btn btn_md btn_bord btn_bord-gray js-open-drop" type="button" data-text-open="Показать" data-text-close="СВЕРНУТЬ"><span class="btn__text js-drop-btn-text">Показать</span></a>
-	</div>
-	<div class="notavailable__wrap js-drop-hidden">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quam accusantium eius sint nemo error, laudantium magni suscipit consequuntur veritatis, natus earum similique impedit eum asperiores! Aliquam, explicabo vero provident.
-	</div>
-</div>
-<!-- end notavailable -->
-{% endmacro %}
 {% macro card(props) %}
 <!-- begin card -->
 <div class="card{% if props.class %} {{ props.class }}{% endif %}">
-	<div class="card__img" style="background-image: url(./img/{{ props.img }});"></div>
+	<div class="card__img" style="background-image: url(./img/{{ props.img }});">
+		{% if props.action %}
+		<div class="action-block">%</div>
+		{% endif %}
+	</div>
 	<div class="card__wrap">
 		<div class="card__table">
 			<div class="card__center">
@@ -176,7 +164,7 @@
 					<span class="card__quantity-text">Кол–во:</span>
 					{% if props.quantity.select %}
 					<div class="card__seclect">
-						<select class="select js-select" 
+						<select class="select select_bord js-select" 
 						{% if props.quantity.select.multiple %} multiple{% endif %}
 						{% if props.quantity.select.actions %} data-actions-box="true"{% endif %}
 						data-width="{{ props.quantity.select.width or '100%'}}">
@@ -219,6 +207,36 @@
 	</div>
 </div>
 <!-- end card -->
+{% endmacro %}
+
+{% macro notavailable(props) %}
+<!-- begin notavailable -->
+<div class="notavailable js-drop">
+	<div class="notavailable__text js-drop-shows">
+		<svg class="notavailable__icon icon icon-warning"><use xlink:href="img/sprite.svg#icon-warning"></use></svg>
+		К сожалению, некоторых товаров из корзины больше нет в наличии.
+	</div>
+	<div class="notavailable__button">
+		<a href="#" class="btn btn_md btn_bord btn_bord-gray js-open-drop" type="button" data-text-open="Показать" data-text-close="СВЕРНУТЬ"><span class="btn__text js-drop-btn-text">Показать</span></a>
+	</div>
+	<div class="notavailable__wrap js-drop-hidden">
+		{% if props.cardList %}
+            {% for item in props.cardList %}
+                {{ card({
+                	class: item.class,
+					img: item.img,
+					price: item.price,
+					priceOld: item.priceOld,
+					benefit: item.benefit,
+					like: item.like,
+					subscribe: item.subscribe,
+					availability: item.availability
+				}) }}
+            {% endfor %}
+		{% endif %}
+	</div>
+</div>
+<!-- end notavailable -->
 {% endmacro %}
 <!-- ------------------------------ END BASKET ------------------------------ -->
 
