@@ -78,9 +78,9 @@
 	line-height: 1.5
 	border: none
 	box-shadow: 0 6px 12px rgba(#000, 0.16)
-	&[role="combobox"]
-		width: 326px 
-		min-width: 326px
+	.show-tick &
+		max-width: 326px 
+		min-width: initial
 	li 
 		a
 			padding: 10px 16px
@@ -132,6 +132,10 @@
 			line-height: 24px
 			.icon-color
 				margin: 2px 1000px 0 0
+	&_bord
+		.dropdown-toggle
+			background-color: transparent 
+			border: 1px solid $silver 
 .icon-color
 	width: 16px
 	height: 16px
