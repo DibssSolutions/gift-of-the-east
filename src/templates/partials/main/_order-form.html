@@ -1,278 +1,308 @@
+{% import "partials/_mixins.html" as mixins %}
+
 {% macro ordered_shop() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Каталог
-    </h4>
-    <form action="" class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    3600 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group order-form__card-group">
-            <div class="card">
-                <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
-                <div class="card__wrap">
-                    <div class="card__vendorcode">Артикул: 45678</div>
-                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
-                    <div class="card__quantity">
-                        Кол–во:
-                        <span>1</span>
-                    </div>
-                    <div class="card__price">
-                        <span>1000 ₽</span>
-                        <span class="is-old">1400 ₽</span>
-                    </div>
-                    <div class="card__benefit">Ваша выгода 400 ₽</div>
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Каталог
+        </h4>
+        <form action="" class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        3600 ₽
+                    </span>
                 </div>
             </div>
-            <div class="order-form__divider order-form__divider--top"></div>
-            <a href="#" class="order-form__more">Еще 2 товара</a>
-            <div class="order-form__divider order-form__divider--bottom"></div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
+            <div class="order-form__group order-form__card-group">
+                <div class="card">
+                    <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+                    <div class="card__wrap">
+                        <div class="card__vendorcode">Артикул: 45678</div>
+                        <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                        <div class="card__quantity">
+                            Кол–во:
+                            <span>1</span>
+                        </div>
+                        <div class="card__price">
+                            <span>1000 ₽</span>
+                            <span class="is-old">1400 ₽</span>
+                        </div>
+                        <div class="card__benefit">Ваша выгода 400 ₽</div>
+                    </div>
+                </div>
+                <div class="order-form__divider order-form__divider--top"></div>
+                <a href="#" class="order-form__more">Еще 2 товара</a>
+                <div class="order-form__divider order-form__divider--bottom"></div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        РЕФЕРАЛЬНАЯ СКИДКА
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        500 ₽
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Скидка
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        400 ₽
+                    </span>
+                </div>
             </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    400 ₽
-                </span>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Самовывоз
+                    </span>
+                    <span class="order-form__text">
+                        Бесплатно
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    70 лет Октября, 25 к.2, сегодня с 17:00
+                </div>
             </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Самовывоз
-                </span>
-                <span class="order-form__text">
-                    Бесплатно
-                </span>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big">
+                        Всего
+                    </span>
+                    <span class="order-form__text order-form__text--big">
+                        400 ₽
+                    </span>
+                </div>
+                <button type="submit" class="btn order-form__submit">ОФОРМИТЬ ЗАКАЗ</button>
             </div>
-            <div class="order-form__row">
-                70 лет Октября, 25 к.2, сегодня с 17:00
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text order-form__text--big">
-                    Всего
-                </span>
-                <span class="order-form__text order-form__text--big">
-                    400 ₽
-                </span>
-            </div>
-            <button type="submit" class="btn order-form__submit">ОФОРМИТЬ ЗАКАЗ</button>
-        </div>
-    </form>
-</div>
-{% endmacro %} 
+        </form>
+    </div>
+{% endmacro %}
 
 {% macro self_delivery() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Ваш заказ
-    </h4>
-    <form action="" class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    3600 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group order-form__card-group">
-            <div class="card">
-                <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
-                <div class="card__wrap">
-                    <div class="card__vendorcode">Артикул: 45678</div>
-                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
-                    <div class="card__quantity">
-                        Кол–во:
-                        <span>1</span>
-                    </div>
-                    <div class="card__price">
-                        <span>1000 ₽</span>
-                        <span class="is-old">1400 ₽</span>
-                    </div>
-                    <div class="card__benefit">Ваша выгода 400 ₽</div>
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Ваш заказ
+        </h4>
+        <form action="" class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        3600 ₽
+                    </span>
                 </div>
             </div>
-            <div class="order-form__divider order-form__divider--top"></div>
-            <a href="#" class="order-form__more">Еще 2 товара</a>
-            <div class="order-form__divider order-form__divider--bottom"></div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
+            <div class="order-form__group order-form__card-group">
+                <div class="card">
+                    <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+                    <div class="card__wrap">
+                        <div class="card__vendorcode">Артикул: 45678</div>
+                        <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                        <div class="card__quantity">
+                            Кол–во:
+                            <span>1</span>
+                        </div>
+                        <div class="card__price">
+                            <span>1000 ₽</span>
+                            <span class="is-old">1400 ₽</span>
+                        </div>
+                        <div class="card__benefit">Ваша выгода 400 ₽</div>
+                    </div>
+                </div>
+                <div class="order-form__divider order-form__divider--top"></div>
+                <a href="#" class="order-form__more">Еще 2 товара</a>
+                <div class="order-form__divider order-form__divider--bottom"></div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        РЕФЕРАЛЬНАЯ СКИДКА
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        500 ₽
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Скидка
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        400 ₽
+                    </span>
+                </div>
             </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    400 ₽
-                </span>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big">
+                        Всего
+                    </span>
+                    <span class="order-form__text order-form__text--big">
+                        2700 ₽
+                    </span>
+                </div>
+                <button type="submit" class="btn order-form__submit order-form__submit--delivery">Перейти к оплате</button>
             </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text order-form__text--big">
-                    Всего
-                </span>
-                <span class="order-form__text order-form__text--big">
-                    2700 ₽
-                </span>
-            </div>
-            <button type="submit" class="btn order-form__submit order-form__submit--delivery">Перейти к оплате</button>
-        </div>
-    </form>
-</div>
-{% endmacro %} 
+        </form>
+    </div>
+{% endmacro %}
 
 {% macro self_delivery_payment() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Каталог
-    </h4>
-    <form action="" class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    3600 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group order-form__card-group">
-            <div class="card">
-                <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
-                <div class="card__wrap">
-                    <div class="card__vendorcode">Артикул: 45678</div>
-                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
-                    <div class="card__quantity">
-                        Кол–во:
-                        <span>1</span>
-                    </div>
-                    <div class="card__price">
-                        <span>1000 ₽</span>
-                        <span class="is-old">1400 ₽</span>
-                    </div>
-                    <div class="card__benefit">Ваша выгода 400 ₽</div>
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Каталог
+        </h4>
+        <form action="" class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        3600 ₽
+                    </span>
                 </div>
             </div>
-            <div class="order-form__divider order-form__divider--top"></div>
-            <a href="#" class="order-form__more">Еще 2 товара</a>
-            <div class="order-form__divider order-form__divider--bottom"></div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
+            <div class="order-form__group order-form__card-group">
+                <div class="card">
+                    <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+                    <div class="card__wrap">
+                        <div class="card__vendorcode">Артикул: 45678</div>
+                        <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                        <div class="card__quantity">
+                            Кол–во:
+                            <span>1</span>
+                        </div>
+                        <div class="card__price">
+                            <span>1000 ₽</span>
+                            <span class="is-old">1400 ₽</span>
+                        </div>
+                        <div class="card__benefit">Ваша выгода 400 ₽</div>
+                    </div>
+                </div>
+                <div class="order-form__divider order-form__divider--top"></div>
+                <a href="#" class="order-form__more">Еще 2 товара</a>
+                <div class="order-form__divider order-form__divider--bottom"></div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        РЕФЕРАЛЬНАЯ СКИДКА
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        500 ₽
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Скидка
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        400 ₽
+                    </span>
+                </div>
             </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    400 ₽
-                </span>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Самовывоз
+                    </span>
+                    <span class="order-form__text">
+                        Бесплатно
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    70 лет Октября, 25 к.2, сегодня с 17:00
+                </div>
             </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Самовывоз
-                </span>
-                <span class="order-form__text">
-                    Бесплатно
-                </span>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big">
+                        Всего
+                    </span>
+                    <span class="order-form__text order-form__text--big">
+                        400 ₽
+                    </span>
+                </div>
+                <button type="submit" class="btn order-form__submit order-form__submit--delivery">купить</button>
             </div>
-            <div class="order-form__row">
-                70 лет Октября, 25 к.2, сегодня с 17:00
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text order-form__text--big">
-                    Всего
-                </span>
-                <span class="order-form__text order-form__text--big">
-                    400 ₽
-                </span>
-            </div>
-            <button type="submit" class="btn order-form__submit order-form__submit--delivery">купить</button>
-        </div>
-    </form>
-</div>
-{% endmacro %} 
+        </form>
+    </div>
+{% endmacro %}
 
 {% macro basket_ref() %}
-<div class="sidebar sidebar__table">
-    <h4 class="sidebar__title">
-        Каталог
-    </h4>
-    <form action="" class="order-form">
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    ТОВАРЫ НА СУММУ
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    3600 ₽
-                </span>
+    <div class="sidebar sidebar__table">
+        <h4 class="sidebar__title">
+            Каталог
+        </h4>
+        <form action="" class="order-form">
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        ТОВАРЫ НА СУММУ
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        3600 ₽
+                    </span>
+                </div>
             </div>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        РЕФЕРАЛЬНАЯ СКИДКА
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        500 ₽
+                    </span>
+                </div>
+                <div class="order-form__row">
+                    <span class="order-form__text">
+                        Скидка
+                    </span>
+                    <span class="order-form__text order-form__text--red">
+                        400 ₽
+                    </span>
+                </div>
+            </div>
+            <div class="order-form__group">
+                <div class="order-form__row">
+                    <span class="order-form__text order-form__text--big">
+                        Всего
+                    </span>
+                    <span class="order-form__text order-form__text--big">
+                        400 ₽
+                    </span>
+                </div>
+                <button type="submit" class="btn order-form__submit">ОФОРМИТЬ ЗАКАЗ</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="order-checkbox">
+        <input type="checkbox" name="payment-agreement" id="payment-agreement">
+        <label for="payment-agreement">
+            <span class="check-icon">{{mixins.icon('check')}}</span>
+            <span>
+                Я согласен с
+                <a href="">условиями покупки</a>
+                и ознакомился с
+                <a href="#">условиями возврата</a>.
+            </span>
+        </label>
+    </div>
+
+    <div class="order-calculation js-drop">
+        <button class="order-calculation__btn js-open-drop js-drop-shows">
+            <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
+            {{mixins.icon('chevron-down')}}
+        </button>
+        <div class="js-drop-hidden order-calculation__form" style="display: none;">
+            <form action="" class="delivery-calculation">
+                <input class="input" type="text" placeholder="Регион">
+                <input class="input" type="number" placeholder="Индекс">
+                <button type="submit">Рассчитать стоимость</button>
+            </form>
         </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    РЕФЕРАЛЬНАЯ СКИДКА
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    500 ₽
-                </span>
-            </div>
-            <div class="order-form__row">
-                <span class="order-form__text">
-                    Скидка
-                </span>
-                <span class="order-form__text order-form__text--red">
-                    400 ₽
-                </span>
-            </div>
-        </div>
-        <div class="order-form__group">
-            <div class="order-form__row">
-                <span class="order-form__text order-form__text--big">
-                    Всего
-                </span>
-                <span class="order-form__text order-form__text--big">
-                    400 ₽
-                </span>
-            </div>
-            <button type="submit" class="btn order-form__submit">ОФОРМИТЬ ЗАКАЗ</button>
-        </div>
-    </form>
+    </div>
 </div>
 {% endmacro %}
