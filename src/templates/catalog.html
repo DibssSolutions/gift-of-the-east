@@ -5,12 +5,15 @@
     <div class="inner">
         {{ mixins.breadcrumbs({ list: ['Назад','Главная','Каталог'] }) }}
         <div class="row">
-            <div class="col col-33">
+            <div class="col col-33 col-sm-100">
                 <aside class="sidebar">
-                    <h4 class="sidebar__title">
+					<button type="button" class="sidebar__toggler js-sidebar-trigger">
+						{{mixins.icon('plus')}} Каталог
+					</button>
+                    <h4 class="sidebar__title d-sm-none">
                         Каталог
                     </h4>
-                    <div class="sidebar__list">
+                    <div class="sidebar__list js-sidebar-container">
                         <ul class="sidebar-list">
                             {% for item in data.sidebar_list %}
                                 {% if item.single %}
@@ -34,7 +37,7 @@
                     </div>
                 </aside>
             </div>
-            <div class="col col-66">
+            <div class="col col-66 col-sm-100">
 
                 {{ mixins.theadsimple({ title: 'Каталог', product: '6758 товаров' }) }}
 

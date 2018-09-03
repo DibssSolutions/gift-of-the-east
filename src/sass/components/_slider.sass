@@ -307,24 +307,35 @@
 	width: 100%
 	padding-left: 114px
 	&__show
+		overflow: hidden
 		font-size: 0
 	&__slide
 		width: 100%
-		height: 0
-		padding-bottom: 40%
+		height: 592px
 		background-repeat: no-repeat
 		background-size: cover
 		background-position: 50% 50%
 	&__nav
+		position: absolute
+		left: -70px
+		top: 70px
+		transform: rotate(90deg)
 		.slick-slide
-		width: 72px
-		height: 72px
-		// position: absolute
-		// left: 0
-		// top: 0
-		// transform: rotate(90deg)
+			width: 72px !important
+			height: 72px
+			border: 1px solid transparent
+			transition: border-color .3s
+		.slick-list
+			padding: 0	!important
+		.slick-slide.slick-current
+			border: 1px solid $silver
 	&__slide-nav
+		transform: rotate(-90deg)
+		margin-bottom: 20px
+		width: 100%
+		height: 70px
 		background-repeat: no-repeat
 		background-size: cover
 		background-position: 50% 50%
+		cursor: pointer
 

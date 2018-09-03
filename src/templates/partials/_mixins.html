@@ -247,13 +247,13 @@
 <!-- ------------------------------ CARDS ------------------------------ -->
 {% macro cardcatalog(props) %}
 <!-- Start card-catalog -->
-<div class="card-catalog">
+<a href="#" class="card-catalog">
 	<div class="card-catalog__img img-bg" style="background-image: url(./img/{{ props.img }});">
 	</div>
 	<div class="card-catalog__wrap">
 		<h4 class="card-catalog__title">{{ props.title }}</h4>
 	</div>
-</div>
+</a>
 <!-- End card-catalog -->
 {% endmacro %}
 
@@ -281,11 +281,11 @@
 
 {% macro cardarticle(props) %}
 <!-- Start card-article -->
-<div class="card-article">
+<a href="#" class="card-article">
 	<div class="card-article__img img-bg" style="background-image: url(./img/{{ props.img }});">
 		<h5 class="card-article__title title">{{ props.title }}</h5>
 	</div>
-</div>
+</a>
 <!-- End card-article -->
 {% endmacro %}
 <!-- ------------------------------ END CARDS ------------------------------ -->

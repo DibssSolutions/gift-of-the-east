@@ -131,9 +131,20 @@
 		&.is-active
 			background-color: $white
 			border: 1px solid $lightBrown
+			.radio-btn__icon
+				color: $lightBrown
+			.radio-btn__title	
+				color: $black
+		&:hover
+			.radio-btn__icon
+				color: $lightBrown
+			.radio-btn__title	
+				color: $black
 	&__icon
+		transition: color .3s
 		margin-right: 8px
 	&__title
+		transition: color .3s
 		line-height: 1
 		margin-bottom: 4px			
 	input
