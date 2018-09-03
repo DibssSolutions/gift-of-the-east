@@ -16,29 +16,26 @@
         // margin: 0 -6px
         position: relative
         border-bottom: 2px solid $lightBrown
-    &__btn
+    &-btn
         position: relative
         padding: 10px 16px 8px 16px
         font-family: $montserrat
         font-size: 0
         line-height: 20px
         transition: background-color .4s, padding-right .4s, color .4s
+        background-color: $gallery
         span 
             +f(14px, 400, 1.42857)
             vertical-align: middle
         .icon
             vertical-align: middle
             fill: $silver
-        &--main 
-            background-color: $gallery
-            .icon
-                font-size: 8px
-                margin-left: 15px
-                transition: transform 0.4s
-            &.is-open .icon
-                +rotate(180)
-
-        &--reset 
+            font-size: 8px
+            margin-left: 15px
+            transition: transform 0.4s
+        &.is-open .icon
+            +rotate(180)
+        &-reset 
             background-color: transparent
             transition: background-color .4s
             .icon
