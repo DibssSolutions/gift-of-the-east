@@ -8,18 +8,38 @@
     &__row
         display: flex
         justify-content: space-between
-        &:not(:last-of-type)
-            margin-bottom: 17px
+        flex-wrap: wrap
+        color: $black
+        &:not(:first-of-type)
+            margin-top: 17px
+        &--submit
+            padding: 0 36px
+            margin-top: 24px
+        &--highlighted
+            background-color: $lightYellow
+            padding: 17px 8px 10px
+            margin: 0 -8px 24px 
     &__text
         text-transform: uppercase
-        font-size: 13px
         font-weight: 500
         line-height: 1
-        color: $black
         &--red 
             color: $red
         &--big 
             font-size: 16px
+        &--full
+            flex: 0 0 100%
+            text-align: left
+            margin-top: 10px
+        &-lower
+            font-size: 14px
+            display: inline-block
+            &--bold
+                font-weight: 500
+                min-width: 100px
+        &-dark 
+            color: $gray
+                
     &__submit
         margin-top: 24px
         padding-left: 64px
@@ -75,38 +95,6 @@
 .order-checkbox
     margin-top: 16px
     margin-bottom: 24px
-    font-family: $montserrat
-    color: $black
-    input[type="checkbox"]
-        position: absolute
-        opacity: 0
-        right: 2000px
-        &:checked + label
-            .check-icon .icon
-                display: block
-    input[type="checkbox"] + label
-        position: relative
-        padding-left: 28px
-        cursor: pointer
-        display: block
-        .check-icon
-            position: absolute
-            display: inline-block
-            left: 0
-            top: 0
-            height: 20px
-            width: 20px
-            border: 1px solid $silver
-            text-align: center
-            font-size: 0
-            // background-color: $lightBrown
-            .icon
-                display: none
-                font-size: 12px
-                +vcenter
-                fill: $lightBrown
-    a 
-        text-decoration: underline
 
 .order-calculation
     &__btn
@@ -144,10 +132,47 @@
         &.is-open .icon
             +rotate(180)
     &__form
-        padding: 24px 52px
         border: 1px solid $silver
         border-top: none
+
 
 .delivery-calculation
     input
         margin-bottom: 16px
+    &__filter
+        display: flex
+        align-items: center
+        padding: 14px 7px 10px 16px
+        justify-content: space-between
+
+    &__city
+        font-size: 16px
+        color: $black
+        padding-left: 16px
+        margin-bottom: 16px
+    &__input-group
+        padding: 24px 52px
+    &__check-group
+        padding: 0 16px 0
+        margin-bottom: -16px
+    .radio-tab
+        background-color: transparent
+        justify-content: flex-start
+        &__label
+            padding: 0 0 16px 28px
+            &.is-active
+                background-color: transparent
+        &__title
+            position: relative
+            font-size: 14px
+            margin-bottom: 0
+            color: $black
+            &:before
+                top: 0
+                left: -28px
+            &:after
+                top: 4px
+                left: -24px
+        &__dscr
+            font-size: 14px
+            color: $black

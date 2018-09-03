@@ -1,253 +1,158 @@
----
-title: UI
----
-{% extends "layouts/_layout.html" %}
+--- title: UI --- {% extends "layouts/_layout.html" %} {% block content %}
 
-{% block content %}
-	
-	<div class="inner">
-		<div class="row" style="margin-top: 20px;">
-			{% for slide in [
-				{
-					img: "art-background-beautiful.png",
-					title: "Уникальные светильники",
-					text: "Наши светильники поразят своим необычным внешним видом и привнесут "
-				},
-				{
-					img: "sudhith-xavier.png",
-					title: "Ретро-центры",
-					text: "Ретро снова в моде! Не оставайтесь в стороне от уникальной возможности "
-				}
-				] %}
-			<div class="col col-50">
-				<!-- begin holiday -->
-				<div class="holiday">
-					<div class="holiday__img">
-						<img src="./img/{{slide.img}}" alt="img">
-					</div>
-					<div class="holiday__wrap">
-						<div class="holiday__title title-sm">{{slide.title}}</div>
-						<p>{{slide.text}}</p>
-					</div>
+<div class="inner">
+	<div class="row" style="margin-top: 20px;">
+		{% for slide in [ { img: "art-background-beautiful.png", title: "Уникальные светильники", text: "Наши светильники поразят
+		своим необычным внешним видом и привнесут " }, { img: "sudhith-xavier.png", title: "Ретро-центры", text: "Ретро снова в
+		моде! Не оставайтесь в стороне от уникальной возможности " } ] %}
+		<div class="col col-50">
+			<!-- begin holiday -->
+			<div class="holiday">
+				<div class="holiday__img">
+					<img src="./img/{{slide.img}}" alt="img">
 				</div>
-				<!-- end holiday -->
-			</div>
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col col-100">
-				<div class="tags">
-					{% for tagClass in ['', 'orange', 'black', 'red', 'yellow', 'beige', 'purple', 'turquoise', 'green'] %}
-					<a href="#" class="tag tag_{{ tagClass }}">text</a>
-					{% endfor %}
+				<div class="holiday__wrap">
+					<div class="holiday__title title-sm">{{slide.title}}</div>
+					<p>{{slide.text}}</p>
 				</div>
 			</div>
+			<!-- end holiday -->
 		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for cardcatalog in [
-				{
-					img: "amethyst-1920@2x.jpg",
-					title: "Изделия из натуральных камней"
-				},
-				{
-					img: "thumb_cover_header@2x.jpg",
-					title: "Муранское стекло"
-				},
-				{
-					img: "nav-img@2x.jpg",
-					title: "Предметы интерьера"
-				}
-				] %}
-			<div class="col col-33">
-				{{ mixins.cardcatalog({
-					img: cardcatalog.img,
-					title: cardcatalog.title
-				}) }}
-			</div>
-			{% endfor %}
-		</div>
-		<div class="cardcolaction" style="margin-top: 20px;">
-			{% for cardcolaction in [
-				{
-					img: "derek-story-unsplash@2x.jpg",
-					title: "Коллекция Восточные сказки",
-					icon: "mixins.icon('arrow-right')"
-				}
-				] %}
-				{{ mixins.cardcolaction({
-					img: cardcolaction.img,
-					title: cardcolaction.title,
-					icon: cardcolaction.icon
-				}) }}
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for cardarticle in [
-				{
-					img: "pexels-photo-698171@2x.jpg",
-					title: "Заголовок статьи, желательно, чтобы это были две–три строчки"
-				}
-				] %}
-				<div class="col col-50">
-				{{ mixins.cardarticle({
-					img: cardarticle.img,
-					title: cardarticle.title
-				}) }}
-				</div>
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for rating in [
-				{
-					textrating: "2 Отзыва",
-					textviews: "12 Просмотров",
-					textvendorcode: "Артикул: 45675"
-				}
-				] %}
-				<div class="col col-50">
-				{{ mixins.rating({
-					textrating: rating.textrating,
-					textviews: rating.textviews,
-					textvendorcode: rating.textvendorcode
-				}) }}
-				</div>
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for checkbox in [
-				{
-					text: "С фото"
-				}
-				] %}
-				<div class="col col-50">
-				{{ mixins.checkbox( checkbox.text) }}
-				</div>
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for checkedbtn in [
-				{
-					text: "Выбран"
-				}
-				] %}
-				<div class="col col-50">
-				{{ mixins.checkedbtn( checkedbtn.text) }}
-				</div>
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for table in [
-				{
-					thTitle1: "Магазин",
-					thTitle2: "Дата самовывоза",
-					tdTitle1: "Континент 2",
-					tdDscpt1: "70 лет Октября, 25 к.2",
-					tdTitle2: "Сегодня с 17:00",
-					tdDscpt2: "пн–вс 10:00–21:00",
-					textBtn: "Выбран"
-				}
-				] %}
-				{{ mixins.table({
-					thTitle1: table.thTitle1,
-					thTitle2: table.thTitle2,
-					tdTitle1: table.tdTitle1,
-					tdDscpt1: table.tdDscpt1,
-					tdTitle2: table.tdTitle2,
-					tdDscpt2: table.tdDscpt2,
-					textBtn: table.textBtn
-				}) }}
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for radiotab in [
-				{
-					title1: "Самовывоз из магазина",
-					dscr1: "Бесплатно",
-					title2: "Доставка домой или в офис",
-					dscr2: "от 100 ₽"
-				}
-				] %}
-					{{ mixins.radiotab({
-						title1: radiotab.title1,
-						dscr1: radiotab.dscr1,
-						title2: radiotab.title2,
-						dscr2: radiotab.dscr2
-					}) }}
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for radiobtn in [
-				{
-					title1: "Список",
-					title2: "Карта"
-				}
-				] %}
-					{{ mixins.radiobtn({
-						title1: radiobtn.title1,
-						title2: radiobtn.title2
-					}) }}
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for newsearch in [
-				{
-					placeholder: "Город, адрес, название ТЦ"
-				}
-				] %}
-					{{ mixins.newsearch(newsearch.placeholder) }}
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col-100">
-				<div class="title text-center">START SELECT</div>
-				<a href="https://developer.snapappointments.com/bootstrap-select/examples/">bootstrap-select LINK</a>
-				<p>simple</p>
-				<select class="select js-select" data-width="100%">
-					<option value="Cначала новинки">Cначала новинки</option>
-					<option value="Цена по возрастанию">Цена по возрастанию</option>
-					<option value="Цена по убыванию">Цена по убыванию</option>
-				</select>
-			</div>
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col-100">
-				<p>multiple</p>
-				<select class="select js-select" data-width="100%" multiple>
-					<option value="Cначала новинки">Cначала новинки</option>
-					<option value="Цена по возрастанию">Цена по возрастанию</option>
-					<option value="Цена по убыванию">Цена по убыванию</option>
-				</select>
-			</div>
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col-100">
-				<p>multiple + actions</p>
-				<select class="select js-select" data-width="100%" multiple data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
-					<option value="Cначала новинки">Cначала новинки</option>
-					<option value="Цена по возрастанию">Цена по возрастанию</option>
-					<option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
-				</select>
-			</div>
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col-100">
-				<p>multiple/color/text-format-count</p>
-				<select class="select select_color js-select" data-width="101" multiple title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} с {1}" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все">
-					<option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
-					<option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
-					<option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
-					<option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
-					<option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
-					<option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
-					<option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
-					<option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
-					<option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
-					<option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
-				</select>
-				<div class="title text-center" style="margin-top: 20px;">END SELECT</div>
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<div class="col col-100">
+			<div class="tags">
+				{% for tagClass in ['', 'orange', 'black', 'red', 'yellow', 'beige', 'purple', 'turquoise', 'green'] %}
+				<a href="#" class="tag tag_{{ tagClass }}">text</a>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
-	
+	<div class="row" style="margin-top: 20px;">
+		{% for cardcatalog in [ { img: "amethyst-1920@2x.jpg", title: "Изделия из натуральных камней" }, { img: "thumb_cover_header@2x.jpg",
+		title: "Муранское стекло" }, { img: "nav-img@2x.jpg", title: "Предметы интерьера" } ] %}
+		<div class="col col-33">
+			{{ mixins.cardcatalog({ img: cardcatalog.img, title: cardcatalog.title }) }}
+		</div>
+		{% endfor %}
+	</div>
+	<div class="cardcolaction" style="margin-top: 20px;">
+		{% for cardcolaction in [ { img: "derek-story-unsplash@2x.jpg", title: "Коллекция Восточные сказки", icon: "mixins.icon('arrow-right')"
+		} ] %} {{ mixins.cardcolaction({ img: cardcolaction.img, title: cardcolaction.title, icon: cardcolaction.icon }) }} {%
+		endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for cardarticle in [ { img: "pexels-photo-698171@2x.jpg", title: "Заголовок статьи, желательно, чтобы это были две–три
+		строчки" } ] %}
+		<div class="col col-50">
+			{{ mixins.cardarticle({ img: cardarticle.img, title: cardarticle.title }) }}
+		</div>
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for rating in [ { textrating: "2 Отзыва", textviews: "12 Просмотров", textvendorcode: "Артикул: 45675" } ] %}
+		<div class="col col-50">
+			{{ mixins.rating({ textrating: rating.textrating, textviews: rating.textviews, textvendorcode: rating.textvendorcode }) }}
+		</div>
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<div class="col-100">
+			<div class="title text-center">FORM ITEMS</div>
+			<a href="https://developer.snapappointments.com/bootstrap-select/examples/">bootstrap-select LINK</a>
+			<p>simple</p>
+			<select class="select js-select" data-width="100%">
+				<option value="Cначала новинки">Cначала новинки</option>
+				<option value="Цена по возрастанию">Цена по возрастанию</option>
+				<option value="Цена по убыванию">Цена по убыванию</option>
+			</select>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<div class="col-100">
+			<p>multiple</p>
+			<select class="select js-select" data-width="100%" multiple>
+				<option value="Cначала новинки">Cначала новинки</option>
+				<option value="Цена по возрастанию">Цена по возрастанию</option>
+				<option value="Цена по убыванию">Цена по убыванию</option>
+			</select>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<div class="col-100">
+			<p>multiple + actions</p>
+			<select class="select js-select" data-width="100%" multiple data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
+				<option value="Cначала новинки">Cначала новинки</option>
+				<option value="Цена по возрастанию">Цена по возрастанию</option>
+				<option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
+			</select>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<div class="col-100">
+			<p>multiple/color/text-format-count</p>
+			<select class="select select_color js-select" data-width="101" multiple title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} с {1}" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все">
+				<option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
+				<option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
+				<option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
+				<option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
+				<option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
+				<option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
+				<option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
+				<option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
+				<option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
+				<option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
+			</select>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for checkbox in [ { text: "С фото" } ] %}
+		<div class="col col-50">
+			{{ mixins.checkbox( checkbox.text) }}
+		</div>
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for checkedbtn in [ { text: "Выбран" } ] %}
+		<div class="col col-50">
+			{{ mixins.checkedbtn( checkedbtn.text) }}
+		</div>
+		{% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for radiotab in [ { title1: "Самовывоз из магазина", dscr1: "Бесплатно", title2: "Доставка домой или в офис", dscr2: "от
+		100 ₽" } ] %} {{ mixins.radiotab({ title1: radiotab.title1, dscr1: radiotab.dscr1, title2: radiotab.title2, dscr2: radiotab.dscr2
+		}) }} {% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for radiobtn in [ { title1: "Список", title2: "Карта" } ] %} {{ mixins.radiobtn({ title1: radiobtn.title1, title2: radiobtn.title2
+		}) }} {% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for newsearch in [ { placeholder: "Город, адрес, название ТЦ" } ] %} {{ mixins.newsearch(newsearch.placeholder) }} {%
+		endfor %}
+	</div>
+
+	<!-- ******************************* Order ******************************* -->
+	<div class="title text-center" style="margin-top: 20px;">Order</div>
+	<div class="row" style="margin-top: 20px;">
+		{% for table in [ { thTitle1: "Магазин", thTitle2: "Дата самовывоза", tdTitle1: "Континент 2", tdDscpt1: "70 лет Октября,
+		25 к.2", tdTitle2: "Сегодня с 17:00", tdDscpt2: "пн–вс 10:00–21:00", textBtn: "Выбран" } ] %} {{ mixins.table({ thTitle1:
+		table.thTitle1, thTitle2: table.thTitle2, tdTitle1: table.tdTitle1, tdDscpt1: table.tdDscpt1, tdTitle2: table.tdTitle2,
+		tdDscpt2: table.tdDscpt2, textBtn: table.textBtn }) }} {% endfor %}
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<div class="col col-33" style="margin-top: 20px;">{{order.ordered_shop()}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery()}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.basket_ref()}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.basket_1()}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(null)}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(type=true)}}</div>
+		<div class="col col-33" style="margin-top: 20px;">{{order.confirmation()}}</div> 
+		<div class="col col-33" style="margin-top: 20px;">{{order.basket_2()}}</div> 
+	</div>
+</div>
+
 
 {% endblock %}
