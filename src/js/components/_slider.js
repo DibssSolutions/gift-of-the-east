@@ -74,3 +74,19 @@ slider.each((i,el) => {
   });
 });
 
+ 
+$('.js-slider-products').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.js-slider-products-nav'
+});
+$('.js-slider-products-nav').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.js-slider-products',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+});

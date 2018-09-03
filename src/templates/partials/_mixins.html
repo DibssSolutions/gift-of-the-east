@@ -273,7 +273,7 @@
 <!-- Start rating -->
 <div class="rating-stars">
 	<input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="2"/>
-	<label class="rating-stars__text rating-stars__text--review" for="stars">{{ props.texdivating }}</label>
+	<a href="#" class="rating-stars__text rating-stars__text--review">{{ props.textdivating }}</a>
 	/
 	<span class="rating-stars__text views">{{ props.textviews }}</span>
 	/
@@ -399,9 +399,59 @@
 
 {% macro newsearch(placeholder) %}
 <!-- Start new-search -->
-<label class="new-search">
-	<input class="new-search__input" type="text" name="new-search" placeholder="{{ placeholder }}">
-	<span class="new-search__icon">{{ icon('search') }}</span>
-</label>
+<form class="new-search" action="/">
+	<label class="new-search__label">
+		<input class="new-search__input" type="text" name="new-search" placeholder="{{ placeholder }}">
+		<button type="submit" class="new-search__btn">{{ icon('search') }}</button>
+	</label>
+</form>
 <!-- End new-search -->
 {% endmacro %}
+
+<!-- ------------------------------ PRICE ------------------------------ -->
+
+{% macro price(props) %}
+<!-- Start price -->
+<div class="price">
+	<span class="price__number">
+		{{ props.price }}
+	</span>
+	<span class="price__text">{{ props.text }}</span>
+</div>
+<!-- End price -->
+{% endmacro %}
+
+{% macro newprice(props) %}
+<!-- Start newprice -->
+<div class="price price_mod">
+	<span class="price__number">
+		{{ props.price }}
+	</span>
+	<span class="price__text">{{ props.text }}</span>
+</div>
+<!-- End newprice -->
+{% endmacro %}
+
+{% macro availability(text) %}
+<!-- Start availability -->
+<a href="#" class="availability">
+	<span class="availability__icon">
+		{{ icon('location') }}
+	</span>
+	<span class="availability__text">{{ text }}</span>
+</a>
+<!-- End availability -->
+{% endmacro %}
+
+{% macro share(text) %}
+<!-- Start share -->
+<a href="#" class="share">
+	<span class="share__icon">
+		{{ icon('share-variant') }}
+	</span>
+	<span class="share__text">{{ text }}</span>
+</a>
+<!-- End share -->
+{% endmacro %}
+
+<!-- ------------------------------ END PRICE ------------------------------ -->

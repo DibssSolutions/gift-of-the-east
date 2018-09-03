@@ -99,14 +99,14 @@ title: UI
 		<div class="row" style="margin-top: 20px;">
 			{% for rating in [
 				{
-					textrating: "2 Отзыва",
+					textdivating: "2 Отзыва",
 					textviews: "12 Просмотров",
 					textvendorcode: "Артикул: 45675"
 				}
 				] %}
 				<div class="col col-50">
 				{{ mixins.rating({
-					textrating: rating.textrating,
+					textdivating: rating.textdivating,
 					textviews: rating.textviews,
 					textvendorcode: rating.textvendorcode
 				}) }}
@@ -197,6 +197,53 @@ title: UI
 					{{ mixins.newsearch(newsearch.placeholder) }}
 			{% endfor %}
 		</div>
+		<div class="row" style="margin-top: 20px;">
+			{% for price in [
+				{
+					price: "1000 ₽",
+					text: "Цена для Вас"
+				}
+				] %}
+					{{ mixins.price({
+						price: price.price,
+						text: price.text
+					}) }}
+			{% endfor %}
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			{% for newprice in [
+				{
+					price: "1400 ₽",
+					text: "Розничная цена"
+				}
+				] %}
+					{{ mixins.newprice({
+						price: newprice.price,
+						text: newprice.text
+					}) }}
+			{% endfor %}
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			{% for availability in [
+				{
+					text: "Розничная цена"
+				}
+				] %}
+					{{ mixins.availability( availability.text) }}
+			{% endfor %}
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			{% for share in [
+				{
+					text: "Поделиться с друзьями"
+				}
+				] %}
+					{{ mixins.share( share.text) }}
+			{% endfor %}
+		</div>
+				<!--Start slider-products -->
+				{% include "partials/_slider-products.html" %}
+				<!-- End slider-products-->
 	</div>
 	
 
