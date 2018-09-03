@@ -219,10 +219,14 @@
         </ul>
         <!-- end breadcrumbs -->
         <div class="row">
-          <div class="col col-33">
+          <div class="col col-33 col-sm-100">
             <aside class="sidebar">
-              <h4 class="sidebar__title"> Каталог </h4>
-              <div class="sidebar__list">
+              <button type="button" class="sidebar__toggler js-sidebar-trigger">
+                <svg class="icon icon-plus">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg> Каталог </button>
+              <h4 class="sidebar__title d-sm-none"> Каталог </h4>
+              <div class="sidebar__list js-sidebar-container">
                 <ul class="sidebar-list">
                   <li class="sidebar-list__item">
                     <a href="#">ИЗДЕЛИЯ ИЗ НАТУРАЛЬНЫХ КАМНЕЙ</a>
@@ -337,7 +341,7 @@
               </div>
             </aside>
           </div>
-          <div class="col col-66">
+          <div class="col col-66 col-sm-100">
             <!-- begin baskethead -->
             <div class="headsimple">
               <h2 class="headsimple__title title">Каталог <span class="headsimple__product">6758 товаров</span></h2>
@@ -526,8 +530,8 @@
                 <div class="filter__select">
                   <select class="select js-select" data-width="100%">
                     <option value="Категория товара">Категория товара</option>
-                    <option value="Цена по возрастанию">Цена по возрастанию</option>
-                    <option value="Цена по убыванию">Цена по убыванию</option>
+                    <option value="1">Вазы</option>
+                    <option value="2">Лампы</option>
                   </select>
                 </div>
                 <div class="filter__select"> lorem </div>

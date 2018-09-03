@@ -1,6 +1,8 @@
 .sidebar
     border: 1px solid $silver
     position: relative
+    +sm 
+        border: none
     &__title
         position: relative
         z-index: 20
@@ -16,10 +18,25 @@
         background-color: $white
         .sidebar__table & 
             margin-left: 10px
+        +sm 
+            display: none
+    &__toggler
+        display: none
+        background: none
+        vertical-align: middle
+        .icon-plus
+            font-size: 24px
+            fill: $lightBrown
+        +sm 
+            display: block
 
 .sidebar-list
     font-family: $montserrat
     padding: 10px 10px 15px 24px
+    +sm 
+        display: none
+        &.is-open
+            display: block
     &__item
         margin-bottom: 17px
         a
