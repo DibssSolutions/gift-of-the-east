@@ -94,19 +94,22 @@
 		background-color: $white 
 		&:not(:first-child)
 			margin-top: 16px
-	&__img
-		position: relative
+	&_bord
+		border-bottom: 1px solid rgba($silver, .5) 
+	&__img-wrap
 		vertical-align: top
 		display: table-cell
 		width: 176px
-		height: 176px
+		.card_simple &
+			width: 144px
+	&__img
+		position: relative
+		width: 100%
+		padding-bottom: 100%
 		background-position: center
 		background-size: cover
 		background-repeat: no-repeat
 		background-color: #F7F7F7
-		.card_simple &
-			width: 144px
-			height: 144px
 	&__club-card
 		position: absolute
 		top: 50%
@@ -114,8 +117,15 @@
 		margin: -36px 0 0 -56px
 		width: 112px
 		height: 72px
+		border-radius: 5px
 		box-shadow: 0 3px 20px rgba(#000, .16) 
 		background-color: $white 
+		+vertical
+	&__club-text
+		font-size: 13px
+		color: rgba($silver,.5) 
+		vertical-align: middle
+		display: inline-block
 	&__wrap
 		position: relative
 		height: 100%

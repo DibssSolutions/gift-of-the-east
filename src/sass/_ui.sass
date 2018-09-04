@@ -53,19 +53,62 @@
 		
 
 .like
+	position: relative
+	width: 22px
+	height: 20px
 	color: $gray
 	transition: color .3s
 	vertical-align: top
 	line-height: 1
 	font-size: 0
+	cursor: pointer
 	background-color: transparent 
 	display: inline-block
 	+hover
-		color: $red !important
-	&.is-check
-		color: $red 
+		color: $red
+	input
+		position: absolute
+		top: 0
+		left: 0
+		width: 22px
+		height: 20px
+		opacity: 0
+		cursor: pointer
+		&:checked
+			& ~ .icon-heart-outline
+				visibility: hidden
+				opacity: 0
+			& ~ .icon-heart
+				visibility: visible
+				opacity: 1
+			&:hover
+				& ~ .like__lines
+					opacity: 1
+					visibility: visible
 	.icon
+		position: absolute
+		top: 50%
+		left: 50%
+		margin: -10px 0 0 -11px
 		font-size: 20px
+		transition: opacity .3s, visibility .3s
+	.icon-heart
+		opacity: 0
+		visibility: hidden
+		color: $red 
+	&__lines
+		position: absolute
+		top: -2px
+		left: 2px
+		height: 4px
+		width: 26px
+		+rotate(45)
+		opacity: 0
+		visibility: hidden
+		transition: opacity .3s, visibility .3s
+		transform-origin: top left
+		border-bottom: 2px solid $red
+		background-color: $white  
 
 .subscribe-link
 	font-size: 14px
