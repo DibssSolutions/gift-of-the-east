@@ -1,17 +1,21 @@
 import './_range-slider';
-var slider = document.querySelector('.js-range-slider');
 
 $('.js-filter-reset').click(e => {
   var selects = $('.js-main-filter').find('.js-select');
   $(selects).selectpicker('deselectAll');
+
   var checkboxes = $('.js-main-filter').find($(':checkbox'));
   $(checkboxes).prop('checked', false);
-  slider.noUiSlider.reset();
+
+  var sliders = document.querySelectorAll('.js-range-slider');
+  sliders.forEach(slider => slider.noUiSlider.reset());
 });
 
-
-$('.js-range-reset').click(e => slider.noUiSlider.reset());
-
+$('.js-range-reset').click(function(e) {
+  var container = this.closest('.js-range-container');
+  var slider = container.querySelector('.js-range-slider');
+  slider.noUiSlider.reset();
+});
 
 $('.js-reset-calc-form').click(e => {
   var radio = $('.js-calc-form').find($(':radio'));

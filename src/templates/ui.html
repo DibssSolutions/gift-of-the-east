@@ -147,7 +147,7 @@
         <div class="row" style="margin-top: 20px;">
             <div class="col-100">
                 <p>range input</p>
-                <div class="dropdown dropdown-range">
+                <div class="dropdown dropdown-range js-range-container">
                     <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Цена
                     </a>
@@ -253,128 +253,145 @@
             {% endfor %}
         </div>
 
-	<!-- ******************************* Order ******************************* -->
+        <!-- ******************************* Order ******************************* -->
 
-	<div class="title text-center" style="margin-top: 20px;">Order</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for table in [ { thTitle1: "Магазин", thTitle2: "Дата самовывоза", tdTitle1: "Континент 2", tdDscpt1: "70 лет Октября,
-		25 к.2", tdTitle2: "Сегодня с 17:00", tdDscpt2: "пн–вс 10:00–21:00", textBtn: "Выбран" } ] %} 
-		<div class="col col-100">
-			{{ mixins.table({ thTitle1:
+        <div class="title text-center" style="margin-top: 20px;">Order</div>
+        <div class="row" style="margin-top: 20px;">
+            {% for table in[
+                {
+                    thTitle1: "Магазин",
+                    thTitle2: "Дата самовывоза",
+                    tdTitle1: "Континент 2",
+                    tdDscpt1: "70 лет Октября,
+ 25 к.2 ", tdTitle2: " Сегодня с 17: 00 ", tdDscpt2: " пн–вс 10: 00 –21: 00 ", textBtn: " Выбран " } ] %}
+                <div class="col col-100">
+                    {{ mixins.table({ thTitle1:
 			table.thTitle1, thTitle2: table.thTitle2, tdTitle1: table.tdTitle1, tdDscpt1: table.tdDscpt1, tdTitle2: table.tdTitle2,
-			tdDscpt2: table.tdDscpt2, textBtn: table.textBtn }) }} {% endfor %}
-		</div>
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for tablepay in [ { 
-			text: "Наличный расчет при получении в магазине", 
-			link: "Подробнее",
-			textBtn: "Выбрать" 
-		} ] 
-		%} 
-		<div class="col col-100">
-			{{ mixins.tablepay({ 
+			tdDscpt2: table.tdDscpt2, textBtn: table.textBtn }) }}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            {% for tablepay in[
+                {
+                    text: "Наличный расчет при получении в магазине",
+                    link: "Подробнее",
+                    textBtn: "Выбрать"
+                }
+            ]
+ %}
+                <div class="col col-100">
+                    {{ mixins.tablepay({ 
 				text: tablepay.text, 
 				link: tablepay.link, 
 				textBtn: tablepay.textBtn }) 
 			}}
-		</div>
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for newtablepay in [ { 
-			text: "Наличный расчет при получении в магазине", 
-			link: "Подробнее",
-			textBtn: "Выбрать" 
-		} ] 
-		%} 
-		<div class="col col-100">
-			{{ mixins.newtablepay({ 
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            {% for newtablepay in[
+                {
+                    text: "Наличный расчет при получении в магазине",
+                    link: "Подробнее",
+                    textBtn: "Выбрать"
+                }
+            ]
+ %}
+                <div class="col col-100">
+                    {{ mixins.newtablepay({ 
 				text: newtablepay.text, 
 				link: newtablepay.link, 
 				textBtn: newtablepay.textBtn }) 
 			}}
-		</div>
-		{% endfor %}
-	</div>
-	<div class="row">
-		{% for modtablepay in [ { 
-			text: "Наличный расчет при получении в магазине", 
-			link: "Подробнее",
-			textBtn: "Выбрать" 
-		} ] 
-		%} 
-		<div class="col col-100">
-			{{ mixins.modtablepay({ 
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for modtablepay in[
+                {
+                    text: "Наличный расчет при получении в магазине",
+                    link: "Подробнее",
+                    textBtn: "Выбрать"
+                }
+            ]
+ %}
+                <div class="col col-100">
+                    {{ mixins.modtablepay({ 
 				text: modtablepay.text, 
 				link: modtablepay.link, 
 				textBtn: modtablepay.textBtn }) 
 			}}
-		</div>
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for price in [
-			{
-				price: "1000 ₽",
-				text: "Цена для Вас"
-			}
-			] %}
-			<div class="col col-100">
-				{{ mixins.price({
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            {% for price in[
+                {
+                    price: "1000 ₽",
+                    text: "Цена для Вас"
+                }
+            ] %}
+                <div class="col col-100">
+                    {{ mixins.price({
 					price: price.price,
 					text: price.text
 				}) }}
-			</div>
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for newprice in [
-			{
-				price: "1400 ₽",
-				text: "Розничная цена"
-			}
-			] %}
-			<div class="col col-100">
-				{{ mixins.newprice({
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            {% for newprice in[
+                {
+                    price: "1400 ₽",
+                    text: "Розничная цена"
+                }
+            ] %}
+                <div class="col col-100">
+                    {{ mixins.newprice({
 					price: newprice.price,
 					text: newprice.text
 				}) }}
-			</div>
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for availability in [
-			{
-				text: "Розничная цена"
-			}
-			] %}
-			<div class="col col-100">
-				{{ mixins.availability( availability.text) }}
-			</div>	
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		{% for share in [
-			{
-				text: "Поделиться с друзьями"
-			}
-			] %}
-			<div class="col col-100">
-				{{ mixins.share( share.text) }}
-			</div>	
-		{% endfor %}
-	</div>
-	<div class="row" style="margin-top: 20px;">
-		<div class="col col-33" style="margin-top: 20px;">{{order.ordered_shop()}}</div>
-		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery()}}</div>
-		<div class="col col-33" style="margin-top: 20px;">{{order.basket_ref()}}</div>
-		<div class="col col-33" style="margin-top: 20px;">{{order.basket_1()}}</div>
-		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(null)}}</div>
-		<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(type=true)}}</div>
-		<div class="col col-33" style="margin-top: 20px;">{{order.confirmation()}}</div> 
-		<div class="col col-33" style="margin-top: 20px;">{{order.basket_2()}}</div> 
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            {% for availability in[
+                {
+                    text: "Розничная цена"
+                }
+            ] %}
+                <div class="col col-100">
+                    {{ mixins.availability( availability.text) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            {% for share in[
+                {
+                    text: "Поделиться с друзьями"
+                }
+            ] %}
+                <div class="col col-100">
+                    {{ mixins.share( share.text) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-33" style="margin-top: 20px;">{{order.ordered_shop()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.self_delivery()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.basket_ref()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.basket_1()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(null)}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(type=true)}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.confirmation()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.basket_2()}}</div>
+        </div>
 
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-100">
+                {% include "partials/main/_filter.html" %}
+            </div>
         </div>
 
     </div>
