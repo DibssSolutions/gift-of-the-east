@@ -12,16 +12,7 @@
 	&__body
 		display: table-row-group
 		+sm
-			display: block		
-	// &__row_header
-	// 	font-size: 14px
-	// 	font-weight: 400
-	// 	text-align: left
-	// 	.table__cell
-	// 		vertical-align: top
-	// 		padding: 0
-	// 		padding: 26px 18px 8px
-	// 		font-size: 16px		
+			display: block
 	&__row
 		position: relative
 		display: table-row
@@ -76,6 +67,30 @@
 		&:not(:last-child)
 			margin-bottom: 5px
 	&__text_up
+		color: $black
 		+sm
 			margin-right: 8px
-		color: $black		
+
+.table-pay
+	&__link
+		font-size: 14px
+		color: $gray
+		text-decoration: underline
+		transition: color .3s
+		&:hover
+			color: $lightBrown
+	&__row
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 28px 16px 24px
+		&:not(:first-child)
+			border-top: 1px solid $silver
+	&__text
+		display: block
+		margin-bottom: 5px	
+	&__left-col
+		flex: 0 0 80%
+	&__right-col
+		flex: 0 0 20%
+		text-align: right					

@@ -321,6 +321,8 @@
 <!-- End checked-btn -->
 {% endmacro %}
 
+<!-- ------------------------------ TABLE ------------------------------ -->
+
 {% macro table(props) %}
 <!-- Start table -->
 <div class="table">
@@ -383,6 +385,82 @@
 </div>
 <!-- End table -->
 {% endmacro %}
+
+{% macro tablepay(props) %}
+<!-- Start table -->
+<div class="table-pay">
+	<div class="table-pay__body">
+		<div class="table-pay__row">
+			<div class="table-pay__left-col">
+				<span class="table-pay__text">
+					{{ props.text }}
+				</span>
+				<a href="#" class="table-pay__link">
+					{{ props.link }}
+				</a>
+			</div>
+			<div class="table-pay__right-col">
+				{{ checkedbtn(props.textBtn) }}
+			</div>
+		</div>
+		<div class="table-pay__row">
+			<div class="table-pay__left-col">
+				<span class="table-pay__text">
+					{{ props.text }}
+				</span>
+				<a href="#" class="table-pay__link">
+					{{ props.link }}
+				</a>
+			</div>
+			<div class="table-pay__right-col">
+				{{ checkedbtn(props.textBtn) }}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End table -->
+{% endmacro %}
+
+{% macro newtablepay(props) %}
+<!-- Start table -->
+<div class="table-pay">
+	<div class="table-pay__body">
+		<div class="table-pay__row">
+			<div class="table-pay__left-col">
+				<div class="table-pay__icon-block">
+				</div>
+				<span class="table-pay__text">
+					{{ props.text }}
+				</span>
+				<a href="#" class="table-pay__link">
+					{{ props.link }}
+				</a>
+			</div>
+			<div class="table-pay__right-col">
+				{{ checkedbtn(props.textBtn) }}
+			</div>
+		</div>
+		<div class="table-pay__row">
+			<div class="table-pay__left-col">
+				<div class="table-pay__icon-block">
+				</div>
+				<span class="table-pay__text">
+					{{ props.text }}
+				</span>
+				<a href="#" class="table-pay__link">
+					{{ props.link }}
+				</a>
+			</div>
+			<div class="table-pay__right-col">
+				{{ checkedbtn(props.textBtn) }}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End table -->
+{% endmacro %}
+
+<!-- ------------------------------ END TABLE ------------------------------ -->
 
 {% macro radiotab(props) %}
 <!-- Start radio-tab -->
