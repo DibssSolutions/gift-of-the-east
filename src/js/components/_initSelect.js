@@ -1,6 +1,4 @@
 import selectpicker from 'bootstrap-select';
-import 'bootstrap/js/dist/dropdown';
-import 'popper.js';
 import { DOC, BODY } from '../constants';
 
 DOC.ready(() => {

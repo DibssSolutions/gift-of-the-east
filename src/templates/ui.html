@@ -60,7 +60,7 @@
 			<div class="title text-center">FORM ITEMS</div>
 			<a class="link" href="https://developer.snapappointments.com/bootstrap-select/examples/">bootstrap-select LINK</a>
 			<p>simple</p>
-			<select class="select select_bord js-select" data-width="100%">
+			<select class="select js-select" data-width="100%">
 				<option value="Cначала новинки">Cначала новинки</option>
 				<option value="Цена по возрастанию">Цена по возрастанию</option>
 				<option value="Цена по убыванию">Цена по убыванию</option>
@@ -69,10 +69,8 @@
 	</div>
 	<div class="row" style="margin-top: 20px;">
 		<div class="col-100">
-			<div class="title text-center">FORM ITEMS</div>
-			<a class="link" href="https://developer.snapappointments.com/bootstrap-select/examples/">bootstrap-select LINK</a>
-			<p>simple</p>
-			<select class="select js-select" data-width="100%">
+			<p>simple border</p>
+			<select class="select select_bord js-select" data-width="100%">
 				<option value="Cначала новинки">Cначала новинки</option>
 				<option value="Цена по возрастанию">Цена по возрастанию</option>
 				<option value="Цена по убыванию">Цена по убыванию</option>
@@ -117,6 +115,23 @@
 		</div>
 	</div>
 	<div class="row" style="margin-top: 20px;">
+		<div class="col-100">
+			<p>multiple + actions + subtext</p>
+			<select class="select js-select select_bord" data-width="100%" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Категория товара">
+                <option value="Вазы" data-subtext="321">Вазы</option>
+                <option value="Музыкальные ретро центры, ретро телефоны" data-subtext="19">Музыкальные ретро центры, ретро телефоны</option>
+                <option value="Картины, декоративные тарелки" data-subtext="24">Картины, декоративные тарелки</option>
+                <option value="Фоторамки" data-subtext="11">Фоторамки</option>
+                <option value="Подсвечники" data-subtext="21">Подсвечники</option>
+                <option value="Фонтаны" data-subtext="8">Фонтаны</option>
+                <option value="Шкатулки, книги-сейфы, ключницы" data-subtext="45">Шкатулки, книги-сейфы, ключницы</option>
+                <option value="Мебель, глобус-бары" data-subtext="17">Мебель, глобус-бары</option>
+                <option value="Барометры" data-subtext="5">Барометры</option>
+                <option value="Корабли" data-subtext="4">Корабли</option>
+            </select>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 20px;">
 		{% for rating in [
 			{
 				textdivating: "2 Отзыва",
@@ -143,7 +158,7 @@
 	<div class="row" style="margin-top: 20px;">
 		{% for checkedbtn in [ { text: "Выбран" } ] %}
 		<div class="col col-50">
-			{{ mixins.checkedbtn( checkedbtn.text) }}
+			{{ mixins.checkedbtn(checkedbtn) }}
 		</div>
 		{% endfor %}
 	</div>
@@ -162,12 +177,16 @@
 	</div>
 
 	<!-- ******************************* Order ******************************* -->
+
 	<div class="title text-center" style="margin-top: 20px;">Order</div>
 	<div class="row" style="margin-top: 20px;">
 		{% for table in [ { thTitle1: "Магазин", thTitle2: "Дата самовывоза", tdTitle1: "Континент 2", tdDscpt1: "70 лет Октября,
-		25 к.2", tdTitle2: "Сегодня с 17:00", tdDscpt2: "пн–вс 10:00–21:00", textBtn: "Выбран" } ] %} {{ mixins.table({ thTitle1:
-		table.thTitle1, thTitle2: table.thTitle2, tdTitle1: table.tdTitle1, tdDscpt1: table.tdDscpt1, tdTitle2: table.tdTitle2,
-		tdDscpt2: table.tdDscpt2, textBtn: table.textBtn }) }} {% endfor %}
+		25 к.2", tdTitle2: "Сегодня с 17:00", tdDscpt2: "пн–вс 10:00–21:00", textBtn: "Выбран" } ] %} 
+		<div class="col col-100">
+			{{ mixins.table({ thTitle1:
+			table.thTitle1, thTitle2: table.thTitle2, tdTitle1: table.tdTitle1, tdDscpt1: table.tdDscpt1, tdTitle2: table.tdTitle2,
+			tdDscpt2: table.tdDscpt2, textBtn: table.textBtn }) }} {% endfor %}
+		</div>
 	</div>
 	<div class="row" style="margin-top: 20px;">
 		{% for tablepay in [ { 
@@ -201,18 +220,35 @@
 		</div>
 		{% endfor %}
 	</div>
+	<div class="row">
+		{% for modtablepay in [ { 
+			text: "Наличный расчет при получении в магазине", 
+			link: "Подробнее",
+			textBtn: "Выбрать" 
+		} ] 
+		%} 
+		<div class="col col-100">
+			{{ mixins.modtablepay({ 
+				text: modtablepay.text, 
+				link: modtablepay.link, 
+				textBtn: modtablepay.textBtn }) 
+			}}
+		</div>
+		{% endfor %}
+	</div>
 	<div class="row" style="margin-top: 20px;">
-
 		{% for price in [
 			{
 				price: "1000 ₽",
 				text: "Цена для Вас"
 			}
 			] %}
+			<div class="col col-100">
 				{{ mixins.price({
 					price: price.price,
 					text: price.text
 				}) }}
+			</div>
 		{% endfor %}
 	</div>
 	<div class="row" style="margin-top: 20px;">
@@ -222,10 +258,12 @@
 				text: "Розничная цена"
 			}
 			] %}
+			<div class="col col-100">
 				{{ mixins.newprice({
 					price: newprice.price,
 					text: newprice.text
 				}) }}
+			</div>
 		{% endfor %}
 	</div>
 	<div class="row" style="margin-top: 20px;">
@@ -234,7 +272,9 @@
 				text: "Розничная цена"
 			}
 			] %}
+			<div class="col col-100">
 				{{ mixins.availability( availability.text) }}
+			</div>	
 		{% endfor %}
 	</div>
 	<div class="row" style="margin-top: 20px;">
@@ -243,7 +283,9 @@
 				text: "Поделиться с друзьями"
 			}
 			] %}
+			<div class="col col-100">
 				{{ mixins.share( share.text) }}
+			</div>	
 		{% endfor %}
 	</div>
 	<div class="row" style="margin-top: 20px;">

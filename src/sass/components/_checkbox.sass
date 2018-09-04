@@ -49,6 +49,12 @@
 		transition: background-color .3s, color .3s
 		font-size: 16px
 		cursor: pointer
+		.checked-btn_border-grey &
+			color: $black
+			border: 1px solid $silver
+			transition: background-color .3s, border-color .3s
+			+hover
+				border: 1px solid $lightBrown
 	input
 		position: absolute
 		top: 0
@@ -58,6 +64,21 @@
 		&:checked ~ .checked-btn
 			color: $white
 			background-color: $lightBrown
+			
+.checked-btn_border-grey 
+	input
+		&:checked ~ .checked-btn__text,
+		&:checked ~ .checked-btn
+			color: $black
+			background-color: rgba($gallery, 0.7)
+			border: 1px solid  rgba($gallery, 0.7) !important
+			+hover
+				background-color: rgba($gallery, 1)
+				border: 1px solid  rgba($gallery, 1) !important
+
+
+
+		
 
 .radio-tab
 	display: flex

@@ -149,9 +149,14 @@
 {% macro card(props) %}
 <!-- begin card -->
 <div class="card{% if props.class %} {{ props.class }}{% endif %}">
-	<div class="card__img" style="background-image: url(./img/{{ props.img }});">
+	<div class="card__img"{% if props.img %} style="background-image: url(./img/{{ props.img }});"{% endif %}>
 		{% if props.action %}
 		<div class="action-block">%</div>
+		{% endif %}
+		{% if props.cardClub %}
+		<div class="card__club-card">
+			<div class="card__club-text">Карта клуба</div>
+		</div>
 		{% endif %}
 	</div>
 	<div class="card__wrap">
@@ -192,7 +197,9 @@
 			</div>
 		</div>
 		<div class="card__footer">
+			{% if props.btnClose !== false %}
 			<button class="card__close"><svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg></button>
+			{% endif %}
 			{% if props.like %}
 			<button class="card__like like" type="button"><svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg></button>
 			{% endif %}
@@ -312,11 +319,11 @@
 <!-- End checkbox -->
 {% endmacro %}
 
-{% macro checkedbtn(text) %}
+{% macro checkedbtn(props) %}
 <!-- Start checked-btn -->
-<label class="checked-btn">
+<label class="checked-btn {% if props.modifier %}{{props.modifier}}{% endif %}">
 	<input type="checkbox" name="checkbox-btn">
-	<span class="checked-btn__text">{{ text }}</span>
+	<span class="checked-btn__text">{{ props.text or 'Выбран' }}</span>
 </label>
 <!-- End checked-btn -->
 {% endmacro %}
@@ -360,27 +367,6 @@
 				{{ checkedbtn(props.textBtn) }}
 			</div>
 		</div>
-		<div class="table__row">
-			<div class="table__cell table__cell_col" data-title="{{ props.thTitle1 }}">
-				<span class="table__text table__text_up">
-					{{ props.tdTitle1 }}
-				</span>
-				<span class="table__text">
-					{{ props.tdDscpt1 }}
-				</span>
-			</div>
-			<div class="table__cell table__cell_col" data-title="{{ props.thTitle2 }}">
-				<span class="table__text table__text_up">
-					{{ props.tdTitle2 }}
-				</span>
-				<span class="table__text">
-					{{ props.tdDscpt2 }}
-				</span>
-			</div>
-			<div class="table__cell table__cell_col">
-				{{ checkedbtn(props.textBtn) }}
-			</div>
-		</div>
 	</div>
 </div>
 <!-- End table -->
@@ -390,19 +376,6 @@
 <!-- Start table -->
 <div class="table-pay">
 	<div class="table-pay__body">
-		<div class="table-pay__row">
-			<div class="table-pay__left-col">
-				<span class="table-pay__text">
-					{{ props.text }}
-				</span>
-				<a href="#" class="table-pay__link">
-					{{ props.link }}
-				</a>
-			</div>
-			<div class="table-pay__right-col">
-				{{ checkedbtn(props.textBtn) }}
-			</div>
-		</div>
 		<div class="table-pay__row">
 			<div class="table-pay__left-col">
 				<span class="table-pay__text">
@@ -428,6 +401,18 @@
 		<div class="table-pay__row">
 			<div class="table-pay__left-col">
 				<div class="table-pay__icon-block">
+					<div class="table-pay__icon">
+						<img src="./img/visa.png" alt="visa">
+					</div>
+					<div class="table-pay__icon">
+						<img src="./img/peace.png" alt="peace">
+					</div>
+					<div class="table-pay__icon">
+						<img src="./img/mastercard.png" alt="mastercard">
+					</div>
+					<div class="table-pay__icon">
+						<img src="./img/group.png" alt="group">
+					</div>
 				</div>
 				<span class="table-pay__text">
 					{{ props.text }}
@@ -440,9 +425,21 @@
 				{{ checkedbtn(props.textBtn) }}
 			</div>
 		</div>
+	</div>
+</div>
+<!-- End table -->
+{% endmacro %}
+
+{% macro modtablepay(props) %}
+<!-- Start table -->
+<div class="table-pay">
+	<div class="table-pay__body">
 		<div class="table-pay__row">
 			<div class="table-pay__left-col">
 				<div class="table-pay__icon-block">
+					<div class="table-pay__icon table-pay__icon_mod">
+						<img src="./img/yandex.png" alt="yandex">
+					</div>
 				</div>
 				<span class="table-pay__text">
 					{{ props.text }}
