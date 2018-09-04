@@ -511,20 +511,50 @@
                     <use xlink:href="img/sprite.svg#icon-chevron-up"></use>
                   </svg>
                 </button>
-                <button class="btn-reset">
+                <button class="btn-reset js-filter-reset">
                   <svg class="icon icon-refresh">
                     <use xlink:href="img/sprite.svg#icon-refresh"></use>
                   </svg>
                   <span>Сбросить фильтры</span>
                 </button>
-                <div class="select"> Упорядочить </div>
-              </div>
-              <div class="filter__bottom js-drop-hidden" style="display: none;">
-                <div class="filter__select">
-                  <select class="select js-select select_bord" data-width="104" title="Цена">
+                <div class="filter__top_select">
+                  <span class="md-hide">Упорядочить</span>
+                  <select class="select select_bord js-select" data-width="216">
+                    <option value="Cначала новинки">Cначала новинки</option>
                     <option value="Цена по возрастанию">Цена по возрастанию</option>
                     <option value="Цена по убыванию">Цена по убыванию</option>
                   </select>
+                </div>
+              </div>
+              <div class="filter__bottom js-drop-hidden js-main-filter" style="display: none;">
+                <div class="filter__range">
+                  <div class="dropdown dropdown-range">
+                    <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Цена </a>
+                    <div class="dropdown-menu dropdown-menu-range" aria-labelledby="dropdownRangeLink">
+                      <div class="dropdown-menu__row">
+                        <span>Диапазон цен</span>
+                        <button type="button" class="js-range-reset btn-reset">
+                          <svg class="icon icon-refresh">
+                            <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                          </svg>
+                          <span>Сбросить</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-menu__row">
+                        <div class="dropdown-menu__input">
+                          <input type="text" class="input input_range js-range-min">
+                          <span class="input-addon"> от </span>
+                        </div>
+                        <div class="dropdown-menu__input">
+                          <input type="text" class="input input_range js-range-max">
+                          <span class="input-addon"> до </span>
+                        </div>
+                      </div>
+                      <div class="dropdown-menu__row dropdown-menu__row_slider">
+                        <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="filter__select">
                   <select class="select js-select select_bord" data-width="232" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Категория товара">
@@ -572,7 +602,7 @@
                     <option value="Коллекция зеленая">Коллекция зеленая</option>
                   </select>
                 </div>
-                <div class="filter__select">
+                <div class="filter__check">
                   <!-- Start checked-btn -->
                   <label class="checked-btn checked-btn_border-grey">
                     <input type="checkbox" name="checkbox-btn">
@@ -580,7 +610,7 @@
                   </label>
                   <!-- End checked-btn -->
                 </div>
-                <div class="filter__select">
+                <div class="filter__check">
                   <!-- Start checked-btn -->
                   <label class="checked-btn checked-btn_border-grey">
                     <input type="checkbox" name="checkbox-btn">
@@ -588,7 +618,7 @@
                   </label>
                   <!-- End checked-btn -->
                 </div>
-                <div class="filter__select">
+                <div class="filter__check">
                   <!-- Start checked-btn -->
                   <label class="checked-btn checked-btn_border-grey">
                     <input type="checkbox" name="checkbox-btn">

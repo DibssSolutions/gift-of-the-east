@@ -16,10 +16,10 @@
             margin-top: 17px
             +sm 
                 margin-top: 10px
-        &--submit
+        &_submit
             margin: 24px auto 0
             max-width: 280px
-        &--highlighted
+        &_highlighted
             background-color: $lightYellow
             padding: 17px 8px 10px
             margin: 0 -8px 24px 
@@ -27,18 +27,18 @@
         text-transform: uppercase
         font-weight: 500
         line-height: 1
-        &--red 
+        &_red 
             color: $red
-        &--big 
+        &_big 
             font-size: 16px
-        &--full
+        &_full
             flex: 0 0 100%
             text-align: left
             margin-top: 10px
         &-lower
             font-size: 14px
             display: inline-block
-            &--bold
+            &_bold
                 font-weight: 500
                 min-width: 100px
         &-dark 
@@ -48,7 +48,7 @@
         margin-top: 24px
         padding-left: 64px
         padding-right: 64px
-        &--delivery
+        &_delivery
             background-color: $gallery
             color: $black
             cursor: default
@@ -92,9 +92,9 @@
     &__divider
         height: 1px
         background-color: $silver
-        &--top 
+        &_top 
             margin-top: 16px
-        &--bottom 
+        &_bottom 
             margin-bottom: 24px
 
 .order-checkbox
@@ -143,8 +143,6 @@
                 +gpu
             +hover
                 background-color: $gallery
-                // border-bottom: 1px solid transparent
-                // border-top: 1px solid transparent
             .icon
                 +rotate(180)
     &__form

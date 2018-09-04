@@ -1,24 +1,58 @@
 {% import "partials/_mixins.html" as mixins %}
 <section class="filter js-drop">
+
     <div class="filter__top js-drop-shows">
         <button class="filter-btn js-open-drop">
             <span>Фильтры</span>
             {{mixins.icon('chevron-up')}}
         </button>
-        <button class="btn-reset">
+        <button class="btn-reset js-filter-reset">
             {{mixins.icon('refresh')}}
             <span>Сбросить фильтры</span>
         </button>
-        <div class="select">
-            Упорядочить
-        </div>
-    </div>
-    <div class="filter__bottom js-drop-hidden" style="display: none;">
-        <div class="filter__select">
-            <select class="select js-select select_bord" data-width="104" title="Цена">
+        <div class="filter__top_select">
+            <span class="md-hide">Упорядочить</span>
+            <select class="select select_bord js-select" data-width="216">
+                <option value="Cначала новинки">Cначала новинки</option>
                 <option value="Цена по возрастанию">Цена по возрастанию</option>
                 <option value="Цена по убыванию">Цена по убыванию</option>
             </select>
+        </div>
+    </div>
+    <div class="filter__bottom js-drop-hidden js-main-filter" style="display: none;">
+        <div class="filter__range">
+            <div class="dropdown dropdown-range">
+                <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Цена
+                </a>
+                <div class="dropdown-menu dropdown-menu-range" aria-labelledby="dropdownRangeLink">
+                    <div class="dropdown-menu__row">
+                        <span>Диапазон цен</span>
+                        <button type="button" class="js-range-reset btn-reset">
+                            {{mixins.icon('refresh')}}
+                            <span>Сбросить</span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu__row">
+                        <div class="dropdown-menu__input">
+                            <input type="text" class="input input_range js-range-min">
+                            <span class="input-addon">
+                                от
+                            </span>
+                        </div>
+                        <div class="dropdown-menu__input">
+                            <input type="text" class="input input_range js-range-max">
+                            <span class="input-addon">
+                                до
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="dropdown-menu__row dropdown-menu__row_slider">
+                        <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="filter__select">
@@ -82,7 +116,7 @@
                 modifier: "checked-btn_border-grey"
             }
         ] %}
-            <div class="filter__select">
+            <div class="filter__check">
                 {{ mixins.checkedbtn(checkedbtn) }}
             </div>
         {% endfor %}
