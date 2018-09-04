@@ -138,10 +138,14 @@
 	&__table
 		width: 100%
 		display: table
+		+sm
+			display: block
 	&__center
 		padding-right: 16px
 		vertical-align: top
 		display: table-cell
+		+sm
+			display: block
 	&__vendorcode
 		margin-bottom: 6px
 	&__title
@@ -155,9 +159,11 @@
 	&__quantity
 		margin-top: 12px
 		line-height: 1.5 
+		display: flex
+		align-items: center
 	&__quantity-text,
 	&__size
-		margin: 8px 5px 0 0
+		margin: 0 8px 0 0
 		vertical-align: top
 		display: inline-block
 	&__seclect
@@ -169,6 +175,10 @@
 		text-align: right
 		vertical-align: top
 		display: table-cell
+		+sm
+			margin-top: 12px
+			text-align: left
+			display: block
 	&__price
 		.is-old
 			position: relative
