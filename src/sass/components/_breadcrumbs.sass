@@ -1,11 +1,20 @@
 .breadcrumbs
 	margin: 24px 0 32px
+	+md
+		font-size: 14px
+	+sm
+		margin: 16x 0 24px
+		font-size: 12px
 	&__item
 		position: relative
 		vertical-align: top
 		display: inline-block
 		&:not(:first-child)
 			padding-left: 26px
+			+md
+				padding-left: 18px 
+			+sm
+				padding-left: 12px 
 			&:before
 				position: absolute
 				content: "/" 
@@ -14,6 +23,11 @@
 				font-size: 16px
 				color: $silver 
 				+rotate(10)
+				+md
+					left: 5px 
+				+sm
+					left: 2px
+					font-size: 13px 
 		a
 			position: relative
 			color: $black 
