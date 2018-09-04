@@ -74,19 +74,27 @@ slider.each((i,el) => {
   });
 });
 
- 
-$('.js-slider-products').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.js-slider-products-nav'
-});
-$('.js-slider-products-nav').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  asNavFor: '.js-slider-products',
-  dots: true,
-  centerMode: true,
-  focusOnSelect: true
+const sliderWrap = $('.js-slider-wrap');
+sliderWrap.each((i,el) => {
+  let that = $(el);
+  let sliderProducts = that.find('.js-slider-products');
+  let sliderNav = that.find('.js-slider-products-nav');
+  sliderProducts.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: sliderNav
+  });
+
+  sliderNav.slick({
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    vertical: true,
+    asNavFor: sliderProducts,
+    dots: false,
+    arrows: false,
+    focusOnSelect: true
+  });
+
 });

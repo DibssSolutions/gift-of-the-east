@@ -333,7 +333,7 @@
 {% macro checkedbtn(props) %}
 <!-- Start checked-btn -->
 <label class="checked-btn {% if props.modifier %}{{props.modifier}}{% endif %}">
-	<input type="checkbox" name="checkbox-btn">
+	<input type="checkbox" name="checkbox-btn" required="{{props.required}}">
 	<span class="checked-btn__text">{{ props.text or 'Выбран' }}</span>
 </label>
 <!-- End checked-btn -->

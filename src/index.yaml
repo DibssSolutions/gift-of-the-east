@@ -13,3 +13,5 @@ PageList:
   ready: 100
 - file: catalog.html
   ready: 100
+- file: confirmation-order.html
+  ready: 50

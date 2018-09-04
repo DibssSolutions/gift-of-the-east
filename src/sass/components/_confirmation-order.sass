@@ -1,0 +1,51 @@
+.club-card
+	margin-bottom: 30px
+	p
+		line-height: 1.5
+		font-size: 16px
+		color: $black
+		max-width: 560px
+		margin-bottom: 24px
+	&__link
+		color: $lightBrown
+		transition: border-color .3s
+		border-bottom: 1px solid $lightBrown	
+		&:hover
+			border-bottom: 1px solid transparent
+	&__wrap
+		display: flex
+		align-items: center
+		+sm
+			flex-wrap: wrap
+	&__col
+		flex: 0 0 50%
+		margin-right: 32px
+		+sm
+			flex: 0 0 100%
+			margin-right: 0
+			.club-card__col:not(:last-child)
+				margin-bottom: 25px
+	&__img
+		width: 100%
+		height: 0
+		padding-bottom: 70%
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: 50% 50%
+	&__cont-title
+		font-weight: 400
+		font-size: 20px
+		color: $black
+		margin-bottom: 16px
+	&__cont-text
+		max-height: 79px
+		overflow: hidden
+		margin-bottom: 24px
+		p
+			line-height: 1.6
+
+.choice-title
+	font-size: 28px
+	font-weight: 400
+	color: $black
+	margin-bottom: 26px
