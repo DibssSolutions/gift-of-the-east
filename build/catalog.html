@@ -520,12 +520,33 @@
                 <div class="select"> Упорядочить </div>
               </div>
               <div class="filter__bottom js-drop-hidden" style="display: none;">
-                <div class="filter__select">
-                  <a class="btn btn_border dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown link </a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <div class="filter__range">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Цена </a>
+                    <div class="dropdown-menu dropdown-menu-range" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-menu__row">
+                        <span>Диапазон цен</span>
+                        <button type="button" class="js-reset-button btn-reset">
+                          <svg class="icon icon-refresh">
+                            <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                          </svg>
+                          <span>Сбросить</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-menu__row">
+                        <div class="dropdown-menu__input">
+                          <input type="text" class="input input_range js-range-min">
+                          <span class="input-addon"> от </span>
+                        </div>
+                        <div class="dropdown-menu__input">
+                          <input type="text" class="input input_range js-range-max">
+                          <span class="input-addon"> до </span>
+                        </div>
+                      </div>
+                      <div class="dropdown-menu__row dropdown-menu__row_slider">
+                        <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="filter__select">
