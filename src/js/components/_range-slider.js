@@ -1,16 +1,9 @@
-// import 'nouislider';
 var noUiSlider = require('nouislider');
 var wNumb = require('wnumb');
 
 var slider = document.querySelector('.js-range-slider');
 
-if (slider) {
-
-  var minSlider = parseInt(slider.dataset['rangeMin']);
-  var maxSlider = parseInt(slider.dataset['rangeMax']);
-  var startSlider = parseInt(slider.dataset['rangeStart']);
-  var endSlider = parseInt(slider.dataset['rangeEnd']);
-  
+function initRange() {
   noUiSlider.create(slider, {
     start: [startSlider, maxSlider],
 
@@ -18,9 +11,18 @@ if (slider) {
     range: {
       min: minSlider,
       max: maxSlider
-    }, 
+    },
     format: wNumb({ decimals: 0, suffix: ' ₽' })
   });
+}
+
+if (slider) {
+  
+  var minSlider = parseInt(slider.dataset['rangeMin']);
+  var maxSlider = parseInt(slider.dataset['rangeMax']);
+  var startSlider = parseInt(slider.dataset['rangeStart']);
+  var endSlider = parseInt(slider.dataset['rangeEnd']);
+  initRange();
 
   slider.noUiSlider.on('update.one', function(e) {
     $('.js-range-min').val(e[0]);
@@ -29,7 +31,7 @@ if (slider) {
 }
 
 $('.dropdown-menu').on('click', function(e) {
-  if($(this).hasClass('dropdown-menu-range')) {
+  if ($(this).hasClass('dropdown-menu-range')) {
     e.stopPropagation();
   }
 });
