@@ -273,7 +273,9 @@
               <div class="notavailable__wrap js-drop-hidden">
                 <!-- begin card -->
                 <div class="card card_simple">
-                  <div class="card__img" style="background-image: url(./img/vase.jpg);">
+                  <div class="card__img-wrap">
+                    <div class="card__img" style="background-image: url(./img/vase.jpg);">
+                    </div>
                   </div>
                   <div class="card__wrap">
                     <div class="card__table">
@@ -300,7 +302,9 @@
                 <!-- end card -->
                 <!-- begin card -->
                 <div class="card card_simple">
-                  <div class="card__img" style="background-image: url(./img/vase-2.jpg);">
+                  <div class="card__img-wrap">
+                    <div class="card__img" style="background-image: url(./img/vase-2.jpg);">
+                    </div>
                   </div>
                   <div class="card__wrap">
                     <div class="card__table">
@@ -330,8 +334,10 @@
             <!-- end notavailable -->
             <!-- begin card -->
             <div class="card">
-              <div class="card__img" style="background-image: url(./img/vase-2.jpg);">
-                <div class="action-block">%</div>
+              <div class="card__img-wrap">
+                <div class="card__img" style="background-image: url(./img/vase-2.jpg);">
+                  <div class="action-block">%</div>
+                </div>
               </div>
               <div class="card__wrap">
                 <div class="card__table">
@@ -363,15 +369,29 @@
                   <button class="card__close"><svg class="icon icon-close">
                       <use xlink:href="img/sprite.svg#icon-close"></use>
                     </svg></button>
+                  <!-- begin like -->
+                  <label class="like card__like">
+                    <input type="checkbox">
+                    <svg class="icon icon-heart-outline">
+                      <use xlink:href="img/sprite.svg#icon-heart-outline"></use>
+                    </svg>
+                    <svg class="icon icon-heart">
+                      <use xlink:href="img/sprite.svg#icon-heart"></use>
+                    </svg>
+                    <span class="like__lines"></span>
+                  </label>
+                  <!-- end like -->
                 </div>
               </div>
             </div>
             <!-- end card -->
             <!-- begin card -->
             <div class="card">
-              <div class="card__img">
-                <div class="card__club-card">
-                  <div class="card__club-text">Карта клуба</div>
+              <div class="card__img-wrap">
+                <div class="card__img">
+                  <div class="card__club-card">
+                    <div class="card__club-text">Карта клуба</div>
+                  </div>
                 </div>
               </div>
               <div class="card__wrap">
@@ -408,7 +428,9 @@
                 </div>
                 <div class="order-form__group order-form__card-group">
                   <div class="card">
-                    <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+                    <div class="card__img-wrap">
+                      <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
+                    </div>
                     <div class="card__wrap">
                       <div class="card__vendorcode">Артикул: 45678</div>
                       <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>

@@ -60,7 +60,8 @@
                         quantity: {
                             select: true
                         },
-                        benefit: true
+                        benefit: true,
+                        like: true
                     },
                     {
                         cardClub: true,
@@ -79,7 +80,8 @@
 					priceOld: card.priceOld,
 					quantity: { select: card.quantity.select },
 					benefit: card.benefit,
-					btnClose: card.btnClose
+					btnClose: card.btnClose,
+					like: card.like
 				}) }}
 
                 {% endfor %}
