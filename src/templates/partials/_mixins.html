@@ -146,18 +146,31 @@
 <!-- end basketlist -->
 {% endmacro %}
 
+{% macro like(class) %}
+<!-- begin like -->
+<label class="like{% if class %} {{ class }}{% endif %}">
+	<input type="checkbox">
+	<svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg>
+	<svg class="icon icon-heart"><use xlink:href="img/sprite.svg#icon-heart"></use></svg>
+	<span class="like__lines"></span>
+</label>
+<!-- end like -->
+{% endmacro %}
+
 {% macro card(props) %}
 <!-- begin card -->
 <div class="card{% if props.class %} {{ props.class }}{% endif %}">
-	<div class="card__img"{% if props.img %} style="background-image: url(./img/{{ props.img }});"{% endif %}>
-		{% if props.action %}
-		<div class="action-block">%</div>
-		{% endif %}
-		{% if props.cardClub %}
-		<div class="card__club-card">
-			<div class="card__club-text">Карта клуба</div>
+	<div class="card__img-wrap">
+		<div class="card__img"{% if props.img %} style="background-image: url(./img/{{ props.img }});"{% endif %}>
+			{% if props.action %}
+			<div class="action-block">%</div>
+			{% endif %}
+			{% if props.cardClub %}
+			<div class="card__club-card">
+				<div class="card__club-text">Карта клуба</div>
+			</div>
+			{% endif %}
 		</div>
-		{% endif %}
 	</div>
 	<div class="card__wrap">
 		<div class="card__table">
@@ -200,9 +213,7 @@
 			{% if props.btnClose !== false %}
 			<button class="card__close"><svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg></button>
 			{% endif %}
-			{% if props.like %}
-			<button class="card__like like" type="button"><svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg></button>
-			{% endif %}
+			{% if props.like %} {{like('card__like')}} {% endif %}
 			{% if props.subscribe %}
 			<a href="#" class="card__subscribe subscribe-link">
 				<svg class="icon icon-email-outline"><use xlink:href="img/sprite.svg#icon-email-outline"></use></svg>

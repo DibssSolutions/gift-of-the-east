@@ -12,7 +12,7 @@
 			list: ['Назад','Главная','Корзина']
 		}) }}
         <div class="row">
-            <div class="col col-66">
+            <div class="col col-66 col-md-100">
                 {{ mixins.theadsimple({ product: '1 товар' }) }}
                 {{ mixins.basketlist({ 
 					active: 1,
@@ -53,6 +53,7 @@
 
                 {% for card in [
                     {
+                    	class: 'card_bord',
                         img: 'vase-2.jpg',
                         price: '1000 ₽',
                         priceOld: '1400 ₽',
@@ -60,9 +61,11 @@
                         quantity: {
                             select: true
                         },
-                        benefit: true
+                        benefit: true,
+                        like: true
                     },
                     {
+                    	class: 'card_bord',
                         cardClub: true,
                         price: 'Бесплатно',
                         quantity: true,
@@ -71,6 +74,7 @@
                     }
                 ] %}
                     {{ mixins.card({
+                    class: card.class,
 					img: card.img,
 					cardClub: card.cardClub,
 					title: card.title,
@@ -79,13 +83,14 @@
 					priceOld: card.priceOld,
 					quantity: { select: card.quantity.select },
 					benefit: card.benefit,
-					btnClose: card.btnClose
+					btnClose: card.btnClose,
+					like: card.like
 				}) }}
 
                 {% endfor %}
 
             </div>
-            <div class="col col-33">
+            <div class="col col-33 col-md-100">
                 {{order.ordered_shop()}}
                 {# {{order.basket_ref()}} 
                 {{order.self_delivery()}}
