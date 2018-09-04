@@ -219,7 +219,7 @@
         </ul>
         <!-- end breadcrumbs -->
         <div class="row">
-          <div class="col col-33 col-sm-100">
+          <div class="col col-25 col-sm-100">
             <aside class="sidebar">
               <button type="button" class="sidebar__toggler js-sidebar-trigger">
                 <svg class="icon icon-plus">
@@ -341,7 +341,7 @@
               </div>
             </aside>
           </div>
-          <div class="col col-66 col-sm-100">
+          <div class="col col-75 col-sm-100">
             <!-- begin baskethead -->
             <div class="headsimple">
               <h2 class="headsimple__title title">Каталог <span class="headsimple__product">6758 товаров</span></h2>
@@ -521,26 +521,81 @@
               </div>
               <div class="filter__bottom js-drop-hidden" style="display: none;">
                 <div class="filter__select">
-                  <select class="select js-select" data-width="100%">
-                    <option value="Цена">Цена</option>
+                  <select class="select js-select select_bord" data-width="104" title="Цена">
                     <option value="Цена по возрастанию">Цена по возрастанию</option>
                     <option value="Цена по убыванию">Цена по убыванию</option>
                   </select>
                 </div>
                 <div class="filter__select">
-                  <select class="select js-select" data-width="100%">
-                    <option value="Категория товара">Категория товара</option>
-                    <option value="1">Вазы</option>
-                    <option value="2">Лампы</option>
+                  <select class="select js-select select_bord" data-width="232" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Категория товара">
+                    <option value="Вазы" data-subtext="321">Вазы</option>
+                    <option value="Музыкальные ретро центры, ретро телефоны" data-subtext="19">Музыкальные ретро центры, ретро телефоны</option>
+                    <option value="Картины, декоративные тарелки" data-subtext="24">Картины, декоративные тарелки</option>
+                    <option value="Фоторамки" data-subtext="11">Фоторамки</option>
+                    <option value="Подсвечники" data-subtext="21">Подсвечники</option>
+                    <option value="Фонтаны" data-subtext="8">Фонтаны</option>
+                    <option value="Шкатулки, книги-сейфы, ключницы" data-subtext="45">Шкатулки, книги-сейфы, ключницы</option>
+                    <option value="Мебель, глобус-бары" data-subtext="17">Мебель, глобус-бары</option>
+                    <option value="Барометры" data-subtext="5">Барометры</option>
+                    <option value="Корабли" data-subtext="4">Корабли</option>
                   </select>
                 </div>
-                <div class="filter__select"> lorem </div>
-                <div class="filter__select"> lorem </div>
-                <div class="filter__select"> lorem </div>
-                <div class="filter__select"> lorem </div>
-                <div class="filter__select"> lorem </div>
-                <div class="filter__select"> lorem </div>
-                <div class="filter__select"> lorem </div>
+                <div class="filter__select">
+                  <select class="select js-select select_bord" data-width="232" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
+                    <option value="70 лет Октября, 25 к.2 (Континент 2)">70 лет Октября, 25 к.2 (Континент 2)</option>
+                    <option value="Бульвар Архитекторов, 35 (Мега)">Бульвар Архитекторов, 35 (Мега)</option>
+                    <option value="ул.70 лет Октября, 19 (Фестиваль)">ул.70 лет Октября, 19 (Фестиваль)</option>
+                    <option value="пр.Комарова, 6 к.1 (Маяк–3)">пр.Комарова, 6 к.1 (Маяк–3)</option>
+                    <option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
+                    <option value="ул.Карла Маркса, 24 (Каскад)">ул.Карла Маркса, 24 (Каскад)</option>
+                  </select>
+                </div>
+                <div class="filter__select">
+                  <select class="select select_color js-select select_bord" data-width="101" multiple="multiple" title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} из {1}" data-actions-box="true"
+                    data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все">
+                    <option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
+                    <option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
+                    <option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
+                    <option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
+                    <option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
+                    <option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
+                    <option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
+                    <option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
+                    <option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
+                    <option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
+                  </select>
+                </div>
+                <div class="filter__select">
+                  <select class="select js-select select_bord" data-width="145" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Коллекция">
+                    <option value="Коллекция красная">Коллекция красная</option>
+                    <option value="Коллекция синяя">Коллекция синяя</option>
+                    <option value="Коллекция зеленая">Коллекция зеленая</option>
+                  </select>
+                </div>
+                <div class="filter__select">
+                  <!-- Start checked-btn -->
+                  <label class="checked-btn checked-btn_border-grey">
+                    <input type="checkbox" name="checkbox-btn">
+                    <span class="checked-btn__text">Редкая находка</span>
+                  </label>
+                  <!-- End checked-btn -->
+                </div>
+                <div class="filter__select">
+                  <!-- Start checked-btn -->
+                  <label class="checked-btn checked-btn_border-grey">
+                    <input type="checkbox" name="checkbox-btn">
+                    <span class="checked-btn__text">Товары со скидкой</span>
+                  </label>
+                  <!-- End checked-btn -->
+                </div>
+                <div class="filter__select">
+                  <!-- Start checked-btn -->
+                  <label class="checked-btn checked-btn_border-grey">
+                    <input type="checkbox" name="checkbox-btn">
+                    <span class="checked-btn__text">Новинка</span>
+                  </label>
+                  <!-- End checked-btn -->
+                </div>
                 <div class="filter__products-number"> 48 товаров </div>
               </div>
             </section>
