@@ -1,10 +1,12 @@
 .order-form
     font-size: 13px
+    +md
+        border: 1px solid rgba($silver, .5) 
     &__group
         padding: 24px 16px
         text-align: center
         &:not(:last-of-type)
-            border-bottom: 1px solid $silver
+            border-bottom: 1px solid rgba($silver, .5)
             +sm 
                 padding: 16px 12px
     &__row
@@ -16,10 +18,10 @@
             margin-top: 17px
             +sm 
                 margin-top: 10px
-        &--submit
+        &_submit
             margin: 24px auto 0
             max-width: 280px
-        &--highlighted
+        &_highlighted
             background-color: $lightYellow
             padding: 17px 8px 10px
             margin: 0 -8px 24px 
@@ -27,18 +29,18 @@
         text-transform: uppercase
         font-weight: 500
         line-height: 1
-        &--red 
+        &_red 
             color: $red
-        &--big 
+        &_big 
             font-size: 16px
-        &--full
+        &_full
             flex: 0 0 100%
             text-align: left
             margin-top: 10px
         &-lower
             font-size: 14px
             display: inline-block
-            &--bold
+            &_bold
                 font-weight: 500
                 min-width: 100px
         &-dark 
@@ -48,7 +50,7 @@
         margin-top: 24px
         padding-left: 64px
         padding-right: 64px
-        &--delivery
+        &_delivery
             background-color: $gallery
             color: $black
             cursor: default
@@ -63,9 +65,13 @@
                 width: 40.2%
                 +md
                     width: 140px
+                +ms
+                    width: 100%
             &__wrap
                 padding-left: 20px
                 padding-bottom: 0
+                +ms
+                    padding-left: 0
             &__vendorcode
                 font-size: 11px
                 color: $gray
@@ -91,10 +97,10 @@
         display: block
     &__divider
         height: 1px
-        background-color: $silver
-        &--top 
+        background-color: rgba($silver, .5)
+        &_top 
             margin-top: 16px
-        &--bottom 
+        &_bottom 
             margin-bottom: 24px
 
 .order-checkbox
@@ -115,7 +121,7 @@
         font-weight: 500
         padding: 14px 
         background-color: transparent
-        transition: 0.4s background-color 0.8s
+        transition: 0.4s background-color
         position: relative
         span 
             font-size: 13px
@@ -152,7 +158,7 @@
 
 
 .delivery-calculation
-    input
+    &__control
         margin-bottom: 16px
     &__filter
         display: flex
@@ -166,7 +172,9 @@
         padding-left: 16px
         margin-bottom: 16px
     &__input-group
-        padding: 24px 52px
+        margin: 0 auto
+        padding: 24px 16px
+        max-width: 312px
     &__check-group
         padding: 0 16px 0
         margin-bottom: -16px

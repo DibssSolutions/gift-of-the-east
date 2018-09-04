@@ -3,14 +3,14 @@
 {% macro submit(submit_text) %}
     <div class="order-form__group">
         <div class="order-form__row">
-            <span class="order-form__text order-form__text--big">
+            <span class="order-form__text order-form__text_big">
                 Всего
             </span>
-            <span class="order-form__text order-form__text--big">
+            <span class="order-form__text order-form__text_big">
                 400 ₽
             </span>
         </div>
-        <div class="order-form__row order-form__row--submit">
+        <div class="order-form__row order-form__row_submit">
             <button type="submit" class="btn btn_full">{{submit_text}}</button>
         </div>
     </div>
@@ -42,8 +42,8 @@
         <div class="js-drop-hidden order-calculation__form" style="display: none;">
             <form action="" class="delivery-calculation">
                 <div class="delivery-calculation__input-group">
-                    <input class="input" type="text" placeholder="Регион">
-                    <input class="input" type="number" placeholder="Индекс">
+                    <div class="delivery-calculation__control"><input class="input" type="text" placeholder="Регион"></div>
+                    <div class="delivery-calculation__control"><input class="input" type="text" placeholder="Индекс"></div>
                     <button type="button" class="btn btn_bord btn_full">
                         <span class="btn__text">
                             Рассчитать стоимость</span>
@@ -61,10 +61,10 @@
             {{mixins.icon('chevron-down')}}
         </button>
         <div class="js-drop-hidden order-calculation__form" style="display: none;">
-            <form action="" class="delivery-calculation">
+            <form action="" class="delivery-calculation js-calc-form">
                 <div class="delivery-calculation__filter">
                     <span>Найдено 2</span>
-                    <button type="button" class="js-reset-button btn-reset">
+                    <button type="button" class="js-reset-calc-form btn-reset">
                         {{mixins.icon('refresh')}}
                         <span>Сбросить</span>
                     </button>
@@ -91,8 +91,12 @@
                     </div>
                 </div>
                 <div class="delivery-calculation__input-group">
-                    <input class="input" type="text" placeholder="Омская область, г.Омск">
-                    <input class="input" type="number" placeholder="644039">
+                    <div class="delivery-calculation__control">
+                        <input class="input" type="text" placeholder="Омская область, г.Омск">
+                    </div>
+                    <div class="delivery-calculation__control">
+                        <input class="input" type="text" placeholder="644039">
+                    </div>
                     <button type="button" class="btn btn_bord btn_full">
                         <span class="btn__text">Рассчитать стоимость</span>
                     </button>
@@ -122,14 +126,14 @@
                 <div class="card__benefit">Ваша выгода 400 ₽</div>
             </div>
         </div>
-        <div class="order-form__divider order-form__divider--top"></div>
+        <div class="order-form__divider order-form__divider_top"></div>
         <a href="#" class="order-form__more">Еще 2 товара</a>
-        <div class="order-form__divider order-form__divider--bottom"></div>
+        <div class="order-form__divider order-form__divider_bottom"></div>
         <div class="order-form__row">
             <span class="order-form__text">
                 РЕФЕРАЛЬНАЯ СКИДКА
             </span>
-            <span class="order-form__text order-form__text--red">
+            <span class="order-form__text order-form__text_red">
                 500 ₽
             </span>
         </div>
@@ -137,7 +141,7 @@
             <span class="order-form__text">
                 Скидка
             </span>
-            <span class="order-form__text order-form__text--red">
+            <span class="order-form__text order-form__text_red">
                 400 ₽
             </span>
         </div>
@@ -155,7 +159,7 @@
                     <span class="order-form__text">
                         ТОВАРЫ НА СУММУ
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         3600 ₽
                     </span>
                 </div>
@@ -190,7 +194,7 @@
                     <span class="order-form__text">
                         ТОВАРЫ НА СУММУ
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         3600 ₽
                     </span>
                 </div>
@@ -212,7 +216,7 @@
                     <span class="order-form__text">
                         ТОВАРЫ НА СУММУ
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         3600 ₽
                     </span>
                 </div>
@@ -259,7 +263,7 @@
                     <span class="order-form__text">
                         ТОВАРЫ НА СУММУ
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         3600 ₽
                     </span>
                 </div>
@@ -269,7 +273,7 @@
                     <span class="order-form__text">
                         РЕФЕРАЛЬНАЯ СКИДКА
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         500 ₽
                     </span>
                 </div>
@@ -277,7 +281,7 @@
                     <span class="order-form__text">
                         Скидка
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         400 ₽
                     </span>
                 </div>
@@ -292,7 +296,7 @@
 {% macro basket_1() %}
     <div class="sidebar sidebar__table">
         <h4 class="sidebar__title">
-            Каталог
+            Ваш заказ
         </h4>
         <div action="" class="order-form">
             <div class="order-form__group">
@@ -300,20 +304,20 @@
                     <span class="order-form__text">
                         ТОВАРЫ НА СУММУ
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         3600 ₽
                     </span>
                 </div>
             </div>
             <div class="order-form__group">
-                <div class="order-form__row order-form__row--highlighted">
+                <div class="order-form__row order-form__row_highlighted">
                     <span class="order-form__text">
                         РЕФЕРАЛЬНАЯ СКИДКА
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         500 ₽
                     </span>
-                    <div class="order-form__text--full">
+                    <div class="order-form__text_full">
                         Чтобы воспользоваться скидкой наберите товаров на сумму 3500 ₽
                         <a href="#" class="link">Подробнее</a>
                     </div>
@@ -322,7 +326,7 @@
                     <span class="order-form__text">
                         Скидка
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         400 ₽
                     </span>
                 </div>
@@ -384,28 +388,28 @@
                 </div>
             </div>
             <div class="order-form__group">
-                <div class="order-form__row order-form__row--highlighted">
+                <div class="order-form__row order-form__row_highlighted">
                     <span class="order-form__text">
                         ДАННЫЕ ПОКУПАТЕЛЯ
                     </span>
-                    <div class="order-form__text--full">
-                        <span class="order-form__text-lower order-form__text-lower--bold">
+                    <div class="order-form__text_full">
+                        <span class="order-form__text-lower order-form__text-lower_bold">
                             Получатель
                         </span>
                         <span class="order-form__text-lower">
                             Анна
                         </span>
                     </div>
-                    <div class="order-form__text--full">
-                        <span class="order-form__text-lower order-form__text-lower--bold">
+                    <div class="order-form__text_full">
+                        <span class="order-form__text-lower order-form__text-lower_bold">
                             Телефон
                         </span>
                         <span class="order-form__text-lower">
                             +7 (961) 678 – 87 – 56
                         </span>
                     </div>
-                    <div class="order-form__text--full">
-                        <span class="order-form__text-lower order-form__text-lower--bold">
+                    <div class="order-form__text_full">
+                        <span class="order-form__text-lower order-form__text-lower_bold">
                             Email
                         </span>
                         <span class="order-form__text-dark">
@@ -414,7 +418,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="order-form__row order-form__row--submit">
+                <div class="order-form__row order-form__row_submit">
                     <button type="submit" class="btn btn_full">подробная информация</button>
                 </div>
             </div>
@@ -433,20 +437,20 @@
                     <span class="order-form__text">
                         ТОВАРЫ НА СУММУ
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         1400 ₽
                     </span>
                 </div>
             </div>
             <div class="order-form__group">
-                <div class="order-form__row order-form__row--highlighted">
+                <div class="order-form__row order-form__row_highlighted">
                     <span class="order-form__text">
                         РЕФЕРАЛЬНАЯ СКИДКА
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         500 ₽
                     </span>
-                    <div class="order-form__text--full">
+                    <div class="order-form__text_full">
                         Чтобы воспользоваться скидкой наберите товаров на сумму 3500 ₽
                         <a href="#" class="link">Подробнее</a>
                     </div>
@@ -455,7 +459,7 @@
                     <span class="order-form__text">
                         Скидка
                     </span>
-                    <span class="order-form__text order-form__text--red">
+                    <span class="order-form__text order-form__text_red">
                         -400 ₽
                     </span>
                 </div>

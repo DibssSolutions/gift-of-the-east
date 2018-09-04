@@ -89,6 +89,8 @@
 	font-size: 16px
 	table-layout: fixed
 	display: table
+	+ms
+		display: block
 	&_simple
 		padding: 16px
 		background-color: $white 
@@ -102,6 +104,12 @@
 		width: 176px
 		.card_simple &
 			width: 144px
+			+ms
+				width: 100%
+		+ms
+			margin-bottom: 16px
+			width: 100%
+			display: block
 	&__img
 		position: relative
 		width: 100%
@@ -110,6 +118,10 @@
 		background-size: cover
 		background-repeat: no-repeat
 		background-color: #F7F7F7
+		+ms
+			margin: 0 auto
+			width: 100%
+			padding-bottom: 70%
 	&__club-card
 		position: absolute
 		top: 50%
@@ -121,6 +133,10 @@
 		box-shadow: 0 3px 20px rgba(#000, .16) 
 		background-color: $white 
 		+vertical
+		+ms
+			margin: -15% 0 0 -35%
+			width: 70%
+			height: 40%
 	&__club-text
 		font-size: 13px
 		color: rgba($silver,.5) 
@@ -133,15 +149,26 @@
 		padding-bottom: 32px 
 		vertical-align: top
 		display: table-cell
+		+sm
+			padding-left: 16px
+		+ms
+			padding-left: 0
+			display: block
 		.card_simple &
 			padding-left: 16px
+			+ms
+				padding-left: 0
 	&__table
 		width: 100%
 		display: table
+		+sm
+			display: block
 	&__center
 		padding-right: 16px
 		vertical-align: top
 		display: table-cell
+		+sm
+			display: block
 	&__vendorcode
 		margin-bottom: 6px
 	&__title
@@ -155,9 +182,11 @@
 	&__quantity
 		margin-top: 12px
 		line-height: 1.5 
+		display: flex
+		align-items: center
 	&__quantity-text,
 	&__size
-		margin: 8px 5px 0 0
+		margin: 0 8px 0 0
 		vertical-align: top
 		display: inline-block
 	&__seclect
@@ -169,6 +198,10 @@
 		text-align: right
 		vertical-align: top
 		display: table-cell
+		+sm
+			margin-top: 12px
+			text-align: left
+			display: block
 	&__price
 		.is-old
 			position: relative

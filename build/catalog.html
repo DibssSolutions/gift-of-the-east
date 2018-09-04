@@ -511,22 +511,29 @@
                     <use xlink:href="img/sprite.svg#icon-chevron-up"></use>
                   </svg>
                 </button>
-                <button class="btn-reset">
+                <button class="btn-reset js-filter-reset">
                   <svg class="icon icon-refresh">
                     <use xlink:href="img/sprite.svg#icon-refresh"></use>
                   </svg>
                   <span>Сбросить фильтры</span>
                 </button>
-                <div class="select"> Упорядочить </div>
+                <div class="filter__top_select">
+                  <span class="md-hide">Упорядочить</span>
+                  <select class="select select_bord js-select" data-width="216">
+                    <option value="Cначала новинки">Cначала новинки</option>
+                    <option value="Цена по возрастанию">Цена по возрастанию</option>
+                    <option value="Цена по убыванию">Цена по убыванию</option>
+                  </select>
+                </div>
               </div>
-              <div class="filter__bottom js-drop-hidden" style="display: none;">
+              <div class="filter__bottom js-drop-hidden js-main-filter" style="display: none;">
                 <div class="filter__range">
-                  <div class="dropdown">
-                    <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Цена </a>
-                    <div class="dropdown-menu dropdown-menu-range" aria-labelledby="dropdownMenuLink">
+                  <div class="dropdown dropdown-range">
+                    <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Цена </a>
+                    <div class="dropdown-menu dropdown-menu-range js-range-container" aria-labelledby="dropdownRangeLink">
                       <div class="dropdown-menu__row">
                         <span>Диапазон цен</span>
-                        <button type="button" class="js-reset-button btn-reset">
+                        <button type="button" class="js-range-reset btn-reset">
                           <svg class="icon icon-refresh">
                             <use xlink:href="img/sprite.svg#icon-refresh"></use>
                           </svg>
@@ -595,7 +602,7 @@
                     <option value="Коллекция зеленая">Коллекция зеленая</option>
                   </select>
                 </div>
-                <div class="filter__select">
+                <div class="filter__check">
                   <!-- Start checked-btn -->
                   <label class="checked-btn checked-btn_border-grey">
                     <input type="checkbox" name="checkbox-btn" required="">
@@ -603,7 +610,7 @@
                   </label>
                   <!-- End checked-btn -->
                 </div>
-                <div class="filter__select">
+                <div class="filter__check">
                   <!-- Start checked-btn -->
                   <label class="checked-btn checked-btn_border-grey">
                     <input type="checkbox" name="checkbox-btn" required="">
@@ -611,7 +618,7 @@
                   </label>
                   <!-- End checked-btn -->
                 </div>
-                <div class="filter__select">
+                <div class="filter__check">
                   <!-- Start checked-btn -->
                   <label class="checked-btn checked-btn_border-grey">
                     <input type="checkbox" name="checkbox-btn" required="">
