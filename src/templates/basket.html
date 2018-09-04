@@ -63,25 +63,23 @@
                         benefit: true
                     },
                     {
-                        img: 'vase-2.jpg',
-                        price: '1000 ₽',
-                        priceOld: '1400 ₽',
-                        quantity: {
-                            select: true
-                        },
-                        benefit: true
+                        cardClub: true,
+                        price: 'Бесплатно',
+                        quantity: true,
+                        btnClose: false,
+                        title: 'Карта члена клуба Дары Востока'
                     }
                 ] %}
                     {{ mixins.card({
 					img: card.img,
+					cardClub: card.cardClub,
+					title: card.title,
 					price: card.price,
 					action: card.action,
 					priceOld: card.priceOld,
 					quantity: { select: card.quantity.select },
 					benefit: card.benefit,
-					like: true,
-					subscribe: true,
-					availability: 'Осталось в наличии: 2'
+					btnClose: card.btnClose
 				}) }}
 
                 {% endfor %}
