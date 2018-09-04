@@ -339,6 +339,8 @@
 <!-- End checked-btn -->
 {% endmacro %}
 
+<!-- ------------------------------ TABLE ------------------------------ -->
+
 {% macro table(props) %}
 <!-- Start table -->
 <div class="table">
@@ -376,24 +378,25 @@
 				{{ checkedbtn(props.textBtn) }}
 			</div>
 		</div>
-		<div class="table__row">
-			<div class="table__cell table__cell_col" data-title="{{ props.thTitle1 }}">
-				<span class="table__text table__text_up">
-					{{ props.tdTitle1 }}
+	</div>
+</div>
+<!-- End table -->
+{% endmacro %}
+
+{% macro tablepay(props) %}
+<!-- Start table -->
+<div class="table-pay">
+	<div class="table-pay__body">
+		<div class="table-pay__row">
+			<div class="table-pay__left-col">
+				<span class="table-pay__text">
+					{{ props.text }}
 				</span>
-				<span class="table__text">
-					{{ props.tdDscpt1 }}
-				</span>
+				<a href="#" class="table-pay__link">
+					{{ props.link }}
+				</a>
 			</div>
-			<div class="table__cell table__cell_col" data-title="{{ props.thTitle2 }}">
-				<span class="table__text table__text_up">
-					{{ props.tdTitle2 }}
-				</span>
-				<span class="table__text">
-					{{ props.tdDscpt2 }}
-				</span>
-			</div>
-			<div class="table__cell table__cell_col">
+			<div class="table-pay__right-col">
 				{{ checkedbtn(props.textBtn) }}
 			</div>
 		</div>
@@ -401,6 +404,71 @@
 </div>
 <!-- End table -->
 {% endmacro %}
+
+{% macro newtablepay(props) %}
+<!-- Start table -->
+<div class="table-pay">
+	<div class="table-pay__body">
+		<div class="table-pay__row">
+			<div class="table-pay__left-col">
+				<div class="table-pay__icon-block">
+					<div class="table-pay__icon">
+						<img src="./img/visa.png" alt="visa">
+					</div>
+					<div class="table-pay__icon">
+						<img src="./img/peace.png" alt="peace">
+					</div>
+					<div class="table-pay__icon">
+						<img src="./img/mastercard.png" alt="mastercard">
+					</div>
+					<div class="table-pay__icon">
+						<img src="./img/group.png" alt="group">
+					</div>
+				</div>
+				<span class="table-pay__text">
+					{{ props.text }}
+				</span>
+				<a href="#" class="table-pay__link">
+					{{ props.link }}
+				</a>
+			</div>
+			<div class="table-pay__right-col">
+				{{ checkedbtn(props.textBtn) }}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End table -->
+{% endmacro %}
+
+{% macro modtablepay(props) %}
+<!-- Start table -->
+<div class="table-pay">
+	<div class="table-pay__body">
+		<div class="table-pay__row">
+			<div class="table-pay__left-col">
+				<div class="table-pay__icon-block">
+					<div class="table-pay__icon table-pay__icon_mod">
+						<img src="./img/yandex.png" alt="yandex">
+					</div>
+				</div>
+				<span class="table-pay__text">
+					{{ props.text }}
+				</span>
+				<a href="#" class="table-pay__link">
+					{{ props.link }}
+				</a>
+			</div>
+			<div class="table-pay__right-col">
+				{{ checkedbtn(props.textBtn) }}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End table -->
+{% endmacro %}
+
+<!-- ------------------------------ END TABLE ------------------------------ -->
 
 {% macro radiotab(props) %}
 <!-- Start radio-tab -->
