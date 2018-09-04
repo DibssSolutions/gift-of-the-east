@@ -520,11 +520,34 @@
                 <div class="select"> Упорядочить </div>
               </div>
               <div class="filter__bottom js-drop-hidden" style="display: none;">
-                <div class="filter__select">
-                  <select class="select js-select select_bord" data-width="104" title="Цена">
-                    <option value="Цена по возрастанию">Цена по возрастанию</option>
-                    <option value="Цена по убыванию">Цена по убыванию</option>
-                  </select>
+                <div class="filter__range">
+                  <div class="dropdown">
+                    <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Цена </a>
+                    <div class="dropdown-menu dropdown-menu-range" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-menu__row">
+                        <span>Диапазон цен</span>
+                        <button type="button" class="js-reset-button btn-reset">
+                          <svg class="icon icon-refresh">
+                            <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                          </svg>
+                          <span>Сбросить</span>
+                        </button>
+                      </div>
+                      <div class="dropdown-menu__row">
+                        <div class="dropdown-menu__input">
+                          <input type="text" class="input input_range js-range-min">
+                          <span class="input-addon"> от </span>
+                        </div>
+                        <div class="dropdown-menu__input">
+                          <input type="text" class="input input_range js-range-max">
+                          <span class="input-addon"> до </span>
+                        </div>
+                      </div>
+                      <div class="dropdown-menu__row dropdown-menu__row_slider">
+                        <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="filter__select">
                   <select class="select js-select select_bord" data-width="232" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Категория товара">
