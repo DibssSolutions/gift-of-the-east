@@ -157,6 +157,19 @@
 <!-- end like -->
 {% endmacro %}
 
+{% macro likebtn() %}
+<!-- begin likebtn -->
+<div class="btn-hard">
+	<label class="btn-hard__btn btn-like like">
+		<input type="checkbox">
+		<svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg>
+		<svg class="icon icon-heart"><use xlink:href="img/sprite.svg#icon-heart"></use></svg>
+		<span class="like__lines"></span>
+	</label>
+</div>
+<!-- end likebtn -->
+{% endmacro %}
+
 {% macro card(props) %}
 <!-- begin card -->
 <div class="card{% if props.class %} {{ props.class }}{% endif %}">
@@ -225,6 +238,35 @@
 	</div>
 </div>
 <!-- end card -->
+{% endmacro %}
+
+{% macro product(props) %}
+<div class="product card-product">
+	<div class="product__img">
+		{% if props.action %}
+		<div class="action-block">%</div>
+		{% endif %}
+		<img src="img/{{ props.srcImg }}" alt="{{ altImg }}">
+	</div>
+	<div class="product__wrap">
+		<div class="product__name">
+			{{ props.nameText }}
+		</div>
+		<div class="product__price card">
+			<div class="card__price">
+				<span>{{ props.price }}</span>
+				<span class="is-old">{{ props.priceOld }}</span>
+			</div>
+		</div>
+		<div class="product__footer">
+			<button type="button" class="product__btn btn">
+			{{ icon('shopping-bag') }}
+			{{ props.textBtn }}
+			</button>
+			{{ likebtn() }}
+		</div>	
+	</div>
+</div>
 {% endmacro %}
 
 {% macro notavailable(props) %}
@@ -338,6 +380,8 @@
 </label>
 <!-- End checked-btn -->
 {% endmacro %}
+
+
 
 <!-- ------------------------------ TABLE ------------------------------ -->
 
@@ -545,27 +589,30 @@
 
 {% macro availability(text) %}
 <!-- Start availability -->
-<a href="#" class="availability">
-	<span class="availability__icon">
-		{{ icon('location') }}
-	</span>
-	<span class="availability__text">{{ text }}</span>
-</a>
+<div class="availability">
+	<a href="#" class="availability__link">
+		<span class="availability__icon">
+			{{ icon('location') }}
+		</span>
+		<span class="availability__text">{{ text }}</span>
+	</a>
+</div>
 <!-- End availability -->
 {% endmacro %}
 
 {% macro share(text) %}
 <!-- Start share -->
-<a href="#" class="share">
-	<span class="share__icon">
-		{{ icon('share-variant') }}
-	</span>
-	<span class="share__text">{{ text }}</span>
-</a>
+<div class="share">
+	<a href="#" class="share__link">
+		<span class="share__icon">
+			{{ icon('share-variant') }}
+		</span>
+		<span class="share__text">{{ text }}</span>
+	</a>
+</div>
 <!-- End share -->
 {% endmacro %}
 <!-- ------------------------------ END PRICE ------------------------------ -->
-
 
 <!-- ------------------------------ START FORM ------------------------------ -->
 {% macro control(props) %}
@@ -575,3 +622,38 @@
 </div>
 {% endmacro %}
 <!-- ------------------------------ END form ------------------------------ -->
+
+{% macro inputRange() %}
+    <div class="dropdown dropdown-range">
+    <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Цена
+    </a>
+    <div class="dropdown-menu dropdown-menu-range js-range-container" aria-labelledby="dropdownRangeLink">
+        <div class="dropdown-menu__row">
+            <span>Диапазон цен</span>
+            <button type="button" class="js-range-reset btn-reset">
+                {{icon('refresh')}}
+                <span>Сбросить</span>
+            </button>
+        </div>
+        <div class="dropdown-menu__row">
+            <div class="dropdown-menu__input">
+                <input type="text" class="input input_range js-range-min js-range-input">
+                <span class="input-addon">
+                    от
+                </span>
+            </div>
+            <div class="dropdown-menu__input">
+                <input type="text" class="input input_range js-range-max js-range-input">
+                <span class="input-addon">
+                    до
+                </span>
+            </div>
+
+        </div>
+        <div class="dropdown-menu__row dropdown-menu__row_slider">
+            <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
+        </div>
+    </div>
+</div>
+{% endmacro %}

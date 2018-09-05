@@ -33,44 +33,7 @@
 						}
 					]
 				}) }}
-				<div class="club-card">
-					<h4 class="choice-title">
-						Спасибо за вашу покупку!
-					</h4>
-					<p>
-						Вы можете отслеживать статус покупки в <a href="#" class="club-card__link">Личном кабинете</a>.<br> 
-						Мы отправим вам смс, как только продавец соберет вашу покупку.
-					</p>
-					<div class="club-card__wrap">
-						<div class="club-card__col">
-							<div class="club-card__img" style="background-image: url(./img/creditcard.jpg);">
-							</div>
-						</div>
-						<div class="club-card__col">
-							<div class="club-card__cont">
-								<h5 class="club-card__cont-title">
-									Карта члена клуба
-								</h5>
-								<div class="club-card__cont-text">
-									<p>
-										Заполните данные о себе, чтобы бесплатно получить карту 
-										члена клуба. Наши держатели карт получают возможность 
-										покупать товар по акциям.
-										Вы сможете забрать карту в магазине вместе с покупкой.
-									</p>
-								</div>
-								<div class="club-card__btn">
-									<a href="#" class="btn btn_md btn_bord btn_anim">
-										<span class="btn__text">Получить карту</span>
-										<span class="btn__icon">
-											{{mixins.icon('arrow-right')}}
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				{% include "partials/_club-card.html" %}
             </div>
             <div class="col col-33 col-md-100">
                 {{order.confirmation()}}

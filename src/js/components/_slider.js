@@ -1,5 +1,6 @@
 import slick from 'slick-carousel';
 import { INIT, widthMD, widthSM } from '../constants';
+import { buildIcon } from '../utils';
 
 const mainSlider = $('.js-main-slider');
 
@@ -97,4 +98,41 @@ sliderWrap.each((i,el) => {
     focusOnSelect: true
   });
 
+});
+
+
+
+const sliderWatched = $('.js-slider-watched');
+
+sliderWatched.slick({
+  dots: false,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  prevArrow: `<button class="slider-watched__prev">${buildIcon('arrow-left')}</button>`,
+  nextArrow: `<button class="slider-watched__next">${buildIcon('arrow-right')}</button>`,
+  responsive: [
+    {
+      breakpoint: 1023,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 });
