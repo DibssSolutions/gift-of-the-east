@@ -358,4 +358,70 @@
 			width: 60px
 			height: 60px
 
+.slider-watched
+	position: relative
+	width: 100%
+	overflow: hidden
+	font-size: 0
+	white-space: nowrap
+	.slick-list.draggable
+		margin-left: -32px
+	&__slide
+		padding-left: 32px
+		padding-right: 2px
+		.product
+			&:hover
+				&:before
+					display: none
+		+md
+			.product
+				&:before
+					display: none			
+	&__title
+		padding-right: 158px
+		padding-bottom: 32px
+		margin-bottom: 32px
+		border-bottom: 2px solid $silver
+		+sm
+			margin-bottom: 24px
+			padding-bottom: 24px
+			padding-top: 20px
+	&__prev,
+	&__next
+		position: absolute
+		width: 55px
+		height: 55px
+		border: 1px solid $silver
+		border-radius: 50%
+		background:  none
+		color: $black
+		top: -108px
+		text-align: center
+		transition: color .3s
+		line-height: 10px
+		+sm
+			top: -80px
+			height: 40px
+			width: 40px
+		&:hover
+			color: $lightBrown
+		+md
+			&:hover
+				color: $black
+		.icon
+			font-size: 16px
+			display: inline-block
+			vertical-align: middle
+			+sm
+				font-size: 14px
+		&.slick-disabled
+			color: $silver
+			&:hover
+				color: $silver
+	&__prev
+		right: 72px
+		+sm
+			right: 56px
+	&__next
+		right: 0	
 
