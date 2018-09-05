@@ -562,3 +562,38 @@
 {% endmacro %}
 
 <!-- ------------------------------ END PRICE ------------------------------ -->
+
+{% macro inputRange() %}
+                <div class="dropdown dropdown-range">
+                <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Цена
+                </a>
+                <div class="dropdown-menu dropdown-menu-range js-range-container" aria-labelledby="dropdownRangeLink">
+                    <div class="dropdown-menu__row">
+                        <span>Диапазон цен</span>
+                        <button type="button" class="js-range-reset btn-reset">
+                            {{icon('refresh')}}
+                            <span>Сбросить</span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu__row">
+                        <div class="dropdown-menu__input">
+                            <input type="text" class="input input_range js-range-min js-range-input">
+                            <span class="input-addon">
+                                от
+                            </span>
+                        </div>
+                        <div class="dropdown-menu__input">
+                            <input type="text" class="input input_range js-range-max js-range-input">
+                            <span class="input-addon">
+                                до
+                            </span>
+                        </div>
+
+                    </div>
+                    <div class="dropdown-menu__row dropdown-menu__row_slider">
+                        <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
+                    </div>
+                </div>
+            </div>
+{% endmacro %}

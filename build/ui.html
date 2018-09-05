@@ -411,9 +411,9 @@
         <div class="row" style="margin-top: 20px;">
           <div class="col-100">
             <p>range input</p>
-            <div class="dropdown dropdown-range js-range-container">
+            <div class="dropdown dropdown-range">
               <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Цена </a>
-              <div class="dropdown-menu dropdown-menu-range" aria-labelledby="dropdownRangeLink">
+              <div class="dropdown-menu dropdown-menu-range js-range-container" aria-labelledby="dropdownRangeLink">
                 <div class="dropdown-menu__row">
                   <span>Диапазон цен</span>
                   <button type="button" class="js-range-reset btn-reset">
@@ -425,11 +425,11 @@
                 </div>
                 <div class="dropdown-menu__row">
                   <div class="dropdown-menu__input">
-                    <input type="text" class="input input_range js-range-min">
+                    <input type="text" class="input input_range js-range-min js-range-input">
                     <span class="input-addon"> от </span>
                   </div>
                   <div class="dropdown-menu__input">
-                    <input type="text" class="input input_range js-range-max">
+                    <input type="text" class="input input_range js-range-max js-range-input">
                     <span class="input-addon"> до </span>
                   </div>
                 </div>
@@ -445,7 +445,7 @@
             <!-- Start rating -->
             <div class="rating-stars">
               <input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="2" />
-              <a href="#" class="rating-stars__text rating-stars__text--review">2 Отзыва</a> / <span class="rating-stars__text views">12 Просмотров</span> / <span class="rating-stars__text vendor-code">Артикул: 45675</span>
+              <a href="#" class="rating-stars__text rating-stars__text--review">2 Отзыва</a> / <span class="rating-stars__text views">12 Просмотров</span> / <span class="rating-stars__text vendor-code"></span>
             </div>
             <!-- End rating -->
           </div>
@@ -1243,11 +1243,11 @@
                       </div>
                       <div class="dropdown-menu__row">
                         <div class="dropdown-menu__input">
-                          <input type="text" class="input input_range js-range-min">
+                          <input type="text" class="input input_range js-range-min js-range-input">
                           <span class="input-addon"> от </span>
                         </div>
                         <div class="dropdown-menu__input">
-                          <input type="text" class="input input_range js-range-max">
+                          <input type="text" class="input input_range js-range-max js-range-input">
                           <span class="input-addon"> до </span>
                         </div>
                       </div>

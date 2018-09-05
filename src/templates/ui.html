@@ -147,38 +147,7 @@
         <div class="row" style="margin-top: 20px;">
             <div class="col-100">
                 <p>range input</p>
-                <div class="dropdown dropdown-range js-range-container">
-                    <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Цена
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-range" aria-labelledby="dropdownRangeLink">
-                        <div class="dropdown-menu__row">
-                            <span>Диапазон цен</span>
-                            <button type="button" class="js-range-reset btn-reset">
-                                {{mixins.icon('refresh')}}
-                                <span>Сбросить</span>
-                            </button>
-                        </div>
-                        <div class="dropdown-menu__row">
-                            <div class="dropdown-menu__input">
-                                <input type="text" class="input input_range js-range-min">
-                                <span class="input-addon">
-                                    от
-                                </span>
-                            </div>
-                            <div class="dropdown-menu__input">
-                                <input type="text" class="input input_range js-range-max">
-                                <span class="input-addon">
-                                    до
-                                </span>
-                            </div>
-
-                        </div>
-                        <div class="dropdown-menu__row dropdown-menu__row_slider">
-                            <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
-                        </div>
-                    </div>
-                </div>
+                {{mixins.inputRange()}}
             </div>
         </div>
         <div class="row" style="margin-top: 20px;">
@@ -193,7 +162,7 @@
                     {{ mixins.rating({
 				textdivating: rating.textdivating,
 				textviews: rating.textviews,
-				textvendorcode: rating.textvendorcode
+				textvendorcode: rating.textvendorcode``
 			}) }}
                 </div>
             {% endfor %}
