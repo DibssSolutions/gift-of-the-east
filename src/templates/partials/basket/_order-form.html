@@ -42,8 +42,8 @@
         <div class="js-drop-hidden order-calculation__form" style="display: none;">
             <form action="" class="delivery-calculation">
                 <div class="delivery-calculation__input-group">
-                    <input class="input" type="text" placeholder="Регион">
-                    <input class="input" type="text" placeholder="Индекс">
+                    <div class="delivery-calculation__control"><input class="input" type="text" placeholder="Регион"></div>
+                    <div class="delivery-calculation__control"><input class="input" type="text" placeholder="Индекс"></div>
                     <button type="button" class="btn btn_bord btn_full">
                         <span class="btn__text">
                             Рассчитать стоимость</span>
@@ -91,8 +91,12 @@
                     </div>
                 </div>
                 <div class="delivery-calculation__input-group">
-                    <input class="input" type="text" placeholder="Омская область, г.Омск">
-                    <input class="input" type="text" placeholder="644039">
+                    <div class="delivery-calculation__control">
+                        <input class="input" type="text" placeholder="Омская область, г.Омск">
+                    </div>
+                    <div class="delivery-calculation__control">
+                        <input class="input" type="text" placeholder="644039">
+                    </div>
                     <button type="button" class="btn btn_bord btn_full">
                         <span class="btn__text">Рассчитать стоимость</span>
                     </button>
@@ -292,7 +296,7 @@
 {% macro basket_1() %}
     <div class="sidebar sidebar__table">
         <h4 class="sidebar__title">
-            Каталог
+            Ваш заказ
         </h4>
         <div action="" class="order-form">
             <div class="order-form__group">

@@ -16,13 +16,11 @@
 	&:hover
 		box-shadow: 0 6px 12px rgba(0,0,0,.2)	
 
-
 .img-bg
 	width: 100%
 	background-repeat: no-repeat
 	background-size: cover
-	background-position: 50% 50%
-
+	background-position: 50% 50%	
 
 .card-colaction
 	display: flex
@@ -89,6 +87,8 @@
 	font-size: 16px
 	table-layout: fixed
 	display: table
+	+ms
+		display: block
 	&_simple
 		padding: 16px
 		background-color: $white 
@@ -102,7 +102,10 @@
 		width: 176px
 		.card_simple &
 			width: 144px
+			+ms
+				width: 100%
 		+ms
+			margin-bottom: 16px
 			width: 100%
 			display: block
 	&__img
@@ -115,7 +118,7 @@
 		background-color: #F7F7F7
 		+ms
 			margin: 0 auto
-			width: 70%
+			width: 100%
 			padding-bottom: 70%
 	&__club-card
 		position: absolute
@@ -128,6 +131,10 @@
 		box-shadow: 0 3px 20px rgba(#000, .16) 
 		background-color: $white 
 		+vertical
+		+ms
+			margin: -15% 0 0 -35%
+			width: 70%
+			height: 40%
 	&__club-text
 		font-size: 13px
 		color: rgba($silver,.5) 
@@ -140,11 +147,15 @@
 		padding-bottom: 32px 
 		vertical-align: top
 		display: table-cell
+		+sm
+			padding-left: 16px
 		+ms
 			padding-left: 0
 			display: block
 		.card_simple &
 			padding-left: 16px
+			+ms
+				padding-left: 0
 	&__table
 		width: 100%
 		display: table
@@ -243,3 +254,18 @@
 .vendorcode
 	font-size: 13px
 	color: $gray
+
+
+
+.card-product
+	.product__img
+		position: relative
+	.like-btn
+		margin-left: 8px
+	.product__name
+		text-align: center
+	.product__price
+		display: flex
+		justify-content: center
+	.product__btn
+		white-space: nowrap	

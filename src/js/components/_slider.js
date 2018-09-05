@@ -1,5 +1,6 @@
 import slick from 'slick-carousel';
 import { INIT, widthMD, widthSM } from '../constants';
+import { buildIcon } from '../utils';
 
 const mainSlider = $('.js-main-slider');
 
@@ -74,19 +75,64 @@ slider.each((i,el) => {
   });
 });
 
- 
-$('.js-slider-products').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.js-slider-products-nav'
+const sliderWrap = $('.js-slider-wrap');
+sliderWrap.each((i,el) => {
+  let that = $(el);
+  let sliderProducts = that.find('.js-slider-products');
+  let sliderNav = that.find('.js-slider-products-nav');
+  sliderProducts.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: sliderNav
+  });
+
+  sliderNav.slick({
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    vertical: true,
+    asNavFor: sliderProducts,
+    dots: false,
+    arrows: false,
+    focusOnSelect: true
+  });
+
 });
-$('.js-slider-products-nav').slick({
-  slidesToShow: 3,
+
+
+
+const sliderWatched = $('.js-slider-watched');
+
+sliderWatched.slick({
+  dots: false,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
   slidesToScroll: 1,
-  asNavFor: '.js-slider-products',
-  dots: true,
-  centerMode: true,
-  focusOnSelect: true
+  prevArrow: `<button class="slider-watched__prev">${buildIcon('arrow-left')}</button>`,
+  nextArrow: `<button class="slider-watched__next">${buildIcon('arrow-right')}</button>`,
+  responsive: [
+    {
+      breakpoint: 1023,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 });

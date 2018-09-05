@@ -1,0 +1,43 @@
+--- title: Confirmation-order ---
+
+{% extends "layouts/_layout.html" %}
+{% block content %}
+    <div class="inner">
+		{{ mixins.breadcrumbs({
+			list: ['Назад','Главная','Корзина','Самовывоз-Доставка']
+		}) }}
+        <div class="row">
+            <div class="col col-66 col-md-100">
+                {{ mixins.theadsimple({ 
+					title: 'Подтвеждение заказа',
+					link: 'Вернуться к покупкам'
+                }) }}
+                {{ mixins.basketlist({ 
+					active: 4,
+					list: [
+						{
+							icon: 'shopping-full',
+							title: 'КОРЗИНА'
+						},
+						{
+							icon: 'home-map-marker',
+							title: 'САМОВЫВОЗ / ДОСТАВКА'
+						},
+						{
+							icon: 'wallet',
+							title: 'ОПЛАТА'
+						},
+						{
+							icon: 'approval',
+							title: 'ПОДТВЕРЖДЕНИЕ'
+						}
+					]
+				}) }}
+				{% include "partials/_club-card.html" %}
+            </div>
+            <div class="col col-33 col-md-100">
+                {{order.confirmation()}}
+            </div>
+        </div>
+    </div>
+{% endblock %}
