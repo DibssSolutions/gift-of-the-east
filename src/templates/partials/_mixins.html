@@ -475,13 +475,17 @@
 <div class="radio-tab">
 	<label class="radio-tab__label js-tab is-active">
 		<input type="radio" name="radio-tab" checked>
-		<span class="radio-tab__title">{{ props.title1 }}</span>
-		<span class="radio-tab__dscr">{{ props.dscr1 }}</span>
+		<span class="radio-tab__inner">
+			<span class="radio-tab__title">{{ props.title1 }}</span>
+			<span class="radio-tab__dscr">{{ props.dscr1 }}</span>
+		</span>
 	</label>
 	<label class="radio-tab__label js-tab">
 		<input type="radio" name="radio-tab">
-		<span class="radio-tab__title">{{ props.title2 }}</span>
-		<span class="radio-tab__dscr">{{ props.dscr2 }}</span>
+		<span class="radio-tab__inner">
+			<span class="radio-tab__title">{{ props.title2 }}</span>
+			<span class="radio-tab__dscr">{{ props.dscr2 }}</span>
+		</span>
 	</label>
 </div>
 <!-- End radio-tab -->
@@ -506,12 +510,12 @@
 
 {% macro newsearch(placeholder) %}
 <!-- Start new-search -->
-<form class="new-search" action="/">
+<div class="new-search">
 	<label class="new-search__label">
 		<input class="new-search__input" type="text" name="new-search" placeholder="{{ placeholder }}">
-		<button type="submit" class="new-search__btn">{{ icon('search') }}</button>
+		<button type="button" class="new-search__btn">{{ icon('search') }}</button>
 	</label>
-</form>
+</div>
 <!-- End new-search -->
 {% endmacro %}
 
@@ -560,5 +564,14 @@
 </a>
 <!-- End share -->
 {% endmacro %}
-
 <!-- ------------------------------ END PRICE ------------------------------ -->
+
+
+<!-- ------------------------------ START FORM ------------------------------ -->
+{% macro control(props) %}
+<div class="form-control{% if props.class %} {{ props.class }}{% endif %}">
+	<input class="input" {% if props.value %}value="{{props.value}}"{% endif %} type="{{ props.type or 'text' }}" {% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %}{% if props.required %} data-validation="required"{% endif %}>
+	{{ icon('check') }}
+</div>
+{% endmacro %}
+<!-- ------------------------------ END form ------------------------------ -->

@@ -226,22 +226,13 @@
                     title1: "Самовывоз из магазина",
                     dscr1: "Бесплатно",
                     title2: "Доставка домой или в офис",
-                    dscr2: "от
- 100 ₽ " } ] %}
+                    dscr2: "от 100 ₽ " } ] %}
                 {{ mixins.radiotab({ title1: radiotab.title1, dscr1: radiotab.dscr1, title2: radiotab.title2, dscr2: radiotab.dscr2
 		}) }}
             {% endfor %}
         </div>
         <div class="row" style="margin-top: 20px;">
-            {% for radiobtn in[
-                {
-                    title1: "Список",
-                    title2: "Карта"
-                }
-            ] %}
-                {{ mixins.radiobtn({ title1: radiobtn.title1, title2: radiobtn.title2
-		}) }}
-            {% endfor %}
+            {{ mixins.radiobtn({ title1: 'Список', title2: 'Карта' }) }}
         </div>
         <div class="row" style="margin-top: 20px;">
             {% for newsearch in[
