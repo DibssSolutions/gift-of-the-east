@@ -73,7 +73,9 @@
 			margin-right: 8px
 
 .table-pay
-	border-top: 1px solid $silver
+	width: 100%
+	&:not(:first-child)
+		border-top: 1px solid rgba($silver,.5)
 	&__link
 		font-size: 14px
 		color: $gray

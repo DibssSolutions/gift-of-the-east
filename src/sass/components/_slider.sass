@@ -306,19 +306,20 @@
 	position: relative
 	width: 100%
 	padding-left: 114px
-	overflow: hidden
-	white-space: nowrap
-	// opacity: 0
-	// visibility: hidden
-	transition: opacity .5s, visibility .5s
-	&.is-init
-		opacity: 1
-		visibility: visible
 	+md
 		padding-left: 0
 		margin-bottom: 10px
 	&__show
+		overflow: hidden
+		white-space: nowrap
+		opacity: 0
+		visibility: hidden
+		transition: opacity .5s, visibility .5s
 		font-size: 0
+		&.slick-initialized
+			overflow: visible
+			opacity: 1
+			visibility: visible
 		+md
 			margin-bottom: 10px
 	&__slide
@@ -338,6 +339,15 @@
 		top: -14px
 		bottom: -14px
 		width: 72px
+		overflow: hidden
+		white-space: nowrap
+		opacity: 0
+		visibility: hidden
+		transition: opacity .5s, visibility .5s
+		&.slick-initialized
+			overflow: visible
+			opacity: 1
+			visibility: visible
 		.slick-slide.slick-current
 			.slider-products__slide-nav
 				border: 1px solid $silver
@@ -424,6 +434,7 @@
 				font-size: 14px
 		&.slick-disabled
 			color: $silver
+			cursor: default
 			&:hover
 				color: $silver
 	&__prev
