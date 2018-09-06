@@ -361,12 +361,20 @@
 .slider-watched
 	position: relative
 	width: 100%
-	overflow: hidden
 	font-size: 0
-	white-space: nowrap
 	.slick-list.draggable
 		margin-left: -32px
+	&__slider	
+		overflow: hidden
+		white-space: nowrap
+		opacity: 0
+		visibility: hidden
+		&.slick-initialized
+			overflow: visible
+			opacity: 1
+			visibility: visible
 	&__slide
+		display: inline-block
 		padding-left: 32px
 		padding-right: 2px
 		.product

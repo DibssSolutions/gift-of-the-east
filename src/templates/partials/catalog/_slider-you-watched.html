@@ -1,10 +1,11 @@
-<div class="slider-watched js-slider-watched-wrap">
+<div class="slider-watched md-hide js-slider-watched-wrap">
 	<h4 class="slider-watched__title title">
 		Вы смотрели
 	</h4>
 	<div class="slider-watched__slider js-slider-watched">
 		{% for cardproduct in [
 		{
+			class: "product_simple",
 			action: "true",
 			srcImg: "annie-spratt.jpg",
 			altImg: "annie-spratt",
@@ -14,6 +15,7 @@
 			textBtn: "В корзину"
 		},
 		{
+			class: "product_simple",
 			action: "true",
 			srcImg: "annie-spratt.jpg",
 			altImg: "annie-spratt",
@@ -23,6 +25,7 @@
 			textBtn: "В корзину"
 		},
 		{
+			class: "product_simple",
 			action: "true",
 			srcImg: "annie-spratt.jpg",
 			altImg: "annie-spratt",
@@ -32,6 +35,7 @@
 			textBtn: "В корзину"
 		},
 		{
+			class: "product_simple",
 			action: "true",
 			srcImg: "annie-spratt.jpg",
 			altImg: "annie-spratt",
@@ -41,6 +45,7 @@
 			textBtn: "В корзину"
 		},
 		{
+			class: "product_simple",
 			action: "true",
 			srcImg: "annie-spratt.jpg",
 			altImg: "annie-spratt",
@@ -50,6 +55,7 @@
 			textBtn: "В корзину"
 		},
 		{
+			class: "product_simple",
 			action: "true",
 			srcImg: "annie-spratt.jpg",
 			altImg: "annie-spratt",
@@ -61,6 +67,7 @@
 		] %}
 		<div class="slider-watched__slide">
 			{{ mixins.product({
+				class: cardproduct.class,
 				action: cardproduct.action,
 				srcImg: cardproduct.srcImg,
 				altImg: cardproduct.altimg,

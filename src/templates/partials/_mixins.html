@@ -241,7 +241,7 @@
 {% endmacro %}
 
 {% macro product(props) %}
-<div class="product">
+<div class="product{% if props.class %} {{props.class}}{% endif %}">
 	<div class="product__img">
 		{% if props.action %}
 		<div class="action-block">%</div>
