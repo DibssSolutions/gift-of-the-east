@@ -372,17 +372,20 @@
 	position: relative
 	width: 100%
 	font-size: 0
+	margin-top: 80px
+	padding: 0 16px
 	.slick-list.draggable
 		margin-left: -32px
 	&__slider	
 		overflow: hidden
-		white-space: nowrap
 		opacity: 0
 		visibility: hidden
+		white-space: nowrap
 		&.slick-initialized
 			overflow: visible
 			opacity: 1
 			visibility: visible
+			white-space: inherit
 	&__slide
 		display: inline-block
 		padding-left: 32px
