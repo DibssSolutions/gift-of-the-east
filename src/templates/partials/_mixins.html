@@ -373,8 +373,9 @@
 {% macro checkedbtn(props) %}
 <!-- Start checked-btn -->
 <label class="checked-btn {% if props.modifier %}{{props.modifier}}{% endif %}">
-	<input type="checkbox" name="checkbox-btn" required="{{props.required}}">
-	<span class="checked-btn__text">{{ props.text or 'Выбран' }}</span>
+	<input type="checkbox" name="checkbox-btn" data-validation="required">
+	<span class="checked-btn__text">{{ props.text or 'Выбрать' }}</span>
+	<span class="checked-btn__text checked-btn__text_checked">{{ props.text or 'Выбран' }}</span>
 </label>
 <!-- End checked-btn -->
 {% endmacro %}
@@ -386,6 +387,7 @@
 {% macro table(props) %}
 <!-- Start table -->
 <div class="table">
+	{% if props.thTitle1 %}
 	<div class="table__head">
 		<div class="table__row">
 			<div class="table__cell">
@@ -398,28 +400,31 @@
 			</div>
 		</div>
 	</div>
+	{% endif %}
 	<div class="table__body">
+		{% for row in props.listRow %}
 		<div class="table__row">
 			<div class="table__cell table__cell_col" data-title="{{ props.thTitle1 }}">
 				<span class="table__text table__text_up">
-					{{ props.tdTitle1 }}
+					{{ row.tdTitle1 }}
 				</span>
 				<span class="table__text">
-					{{ props.tdDscpt1 }}
+					{{ row.tdDscpt1 }}
 				</span>
 			</div>
 			<div class="table__cell table__cell_col" data-title="{{ props.thTitle2 }}">
 				<span class="table__text table__text_up">
-					{{ props.tdTitle2 }}
+					{{ row.tdTitle2 }}
 				</span>
 				<span class="table__text">
-					{{ props.tdDscpt2 }}
+					{{ row.tdDscpt2 }}
 				</span>
 			</div>
 			<div class="table__cell table__cell_col">
-				{{ checkedbtn(props.textBtn) }}
+				{{ checkedbtn() }}
 			</div>
 		</div>
+		{% endfor %}
 	</div>
 </div>
 <!-- End table -->
@@ -439,7 +444,7 @@
 				</a>
 			</div>
 			<div class="table-pay__right-col">
-				{{ checkedbtn(props.textBtn) }}
+				{{ checkedbtn() }}
 			</div>
 		</div>
 	</div>
@@ -475,7 +480,7 @@
 				</a>
 			</div>
 			<div class="table-pay__right-col">
-				{{ checkedbtn(props.textBtn) }}
+				{{ checkedbtn() }}
 			</div>
 		</div>
 	</div>
@@ -502,7 +507,7 @@
 				</a>
 			</div>
 			<div class="table-pay__right-col">
-				{{ checkedbtn(props.textBtn) }}
+				{{ checkedbtn() }}
 			</div>
 		</div>
 	</div>

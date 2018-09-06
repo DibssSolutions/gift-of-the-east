@@ -173,15 +173,9 @@
             {% endfor %}
         </div>
         <div class="row" style="margin-top: 20px;">
-            {% for checkbox in[
-                {
-                    text: "С фото"
-                }
-            ] %}
-                <div class="col col-50">
-                    {{ mixins.checkbox( checkbox.text) }}
-                </div>
-            {% endfor %}
+            <div class="col col-100">
+                {{ mixins.checkbox("С фото") }}
+            </div>
         </div>
         <div class="row" style="margin-top: 20px;">
             {% for checkedbtn in[
@@ -242,21 +236,56 @@
 
 		<div class="title text-center" style="margin-top: 20px;">Order</div>
 		<div class="row" style="margin-top: 20px;">
-			{% for table in[
+			{% for table in [
 				{
 					thTitle1: "Магазин",
 					thTitle2: "Дата самовывоза",
-					tdTitle1: "Континент 2",
-					tdDscpt1: "70 лет Октября,25 к.2 ", 
-					tdTitle2: " Сегодня с 17: 00 ", 
-					tdDscpt2: " пн–вс 10: 00 –21: 00 ", 
-					textBtn: " Выбран " } ] %}
-				<div class="col col-100">
-					{{ mixins.table({ thTitle1:
-						table.thTitle1, thTitle2: table.thTitle2, tdTitle1: table.tdTitle1, tdDscpt1: table.tdDscpt1, tdTitle2: table.tdTitle2,
-						tdDscpt2: table.tdDscpt2, textBtn: table.textBtn }) }}
-				{% endfor %}
-			</div>
+					listRow: [
+						{
+							tdTitle1: "Континент 2",
+							tdDscpt1: "70 лет Октября,25 к.2 ", 
+							tdTitle2: " Сегодня с 17: 00 ", 
+							tdDscpt2: " пн–вс 10: 00 –21: 00 "
+						},
+						{
+							tdTitle1: "Континент 2",
+							tdDscpt1: "70 лет Октября,25 к.2 ", 
+							tdTitle2: " Сегодня с 17: 00 ", 
+							tdDscpt2: " пн–вс 10: 00 –21: 00 "
+						},
+						{
+							tdTitle1: "Континент 2",
+							tdDscpt1: "70 лет Октября,25 к.2 ", 
+							tdTitle2: " Сегодня с 17: 00 ", 
+							tdDscpt2: " пн–вс 10: 00 –21: 00 "
+						},
+						{
+							tdTitle1: "Континент 2",
+							tdDscpt1: "70 лет Октября,25 к.2 ", 
+							tdTitle2: " Сегодня с 17: 00 ", 
+							tdDscpt2: " пн–вс 10: 00 –21: 00 "
+						},
+						{
+							tdTitle1: "Континент 2",
+							tdDscpt1: "70 лет Октября,25 к.2 ", 
+							tdTitle2: " Сегодня с 17: 00 ", 
+							tdDscpt2: " пн–вс 10: 00 –21: 00 "
+						},
+						{
+							tdTitle1: "Континент 2",
+							tdDscpt1: "70 лет Октября,25 к.2 ", 
+							tdTitle2: " Сегодня с 17: 00 ", 
+							tdDscpt2: " пн–вс 10: 00 –21: 00 "
+						}
+					]
+				}
+			] %}
+				{{ mixins.table({ 
+					thTitle1: table.thTitle1, 
+					thTitle2: table.thTitle2, 
+					listRow: table.listRow
+				}) }}
+			{% endfor %}
 		</div>
 		<div class="row" style="margin-top: 20px;">
 			{% for tablepay in[

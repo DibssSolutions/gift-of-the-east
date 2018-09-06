@@ -43,7 +43,9 @@
 	&__text
 		display: inline-block
 		background-color: $white
-		padding: 13px 30px 12px
+		padding: 10px 20px
+		min-width: 128px
+		text-align: center
 		user-select: none
 		border: 1px solid $lightBrown
 		transition: background-color .3s, color .3s
@@ -56,6 +58,8 @@
 			transition: background-color .3s, border-color .3s
 			+hover
 				border: 1px solid $lightBrown
+		&_checked
+			display: none
 	input
 		position: absolute
 		top: 0
@@ -65,6 +69,11 @@
 		&:checked ~ .checked-btn
 			color: $white
 			background-color: $lightBrown
+		&:checked ~ .checked-btn__text
+			display: none
+			&_checked
+				display: block
+				
 			
 .checked-btn_border-grey 
 	input
@@ -81,6 +90,9 @@
 .radio-tab
 	width: 100%
 	display: table
+	+sm
+		width: 100%
+		display: block
 	&__label
 		position: relative
 		background-color: $white
@@ -93,6 +105,7 @@
 		display: table-cell
 		+sm
 			width: 100%
+			display: block
 		&.is-active
 			background-color: rgba($gallery, .5)
 	&__inner
@@ -100,6 +113,8 @@
 		padding-left: 28px
 		text-align: left
 		display: inline-block
+		+sm
+			min-width: 262px 
 		&:before
 			position: absolute
 			content: ''
@@ -136,6 +151,8 @@
 		font-size: 20px
 		transition: color .3s
 		margin-bottom: 3px
+		+md
+			font-size: 16px 
 	&__dscr
 		font-size: 14px
 		color: $gray		
@@ -143,16 +160,23 @@
 .radio-btn
 	background-color: rgba($gallery, .5)
 	padding: 4px
-	display: flex
+	font-size: 0
+	vertical-align: top
+	display: inline-block
 	&__label
 		position: relative
-		display: flex
-		align-items: center
-		padding: 8px 14px 4px 22px
+		padding: 8px 14px 8px 22px
 		transition: background-color .3s, border-color .3s
 		border: 1px solid transparent
 		cursor: pointer
-		font-size: 14px
+		min-height: 33px
+		min-width: 108px
+		text-align: center
+		display: inline-block
+		vertical-align: top
+		+xs
+			padding: 8px
+			min-width: 32px
 		&.is-active
 			background-color: $white
 			border: 1px solid $lightBrown
@@ -168,10 +192,24 @@
 	&__icon
 		transition: color .3s
 		margin-right: 8px
+		font-size: 0
+		line-height: 1
+		vertical-align: top
+		display: inline-block
+		+xs
+			margin-right: 0
+		.icon
+			font-size: 14px
+			vertical-align: top
+			display: inline-block
 	&__title
 		transition: color .3s
 		line-height: 1
-		margin-bottom: 4px			
+		vertical-align: top
+		font-size: 14px
+		display: inline-block
+		+xs
+			font-size: 0		
 	input
 		position: absolute
 		top: 0
