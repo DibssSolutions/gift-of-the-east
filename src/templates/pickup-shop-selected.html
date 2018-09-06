@@ -81,7 +81,7 @@ title: pickup-shop-selected
     		            {% endfor %}
                     	<div class="order-info__out">
                     		<div class="order-info__wrap">
-                    			<div class="order-info__head">
+                    			<div class="order-info__row">
                     				<div class="order-info__search">
                     					{{ mixins.newsearch('Город, адрес, название ТЦ') }}
                     				</div>
@@ -89,7 +89,60 @@ title: pickup-shop-selected
                     					{{ mixins.radiobtn({ title1: 'Список', title2: 'Карта' }) }}
                     				</div>
                     			</div>
+                    			<div class="order-info__row">
+                    				{{ mixins.checkbox("С фото") }}
+                    			</div>
                     		</div>
+    		    			{% for table in [
+    		    				{
+    		    					thTitle1: "Магазин",
+    		    					thTitle2: "Дата самовывоза",
+    		    					listRow: [
+    		    						{
+											tdTitle1: "Континент 2",
+											tdDscpt1: "70 лет Октября,25 к.2 ", 
+											tdTitle2: " Сегодня с 17: 00 ", 
+											tdDscpt2: " пн–вс 10: 00 –21: 00 "
+										},
+    		    						{
+											tdTitle1: "Континент 2",
+											tdDscpt1: "70 лет Октября,25 к.2 ", 
+											tdTitle2: " Сегодня с 17: 00 ", 
+											tdDscpt2: " пн–вс 10: 00 –21: 00 "
+										},
+    		    						{
+											tdTitle1: "Континент 2",
+											tdDscpt1: "70 лет Октября,25 к.2 ", 
+											tdTitle2: " Сегодня с 17: 00 ", 
+											tdDscpt2: " пн–вс 10: 00 –21: 00 "
+										},
+    		    						{
+											tdTitle1: "Континент 2",
+											tdDscpt1: "70 лет Октября,25 к.2 ", 
+											tdTitle2: " Сегодня с 17: 00 ", 
+											tdDscpt2: " пн–вс 10: 00 –21: 00 "
+										},
+    		    						{
+											tdTitle1: "Континент 2",
+											tdDscpt1: "70 лет Октября,25 к.2 ", 
+											tdTitle2: " Сегодня с 17: 00 ", 
+											tdDscpt2: " пн–вс 10: 00 –21: 00 "
+										},
+    		    						{
+											tdTitle1: "Континент 2",
+											tdDscpt1: "70 лет Октября,25 к.2 ", 
+											tdTitle2: " Сегодня с 17: 00 ", 
+											tdDscpt2: " пн–вс 10: 00 –21: 00 "
+										}
+    		    					]
+    		    				}
+    		    			] %}
+    							{{ mixins.table({ 
+    								thTitle1: table.thTitle1, 
+    								thTitle2: table.thTitle2, 
+    								listRow: table.listRow
+    							}) }}
+    		    			{% endfor %}
                     	</div>
                     </div>
 	            </div>
