@@ -113,15 +113,7 @@
 					{% for cardproduct in [
 						{
 							action: "true",
-							srcImg: "annie-spratt.jpg",
-							altImg: "annie-spratt",
-							price: "1000 ₽",
-							priceOld: "1400 ₽",
-							nameText: "Наименование товара",
-							textBtn: "В корзину"
-						},
-						{
-							srcImg: "annie-spratt.jpg",
+							srcImg: "vase-1.jpg",
 							altImg: "annie-spratt",
 							price: "1000 ₽",
 							priceOld: "1400 ₽",
@@ -130,7 +122,7 @@
 						},
 						{
 							action: "true",
-							srcImg: "annie-spratt.jpg",
+							srcImg: "vase-2.jpg",
 							altImg: "annie-spratt",
 							price: "1000 ₽",
 							priceOld: "1400 ₽",
@@ -139,6 +131,14 @@
 						},
 						{
 							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							srcImg: "vase-4.jpg",
 							altImg: "annie-spratt",
 							price: "1000 ₽",
 							priceOld: "1400 ₽",
@@ -159,11 +159,12 @@
 							}) }}
 						</div>
 					{% endfor %}
-				</div><div class="row catalog-cards__row">
+				</div>
+				<div class="row catalog-cards__row">
 					{% for cardproduct in [
 						{
 							action: "true",
-							srcImg: "annie-spratt.jpg",
+							srcImg: "vase-1.jpg",
 							altImg: "annie-spratt",
 							price: "1000 ₽",
 							priceOld: "1400 ₽",
@@ -171,7 +172,7 @@
 							textBtn: "В корзину"
 						},
 						{
-							srcImg: "annie-spratt.jpg",
+							srcImg: "vase-2.jpg",
 							altImg: "annie-spratt",
 							price: "1000 ₽",
 							priceOld: "1400 ₽",
@@ -188,7 +189,7 @@
 							textBtn: "В корзину"
 						},
 						{
-							srcImg: "annie-spratt.jpg",
+							srcImg: "vase-4.jpg",
 							altImg: "annie-spratt",
 							price: "1000 ₽",
 							priceOld: "1400 ₽",
@@ -209,11 +210,21 @@
 							}) }}
 						</div>
 					{% endfor %}
-				</div><div class="row catalog-cards__row">
+				</div>
+				<div class="row catalog-cards__row">
 					{% for cardproduct in [
 						{
 							action: "true",
-							srcImg: "annie-spratt.jpg",
+							srcImg: "vase-1.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							action: "true",
+							srcImg: "vase-2.jpg",
 							altImg: "annie-spratt",
 							price: "1000 ₽",
 							priceOld: "1400 ₽",
@@ -230,7 +241,41 @@
 						},
 						{
 							action: "true",
-							srcImg: "annie-spratt.jpg",
+							srcImg: "vase-4.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						}
+						] %}
+						<div class="catalog-cards__col col-25">
+							{{ mixins.product({
+								class: cardproduct.class,
+								action: cardproduct.action,
+								srcImg: cardproduct.srcImg,
+								altImg: cardproduct.altimg,
+								price: cardproduct.price,
+								priceOld: cardproduct.priceOld,
+								textBtn: cardproduct.textBtn,
+								nameText: cardproduct.nameText
+							}) }}
+						</div>
+					{% endfor %}
+				</div>
+				<div class="row catalog-cards__row">
+					{% for cardproduct in [
+						{
+							srcImg: "vase-1.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							action: "true",
+							srcImg: "vase-2.jpg",
 							altImg: "annie-spratt",
 							price: "1000 ₽",
 							priceOld: "1400 ₽",
@@ -239,6 +284,14 @@
 						},
 						{
 							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							srcImg: "vase-4.jpg",
 							altImg: "annie-spratt",
 							price: "1000 ₽",
 							priceOld: "1400 ₽",
