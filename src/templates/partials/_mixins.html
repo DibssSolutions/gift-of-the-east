@@ -373,7 +373,7 @@
 {% macro checkedbtn(props) %}
 <!-- Start checked-btn -->
 <label class="checked-btn {% if props.modifier %}{{props.modifier}}{% endif %}">
-	<input type="checkbox" name="checkbox-btn" data-validation="required">
+	<input type="{{ props.type or 'radio' }}" name="checkbox-btn" data-validation="required">
 	<span class="checked-btn__text">{{ props.text or 'Выбрать' }}</span>
 	<span class="checked-btn__text checked-btn__text_checked">{{ props.text or 'Выбран' }}</span>
 </label>
@@ -404,7 +404,7 @@
 	<div class="table__body">
 		{% for row in props.listRow %}
 		<div class="table__row">
-			<div class="table__cell table__cell_col" data-title="{{ props.thTitle1 }}">
+			<div class="table__cell" data-title="{{ props.thTitle1 }}">
 				<span class="table__text table__text_up">
 					{{ row.tdTitle1 }}
 				</span>
@@ -412,7 +412,7 @@
 					{{ row.tdDscpt1 }}
 				</span>
 			</div>
-			<div class="table__cell table__cell_col" data-title="{{ props.thTitle2 }}">
+			<div class="table__cell" data-title="{{ props.thTitle2 }}">
 				<span class="table__text table__text_up">
 					{{ row.tdTitle2 }}
 				</span>
@@ -420,8 +420,8 @@
 					{{ row.tdDscpt2 }}
 				</span>
 			</div>
-			<div class="table__cell table__cell_col">
-				{{ checkedbtn() }}
+			<div class="table__cell">
+				{{ checkedbtn({ loopIndex: loop.index }) }}
 			</div>
 		</div>
 		{% endfor %}
