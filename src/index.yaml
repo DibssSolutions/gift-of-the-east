@@ -17,3 +17,5 @@ PageList:
   ready: 50
 - file: pickup-shop-selected.html
   ready: 100
+- file: pay-order.html
+  ready: 100

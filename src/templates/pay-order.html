@@ -1,0 +1,95 @@
+--- title: Pay-order ---
+
+{% extends "layouts/_layout.html" %}
+{% block content %}
+    <div class="inner">
+		{{ mixins.breadcrumbs({
+			list: ['Назад','Главная','Корзина','Самовывоз-Доставка']
+		}) }}
+		<form action="/">
+	        <div class="row">
+	            <div class="col col-66 col-md-100">
+	                {{ mixins.theadsimple({ 
+						title: 'Подтвеждение заказа',
+						link: 'Самовывоз–Доставка'
+	                }) }}
+	                {{ mixins.basketlist({ 
+						active: 3,
+						list: [
+							{
+								icon: 'shopping-full',
+								title: 'КОРЗИНА'
+							},
+							{
+								icon: 'home-map-marker',
+								title: 'САМОВЫВОЗ / ДОСТАВКА'
+							},
+							{
+								icon: 'wallet',
+								title: 'ОПЛАТА'
+							},
+							{
+								icon: 'approval',
+								title: 'ПОДТВЕРЖДЕНИЕ'
+							}
+						]
+					}) }}
+					<h4 class="title-simple">
+						Выберите способ оплаты заказа
+					</h4>
+					<div class="order-info">
+						<div class="order-info__out">
+							{% for tablepay in[
+								{
+									text: "Наличный расчет при получении в магазине",
+									link: "Подробнее",
+									textBtn: "Выбрать"
+								}
+							]%}
+									{{ mixins.tablepay({ 
+								text: tablepay.text, 
+								link: tablepay.link, 
+								textBtn: tablepay.textBtn }) 
+							}}
+							{% endfor %}
+							{% for newtablepay in[
+								{
+									text: "Наличный расчет при получении в магазине",
+									link: "Подробнее",
+									textBtn: "Выбрать"
+								},{
+									text: "Наличный расчет при получении в магазине",
+									link: "Подробнее",
+									textBtn: "Выбрать"
+								}
+							]%}
+									{{ mixins.newtablepay({ 
+								text: newtablepay.text, 
+								link: newtablepay.link, 
+								textBtn: newtablepay.textBtn }) 
+							}}
+							{% endfor %}
+							{% for modtablepay in[
+								{
+									text: "Наличный расчет при получении в магазине",
+									link: "Подробнее",
+									textBtn: "Выбрать"
+								}
+							]%}
+									{{ mixins.modtablepay({ 
+								text: modtablepay.text, 
+								link: modtablepay.link, 
+								textBtn: modtablepay.textBtn }) 
+							}}
+							{% endfor %}
+
+						</div>
+					</div>
+	            </div>
+	            <div class="col col-33 col-md-100">
+	                {{order.self_delivery_payment()}}
+	            </div>
+	        </div>
+		</form>
+    </div>
+{% endblock %}
