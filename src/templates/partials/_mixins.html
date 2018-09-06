@@ -224,7 +224,7 @@
 		</div>
 		<div class="card__footer">
 			{% if props.btnClose !== false %}
-			<button class="card__close"><svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg></button>
+			<button class="card__close" type="button"><svg class="icon icon-close"><use xlink:href="img/sprite.svg#icon-close"></use></svg></button>
 			{% endif %}
 			{% if props.like %} {{like('card__like')}} {% endif %}
 			{% if props.subscribe %}
