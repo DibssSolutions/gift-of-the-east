@@ -2,47 +2,47 @@
 {% import "data/data.html" as data %}
 {% extends "layouts/_layout.html" %}
 {% block content %}
-    <div class="inner">
-        {{ mixins.breadcrumbs({ list: ['Назад','Главная','Каталог'] }) }}
-        <div class="row">
-            <div class="col col-25 col-sm-100">
-                <aside class="sidebar">
+	<div class="inner">
+		{{ mixins.breadcrumbs({ list: ['Назад','Главная','Каталог'] }) }}
+		<div class="row">
+			<div class="col col-25 col-sm-100">
+				<aside class="sidebar">
 					<button type="button" class="sidebar__toggler js-sidebar-trigger">
 						{{mixins.icon('plus')}} Каталог
 					</button>
-                    <h4 class="sidebar__title d-sm-none">
-                        Каталог
-                    </h4>
-                    <div class="sidebar__list js-sidebar-container">
-                        <ul class="sidebar-list">
-                            {% for item in data.sidebar_list %}
-                                {% if item.single %}
-                                    <li class="sidebar-list__item">
-                                        <a href="{{item.link}}">{{item.title | safe}}</a>
-                                    </li>
-                                {% else %}
-                                    <li class="sidebar-list__item {% if item.isOpen %}is-open{% endif %}">
-                                        <a href="#">{{item.title | safe}}</a>
-                                        <ul class="sidebar-list__secondary-list">
-                                            {% for list in item.list %}
-                                                <li class="sidebar-list__item {% if list.isActive %}is-active{% endif %}">
-                                                    <a href="{{list.link}}">{{list.title | safe}}</a>
-                                                </li>
-                                            {% endfor %}
-                                        </ul>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </aside>
-            </div>
-            <div class="col col-75 col-sm-100">
+					<h4 class="sidebar__title d-sm-none">
+						Каталог
+					</h4>
+					<div class="sidebar__list js-sidebar-container">
+						<ul class="sidebar-list">
+							{% for item in data.sidebar_list %}
+								{% if item.single %}
+									<li class="sidebar-list__item">
+										<a href="{{item.link}}">{{item.title | safe}}</a>
+									</li>
+								{% else %}
+									<li class="sidebar-list__item {% if item.isOpen %}is-open{% endif %}">
+										<a href="#">{{item.title | safe}}</a>
+										<ul class="sidebar-list__secondary-list">
+											{% for list in item.list %}
+												<li class="sidebar-list__item {% if list.isActive %}is-active{% endif %}">
+													<a href="{{list.link}}">{{list.title | safe}}</a>
+												</li>
+											{% endfor %}
+										</ul>
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				</aside>
+			</div>
+			<div class="col col-75 col-sm-100">
 
-                {{ mixins.theadsimple({ title: 'Каталог', product: '6758 товаров' }) }}
+				{{ mixins.theadsimple({ title: 'Каталог', product: '6758 товаров' }) }}
 
-                <div class="row catalog-cards">
-                    {% for cardcatalog in [
+				<div class="row catalog-cards">
+					{% for cardcatalog in [
 				{
 					img: "amethyst-1920@2x.jpg",
 					title: "Изделия из натуральных камней"
@@ -55,7 +55,7 @@
 					img: "nav-img@2x.jpg",
 					title: "Предметы интерьера"
 				},
-                {
+				{
 					img: "amethyst-1920@2x.jpg",
 					title: "Изделия из натуральных камней"
 				},
@@ -67,7 +67,7 @@
 					img: "nav-img@2x.jpg",
 					title: "Предметы интерьера"
 				},
-                {
+				{
 					img: "amethyst-1920@2x.jpg",
 					title: "Изделия из натуральных камней"
 				},
@@ -79,7 +79,7 @@
 					img: "nav-img@2x.jpg",
 					title: "Предметы интерьера"
 				},
-                {
+				{
 					img: "amethyst-1920@2x.jpg",
 					title: "Изделия из натуральных камней"
 				},
@@ -100,17 +100,168 @@
 					title: "СИМВОЛЫ ГОРОДА ОМСКА"
 				}
 				] %}
-                        <div class="col col-33 col-md-50 col-sm-100">
-                            {{ mixins.cardcatalog({
-                                img: cardcatalog.img,
-                                title: cardcatalog.title
-                            }) }}
-                        </div>
-                    {% endfor %}
-                </div>
-                {% include "partials/catalog/_filter.html" %}
-            </div>
-        </div>
-    </div>
+					<div class="col col-33 col-md-50 col-sm-100">
+						{{ mixins.cardcatalog({
+							img: cardcatalog.img,
+							title: cardcatalog.title
+						}) }}
+					</div>
+					{% endfor %}
+				</div>
+				{% include "partials/catalog/_filter.html" %}
+				<div class="row catalog-cards__row">
+					{% for cardproduct in [
+						{
+							action: "true",
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							action: "true",
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						}
+						] %}
+						<div class="catalog-cards__col col-25">
+							{{ mixins.product({
+								class: cardproduct.class,
+								action: cardproduct.action,
+								srcImg: cardproduct.srcImg,
+								altImg: cardproduct.altimg,
+								price: cardproduct.price,
+								priceOld: cardproduct.priceOld,
+								textBtn: cardproduct.textBtn,
+								nameText: cardproduct.nameText
+							}) }}
+						</div>
+					{% endfor %}
+				</div><div class="row catalog-cards__row">
+					{% for cardproduct in [
+						{
+							action: "true",
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							action: "true",
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						}
+						] %}
+						<div class="catalog-cards__col col-25">
+							{{ mixins.product({
+								class: cardproduct.class,
+								action: cardproduct.action,
+								srcImg: cardproduct.srcImg,
+								altImg: cardproduct.altimg,
+								price: cardproduct.price,
+								priceOld: cardproduct.priceOld,
+								textBtn: cardproduct.textBtn,
+								nameText: cardproduct.nameText
+							}) }}
+						</div>
+					{% endfor %}
+				</div><div class="row catalog-cards__row">
+					{% for cardproduct in [
+						{
+							action: "true",
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							action: "true",
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						},
+						{
+							srcImg: "annie-spratt.jpg",
+							altImg: "annie-spratt",
+							price: "1000 ₽",
+							priceOld: "1400 ₽",
+							nameText: "Наименование товара",
+							textBtn: "В корзину"
+						}
+						] %}
+						<div class="catalog-cards__col col-25">
+							{{ mixins.product({
+								class: cardproduct.class,
+								action: cardproduct.action,
+								srcImg: cardproduct.srcImg,
+								altImg: cardproduct.altimg,
+								price: cardproduct.price,
+								priceOld: cardproduct.priceOld,
+								textBtn: cardproduct.textBtn,
+								nameText: cardproduct.nameText
+							}) }}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
 
