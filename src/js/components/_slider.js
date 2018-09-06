@@ -110,8 +110,8 @@ sliderWatched.slick({
   speed: 300,
   slidesToShow: 4,
   slidesToScroll: 1,
-  prevArrow: `<button class="slider-watched__prev">${buildIcon('arrow-left')}</button>`,
-  nextArrow: `<button class="slider-watched__next">${buildIcon('arrow-right')}</button>`,
+  prevArrow: `<button class="slider-watched__prev" type="button">${buildIcon('arrow-left')}</button>`,
+  nextArrow: `<button class="slider-watched__next" type="button">${buildIcon('arrow-right')}</button>`,
   responsive: [
     {
       breakpoint: 1023,
