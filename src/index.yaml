@@ -14,8 +14,10 @@ PageList:
 - file: catalog.html
   ready: 100
 - file: confirmation-order.html
-  ready: 50
+  ready: 100
 - file: pickup-shop-selected.html
   ready: 100
 - file: pay-order.html
   ready: 100
+- file: basket-second-state.html
+  ready: 50

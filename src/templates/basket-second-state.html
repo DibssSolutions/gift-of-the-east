@@ -1,0 +1,99 @@
+--- title: Basket ---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+    <div class="inner">
+		{{ mixins.breadcrumbs({
+
+			list: ['Назад','Главная','Корзина']
+		}) }}
+		<form action="/">
+	        <div class="row">
+	            <div class="col col-66 col-md-100">
+	                {{ mixins.theadsimple({ product: '1 товар' }) }}
+	                {{ mixins.basketlist({ 
+						active: 1,
+						list: [
+							{
+								icon: 'shopping-full',
+								title: 'КОРЗИНА'
+							},
+							{
+								icon: 'home-map-marker',
+								title: 'САМОВЫВОЗ / ДОСТАВКА'
+							},
+							{
+								icon: 'wallet',
+								title: 'ОПЛАТА'
+							},
+							{
+								icon: 'approval',
+								title: 'ПОДТВЕРЖДЕНИЕ'
+							}
+						]
+					}) }}
+
+	                {{ mixins.notavailable({
+	                	cardList: [
+		                    {
+		                    	class: 'card_simple',
+		                        img: 'vase.jpg',
+								subscribe: true
+		                    },
+		                    {
+		                    	class: 'card_simple',
+		                        img: 'vase-2.jpg',
+								subscribe: true
+		                    }
+		                ]
+	                }) }}
+
+	                {% for card in [
+	                    {
+	                    	class: 'card_bord',
+	                        img: 'vase-2.jpg',
+	                        price: '1000 ₽',
+	                        priceOld: '1400 ₽',
+	                        action: true,
+	                        quantity: {
+	                            select: true
+	                        },
+	                        benefit: true,
+	                        like: true
+	                    },
+	                    {
+	                    	class: 'card_bord',
+	                        cardClub: true,
+	                        price: 'Бесплатно',
+	                        quantity: true,
+	                        btnClose: false,
+	                        title: 'Карта члена клуба Дары Востока'
+	                    }
+	                ] %}
+	                    {{ mixins.card({
+	                    class: card.class,
+						img: card.img,
+						cardClub: card.cardClub,
+						title: card.title,
+						price: card.price,
+						action: card.action,
+						priceOld: card.priceOld,
+						quantity: { select: card.quantity.select },
+						benefit: card.benefit,
+						btnClose: card.btnClose,
+						like: card.like
+					}) }}
+
+	                {% endfor %}
+		            <!--Start slider-you-watched -->
+		            {% include "partials/catalog/_slider-you-watched.html" %}
+		            <!-- End slider-you-watched-->
+	            </div>
+	            <div class="col col-33 col-md-100">
+	            	{{order.basket_1()}}
+	            </div>
+	        </div>
+		</form>
+    </div>
+{% endblock %}
