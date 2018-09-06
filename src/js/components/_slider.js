@@ -1,5 +1,5 @@
 import slick from 'slick-carousel';
-import { INIT, widthMD, widthSM } from '../constants';
+import { BODY, DOC, WIN, INIT, widthMD, widthSM } from '../constants';
 import { buildIcon } from '../utils';
 
 const mainSlider = $('.js-main-slider');
@@ -135,4 +135,41 @@ sliderWatched.slick({
       }
     }
   ]
+});
+
+DOC.ready(() => {
+  let timeOut;
+  let arrayHref = [];
+  const sliderIcons = $('.js-slider-watched .icon');
+  sliderIcons.each((i,el) => {
+    const container = $(el);
+    const atr = container.find('use').attr('xlink:href');
+    arrayHref.push(atr);
+    // console.log(arrayHref);
+  });
+  WIN.on('resize', () => {
+  // setTimeout(() => {
+    // console.log(sliderIcons);
+    for(let i = 0; i <= sliderIcons.length-1; i++) {
+      $(sliderIcons[i]).find('use').attr('xlink:href', ''); 
+      // $(sliderIcons[i]).attr('xlink:href', arrayHref[i]); 
+      // $(sliderIcons[i]).find('use').attr('xlink:href', ''); 
+      console.log('atr', $(sliderIcons[i]).find('use').attr('xlink:href'));
+    }
+    clearTimeout(timeOut);
+    timeOut = setTimeout(() => {
+      // sliderIcons 
+      for(let i = 0; i <= sliderIcons.length-1; i++) {
+        // $(sliderIcons[i]).find('use').attr('xlink:href', ''); 
+        $(sliderIcons[i]).attr('xlink:href', `${arrayHref[i]}`); 
+        // $(sliderIcons[i]).find('use').attr('xlink:href', ''); 
+        console.log('atr2', $(sliderIcons[i]).find('use').attr('xlink:href'), arrayHref[i]);
+      }
+      // container.find('use').attr('xlink:href', ''); 
+      // container.find('use').attr('xlink:href', atr); 
+      // console.log(atr);
+    },500);
+  });
+
+  // },500);
 });
