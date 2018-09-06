@@ -15,3 +15,5 @@ PageList:
   ready: 100
 - file: confirmation-order.html
   ready: 50
+- file: pickup-shop-selected.html
+  ready: 100

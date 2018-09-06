@@ -78,45 +78,33 @@
 				border: 1px solid  rgba($gallery, 1) !important
 
 
-
-		
-
 .radio-tab
-	display: flex
-	align-items: flex-start
-	justify-content: center
-	flex-wrap: wrap
+	width: 100%
+	display: table
 	&__label
 		position: relative
-		display: block
 		background-color: $white
-		padding: 18px 16px	16px 94px
+		padding: 18px 16px 15px 7.8%
 		transition: background-color .3s
 		cursor: pointer
+		vertical-align: top
+		width: 50%
+		text-align: center
+		display: table-cell
 		+sm
 			width: 100%
-		span
-			display: block
 		&.is-active
-			background-color: $gallery
-	input
-		position: absolute
-		top: 0
-		left: 0
-		opacity: 0
-		&:checked ~ .radio-tab__title
-			color: $black
-			&:after
-				opacity: 1
-	&__title
-		font-size: 20px
-		transition: color .3s
-		margin-bottom: 5px
+			background-color: rgba($gallery, .5)
+	&__inner
+		position: relative
+		padding-left: 28px
+		text-align: left
+		display: inline-block
 		&:before
 			position: absolute
 			content: ''
-			left: 65px
-			top: 23px
+			left: 0
+			top: 5px
 			width: 16px
 			height: 16px
 			border: 1px solid $lightBrown
@@ -125,20 +113,35 @@
 		&:after
 			position: absolute
 			content: ''
-			left: 69px
-			top: 27px
+			left: 4px
+			top: 9px
 			width: 8px
 			height: 8px
 			background-color: $lightBrown
 			transition: opacity .3s
 			border-radius: 50%
 			opacity: 0
+		span
+			display: block
+	input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		&:checked ~ .radio-tab__inner
+			color: $black
+			&:after
+				opacity: 1
+	&__title
+		font-size: 20px
+		transition: color .3s
+		margin-bottom: 3px
 	&__dscr
 		font-size: 14px
 		color: $gray		
 
 .radio-btn
-	background-color: $gallery
+	background-color: rgba($gallery, .5)
 	padding: 4px
 	display: flex
 	&__label

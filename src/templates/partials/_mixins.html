@@ -241,7 +241,7 @@
 {% endmacro %}
 
 {% macro product(props) %}
-<div class="product card-product">
+<div class="product">
 	<div class="product__img">
 		{% if props.action %}
 		<div class="action-block">%</div>
@@ -252,11 +252,9 @@
 		<div class="product__name">
 			{{ props.nameText }}
 		</div>
-		<div class="product__price card">
-			<div class="card__price">
-				<span>{{ props.price }}</span>
-				<span class="is-old">{{ props.priceOld }}</span>
-			</div>
+		<div class="product__price">
+			<span>{{ props.price }}</span>
+			<span class="is-old">{{ props.priceOld }}</span>
 		</div>
 		<div class="product__footer">
 			<button type="button" class="product__btn btn">
@@ -519,13 +517,17 @@
 <div class="radio-tab">
 	<label class="radio-tab__label js-tab is-active">
 		<input type="radio" name="radio-tab" checked>
-		<span class="radio-tab__title">{{ props.title1 }}</span>
-		<span class="radio-tab__dscr">{{ props.dscr1 }}</span>
+		<span class="radio-tab__inner">
+			<span class="radio-tab__title">{{ props.title1 }}</span>
+			<span class="radio-tab__dscr">{{ props.dscr1 }}</span>
+		</span>
 	</label>
 	<label class="radio-tab__label js-tab">
 		<input type="radio" name="radio-tab">
-		<span class="radio-tab__title">{{ props.title2 }}</span>
-		<span class="radio-tab__dscr">{{ props.dscr2 }}</span>
+		<span class="radio-tab__inner">
+			<span class="radio-tab__title">{{ props.title2 }}</span>
+			<span class="radio-tab__dscr">{{ props.dscr2 }}</span>
+		</span>
 	</label>
 </div>
 <!-- End radio-tab -->
@@ -550,12 +552,12 @@
 
 {% macro newsearch(placeholder) %}
 <!-- Start new-search -->
-<form class="new-search" action="/">
+<div class="new-search">
 	<label class="new-search__label">
 		<input class="new-search__input" type="text" name="new-search" placeholder="{{ placeholder }}">
-		<button type="submit" class="new-search__btn">{{ icon('search') }}</button>
+		<button type="button" class="new-search__btn">{{ icon('search') }}</button>
 	</label>
-</form>
+</div>
 <!-- End new-search -->
 {% endmacro %}
 
@@ -608,5 +610,48 @@
 </div>
 <!-- End share -->
 {% endmacro %}
-
 <!-- ------------------------------ END PRICE ------------------------------ -->
+
+<!-- ------------------------------ START FORM ------------------------------ -->
+{% macro control(props) %}
+<div class="form-control{% if props.class %} {{ props.class }}{% endif %}">
+	<input class="input" {% if props.value %}value="{{props.value}}"{% endif %} type="{{ props.type or 'text' }}" {% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %}{% if props.required %} data-validation="required"{% endif %}>
+	{{ icon('check') }}
+</div>
+{% endmacro %}
+<!-- ------------------------------ END form ------------------------------ -->
+
+{% macro inputRange() %}
+    <div class="dropdown dropdown-range">
+    <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Цена
+    </a>
+    <div class="dropdown-menu dropdown-menu-range js-range-container" aria-labelledby="dropdownRangeLink">
+        <div class="dropdown-menu__row">
+            <span>Диапазон цен</span>
+            <button type="button" class="js-range-reset btn-reset">
+                {{icon('refresh')}}
+                <span>Сбросить</span>
+            </button>
+        </div>
+        <div class="dropdown-menu__row">
+            <div class="dropdown-menu__input">
+                <input type="text" class="input input_range js-range-min js-range-input">
+                <span class="input-addon">
+                    от
+                </span>
+            </div>
+            <div class="dropdown-menu__input">
+                <input type="text" class="input input_range js-range-max js-range-input">
+                <span class="input-addon">
+                    до
+                </span>
+            </div>
+
+        </div>
+        <div class="dropdown-menu__row dropdown-menu__row_slider">
+            <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
