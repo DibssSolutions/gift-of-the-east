@@ -165,14 +165,18 @@
 
 .btn-reset
 	position: relative
-	padding: 10px 16px 8px 16px
+	padding: 10px 16px 8px
 	font-family: $montserrat
 	font-size: 0
 	line-height: 20px
 	background-color: transparent
+	+sm
+		padding: 10px 8px 8px
 	span 
 		+f(14px, 400, 1.42857)
 		vertical-align: middle
+		+sm
+			font-size: 12px
 	.icon
 		vertical-align: middle
 		fill: $silver
