@@ -140,7 +140,7 @@ sliderWatched.slick({
 DOC.ready(() => {
   let timeOut;
   let arrayHref = [];
-  const sliderIcons = $('.js-slider-watched .icon use');
+  const sliderIcons = $('.slick-slider .icon use');
   sliderIcons.each((i,el) => {
     const atr = $(el).attr('xlink:href');
     arrayHref.push(atr);
