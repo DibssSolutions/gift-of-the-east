@@ -159,14 +159,14 @@
 
 {% macro likebtn() %}
 <!-- begin likebtn -->
-<div class="btn-hard">
-	<label class="btn-hard__btn btn-like like">
+<label class="btn-like">
+	<span class="like">
 		<input type="checkbox">
 		<svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg>
 		<svg class="icon icon-heart"><use xlink:href="img/sprite.svg#icon-heart"></use></svg>
 		<span class="like__lines"></span>
-	</label>
-</div>
+	</span>
+</label>
 <!-- end likebtn -->
 {% endmacro %}
 
@@ -257,11 +257,15 @@
 			<span class="is-old">{{ props.priceOld }}</span>
 		</div>
 		<div class="product__footer">
-			<button type="button" class="product__btn btn">
+			<button type="button" class="product__btn btn" type="button">
 			{{ icon('shopping-bag') }}
 			{{ props.textBtn }}
 			</button>
-			{{ likebtn() }}
+			{% if props.likebtn !== false %}
+			<div class="product__like">
+				{{ likebtn() }}
+			</div>
+			{% endif %}
 		</div>	
 	</div>
 </div>
@@ -619,9 +623,10 @@
 
 <!-- ------------------------------ START FORM ------------------------------ -->
 {% macro control(props) %}
-<div class="form-control{% if props.class %} {{ props.class }}{% endif %}">
-	<input class="input" {% if props.value %}value="{{props.value}}"{% endif %} type="{{ props.type or 'text' }}" {% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %}{% if props.required %} data-validation="required"{% endif %}>
+<div class="form-control{% if props.class %} {{ props.class }}{% endif %} js-form-control">
+	<input class="input" type="{{ props.type or 'text' }}" {% if props.value %}value="{{props.value}}"{% endif %} {% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %} {% if props.required %} data-validation="required"{% endif %} {% if props.phoneMask %} data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder=""{% endif %}>
 	{{ icon('check') }}
+	{% if props.tooltip %}<div class="form-tooltip">{{ props.tooltip }}</div>{% endif %}
 </div>
 {% endmacro %}
 <!-- ------------------------------ END form ------------------------------ -->

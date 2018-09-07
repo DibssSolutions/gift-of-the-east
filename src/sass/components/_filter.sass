@@ -1,22 +1,26 @@
 .filter
     width: 100%
-    margin-top: 32px
+    &:not(:first-child)
+        margin-top: 30px
+    .btn-reset
+        color: $gray 
     &__top
         display: flex
         align-items: center
         flex-wrap: wrap
         padding-bottom: 16px
-        border-bottom: 1px solid $silver
-        &_select
-            margin-left: auto
-            display: flex
-            justify-content: flex-start
-            align-items: center
-            span 
-                margin-right: 8px
-            +sm 
-                flex: 0 0 100%
-                margin-top: 24px
+        border-bottom: 1px solid rgba($silver, .5)
+    &__top-select
+        margin-left: auto
+        color: $black 
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        span 
+            margin-right: 8px
+        +sm 
+            flex: 0 0 100%
+            margin-top: 24px
                 
     &__bottom
         padding: 16px 0 4px

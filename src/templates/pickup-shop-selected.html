@@ -15,7 +15,7 @@ title: pickup-shop-selected
 	            <div class="col col-66 col-md-100">
 	                {{ mixins.theadsimple({ title: 'Выбор способа получения заказа', link: 'Вернуться в корзину' }) }}
 	                {{ mixins.basketlist({ 
-						active: 1,
+						active: 2,
 						list: [
 							{
 								icon: 'shopping-full',
@@ -48,16 +48,21 @@ title: pickup-shop-selected
 		                			{
 		                				class: 'is-checked',
 		                				value: '+7 (961) 678 – 87 – 56',
-		                				placeholder: 'Номер телефона'
+		                				placeholder: 'Номер телефона',
+		                				phoneMask: "true"
 		                			},
 		                			{
-		                				placeholder: 'Email'
+		                				class: 'tooltip-active',
+		                				placeholder: 'Email',
+		                				tooltip: 'Мы отправим вам чек на указанный email.'
 		                			}
 		                		] %}
 		                		{{ mixins.control({
 		                			class: field.class,
 		                			value: field.value,
-									placeholder: field.placeholder
+									placeholder: field.placeholder,
+									tooltip: field.tooltip,
+									phoneMask: field.phoneMask
 		                		}) }}
 		                		{% endfor %}
 		                		<div class="form-control">

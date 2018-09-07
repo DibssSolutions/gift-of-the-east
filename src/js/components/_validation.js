@@ -3,8 +3,9 @@ import '../lib/toggleDisabled.js';
 import Inputmask from 'inputmask';
 import { BODY } from '../constants';
 
-BODY.on('focus', 'input', function() {
-  Inputmask().mask(this);
+
+$('[data-inputmask]').each((i,el) => {
+  Inputmask().mask(el);
 });
 
 const number = $('.js-input-number');

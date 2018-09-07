@@ -20,7 +20,7 @@
 		vertical-align: top
 		display: inline-block
 	.icon-shopping-bag
-		margin: -5px 13px
+		margin: -3px 13px
 		font-size: 21px
 		+md
 			margin: -1px 5px -1px 0
@@ -141,6 +141,7 @@
 		transform: translateX(105%)
 
 .btn-like
+	position: relative
 	height: 48px
 	width: 48px
 	line-height: 46px
@@ -151,17 +152,20 @@
 	background-color: $white 
 	transition: color .3s
 	vertical-align: top
+	cursor: pointer
 	display: inline-block
 	+md
 		height: 45px
 		width: 45px
 		line-height: 44px
 	+hover
-		color: $red 
-	.icon
-		font-size: 20px
-		vertical-align: middle
-		display: inline-block
+		.like
+			color: $red 
+	.like
+		position: absolute
+		top: 50%
+		left: 50%
+		margin: -10px 0 0 -11px
 
 .btn-reset
 	position: relative

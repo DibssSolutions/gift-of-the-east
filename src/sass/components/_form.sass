@@ -21,6 +21,43 @@
 		color: $green 
 		visibility: hidden
 		opacity: 0
+.form-tooltip
+	position: absolute
+	top: -4px
+	left: 100%
+	z-index: 2
+	width: 320px
+	padding: 16px
+	font-size: 13px
+	color: $black 
+	margin-left: 24px
+	box-shadow: 0 6px 12px rgba(#000, .16) 
+	background-color: $white 
+	display: none
+	.tooltip-active &
+		display: block
+		+md
+			display: none
+	&:before
+		position: absolute
+		content: "" 
+		z-index: -1
+		top: 50%
+		left: -6px
+		margin-top: -6px
+		width: 13px
+		height: 13px
+		box-shadow: 0 6px 12px rgba(#000, .16) 
+		+rotate(45)
+		background-color: $white 
+	&:after
+		position: absolute
+		content: ""
+		top: 0
+		left: 0
+		bottom: 0
+		width: 7px
+		background-color: $white 
 .form-question
 	margin-right: -16px
 	text-align: right

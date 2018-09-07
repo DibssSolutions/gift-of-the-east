@@ -38,13 +38,14 @@
     padding: 10px 10px 15px 24px
     +md 
         display: none
-        &.is-open
-            display: block
     &__item
         margin-bottom: 17px
+        &.is-open
+            & > a
+                color: $black 
         a
             font-size: 13px
-            color: $black
+            color: #5e6e6e 
             font-weight: 500
             text-transform: uppercase
             line-height: 1.4
