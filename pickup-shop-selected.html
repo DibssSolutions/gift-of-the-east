@@ -231,7 +231,7 @@
               <!-- end baskethead -->
               <!-- begin basketlist -->
               <ul class="basketlist">
-                <li class="basketlist__item is-active">
+                <li class="basketlist__item">
                   <span class="basketlist__icon">
                     <svg class="icon icon-shopping-full">
                       <use xlink:href="img/sprite.svg#icon-shopping-full"></use>
@@ -239,7 +239,7 @@
                   </span>
                   <span class="basketlist__title">КОРЗИНА</span>
                 </li>
-                <li class="basketlist__item">
+                <li class="basketlist__item is-active">
                   <span class="basketlist__icon">
                     <svg class="icon icon-home-map-marker">
                       <use xlink:href="img/sprite.svg#icon-home-map-marker"></use>
@@ -269,23 +269,24 @@
               <div class="cont-info">
                 <div class="cont-info__out">
                   <div class="cont-info__wrap">
-                    <div class="form-control is-checked">
-                      <input class="input" value="Анна" type="text" placeholder="Имя">
+                    <div class="form-control is-checked js-form-control">
+                      <input class="input" type="text" value="Анна" placeholder="Имя">
                       <svg class="icon icon-check">
                         <use xlink:href="img/sprite.svg#icon-check"></use>
                       </svg>
                     </div>
-                    <div class="form-control is-checked">
-                      <input class="input" value="+7 (961) 678 – 87 – 56" type="text" placeholder="Номер телефона">
+                    <div class="form-control is-checked js-form-control">
+                      <input class="input" type="text" value="+7 (961) 678 – 87 – 56" placeholder="Номер телефона" data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder="">
                       <svg class="icon icon-check">
                         <use xlink:href="img/sprite.svg#icon-check"></use>
                       </svg>
                     </div>
-                    <div class="form-control">
+                    <div class="form-control tooltip-active js-form-control">
                       <input class="input" type="text" placeholder="Email">
                       <svg class="icon icon-check">
                         <use xlink:href="img/sprite.svg#icon-check"></use>
                       </svg>
+                      <div class="form-tooltip">Мы отправим вам чек на указанный email.</div>
                     </div>
                     <div class="form-control">
                       <button class="btn btn_md btn_bord btn_full" type="button">
@@ -549,7 +550,7 @@
                       <span class="order-form__text order-form__text_big"> 400 ₽ </span>
                     </div>
                     <div class="order-form__row order-form__row_submit">
-                      <button type="submit" class="btn btn_full">Перейти к оплате</button>
+                      <button type="submit" class="btn btn_full" disabled>Перейти к оплате</button>
                     </div>
                   </div>
                 </div>
