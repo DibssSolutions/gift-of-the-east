@@ -1,0 +1,72 @@
+[data-tabs-control]
+	cursor: pointer
+[data-tabs-container]
+	display: none
+	&.is-open
+		display: block
+
+.tabs
+	&:not(:first-child)
+		margin-top: 40px
+	&__current
+		display: none
+	&__out
+		border-top: 1px solid rgba($silver, 0.5) 
+		box-shadow: 0 3px 9px $gallery
+	&__list
+		font-size: 0
+	&__item
+		position: relative
+		margin-bottom: -1px
+		padding: 20px 16px 15px
+		font-size: 20px
+		line-height: 1.5
+		color: rgba($black, .8)
+		vertical-align: top
+		overflow: hidden
+		transition: color .3s
+		display: inline-block
+		+hover
+			color: $black 
+		&.is-active
+			color: $black 
+			&:before
+				animation: lineIn 0.4s ease alternate forwards
+		&:before
+			position: absolute
+			content: "" 
+			left: 0
+			bottom: 0
+			height: 2px
+			width: 100%
+			opacity: 0
+			transition: opacity .2s
+			animation: lineOut 0.4s ease alternate forwards
+			background-color: $lightBrown 
+			.is-loaded &
+				opacity: 1
+				transition-delay: .2s
+		&:not(:first-child)
+			margin-left: 42px
+	&__quantity
+		margin-left: 3px
+		color: $silver 
+		font-size: 16px
+		display: inline
+	&__wrap
+
+	&__container
+		padding: 42px 0 67px
+
+@keyframes lineIn
+	0%
+		transform: translateX(-105%)
+	1%
+		transform: translateX(-105%)
+	100%
+		transform: translateX(0)
+@keyframes lineOut
+	0%
+		transform: translateX(0)
+	100%
+		transform: translateX(105%)

@@ -4,6 +4,8 @@ export const ACTIVE = 'is-active';
 export const ANIMATE = 'is-animate';
 export const INIT = 'is-init';
 export const SHOW = 'is-show';
+export const LOADED = 'is-loaded';
+export const DISABLED = 'is-disabled';
 export const OVERFLOW_HIDDEN = 'is-overflow-hidden';
 
 export const widthMD = 1024;

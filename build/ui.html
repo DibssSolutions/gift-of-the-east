@@ -11,7 +11,7 @@
     <link rel="stylesheet" media="all" href="css/app.css">
   </head>
 
-  <body>
+  <body data-lazy>
     <!-- BEGIN content -->
     <div class="out">
       <!-- begin header -->
@@ -28,7 +28,7 @@
             </div>
             <div class="header__logo">
               <!-- begin logo -->
-              <a href="/" class="logo">
+              <a href="./index.html" class="logo">
                 <img src="./img/logo.png" alt="logo">
               </a>
               <!-- end logo -->
@@ -281,14 +281,14 @@
             <!-- End card-catalog -->
           </div>
         </div>
-        <div class="cardcolaction" style="margin-top: 20px;">
-          <!-- Start card-colaction -->
-          <div class="card-colaction">
-            <div class="card-colaction__left-col">
-              <div class="card-colaction__img img-bg" style="background-image: url(./img/derek-story-unsplash@2x.jpg);">
+        <div class="cardcollection" style="margin-top: 20px;">
+          <!-- Start card-collection -->
+          <div class="card-collection">
+            <div class="card-collection__left-col">
+              <div class="card-collection__img img-bg" style="background-image: url(./img/derek-story-unsplash@2x.jpg);">
               </div>
             </div>
-            <div class="card-colaction__right-col">
+            <div class="card-collection__right-col">
               <div class="head">
                 <h2 class="title">Коллекция Восточные сказки</h2>
                 <a href="#" class="head__btn btn btn_md btn_bord btn_anim">
@@ -317,11 +317,18 @@
         </div>
         <div class="block" style="margin-top: 20px;">
           <!--Start slider-products -->
+          <!-- begin slider-products -->
           <div class="slider-products js-slider-wrap">
             <div class="slider-products__show js-slider-products">
-              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
-              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
-              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
+              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);">
+                <div class="action-block">%</div>
+              </div>
+              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);">
+                <div class="action-block">%</div>
+              </div>
+              <div class="slider-products__slide" style="background-image: url(./img/vase.jpg);">
+                <div class="action-block">%</div>
+              </div>
             </div>
             <div class="slider-products__nav js-slider-products-nav">
               <div class="slider-products__slide-wrap">
@@ -335,6 +342,7 @@
               </div>
             </div>
           </div>
+          <!-- end slider-products -->
           <!-- End slider-products-->
         </div>
         <div class="block" style="margin-top: 20px;">
@@ -585,8 +593,14 @@
           <div class="col col-50">
             <!-- Start rating -->
             <div class="rating-stars">
-              <input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="2" />
-              <a href="#" class="rating-stars__text rating-stars__text--review">2 Отзыва</a> / <span class="rating-stars__text views">12 Просмотров</span> / <span class="rating-stars__text vendor-code"></span>
+              <div class="rating-stars__input">
+                <input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="10" />
+              </div>
+              <div class="rating-stars__wrap">
+                <a href="#" class="rating-stars__text">2 Отзыва</a>
+                <span class="rating-stars__text">12 просмотров</span>
+                <span class="rating-stars__text">Артикул: 45675</span>
+              </div>
             </div>
             <!-- End rating -->
           </div>
@@ -615,14 +629,14 @@
         <div class="row" style="margin-top: 20px;">
           <!-- Start radio-tab -->
           <div class="radio-tab">
-            <label class="radio-tab__label js-tab is-active">
+            <label class="radio-tab__label js-radio-tab is-active">
               <input type="radio" name="radio-tab" checked>
               <span class="radio-tab__inner">
                 <span class="radio-tab__title">Самовывоз из магазина</span>
                 <span class="radio-tab__dscr">Бесплатно</span>
               </span>
             </label>
-            <label class="radio-tab__label js-tab">
+            <label class="radio-tab__label js-radio-tab">
               <input type="radio" name="radio-tab">
               <span class="radio-tab__inner">
                 <span class="radio-tab__title">Доставка домой или в офис</span>
@@ -685,20 +699,6 @@
             </span>
           </label>
           <!-- end likebtn -->
-        </div>
-        <div class="row" style="margin-top: 20px;">
-          <!-- Start new-search -->
-          <div class="new-search">
-            <label class="new-search__label">
-              <input class="new-search__input" type="text" name="new-search" placeholder="Город, адрес, название ТЦ">
-              <button type="button" class="new-search__btn">
-                <svg class="icon icon-search">
-                  <use xlink:href="img/sprite.svg#icon-search"></use>
-                </svg>
-              </button>
-            </label>
-          </div>
-          <!-- End new-search -->
         </div>
         <!-- ******************************* Order ******************************* -->
         <div class="title text-center" style="margin-top: 20px;">Order</div>
@@ -1014,44 +1014,36 @@
         </div>
         <div class="row" style="margin-top: 20px;">
           <div class="col col-100">
-            <!-- Start newprice -->
-            <div class="price price_mod">
-              <span class="price__number"> 1400 ₽ </span>
-              <span class="price__text">Розничная цена</span>
+            <!-- Start price -->
+            <div class="price price_old">
+              <span class="price__number"> 1000 ₽ </span>
+              <span class="price__text">Цена для Вас</span>
             </div>
-            <!-- End newprice -->
+            <!-- End price -->
           </div>
         </div>
         <div class="row" style="margin-top: 20px;">
           <div class="col col-100">
-            <!-- Start availability -->
-            <div class="availability">
-              <a href="#" class="availability__link">
-                <span class="availability__icon">
-                  <svg class="icon icon-location">
-                    <use xlink:href="img/sprite.svg#icon-location"></use>
-                  </svg>
-                </span>
-                <span class="availability__text">Розничная цена</span>
-              </a>
-            </div>
-            <!-- End availability -->
+            <a href="#" class="iconlink">
+              <span class="iconlink__icon">
+                <svg class="icon icon-location">
+                  <use xlink:href="img/sprite.svg#icon-location"></use>
+                </svg>
+              </span>
+              <span class="iconlink__text">Розничная цена</span>
+            </a>
           </div>
         </div>
         <div class="row" style="margin-top: 20px;">
           <div class="col col-100">
-            <!-- Start share -->
-            <div class="share">
-              <a href="#" class="share__link">
-                <span class="share__icon">
-                  <svg class="icon icon-share-variant">
-                    <use xlink:href="img/sprite.svg#icon-share-variant"></use>
-                  </svg>
-                </span>
-                <span class="share__text">Поделиться с друзьями</span>
-              </a>
-            </div>
-            <!-- End share -->
+            <a href="#" class="iconlink">
+              <span class="iconlink__icon">
+                <svg class="icon icon-share-variant">
+                  <use xlink:href="img/sprite.svg#icon-share-variant"></use>
+                </svg>
+              </span>
+              <span class="iconlink__text">Поделиться с друзьями</span>
+            </a>
           </div>
         </div>
         <div class="row" style="margin-top: 20px;">
@@ -1257,7 +1249,7 @@
                   <div class="delivery-calculation__input-group">
                     <div class="delivery-calculation__control"><input class="input" type="text" placeholder="Регион"></div>
                     <div class="delivery-calculation__control"><input class="input" type="text" placeholder="Индекс"></div>
-                    <button type="button" class="btn btn_bord btn_full" disabled>
+                    <button type="button" class="btn btn_bord btn_full">
                       <span class="btn__text"> Рассчитать стоимость</span>
                     </button>
                   </div>
@@ -1321,7 +1313,7 @@
                   <div class="delivery-calculation__input-group">
                     <div class="delivery-calculation__control"><input class="input" type="text" placeholder="Регион"></div>
                     <div class="delivery-calculation__control"><input class="input" type="text" placeholder="Индекс"></div>
-                    <button type="button" class="btn btn_bord btn_full" disabled>
+                    <button type="button" class="btn btn_bord btn_full">
                       <span class="btn__text"> Рассчитать стоимость</span>
                     </button>
                   </div>
@@ -1568,7 +1560,7 @@
                   <div class="delivery-calculation__city"> Омская область, г.Омск </div>
                   <div class="delivery-calculation__check-group">
                     <div class="radio-tab">
-                      <label class="radio-tab__label js-tab is-active">
+                      <label class="radio-tab__label js-radio-tab is-active">
                         <input type="radio" name="radio-tab" checked="checked">
                         <span class="radio-tab__inner">
                           <span class="radio-tab__title">Стоимость доставки – 400 рублей. </span>
@@ -1577,7 +1569,7 @@
                       </label>
                     </div>
                     <div class="radio-tab">
-                      <label class="radio-tab__label js-tab is-active">
+                      <label class="radio-tab__label js-radio-tab">
                         <input type="radio" name="radio-tab" checked="checked">
                         <span class="radio-tab__inner">
                           <span class="radio-tab__title">Стоимость доставки – 400 рублей. </span>
@@ -1593,7 +1585,7 @@
                     <div class="delivery-calculation__control">
                       <input class="input" type="text" placeholder="644039">
                     </div>
-                    <button type="button" class="btn btn_bord btn_full" disabled>
+                    <button type="button" class="btn btn_bord btn_full">
                       <span class="btn__text">Рассчитать стоимость</span>
                     </button>
                   </div>

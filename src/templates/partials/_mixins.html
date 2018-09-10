@@ -319,14 +319,14 @@
 <!-- End card-catalog -->
 {% endmacro %}
 
-{% macro cardcolaction(props) %}
-<!-- Start card-colaction -->
-<div class="card-colaction">
-	<div class="card-colaction__left-col">
-		<div class="card-colaction__img img-bg" style="background-image: url(./img/{{ props.img }});">
+{% macro cardcollection(props) %}
+<!-- Start card-collection -->
+<div class="card-collection">
+	<div class="card-collection__left-col">
+		<div class="card-collection__img img-bg" style="background-image: url(./img/{{ props.img }});">
 		</div>
 	</div>
-	<div class="card-colaction__right-col">
+	<div class="card-collection__right-col">
 		<div class="head">
 			<h2 class="title">{{ props.title }}</h2>
 			<a href="#" class="head__btn btn btn_md btn_bord btn_anim">
@@ -352,15 +352,21 @@
 {% endmacro %}
 <!-- ------------------------------ END CARDS ------------------------------ -->
 
-{% macro rating(props) %}
+{% macro rating(list) %}
 <!-- Start rating -->
 <div class="rating-stars">
-	<input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="2"/>
-	<a href="#" class="rating-stars__text rating-stars__text--review">{{ props.textdivating }}</a>
-	/
-	<span class="rating-stars__text views">{{ props.textviews }}</span>
-	/
-	<span class="rating-stars__text vendor-code">{{ props.textvendorcode }}</span>
+	<div class="rating-stars__input">
+		<input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="10"/>
+	</div>
+	<div class="rating-stars__wrap">
+		{% for item in list %}
+			{% if item.link %}
+				<a href="#" class="rating-stars__text">{{ item.text }}</a>
+			{% else %}
+				<span class="rating-stars__text">{{ item.text }}</span>
+			{% endif %}
+		{% endfor %}
+	</div>
 </div>
 <!-- End rating -->
 {% endmacro %}
@@ -524,14 +530,14 @@
 {% macro radiotab(props) %}
 <!-- Start radio-tab -->
 <div class="radio-tab">
-	<label class="radio-tab__label js-tab is-active">
+	<label class="radio-tab__label js-radio-tab is-active">
 		<input type="radio" name="radio-tab" checked>
 		<span class="radio-tab__inner">
 			<span class="radio-tab__title">{{ props.title1 }}</span>
 			<span class="radio-tab__dscr">{{ props.dscr1 }}</span>
 		</span>
 	</label>
-	<label class="radio-tab__label js-tab">
+	<label class="radio-tab__label js-radio-tab">
 		<input type="radio" name="radio-tab">
 		<span class="radio-tab__inner">
 			<span class="radio-tab__title">{{ props.title2 }}</span>
@@ -574,7 +580,7 @@
 
 {% macro price(props) %}
 <!-- Start price -->
-<div class="price">
+<div class="price{% if props.class %} {{ props.class }}{% endif %}">
 	<span class="price__number">
 		{{ props.price }}
 	</span>
@@ -583,41 +589,13 @@
 <!-- End price -->
 {% endmacro %}
 
-{% macro newprice(props) %}
-<!-- Start newprice -->
-<div class="price price_mod">
-	<span class="price__number">
-		{{ props.price }}
+{% macro iconlink(img, text) %}
+<a href="#" class="iconlink">
+	<span class="iconlink__icon">
+		{{ icon(img) }}
 	</span>
-	<span class="price__text">{{ props.text }}</span>
-</div>
-<!-- End newprice -->
-{% endmacro %}
-
-{% macro availability(text) %}
-<!-- Start availability -->
-<div class="availability">
-	<a href="#" class="availability__link">
-		<span class="availability__icon">
-			{{ icon('location') }}
-		</span>
-		<span class="availability__text">{{ text }}</span>
-	</a>
-</div>
-<!-- End availability -->
-{% endmacro %}
-
-{% macro share(text) %}
-<!-- Start share -->
-<div class="share">
-	<a href="#" class="share__link">
-		<span class="share__icon">
-			{{ icon('share-variant') }}
-		</span>
-		<span class="share__text">{{ text }}</span>
-	</a>
-</div>
-<!-- End share -->
+	<span class="iconlink__text">{{ text }}</span>
+</a>
 {% endmacro %}
 <!-- ------------------------------ END PRICE ------------------------------ -->
 

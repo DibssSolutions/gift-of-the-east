@@ -28,28 +28,30 @@
 		background-position: 50% 50%
 		background-size: cover
 		background-repeat: no-repeat
-.inner
+.inner,
+.inner-sm
 	position: relative
 	margin: 0 auto
 	padding: 0 15px
 	max-width: 1246px
 	+clr
 
+.inner-sm
+	max-width: 1038px
+
 .row
 	margin: 0 -16px
 	display: flex
 	flex-wrap: wrap
-	box-sizing: border-box
-	
-	&:before,
-	&:after
-		box-sizing: border-box
+	&_psm
+		margin: 0 -12px
 .col
 	padding: 0 16px
-	box-sizing: border-box
-	&:before,
-	&:after
-		box-sizing: border-box
+	&_psm
+		padding: 0 12px
+	&-20
+		flex: 0 0 20%
+		max-width: 20%
 	&-25
 		flex: 0 0 25%
 		max-width: 25%
@@ -63,14 +65,14 @@
 		flex: 0 0 40%
 		max-width: 40%
 	&-42
-		flex: 0 0 42%
-		max-width: 42%
+		flex: 0 0 41.7%
+		max-width: 41.7%
 	&-50
 		flex: 0 0 50%
 		max-width: 50%
 	&-58
-		flex: 0 0 58%
-		max-width: 58%
+		flex: 0 0 58.3%
+		max-width: 58.3%
 	&-60
 		flex: 0 0 60%
 		max-width: 60%

@@ -8,7 +8,7 @@
 	text-align: center
 	text-transform: uppercase 
 	vertical-align: top
-	transition: background-color .4s, padding-right .4s, color .4s
+	transition: background-color .3s, padding-right .3s, color .3s
 	background-color: $lightBrown 
 	display: inline-block
 	+md
@@ -67,13 +67,18 @@
 			left: 0
 			right: 0
 			bottom: 0
+			opacity: 0
+			transition: opacity .2s
+			animation: lineOut 0.3s ease alternate forwards
 			background-color: $lightBrown
-			animation: lineOut 0.4s ease alternate forwards
+			.is-loaded &
+				opacity: 1
+				transition-delay: .2s
 		+hover
 			color: $white 
 			background-color: transparent 
 			&:before
-				animation: lineOn 0.4s ease alternate forwards
+				animation: lineOn 0.3s ease alternate forwards
 	&_bord-gray
 		border-color: $gray 
 		&:before
@@ -82,16 +87,45 @@
 		padding-right: 40px
 		+md
 			padding-right: 40px
+		.icon
+			transition: color .3s
 		+hover
 			.icon-arrow-right
 				color: $white 
 				animation: arrowRight 0.5s ease alternate forwards
-				animation-delay: .25s
+				animation-delay: .31s
 	&_blue
 		color: $white 
 		background-color: $pictonBlue 
 		+hover
 			background-color: lighten($pictonBlue, 15%) 
+	&_line
+		position: relative
+		color: $black 
+		border-top: 1px solid $silver
+		border-bottom: 1px solid $silver
+		background-color: transparent 
+		overflow: hidden
+		+hover
+			background-color: transparent 
+			&:before,
+			&:after
+				transform: translateY(0)
+		&:before,
+		&:after
+			position: absolute
+			content: "" 
+			top: 0
+			height: 100%
+			width: 1px
+			transition: transform .3s
+			background-color: $silver 
+		&:before
+			left: 0
+			transform: translateY(-100%)
+		&:after
+			right: 0
+			transform: translateY(100%)
 	&__text
 		position: relative
 		z-index: 1
@@ -144,6 +178,7 @@
 	position: relative
 	height: 48px
 	width: 48px
+	min-width: 48px
 	line-height: 46px
 	font-size: 0 
 	color: $black 

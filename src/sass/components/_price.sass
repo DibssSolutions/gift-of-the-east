@@ -1,70 +1,24 @@
 .price
 	display: flex
 	&__number
-		white-space: nowrap
 		font-size: 28px
 		color: $black
+		.price_old &
+			position: relative
+			font-size: 20px
+			color: $gray
+			&:after
+				position: absolute
+				top: 14px
+				left: -5%
+				content: ''
+				width: 110%
+				height: 1px
+				background-color: $gray
 	&__text
 		margin-left: 18px
 		font-size: 14px
 		margin-top: 12px
 		color: $gray
-
-.price_mod
-	.price__number
-		white-space: nowrap
-		position: relative
-		font-size: 20px
-		color: $gray
-		&:after
-			position: absolute
-			top: 14px
-			left: -5%
-			content: ''
-			width: 110%
-			height: 1px
-			background-color: $gray
-	.price__text
-		margin-top: 6px		
-
-.availability
-	display: inline-block
-	&__link
-		display: flex
-	&__icon
-		.icon
-			transition: fill .3s
-			font-size: 24px
-			fill: $silver
-	&__text
-		margin-left: 12px
-		font-size: 16px
-		color: $black
-		transition: color .3s
-	&:hover
-		.availability__icon
-			.icon
-				fill: $lightBrown
-		.availability__text		
-			color: $lightBrown
-.share
-	display: inline-block
-	&__link
-		display: flex
-	&__icon
-		.icon
-			transition: fill .3s
-			font-size: 24px
-			fill: $silver
-	&__text
-		margin-left: 12px
-		font-size: 16px
-		color: $black
-		transition: color .3s
-	&:hover
-		.share__icon
-			.icon
-				fill: $lightBrown
-		.share__text		
-			color: $lightBrown
-
+		.price_old &
+			margin-top: 6px

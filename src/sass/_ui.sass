@@ -23,7 +23,7 @@
 
 .tag
 	margin: 0 4px 8px
-	padding: 8px 12px
+	padding: 7px 12px
 	color: $white 
 	font-family: $montserrat
 	+f(11px,400,1.28)
@@ -140,6 +140,29 @@
 		&__lines
 			top: 11px
 			left: 14px
-			// +md
-			// 	top: 9px
-			// 	left: 12px
+.iconlink
+	position: relative
+	padding-left: 30px
+	vertical-align: top
+	line-height: 1.428
+	font-size: 16px
+	color: $black
+	display: inline-block
+	+hover
+		color: $lightBrown 
+		.iconlink__icon
+			color: currentColor 
+	&__icon
+		position: absolute
+		top: 0
+		left: 0
+		color: $silver
+		font-size: 0
+		transition: color .3s 
+		.icon
+			font-size: 20px 
+		.icon-location
+			margin-top: -2px
+			font-size: 24px
+	&__text
+		transition: color .3s 

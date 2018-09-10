@@ -2,8 +2,7 @@
 	position: relative
 	overflow: hidden
 	opacity: 0
-	transition: opacity 0.8s
-	transition-delay: 0.8s
+	transition: opacity .35s ease-in-out
 	&.is-init
 		opacity: 1
 	
@@ -180,15 +179,14 @@
 
 .slider
 	opacity: 0
-	transition: opacity 0.8s
-	transition-delay: 0.8s
+	transition: opacity .35s ease-in-out
 	&.is-init
 		opacity: 1
 	&__wrap
 		position: relative
 	&__inner
 		position: relative
-		padding-bottom: 78px
+		padding-bottom: 80px
 		overflow: hidden
 		+sm
 			padding-bottom: 20px 
@@ -305,26 +303,24 @@
 .slider-products
 	position: relative
 	width: 100%
-	padding-left: 114px
+	padding-left: 104px
+	overflow: hidden
 	+md
 		padding-left: 0
 		margin-bottom: 10px
 	&__show
-		overflow: hidden
 		white-space: nowrap
 		opacity: 0
-		visibility: hidden
-		transition: opacity .5s, visibility .5s
+		transition: opacity .35s ease-in-out
 		font-size: 0
 		&.slick-initialized
-			overflow: visible
 			opacity: 1
-			visibility: visible
 		+md
 			margin-bottom: 10px
 	&__slide
+		position: relative
 		width: 100%
-		height: 596px
+		height: 590px
 		background-repeat: no-repeat
 		background-size: cover
 		background-position: 50% 50%
@@ -337,22 +333,18 @@
 		position: absolute
 		left: 0
 		top: -14px
-		bottom: -14px
+		bottom: 0x
 		width: 72px
-		overflow: hidden
 		white-space: nowrap
 		opacity: 0
-		visibility: hidden
-		transition: opacity .5s, visibility .5s
+		transition: opacity .35s ease-in-out
 		&.slick-initialized
-			overflow: visible
 			opacity: 1
-			visibility: visible
 		.slick-slide.slick-current
 			.slider-products__slide-nav
 				border: 1px solid $silver
 	&__slide-wrap
-		padding: 14px 0
+		padding: 13px 0 
 	&__slide-nav
 		transition: border-color .3s
 		border: 1px solid transparent
@@ -379,12 +371,9 @@
 	&__slider	
 		overflow: hidden
 		opacity: 0
-		visibility: hidden
 		white-space: nowrap
 		&.slick-initialized
-			overflow: visible
 			opacity: 1
-			visibility: visible
 			white-space: inherit
 	&__slide
 		display: inline-block

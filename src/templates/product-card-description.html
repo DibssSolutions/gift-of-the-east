@@ -1,0 +1,182 @@
+---
+title: product-card-description
+---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<!-- begin goods -->
+	<div class="goods">
+		<div class="goods__card">
+		    <div class="goods__inner inner">
+				{{ mixins.breadcrumbs({
+					list: ['Назад','Главная','Каталог', 'Предметы интерьера', 'Вазы', 'Вазы настольные', 'Ваза из стекла с разноцветным узором']
+				}) }}
+				<div class="goods__row row">
+					<div class="goods__col col col-58 col-md-100">
+						{% include "partials/product-card/_slider-products.html" %}
+					</div>
+					<div class="goods__col col col-42 col-md-100">
+						<h3 class="goods__title title-md">Ваза из стекла с разноцветным узором</h3>
+			        	{{ mixins.rating(
+       		            	[
+       			                {
+       			                	link: true,
+       			                	text: '2 отзыва'
+       			                },
+       			                {
+       			                	text: '12 просмотров'
+       			                },
+       			                {
+       			                	text: 'Артикул: 45675'
+       			                }
+       			            ]
+       		        	) }}
+			        	<div class="goods__price">
+				        	{{ mixins.price({
+				        		price: "1000 ₽",
+				        		text: "Цена для Вас"
+				        	}) }}
+			        	</div>
+			        	<div class="goods__price-old">
+			        		{{ mixins.price({
+			        			class: 'price_old',
+			        			price: "1400 ₽",
+			        			text: "Цена для Вас"
+			        		}) }}
+			        	</div>
+			        	<div class="goods__controls">
+				        	<div class="goods__field">
+				        		<a href="#" class="btn btn_full btn_line">
+				        			<span class="btn__text">СДЕЛАТЬ ЦЕНУ НИЖЕ</span>
+				        		</a>
+				        	</div>
+				        	<div class="goods__field">
+				        		<div class="goods__buy">
+				        			<button class="btn btn_full" type="button">ДОБАВИТЬ В КОРЗИНУ</button>
+				        			{{ mixins.likebtn() }}
+				        		</div>
+				        	</div>
+			        	</div>
+			        	<div class="goods__share">
+			        		<div class="goods__field">
+			        			{{ mixins.iconlink('location', 'В наличии в 3 магазинах') }}
+			        		</div>
+			        		<div class="goods__field">
+			        			{{ mixins.iconlink('share-variant', 'Поделиться с друзьями') }}
+			        		</div>
+			        	</div>
+					</div>
+				</div>
+		    </div>
+		</div>
+		<div class="goods__tabs">
+			<!-- begin tabs -->
+			<div class="tabs" data-tabs>
+				<div class="tabs__current"><span data-tabs-current></span>{{ mixins.icon('chevron-up') }}</div>
+				<div class="tabs__out">
+					<ul class="tabs__list inner-sm">
+						{% for item in [
+							{
+								id: 'description',
+								text: 'Описание'
+							},
+							{
+								id: 'availability',
+								text: 'Наличие в магазинах',
+								quantity: '3'
+							},
+							{
+								id: 'reviews',
+								text: 'Отзывы',
+								quantity: '2'
+							},
+							{
+								id: 'question-answer',
+								text: 'Вопрос-ответ',
+								quantity: '2'
+							}
+							] %}
+							<li class="tabs__item" data-tabs-control="{{ item.id }}">
+								{{ item.text }}
+								{% if item.quantity %}<span class="tabs__quantity">{{ item.quantity }}</span>{% endif %}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="tabs__wrap" data-tabs-wrapper>
+					<div class="tabs__container" data-tabs-container="description">
+						<div class="tab__inner inner-sm">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel quidem, aperiam! Beatae corrupti, dolor numquam libero veniam aperiam itaque accusantium rerum recusandae perferendis vitae consequatur delectus ea aut. Cupiditate, maxime.
+						</div>
+					</div>
+					<div class="tabs__container" data-tabs-container="availability">
+						<div class="tab__inner inner-sm">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime architecto a dignissimos asperiores, deleniti consectetur repellendus assumenda accusamus aliquid quasi sequi unde modi, voluptate iusto soluta maiores cumque quis voluptatem!
+						</div>
+					</div>
+					<div class="tabs__container" data-tabs-container="reviews">
+						<div class="tab__inner inner-sm">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eligendi itaque, dolor laborum? Vero adipisci dignissimos suscipit maxime, possimus est voluptas accusamus inventore. Earum esse dolor architecto optio, adipisci nam!
+						</div>
+					</div>
+					<div class="tabs__container" data-tabs-container="question-answer">
+						<div class="tab__inner inner-sm">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias placeat ut totam ex deserunt numquam odit nemo facilis quae dolorem alias atque debitis doloribus, nobis quas assumenda saepe, consequatur quidem?
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end tabs -->
+		</div>
+		<div class="goods__section">
+			<div class="goods__inner inner">
+				<h2 class="title text-center">Больше товаров по акции</h2>
+				<div class="row row_psm">
+					{% for item in range(0,5) %}
+						<div class="col col_psm col-20">
+							{{ mixins.product({
+								action: "true",
+								srcImg: "annie-spratt.jpg",
+								altImg: "annie-spratt",
+								price: "1000 ₽",
+								priceOld: "1400 ₽",
+								nameText: "Наименование товара",
+								textBtn: "В корзину"
+							}) }}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="goods__section goods__section_lg">
+			<div class="goods__inner inner">
+				{{ mixins.cardcollection({ 
+					img: "derek-story-unsplash@2x.jpg", 
+					title: "Коллекция Восточные сказки", 
+					icon: "mixins.icon('arrow-right')"
+				}) }}
+			</div>
+		</div>
+		<div class="goods__section">
+			<div class="goods__inner inner">
+				<h2 class="title text-center">Вы недавно смотрели</h2>
+				<div class="row row_psm">
+					{% for item in range(0,5) %}
+						<div class="col col_psm col-20">
+							{{ mixins.product({
+								srcImg: "annie-spratt.jpg",
+								altImg: "annie-spratt",
+								price: "1000 ₽",
+								priceOld: "1400 ₽",
+								nameText: "Наименование товара",
+								textBtn: "В корзину"
+							}) }}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end goods -->
+{% endblock %}

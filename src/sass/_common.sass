@@ -5,3 +5,8 @@ body
 	color: $gray 
 	+font-smoothing
 	background-color: $white
+	&[data-lazy]
+		opacity: 0
+		transition: opacity .35s ease-in-out
+		&.is-loaded
+			opacity: 1

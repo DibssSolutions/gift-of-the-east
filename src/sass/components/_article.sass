@@ -1,5 +1,8 @@
 .article
 	+f(17px,400,1.59)
+	transition: box-shadow .3s
+	+hover
+		box-shadow: 0 6px 12px rgba(#000, .16) 
 	+sm	
 		margin-bottom: 20px
 		font-size: 14px
@@ -40,17 +43,14 @@
 		margin-bottom: 4px
 	&__title-md
 		display: block
-		transition: color .3s
+		transition: color .3s ease-in-out
 		+hover
 			color: $lightBrown 
-		.title
-			+hover
-				color: $lightBrown 
 		&:not(:last-child)
 			margin-bottom: 10px
 	&__title
 		margin-bottom: 0
-		transition: color .3s
+		transition: color .3s ease-in-out
 		vertical-align: middle
 		display: table-cell
 		+md
@@ -58,10 +58,6 @@
 			display: block
 		+hover
 			color: $lightBrown 
-		.title
-			transition: color .3s
-			+hover
-				color: $lightBrown 
 	&__button
 		text-align: right
 		vertical-align: top

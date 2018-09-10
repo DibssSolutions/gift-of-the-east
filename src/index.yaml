@@ -21,3 +21,5 @@ PageList:
   ready: 100
 - file: confirmation-order.html
   ready: 100
+- file: product-card-description.html
+  ready: 100

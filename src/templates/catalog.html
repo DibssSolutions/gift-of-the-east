@@ -46,72 +46,74 @@
 				</aside>
 			</div>
 			<div class="col col-75 col-md-100">
-				<div class="row catalog-cards">
-					{% for cardcatalog in [
-					{
-						img: "amethyst-1920@2x.jpg",
-						title: "Изделия из натуральных камней"
-					},
-					{
-						img: "thumb_cover_header@2x.jpg",
-						title: "Муранское стекло"
-					},
-					{
-						img: "nav-img@2x.jpg",
-						title: "Предметы интерьера"
-					},
-					{
-						img: "amethyst-1920@2x.jpg",
-						title: "Изделия из натуральных камней"
-					},
-					{
-						img: "thumb_cover_header@2x.jpg",
-						title: "Муранское стекло"
-					},
-					{
-						img: "nav-img@2x.jpg",
-						title: "Предметы интерьера"
-					},
-					{
-						img: "amethyst-1920@2x.jpg",
-						title: "Изделия из натуральных камней"
-					},
-					{
-						img: "thumb_cover_header@2x.jpg",
-						title: "Муранское стекло"
-					},
-					{
-						img: "nav-img@2x.jpg",
-						title: "Предметы интерьера"
-					},
-					{
-						img: "amethyst-1920@2x.jpg",
-						title: "Изделия из натуральных камней"
-					},
-					{
-						img: "thumb_cover_header@2x.jpg",
-						title: "Муранское стекло"
-					},
-					{
-						img: "nav-img@2x.jpg",
-						title: "Предметы интерьера"
-					},
-					{
-						img: "jaime-handley-44725-unsplash@2x.jpg",
-						title: "СУВЕНИРНЫЕ ИЗДЕЛИЯ, КОПИЛКИ, АНТИСТРЕССЫ"
-					},
-					{
-						img: "megalopolis-3257873_1920@2x.jpg",
-						title: "СИМВОЛЫ ГОРОДА ОМСКА"
-					}
-				] %}
-					<div class="col col-33 col-sm-50 col-xs-100">
-						{{ mixins.cardcatalog({
-							img: cardcatalog.img,
-							title: cardcatalog.title
-						}) }}
+				<div class="catalog-cards">
+					<div class="row">
+						{% for cardcatalog in [
+							{
+								img: "amethyst-1920@2x.jpg",
+								title: "Изделия из натуральных камней"
+							},
+							{
+								img: "thumb_cover_header@2x.jpg",
+								title: "Муранское стекло"
+							},
+							{
+								img: "nav-img@2x.jpg",
+								title: "Предметы интерьера"
+							},
+							{
+								img: "amethyst-1920@2x.jpg",
+								title: "Изделия из натуральных камней"
+							},
+							{
+								img: "thumb_cover_header@2x.jpg",
+								title: "Муранское стекло"
+							},
+							{
+								img: "nav-img@2x.jpg",
+								title: "Предметы интерьера"
+							},
+							{
+								img: "amethyst-1920@2x.jpg",
+								title: "Изделия из натуральных камней"
+							},
+							{
+								img: "thumb_cover_header@2x.jpg",
+								title: "Муранское стекло"
+							},
+							{
+								img: "nav-img@2x.jpg",
+								title: "Предметы интерьера"
+							},
+							{
+								img: "amethyst-1920@2x.jpg",
+								title: "Изделия из натуральных камней"
+							},
+							{
+								img: "thumb_cover_header@2x.jpg",
+								title: "Муранское стекло"
+							},
+							{
+								img: "nav-img@2x.jpg",
+								title: "Предметы интерьера"
+							},
+							{
+								img: "jaime-handley-44725-unsplash@2x.jpg",
+								title: "СУВЕНИРНЫЕ ИЗДЕЛИЯ, КОПИЛКИ, АНТИСТРЕССЫ"
+							},
+							{
+								img: "megalopolis-3257873_1920@2x.jpg",
+								title: "СИМВОЛЫ ГОРОДА ОМСКА"
+							}
+						] %}
+						<div class="col col-33 col-sm-50 col-xs-100">
+							{{ mixins.cardcatalog({
+								img: cardcatalog.img,
+								title: cardcatalog.title
+							}) }}
+						</div>
+						{% endfor %}
 					</div>
-					{% endfor %}
 				</div>
 				{% include "partials/catalog/_filter.html" %}
 				<div class="catalog-cards">

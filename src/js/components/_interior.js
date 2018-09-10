@@ -14,7 +14,14 @@ const template = data => {
         <div class="product__price">${data.current.price}</div>
         <div class="product__footer">
           <button type="button" class="product__btn btn js-add-to-basket">${buildIcon('shopping-bag')}${data.current.btnText}</button>
-          <button type="button" class="product__like btn-like js-add-like">${buildIcon('heart-outline')}</button>
+          <label class="product__like btn-like">
+            <span class="like">
+              <input type="checkbox">
+              <svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg>
+              <svg class="icon icon-heart"><use xlink:href="img/sprite.svg#icon-heart"></use></svg>
+              <span class="like__lines"></span>
+            </span>
+          </label>
         </div>
       </div>
     </div>`;
@@ -31,7 +38,14 @@ const template = data => {
           <div class="product__price">${data.similar.list[i].price}</div>
           <div class="product__footer">
             <button type="button" class="product__btn btn js-add-to-basket">${buildIcon('shopping-bag')}${data.similar.list[i].btnText}</button>
-            <button type="button" class="product__like btn-like js-add-like">${buildIcon('heart-outline')}</button>
+            <label class="product__like btn-like">
+              <span class="like">
+                <input type="checkbox">
+                <svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg>
+                <svg class="icon icon-heart"><use xlink:href="img/sprite.svg#icon-heart"></use></svg>
+                <span class="like__lines"></span>
+              </span>
+            </label>
           </div>
         </div>
       </div>
