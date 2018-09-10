@@ -14,4 +14,4 @@ import './_range-slider';
 import './_input-mask';
 import './_radioTab';
 import './_tabs';
-
+import './_aminOnScroll';
