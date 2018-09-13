@@ -2,9 +2,9 @@ import { WIN, ANIMATE } from '../constants';
 
 export default (function() {
 
-  const card = $('[data-stagger-show]');
+  const containers = $('[data-stagger-show]');
   let array = [];
-  card.each((id,el) => {
+  containers.each((id,el) => {
     const item = $(el);
   	const show = () => {
   	  if (item.offset().top + item.outerHeight()/2 <= WIN.scrollTop() + WIN.outerHeight()) {

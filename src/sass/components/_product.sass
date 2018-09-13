@@ -1,12 +1,14 @@
 .product
 	position: relative
 	padding-bottom: 63px
-	z-index: 1
+	// z-index: 1
 	color: $black
 	text-align: center
 	background-color: $white 
 	+md
 		padding: 16px 16px 79px
+	// &.is-active
+	// 	z-index: 10
 	&_simple
 		+md
 			padding: 0
@@ -38,6 +40,7 @@
 			visibility: visible
 			opacity: 1
 	&__img
+		position: relative
 		font-size: 0
 		img
 			width: 100%

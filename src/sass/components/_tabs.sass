@@ -25,6 +25,7 @@
 		vertical-align: top
 		overflow: hidden
 		transition: color .3s
+		user-select: none
 		display: inline-block
 		+hover
 			color: $black 
@@ -53,10 +54,13 @@
 		color: $silver 
 		font-size: 16px
 		display: inline
-	&__wrap
-
 	&__container
 		padding: 42px 0 67px
+		font-size: 14px
+		line-height: 1.7 
+	&__group
+		&:not(:last-child)
+			margin-bottom: 20px
 
 @keyframes lineIn
 	0%

@@ -1,0 +1,51 @@
+.shops-info
+	&__title-simple
+		&:not(:last-child)
+			margin-bottom: 15px 
+	&__head
+		margin-bottom: 33px
+		+clr
+		&:not(:first-child)
+			margin-top: 24px 
+	&__search
+		float: left
+		width: 100%
+		max-width: 560px
+		+xs
+			width: calc(100% - 94px)
+	&__view
+		float: right
+		padding-left: 16px
+		width: 288px 
+		text-align: right
+		+xs
+			width: 94px 
+
+.shops-table
+	width: 100%
+	// table-layout: fixed
+	display: table
+	&__head
+		display: table-header-group
+	&__body
+		display: table-row-group
+	&__row
+		display: table-row
+	&__td,
+	&__th
+		padding-right: 11px
+		position: relative
+		vertical-align: middle
+		display: table-cell
+	&__td
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			left: 0
+			right: 0
+			height: 1px
+			background-color: $silver
+	&__text
+	&__addres
+	&__day

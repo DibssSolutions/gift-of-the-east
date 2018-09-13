@@ -376,9 +376,12 @@
 			opacity: 1
 			white-space: inherit
 	&__slide
+		position: relative
 		display: inline-block
 		padding-left: 32px
 		padding-right: 2px
+		&:focus
+			z-index: 100
 		.product
 			&:hover
 				&:before

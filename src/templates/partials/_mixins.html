@@ -176,7 +176,22 @@
 	<div class="card__img-wrap">
 		<div class="card__img"{% if props.img %} style="background-image: url(./img/{{ props.img }});"{% endif %}>
 			{% if props.action %}
-			<div class="action-block">%</div>
+			<div class="price-below price-below_action js-drop js-price-below">
+				<div class="action-block js-open-drop">%</div>
+				<div class="price-below__drop js-drop-hidden">
+					<div class="price-below__info">
+						<p>Наши держатели карт получают возможность покупать товар по акциям.</p>
+						<p>Совершите первую покупку на любую сумму и получите карту Члена Клуба в подарок.</p>
+					</div>
+					<div class="price-below__fotter">
+						{{ price({
+							class: "price_red",
+							price: "1000 ₽",
+							text: "Розничная цена"
+						}) }}
+					</div>
+				</div>
+			</div>
 			{% endif %}
 			{% if props.cardClub %}
 			<div class="card__club-card">
@@ -244,7 +259,22 @@
 <div class="product{% if props.class %} {{props.class}}{% endif %}">
 	<div class="product__img">
 		{% if props.action %}
-		<div class="action-block">%</div>
+		<div class="price-below price-below_action js-drop js-price-below">
+			<div class="action-block js-open-drop">%</div>
+			<div class="price-below__drop js-drop-hidden">
+				<div class="price-below__info">
+					<p>Наши держатели карт получают возможность покупать товар по акциям.</p>
+					<p>Совершите первую покупку на любую сумму и получите карту Члена Клуба в подарок.</p>
+				</div>
+				<div class="price-below__fotter">
+					{{ price({
+						class: "price_red",
+						price: "1000 ₽",
+						text: "Розничная цена"
+					}) }}
+				</div>
+			</div>
+		</div>
 		{% endif %}
 		<img src="img/{{ props.srcImg }}" alt="{{ altImg }}">
 	</div>
@@ -551,12 +581,12 @@
 {% macro radiobtn(props) %}
 <!-- Start radio-btn -->
 <div class="radio-btn">
-	<label class="radio-btn__label js-tab is-active">
+	<label class="radio-btn__label js-radio-tab is-active">
 		<input type="radio" name="radio-btn">
 		<span class="radio-btn__icon">{{ icon('format-list-bulleted') }}</span>
 		<span class="radio-btn__title">{{ props.title1 }}</span>
 	</label>
-	<label class="radio-btn__label js-tab">
+	<label class="radio-btn__label js-radio-tab">
 		<input type="radio" name="radio-btn">
 		<span class="radio-btn__icon">{{ icon('map') }}</span>
 		<span class="radio-btn__title">{{ props.title2 }}</span>

@@ -93,7 +93,28 @@
 		&[aria-expanded="true"]
 			background-color: rgba($gallery, .7)
 			border: 1px solid rgba($gallery, .7)
-
+			
+.select_sm
+	.dropdown-toggle
+		padding: 5px 0 4px 15px
+		font-size: 11px
+		text-transform: uppercase
+	.dropdown-menu
+		font-size: 11px
+		text-transform: uppercase
+.select_icon
+	.dropdown-toggle
+		&:after
+			display: none
+		.filter-option-inner
+			padding-right: 35px
+	.icon
+		position: absolute
+		top: 50%
+		right: 14px
+		margin-top: -3px
+		font-size: 7px
+		color: $silver  
 
 .select.show
 	.dropdown-toggle

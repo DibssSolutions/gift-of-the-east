@@ -1,11 +1,17 @@
-import { OPEN, ACTIVE, widthMD, widthSM, WIN } from '../constants';
+import { OPEN, ACTIVE, widthMD, widthSM, WIN, BODY } from '../constants';
+import Popper from 'popper.js';
 
 ;(function() {
 
   const drop = $('.js-drop');
   const btn = $('.js-open-drop');
+  const dropHidden = $('.js-drop-hidden');
+  const btnOpen = $('.js-open-drop.is-open');
+  const products = $('.product');
   const dropWrapHeights = [];
-	
+  
+  const priceBelowBtn = $('.js-price-below .js-open-drop');
+
   // add btn-text
   btn.each((i,el) => {
     const _this = $(el);
@@ -23,8 +29,8 @@ import { OPEN, ACTIVE, widthMD, widthSM, WIN } from '../constants';
     const textClose = _this.data('text-close');
     const btnTextWrap = _this.find('.js-drop-btn-text');
     const duration = 400;
-			
     if (!_this.hasClass(OPEN)) {
+      priceBelowBtn.removeClass(OPEN);
       _this.addClass(OPEN);
       btnTextWrap.text(textClose);
       hiddenBlock.slideDown(duration);
@@ -34,6 +40,39 @@ import { OPEN, ACTIVE, widthMD, widthSM, WIN } from '../constants';
       btnTextWrap.text(textOpen);
       hiddenBlock.slideUp(duration);
     }
+  });
+  const getPosition = (el,arg) => {
+    if (arg[0].placement === 'bottom-start' || arg[0].placement === 'bottom') {
+      el
+        .removeClass('is-top-pos')
+        .addClass('is-bottom-pos');
+    }
+    else {
+      el
+        .removeClass('is-bottom-pos')
+        .addClass('is-top-pos');
+    }
+  };
+  const priceBelow = $('.js-price-below');
+  priceBelow.each((i,el) => {
+    const that = $(el);
+    const reference = that.find('.js-open-drop')[0];
+    const popper = that.find('.js-drop-hidden')[0];
+    const position = that.data('drop-position') || 'bottom-start';
+    var anotherPopper = new Popper(reference, popper, {
+      placement: position,
+      onCreate: function() {
+        getPosition(that, arguments);
+      },
+      onUpdate: function() {
+        getPosition(that, arguments);
+      }
+    });
+  });
+
+  BODY.on('click', e => {
+    if ($(e.target).closest('.js-price-below').length) return;
+    $('.js-price-below .js-open-drop.is-open').trigger('click');
   });
 
 })();

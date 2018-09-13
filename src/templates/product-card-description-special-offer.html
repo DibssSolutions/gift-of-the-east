@@ -1,5 +1,5 @@
 ---
-title: product-card-description
+title: Product card-Product description - Registered user with club card - Special offer
 ---
 
 {% extends "layouts/_layout.html" %}
@@ -34,33 +34,19 @@ title: product-card-description
        		        	) }}
 			        	<div class="goods__price">
 				        	{{ mixins.price({
-				        		price: "1000 ₽",
-				        		text: "Розничная цена"
+				        		class: 'price_red',
+				        		price: "900 ₽",
+				        		text: "Цена для Вас"
 				        	}) }}
 			        	</div>
+			        	<div class="goods__price-old">
+			        		{{ mixins.price({
+			        			class: 'price_old',
+			        			price: "1400 ₽",
+			        			text: "Цена без скидки"
+			        		}) }}
+			        	</div>
 			        	<div class="goods__controls">
-				        	<div class="goods__field">
-				        		<div class="price-below js-drop js-price-below" data-drop-position="bottom">
-				        			<div class="price-below__btn js-open-drop" data-text-open="СДЕЛАТЬ ЦЕНУ НИЖЕ" data-text-close="ЗАКРЫТЬ">
-				        				<a href="#" class="btn btn_full btn_line">
-				        					<span class="btn__text js-drop-btn-text">СДЕЛАТЬ ЦЕНУ НИЖЕ</span>
-				        				</a>
-				        			</div>
-				        			<div class="price-below__drop js-drop-hidden">
-				        				<div class="price-below__info">
-				        					<p>Наши держатели карт получают возможность покупать товар по акциям.</p>
-				        					<p>Совершите первую покупку на любую сумму и получите карту Члена Клуба в подарок.</p>
-				        				</div>
-				        				<div class="price-below__fotter">
-				        					{{ mixins.price({
-				        						class: "price_red",
-				        						price: "1000 ₽",
-				        						text: "Розничная цена"
-				        					}) }}
-				        				</div>
-				        			</div>
-				        		</div>
-				        	</div>
 				        	<div class="goods__field">
 				        		<div class="goods__buy">
 				        			<button class="btn btn_full" type="button">ДОБАВИТЬ В КОРЗИНУ</button>
@@ -138,7 +124,169 @@ title: product-card-description
 					</div>
 					<div class="tabs__container" data-tabs-container="availability">
 						<div class="tabs__inner inner-sm">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime architecto a dignissimos asperiores, deleniti consectetur repellendus assumenda accusamus aliquid quasi sequi unde modi, voluptate iusto soluta maiores cumque quis voluptatem!
+							<div class="shops-info">
+								<h3 class="shops-info__title-simple title-simple">Доступно в 3 магазинах в городе Омск</h3>
+								<p>Вы можете выбрать любой магазин для самовывоза товара. <a href="#" class="link">Подробнее</a></p>
+								<div class="shops-info__head">
+									<div class="shops-info__search">
+										{{ mixins.newsearch('Город, адрес, название ТЦ') }}
+									</div>
+									<div class="shops-info__view">
+										{{ mixins.radiobtn({ title1: 'Список', title2: 'Карта' }) }}
+									</div>
+								</div>
+								<div class="shops-table">
+									{% for table in [{
+										head: ["Адрес магазина", "Телефон", "Время работы", "Наличие"],
+										body: [ 
+											[
+												{
+													thTitle: 'Адрес магазина',
+													text: 'Континент 2',
+													addres: '70 лет Октября, 25 к.2 '
+												},
+												{
+													thTitle: 'Телефон',
+													text: '+7 (678) 678 87 67'
+												},
+												{
+													thTitle: 'Время работы',
+													text: '10:00–21:00',
+													day: 'пн–вс'
+												},
+												{
+													thTitle: 'Наличие',
+													text: '3 шт'
+												}
+											],
+											[
+												{
+													thTitle: 'Адрес магазина',
+													text: 'Мега',
+													addres: 'Бульвар Архитекторов, 35'
+												},
+												{
+													thTitle: 'Телефон',
+													text: '+7 (678) 678 87 67'
+												},
+												{
+													thTitle: 'Время работы',
+													text: '10:00–21:00',
+													day: 'пн–вс'
+												},
+												{
+													thTitle: 'Наличие',
+													text: '2 шт'
+												}
+											],
+											[
+												{
+													thTitle: 'Адрес магазина',
+													text: 'Фестиваль',
+													addres: 'ул.70 лет Октября, 19'
+												},
+												{
+													thTitle: 'Телефон',
+													text: '+7 (678) 678 87 67'
+												},
+												{
+													thTitle: 'Время работы',
+													text: '10:00–21:00',
+													day: 'пн–вс'
+												},
+												{
+													thTitle: 'Наличие',
+													text: '1 шт'
+												}
+											],
+											[
+												{
+													thTitle: 'Адрес магазина',
+													text: 'Маяк–3',
+													addres: 'пр.Комарова, 6 к.1'
+												},
+												{
+													thTitle: 'Телефон',
+													text: '+7 (678) 678 87 67'
+												},
+												{
+													thTitle: 'Время работы',
+													text: '10:00–21:00',
+													day: 'пн–вс'
+												},
+												{
+													thTitle: 'Наличие',
+													text: 'Нет в наличии'
+												}
+											],
+											[
+												{
+													thTitle: 'Адрес магазина',
+													text: 'Привокзальный',
+													addres: 'ул.Карла Маркса, 84'
+												},
+												{
+													thTitle: 'Телефон',
+													text: '+7 (678) 678 87 67'
+												},
+												{
+													thTitle: 'Время работы',
+													text: '10:00–21:00',
+													day: 'пн–вс'
+												},
+												{
+													thTitle: 'Наличие',
+													text: 'Нет в наличии'
+												}
+											],
+											[
+												{
+													thTitle: 'Адрес магазина',
+													text: 'Каскад',
+													addres: 'ул.Карла Маркса, 24'
+												},
+												{
+													thTitle: 'Телефон',
+													text: '+7 (678) 678 87 67'
+												},
+												{
+													thTitle: 'Время работы',
+													text: '10:00–21:00',
+													day: 'пн–вс'
+												},
+												{
+													thTitle: 'Наличие',
+													text: 'Нет в наличии',
+													textClass: 'gray'
+												}
+											]
+										]
+									}] %}
+									<div class="shops-table__head">
+										{% for text in table.head %}
+										<div class="shops-table__th">{{text}}</div>
+										{% endfor %}
+									</div>
+									<div class="shops-table__body">
+										{% for row in table.body %}
+											<div class="shops-table__row">
+												{% for item in row %}
+												<div class="shops-table__td" data-title="{{ item.thTitle }}">
+													<div class="shops-table__text{% if item.textClass %} table__text_{{ item.textClass }}{% endif %}">{{ item.text }}</div>
+													{% if item.addres %}
+													<div class="shops-table__addres">{{ item.addres }}</div>
+													{% endif %}
+													{% if day %}
+													<div class="shops-table__day">{{ item.day }}</div>
+													{% endif %}
+												</div>
+												{% endfor %}
+											</div>
+										{% endfor %}
+									</div>
+									{% endfor %}
+								</div>
+							</div>
 						</div>
 					</div>
 					<div class="tabs__container" data-tabs-container="reviews">

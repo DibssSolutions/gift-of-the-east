@@ -35,7 +35,7 @@
 
 {% macro calc(open) %}
     <div class="order-calculation js-drop">
-        <button class="{% if open %}is-open{% endif %} order-calculation__btn vertical-line-animation js-open-drop js-drop-shows">
+        <button class="{% if open %}is-open{% endif %} order-calculation__btn vertical-line-animation js-open-drop">
             <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
             {{mixins.icon('chevron-down')}}
         </button>
@@ -56,7 +56,7 @@
 
 {% macro calc_big(open) %}
     <div class="order-calculation js-drop">
-        <button class="{% if open %}is-open{% endif %} order-calculation__btn vertical-line-animation js-open-drop js-drop-shows">
+        <button class="{% if open %}is-open{% endif %} order-calculation__btn vertical-line-animation js-open-drop">
             <span>РАССЧИТАТЬ СТОИМОСТЬ ДОСТАВКИ</span>
             {{mixins.icon('chevron-down')}}
         </button>

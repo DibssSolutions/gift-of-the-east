@@ -2,13 +2,41 @@
 <div class="slider-products js-slider-wrap">
 	<div class="slider-products__show js-slider-products">
 		<div class="slider-products__slide" style="background-image: url(./img/vase.jpg);">
-			<div class="action-block">%</div>
+			<div class="price-below price-below_action js-drop js-price-below">
+				<div class="action-block js-open-drop">%</div>
+				<div class="price-below__drop js-drop-hidden">
+					<div class="price-below__info">
+						<p>Наши держатели карт получают возможность покупать товар по акциям.</p>
+						<p>Совершите первую покупку на любую сумму и получите карту Члена Клуба в подарок.</p>
+					</div>
+					<div class="price-below__fotter">
+						{{ mixins.price({
+							class: "price_red",
+							price: "1000 ₽",
+							text: "Розничная цена"
+						}) }}
+					</div>
+				</div>
+			</div>
 		</div>
+		<div class="slider-products__slide" style="background-image: url(./img/vase.jpg);"></div>
 		<div class="slider-products__slide" style="background-image: url(./img/vase.jpg);">
-			<div class="action-block">%</div>
-		</div>
-		<div class="slider-products__slide" style="background-image: url(./img/vase.jpg);">
-			<div class="action-block">%</div>
+			<div class="price-below price-below_action js-drop js-price-below">
+				<div class="action-block js-open-drop">%</div>
+				<div class="price-below__drop js-drop-hidden">
+					<div class="price-below__info">
+						<p>Наши держатели карт получают возможность покупать товар по акциям.</p>
+						<p>Совершите первую покупку на любую сумму и получите карту Члена Клуба в подарок.</p>
+					</div>
+					<div class="price-below__fotter">
+						{{ mixins.price({
+							class: "price_red",
+							price: "1000 ₽",
+							text: "Розничная цена"
+						}) }}
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="slider-products__nav js-slider-products-nav">
