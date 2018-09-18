@@ -1,0 +1,283 @@
+--- title: Basket ---
+
+{% import "data/data.html" as data %}
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="inner">
+		{{ mixins.breadcrumbs({
+
+			list: ['Назад','Главная','Акции','Отпуск у себя дома']
+		}) }}
+		<article class="promo">
+			<h2 class="promo__title title text-center">Отпуск у себя дома</h2>
+			<div class="promo__text text-center">
+				<p>
+					Здесь будет эмоциональное описание, которое затрагивает иррациональные причины, почему 
+					клиенту необходима данная группа товара или предметы коллекции и тд и тп. Например: «Вы видели 
+					Белого кролика? Он, кажется, побежал туда! Мы не знаем, куда он направляется, но есть ощущение, 
+					что его притягивает все оригинальное, смелое и невероятное. Значит, искать его надо в коллекции 
+					американского бренда MacKenzie-Childs. Там его ждет настоящая Страна чудес! Хотите взглянуть? 
+					Следуйте за белым кроликом!» Данный размер текста является наиболее подходящим
+				</p>
+			</div>
+			<div class="promo__img article-img">
+				<img src="./img/alternative-aroma-aromatherapy-161599.jpg" alt="img">
+			</div>
+			<div class="row">
+				<div class="col col-66 col-md-100">
+					<div class="description-text">
+						<p>
+							Здесь будет описание условий акции, которое в понятной и простой форме рассказывает как принять участие в акции, какие действия совершить и какая выгода для клиента за этим последует. Необходимо указать как акции накладываются друг на друга, какие есть
+						</p>
+					</div>
+					<div class="article-date">
+						22 мая, 16:50
+					</div>
+				</div>
+				<div class="col col-33 col-md-100">
+					<div class="promo-counter">
+						<div class="promo-counter__info">
+							<span class="promo-counter__duration">{{ mixins.icon("timer-sand") }}4 дня</span>
+							<span class="promo-counter__dates">с 23 мая по 4 июня</span>
+						</div>
+						<div class="promo-counter__timer">
+							<div class="promo-counter__box promo-counter__box_hours">21</div>
+							<div class="promo-counter__box promo-counter__box_minutes">14</div>
+							<div class="promo-counter__box promo-counter__box_seconds">01</div>
+						</div>
+					</div>
+					<div class="social text-right">
+						{% for name in ["email", "vk", "facebook", "odnoklassniki", "twitter", "google-plus", "mail-ru"] %}
+						<a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</article>
+		<div class="promo-categories">
+			{{ mixins.theadsimple({ title: 'Товары по акции', product: '45 товаров' }) }}
+			<div class="catalog-cards">
+				<div class="row">
+					{% for cardcatalog in [
+						{
+							img: "nav-img@2x.jpg",
+							title: "Предметы интерьера"
+						},
+						{
+							img: "wesley-balten@2x.jpg",
+							title: "КАЛЬЯНЫ, КУРИТЕЛЬНЫЕ ПРИНАДЛЕЖНОСТИ"
+						},
+						{
+							img: "leon-liu@2x.jpg",
+							title: "ФЭН–ШУЙ"
+						},
+						{
+							img: "prayer-1308663_1920@2x.jpg",
+							title: "РЕЛИГИОЗНЫЕ ПОДАРКИ"
+						}
+					] %}
+					<div class="col col-25 col-sm-50 col-xs-100" data-stagger-show>
+						{{ mixins.cardcatalog({
+							img: cardcatalog.img,
+							title: cardcatalog.title | safe
+						}) }}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		
+		<div class="catalog-single">
+			<div class="row">
+				<div class="col col-25 md-hide">
+					<aside class="sidebar">
+						<h4 class="sidebar__title" data-stagger-show>Каталог</h4>
+						<div class="sidebar__list js-sidebar-container">
+							<ul class="sidebar-list">
+								{% for item in data.sidebar_list %}
+									{% if item.single %}
+										<li class="sidebar-list__item">
+											<a href="{{item.link}}">{{item.title | safe}}</a>
+										</li>
+									{% else %}
+										<li class="sidebar-list__item {% if item.isOpen %}is-open{% endif %}">
+											<a href="#">{{item.title | safe}}</a>
+											<ul class="sidebar-list__secondary-list">
+												{% for list in item.list %}
+													<li class="sidebar-list__item {% if list.isActive %}is-active{% endif %}">
+														<a href="{{list.link}}">{{list.title | safe}}</a>
+													</li>
+												{% endfor %}
+											</ul>
+										</li>
+									{% endif %}
+								{% endfor %}
+							</ul>
+						</div>
+					</aside>
+				</div>
+				<div class="col col-75 col-md-100">
+					<div data-stagger-show>
+						{% include "partials/catalog/_filter.html" %}
+					</div>
+					<div class="catalog-cards">
+						<div class="row catalog-cards__row">
+							{% for cardproduct in [
+								{
+									action: "true",
+									srcImg: "vase-1.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									action: "true",
+									srcImg: "vase-2.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									srcImg: "annie-spratt.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									srcImg: "vase-4.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									action: "true",
+									srcImg: "vase-1.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									action: "true",
+									srcImg: "vase-2.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									srcImg: "annie-spratt.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									srcImg: "vase-4.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									action: "true",
+									srcImg: "vase-1.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									action: "true",
+									srcImg: "vase-2.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									srcImg: "annie-spratt.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									srcImg: "vase-4.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									action: "true",
+									srcImg: "vase-1.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									action: "true",
+									srcImg: "vase-2.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									srcImg: "annie-spratt.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								},
+								{
+									srcImg: "vase-4.jpg",
+									altImg: "annie-spratt",
+									price: "1000 ₽",
+									priceOld: "1400 ₽",
+									nameText: "Наименование товара",
+									textBtn: "В корзину"
+								}
+								] %}
+								<div class="catalog-cards__col col-25 col-md-33 col-sm-50 col-xs-100" data-stagger-show>
+									{{ mixins.product({
+										class: cardproduct.class,
+										action: cardproduct.action,
+										srcImg: cardproduct.srcImg,
+										altImg: cardproduct.altimg,
+										price: cardproduct.price,
+										priceOld: cardproduct.priceOld,
+										textBtn: cardproduct.textBtn,
+										nameText: cardproduct.nameText
+									}) }}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
