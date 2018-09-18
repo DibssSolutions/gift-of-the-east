@@ -95,7 +95,23 @@ sliderWrap.each((i,el) => {
     asNavFor: sliderProducts,
     dots: false,
     arrows: false,
-    focusOnSelect: true
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: widthMD,
+        settings: {
+          vertical: false,
+          variableWidth: true
+        }
+      },
+      {
+        breakpoint: widthSM,
+        settings: {
+          variableWidth: true,
+          vertical: false
+        }
+      }
+    ]
   });
 
 });

@@ -11,6 +11,8 @@
 		float: left
 		width: 100%
 		max-width: 560px
+		+md
+			width: calc(100% - 288px)
 		+xs
 			width: calc(100% - 94px)
 	&__view
@@ -25,19 +27,48 @@
 	width: 100%
 	// table-layout: fixed
 	display: table
+	+sm
+		display: block
 	&__head
 		display: table-header-group
+		+sm
+			display: none
 	&__body
 		display: table-row-group
+		+sm
+			display: block
 	&__row
 		display: table-row
+		&:not(:last-child)
+			+sm
+				padding: 16px 0 8px
+				border-top: 1px solid $silver 
+		+sm
+			display: block
 	&__td,
 	&__th
 		padding-right: 11px
 		position: relative
 		vertical-align: middle
 		display: table-cell
+	&__th
+		position: relative
+		padding: 0 16px 14px
+		line-height: 1.28
+		font-size: 14px
+		&:before
+			position: absolute
+			content: "" 
+			left: 0
+			right: 0
+			bottom: -1px
+			height: 2px
+			background-color: $silver 
 	&__td
+		padding: 9px 16px 6px
+		font-size: 16px
+		+md
+			font-size: 14px
 		&:after
 			position: absolute
 			content: ''
@@ -46,6 +77,26 @@
 			right: 0
 			height: 1px
 			background-color: $silver
+			+sm
+				display: none
+		+sm
+			display: block
+			padding: 0 8px 10px
+			font-size: 14px
+			&:before
+				margin-bottom: 10px
+				content: attr(data-title)
+				font-size: 16px
+				display: block
+				color: black
+				font-weight: 500
 	&__text
-	&__addres
+		&_gray
+			color: $gray  
 	&__day
+		color: $gray 
+		display: inline
+		& + .shops-table__text
+			display: inline
+	&__addres
+		color: $gray 

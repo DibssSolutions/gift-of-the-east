@@ -104,10 +104,10 @@ title: Product card-Product description - Registered user with club card - Speci
 					<div class="tabs__container" data-tabs-container="description">
 						<div class="tabs__inner inner-sm">
 							<div class="tabs__row row">
-								<div class="tabs__col col col-70">
+								<div class="tabs__col col col-70 col-sm-100">
 									<p>Эмоциональное описание. Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов. Эмоциональное описание. Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в</p>
 								</div>
-								<div class="tabs__col col col-30">
+								<div class="tabs__col col col-30 col-sm-100">
 									<div class="tabs__group">
 										<h4 class="title-xs">РАЗМЕРЫ</h4>
 										<p>Длина: 56 см</p>
@@ -216,7 +216,8 @@ title: Product card-Product description - Registered user with club card - Speci
 												},
 												{
 													thTitle: 'Наличие',
-													text: 'Нет в наличии'
+													text: 'Нет в наличии',
+													textClass: 'gray'
 												}
 											],
 											[
@@ -236,7 +237,8 @@ title: Product card-Product description - Registered user with club card - Speci
 												},
 												{
 													thTitle: 'Наличие',
-													text: 'Нет в наличии'
+													text: 'Нет в наличии',
+													textClass: 'gray'
 												}
 											],
 											[
@@ -272,12 +274,12 @@ title: Product card-Product description - Registered user with club card - Speci
 											<div class="shops-table__row">
 												{% for item in row %}
 												<div class="shops-table__td" data-title="{{ item.thTitle }}">
-													<div class="shops-table__text{% if item.textClass %} table__text_{{ item.textClass }}{% endif %}">{{ item.text }}</div>
+													{% if item.day %}
+													<div class="shops-table__day">{{ item.day }}</div>
+													{% endif %}
+													<div class="shops-table__text {% if item.textClass %} shops-table__text_{{ item.textClass }}{% endif %}">{{ item.text }}</div>
 													{% if item.addres %}
 													<div class="shops-table__addres">{{ item.addres }}</div>
-													{% endif %}
-													{% if day %}
-													<div class="shops-table__day">{{ item.day }}</div>
 													{% endif %}
 												</div>
 												{% endfor %}

@@ -338,6 +338,10 @@
 		white-space: nowrap
 		opacity: 0
 		transition: opacity .35s ease-in-out
+		+md
+			position: relative
+			top: auto
+			width: 100%
 		&.slick-initialized
 			opacity: 1
 		.slick-slide.slick-current
@@ -345,6 +349,9 @@
 				border: 1px solid $silver
 	&__slide-wrap
 		padding: 13px 0 
+		+md
+			padding: 0
+			padding-right: 5px
 	&__slide-nav
 		transition: border-color .3s
 		border: 1px solid transparent
