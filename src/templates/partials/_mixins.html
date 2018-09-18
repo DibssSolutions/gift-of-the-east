@@ -382,11 +382,11 @@
 {% endmacro %}
 <!-- ------------------------------ END CARDS ------------------------------ -->
 
-{% macro rating(list) %}
+{% macro rating(list,value) %}
 <!-- Start rating -->
 <div class="rating-stars">
 	<div class="rating-stars__input">
-		<input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="4.5" data-fractions="10"/>
+		<input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="{{ value or '4.5' }}" data-fractions="10"/>
 	</div>
 	<div class="rating-stars__wrap">
 		{% for item in list %}
