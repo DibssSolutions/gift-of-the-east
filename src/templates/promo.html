@@ -55,34 +55,36 @@
 				</div>
 			</div>
 		</article>
-		{{ mixins.theadsimple({ title: 'Товары по акции', product: '45 товаров' }) }}
-		<div class="catalog-cards">
-			<div class="row">
-				{% for cardcatalog in [
-					{
-						img: "nav-img@2x.jpg",
-						title: "Предметы интерьера"
-					},
-					{
-						img: "wesley-balten@2x.jpg",
-						title: "КАЛЬЯНЫ, КУРИТЕЛЬНЫЕ ПРИНАДЛЕЖНОСТИ"
-					},
-					{
-						img: "leon-liu@2x.jpg",
-						title: "ФЭН–ШУЙ"
-					},
-					{
-						img: "prayer-1308663_1920@2x.jpg",
-						title: "РЕЛИГИОЗНЫЕ ПОДАРКИ"
-					}
-				] %}
-				<div class="col col-25 col-sm-50 col-xs-100" data-stagger-show>
-					{{ mixins.cardcatalog({
-						img: cardcatalog.img,
-						title: cardcatalog.title | safe
-					}) }}
+		<div class="promo-categories">
+			{{ mixins.theadsimple({ title: 'Товары по акции', product: '45 товаров' }) }}
+			<div class="catalog-cards">
+				<div class="row">
+					{% for cardcatalog in [
+						{
+							img: "nav-img@2x.jpg",
+							title: "Предметы интерьера"
+						},
+						{
+							img: "wesley-balten@2x.jpg",
+							title: "КАЛЬЯНЫ, КУРИТЕЛЬНЫЕ ПРИНАДЛЕЖНОСТИ"
+						},
+						{
+							img: "leon-liu@2x.jpg",
+							title: "ФЭН–ШУЙ"
+						},
+						{
+							img: "prayer-1308663_1920@2x.jpg",
+							title: "РЕЛИГИОЗНЫЕ ПОДАРКИ"
+						}
+					] %}
+					<div class="col col-25 col-sm-50 col-xs-100" data-stagger-show>
+						{{ mixins.cardcatalog({
+							img: cardcatalog.img,
+							title: cardcatalog.title | safe
+						}) }}
+					</div>
+					{% endfor %}
 				</div>
-				{% endfor %}
 			</div>
 		</div>
 		
