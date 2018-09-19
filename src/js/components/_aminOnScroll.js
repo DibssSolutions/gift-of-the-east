@@ -7,7 +7,7 @@ export default (function() {
   containers.each((id,el) => {
     const item = $(el);
   	const show = () => {
-  	  if (item.offset().top + item.outerHeight()/2 <= WIN.scrollTop() + WIN.outerHeight()) {
+  	  if (item.offset().top + item.outerHeight()/4 <= WIN.scrollTop() + WIN.outerHeight()) {
   	    WIN.off('scroll', show);
         if ( !item.hasClass(ANIMATE) ) array.push(item);
         if ( array.length - 1 === 0 ) return;

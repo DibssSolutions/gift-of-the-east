@@ -292,9 +292,32 @@ title: Product card-Product description - Registered user with club card - Speci
 						</div>
 					</div>
 					<div class="tabs__container" data-tabs-container="reviews">
-						<div class="tabs__inner inner-sm">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eligendi itaque, dolor laborum? Vero adipisci dignissimos suscipit maxime, possimus est voluptas accusamus inventore. Earum esse dolor architecto optio, adipisci nam!
+						<!-- begin reviews -->
+						<div class="reviews">
+							<div class="reviews__inner inner-sm">
+								<div class="reviews-statistic">
+									<h3 class="reviews-statistic__title title">2 отзыва</h3>
+									<div class="reviews-statistic__ratings">
+										<!-- begin rating-stat -->
+										<div class="rating-statistic">
+											<div class="rating-statistic__chekbox">
+												<div class="rating-statistic__icon">{{ mixins.icon('check') }}</div>
+											</div>
+											<div class="rating-statistic__stars">
+												{{ mixins.rating(null,5) }}
+											</div>
+											<div class="rating-statistic__progress progress">
+												<div class="progress__inner" style="width: 50%"></div>
+											</div>
+											<div class="rating-statistic__quantity">1</div>
+										</div>
+										<!-- end rating-stat -->
+									</div>
+								</div>
+							</div>
+							
 						</div>
+						<!-- end reviews -->
 					</div>
 					<div class="tabs__container" data-tabs-container="question-answer">
 						<div class="tabs__inner inner-sm">
