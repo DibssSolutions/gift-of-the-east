@@ -1,0 +1,114 @@
+--- title: Basket ---
+
+{% import "data/data.html" as data %}
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="inner">
+		{{ mixins.breadcrumbs({
+
+			list: ['Назад','Главная','Акции']
+		}) }}
+		<div class="promo-list">
+			<h2 class="promo-list__title title text-center">Акции</h2>
+			<div class="promo-list__top">
+                <div class="promo-list__nav nav-links">
+                    <a href="" class="nav-links__item is-active">Акции дня</a>
+                    <a href="" class="nav-links__item">Предстоящие акции</a>
+                </div>
+                <div class="promo-list__toggler">
+                    <!-- Start checkbox -->
+                    <label class="toggler">
+                        <input type="checkbox" name="checkbox">
+                        <span class="toggler__text">Заканчивается</span>
+                    </label>
+                    <!-- End checkbox -->
+                </div>
+            </div>
+            <div class="promo-list__body">
+                <div class="row">
+                    {% for item in [
+                        {
+                            img: "lamp-2381617_1920.jpg",
+                            duration: "",
+                            title: "Заголовок акции, желательно, чтобы это были две строчки, иначе три то...",
+                            text: "Здесь будет одна–две строчки текста, который является подзаголовком к акции...",
+                            counter: true
+                        },
+                        {
+                            img: "main-slide.jpg",
+                            duration: "Акция действует с 1 мая 2018 года",
+                            title: "Заголовок акции, желательно, чтобы это были две строчки",
+                            text: "Здесь будет одна–две строчки текста, который является подзаголовком к"
+                        },
+                        {
+                            img: "daniil-silantev-574962-unsplash.jpg",
+                            duration: "Акция действует с 30 мая 2018 года",
+                            title: "Заголовок акции, желательно, чтобы это были две строчки",
+                            text: "Здесь будет одна–две строчки текста, который является подзаголовком к"
+                        },
+                        {
+                            img: "photo-nic-co-uk-nic-224379-unsplash@2x.jpg",
+                            duration: "Акция действует со 2 июня по 1 августа 2018 года",
+                            title: "Заголовок акции, желательно, чтобы это были две строчки",
+                            text: "Здесь будет одна–две строчки текста, который является подзаголовком к"
+                        },
+                        {
+                            img: "rawpixel-247358-unsplash.jpg",
+                            duration: "Акция действует с 8 июня по 3 августа 2018 года",
+                            title: "Заголовок акции, желательно, чтобы это были две строчки",
+                            text: "Здесь будет одна–две строчки текста, который является подзаголовком к"
+                        },
+                        {
+                            img: "alternative-aroma-aromatherapy-161599.jpg",
+                            duration: "Акция действует с 25 июня 2018 года",
+                            title: "Заголовок акции, желательно, чтобы это были две строчки",
+                            text: "Здесь будет одна–две строчки текста, который является подзаголовком к"
+                        },
+                        {
+                            img: "bath-bathroom-candlelight-3188@2x.jpg",
+                            duration: "Акция действует с 30 июня по 3 августа 2018 года",
+                            title: "Заголовок акции, желательно, чтобы это были две строчки",
+                            text: "Здесь будет одна–две строчки текста, который является подзаголовком к"
+                        },
+                        {
+                            img: "pexels-photo-698864.jpg",
+                            duration: "Акция действует с 1 августа 2018 года",
+                            title: "Заголовок акции, желательно, чтобы это были две строчки",
+                            text: "Здесь будет одна–две строчки текста, который является подзаголовком к"
+                        }
+                    ] %}
+                        <div class="col col-50 col-md-100">
+                            <a href="#" class="promo-card">
+                                <div class="promo-card__img img-bg" style="background-image: url(./img/{{ item.img }})">
+                                </div>
+                                <div class="promo-card__descr">
+                                    {% if item.counter %}
+                                        <div class="promo-counter text-center">
+                                            <div class="promo-counter__info">
+                                                <span class="promo-counter__duration">{{ mixins.icon("timer-sand") }}1 день</span>
+                                            </div>
+                                            <div class="promo-counter__timer">
+                                                <div class="promo-counter__box promo-counter__box_hours">21</div>
+                                                <div class="promo-counter__box promo-counter__box_minutes">14</div>
+                                                <div class="promo-counter__box promo-counter__box_seconds">01</div>
+                                            </div>
+						                    <div class="promo-counter__text">до конца акции</div>
+                                        </div>
+                                    {% endif %}
+                                    <div class="promo-card__text">
+                                        {% if not item.counter %}
+                                            <span class="promo-card__duration">{{ item.duration }}</span>
+                                        {% endif %}
+                                        <h5 class="js-dots promo-card__title title-sm ">{{ item.title }}</h5>
+                                        <div class="js-dots promo-card__subtitle">{{ item.text }}</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+		</div>
+	</div>
+{% endblock %}

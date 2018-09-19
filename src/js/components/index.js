@@ -1,3 +1,4 @@
+import './_three-dots';
 import './_slider';
 import './_interior';
 import './_modal';

@@ -27,3 +27,5 @@ PageList:
   ready: 100
 - file: promo.html
   ready: 50
+- file: promo-list.html
+  ready: 50
