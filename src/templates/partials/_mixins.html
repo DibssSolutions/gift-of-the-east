@@ -673,3 +673,50 @@
     </div>
 </div>
 {% endmacro %}
+
+{% macro magazineTop(props) %}
+<div class="magazine-top">
+	<div class="magazine-top__tags tags">
+		{% for tag in props.tags %}
+		<a href="#" class="tag{% if tag.class %} {{tag.class}}{% endif %}">{{ tag.text }}</a>
+		{% endfor %}
+	</div>
+	<h2 class="magazine-top__title title text-center">{{ props.title }}</h2>
+	<div class="magazine-top__details">
+		<div class="magazine-top__date magazine-top__item">
+			{{ icon('calendar-clock') }}
+			<span class="article-date">
+				22 МАЯ, 16:50
+			</span>
+		</div>
+		<div class="magazine-top__comments magazine-top__item">
+			{{ icon('comment-text-outline') }}
+			<span class="article-date">
+				3
+			</span>
+		</div>
+		<div class="magazine-top__views magazine-top__item">
+			{{ icon('eye-outline') }}
+			<span class="article-date">
+				145
+			</span>
+		</div>
+		<div class="magazine-top__likes magazine-top__item">
+			{{ icon('heart-outline') }}
+			<span class="article-date">
+				124
+			</span>
+		</div>
+	</div>
+	<div class="magazine-top__text text-center">
+		{{ props.text }}
+	</div>
+	<div class="magazine-top__social">
+		<div class="social text-center">
+			{% for name in ["email", "vk", "facebook", "odnoklassniki", "twitter", "google-plus", "mail-ru"] %}
+			<a href="#" class="social__link social__link_{{name}}">{{ icon(name) }}</a>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endmacro %}

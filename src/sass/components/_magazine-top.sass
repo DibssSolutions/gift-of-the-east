@@ -1,0 +1,45 @@
+.magazine-top
+	display: flex
+	flex-direction: column
+	align-items: center
+	max-width: 860px
+	margin: 0 auto
+	margin-bottom: 24px
+	&__title
+		max-width: 700px
+		margin-bottom: 20px
+	&__tags
+		margin-bottom: 13px
+
+	&__details
+		display: flex
+		align-items: center
+		justify-content: space-between
+		max-width: 330px
+		width: 100%
+		margin-bottom: 18px
+		.icon
+			display: inline-block
+			margin-right: 8px
+			color: $silver
+	&__item
+		display: flex
+		align-items: center
+	&__date
+		.icon
+			font-size: 22px
+	&__comments
+		.icon
+			font-size: 20px
+	&__views
+		.icon
+			font-size: 15px
+	&__likes
+		.icon
+			font-size: 18px
+	&__text
+		font-size: 17px
+		color: $gray
+		margin-bottom: 24px
+		+sm
+			font-size: 14px
