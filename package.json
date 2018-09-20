@@ -69,6 +69,7 @@
     "run-sequence": "^1.1.5",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
+    "three-dots.js": "0.0.2",
     "through2": "^2.0.1",
     "tooltip": "^1.6.1",
     "webpack": "^2.2.1",

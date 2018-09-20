@@ -1,0 +1,77 @@
+.promo-list
+    &__title
+    &__top
+        display: flex
+        justify-content: space-between
+        border-bottom: 1px solid $silver
+        +sm
+            flex-direction: column
+    &__nav
+        margin-right: 15px
+        +sm
+            margin-right: 0
+    &__toggler
+        padding-top: 7px
+    &__body
+        padding-top: 24px
+
+
+
+.nav-links
+    &__item
+        position: relative
+        display: inline-block
+        font-size: 20px
+        padding: 0 0 11px 16px
+        line-height: 1.5
+        vertical-align: top
+        margin-bottom: -1px
+        color: $gray
+        &:after
+            content: ""
+            position: absolute
+            left: 0
+            right: 0
+            bottom: 0
+            height: 2px
+            background-color: $lightBrown
+            opacity: 0
+            transition: .2s
+            animation: lineOut .4s ease alternate forwards
+        &:not(:first-child)
+            margin-left: 48px
+        &.is-active
+            color: $black
+            &:after
+                opacity: 1
+                transition-delay: .2s
+                animation: lineIn .4s ease alternate forwards
+
+
+.promo-card
+    display: block
+    transition: box-shadow .3s
+    margin-bottom: 32px
+    &:hover
+        box-shadow: 0 6px 12px rgba(0,0,0,.2)
+    &__img
+        height: 368px
+        +sm
+            height: 280px
+    &__descr
+        display: flex
+        +sm
+            flex-direction: column
+            .promo-counter
+                order: 2
+    &__text
+        padding: 8px 16px
+    &__title
+        margin: 8px 0
+        height: 56px
+        overflow: hidden
+        +md
+            height: 50px
+    &__subtitle
+        height: 40px
+        overflow: hidden
