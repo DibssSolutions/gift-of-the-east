@@ -1,0 +1,29 @@
+--- title: Basket ---
+
+{% import "data/data.html" as data %}
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="inner">
+		{{ mixins.breadcrumbs({
+
+			list: ['Назад','Главная','Акции']
+		}) }}
+		<div class="magazine-article">
+			{{ mixins.magazineTop({
+				title: "Заголовок статьи, желательно, чтобы это были две или одна строчки",
+				text: "Здесь будет текст, который служит подзаголовком к статье, желательно, чтобы это были две–три строчки, как выжимка из последующих слов в статье",
+				tags: [
+					{
+						class: 'tag_orange',
+						text: 'ДОБРОЕ УТРО'
+					},
+					{
+						class: 'tag_green',
+						text: 'РЕЦЕПТЫ'
+					}
+				]
+			}) }}
+		</div>
+	</div>
+{% endblock %}

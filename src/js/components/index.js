@@ -16,3 +16,4 @@ import './_input-mask';
 import './_radioTab';
 import './_tabs';
 import './_aminOnScroll';
+import './_nav-links';
