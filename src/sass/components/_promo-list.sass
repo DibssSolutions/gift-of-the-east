@@ -86,6 +86,7 @@
             // transform: translateX(-50%)
             bottom: -100px
             background-color: #fff
+            box-shadow: 0 6px 12px rgba(#000,.12)
     &__item
         position: relative
         display: inline-block
@@ -96,6 +97,7 @@
         margin-bottom: -1px
         color: $gray
         transition: color .3s, background-color .3s
+        overflow: hidden
         +sm
             display: block
             // text-align: center
@@ -110,7 +112,6 @@
             bottom: 0
             height: 2px
             background-color: $lightBrown
-            opacity: 0
             transition: .2s
             animation: lineOut .4s ease alternate forwards
             +sm
@@ -158,13 +159,14 @@
                 order: 2
     &__text
         padding: 8px 16px 24px
+        +sm
+            padding-bottom: 8px
     &__title
         margin: 8px 0
-        min-height: 45px
         max-height: 56px
         overflow: hidden
         +md
-            height: 50px
+            max-height: 50px
     &__subtitle
         max-height: 40px
         color: $gray
