@@ -282,7 +282,7 @@
 		<div class="product__name">
 			{{ props.nameText }}
 		</div>
-		<div class="product__price">
+		<div class="product__price{% if props.priceRed %} product__price_red{% endif %}">
 			<span>{{ props.price }}</span>
 			<span class="is-old">{{ props.priceOld }}</span>
 		</div>

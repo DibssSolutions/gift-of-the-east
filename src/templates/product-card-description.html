@@ -81,88 +81,31 @@ title: product-card-description
 		    </div>
 		</div>
 		<div class="goods__tabs">
-			<!-- begin tabs -->
-			<div class="tabs" data-tabs>
-				<div class="tabs__current"><span data-tabs-current></span>{{ mixins.icon('chevron-up') }}</div>
-				<div class="tabs__out">
-					<ul class="tabs__list inner-sm">
-						{% for item in [
-							{
-								id: 'description',
-								text: 'Описание'
-							},
-							{
-								id: 'availability',
-								text: 'Наличие в магазинах',
-								quantity: '3'
-							},
-							{
-								id: 'reviews',
-								text: 'Отзывы',
-								quantity: '2'
-							},
-							{
-								id: 'question-answer',
-								text: 'Вопрос-ответ',
-								quantity: '2'
-							}
-							] %}
-							<li class="tabs__item" data-tabs-control="{{ item.id }}">
-								{{ item.text }}
-								{% if item.quantity %}<span class="tabs__quantity">{{ item.quantity }}</span>{% endif %}
-							</li>
-						{% endfor %}
-					</ul>
-				</div>
-				<div class="tabs__wrap" data-tabs-wrapper>
-					<div class="tabs__container" data-tabs-container="description">
-						<div class="tabs__inner inner-sm">
-							<div class="tabs__row row">
-								<div class="tabs__col col col-70">
-									<p>Эмоциональное описание. Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов. Эмоциональное описание. Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в</p>
-								</div>
-								<div class="tabs__col col col-30">
-									<div class="tabs__group">
-										<h4 class="title-xs">РАЗМЕРЫ</h4>
-										<p>Длина: 56 см</p>
-										<p>Ширина: 48 см</p>
-										<p>Высота: 61 см</p>
-									</div>
-									<div class="tabs__group">
-										<h4 class="title-xs">МАТЕРИАЛЫ</h4>
-										<p>Дерево, акриловый лак, позолота</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="tabs__container" data-tabs-container="availability">
-						<div class="tabs__inner inner-sm">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime architecto a dignissimos asperiores, deleniti consectetur repellendus assumenda accusamus aliquid quasi sequi unde modi, voluptate iusto soluta maiores cumque quis voluptatem!
-						</div>
-					</div>
-					<div class="tabs__container" data-tabs-container="reviews">
-						<div class="tabs__inner inner-sm">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eligendi itaque, dolor laborum? Vero adipisci dignissimos suscipit maxime, possimus est voluptas accusamus inventore. Earum esse dolor architecto optio, adipisci nam!
-						</div>
-					</div>
-					<div class="tabs__container" data-tabs-container="question-answer">
-						<div class="tabs__inner inner-sm">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias placeat ut totam ex deserunt numquam odit nemo facilis quae dolorem alias atque debitis doloribus, nobis quas assumenda saepe, consequatur quidem?
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- end tabs -->
+			{% include "partials/product-card/_tabs.html" %}
 			<div class="goods__filter">
 				<div class="goods__inner inner-sm">
-					<select class="js-select select select_bord select_sm select_icon" data-icon-arrow="chevron-down" data-width="144">
-						<option value="ПОКАЗАТЬ ВСЕ">ПОКАЗАТЬ ВСЕ</option>
-						<option value="item">item</option>
-						<option value="item">item</option>
-						<option value="item">item</option>
-						<option value="item">item</option>
-					</select>
+					<div class="goods__tags tags">
+						<div class="tags__wrap">
+							{% for text in [
+								'ПОДАРКИ ДЛЯ ЖЕНЩИН',
+								'НЕОБЫЧНЫЕ ПОДАРКИ',
+								'ВОСТОЧНЫЙ ИНТЕРЬЕР',
+								'ВОСТОЧНЫЙ ИНТЕРЬЕР',
+								'ЭЛЕГАНТНОСТЬ'
+							] %}
+								<a href="#" class="tag tag_gallery">{{text}}</a>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="goods__filter-select">
+						<select class="js-select select select_bord select_sm select_icon" data-icon-arrow="chevron-down" data-width="144">
+							<option value="ПОКАЗАТЬ ВСЕ">ПОКАЗАТЬ ВСЕ</option>
+							<option value="item">item</option>
+							<option value="item">item</option>
+							<option value="item">item</option>
+							<option value="item">item</option>
+						</select>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -177,6 +120,7 @@ title: product-card-description
 								srcImg: "annie-spratt.jpg",
 								altImg: "annie-spratt",
 								price: "1000 ₽",
+								priceRed: true,
 								priceOld: "1400 ₽",
 								nameText: "Наименование товара",
 								textBtn: "В корзину"
