@@ -2,6 +2,17 @@
 	font-size: 0
 	.rating-symbol
 		margin-left: 4px
+		color: $yellowStar
+	.glyphicon
+		cursor: pointer
+		font-size: 12px
+		color: inherit 
+	&_gray
+		.rating-symbol-background
+			color: rgba($silver, .5) 
+	&_md
+		.glyphicon
+			font-size: 16px
 	&__input
 		margin-top: 2px
 		vertical-align: top
@@ -32,16 +43,15 @@ a.rating-stars__text
 	+hover
 		border-color: transparent 
 		
-.glyphicon
-	cursor: pointer
-	font-size: 12px
-	color: $yellowStar
 	
 
 .rating-statistic
+	font-size: 0
+	&:not(:last-child)
+		margin-bottom: 10px
 	&__chekbox
 		position: relative
-		margin-top: 2px
+		margin-top: 1px
 		width: 16px
 		height: 16px
 		border: 1px solid #C0C0C0 
@@ -62,11 +72,14 @@ a.rating-stars__text
 		vertical-align: top
 		display: inline-block
 	&__stars
-		margin-top: 10px
+		margin-left: 8px
 	&__quantity
+		margin-left: 16px
 		font-size: 14px
 		color: $gray
 		line-height: 1.4 
+	&__progress
+		margin: 5px 0 0 22px
 .progress
 	position: relative
 	height: 8px
@@ -79,4 +92,23 @@ a.rating-stars__text
 		bottom: 0
 		border-radius: 0 5px 5px 0 
 		background-color: $silver 
+
+.average-rating
+	&__wrap
+		font-size: 0
+	&__size,
+	&__stars
+		vertical-align: top
+		display: inline-block
+	&__size
+		font-size: 26px
+		line-height: 1.1
+	&__stars
+		margin: 3px 0 0 9px
+	&__text
+		margin-top: 9px
+		max-width: 180px
+		font-size: 14px
+		line-height: 1.28
+		color: $gray 
 		

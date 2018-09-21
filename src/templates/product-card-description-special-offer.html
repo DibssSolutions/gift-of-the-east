@@ -71,7 +71,7 @@ title: Product card-Product description - Registered user with club card - Speci
 			<div class="tabs" data-tabs>
 				<div class="tabs__current"><span data-tabs-current></span>{{ mixins.icon('chevron-up') }}</div>
 				<div class="tabs__out">
-					<ul class="tabs__list inner-sm">
+					<ul class="tabs__list inner inner_pull-left">
 						{% for item in [
 							{
 								id: 'description',
@@ -295,27 +295,89 @@ title: Product card-Product description - Registered user with club card - Speci
 						<!-- begin reviews -->
 						<div class="reviews">
 							<div class="reviews__inner inner-sm">
+								<h3 class="reviews__title title-simple">2 отзыва</h3>
 								<div class="reviews-statistic">
-									<h3 class="reviews-statistic__title title">2 отзыва</h3>
 									<div class="reviews-statistic__ratings">
+										{% for item in [
+											{
+												stars: 5,
+												quantity: 1,
+												pregress: 50
+											},
+											{
+												stars: 4,
+												quantity: 1,
+												pregress: 50
+											},
+											{
+												stars: 3,
+												pregress: 0
+											},
+											{
+												stars: 2,
+												pregress: 0
+											},
+											{
+												stars: 1,
+												pregress: 0
+											}
+										] %}
 										<!-- begin rating-stat -->
 										<div class="rating-statistic">
 											<div class="rating-statistic__chekbox">
 												<div class="rating-statistic__icon">{{ mixins.icon('check') }}</div>
 											</div>
 											<div class="rating-statistic__stars">
-												{{ mixins.rating(null,5) }}
+												{{ mixins.rating(null,item.stars,'rating-stars_gray', 'js-rating-full') }}
 											</div>
 											<div class="rating-statistic__progress progress">
-												<div class="progress__inner" style="width: 50%"></div>
+												<div class="progress__inner" style="width: {{ item.pregress }}%"></div>
 											</div>
-											<div class="rating-statistic__quantity">1</div>
+											{% if item.quantity %}<div class="rating-statistic__quantity">{{ item.quantity }}</div>{% endif %}
 										</div>
 										<!-- end rating-stat -->
+										{% endfor %}
+									</div>
+									<div class="reviews-statistic__estimate">
+										<div class="average-rating">
+											<div class="average-rating__wrap">
+												<div class="average-rating__size">4.5</div>
+												<div class="average-rating__stars">
+													{{ mixins.rating(null,4.5,'rating-stars_md') }}
+												</div>
+											</div>
+											<div class="average-rating__text">Средняя оценка на основании 2 отзывов</div>
+										</div>
 									</div>
 								</div>
 							</div>
-							
+							<div class="reviews-filter">
+								<div class="reviews-filter__head">
+									<div class="reviews-filter__inner inner inner_pull-left">
+										<div class="reviews-filter__left">
+											<div class="reviews-filter__toggler">
+												{{ mixins.checkbox('С фото',null,true) }}
+											</div>
+											<div class="reviews-filter__drop">
+												<div class="reviews-filter__select-text">Упорядочить</div>
+												<div class="reviews-filter__select">
+													<select class="select select_bord js-select" data-width="214px">
+													    <option value="Cначала новинки">сначала новые</option>
+													    <option value="text 1">text 1</option>
+													    <option value="text 2">text 2</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="reviews-filter__right">
+											<a href="#" class="btn btn_w-md btn_bord btn_bord-silver"><span class="btn__text">Показать</span></a>
+										</div>
+									</div>
+								</div>
+								<div class="reviews-filter__inner inner-sm">
+									
+								</div>
+							</div>
 						</div>
 						<!-- end reviews -->
 					</div>

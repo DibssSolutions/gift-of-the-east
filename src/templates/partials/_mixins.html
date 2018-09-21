@@ -309,7 +309,7 @@
 		К сожалению, некоторых товаров из корзины больше нет в наличии.
 	</div>
 	<div class="notavailable__button">
-		<a href="#" class="btn btn_md btn_bord btn_bord-gray js-open-drop" type="button" data-text-open="Показать" data-text-close="СВЕРНУТЬ"><span class="btn__text js-drop-btn-text">Показать</span></a>
+		<button class="btn btn_md btn_bord btn_bord-gray js-open-drop" type="button" data-text-open="Показать" data-text-close="СВЕРНУТЬ"><span class="btn__text js-drop-btn-text">Показать</span></button>
 	</div>
 	<div class="notavailable__wrap js-drop-hidden">
 		{% if props.cardList %}
@@ -382,12 +382,13 @@
 {% endmacro %}
 <!-- ------------------------------ END CARDS ------------------------------ -->
 
-{% macro rating(list,value) %}
+{% macro rating(list,value,class,jsClass) %}
 <!-- Start rating -->
-<div class="rating-stars">
+<div class="rating-stars{% if class %} {{ class }}{% endif %}">
 	<div class="rating-stars__input">
-		<input type="hidden" id="stars" class="rating-stars__input js-rating rating" value="{{ value or '4.5' }}" data-fractions="10"/>
+		<input type="hidden" id="stars" class="rating-stars__input rating {{ jsClass or 'js-rating' }}" value="{{ value or '4.5' }}" data-fractions="10"/>
 	</div>
+	{% if list %}
 	<div class="rating-stars__wrap">
 		{% for item in list %}
 			{% if item.link %}
@@ -397,14 +398,15 @@
 			{% endif %}
 		{% endfor %}
 	</div>
+	{% endif %}
 </div>
 <!-- End rating -->
 {% endmacro %}
 
-{% macro checkbox(text, radio) %}
+{% macro checkbox(text, radio, checked) %}
 <!-- Start checkbox -->
 <label class="toggler">
-	<input type="{{radio or 'checkbox'}}" name="checkbox">
+	<input type="{{radio or 'checkbox'}}" name="checkbox"{% if checked %} checked{% endif %}>
 	<span class="toggler__text">{{ text }}</span>
 </label>
 <!-- End checkbox -->
