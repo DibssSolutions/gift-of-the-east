@@ -20,9 +20,12 @@
 
 .tags
 	font-size: 0
+	overflow: hidden
+	&__wrap
+		margin: 0 -4px -8px 0
 
 .tag
-	margin: 0 4px 8px
+	margin: 0 4px 8px 0
 	padding: 7px 12px
 	color: $white 
 	font-family: $montserrat
@@ -50,6 +53,11 @@
 		background-color: $turquoise
 	&_green
 		background-color: $green
+	&_gallery
+		color: $black 
+		background-color: $gallery 
+	&_gray
+		background-color: $gallery 
 
 .like
 	position: relative
