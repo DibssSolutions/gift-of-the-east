@@ -683,7 +683,7 @@
 		<a href="#" class="tag{% if tag.class %} {{tag.class}}{% endif %}">{{ tag.text }}</a>
 		{% endfor %}
 	</div>
-	<h2 class="magazine-top__title title text-center">{{ props.title }}</h2>
+	<h1 class="magazine-top__title title text-center">{{ props.title }}</h1>
 	<div class="magazine-top__details">
 		<div class="magazine-top__date magazine-top__item">
 			{{ icon('calendar-clock') }}
@@ -721,4 +721,53 @@
 		</div>
 	</div>
 </div>
+{% endmacro %}
+
+{% macro magazineImg(img, center) %}
+	<div class="magazine-img{%if center%} text-center{%endif%}">
+		<img src="./img/{{ img }}" alt="img">
+		<span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
+	</div>
+{% endmacro %}
+
+{% macro magazineParagraph(props) %}
+	<div class="magazine-paragraph">
+		<h2 class="title-simple">
+			{{ props.subtitle }}
+		</h2>
+		{% for p in props.text %}
+		<p>
+			{{ p }}
+		</p>
+		{% endfor %}
+	</div>
+{% endmacro %}
+
+{% macro magazineBottom(props) %}
+	<div class="magazine-bottom">
+		<div class="magazine-bottom__left">
+			<div class="tags">
+				{% for tag in props.tags %}
+				<a href="#" class="tag{% if tag.class %} {{tag.class}}{% endif %}">{{ tag.text }}</a>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="magazine-bottom__right">
+			<span class="article-date">
+				22 МАЯ, 16:50
+			</span>
+			<span class="article-author">
+				<span class="article-author__title">Автор статьи</span>
+				Надежда Поперечная
+			</span>
+		</div>
+	</div>
+{% endmacro %}
+
+{% macro magazineFooter() %}
+	<div class="magazine-footer">
+		<div class="inner-sm">
+			
+		</div>
+	</div>
 {% endmacro %}

@@ -1,4 +1,103 @@
+.magazine-photos
+    &__row
+        justify-content: space-between
+    &__col
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        +md
+            justify-content: center
+        &:not(:last-child)
+            +md
+                margin-bottom: 16px
+        &_right
+            justify-content: flex-end
+    
 .magazine-img
     img
         display: block
         max-width: 100%
+    &__text
+        display: inline-block
+        margin-top: 9px
+        color: $gray
+
+.magazine-top
+	display: flex
+	flex-direction: column
+	align-items: center
+	max-width: 860px
+	margin: 0 auto
+	margin-bottom: 24px
+	&__title
+		max-width: 700px
+		margin-bottom: 20px
+	&__tags
+		margin-bottom: 13px
+
+	&__details
+		display: flex
+		align-items: center
+		justify-content: space-between
+		max-width: 330px
+		width: 100%
+		margin-bottom: 18px
+		.icon
+			display: inline-block
+			margin-right: 8px
+			color: $silver
+	&__item
+		display: flex
+		align-items: center
+	&__date
+		.icon
+			font-size: 22px
+	&__comments
+		.icon
+			font-size: 20px
+	&__views
+		.icon
+			font-size: 15px
+	&__likes
+		.icon
+			font-size: 18px
+	&__text
+		font-size: 17px
+		color: $gray
+		margin-bottom: 24px
+		+sm
+			font-size: 14px
+
+.magazine-paragraph
+    max-width: 920px
+    margin: 72px auto
+    text-align: center
+    font-size: 17px
+    line-height: 1.6
+    +md
+        margin: 32px auto
+        font-size: 14px
+    p:not(:last-child)
+        margin-bottom: 33px
+        +md
+            margin-bottom: 16px
+
+.magazine-bottom
+    display: flex
+    justify-content: space-between
+    padding: 32px 0 20px
+    &__right
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        text-align: right
+        margin-left: 16px
+
+.article-author
+    font-size: 14px
+    margin-top: 9px
+    &__title
+        color: $gray
+
+
+

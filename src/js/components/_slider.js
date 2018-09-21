@@ -153,6 +153,33 @@ sliderWatched.slick({
   ]
 });
 
+const magazineSlider = $('.js-magazine-slider');
+magazineSlider.each((i,el) => {
+  let slider = $(el);
+  let sliderParent = slider.parents('.js-magazine-slider-parent');
+  let prevBtn = $('.js-magazine-slider-prev', sliderParent);
+  let nextBtn = $('.js-magazine-slider-next', sliderParent);
+  slider.on('init', () => { sliderParent.addClass(INIT); });
+  slider.slick({
+    dots: true,
+    infinite: false,
+    speed: 800,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: prevBtn,
+    nextArrow: nextBtn,
+    customPaging: (slider, pageIndex) => {
+      return $(`<button class="magazine-slider__dot">
+    <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle stroke="#000" stroke-width="2" cx="11" cy="11" r="10"></circle>
+      </g>
+    </svg>
+    </button>`);
+    }
+  });
+});
+
 DOC.ready(() => {
   let timeOut;
   let arrayHref = [];
