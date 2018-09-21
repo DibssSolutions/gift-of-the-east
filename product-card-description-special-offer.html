@@ -378,7 +378,7 @@
               </svg>
             </div>
             <div class="tabs__out">
-              <ul class="tabs__list inner inner_pull-left">
+              <ul class="tabs__list inner inner_push-left">
                 <li class="tabs__item" data-tabs-control="description"> Описание </li>
                 <li class="tabs__item" data-tabs-control="availability"> Наличие в магазинах <span class="tabs__quantity">3</span>
                 </li>
@@ -712,7 +712,7 @@
                   </div>
                   <div class="reviews-filter">
                     <div class="reviews-filter__head">
-                      <div class="reviews-filter__inner inner inner_pull-left">
+                      <div class="reviews-filter__inner inner inner_push-left">
                         <div class="reviews-filter__left">
                           <div class="reviews-filter__toggler">
                             <!-- Start checkbox -->
@@ -738,21 +738,314 @@
                         </div>
                       </div>
                     </div>
-                    <div class="reviews-filter__inner inner-sm">
+                  </div>
+                  <div class="reviews__inner inner-sm">
+                    <div class="reviews__wrap">
+                      <!-- begin review -->
+                      <div class="review">
+                        <div class="review__wrap">
+                          <div class="review__head">
+                            <div class="review__rating">
+                              <!-- Start rating -->
+                              <div class="rating-stars rating-stars_gray">
+                                <div class="rating-stars__input">
+                                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="5" data-fractions="10" />
+                                </div>
+                              </div>
+                              <!-- End rating -->
+                            </div>
+                            <div class="review__name">Анна</div>
+                            <div class="review__date">21 мая в 12:45</div>
+                          </div>
+                          <div class="review__title">Шикарный</div>
+                          <p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍</p>
+                          <div class="review__footer">
+                            <button class="btn-text" type="button">Ответить</button>
+                            <div class="review__likes likes is-positive">
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-up-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                </svg>
+                              </button>
+                              <div class="likes__size">5</div>
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-down-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="review__attached">
+                            <div class="review__attached-wrap">
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- begin review -->
+                        <div class="review">
+                          <div class="review__wrap">
+                            <div class="review__head">
+                              <div class="review__rating">
+                                <!-- Start rating -->
+                                <div class="rating-stars rating-stars_gray">
+                                  <div class="rating-stars__input">
+                                    <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="4.5" data-fractions="10" />
+                                  </div>
+                                </div>
+                                <!-- End rating -->
+                              </div>
+                              <div class="review__name">Мария</div>
+                              <div class="review__date">21 мая в 13:05</div>
+                              <button class="review__reply" type="button">
+                                <svg class="icon icon-reply">
+                                  <use xlink:href="img/sprite.svg#icon-reply"></use>
+                                </svg> Анне</button>
+                            </div>
+                            <p>Cогласна! Мне слон тоже очень понравился, роскошный подарок.</p>
+                            <div class="review__footer">
+                              <button class="btn-text" type="button">Ответить</button>
+                              <div class="review__likes likes">
+                                <button class="likes__btn" type="button">
+                                  <svg class="icon icon-thumb-up-outline">
+                                    <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                  </svg>
+                                </button>
+                                <div class="likes__size">0</div>
+                                <button class="likes__btn" type="button">
+                                  <svg class="icon icon-thumb-down-outline">
+                                    <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end review -->
+                      </div>
+                      <!-- end review -->
+                      <!-- begin review -->
+                      <div class="review">
+                        <div class="review__wrap">
+                          <div class="review__head">
+                            <div class="review__rating">
+                              <!-- Start rating -->
+                              <div class="rating-stars rating-stars_gray">
+                                <div class="rating-stars__input">
+                                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="4.5" data-fractions="10" />
+                                </div>
+                              </div>
+                              <!-- End rating -->
+                            </div>
+                            <div class="review__name">Лиза</div>
+                            <div class="review__date">25 мая в 9:48</div>
+                          </div>
+                          <div class="review__title">Необычный подарок</div>
+                          <p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍 Однако цена высоковата, за это минус балл(</p>
+                          <div class="review__footer">
+                            <button class="btn-text" type="button">Ответить</button>
+                            <div class="review__likes likes is-negative">
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-up-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                </svg>
+                              </button>
+                              <div class="likes__size">-1</div>
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-down-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="review__attached">
+                            <div class="review__attached-wrap">
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end review -->
                     </div>
                   </div>
                 </div>
                 <!-- end reviews -->
               </div>
               <div class="tabs__container" data-tabs-container="question-answer">
-                <div class="tabs__inner inner-sm"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias placeat ut totam ex deserunt numquam odit nemo facilis quae dolorem alias atque debitis doloribus, nobis quas assumenda saepe,
-                  consequatur quidem? </div>
+                <!-- begin reviews -->
+                <div class="reviews">
+                  <div class="reviews__inner inner-sm">
+                    <h3 class="reviews__title title-simple">2 вопроса</h3>
+                  </div>
+                  <div class="reviews-filter">
+                    <div class="reviews-filter__head">
+                      <div class="reviews-filter__inner inner inner_push-left">
+                        <div class="reviews-filter__left">
+                          <div class="reviews-filter__toggler">
+                            <!-- Start checkbox -->
+                            <label class="toggler">
+                              <input type="checkbox" name="checkbox" checked>
+                              <span class="toggler__text">С фото</span>
+                            </label>
+                            <!-- End checkbox -->
+                          </div>
+                          <div class="reviews-filter__drop">
+                            <div class="reviews-filter__select-text">Упорядочить</div>
+                            <div class="reviews-filter__select">
+                              <select class="select select_bord js-select" data-width="214px">
+                                <option value="Cначала новинки">сначала новые</option>
+                                <option value="text 1">text 1</option>
+                                <option value="text 2">text 2</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="reviews-filter__right">
+                          <a href="#" class="btn btn_w-md btn_bord btn_bord-silver"><span class="btn__text">ЗАДАТЬ ВОПРОС</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__inner inner-sm">
+                    <div class="reviews__wrap">
+                      <!-- begin review -->
+                      <div class="review">
+                        <div class="review__wrap">
+                          <div class="review__head">
+                            <div class="review__rating">
+                              <!-- Start rating -->
+                              <div class="rating-stars rating-stars_gray">
+                                <div class="rating-stars__input">
+                                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="5" data-fractions="10" />
+                                </div>
+                              </div>
+                              <!-- End rating -->
+                            </div>
+                            <div class="review__name">Мария</div>
+                            <div class="review__date">21 мая в 12:45</div>
+                          </div>
+                          <div class="review__title">Шикарный</div>
+                          <p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍</p>
+                          <div class="review__footer">
+                            <button class="btn-text" type="button">Ответить</button>
+                            <div class="review__likes likes is-positive">
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-up-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                </svg>
+                              </button>
+                              <div class="likes__size">5</div>
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-down-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="review__attached">
+                            <div class="review__attached-wrap">
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- begin review -->
+                        <div class="review">
+                          <div class="review__wrap">
+                            <div class="review__head">
+                              <div class="review__logo"><img src="./img/logo-review.png" alt="img"></div>
+                              <div class="review__name">Дары Востока</div>
+                              <div class="review__date">21 мая в 13:05</div>
+                              <button class="review__reply" type="button">
+                                <svg class="icon icon-reply">
+                                  <use xlink:href="img/sprite.svg#icon-reply"></use>
+                                </svg> Анне</button>
+                            </div>
+                            <p>Cогласна! Мне слон тоже очень понравился, роскошный подарок.</p>
+                            <div class="review__footer">
+                              <button class="btn-text" type="button">Ответить</button>
+                              <div class="review__likes likes">
+                                <button class="likes__btn" type="button">
+                                  <svg class="icon icon-thumb-up-outline">
+                                    <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                  </svg>
+                                </button>
+                                <div class="likes__size">0</div>
+                                <button class="likes__btn" type="button">
+                                  <svg class="icon icon-thumb-down-outline">
+                                    <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end review -->
+                      </div>
+                      <!-- end review -->
+                      <!-- begin review -->
+                      <div class="review">
+                        <div class="review__wrap">
+                          <div class="review__head">
+                            <div class="review__rating">
+                              <!-- Start rating -->
+                              <div class="rating-stars rating-stars_gray">
+                                <div class="rating-stars__input">
+                                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="4.5" data-fractions="10" />
+                                </div>
+                              </div>
+                              <!-- End rating -->
+                            </div>
+                            <div class="review__name">Лиза</div>
+                            <div class="review__date">25 мая в 9:48</div>
+                          </div>
+                          <div class="review__title">Необычный подарок</div>
+                          <p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍 Однако цена высоковата, за это минус балл(</p>
+                          <div class="review__footer">
+                            <button class="btn-text" type="button">Ответить</button>
+                            <div class="review__likes likes is-negative">
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-up-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                </svg>
+                              </button>
+                              <div class="likes__size">-1</div>
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-down-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="review__attached">
+                            <div class="review__attached-wrap">
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end review -->
+                    </div>
+                  </div>
+                </div>
+                <!-- end reviews -->
               </div>
             </div>
           </div>
           <!-- end tabs -->
           <div class="goods__filter">
             <div class="goods__inner inner-sm">
+              <div class="goods__tags tags">
+                <div class="tags__wrap">
+                  <a href="#" class="tag tag_gallery">ПОДАРКИ ДЛЯ ЖЕНЩИН</a>
+                  <a href="#" class="tag tag_gallery">НЕОБЫЧНЫЕ ПОДАРКИ</a>
+                  <a href="#" class="tag tag_gallery">ВОСТОЧНЫЙ ИНТЕРЬЕР</a>
+                  <a href="#" class="tag tag_gallery">ВОСТОЧНЫЙ ИНТЕРЬЕР</a>
+                  <a href="#" class="tag tag_gallery">ЭЛЕГАНТНОСТЬ</a>
+                </div>
+              </div>
               <select class="js-select select select_bord select_sm select_icon" data-icon-arrow="chevron-down" data-width="144">
                 <option value="ПОКАЗАТЬ ВСЕ">ПОКАЗАТЬ ВСЕ</option>
                 <option value="item">item</option>

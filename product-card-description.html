@@ -393,7 +393,7 @@
               </svg>
             </div>
             <div class="tabs__out">
-              <ul class="tabs__list inner-sm">
+              <ul class="tabs__list inner inner_push-left">
                 <li class="tabs__item" data-tabs-control="description"> Описание </li>
                 <li class="tabs__item" data-tabs-control="availability"> Наличие в магазинах <span class="tabs__quantity">3</span>
                 </li>
@@ -407,12 +407,12 @@
               <div class="tabs__container" data-tabs-container="description">
                 <div class="tabs__inner inner-sm">
                   <div class="tabs__row row">
-                    <div class="tabs__col col col-70">
+                    <div class="tabs__col col col-70 col-sm-100">
                       <p>Эмоциональное описание. Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в статьях,
                         посвященных изготовлению макета верстки при отсутствии финальных текстов. Эмоциональное описание. Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех
                         справочниках по типографике и предлагается к использованию в</p>
                     </div>
-                    <div class="tabs__col col col-30">
+                    <div class="tabs__col col col-30 col-sm-100">
                       <div class="tabs__group">
                         <h4 class="title-xs">РАЗМЕРЫ</h4>
                         <p>Длина: 56 см</p>
@@ -428,29 +428,648 @@
                 </div>
               </div>
               <div class="tabs__container" data-tabs-container="availability">
-                <div class="tabs__inner inner-sm"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime architecto a dignissimos asperiores, deleniti consectetur repellendus assumenda accusamus aliquid quasi sequi unde modi, voluptate
-                  iusto soluta maiores cumque quis voluptatem! </div>
+                <div class="tabs__inner inner-sm">
+                  <div class="shops-info">
+                    <h3 class="shops-info__title-simple title-simple">Доступно в 3 магазинах в городе Омск</h3>
+                    <p>Вы можете выбрать любой магазин для самовывоза товара. <a href="#" class="link">Подробнее</a></p>
+                    <div class="shops-info__head">
+                      <div class="shops-info__search">
+                        <!-- Start new-search -->
+                        <div class="new-search">
+                          <label class="new-search__label">
+                            <input class="new-search__input" type="text" name="new-search" placeholder="Город, адрес, название ТЦ">
+                            <button type="button" class="new-search__btn">
+                              <svg class="icon icon-search">
+                                <use xlink:href="img/sprite.svg#icon-search"></use>
+                              </svg>
+                            </button>
+                          </label>
+                        </div>
+                        <!-- End new-search -->
+                      </div>
+                      <div class="shops-info__view">
+                        <!-- Start radio-btn -->
+                        <div class="radio-btn">
+                          <label class="radio-btn__label js-radio-tab is-active">
+                            <input type="radio" name="radio-btn">
+                            <span class="radio-btn__icon">
+                              <svg class="icon icon-format-list-bulleted">
+                                <use xlink:href="img/sprite.svg#icon-format-list-bulleted"></use>
+                              </svg>
+                            </span>
+                            <span class="radio-btn__title">Список</span>
+                          </label>
+                          <label class="radio-btn__label js-radio-tab">
+                            <input type="radio" name="radio-btn">
+                            <span class="radio-btn__icon">
+                              <svg class="icon icon-map">
+                                <use xlink:href="img/sprite.svg#icon-map"></use>
+                              </svg>
+                            </span>
+                            <span class="radio-btn__title">Карта</span>
+                          </label>
+                        </div>
+                        <!-- End radio-btn -->
+                      </div>
+                    </div>
+                    <div class="shops-table">
+                      <div class="shops-table__head">
+                        <div class="shops-table__th">Адрес магазина</div>
+                        <div class="shops-table__th">Телефон</div>
+                        <div class="shops-table__th">Время работы</div>
+                        <div class="shops-table__th">Наличие</div>
+                      </div>
+                      <div class="shops-table__body">
+                        <div class="shops-table__row">
+                          <div class="shops-table__td" data-title="Адрес магазина">
+                            <div class="shops-table__text ">Континент 2</div>
+                            <div class="shops-table__addres">70 лет Октября, 25 к.2 </div>
+                          </div>
+                          <div class="shops-table__td" data-title="Телефон">
+                            <div class="shops-table__text ">+7 (678) 678 87 67</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Время работы">
+                            <div class="shops-table__day">пн–вс</div>
+                            <div class="shops-table__text ">10:00–21:00</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Наличие">
+                            <div class="shops-table__text ">3 шт</div>
+                          </div>
+                        </div>
+                        <div class="shops-table__row">
+                          <div class="shops-table__td" data-title="Адрес магазина">
+                            <div class="shops-table__text ">Мега</div>
+                            <div class="shops-table__addres">Бульвар Архитекторов, 35</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Телефон">
+                            <div class="shops-table__text ">+7 (678) 678 87 67</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Время работы">
+                            <div class="shops-table__day">пн–вс</div>
+                            <div class="shops-table__text ">10:00–21:00</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Наличие">
+                            <div class="shops-table__text ">2 шт</div>
+                          </div>
+                        </div>
+                        <div class="shops-table__row">
+                          <div class="shops-table__td" data-title="Адрес магазина">
+                            <div class="shops-table__text ">Фестиваль</div>
+                            <div class="shops-table__addres">ул.70 лет Октября, 19</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Телефон">
+                            <div class="shops-table__text ">+7 (678) 678 87 67</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Время работы">
+                            <div class="shops-table__day">пн–вс</div>
+                            <div class="shops-table__text ">10:00–21:00</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Наличие">
+                            <div class="shops-table__text ">1 шт</div>
+                          </div>
+                        </div>
+                        <div class="shops-table__row">
+                          <div class="shops-table__td" data-title="Адрес магазина">
+                            <div class="shops-table__text ">Маяк–3</div>
+                            <div class="shops-table__addres">пр.Комарова, 6 к.1</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Телефон">
+                            <div class="shops-table__text ">+7 (678) 678 87 67</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Время работы">
+                            <div class="shops-table__day">пн–вс</div>
+                            <div class="shops-table__text ">10:00–21:00</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Наличие">
+                            <div class="shops-table__text  shops-table__text_gray">Нет в наличии</div>
+                          </div>
+                        </div>
+                        <div class="shops-table__row">
+                          <div class="shops-table__td" data-title="Адрес магазина">
+                            <div class="shops-table__text ">Привокзальный</div>
+                            <div class="shops-table__addres">ул.Карла Маркса, 84</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Телефон">
+                            <div class="shops-table__text ">+7 (678) 678 87 67</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Время работы">
+                            <div class="shops-table__day">пн–вс</div>
+                            <div class="shops-table__text ">10:00–21:00</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Наличие">
+                            <div class="shops-table__text  shops-table__text_gray">Нет в наличии</div>
+                          </div>
+                        </div>
+                        <div class="shops-table__row">
+                          <div class="shops-table__td" data-title="Адрес магазина">
+                            <div class="shops-table__text ">Каскад</div>
+                            <div class="shops-table__addres">ул.Карла Маркса, 24</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Телефон">
+                            <div class="shops-table__text ">+7 (678) 678 87 67</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Время работы">
+                            <div class="shops-table__day">пн–вс</div>
+                            <div class="shops-table__text ">10:00–21:00</div>
+                          </div>
+                          <div class="shops-table__td" data-title="Наличие">
+                            <div class="shops-table__text  shops-table__text_gray">Нет в наличии</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="tabs__container" data-tabs-container="reviews">
-                <div class="tabs__inner inner-sm"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eligendi itaque, dolor laborum? Vero adipisci dignissimos suscipit maxime, possimus est voluptas accusamus inventore. Earum esse
-                  dolor architecto optio, adipisci nam! </div>
+                <!-- begin reviews -->
+                <div class="reviews">
+                  <div class="reviews__inner inner-sm">
+                    <h3 class="reviews__title title-simple">2 отзыва</h3>
+                    <div class="reviews-statistic">
+                      <div class="reviews-statistic__ratings">
+                        <!-- begin rating-stat -->
+                        <div class="rating-statistic">
+                          <div class="rating-statistic__chekbox">
+                            <div class="rating-statistic__icon">
+                              <svg class="icon icon-check">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="rating-statistic__stars">
+                            <!-- Start rating -->
+                            <div class="rating-stars rating-stars_gray">
+                              <div class="rating-stars__input">
+                                <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="5" data-fractions="10" />
+                              </div>
+                            </div>
+                            <!-- End rating -->
+                          </div>
+                          <div class="rating-statistic__progress progress">
+                            <div class="progress__inner" style="width: 50%"></div>
+                          </div>
+                          <div class="rating-statistic__quantity">1</div>
+                        </div>
+                        <!-- end rating-stat -->
+                        <!-- begin rating-stat -->
+                        <div class="rating-statistic">
+                          <div class="rating-statistic__chekbox">
+                            <div class="rating-statistic__icon">
+                              <svg class="icon icon-check">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="rating-statistic__stars">
+                            <!-- Start rating -->
+                            <div class="rating-stars rating-stars_gray">
+                              <div class="rating-stars__input">
+                                <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="4" data-fractions="10" />
+                              </div>
+                            </div>
+                            <!-- End rating -->
+                          </div>
+                          <div class="rating-statistic__progress progress">
+                            <div class="progress__inner" style="width: 50%"></div>
+                          </div>
+                          <div class="rating-statistic__quantity">1</div>
+                        </div>
+                        <!-- end rating-stat -->
+                        <!-- begin rating-stat -->
+                        <div class="rating-statistic">
+                          <div class="rating-statistic__chekbox">
+                            <div class="rating-statistic__icon">
+                              <svg class="icon icon-check">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="rating-statistic__stars">
+                            <!-- Start rating -->
+                            <div class="rating-stars rating-stars_gray">
+                              <div class="rating-stars__input">
+                                <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="3" data-fractions="10" />
+                              </div>
+                            </div>
+                            <!-- End rating -->
+                          </div>
+                          <div class="rating-statistic__progress progress">
+                            <div class="progress__inner" style="width: 0%"></div>
+                          </div>
+                        </div>
+                        <!-- end rating-stat -->
+                        <!-- begin rating-stat -->
+                        <div class="rating-statistic">
+                          <div class="rating-statistic__chekbox">
+                            <div class="rating-statistic__icon">
+                              <svg class="icon icon-check">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="rating-statistic__stars">
+                            <!-- Start rating -->
+                            <div class="rating-stars rating-stars_gray">
+                              <div class="rating-stars__input">
+                                <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="2" data-fractions="10" />
+                              </div>
+                            </div>
+                            <!-- End rating -->
+                          </div>
+                          <div class="rating-statistic__progress progress">
+                            <div class="progress__inner" style="width: 0%"></div>
+                          </div>
+                        </div>
+                        <!-- end rating-stat -->
+                        <!-- begin rating-stat -->
+                        <div class="rating-statistic">
+                          <div class="rating-statistic__chekbox">
+                            <div class="rating-statistic__icon">
+                              <svg class="icon icon-check">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="rating-statistic__stars">
+                            <!-- Start rating -->
+                            <div class="rating-stars rating-stars_gray">
+                              <div class="rating-stars__input">
+                                <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="1" data-fractions="10" />
+                              </div>
+                            </div>
+                            <!-- End rating -->
+                          </div>
+                          <div class="rating-statistic__progress progress">
+                            <div class="progress__inner" style="width: 0%"></div>
+                          </div>
+                        </div>
+                        <!-- end rating-stat -->
+                      </div>
+                      <div class="reviews-statistic__estimate">
+                        <div class="average-rating">
+                          <div class="average-rating__wrap">
+                            <div class="average-rating__size">4.5</div>
+                            <div class="average-rating__stars">
+                              <!-- Start rating -->
+                              <div class="rating-stars rating-stars_md">
+                                <div class="rating-stars__input">
+                                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating" value="4.5" data-fractions="10" />
+                                </div>
+                              </div>
+                              <!-- End rating -->
+                            </div>
+                          </div>
+                          <div class="average-rating__text">Средняя оценка на основании 2 отзывов</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews-filter">
+                    <div class="reviews-filter__head">
+                      <div class="reviews-filter__inner inner inner_push-left">
+                        <div class="reviews-filter__left">
+                          <div class="reviews-filter__toggler">
+                            <!-- Start checkbox -->
+                            <label class="toggler">
+                              <input type="checkbox" name="checkbox" checked>
+                              <span class="toggler__text">С фото</span>
+                            </label>
+                            <!-- End checkbox -->
+                          </div>
+                          <div class="reviews-filter__drop">
+                            <div class="reviews-filter__select-text">Упорядочить</div>
+                            <div class="reviews-filter__select">
+                              <select class="select select_bord js-select" data-width="214px">
+                                <option value="Cначала новинки">сначала новые</option>
+                                <option value="text 1">text 1</option>
+                                <option value="text 2">text 2</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="reviews-filter__right">
+                          <a href="#" class="btn btn_w-md btn_bord btn_bord-silver"><span class="btn__text">Показать</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__inner inner-sm">
+                    <div class="reviews__wrap">
+                      <!-- begin review -->
+                      <div class="review">
+                        <div class="review__wrap">
+                          <div class="review__head">
+                            <div class="review__rating">
+                              <!-- Start rating -->
+                              <div class="rating-stars rating-stars_gray">
+                                <div class="rating-stars__input">
+                                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="5" data-fractions="10" />
+                                </div>
+                              </div>
+                              <!-- End rating -->
+                            </div>
+                            <div class="review__name">Анна</div>
+                            <div class="review__date">21 мая в 12:45</div>
+                          </div>
+                          <div class="review__title">Шикарный</div>
+                          <p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍</p>
+                          <div class="review__footer">
+                            <button class="btn-text" type="button">Ответить</button>
+                            <div class="review__likes likes is-positive">
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-up-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                </svg>
+                              </button>
+                              <div class="likes__size">5</div>
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-down-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="review__attached">
+                            <div class="review__attached-wrap">
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- begin review -->
+                        <div class="review">
+                          <div class="review__wrap">
+                            <div class="review__head">
+                              <div class="review__rating">
+                                <!-- Start rating -->
+                                <div class="rating-stars rating-stars_gray">
+                                  <div class="rating-stars__input">
+                                    <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="4.5" data-fractions="10" />
+                                  </div>
+                                </div>
+                                <!-- End rating -->
+                              </div>
+                              <div class="review__name">Мария</div>
+                              <div class="review__date">21 мая в 13:05</div>
+                              <button class="review__reply" type="button">
+                                <svg class="icon icon-reply">
+                                  <use xlink:href="img/sprite.svg#icon-reply"></use>
+                                </svg> Анне</button>
+                            </div>
+                            <p>Cогласна! Мне слон тоже очень понравился, роскошный подарок.</p>
+                            <div class="review__footer">
+                              <button class="btn-text" type="button">Ответить</button>
+                              <div class="review__likes likes">
+                                <button class="likes__btn" type="button">
+                                  <svg class="icon icon-thumb-up-outline">
+                                    <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                  </svg>
+                                </button>
+                                <div class="likes__size">0</div>
+                                <button class="likes__btn" type="button">
+                                  <svg class="icon icon-thumb-down-outline">
+                                    <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end review -->
+                      </div>
+                      <!-- end review -->
+                      <!-- begin review -->
+                      <div class="review">
+                        <div class="review__wrap">
+                          <div class="review__head">
+                            <div class="review__rating">
+                              <!-- Start rating -->
+                              <div class="rating-stars rating-stars_gray">
+                                <div class="rating-stars__input">
+                                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="4.5" data-fractions="10" />
+                                </div>
+                              </div>
+                              <!-- End rating -->
+                            </div>
+                            <div class="review__name">Лиза</div>
+                            <div class="review__date">25 мая в 9:48</div>
+                          </div>
+                          <div class="review__title">Необычный подарок</div>
+                          <p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍 Однако цена высоковата, за это минус балл(</p>
+                          <div class="review__footer">
+                            <button class="btn-text" type="button">Ответить</button>
+                            <div class="review__likes likes is-negative">
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-up-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                </svg>
+                              </button>
+                              <div class="likes__size">-1</div>
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-down-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="review__attached">
+                            <div class="review__attached-wrap">
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end review -->
+                    </div>
+                  </div>
+                </div>
+                <!-- end reviews -->
               </div>
               <div class="tabs__container" data-tabs-container="question-answer">
-                <div class="tabs__inner inner-sm"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias placeat ut totam ex deserunt numquam odit nemo facilis quae dolorem alias atque debitis doloribus, nobis quas assumenda saepe,
-                  consequatur quidem? </div>
+                <!-- begin reviews -->
+                <div class="reviews">
+                  <div class="reviews__inner inner-sm">
+                    <h3 class="reviews__title title-simple">2 вопроса</h3>
+                  </div>
+                  <div class="reviews-filter">
+                    <div class="reviews-filter__head">
+                      <div class="reviews-filter__inner inner inner_push-left">
+                        <div class="reviews-filter__left">
+                          <div class="reviews-filter__toggler">
+                            <!-- Start checkbox -->
+                            <label class="toggler">
+                              <input type="checkbox" name="checkbox" checked>
+                              <span class="toggler__text">С фото</span>
+                            </label>
+                            <!-- End checkbox -->
+                          </div>
+                          <div class="reviews-filter__drop">
+                            <div class="reviews-filter__select-text">Упорядочить</div>
+                            <div class="reviews-filter__select">
+                              <select class="select select_bord js-select" data-width="214px">
+                                <option value="Cначала новинки">сначала новые</option>
+                                <option value="text 1">text 1</option>
+                                <option value="text 2">text 2</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="reviews-filter__right">
+                          <a href="#" class="btn btn_w-md btn_bord btn_bord-silver"><span class="btn__text">ЗАДАТЬ ВОПРОС</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="reviews__inner inner-sm">
+                    <div class="reviews__wrap">
+                      <!-- begin review -->
+                      <div class="review">
+                        <div class="review__wrap">
+                          <div class="review__head">
+                            <div class="review__rating">
+                              <!-- Start rating -->
+                              <div class="rating-stars rating-stars_gray">
+                                <div class="rating-stars__input">
+                                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="5" data-fractions="10" />
+                                </div>
+                              </div>
+                              <!-- End rating -->
+                            </div>
+                            <div class="review__name">Мария</div>
+                            <div class="review__date">21 мая в 12:45</div>
+                          </div>
+                          <div class="review__title">Шикарный</div>
+                          <p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍</p>
+                          <div class="review__footer">
+                            <button class="btn-text" type="button">Ответить</button>
+                            <div class="review__likes likes is-positive">
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-up-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                </svg>
+                              </button>
+                              <div class="likes__size">5</div>
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-down-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="review__attached">
+                            <div class="review__attached-wrap">
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- begin review -->
+                        <div class="review">
+                          <div class="review__wrap">
+                            <div class="review__head">
+                              <div class="review__logo"><img src="./img/logo-review.png" alt="img"></div>
+                              <div class="review__name">Дары Востока</div>
+                              <div class="review__date">21 мая в 13:05</div>
+                              <button class="review__reply" type="button">
+                                <svg class="icon icon-reply">
+                                  <use xlink:href="img/sprite.svg#icon-reply"></use>
+                                </svg> Анне</button>
+                            </div>
+                            <p>Cогласна! Мне слон тоже очень понравился, роскошный подарок.</p>
+                            <div class="review__footer">
+                              <button class="btn-text" type="button">Ответить</button>
+                              <div class="review__likes likes">
+                                <button class="likes__btn" type="button">
+                                  <svg class="icon icon-thumb-up-outline">
+                                    <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                  </svg>
+                                </button>
+                                <div class="likes__size">0</div>
+                                <button class="likes__btn" type="button">
+                                  <svg class="icon icon-thumb-down-outline">
+                                    <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                  </svg>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end review -->
+                      </div>
+                      <!-- end review -->
+                      <!-- begin review -->
+                      <div class="review">
+                        <div class="review__wrap">
+                          <div class="review__head">
+                            <div class="review__rating">
+                              <!-- Start rating -->
+                              <div class="rating-stars rating-stars_gray">
+                                <div class="rating-stars__input">
+                                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating-full" value="4.5" data-fractions="10" />
+                                </div>
+                              </div>
+                              <!-- End rating -->
+                            </div>
+                            <div class="review__name">Лиза</div>
+                            <div class="review__date">25 мая в 9:48</div>
+                          </div>
+                          <div class="review__title">Необычный подарок</div>
+                          <p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍 Однако цена высоковата, за это минус балл(</p>
+                          <div class="review__footer">
+                            <button class="btn-text" type="button">Ответить</button>
+                            <div class="review__likes likes is-negative">
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-up-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
+                                </svg>
+                              </button>
+                              <div class="likes__size">-1</div>
+                              <button class="likes__btn" type="button">
+                                <svg class="icon icon-thumb-down-outline">
+                                  <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="review__attached">
+                            <div class="review__attached-wrap">
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                              <div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end review -->
+                    </div>
+                  </div>
+                </div>
+                <!-- end reviews -->
               </div>
             </div>
           </div>
           <!-- end tabs -->
           <div class="goods__filter">
             <div class="goods__inner inner-sm">
-              <select class="js-select select select_bord select_sm select_icon" data-icon-arrow="chevron-down" data-width="144">
-                <option value="ПОКАЗАТЬ ВСЕ">ПОКАЗАТЬ ВСЕ</option>
-                <option value="item">item</option>
-                <option value="item">item</option>
-                <option value="item">item</option>
-                <option value="item">item</option>
-              </select>
+              <div class="goods__tags tags">
+                <div class="tags__wrap">
+                  <a href="#" class="tag tag_gallery">ПОДАРКИ ДЛЯ ЖЕНЩИН</a>
+                  <a href="#" class="tag tag_gallery">НЕОБЫЧНЫЕ ПОДАРКИ</a>
+                  <a href="#" class="tag tag_gallery">ВОСТОЧНЫЙ ИНТЕРЬЕР</a>
+                  <a href="#" class="tag tag_gallery">ВОСТОЧНЫЙ ИНТЕРЬЕР</a>
+                  <a href="#" class="tag tag_gallery">ЭЛЕГАНТНОСТЬ</a>
+                </div>
+              </div>
+              <div class="goods__filter-select">
+                <select class="js-select select select_bord select_sm select_icon" data-icon-arrow="chevron-down" data-width="144">
+                  <option value="ПОКАЗАТЬ ВСЕ">ПОКАЗАТЬ ВСЕ</option>
+                  <option value="item">item</option>
+                  <option value="item">item</option>
+                  <option value="item">item</option>
+                  <option value="item">item</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
@@ -482,7 +1101,7 @@
                   </div>
                   <div class="product__wrap">
                     <div class="product__name"> Наименование товара </div>
-                    <div class="product__price">
+                    <div class="product__price product__price_red">
                       <span>1000 ₽</span>
                       <span class="is-old">1400 ₽</span>
                     </div>
@@ -535,7 +1154,7 @@
                   </div>
                   <div class="product__wrap">
                     <div class="product__name"> Наименование товара </div>
-                    <div class="product__price">
+                    <div class="product__price product__price_red">
                       <span>1000 ₽</span>
                       <span class="is-old">1400 ₽</span>
                     </div>
@@ -588,7 +1207,7 @@
                   </div>
                   <div class="product__wrap">
                     <div class="product__name"> Наименование товара </div>
-                    <div class="product__price">
+                    <div class="product__price product__price_red">
                       <span>1000 ₽</span>
                       <span class="is-old">1400 ₽</span>
                     </div>
@@ -641,7 +1260,7 @@
                   </div>
                   <div class="product__wrap">
                     <div class="product__name"> Наименование товара </div>
-                    <div class="product__price">
+                    <div class="product__price product__price_red">
                       <span>1000 ₽</span>
                       <span class="is-old">1400 ₽</span>
                     </div>
@@ -694,7 +1313,7 @@
                   </div>
                   <div class="product__wrap">
                     <div class="product__name"> Наименование товара </div>
-                    <div class="product__price">
+                    <div class="product__price product__price_red">
                       <span>1000 ₽</span>
                       <span class="is-old">1400 ₽</span>
                     </div>
