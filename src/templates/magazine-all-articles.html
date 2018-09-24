@@ -1,0 +1,262 @@
+--- title: Basket ---
+
+{% import "data/data.html" as data %}
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="inner">
+		<div class="magazine-categories">
+			<h2 class="magazine-categories__title title text-center">Все статьи</h2>
+			<div class="magazine-categories__top">
+					<section class="filter js-drop">
+						<div class="filter__top js-drop-shows">
+							<div class="filter__top-select">
+								<span class="md-hide">Упорядочить</span>
+								<select class="select select_bord js-select" data-width="216">
+									<option value="Cначала новинки">сначала новые</option>
+									<option value="Цена по возрастанию">по дате</option>
+									<option value="Цена по убыванию">по популярности</option>
+								</select>
+							</div>
+						</div>
+					</section>
+			</div>
+			<div class="magazine-categories__body">
+				<div class="row magazine-categories__row">
+					<div class="col col-50 col-md-100 magazine-categories__col">
+						{{ mixins.cardarticle({
+							img: "pexels-photo-698171@2x.jpg",
+							title: "Заголовок статьи, желательно, чтобы это были две–три строчки",
+							
+							tags: [
+								{
+									class: 'tag_orange',
+									text: 'СТИЛЬ ЖИЗНИ'
+								},
+								{
+									class: 'tag_turquoise',
+									text: 'ДОСУГ'
+								}
+							]
+						}) }}
+					</div>
+					<div class="col col-25 col-md-50 col-sm-100 magazine-categories__col">
+						{{ mixins.articleSmall(
+							{
+								img: "penchant-styled-542047-unsplash.jpg",
+								tags: [
+									{
+										class: 'tag_orange',
+										text: 'ДОБРОЕ УТРО'
+									},
+									{
+										class: 'tag_green',
+										text: 'РЕЦЕПТЫ'
+									}
+								],
+								title: "Заголовок статьи, 
+								желательно, чтобы это были 
+								две–три строчки",
+								text: "Здесь будет две строчки текста, который является подзаголовком...",
+								class: "title-sm-article"
+							}) }}
+					</div>
+					<div class="col col-25 col-md-50 col-sm-100 magazine-categories__col">
+						{{ mixins.articleSmall(
+							{
+								img: "haley-rivera-540464-unsplash@2x.jpg",
+								tags: [
+									{
+										class: 'tag_turquoise',
+										text: 'КРАСОТА'
+									},
+									{
+										class: 'tag_red',
+										text: 'МАКИЯЖ'
+									}
+								],
+								title: "Заголовок статьи, 
+								желательно, чтобы это были 
+								две–три строчки",
+								text: "Здесь будет две строчки текста, который является подзаголовком...",
+								class: "title-sm-article"
+							}) }}
+					</div>
+				</div>
+				<div class="row magazine-categories__row">
+					{% for item in [
+							{
+								img: "light-stone-church-lighting-decor-interior-design-181977-pxhere.com.jpg",
+								tags: [
+									{
+										class: 'tag_turquoise',
+										text: 'ИНТЕРЬЕР'
+									}
+								],
+								title: "Заголовок статьи, 
+								желательно, чтобы это были 
+								две–три строчки",
+								text: "Здесь будет две строчки текста, который 
+								является подзаголовком к статье..."
+							},
+							{
+								img: "lamp-2381617_1920.jpg",
+								tags: [
+									{
+										class: 'tag_turquoise',
+										text: 'ИНТЕРЬЕР'
+									}
+								],
+								title: "Заголовок статьи, 
+								желательно, чтобы это были 
+								две–три строчки",
+								text: "Здесь будет две строчки текста, который 
+								является подзаголовком к статье..."
+							},
+							{
+								img: "jose-ignacio-gonzalez-pansiera-480627-unsplash.jpg",
+								tags: [
+									{
+										class: 'tag_lightBrown',
+										text: 'САД & ОГОРОД'
+									}
+								],
+								title: "Заголовок статьи, 
+								желательно, чтобы это были 
+								две–три строчки",
+								text: "Здесь будет две строчки текста, который 
+								является подзаголовком к статье..."
+							}
+						] %}
+						<div class="col col-33 col-sm-100 magazine-categories__col">
+							{{ mixins.articleSmall({
+								img: item.img,
+								tags: item.tags,
+								title: item.title,
+								text: item.text
+							}) }}
+						</div>
+					{% endfor %}
+				</div>
+				<div class="row magazine-categories__row">
+					<div class="col col-25 col-md-50 col-sm-100 magazine-categories__col">
+						{{ mixins.articleSmall(
+							{
+								img: "room-2593422_1920.jpg",
+								tags: [
+									{
+										class: 'tag_orange',
+										text: 'УЮТ ДОМА'
+									},
+									{
+										class: 'tag_turquoise',
+										text: 'ДОСУГ'
+									}
+								],
+								title: "Заголовок статьи, 
+								желательно, чтобы это были 
+								две–три строчки",
+								text: "Здесь будет две строчки текста, который является подзаголовком...",
+								class: "title-sm-article"
+							}) }}
+					</div>
+					<div class="col col-25 col-md-50 col-sm-100 magazine-categories__col">
+						{{ mixins.articleSmall(
+							{
+								img: "packaging-2655768_1920.jpg",
+								tags: [
+									{
+										class: 'tag_lightBrown',
+										text: 'ПОДАРКИ'
+									},
+									{
+										class: 'tag_red',
+										text: 'УПАКОВКА'
+									}
+								],
+								title: "Заголовок статьи, 
+								желательно, чтобы это были 
+								две–три строчки",
+								text: "Здесь будет две строчки текста, который является подзаголовком...",
+								class: "title-sm-article"
+							}) }}
+					</div>
+					<div class="col col-50 col-md-100 magazine-categories__col">
+						{{ mixins.cardarticle({
+							img: "ingrid-hofstra-530078-unsplash.jpg",
+							title: "Заголовок статьи, желательно, чтобы это были две–три строчки",
+							
+							tags: [
+								{
+									class: 'tag_blue',
+									text: 'СЕРВИРОВКА'
+								}
+							]
+						}) }}
+					</div>
+				</div>
+				<div class="row magazine-categories__row">
+					{% for item in [
+						{
+							img: "businesswoman-call-career-789822@2x.png",
+							tags: [
+								{
+									class: 'tag_blue',
+									text: 'РАБОТА'
+								}
+							],
+							title: "Заголовок статьи, 
+							желательно, чтобы это были 
+							две–три строчки",
+							text: "Здесь будет две строчки текста, который является подзаголовком к статье..."
+						},
+						{
+							img: "rodolfo-sanches-carvalho-1.jpg",
+							tags: [
+								{
+									class: 'tag_orange',
+									text: 'РАЗВЛЕЧЕНИЯ'
+								},
+								{
+									class: 'tag_orange',
+									text: 'ТЕСТЫ'
+								}
+							],
+							title: "Заголовок статьи, 
+							желательно, чтобы это были 
+							две–три строчки",
+							text: "Здесь будет две строчки текста, который является подзаголовком к статье..."
+						},
+						{
+							img: "beautiful-book-eyeglasses-762080.jpg",
+							tags: [
+							{
+								class: 'tag_orange',
+								text: 'РАЗВЛЕЧЕНИЯ'
+							},
+							{
+								class: 'tag_orange',
+								text: 'ТЕСТЫ'
+							}
+							],
+							title: "Заголовок статьи, 
+							желательно, чтобы это были 
+							две–три строчки",
+							text: "Здесь будет две строчки текста, который является подзаголовком к статье..."
+						}
+						] %}
+						<div class="col col-33 col-sm-100 magazine-categories__col">
+							{{ mixins.articleSmall({
+								img: item.img,
+								tags: item.tags,
+								title: item.title,
+								text: item.text
+							}) }}
+						</div>
+					{% endfor %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

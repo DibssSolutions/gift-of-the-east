@@ -1,7 +1,7 @@
 <!-- begin tabs -->
 <div class="tabs" data-tabs>
-	<div class="tabs__current"><span data-tabs-current></span>{{ mixins.icon('chevron-up') }}</div>
 	<div class="tabs__out">
+		<div class="tabs__current" data-tabs-current><span ></span></div>
 		<ul class="tabs__list inner inner_push-left">
 			{% for item in [
 				{
@@ -430,14 +430,10 @@
 						<div class="review">
 							<div class="review__wrap">
 								<div class="review__head">
-									<div class="review__rating">
-										{{ mixins.rating(null,5,'rating-stars_gray', 'js-rating-full') }}
-									</div>
-									<div class="review__name">Мария</div>
+									<div class="review__name">Анна</div>
 									<div class="review__date">21 мая в 12:45</div>
 								</div>
-								<div class="review__title">Шикарный</div>
-								<p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍</p>
+								<p>Скажите, а есть ли у вас в магазине слон под мой интерьер (на фотографии)?</p>
 								<div class="review__footer">
 									<button class="btn-text" type="button">Ответить</button>
 									<div class="review__likes likes is-positive">
@@ -448,7 +444,7 @@
 								</div>
 								<div class="review__attached">
 									<div class="review__attached-wrap">
-										<div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
+										<div class="review__img"><img src="./img/dining-room-1006525_1920@2x.jpg" alt="review-img"></div>
 									</div>
 								</div>
 							</div>
@@ -461,7 +457,7 @@
 										<div class="review__date">21 мая в 13:05</div>
 										<button class="review__reply" type="button">{{ mixins.icon('reply') }}Анне</button>
 									</div>
-									<p>Cогласна! Мне слон тоже очень понравился, роскошный подарок.</p>
+									<p>Здравствуйте, Анна! Да, мы можем вам посоветовать этот замечательный</p>
 									<div class="review__footer">
 										<button class="btn-text" type="button">Ответить</button>
 										<div class="review__likes likes">
@@ -479,27 +475,16 @@
 						<div class="review">
 							<div class="review__wrap">
 								<div class="review__head">
-									<div class="review__rating">
-										{{ mixins.rating(null,4.5,'rating-stars_gray', 'js-rating-full') }}
-									</div>
 									<div class="review__name">Лиза</div>
 									<div class="review__date">25 мая в 9:48</div>
 								</div>
-								<div class="review__title">Необычный подарок</div>
-								<p>Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители востока и им он идеально подошел к интерьеру 😍 Однако цена высоковата, за это минус балл(</p>
+								<p>Подскажите, пожалуйста, какой максимальный вес выдерживает данный стул-слон?</p>
 								<div class="review__footer">
 									<button class="btn-text" type="button">Ответить</button>
 									<div class="review__likes likes is-negative">
 										<button class="likes__btn" type="button">{{ mixins.icon('thumb-up-outline') }}</button>
 										<div class="likes__size">-1</div>
 										<button class="likes__btn" type="button">{{ mixins.icon('thumb-down-outline') }}</button>
-									</div>
-								</div>
-								<div class="review__attached">
-									<div class="review__attached-wrap">
-										<div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
-										<div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
-										<div class="review__img"><img src="./img/review-img.jpg" alt="review-img"></div>
 									</div>
 								</div>
 							</div>

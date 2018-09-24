@@ -23,6 +23,8 @@
 	overflow: hidden
 	&__wrap
 		margin: 0 -4px -8px 0
+		+md
+			margin: 0
 
 .tag
 	margin: 0 4px 8px 0
@@ -57,7 +59,9 @@
 		color: $black 
 		background-color: $gallery 
 	&_gray
-		background-color: $gallery 
+		background-color: $gallery
+	&_lightBrown
+		background-color: $lightBrown
 
 .like
 	position: relative
@@ -250,3 +254,6 @@
 	&__text
 		margin-top: 10px
 		color: $gray
+
+.quantity
+	color: $silver

@@ -8,13 +8,69 @@
 .tabs
 	&:not(:first-child)
 		margin-top: 40px
+	&.is-open
+		.tabs__list
+			opacity: 1
+			z-index: 2
+		.tabs__current
+			background-color: rgba($gallery,.7)
 	&__current
 		display: none
+		position: relative
+		padding: 6px 0 6px 15px
+		font-family: "Montserrat",Helvetica,sans-serif
+		color: #272727
+		font-size: 16px
+		font-weight: 400
+		line-height: 1.5
+		outline: none
+		border: 1px solid $silver
+		cursor: pointer
+		transition: background-color .3s, color .3s
+		+md
+			display: block
+		&:after
+			position: absolute
+			top: 50%
+			right: 16px
+			margin-top: -3px
+			vertical-align: top
+			width: 0
+			height: 0
+			border-width: 5px 5px 0
+			display: inline-block
+			width: 0
+			height: 0
+			margin-left: .255em
+			vertical-align: .255em
+			content: ""
+			border-top: .3em solid $silver
+			border-right: .3em solid transparent
+			border-bottom: 0
+			border-left: .3em solid transparent
 	&__out
 		border-top: 1px solid rgba($silver, 0.5) 
 		box-shadow: 0 3px 9px $gallery
+		+md
+			position: relative
+			border-top: none
+			padding: 0 15px
+			box-shadow: none
 	&__list
 		font-size: 0
+		transition: opacity .3s
+		+md
+			opacity: 0
+			z-index: -1
+			position: absolute
+			left: 0
+			right: 0
+			// transform: translateX(-50%)
+			bottom: -190px
+			background-color: #fff
+			box-shadow: 0 6px 12px rgba(#000,.12)
+			margin: 0 15px
+			padding: 0
 	&__col
 		&:not(:first-child)
 			+sm
@@ -32,9 +88,19 @@
 		user-select: none
 		display: inline-block
 		+hover
-			color: $black 
+			color: $black
+			+md
+				color: $black 
+				background-color: rgba($gallery,.7)
+		+md
+			display: block
+			font-size: 16px
+			padding: 11px 15px
 		&.is-active
 			color: $black 
+			+md
+				color: $black 
+				background-color: rgba($gallery, .7)
 			&:before
 				animation: lineIn 0.4s ease alternate forwards
 		&:before
@@ -48,11 +114,15 @@
 			transition: opacity .2s
 			animation: lineOut 0.4s ease alternate forwards
 			background-color: $lightBrown 
+			+md
+				display: none
 			.is-loaded &
 				opacity: 1
 				transition-delay: .2s
 		&:not(:first-child)
 			margin-left: 42px
+			+md
+				margin-left: 0
 	&__quantity
 		margin-left: 3px
 		color: $silver 

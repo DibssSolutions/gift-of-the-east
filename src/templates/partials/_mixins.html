@@ -13,7 +13,7 @@
 			<a href="#" class="tag{% if tag.class %} {{tag.class}}{% endif %}">{{ tag.text }}</a>
 			{% endfor %}
 		</div>
-		<a href="#" class="article__title-md title-md">{{ props.title }}</a>
+		<a href="#" class="article__title-md {{ props.class or 'title-md'}}">{{ props.title }}</a>
 		<div class="article__text">{{ props.text }}</div>
 	</div>
 </div>
@@ -376,6 +376,9 @@
 <a href="#" class="card-article">
 	<div class="card-article__img img-bg" style="background-image: url(./img/{{ props.img }});">
 		<h5 class="card-article__title title">{{ props.title }}</h5>
+		{% for tag in props.tags %}
+		<span class="tag{% if tag.class %} {{tag.class}}{% endif %}">{{ tag.text }}</span>
+		{% endfor %}
 	</div>
 </a>
 <!-- End card-article -->
@@ -728,10 +731,12 @@
 </div>
 {% endmacro %}
 
-{% macro magazineImg(img, center) %}
+{% macro magazineImg(img, text, center) %}
 	<div class="magazine-img{%if center%} text-center{%endif%}">
 		<img src="./img/{{ img }}" alt="img">
-		<span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
+		{%if text%}
+			<span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
+		{%endif%}
 	</div>
 {% endmacro %}
 

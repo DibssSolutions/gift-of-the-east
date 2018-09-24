@@ -1,0 +1,259 @@
+--- title: Basket ---
+
+{% import "data/data.html" as data %}
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="inner">
+		{{ mixins.breadcrumbs({
+
+			list: ['Назад','Главная','Журнал','Заголовок статьи, желательно, чтобы это были две или одна строчки']
+		}) }}
+		<div class="magazine-test-1">
+			{{ mixins.magazineTop({
+				title: "Заголовок статьи, желательно, чтобы это были две или одна строчки",
+				text: "Здесь будет текст, который служит подзаголовком к статье, желательно, чтобы это были две–три строчки, как выжимка из последующих слов в статье",
+				tags: [
+					{
+						class: 'tag_orange',
+						text: 'РАЗВЛЕЧЕНИЯ'
+					},
+					{
+						class: 'tag_orange',
+						text: 'ТЕСТЫ'
+					}
+				]
+			}) }}
+			{{ mixins.magazineImg("beautiful-book-eyeglasses-762080.jpg") }}
+		</div>
+	</div>
+	<div class="test-questions">
+		{% for i in range(0, 4) %}
+		<form class="test-question test-question_text text-center">
+			<div class="inner-xs">
+				<div class="test-number">
+					<span class="test-number__current">{{ loop.index }}</span>
+					<span class="test-number__total"> / 4</span>
+				</div>
+				<h3 class="title-md">Заголовок вопроса, желательно, чтобы это были две или одна строчки</h3>
+					{% for item in [
+						{
+							text: "Здесь будет вариант ответа",
+							img: "bake-baked-bakery-1028714.jpg"
+						},
+						{
+							text: "Данный вариант выбран",
+							img: "baking-biscuits-breakfast-1009841.jpg",
+							checked: true
+						},
+						{
+							text: "Здесь будет вариант ответа",
+							img: "brown-chocolate-close-up-1128976.jpg"
+						},
+						{
+							text: "Здесь будет вариант ответа",
+							img: "cake-chocolate-chocolate-cupcakes-818789.jpg"
+						}
+					] %}
+						<label class="test-answer test-answer_text">
+							<input type="radio" name="question{{ i }}" class="test-answer__radio"{% if item.checked %} checked{% endif %}>
+							<div class="test-answer__text">
+								{{ item.text }}
+							</div>
+						</label>
+					{% endfor %}
+			</div>
+		</form>
+		{% endfor %}
+	</div>
+	<div class="test-result text-center">
+		<div class="inner-xs">
+			<h3 class="test-result__top title-md">Ваш результат</h3>
+		</div>
+		<div class="inner-sm">
+			{{ mixins.magazineImg("beverage-books-contemporary-904616.jpg") }}
+		</div>
+		<div class="inner-xs">
+			<h2 class="test-result__title title-simple">Результат теста в нескольких словах</h2>
+			<p>Но высококачественный прототип будущего проекта требует определения и уточнения анализа существующих паттернов поведения. В рамках спецификации современных стандартов, сделанные на базе интернет-аналитики выводы лишь добавляют фракционных разногласий и указаны как претенденты на роль ключевых факторов. И нет сомнений, что сторонники тоталитаризма в науке могут быть превращены в посмешище, хотя само их существование приносит несомненную пользу обществу.</p>
+		</div>
+		<div class="inner-sm">
+			{{ mixins.magazineBottom({
+				tags: [
+						{
+							class: 'tag_orange',
+							text: 'РАЗВЛЕЧЕНИЯ'
+						},
+						{
+							class: 'tag_orange',
+							text: 'ТЕСТЫ'
+						}
+					]
+			}) }}
+		</div>
+	</div>
+	{{ mixins.magazineFooter() }}
+	<div class="inner">
+		{{ mixins.similarArticle({
+			title: "Больше тестов",
+			articles: [
+			{
+				img: "businesswoman-call-career-789822@2x.png",
+				tags: [
+					{
+						class: 'tag_orange',
+						text: 'РАЗВЛЕЧЕНИЯ'
+					},
+					{
+						class: 'tag_orange',
+						text: 'ТЕСТЫ'
+					}
+				],
+				title: "Заголовок статьи, 
+				желательно, чтобы это были 
+				две–три строчки",
+				text: "Здесь будет две строчки текста, который является подзаголовком к статье..."
+			},
+			{
+				img: "rodolfo-sanches-carvalho-1.jpg",
+				tags: [
+					{
+						class: 'tag_orange',
+						text: 'РАЗВЛЕЧЕНИЯ'
+					},
+					{
+						class: 'tag_orange',
+						text: 'ТЕСТЫ'
+					}
+				],
+				title: "Заголовок статьи, 
+				желательно, чтобы это были 
+				две–три строчки",
+				text: "Здесь будет две строчки текста, который является подзаголовком к статье..."
+			},
+			{
+				img: "kristina-m-m-156472-unsplash.jpg",
+				tags: [
+				{
+					class: 'tag_orange',
+					text: 'РАЗВЛЕЧЕНИЯ'
+				},
+				{
+					class: 'tag_orange',
+					text: 'ТЕСТЫ'
+				}
+				],
+				title: "Заголовок статьи, 
+				желательно, чтобы это были 
+				две–три строчки",
+				text: "Здесь будет две строчки текста, который является подзаголовком к статье..."
+			}]
+			}
+			) }}
+	</div>
+			<!-- begin reviews -->
+			<div class="reviews reviews_article">
+				<div class="reviews__inner inner-sm">
+					<h3 class="reviews__title title-simple">Комментарии <span class="quantity">3</span></h3>
+					<div class="reviews__input">
+						<input type="text" placeholder="Написать комментарий...">
+					</div>
+				</div>
+				<div class="reviews-filter">
+					<div class="reviews-filter__head">
+						<div class="reviews-filter__inner inner inner_push-left">
+							<div class="reviews-filter__left">
+								<div class="reviews-filter__toggler">
+									{{ mixins.checkbox('С фото',null,true) }}
+								</div>
+								<div class="reviews-filter__drop">
+									<div class="reviews-filter__select-text">Сортировать:</div>
+									<div class="reviews-filter__select">
+										<select class="select select_bord js-select" data-width="214px">
+											<option value="По дате">По дате</option>
+											<option value="text 1">text 1</option>
+											<option value="text 2">text 2</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="reviews__inner inner-sm">
+					<div class="reviews__wrap">
+						<!-- begin review -->
+						<div class="review">
+							<div class="review__wrap">
+								<div class="review__head">
+									<div class="review__name">Анна</div>
+									<div class="review__date">21 мая в 12:45</div>
+								</div>
+								<p>Равным образом, выбранный нами инновационный путь требует определения и уточнения направлений прогрессивного развития.</p>
+								<div class="review__footer">
+									<button class="btn-text" type="button">Ответить</button>
+									<div class="review__likes likes is-positive">
+										<button class="likes__btn" type="button">{{ mixins.icon('thumb-up-outline') }}</button>
+										<div class="likes__size">5</div>
+										<button class="likes__btn" type="button">{{ mixins.icon('thumb-down-outline') }}</button>
+									</div>
+								</div>
+								<div class="review__attached">
+									<div class="review__attached-wrap">
+										<div class="review__img"><img src="./img/apples-birdcage-bowl-724643@2x.jpg" alt="review-img"></div>
+									</div>
+								</div>
+							</div>
+							<!-- begin review -->
+							<div class="review">
+								<div class="review__wrap">
+									<div class="review__head">
+										<div class="review__name">Мария</div>
+										<div class="review__date">21 мая в 13:05</div>
+										<button class="review__reply" type="button">{{ mixins.icon('reply') }}Анне</button>
+									</div>
+									<p>Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности не дает нам иного выбора, кроме определения </p>
+									<div class="review__footer">
+										<button class="btn-text" type="button">Ответить</button>
+										<div class="review__likes likes">
+											<button class="likes__btn" type="button">{{ mixins.icon('thumb-up-outline') }}</button>
+											<div class="likes__size">0</div>
+											<button class="likes__btn" type="button">{{ mixins.icon('thumb-down-outline') }}</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- end review -->
+						</div>
+						<!-- end review -->
+						<!-- begin review -->
+						<div class="review">
+							<div class="review__wrap">
+								<div class="review__head">
+									<div class="review__name">Лиза</div>
+									<div class="review__date">25 мая в 9:48</div>
+								</div>
+								<p>Для современного мира повышение уровня гражданского сознания обеспечивает актуальность системы обучения кадров, соответствующей насущным потребностям.</p>
+								<div class="review__footer">
+									<button class="btn-text" type="button">Ответить</button>
+									<div class="review__likes likes is-negative">
+										<button class="likes__btn" type="button">{{ mixins.icon('thumb-up-outline') }}</button>
+										<div class="likes__size">-1</div>
+										<button class="likes__btn" type="button">{{ mixins.icon('thumb-down-outline') }}</button>
+									</div>
+								</div>
+								<div class="review__attached">
+									<div class="review__attached-wrap">
+										<div class="review__img"><img src="./img/girl-1561943_1920@2x.jpg" alt="review-img"></div>
+										<div class="review__img"><img src="./img/gift-2655558_1920@2x.jpg" alt="review-img"></div>
+										<div class="review__img"><img src="./img/flower-3201719_1920@2x.jpg" alt="review-img"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- end review -->
+					</div>
+				</div>
+			</div>
+			<!-- end reviews -->
+{% endblock %}

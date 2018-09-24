@@ -31,3 +31,11 @@ PageList:
   ready: 50
 - file: magazine-article.html
   ready: 50
+- file: magazine-test-1.html
+  ready: 50
+- file: magazine-test-2.html
+  ready: 50
+- file: magazine-categories.html
+  ready: 50
+- file: magazine-all-articles.html
+  ready: 50
