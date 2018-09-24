@@ -1,26 +1,26 @@
 .magazine-photos
-    &__row
-        justify-content: space-between
-    &__col
-        display: flex
-        align-items: center
-        justify-content: flex-start
-        +md
-            justify-content: center
-        &:not(:last-child)
-            +md
-                margin-bottom: 16px
-        &_right
-            justify-content: flex-end
-    
+	&__row
+		justify-content: space-between
+	&__col
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		+md
+			justify-content: center
+		&:not(:last-child)
+			+md
+				margin-bottom: 16px
+		&_right
+			justify-content: flex-end
+	
 .magazine-img
-    img
-        display: block
-        max-width: 100%
-    &__text
-        display: inline-block
-        margin-top: 9px
-        color: $gray
+	img
+		display: block
+		max-width: 100%
+	&__text
+		display: inline-block
+		margin-top: 9px
+		color: $gray
 
 .magazine-top
 	display: flex
@@ -69,35 +69,60 @@
 			font-size: 14px
 
 .magazine-paragraph
-    max-width: 920px
-    margin: 72px auto
-    text-align: center
-    font-size: 17px
-    line-height: 1.6
-    +md
-        margin: 32px auto
-        font-size: 14px
-    p:not(:last-child)
-        margin-bottom: 33px
-        +md
-            margin-bottom: 16px
+	max-width: 920px
+	margin: 72px auto
+	text-align: center
+	font-size: 17px
+	line-height: 1.6
+	+md
+		margin: 32px auto
+		font-size: 14px
+	p:not(:last-child)
+		margin-bottom: 33px
+		+md
+			margin-bottom: 16px
 
 .magazine-bottom
-    display: flex
-    justify-content: space-between
-    padding: 32px 0 20px
-    &__right
-        display: flex
-        flex-direction: column
-        justify-content: flex-end
-        text-align: right
-        margin-left: 16px
+	display: flex
+	justify-content: space-between
+	padding: 32px 0 20px
+	&__right
+		display: flex
+		flex-direction: column
+		justify-content: flex-end
+		text-align: right
+		margin-left: 16px
 
 .article-author
-    font-size: 14px
-    margin-top: 9px
-    &__title
-        color: $gray
+	font-size: 14px
+	margin-top: 9px
+	&__title
+		color: $gray
+
+.magazine-footer
+	padding: 25px 0 20px
+	border-top: 1px solid
+	border-bottom: 1px solid
+	border-color: rgba($silver,.5)
+	margin-bottom: 36px
+	&__title
+		text-transform: uppercase
+		margin-bottom: 15px
+	&__votes
+		font-size: 13px
+		color: $gray
+		margin-top: 4px
+		line-height: 1.38
+	&__btn
+		text-align: right
+	&__col
+		+md
+			display: flex
+			flex-direction: column
+			align-items: center
+		&:not(:last-child)
+			+md
+				margin-bottom: 15px
 
 
 

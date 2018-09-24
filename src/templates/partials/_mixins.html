@@ -382,7 +382,7 @@
 {% endmacro %}
 <!-- ------------------------------ END CARDS ------------------------------ -->
 
-{% macro rating(list,value,class,jsClass) %}
+{% macro rating(list,value,class,jsClass,text) %}
 <!-- Start rating -->
 <div class="rating-stars{% if class %} {{ class }}{% endif %}">
 	<div class="rating-stars__input">
@@ -398,6 +398,11 @@
 			{% endif %}
 		{% endfor %}
 	</div>
+	{% endif %}
+	{% if text %}
+	<span class="rating-stars__value">
+		{{ value }}
+	</span>
 	{% endif %}
 </div>
 <!-- End rating -->
@@ -764,10 +769,54 @@
 	</div>
 {% endmacro %}
 
-{% macro magazineFooter() %}
+{% macro magazineFooter(test) %}
 	<div class="magazine-footer">
 		<div class="inner-sm">
-			
+			<div class="row magazine-footer__row">
+				<div class="col col-40 col-md-100 magazine-footer__col">
+					<div class="magazine-footer__title">
+						РАССКАЗАТЬ ДРУЗЬЯМ
+					</div>
+					<div class="social">
+						{% for name in ["email", "vk", "facebook", "odnoklassniki", "twitter", "google-plus", "mail-ru"] %}
+						<a href="#" class="social__link social__link_sm social__link_{{name}}">{{ icon(name) }}</a>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="col col-30 col-md-100 magazine-footer__col">
+					<div class="magazine-footer__title">
+						ОЦЕНИТЬ СТАТЬЮ
+					</div>
+					{{ rating(false,3.6,"rating-stars_xl",false,true) }}
+					<div class="magazine-footer__votes">
+						4 голоса
+					</div>
+				</div>
+				<div class="col col-30 col-md-100 magazine-footer__col">
+					<div class="magazine-footer__btn">
+						<a href="#" class="btn btn_w-md btn_bord btn_bord-silver">
+							<svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg>
+							<span class="btn__text">ДОБАВИТЬ В ИЗБРАННОЕ</span>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
+{% endmacro %}
+
+{% macro similarArticle(props) %}
+	<h2 class="title text-center">{{ props.title }}</h2>
+	<div class="row">
+		{% for article in props.articles %}
+		<div class="col col-33 col-sm-100">
+			{{ articleSmall({
+				img: article.img,
+				tags: article.tags,
+				title: article.title,
+				text: article.text
+			}) }}
+		</div>
+		{% endfor %}
 	</div>
 {% endmacro %}
