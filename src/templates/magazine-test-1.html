@@ -59,10 +59,10 @@
 					<div class="col col-50 col-xs-100">
 						<label class="test-answer">
 							<input type="radio" name="question{{ i }}" class="test-answer__radio"{% if item.checked %} checked{% endif %}>
-							{{ mixins.magazineImg(item.img) }}
-							<div class="test-answer__text">
+							<span class="test-answer__img img-bg" style="background-image: url(./img/{{ item.img }})"></span>
+							<span class="test-answer__text">
 								{{ item.text }}
-							</div>
+							</span>
 						</label>
 					</div>
 					{% endfor %}

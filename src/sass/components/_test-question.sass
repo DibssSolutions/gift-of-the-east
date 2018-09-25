@@ -29,6 +29,7 @@
 	margin-bottom: 24px
 	display: block
 	cursor: pointer
+	user-select: none
 	&:hover
 		.test-answer__text
 			background-color: $gallery
@@ -41,7 +42,11 @@
 		z-index: -1
 		&:checked ~ .test-answer__text
 			background-color: $gallery
+	&__img
+		display: block
+		padding-bottom: 100%
 	&__text
+		display: block
 		padding: 16px 0 8px
 		font-size: 14px
 
