@@ -4,7 +4,7 @@ PageList:
 - file: ui.html
   ready: 100
 - file: home.html
-  ready: 50
+  ready: 100
 - file: home-registration-phone.html
   ready: 100
 - file: home-registration-phone-text.html
@@ -26,16 +26,18 @@ PageList:
 - file: product-card-description-special-offer.html
   ready: 100
 - file: promo.html
-  ready: 50
+  ready: 100
 - file: promo-list.html
-  ready: 50
+  ready: 100
 - file: magazine-article.html
-  ready: 50
+  ready: 100
 - file: magazine-test-1.html
-  ready: 50
+  ready: 100
 - file: magazine-test-2.html
-  ready: 50
+  ready: 100
 - file: magazine-categories.html
-  ready: 50
+  ready: 100
 - file: magazine-all-articles.html
-  ready: 50
+  ready: 100
+- file: personal-account-information.html
+  ready: 100

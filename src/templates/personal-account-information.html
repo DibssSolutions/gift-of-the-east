@@ -1,0 +1,31 @@
+---
+title: personal-account-information 
+---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+    <div class="inner">
+		{{ mixins.breadcrumbs({
+			list: ['Назад','Главная','Корзина']
+		}) }}
+		<div class="cabit">
+			{{ mixins.theadsimple({ title: 'Добро пожаловать в ваш профиль, Анна' }) }}
+	        <div class="cabit__row row">
+	            <div class="cabit__col col col-25 col-md-100">
+	                <!-- begin sidebar -->
+	                <div class="sidebar">
+	                	{{ mixins.cabinList({ active: 1 }) }}
+	                </div>
+	                <!-- end sidebar -->
+	            </div>
+	            <div class="cabit__col col col-75 col-md-100">
+	            	<h3 class="title-simple">Личные данные</h3>
+	            	<div class="cabit__fields-wrap">
+	            		
+	            	</div>
+	            </div>
+	        </div>
+		</div>
+    </div>
+{% endblock %}

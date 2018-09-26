@@ -15,7 +15,7 @@ export default (function() {
           setTimeout(() => {
             $(array[i]).addClass(ANIMATE);
             if ( i === array.length-1 ) array.splice(0, array.length);
-          }, i*100);
+          }, i*60);
         }
   	  }
   	};

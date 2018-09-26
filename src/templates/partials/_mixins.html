@@ -825,3 +825,38 @@
 		{% endfor %}
 	</div>
 {% endmacro %}
+
+{% macro cabinList(props) %}
+	<!-- begin cabin-list -->
+	<ul class="cabin-list">
+		{% for item in [
+			{
+				text: 'Личные данные'
+			},
+			{
+				text: 'Сообщения',
+				quantity: '3',
+				info: true
+			},
+			{
+				text: 'История покупок'
+			},
+			{
+				text: 'Персональные предложения',
+				info: true
+			},
+			{
+				text: 'Избранное'
+			},
+			{
+				text: 'Клубная карта'
+			}
+		] %}
+		<li class="cabin-list__item{% if props.active === loop.index %} is-active{% endif %}{% if item.info %} has-info{% endif %}">
+			<a href="#" class="cabin-list__link">{{ item.text }}{% if item.quantity %}<span class="cabin-list__quantity">{{ item.quantity }}</span>{% endif %}</a>
+		</li>
+		{% endfor %}
+	</ul>
+	<!-- end cabin-list -->
+{% endmacro %}
+
