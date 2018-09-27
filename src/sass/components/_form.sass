@@ -8,6 +8,9 @@
 	position: relative
 	&:not(:first-child)
 		margin-top: 24px
+	&_sm
+		&:not(:first-child)
+			margin-top: 16px
 	&.is-checked
 		.icon-check
 			visibility: visible
@@ -21,9 +24,16 @@
 		color: $green 
 		visibility: hidden
 		opacity: 0
+.form-label
+	+f(16px,400,1.5)
+	display: block
+.form-group
+	&:not(:last-child)
+		margin-bottom: 26px
 .form-tooltip
 	position: absolute
-	top: -4px
+	top: 50%
+	transform: translateY(-50%)
 	left: 100%
 	z-index: 2
 	width: 320px
@@ -33,9 +43,10 @@
 	margin-left: 24px
 	box-shadow: 0 6px 12px rgba(#000, .16) 
 	background-color: $white 
+	align-items: center
 	display: none
 	.tooltip-active &
-		display: block
+		display: flex
 		+md
 			display: none
 	&:before
@@ -58,11 +69,70 @@
 		bottom: 0
 		width: 7px
 		background-color: $white 
+	&__icon
+		margin-right: 12px
+		height: 100%
+		font-size: 0
+		vertical-align: middle
+		display: inline-block
+		.icon
+			font-size: 20px
+			color: $lightBrown 
 .form-question
 	margin-right: -16px
 	text-align: right
 	&:not(:first-child)
 		margin-top: 20px
+.form-radio-label
+	padding-left: 8px
+.form-radio-label
+	+f(14px,400,1.28)
+	color: $gray
+	vertical-align: top
+	display: inline-block
+	&:not(:last-child)
+		margin-right: 16px
+.radio
+	position: relative
+	cursor: pointer
+	user-select: none
+	vertical-align: top
+	display: inline-block
+	&:not(:last-child)
+		margin-right: 16px
+	input
+		position: absolute
+		opacity: 0
+		&:checked ~ .radio__text
+			&:before
+				border-color: $lightBrown 
+			&:after
+				opacity: 1
+	&__text
+		padding-left: 18px 
+		+f(14px,400,1.28)
+		display: block
+		&:before
+			position: absolute
+			content: ""
+			top: 0
+			left: 0
+			width: 16px
+			height: 16px
+			border-radius: 50% 
+			transition: border-color .3s
+			border: 1px solid $silver 
+		&:after
+			position: absolute
+			content: ""
+			top: 4px
+			left: 4px
+			width: 8px
+			height: 8px
+			opacity: 0
+			transition: opacity .3s
+			border-radius: 50% 
+			background-color: $lightBrown 
 .input
 	padding: 12px
 	height: 40px

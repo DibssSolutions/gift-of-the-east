@@ -8,6 +8,10 @@
         </style>
     
         <style>
+            .cls-1{fill:#c8a480}
+        </style>
+    
+        <style>
             .cls-1{fill:silver}
         </style>
     
@@ -88,6 +92,9 @@
 </symbol><symbol id="icon-format-list-bulleted" viewBox="0 0 14.8 12">
     
     <path id="format-list-bulleted" class="cls-1" d="M6.1 4.9h11.2v1.6H6.1V4.9m0 6.4V9.7h11.2v1.6H6.1M3.7 4.5a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2m0 4.8a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2m2.4 6.8v-1.6h11.2v1.6H6.1m-2.4-2a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2z" transform="translate(-2.5 -4.5)"/>
+</symbol><symbol id="icon-gift" viewBox="0 0 22 20">
+    
+    <path id="gift" class="cls-1" d="M22 12v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h3.17A3 3 0 0 1 9 2a3.034 3.034 0 0 1 2.43 1.24v-.01L12 4l.57-.77v.01A3.034 3.034 0 0 1 15 2a3 3 0 0 1 2.83 4H21a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1M4 20h7v-8H4v8m16 0v-8h-7v8h7M9 4a1 1 0 1 0 1 1 1 1 0 0 0-1-1m6 0a1 1 0 1 0 1 1 1 1 0 0 0-1-1M3 8v2h8V8H3m10 0v2h8V8z" transform="translate(-1 -2)"/>
 </symbol><symbol id="icon-google-plus" viewBox="0 0 22 14">
     <path d="M22 6h-2V4h-2v2h-2v2h2v2h2V8h2M7 6v2.4h4c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4S4.6 2.6 7 2.6c1.4 0 2.3.6 2.8 1.1l1.9-1.8C10.5.7 8.9 0 7 0 3.1 0 0 3.1 0 7s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7z"/>
 </symbol><symbol id="icon-heart-outline" viewBox="0 0 20 18.3">

@@ -5,27 +5,127 @@ title: personal-account-information
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-    <div class="inner">
+	<div class="inner">
 		{{ mixins.breadcrumbs({
 			list: ['Назад','Главная','Корзина']
 		}) }}
 		<div class="cabit">
 			{{ mixins.theadsimple({ title: 'Добро пожаловать в ваш профиль, Анна' }) }}
-	        <div class="cabit__row row">
-	            <div class="cabit__col col col-25 col-md-100">
-	                <!-- begin sidebar -->
-	                <div class="sidebar">
-	                	{{ mixins.cabinList({ active: 1 }) }}
-	                </div>
-	                <!-- end sidebar -->
-	            </div>
-	            <div class="cabit__col col col-75 col-md-100">
-	            	<h3 class="title-simple">Личные данные</h3>
-	            	<div class="cabit__fields-wrap">
-	            		
-	            	</div>
-	            </div>
-	        </div>
+			<div class="cabit__row row">
+				<div class="cabit__col col col-25 col-md-100">
+					<!-- begin sidebar -->
+					<div class="sidebar">
+						{{ mixins.cabinList({ active: 1 }) }}
+					</div>
+					<!-- end sidebar -->
+				</div>
+				<div class="cabit__col col col-75 col-md-100">
+					<h3 class="title-simple">Личные данные</h3>
+					<div class="cabit__fields-wrap">
+						<form class="form" action="/">
+							<div class="form-group">
+								<div class="form-label">Обо мне</div>
+								{% for field in [
+									{
+										class: 'form-control_sm',
+										value: 'Анна',
+										placeholder: 'Имя'
+									},
+									{
+										class: 'form-control_sm',
+										placeholder: 'Отчество'
+									},
+									{
+										class: 'form-control_sm',
+										placeholder: 'Фамилия'
+									},
+									{
+										class: 'tooltip-active form-control_sm',
+										placeholder: 'День рождения',
+										tooltip: '<span class="form-tooltip__icon"><svg class="icon icon-gift"><use xlink:href="img/sprite.svg#icon-gift"></use></svg></span>Получайте от нас подарки в свой день рождения'
+									}
+								] %}
+								{{ mixins.control({
+									class: field.class,
+									value: field.value,
+									placeholder: field.placeholder,
+									tooltip: field.tooltip,
+									phoneMask: field.phoneMask
+								}) }}
+								{% endfor %}
+								<div class="form-control form-control_sm">
+									<div class="form-radio-group">
+										<div class="form-radio-label">Ваш пол</div>
+										<label class="radio">
+											<input type="radio" data-validation="required" checked name="sex">
+											<span class="radio__text">Женский</span>
+										</label>
+										<label class="radio">
+											<input type="radio" data-validation="required" name="sex">
+											<span class="radio__text">Мужской</span>
+										</label>
+									</div>
+								</div>
+								{% for field in [
+									{
+										class: 'form-control_sm',
+										value: 'anna.example@yandex.ru',
+										placeholder: 'Email'
+									},
+									{
+										class: 'form-control_sm',
+										placeholder: 'Телефон',
+			                			phoneMask: "true"
+									}
+								] %}
+								{{ mixins.control({
+									class: field.class,
+									value: field.value,
+									placeholder: field.placeholder,
+									phoneMask: field.phoneMask
+								}) }}
+								{% endfor %}
+								<div class="form-checkbox">
+									<label class="checkbox">
+										<input type="checkbox" data-validation="required" checked>
+										<span class="checkbox__text">Получать новости об акциях, скидках и спецпредложениях</span>
+										<span class="checkbox__icon">
+											{{ mixins.icon('check') }}
+										</span>
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-label">Смена пароля</div>
+								<div class="form-control form-control_sm js-form-control">
+									<input type="password" class="input input_password" placeholder="Текущий пароль" data-validation="required" data-validation-event="keyup change">
+									<button class="password-show js-password-show" type="button">
+										{{ mixins.icon('eye-closed') }}
+										{{ mixins.icon('eye-opened') }}
+									</button>
+								</div>
+								<div class="form-control form-control_sm js-form-control">
+									<input type="password" class="input input_password" placeholder="Новый пароль" data-validation="required" data-validation-event="keyup change">
+									<button class="password-show js-password-show" type="button">
+										{{ mixins.icon('eye-closed') }}
+										{{ mixins.icon('eye-opened') }}
+									</button>
+								</div>
+								<div class="form-control form-control_sm js-form-control">
+									<input type="password" class="input input_password" placeholder="Повторите пароль" data-validation="required" data-validation-event="keyup change">
+									<button class="password-show js-password-show" type="button">
+										{{ mixins.icon('eye-closed') }}
+										{{ mixins.icon('eye-opened') }}
+									</button>
+								</div>
+								<div class="form-control">
+									<button class="btn btn_full" type="submit" disabled>СОХРАНИТЬ</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
-    </div>
+	</div>
 {% endblock %}

@@ -644,7 +644,7 @@
 <div class="form-control{% if props.class %} {{ props.class }}{% endif %} js-form-control">
 	<input class="input" type="{{ props.type or 'text' }}" {% if props.value %}value="{{props.value}}"{% endif %} {% if props.placeholder %}placeholder="{{ props.placeholder }}"{% endif %} {% if props.required %} data-validation="required"{% endif %} {% if props.phoneMask %} data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder=""{% endif %}>
 	{{ icon('check') }}
-	{% if props.tooltip %}<div class="form-tooltip">{{ props.tooltip }}</div>{% endif %}
+	{% if props.tooltip %}<div class="form-tooltip">{{ props.tooltip | safe }}</div>{% endif %}
 </div>
 {% endmacro %}
 <!-- ------------------------------ END form ------------------------------ -->
