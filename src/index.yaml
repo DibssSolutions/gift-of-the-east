@@ -41,3 +41,7 @@ PageList:
   ready: 100
 - file: personal-account-information.html
   ready: 100
+- file: personal-account-suggestions.html
+  ready: 100
+- file: personal-account-reviews.html
+  ready: 100

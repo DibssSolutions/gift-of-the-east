@@ -1,6 +1,51 @@
-.cabin-list
-	padding: 16px 4px
-	font-size: 14px
+.cabinet-list
+	&__nav
+		padding: 16px 4px
+		font-size: 14px
+		// +md 
+		// 	border: 1px solid rgba($silver, .5)
+		+sm 
+			padding: 16px 0
+			opacity: 0
+			visibility: hidden
+			transition: visibility .7s, opacity .7s
+			position: absolute
+			top: 110%
+			left: 0
+			width: 100%
+			z-index: 100
+			background-color: $white
+			.is-show &
+				opacity: 1
+				visibility: visible 
+	&__toggler
+		display: none
+		+sm 
+			display: block
+			position: relative
+			// margin-top: -30px
+			margin-bottom: 24px
+			border: 1px solid $silver
+			&:after
+				position: absolute
+				top: 50%
+				right: 16px
+				margin-top: -3px
+				vertical-align: top
+				width: 0
+				height: 0
+				border-width: 5px 5px 0
+				display: inline-block
+				width: 0
+				height: 0
+				margin-left: .255em
+				vertical-align: .255em
+				content: ""
+				border-top: .3em solid $silver
+				border-right: .3em solid transparent
+				border-bottom: 0
+				border-left: .3em solid transparent
+
 	&__item
 		display: block
 	&__link
@@ -26,6 +71,8 @@
 		margin-left: 4px
 		+f(13px,400)
 		color: $silver
-.cabit
+.cabinet
 	&__fields-wrap
 		max-width: 280px
+		+md
+			max-width: 100%

@@ -286,6 +286,12 @@
 			<span>{{ props.price }}</span>
 			<span class="is-old">{{ props.priceOld }}</span>
 		</div>
+        {% if props.expireTime %}
+            <div class="product__expire">
+                {{icon('clock-outline')}}
+                <span>{{props.expireTime}}</span>
+            </div>
+        {% endif %}
 		<div class="product__footer">
 			<button type="button" class="product__btn btn" type="button">
 			{{ icon('shopping-bag') }}
@@ -826,9 +832,17 @@
 	</div>
 {% endmacro %}
 
-{% macro cabinList(props) %}
-	<!-- begin cabin-list -->
-	<ul class="cabin-list">
+{% macro cabinetList(props) %}
+<!-- begin cabinet-list -->
+<div class="cabinet-list"> 
+    <div class="js-nav-links-current cabinet-list__toggler">
+        <div class="cabinet-list__item">
+            <span class="cabinet-list__link">
+                {{props.currentText}}
+            </span>
+        </div>
+    </div> 
+    <ul class="cabinet-list__nav">
 		{% for item in [
 			{
 				text: 'Личные данные'
@@ -850,13 +864,19 @@
 			},
 			{
 				text: 'Клубная карта'
+			},
+            {
+				text: 'Пригласить друзей'
+			},
+            {
+				text: 'Выйти'
 			}
 		] %}
-		<li class="cabin-list__item{% if props.active === loop.index %} is-active{% endif %}{% if item.info %} has-info{% endif %}">
-			<a href="#" class="cabin-list__link">{{ item.text }}{% if item.quantity %}<span class="cabin-list__quantity">{{ item.quantity }}</span>{% endif %}</a>
+		<li class="cabinet-list__item{% if props.active === loop.index %} is-active{% endif %}{% if item.info %} has-info{% endif %}">
+			<a href="#" class="cabinet-list__link">{{ item.text }}{% if item.quantity %}<span class="cabinet-list__quantity">{{ item.quantity }}</span>{% endif %}</a>
 		</li>
 		{% endfor %}
 	</ul>
-	<!-- end cabin-list -->
+</div>
+<!-- end cabinet-list -->
 {% endmacro %}
-
