@@ -4,7 +4,7 @@
 		font-size: 14px
 		// +md 
 		// 	border: 1px solid rgba($silver, .5)
-		+sm 
+		+md 
 			padding: 16px 0
 			opacity: 0
 			visibility: hidden
@@ -20,7 +20,7 @@
 				visibility: visible 
 	&__toggler
 		display: none
-		+sm 
+		+md
 			display: block
 			position: relative
 			// margin-top: -30px
@@ -31,9 +31,6 @@
 				top: 50%
 				right: 16px
 				margin-top: -3px
-				vertical-align: top
-				width: 0
-				height: 0
 				border-width: 5px 5px 0
 				display: inline-block
 				width: 0
@@ -41,7 +38,7 @@
 				margin-left: .255em
 				vertical-align: .255em
 				content: ""
-				border-top: .3em solid $silver
+				border-top: .3em solid silver
 				border-right: .3em solid transparent
 				border-bottom: 0
 				border-left: .3em solid transparent
@@ -53,6 +50,9 @@
 		padding: 13px 12px 12px 20px
 		transition: background-color .3s
 		display: block
+		// +md 
+		// 	padding: 12px
+		// 	line-height: 1.285
 		+hover
 			background-color: rgba($gallery, .7)
 		.is-active &
@@ -76,3 +76,129 @@
 		max-width: 280px
 		+md
 			max-width: 100%
+
+.shopping-card
+	border: 1px solid rgba($silver, .5)
+	padding: 20px 16px 24px
+	&:not(:last-child)
+		margin-bottom: 16px
+	&__header
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		flex-wrap: wrap
+	&__number
+		margin-right: 15px
+		font-size: 20px
+		line-height: 1.8
+		~ .shopping-card__time 
+			margin-bottom: 4px
+	&__info
+		font-size: 0
+		cursor: pointer
+		margin-right: 40px
+		.icon
+			font-size: 20px
+			color: #B6C3C3
+	&__price
+		font-size: 20px
+		line-height: 1.5
+		margin-left: auto
+		+sm 
+			flex: 0 0 100%
+	.tag
+		margin-bottom: 0
+		margin-right: 15px
+	&__time
+		flex: 0 0 100%
+		text-align: left
+		.shopping-card__header_offline &
+			flex: 0 0 auto
+	&__default
+		display: flex
+		align-items: flex-end
+		justify-content: space-between
+		flex-wrap: wrap
+		position: relative
+		.btn 
+			margin-left: auto
+		+md 
+			.btn 
+				margin-top: 12px
+	&__previews
+		display: flex
+		flex-wrap: wrap
+		margin: 16px -6px 0
+		transition: opacity 0.3s, visibility 0.3s
+		.is-active &
+			opacity: 0
+			visibility: 0
+			transition: opacity 0.3s, visibility 0.3s
+			+md 
+				display: none
+	&__preview
+		display: block
+		position: relative
+		width: 72px
+		padding-bottom: 72px
+		margin: 0 6px 
+		+cover
+		background-color: rgba($gallery, 0.5)
+		+sm 
+			margin-top: 6px
+		
+	&__another-purchases
+		position: absolute
+		+vcenter
+		color: $gray
+		font-size: 20px
+	&__hidden-price
+		position: absolute
+		transform: translateX(-150px)
+		opacity: 0
+		visibility: 0
+		.is-active &
+			transform: translateX(0)
+			opacity: 1
+			visibility: visible
+	&__dropdown-title
+		border-bottom: 1px solid rgba($silver, .5)
+		padding-bottom: 16px
+		padding-top: 16px
+		display: flex
+		align-items: flex-end
+		justify-content: space-between
+			
+.shopping-info
+	display: flex
+	flex-wrap: wrap
+	padding: 24px 12px
+	background-color: rgba($gallery, 0.5)
+	margin-top: 20px
+	+sm 
+		padding: 12px
+	&__header
+		flex: 0 0 140px
+		font-weight: 500
+		+sm 
+			flex: 0 0 100%
+	&__content
+		flex: 0 0 calc(100% - 140px)
+		padding-left: 8px
+		+sm 
+			flex: 0 0 100%
+			padding-left: 0
+			margin-bottom: 10px
+		&_empty
+			color: $gray
+	.icon-information
+		cursor: pointer
+		margin-right: 40px
+		font-size: 20px
+		color: #B6C3C3
+		display: inline-block
+		vertical-align: middle
+
+.cabinet
+	.title-simple
+		margin-bottom: 0

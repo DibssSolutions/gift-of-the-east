@@ -1,0 +1,1285 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="css/app.css">
+  </head>
+
+  <body data-lazy>
+    <!-- BEGIN content -->
+    <div class="out">
+      <!-- begin header -->
+      <header class="header">
+        <div class="header__top">
+          <div class="header__inner inner">
+            <div class="header__contact">
+              <a href="#" class="header__shops">
+                <svg class="icon icon-location">
+                  <use xlink:href="img/sprite.svg#icon-location"></use>
+                </svg>
+                <span>Магазины</span></a>
+              <a href="tel:+74565678795" class="header__phone">+7 (456) 567 87 95</a>
+            </div>
+            <div class="header__logo">
+              <!-- begin logo -->
+              <a href="./index.html" class="logo">
+                <img src="./img/logo.png" alt="logo">
+              </a>
+              <!-- end logo -->
+            </div>
+            <div class="header__cabin">
+              <!-- begin signin -->
+              <div class="signin">
+                <a href="#" class="signin__item" data-modal-control="login">
+                  <svg class="icon icon-account">
+                    <use xlink:href="img/sprite.svg#icon-account"></use>
+                  </svg>
+                  <span>Войти</span></a>
+                <span class="signin__slash">/</span>
+                <a href="#" class="signin__item" data-modal-control="registration"><span>Регистрация</span></a>
+                <div class="signin__drop">
+                  <div class="signin__head">Добро пожаловать, Анна</div>
+                  <ul class="signin__list">
+                    <li>
+                      <a href="#">Личные данные</a>
+                    </li>
+                    <li class="has-inf">
+                      <a href="#">Сообщения <span class="text-silver">3</span></a>
+                    </li>
+                    <li>
+                      <a href="#">История покупок</a>
+                    </li>
+                    <li class="has-inf">
+                      <a href="#">Персональные предложения <span class="text-silver">4</span></a>
+                    </li>
+                    <li>
+                      <a href="#">Избранное</a>
+                    </li>
+                    <li>
+                      <a href="#">Клубная карта</a>
+                    </li>
+                    <li>
+                      <a href="#">Пригласить друзей</a>
+                    </li>
+                  </ul>
+                  <div class="signin__footer">
+                    <a href="#" class="signin__exit">Выйти</a>
+                  </div>
+                </div>
+              </div>
+              <!-- end signin -->
+              <!-- begin basket -->
+              <div class="basket">
+                <a href="#" class="basket__trigger">
+                  <svg class="icon icon-shopping-bag">
+                    <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
+                  </svg>
+                  <span>Корзина</span></a>
+                <div class="basket__drop">
+                  <div class="basket__head">Корзина (1)</div>
+                  <div class="basket__product js-basket-product">
+                    <div class="basket__product-inner">
+                      <div class="basket__img" style="background-image: url(./img/vase.jpg);"></div>
+                      <div class="basket__text">
+                        <a href="#" class="basket__name">Ваза из стекла с разноцветным узором</a>
+                        <div class="basket__quantity">Кол–во: 2</div>
+                      </div>
+                      <div class="basket__right">
+                        <div class="basket__price"><span>2000 ₽</span><span class="is-old">2800 ₽</span></div>
+                        <div class="basket__benefit">Ваша выгода 800 ₽</div>
+                      </div>
+                    </div>
+                    <button class="basket__remove" type="button">
+                      <svg class="icon icon-close">
+                        <use xlink:href="img/sprite.svg#icon-close"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="basket__footer">
+                    <div class="basket__total"><strong>Итого:</strong> 2000 ₽</div>
+                    <div class="basket__button">
+                      <a href="#" class="btn btn_md btn_bord btn_anim">
+                        <span class="btn__text">Перейти в корзину</span>
+                        <span class="btn__icon">
+                          <svg class="icon icon-arrow-right">
+                            <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end basket -->
+            </div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <div class="header__inner inner">
+            <!-- begin search -->
+            <div class="header__search search">
+              <form action="/" class="search__form">
+                <button class="search__btn" type="button">
+                  <svg class="icon icon-search">
+                    <use xlink:href="img/sprite.svg#icon-search"></use>
+                  </svg>
+                </button>
+                <input type="text" class="search__input" placeholder="Поиск">
+              </form>
+            </div>
+            <!-- end search -->
+            <nav class="header__nav nav">
+              <ul class="nav__list">
+                <li class="nav__item js-nav-item">
+                  <a href="#" class="nav__link">
+                    <span class="nav__text">КАТАЛОГ</span>
+                    <span class="nav__line"><span></span></span>
+                  </a>
+                  <span class="nav__wrap js-nav-wrap">
+                    <span class="nav__inner inner">
+                      <ul class="nav__items">
+                        <li><a href="#">Изделия из натуральных камней</a></li>
+                        <li><a href="#">Муранское стекло</a></li>
+                        <li><a href="#">Предметы интерьера</a></li>
+                        <li><a href="#">Питьевая посуда, фляжки, <br>бочки для вина</a></li>
+                        <li><a href="#">Подсвечники</a></li>
+                        <li><a href="#">Посуда и сервировка</a></li>
+                        <li><a href="#">Статуэтки, куклы</a></li>
+                        <li><a href="#">Принадлежности для письма</a></li>
+                        <li><a href="#">Кальяны, курительные принадлежности</a></li>
+                        <li><a href="#">Настольные игры</a></li>
+                        <li><a href="#">Сувенирное оружие</a></li>
+                        <li><a href="#">Фэн-шуй</a></li>
+                        <li><a href="#">Религиозные подарки</a></li>
+                        <li><a href="#">Сувенирные изделия, копилки, антистрессы</a></li>
+                        <li><a href="#">Символы г. Омска</a></li>
+                        <li><a href="#">Вазы</a></li>
+                        <li><a href="#">Музыкальные ретро центры, <br>ретро телефоны</a></li>
+                        <li><a href="#">Картины, декоративные тарелки</a></li>
+                        <li><a href="#">Фоторамки</a></li>
+                        <li><a href="#">Светильники</a></li>
+                        <li><a href="#">Подсвечники</a></li>
+                        <li><a href="#">Фонтаны</a></li>
+                        <li><a href="#">Часы</a></li>
+                        <li><a href="#">Шкатулки, книги-сейфы, <br>ключницы</a></li>
+                        <li><a href="#">Мебель, глобус-бары</a></li>
+                        <li><a href="#">Барометры</a></li>
+                        <li><a href="#">Корабли</a></li>
+                      </ul>
+                      <span class="nav__img">
+                        <img src="./img/nav-img@2x.jpg" alt="img">
+                      </span>
+                    </span>
+                  </span>
+                </li>
+                <li class="nav__item js-nav-item">
+                  <a href="#" class="nav__link">
+                    <span class="nav__text">КОЛЛЕКЦИИ</span>
+                    <span class="nav__line"><span></span></span>
+                  </a>
+                </li>
+                <li class="nav__item js-nav-item">
+                  <a href="#" class="nav__link">
+                    <span class="nav__text">АКЦИИ</span>
+                    <span class="nav__line"><span></span></span>
+                  </a>
+                </li>
+                <li class="nav__item js-nav-item">
+                  <a href="#" class="nav__link">
+                    <span class="nav__text">ЖУРНАЛ</span>
+                    <span class="nav__line"><span></span></span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!-- end header -->
+      <div class="inner">
+        <!-- begin breadcrumbs -->
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a href="#"><svg class="icon icon-chevron-left">
+                <use xlink:href="img/sprite.svg#icon-chevron-left"></use>
+              </svg>Назад</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <a href="#">Главная</a>
+          </li>
+          <li class="breadcrumbs__item">
+            <span>Профиль</span>
+          </li>
+        </ul>
+        <!-- end breadcrumbs -->
+        <div class="cabinet">
+          <!-- begin baskethead -->
+          <div class="headsimple">
+            <h2 class="headsimple__title title">Добро пожаловать в ваш профиль, Анна</h2>
+          </div>
+          <!-- end baskethead -->
+          <div class="cabinet__row row">
+            <div class="cabinet__col col col-25 col-md-100">
+              <!-- begin sidebar -->
+              <div class="sidebar sidebar_cabinet js-nav-links">
+                <div class="sidebar sidebar_cabinet js-nav-links">
+                  <!-- begin cabinet-list -->
+                  <div class="cabinet-list">
+                    <div class="js-nav-links-current cabinet-list__toggler">
+                      <div class="cabinet-list__item">
+                        <span class="cabinet-list__link"> История покупок </span>
+                      </div>
+                    </div>
+                    <ul class="cabinet-list__nav">
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Личные данные</a>
+                      </li>
+                      <li class="cabinet-list__item has-info">
+                        <a href="#" class="cabinet-list__link">Сообщения<span class="cabinet-list__quantity">3</span></a>
+                      </li>
+                      <li class="cabinet-list__item is-active">
+                        <a href="#" class="cabinet-list__link">История покупок</a>
+                      </li>
+                      <li class="cabinet-list__item has-info">
+                        <a href="#" class="cabinet-list__link">Персональные предложения</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Избранное</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Клубная карта</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Пригласить друзей</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Выйти</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end cabinet-list -->
+                </div>
+              </div>
+              <!-- end sidebar -->
+            </div>
+            <div class="cabinet__col col col-75 col-md-100">
+              <h3 class="title-simple cabinet__title">История покупок</h3>
+              <div class="tabs tabs_shopping" data-tabs="data-tabs">
+                <div class="tabs__out">
+                  <div class="tabs__current" data-tabs-current="data-tabs-current">
+                    <span></span></div>
+                  <ul class="tabs__list inner">
+                    <li class="tabs__item" data-tabs-control="shop-online"> Покупки на сайте <span class="tabs__quantity">2</span>
+                    </li>
+                    <li class="tabs__item" data-tabs-control="shop-offline"> Покупки в магазине <span class="tabs__quantity">2</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                  <div class="tabs__container" data-tabs-container="shop-online">
+                    <div class="tabs__inner">
+                      <div class="shopping-card">
+                        <div class="shopping-card__header">
+                          <div class="shopping-card__number">№ 45765</div>
+                          <div class="shopping-card__info">
+                            <svg class="icon icon-information">
+                              <use xlink:href="img/sprite.svg#icon-information"></use>
+                            </svg>
+                          </div>
+                          <a href="#" class="tag tag_turquoise">НОВЫЙ ЗАКАЗ</a>
+                          <button class="btn btn_underline">Отменить заказ</button>
+                          <div class="shopping-card__price">6000 ₽</div>
+                          <div class="shopping-card__time">21 мая 2018, 12:45</div>
+                        </div>
+                        <div class="js-drop shopping-card__main">
+                          <div class="shopping-card__dropdown js-drop-hidden" style="display: none;">
+                            <div class="shopping-card__dropdown-title">
+                              <span>6 товаров</span>
+                              <a href="#" class="btn btn_md btn_shopping btn_bord btn_bord-silver js-close-drop">
+                                <span class="btn__text js-drop-btn-text">Скрыть</span>
+                              </a>
+                            </div>
+                            <div class="shopping-card__full-info">
+                              <div class="shopping-info">
+                                <div class="shopping-info__header"> Получатель </div>
+                                <div class="shopping-info__content"> Анна </div>
+                                <div class="shopping-info__header"> Телефон </div>
+                                <div class="shopping-info__content"> +7 (961) 678 – 87 – 56 </div>
+                                <div class="shopping-info__header"> Email </div>
+                                <div class="shopping-info__content shopping-info__content_empty"> не указан </div>
+                                <div class="shopping-info__header"> Способ получения </div>
+                                <div class="shopping-info__content"> Самовывоз </div>
+                                <div class="shopping-info__header"> Адрес магазина </div>
+                                <div class="shopping-info__content"> 70 лет Октября, 25 к.2, Континент 2 </div>
+                                <div class="shopping-info__header"> Дата самовывоза </div>
+                                <div class="shopping-info__content"> с 12 июня 2018, 17:00 до 12 июля 2018, 21:00 <svg class="icon icon-information">
+                                    <use xlink:href="img/sprite.svg#icon-information"></use>
+                                  </svg>
+                                </div>
+                                <div class="shopping-info__header"> Способ оплаты </div>
+                                <div class="shopping-info__content"> Наличными или банковской картой при получении </div>
+                              </div>
+                            </div>
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/vase-1.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/elephant_1.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/bar.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/annie-spratt.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/elephant_2.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/vase-4.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                          </div>
+                          <div class="shopping-card__default">
+                            <div class="shopping-card__hidden-price">
+                              <span class="text-gray">6 товаров на сумму</span> 6000 ₽ </div>
+                            <div class="shopping-card__previews">
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/vase-1.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/elephant_1.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/bar.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/annie-spratt.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/elephant_2.jpg);"></a>
+                              <a href="#" class="shopping-card__preview">
+                                <span class="shopping-card__another-purchases"> +1 </span>
+                              </a>
+                            </div>
+                            <a href="#" class="btn btn_md btn_shopping btn_bord btn_bord-silver js-open-drop" data-text-open="Подробнее" data-text-close="Скрыть">
+                              <span class="btn__text js-drop-btn-text">Подробнее</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="shopping-card">
+                        <div class="shopping-card__header">
+                          <div class="shopping-card__number">№ 45765</div>
+                          <div class="shopping-card__info">
+                            <svg class="icon icon-information">
+                              <use xlink:href="img/sprite.svg#icon-information"></use>
+                            </svg>
+                          </div>
+                          <a href="#" class="tag tag_turquoise">НОВЫЙ ЗАКАЗ</a>
+                          <button class="btn btn_underline">Отменить заказ</button>
+                          <div class="shopping-card__price">6000 ₽</div>
+                          <div class="shopping-card__time">21 мая 2018, 12:45</div>
+                        </div>
+                        <div class="js-drop shopping-card__main">
+                          <div class="shopping-card__dropdown js-drop-hidden" style="display: none;">
+                            <div class="shopping-card__dropdown-title">
+                              <span>6 товаров</span>
+                              <a href="#" class="btn btn_md btn_shopping btn_bord btn_bord-silver js-close-drop">
+                                <span class="btn__text js-drop-btn-text">Скрыть</span>
+                              </a>
+                            </div>
+                            <div class="shopping-card__full-info">
+                              <div class="shopping-info">
+                                <div class="shopping-info__header"> Получатель </div>
+                                <div class="shopping-info__content"> Анна </div>
+                                <div class="shopping-info__header"> Телефон </div>
+                                <div class="shopping-info__content"> +7 (961) 678 – 87 – 56 </div>
+                                <div class="shopping-info__header"> Email </div>
+                                <div class="shopping-info__content shopping-info__content_empty"> не указан </div>
+                                <div class="shopping-info__header"> Способ получения </div>
+                                <div class="shopping-info__content"> Самовывоз </div>
+                                <div class="shopping-info__header"> Адрес магазина </div>
+                                <div class="shopping-info__content"> 70 лет Октября, 25 к.2, Континент 2 </div>
+                                <div class="shopping-info__header"> Дата самовывоза </div>
+                                <div class="shopping-info__content"> с 12 июня 2018, 17:00 до 12 июля 2018, 21:00 <svg class="icon icon-information">
+                                    <use xlink:href="img/sprite.svg#icon-information"></use>
+                                  </svg>
+                                </div>
+                                <div class="shopping-info__header"> Способ оплаты </div>
+                                <div class="shopping-info__content"> Наличными или банковской картой при получении </div>
+                              </div>
+                            </div>
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/vase-1.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/elephant_1.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/bar.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/annie-spratt.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/elephant_2.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/vase-4.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                          </div>
+                          <div class="shopping-card__default">
+                            <div class="shopping-card__hidden-price">
+                              <span class="text-gray">6 товаров на сумму</span> 6000 ₽ </div>
+                            <div class="shopping-card__previews">
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/vase-1.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/elephant_1.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/bar.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/annie-spratt.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/elephant_2.jpg);"></a>
+                              <a href="#" class="shopping-card__preview">
+                                <span class="shopping-card__another-purchases"> +1 </span>
+                              </a>
+                            </div>
+                            <a href="#" class="btn btn_md btn_shopping btn_bord btn_bord-silver js-open-drop" data-text-open="Подробнее" data-text-close="Скрыть">
+                              <span class="btn__text js-drop-btn-text">Подробнее</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                    <div class="tabs__container" data-tabs-container="shop-offline">
+                      <div class="shopping-card">
+                        <div class="shopping-card__header shopping-card__header_offline">
+                          <div class="shopping-card__time">21 мая 2018, 12:45</div>
+                          <div class="shopping-card__price">6000 ₽</div>
+                        </div>
+                        <div class="js-drop shopping-card__main">
+                          <div class="shopping-card__dropdown js-drop-hidden" style="display: none;">
+                            <div class="shopping-card__dropdown-title">
+                              <span>6 товаров</span>
+                              <a href="#" class="btn btn_md btn_shopping btn_bord js-close-drop">
+                                <span class="btn__text js-drop-btn-text">Скрыть</span>
+                              </a>
+                            </div>
+                            <div class="shopping-card__full-info">
+                              <div class="shopping-info">
+                                <div class="shopping-info__header"> Получатель </div>
+                                <div class="shopping-info__content"> Анна </div>
+                                <div class="shopping-info__header"> Телефон </div>
+                                <div class="shopping-info__content"> +7 (961) 678 – 87 – 56 </div>
+                                <div class="shopping-info__header"> Email </div>
+                                <div class="shopping-info__content shopping-info__content_empty"> не указан </div>
+                                <div class="shopping-info__header"> Способ получения </div>
+                                <div class="shopping-info__content"> Самовывоз </div>
+                                <div class="shopping-info__header"> Адрес магазина </div>
+                                <div class="shopping-info__content"> 70 лет Октября, 25 к.2, Континент 2 </div>
+                                <div class="shopping-info__header"> Дата самовывоза </div>
+                                <div class="shopping-info__content"> с 12 июня 2018, 17:00 до 12 июля 2018, 21:00 <svg class="icon icon-information">
+                                    <use xlink:href="img/sprite.svg#icon-information"></use>
+                                  </svg>
+                                </div>
+                                <div class="shopping-info__header"> Способ оплаты </div>
+                                <div class="shopping-info__content"> Наличными или банковской картой при получении </div>
+                              </div>
+                            </div>
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/vase-1.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/elephant_1.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/bar.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/annie-spratt.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/elephant_2.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/vase-4.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                          </div>
+                          <div class="shopping-card__default">
+                            <div class="shopping-card__hidden-price">
+                              <span class="text-gray">6 товаров на сумму</span> 6000 ₽ </div>
+                            <div class="shopping-card__previews">
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/vase-1.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/elephant_1.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/bar.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/annie-spratt.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/elephant_2.jpg);"></a>
+                              <a href="#" class="shopping-card__preview">
+                                <span class="shopping-card__another-purchases"> +1 </span>
+                              </a>
+                            </div>
+                            <a href="#" class="btn btn_md btn_shopping btn_bord js-open-drop" data-text-open="Подробнее" data-text-close="Скрыть">
+                              <span class="btn__text js-drop-btn-text">Подробнее</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="shopping-card">
+                        <div class="shopping-card__header shopping-card__header_offline">
+                          <div class="shopping-card__time">21 мая 2018, 12:45</div>
+                          <div class="shopping-card__price">6000 ₽</div>
+                        </div>
+                        <div class="js-drop shopping-card__main">
+                          <div class="shopping-card__dropdown js-drop-hidden" style="display: none;">
+                            <div class="shopping-card__dropdown-title">
+                              <span>3 товара</span>
+                              <a href="#" class="btn btn_md btn_shopping btn_bord js-close-drop">
+                                <span class="btn__text js-drop-btn-text">Скрыть</span>
+                              </a>
+                            </div>
+                            <div class="shopping-card__full-info">
+                              <div class="shopping-info">
+                                <div class="shopping-info__header"> Получатель </div>
+                                <div class="shopping-info__content"> Анна </div>
+                                <div class="shopping-info__header"> Телефон </div>
+                                <div class="shopping-info__content"> +7 (961) 678 – 87 – 56 </div>
+                                <div class="shopping-info__header"> Email </div>
+                                <div class="shopping-info__content shopping-info__content_empty"> не указан </div>
+                                <div class="shopping-info__header"> Способ получения </div>
+                                <div class="shopping-info__content"> Самовывоз </div>
+                                <div class="shopping-info__header"> Адрес магазина </div>
+                                <div class="shopping-info__content"> 70 лет Октября, 25 к.2, Континент 2 </div>
+                                <div class="shopping-info__header"> Дата самовывоза </div>
+                                <div class="shopping-info__content"> с 12 июня 2018, 17:00 до 12 июля 2018, 21:00 <svg class="icon icon-information">
+                                    <use xlink:href="img/sprite.svg#icon-information"></use>
+                                  </svg>
+                                </div>
+                                <div class="shopping-info__header"> Способ оплаты </div>
+                                <div class="shopping-info__content"> Наличными или банковской картой при получении </div>
+                              </div>
+                            </div>
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/annie-spratt.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/vase-1.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                            <!-- begin card -->
+                            <div class="card card_bord">
+                              <div class="card__img-wrap">
+                                <div class="card__img" style="background-image: url(./img/elephant_1.jpg);">
+                                </div>
+                              </div>
+                              <div class="card__wrap">
+                                <div class="card__table">
+                                  <div class="card__center">
+                                    <div class="card__vendorcode vendorcode">Артикул: 45678</div>
+                                    <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
+                                    <div class="card__quantity">
+                                      <span class="card__quantity-text">Кол–во:</span>
+                                      <span class="card__size">1</span>
+                                    </div>
+                                  </div>
+                                  <div class="card__right">
+                                    <div class="card__price">
+                                      <span>1000 ₽</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card__footer">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end card -->
+                          </div>
+                          <div class="shopping-card__default">
+                            <div class="shopping-card__hidden-price">
+                              <span class="text-gray">3 товаров на сумму</span> 6000 ₽ </div>
+                            <div class="shopping-card__previews">
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/annie-spratt.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/vase-1.jpg);"></a>
+                              <a href="#" class="shopping-card__preview" style="background-image: url(./img/elephant_1.jpg);"></a>
+                            </div>
+                            <a href="#" class="btn btn_md btn_shopping btn_bord js-open-drop" data-text-open="Подробнее" data-text-close="Скрыть">
+                              <span class="btn__text js-drop-btn-text">Подробнее</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- begin footer -->
+        <footer class="footer">
+          <div class="footer__inner inner">
+            <div class="footer__row row">
+              <div class="footer__col col col-25 col-md-50 col-sm-100">
+                <a href="#" class="footer__title">КЛУБ ДАРЫ ВОСТОКА</a>
+                <ul class="footer__list">
+                  <li class="footer__item"><a href="#" class="footer__link">О клубе</a></li>
+                  <li class="footer__item"><a href="#" class="footer__link">Каталог</a></li>
+                  <li class="footer__item"><a href="#" class="footer__link">Программа лояльности</a></li>
+                  <li class="footer__item"><a href="#" class="footer__link">Адреса магазинов</a></li>
+                  <li class="footer__item"><a href="#" class="footer__link">Сотрудничество/Оптовым</a></li>
+                </ul>
+              </div>
+              <div class="footer__col col col-25 col-md-50 col-sm-100">
+                <a href="#" class="footer__title">ДЛЯ ПОКУПАТЕЛЕЙ</a>
+                <ul class="footer__list">
+                  <li class="footer__item"><a href="#" class="footer__link">Доставка и самовывоз</a></li>
+                  <li class="footer__item"><a href="#" class="footer__link">Оплата</a></li>
+                  <li class="footer__item"><a href="#" class="footer__link">Обратная связь</a></li>
+                  <li class="footer__item"><a href="#" class="footer__link">Общие вопросы</a></li>
+                </ul>
+              </div>
+              <div class="footer__col col col-25 col-md-50 col-sm-100">
+                <a href="#" class="footer__title">ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ</a>
+                <ul class="footer__list">
+                  <li class="footer__item"><a href="#" class="footer__link">Политика безопасности</a></li>
+                  <li class="footer__item"><a href="#" class="footer__link">Оферта</a></li>
+                  <li class="footer__item"><a href="#" class="footer__link">Обмен/Возврат товара</a></li>
+                </ul>
+              </div>
+              <div class="footer__col col col-25 col-md-50 col-sm-100">
+                <a href="#" class="footer__title">КОНТАКТЫ</a>
+                <div class="footer__item"><a href="#" class="footer__tel">+7 (495) 661 - 0101</a></div>
+                <ul class="footer__list footer__list_contact">
+                  <li class="footer__item">Служба клиентской поддержки</li>
+                  <li class="footer__item">пн–вс 9:00 до 18:00</li>
+                  <li class="footer__item">сб 9:00 до 16:00</li>
+                </ul>
+                <div class="footer__social social">
+                  <a href="#" class="social__link social__link_vk">
+                    <svg class="icon icon-vk">
+                      <use xlink:href="img/sprite.svg#icon-vk"></use>
+                    </svg>
+                  </a>
+                  <a href="#" class="social__link social__link_facebook">
+                    <svg class="icon icon-facebook">
+                      <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                    </svg>
+                  </a>
+                  <a href="#" class="social__link social__link_odnoklassniki">
+                    <svg class="icon icon-odnoklassniki">
+                      <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                    </svg>
+                  </a>
+                  <a href="#" class="social__link social__link_instagram">
+                    <svg class="icon icon-instagram">
+                      <use xlink:href="img/sprite.svg#icon-instagram"></use>
+                    </svg>
+                  </a>
+                </div>
+                <a href="#" class="footer__hashtag">#Дары_Востока</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- end footer -->
+        <!-- begin modal -->
+        <div class="modal" data-modal="login">
+          <div class="modal__container" data-modal-container>
+            <form action="/" class="modal__form form">
+              <div class="modal__title">Вход в аккаунт</div>
+              <div class="form-control js-form-control">
+                <input type="text" class="input" placeholder="Номер телефона или email" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="form-control js-form-control">
+                <input type="password" class="input input_password" placeholder="Пароль" data-validation="required" data-validation-event="keyup change">
+                <button class="password-show js-password-show" type="button">
+                  <svg class="icon icon-eye-closed">
+                    <use xlink:href="img/sprite.svg#icon-eye-closed"></use>
+                  </svg>
+                  <svg class="icon icon-eye-opened">
+                    <use xlink:href="img/sprite.svg#icon-eye-opened"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="form-question">
+                <a href="#" class="link link_current">Забыли пароль?</a>
+              </div>
+              <div class="form-control">
+                <button class="btn btn_full" type="submit" disabled>ВОЙТИ</button>
+              </div>
+              <div class="form-social social">
+                <a href="#" class="social__link social__link_vk">
+                  <svg class="icon icon-vk">
+                    <use xlink:href="img/sprite.svg#icon-vk"></use>
+                  </svg>
+                </a>
+                <a href="#" class="social__link social__link_facebook">
+                  <svg class="icon icon-facebook">
+                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+                <a href="#" class="social__link social__link_odnoklassniki">
+                  <svg class="icon icon-odnoklassniki">
+                    <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                  </svg>
+                </a>
+                <a href="#" class="social__link social__link_google-plus">
+                  <svg class="icon icon-google-plus">
+                    <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                  </svg>
+                </a>
+              </div>
+              <div class="form-footer">Еще не член клуба? <a href="#" class="link link_current">Зарегистрироваться</a></div>
+            </form>
+          </div>
+        </div>
+        <!-- end modal -->
+        <!-- begin modal -->
+        <div class="modal" data-modal="registration">
+          <div class="modal__container" data-modal-container>
+            <form action="/" class="modal__form form">
+              <div class="modal__title">Регистрация</div>
+              <div class="form-control js-form-control">
+                <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="form-control js-form-control">
+                <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
+              </div>
+              <div class="form-control js-form-control">
+                <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change">
+                <button class="password-show js-password-show" type="button">
+                  <svg class="icon icon-eye-closed">
+                    <use xlink:href="img/sprite.svg#icon-eye-closed"></use>
+                  </svg>
+                  <svg class="icon icon-eye-opened">
+                    <use xlink:href="img/sprite.svg#icon-eye-opened"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="form-question">
+                <a href="#" class="link">Использовать email для регистрации</a>
+              </div>
+              <div class="form-checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" data-validation="required">
+                  <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+                  </span>
+                  <span class="checkbox__icon">
+                    <svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg>
+                  </span>
+                </label>
+              </div>
+              <div class="form-control">
+                <button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
+              </div>
+              <div class="form-social social">
+                <a href="#" class="social__link social__link_vk">
+                  <svg class="icon icon-vk">
+                    <use xlink:href="img/sprite.svg#icon-vk"></use>
+                  </svg>
+                </a>
+                <a href="#" class="social__link social__link_facebook">
+                  <svg class="icon icon-facebook">
+                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+                <a href="#" class="social__link social__link_odnoklassniki">
+                  <svg class="icon icon-odnoklassniki">
+                    <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                  </svg>
+                </a>
+                <a href="#" class="social__link social__link_google-plus">
+                  <svg class="icon icon-google-plus">
+                    <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                  </svg>
+                </a>
+              </div>
+              <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
+            </form>
+          </div>
+        </div>
+        <!-- end modal -->
+      </div>
+      <!-- END content -->
+      <!-- BEGIN scripts -->
+      <script type="text/javascript" src="js/app.js"></script>
+      <!-- END scripts -->
+  </body>
+
+</html>

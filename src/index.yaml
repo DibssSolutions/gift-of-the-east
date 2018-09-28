@@ -45,3 +45,5 @@ PageList:
   ready: 100
 - file: personal-account-reviews.html
   ready: 100
+- file: personal-account-shopping.html
+  ready: 100

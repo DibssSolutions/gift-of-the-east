@@ -1,6 +1,7 @@
 {% macro icon(i) %}
 <svg class="icon icon-{{i}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
 {% endmacro %}
+
 {% macro articleSmall(props) %}
 <!-- begin article -->
 <div class="article article_sm">
@@ -880,3 +881,80 @@
 </div>
 <!-- end cabinet-list -->
 {% endmacro %}
+
+{% macro shoppingCard(props) %}
+	<div class="shopping-card">
+		{% if props.online %}
+		<div class="shopping-card__header">
+				<div class="shopping-card__number">{{props.number}}</div>
+				<div class="shopping-card__info">
+					{{icon('information')}}
+				</div>
+			<a href="#" class="tag tag_turquoise">НОВЫЙ ЗАКАЗ</a>
+			<button class="btn btn_underline">Отменить заказ</button>
+			<div class="shopping-card__price">{{props.price}}</div>
+			<div class="shopping-card__time">{{props.time}}</div>
+			{% else  %}
+		<div class="shopping-card__header shopping-card__header_offline">
+			<div class="shopping-card__time">{{props.time}}</div>
+			<div class="shopping-card__price">{{props.price}}</div>
+			{% endif %}
+		</div>
+		<div class="js-drop shopping-card__main">
+			<div class="shopping-card__dropdown js-drop-hidden" style="display: none;">
+				<div class="shopping-card__dropdown-title">
+					<span>{{props.ddTitle}}</span>
+					<a href="#" class="btn btn_md btn_shopping btn_bord{% if props.online %} btn_bord-silver{% endif %} js-close-drop">
+							<span class="btn__text js-drop-btn-text">Скрыть</span>
+						</a>
+				</div>
+				<div class="shopping-card__full-info">
+					<div class="shopping-info">
+						{% for item in props.info %}
+							<div class="shopping-info__header">
+								{{item.header}}
+							</div>
+							<div class="shopping-info__content{% if item.modifier %} {{item.modifier}}{% endif %}">
+								{{item.content}}
+								{% if item.info %}
+									{{icon('information')}}
+								{% endif %}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				{% for item in props.cards %}
+					{{ card({
+						class: "card_bord",
+						img: item.img,
+						price: "1000 ₽",
+						btnClose: false,
+						quantity: true
+					}) }}
+				{% endfor %}
+				</div>
+			<div class="shopping-card__default">
+				<div class="shopping-card__hidden-price">
+					<span class="text-gray">{{props.itemsNumber}} товаров на сумму</span> 
+					{{props.price}}
+				</div>
+				<div class="shopping-card__previews">
+					{% for item in props.previews %}
+						<a href="{{item.link}}" class="shopping-card__preview" 	style="background-image: url(./img/{{item.image}});"></a>
+					{% endfor %}
+					{% if props.anotherItems %}
+					<a href="{{props.anotherItems.link}}" class="shopping-card__preview">
+						<span class="shopping-card__another-purchases">
+							+{{props.anotherItems.number}}
+						</span>
+					</a>
+					{% endif %}
+				</div>
+				<a href="#" class="btn btn_md btn_shopping btn_bord{% if props.online %} btn_bord-silver{% endif %} js-open-drop" data-text-open="Подробнее" data-text-close="Скрыть">
+					<span class="btn__text js-drop-btn-text">Подробнее</span>
+				</a>
+			</div>
+		</div>
+	</div>
+{% endmacro %}
+
