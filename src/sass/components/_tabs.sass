@@ -111,7 +111,7 @@
 		display: inline-block
 		.tabs_account &,
 		.tabs_shopping &
-			padding: 20px 5px 15px
+			padding: 20px 5px 10px
 		+hover
 			color: $black
 			+md
@@ -121,6 +121,9 @@
 			display: block
 			font-size: 16px
 			padding: 11px 15px
+			.tabs_account &,
+			.tabs_shopping &
+				padding: 11px 15px	
 		&.is-active
 			color: $black 
 			+md
@@ -160,9 +163,10 @@
 		padding: 42px 0 67px
 		font-size: 14px
 		line-height: 1.7 
-		.tabs_account &,
+		.tabs_account &
+			padding: 20px 0
 		.tabs_shopping &
-			padding: 27px 0
+			padding: 30px 0
 	&__group
 		&:not(:last-child)
 			margin-bottom: 20px

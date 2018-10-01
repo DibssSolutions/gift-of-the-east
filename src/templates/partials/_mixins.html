@@ -891,7 +891,9 @@
 					{{icon('information')}}
 				</div>
 			<a href="#" class="tag tag_turquoise">НОВЫЙ ЗАКАЗ</a>
-			<button class="btn btn_underline">Отменить заказ</button>
+			<div class="shopping-card__reset">
+				<button class="btn btn_underline">Отменить заказ</button>
+			</div>
 			<div class="shopping-card__price">{{props.price}}</div>
 			<div class="shopping-card__time">{{props.time}}</div>
 			{% else  %}
@@ -902,12 +904,6 @@
 		</div>
 		<div class="js-drop shopping-card__main">
 			<div class="shopping-card__dropdown js-drop-hidden" style="display: none;">
-				<div class="shopping-card__dropdown-title">
-					<span>{{props.ddTitle}}</span>
-					<a href="#" class="btn btn_md btn_shopping btn_bord{% if props.online %} btn_bord-silver{% endif %} js-close-drop">
-							<span class="btn__text js-drop-btn-text">Скрыть</span>
-						</a>
-				</div>
 				<div class="shopping-card__full-info">
 					<div class="shopping-info">
 						{% for item in props.info %}
@@ -923,9 +919,15 @@
 						{% endfor %}
 					</div>
 				</div>
+				<div class="shopping-card__dropdown-title">
+					<span>{{props.ddTitle}}</span>
+					<a href="#" class="btn btn_md btn_shopping btn_bord{% if props.online %} btn_bord-silver{% endif %} js-close-drop">
+							<span class="btn__text js-drop-btn-text">Скрыть</span>
+						</a>
+				</div>
 				{% for item in props.cards %}
 					{{ card({
-						class: "card_bord",
+						class: "card_bord card_shopping",
 						img: item.img,
 						price: "1000 ₽",
 						btnClose: false,
@@ -934,9 +936,9 @@
 				{% endfor %}
 				</div>
 			<div class="shopping-card__default">
-				<div class="shopping-card__hidden-price">
+				<div class="shopping-card__total-hidden">
 					<span class="text-gray">{{props.itemsNumber}} товаров на сумму</span> 
-					{{props.price}}
+					<span class="shopping-card__hidden-price">{{props.price}}</spamn>
 				</div>
 				<div class="shopping-card__previews">
 					{% for item in props.previews %}

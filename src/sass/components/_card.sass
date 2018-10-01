@@ -114,6 +114,8 @@
 			width: 144px
 			+ms
 				width: 100%
+		.card_shopping &
+			width: 144px
 		+ms
 			margin-bottom: 16px
 			width: 100%
@@ -159,6 +161,8 @@
 		display: table-cell
 		+sm
 			padding-left: 16px
+			.card_shopping &
+				padding-bottom: 0
 		+ms
 			padding-left: 0
 			display: block
@@ -179,14 +183,16 @@
 			display: block
 	&__vendorcode
 		margin-bottom: 6px
+		.card_shopping &
+			margin-bottom: 0
 	&__title
 		max-width: 280px
 		font-size: 16px
-		line-height: 1.5 
+		line-height: 1.5
 		transition: color .3s
 		display: block
 		+hover
-			color: $lightBrown 
+			color: $lightBrown
 	&__quantity
 		margin-top: 12px
 		line-height: 1.5 
@@ -211,6 +217,8 @@
 			text-align: left
 			display: block
 	&__price
+		.card_shopping &
+			line-height: 1
 		.is-old
 			position: relative
 			margin-left: 8px

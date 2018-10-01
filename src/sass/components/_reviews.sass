@@ -88,6 +88,8 @@
 	font-size: 16px
 	line-height: 1.5
 	max-width: 800px
+	&_account
+		padding-top: 0
 	&:not(:first-child)
 		margin-top: 56px
 		+sm
@@ -99,6 +101,8 @@
 	&__head
 		margin-bottom: 15px
 		line-height: 1.28
+		.review_account & 
+			margin-bottom: 11px
 	&__rating,
 	&__name,
 	&__date,
@@ -163,7 +167,7 @@
 		font-size: 14px
 		font-weight: 400
 		color: $gray
-		min-width: 115px
+		min-width: 110px
 	&__link
 		font-size: 14px
 		color: $blueLink

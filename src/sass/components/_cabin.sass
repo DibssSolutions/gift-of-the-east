@@ -38,21 +38,25 @@
 				margin-left: .255em
 				vertical-align: .255em
 				content: ""
-				border-top: .3em solid silver
-				border-right: .3em solid transparent
+				border-top: 5px solid silver
+				border-right: 5px solid transparent
 				border-bottom: 0
-				border-left: .3em solid transparent
+				border-left: 5px solid transparent
 
 	&__item
 		display: block
 	&__link
 		position: relative
-		padding: 13px 12px 12px 20px
+		padding: 12px 12px 12px 20px
 		transition: background-color .3s
 		display: block
 		// +md 
 		// 	padding: 12px
 		// 	line-height: 1.285
+		+md 
+			.cabinet-list__toggler &
+				padding: 9px 15px
+
 		+hover
 			background-color: rgba($gallery, .7)
 		.is-active &
@@ -88,11 +92,12 @@
 		justify-content: flex-start
 		flex-wrap: wrap
 	&__number
-		margin-right: 15px
+		margin-right: 13px
 		font-size: 20px
 		line-height: 1.8
 		~ .shopping-card__time 
-			margin-bottom: 4px
+			// margin-bottom: 4px
+			margin-top: 6px
 	&__info
 		font-size: 0
 		cursor: pointer
@@ -109,9 +114,13 @@
 	.tag
 		margin-bottom: 0
 		margin-right: 15px
+	&__reset
+		+sm 
+			margin: 10px 0
 	&__time
 		flex: 0 0 100%
 		text-align: left
+		color: $gray
 		.shopping-card__header_offline &
 			flex: 0 0 auto
 	&__default
@@ -132,8 +141,10 @@
 		transition: opacity 0.3s, visibility 0.3s
 		.is-active &
 			opacity: 0
-			visibility: 0
+			visibility: hidden
 			transition: opacity 0.3s, visibility 0.3s
+			position: absolute
+			bottom: 0
 			+md 
 				display: none
 	&__preview
@@ -146,25 +157,30 @@
 		background-color: rgba($gallery, 0.5)
 		+sm 
 			margin-top: 6px
-		
 	&__another-purchases
 		position: absolute
 		+vcenter
 		color: $gray
 		font-size: 20px
-	&__hidden-price
+	&__total-hidden
 		position: absolute
 		transform: translateX(-150px)
 		opacity: 0
-		visibility: 0
+		visibility: hidden
 		.is-active &
 			transform: translateX(0)
 			opacity: 1
 			visibility: visible
+			position: relative
+	&__hidden-price
+			font-size: 20px
+			line-height: 1.5
+	&__dropdown
+		margin-bottom: 24px
 	&__dropdown-title
 		border-bottom: 1px solid rgba($silver, .5)
 		padding-bottom: 16px
-		padding-top: 16px
+		margin-top: 28px
 		display: flex
 		align-items: flex-end
 		justify-content: space-between
@@ -172,19 +188,23 @@
 .shopping-info
 	display: flex
 	flex-wrap: wrap
-	padding: 24px 12px
+	padding: 24px 12px 11px
 	background-color: rgba($gallery, 0.5)
 	margin-top: 20px
+	line-height: 1.286
 	+sm 
 		padding: 12px
 	&__header
-		flex: 0 0 140px
+		flex: 0 0 142px
 		font-weight: 500
+		margin-bottom: 13px
 		+sm 
 			flex: 0 0 100%
+			margin-bottom: 0
 	&__content
-		flex: 0 0 calc(100% - 140px)
+		flex: 0 0 calc(100% - 142px)
 		padding-left: 8px
+		margin-bottom: 13px
 		+sm 
 			flex: 0 0 100%
 			padding-left: 0
@@ -200,5 +220,10 @@
 		vertical-align: middle
 
 .cabinet
-	.title-simple
+	.headsimple:not(:last-child)
+		margin-bottom: 32px
+	.title-simple:not(:last-child)
 		margin-bottom: 0
+		padding-bottom: 3px
+	&__suggestions
+		margin-top: 40px
