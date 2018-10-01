@@ -1,0 +1,109 @@
+--- title: personal-account-information ---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+    <div class="inner">
+        {{ mixins.breadcrumbs({
+            list: ['Назад','Главная','Корзина']
+        }) }}
+        <div class="cabinet">
+            {{ mixins.theadsimple({ title: 'Добро пожаловать в ваш профиль, Анна' }) }}
+            <div class="cabinet__row row">
+                <div class="cabinet__col col col-25 col-md-100">
+                    <!-- begin sidebar -->
+                    <div class="sidebar sidebar_cabinet js-nav-links">
+                        <div class="sidebar sidebar_cabinet js-nav-links">
+                            {{ mixins.cabinetList({ active: 2, currentText: "Сообщения" }) }}
+                        </div>
+                    </div>
+                    <!-- end sidebar -->
+                </div>
+                <div class="cabinet__col col col-75 col-md-100">
+                    {# {{ mixins.theadsimple({ product: '1 товар' }) }} #}
+                    <h3 class="title-simple cabinet__title inner">Сообщения
+                        <span class="text-gray cabinet__title-quantity">3</span>
+                    </h3>
+                    <div class="tabs tabs_account" data-tabs="data-tabs">
+                        <div class="tabs__out">
+                            <div class="tabs__current" data-tabs-current="data-tabs-current">
+                                <span></span></div>
+                            <ul class="tabs__list inner">
+                                {% for item in [
+                                        {
+                                            id: 'shop-mails',
+                                            text: 'Сообщения от магазина',
+                                            quantity: '2'
+                                        },
+                                        {
+                                            id: 'reviews',
+                                            text: 'Отзывы',
+                                            quantity: '2'
+                                        },
+                                        {
+                                            id: 'shop-answers',
+                                            text: 'Вопрос-Ответ'
+                                        }
+                                        ] %}
+                                    <li class="tabs__item" data-tabs-control="{{ item.id }}">
+                                        {{ item.text }}
+                                        {% if item.quantity %}
+                                            <span class="tabs__quantity">{{ item.quantity }}</span>{% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                            <div class="tabs__container" data-tabs-container="shop-mails">
+                                <div class="tabs__inner inner">
+                                    <p>Эмоциональное описание. Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов. Эмоциональное описание. Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                            <div class="tabs__container" data-tabs-container="reviews">
+                                <div class="tabs__inner inner">
+                                    <div class="review review_account">
+                                        <div class="review__head">
+                                            <div class="review__name">Мария</div>
+                                            <div class="review__date">21 мая в 12:45</div>
+                                        </div>
+                                        <p>Cогласна! Мне слон тоже очень понравился, роскошный подарок.</p>
+                                        <div class="review__footer">
+                                            <div class="review__details">Ответ на отзыв</div>
+                                            <a href="#" class="review__link">
+                                                Замечательный слон! Стал отличным подарком нашим друзья на свадьбу, они любители слонов и носорогов
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                            <div class="tabs__container" data-tabs-container="shop-answers">
+                                <div class="tabs__inner inner">
+                                    <div class="review review_account">
+                                        <div class="review__wrap">
+                                            <div class="review__head">
+                                                <div class="review__logo"><img src="./img/logo-review.png" alt="img"></div>
+                                                <div class="review__name">Дары Востока</div>
+                                                <div class="review__date">21 мая в 13:05</div>
+                                            </div>
+                                            <p>Здравствуйте, Анна! Да, мы можем вам посоветовать этот замечательный</p>
+                                            <div class="review__footer">
+                                                <div class="review__details">Ответ на вопрос</div>
+                                                <a href="#" class="review__link">
+                                                    Скажите, а есть ли у вас в магазине слон под мой интерьер (на фотографии)?
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
