@@ -14,11 +14,26 @@
 	height: 100%
 	z-index: 100000
 	&__text
-		+vcenter
+		position: absolute
+		top: 50%
+		left: 50%
+		margin: -30px 0 0 -150px
+		transform: translateX(-100%)
 		font-size: 70px
-		color: $white
+		color: $silver
 		font-weight: 700
 		z-index: 3
+		animation: textAnimation 10s ease-out
+	&__text-wrapper
+		position: fixed
+		top: 0
+		height: 100%
+		width: 100%
+		left: 0
+		animation: loader1 10s ease-in
+		transform: translateX(100%)
+		z-index: 10
+		overflow: hidden
 	// +hover
 	// 	&:before,
 	// 	&:after
@@ -29,11 +44,12 @@
 		+coverdiv
 		transform: translateX(100%)
 	&:before
-		background-color: $green
-		animation: loader1 1.5s ease-in-out
+		background-color: $black
+		// animation: loader1 3s cubic-bezier(0.785, 0.135, 0.150, 0.860)
+		animation: loader1 10s cubic-bezier(0.785, 0.135, 0.15, 0.86)
 	&:after
 		background-color: $red
-		animation: loader2 1.5s ease-in-out 
+		animation: loader2 10s cubic-bezier(0.785, 0.135, 0.15, 0.86) 
 
 // @keyframes loader
 // 	100%
@@ -42,25 +58,24 @@
 @keyframes loader1
 	0%
 		transform: translateX(100%)
-	25%
-		transform: translateX(20%)
-	50%
-		transform: translateX(-10%)
-	75%
-		transform: translateX(-35%)
 	100%
 		transform: translateX(-100%)
 
 @keyframes loader2
 	0%
-		transform: translateX(100%)
-	25%
-		transform: translateX(50%)
-	50%
-		transform: translateX(0%)
-	75%
-		transform: translateX(-60%)
-	90% 
-		transform: translateX(-95%)
+		transform: translateX(130%)
 	100%
-		transform: translateX(-130%)
+		transform: translateX(-120%)
+
+// @keyframes loader
+// 	0%
+// 		transform: translateX(100%)
+// 	100%
+// 		transform: translateX(-100%)
+
+@keyframes textAnimation
+	0% 
+		transform: translateX(-100%)
+	100% 
+		transform: translateX(100%)
+
