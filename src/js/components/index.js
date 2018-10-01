@@ -17,3 +17,4 @@ import './_radioTab';
 import './_tabs';
 import './_aminOnScroll';
 import './_nav-links';
+// import "./_startingAnimation";
