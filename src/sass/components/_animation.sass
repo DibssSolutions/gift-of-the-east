@@ -7,53 +7,63 @@
 		visibility: visible
 
 .loader
-	position: fixed
+	position: absolute
 	top: 0
 	left: 0
 	width: 100%
-	height: 100%
+	height: 100vh
 	z-index: 100000
-	&__text
+	&__inner
+		// position: absolute
+		// top: 50%
+		// left: -68.75%
+		// // transform: translate(-50%, -50%)
+		// margin: -16px 0 0 -111px
+		// font-size: 70px
+		// color: $silver
+		// font-weight: 700
+		// z-index: 15
+		// animation: textAnimation 3s cubic-bezier(.37,.01,.81,1)
+		// // background-color: #fff
+		animation: textAnimation 3s cubic-bezier(.37,.01,.81,1)
+		will-change: left
+		padding: 20px
 		position: absolute
-		top: 50%
-		left: 50%
-		margin: -30px 0 0 -150px
-		transform: translateX(-100%)
-		font-size: 70px
-		color: $silver
-		font-weight: 700
-		z-index: 3
-		animation: textAnimation 10s ease-out
-	&__text-wrapper
-		position: fixed
 		top: 0
+		left: 0
 		height: 100%
 		width: 100%
+		transform: translateX(-100%)
+	&__outer
+		position: absolute
+		top: 0
+		height: 100%
+		width: 150%
 		left: 0
-		animation: loader1 10s ease-in
+		animation: loader1 3s cubic-bezier(.37,.01,.81,1)
 		transform: translateX(100%)
-		z-index: 10
+		z-index: 1000
 		overflow: hidden
-	// +hover
-	// 	&:before,
-	// 	&:after
-	// 		transform: translateX(-100%)
+	&__content
+		position: absolute
+		top: 50%
+		left: 33.333%
+		transform: translate(-50%, -50%)
+		background-color: $white
+		padding: 20px
+		// border-radius: 10px
 	&:before,
 	&:after
 		content: ''
 		+coverdiv
 		transform: translateX(100%)
+		width: 150%
 	&:before
-		background-color: $black
-		// animation: loader1 3s cubic-bezier(0.785, 0.135, 0.150, 0.860)
-		animation: loader1 10s cubic-bezier(0.785, 0.135, 0.15, 0.86)
+		background-color: rgba($black, 0.8)
+		animation: loader1 3s cubic-bezier(.37,.01,.81,1)
 	&:after
 		background-color: $red
-		animation: loader2 10s cubic-bezier(0.785, 0.135, 0.15, 0.86) 
-
-// @keyframes loader
-// 	100%
-// 		transform: translateX(-100%)
+		animation: loader2 3s cubic-bezier(.37,.01,.81,1)
 
 @keyframes loader1
 	0%
@@ -63,19 +73,18 @@
 
 @keyframes loader2
 	0%
-		transform: translateX(130%)
+		transform: translateX(135%)
 	100%
-		transform: translateX(-120%)
+		transform: translateX(-115%)
 
-// @keyframes loader
-// 	0%
-// 		transform: translateX(100%)
-// 	100%
-// 		transform: translateX(-100%)
+// @keyframes textAnimation
+// 	0% 
+// 		left: -68.75%
+// 	100% 
+// 		left: 131.25%
 
 @keyframes textAnimation
 	0% 
 		transform: translateX(-100%)
 	100% 
 		transform: translateX(100%)
-

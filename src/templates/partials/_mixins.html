@@ -962,10 +962,15 @@
 
 {% macro loader() %}
 	<div class="loader js-loader">
-		<div class="loader__text-wrapper">
-			<div class="loader__text">LOADER</div>
+		<div class="loader__outer">
+			<div class="loader__inner">
+				<div class="loader__content">
+					<span class="logo">
+						<img src="./img/logo.png" alt="logo">
+					</span>
+				</div>
+			</div>
 		</div>
-		
 	</div>
 {% endmacro %}
 

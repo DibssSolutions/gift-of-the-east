@@ -47,3 +47,6 @@ PageList:
   ready: 100
 - file: personal-account-shopping.html
   ready: 100
+- file: loader.html
+  ready: 100
+
