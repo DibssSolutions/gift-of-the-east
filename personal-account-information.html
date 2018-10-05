@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Template</title>
+    <title>personal-account-information</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
@@ -35,37 +35,38 @@
             </div>
             <div class="header__cabin">
               <!-- begin signin -->
-              <div class="signin">
-                <a href="#" class="signin__item" data-modal-control="login">
+              <div class="signin js-profile-wrapper" data-dd-wrapper="data-dd-wrapper">
+                <a href="#" class="signin__item js-profile-trigger" data-dd-trigger="data-dd-trigger">
                   <svg class="icon icon-account">
                     <use xlink:href="img/sprite.svg#icon-account"></use>
                   </svg>
-                  <span>Войти</span></a>
-                <span class="signin__slash">/</span>
-                <a href="#" class="signin__item" data-modal-control="registration"><span>Регистрация</span></a>
-                <div class="signin__drop">
+                  <span>Профиль</span>
+                </a>
+                <div class="signin__drop js-profile-content">
                   <div class="signin__head">Добро пожаловать, Анна</div>
                   <ul class="signin__list">
                     <li>
-                      <a href="#">Личные данные</a>
+                      <a href="#">Личные данные </a>
                     </li>
                     <li class="has-inf">
-                      <a href="#">Сообщения <span class="text-silver">3</span></a>
+                      <a href="#">Сообщения <span class="text-silver">3</span>
+                      </a>
                     </li>
                     <li>
-                      <a href="#">История покупок</a>
+                      <a href="#">История покупок </a>
                     </li>
                     <li class="has-inf">
-                      <a href="#">Персональные предложения <span class="text-silver">4</span></a>
+                      <a href="#">Персональные предложения <span class="text-silver">4</span>
+                      </a>
                     </li>
                     <li>
-                      <a href="#">Избранное</a>
+                      <a href="#">Избранное </a>
                     </li>
                     <li>
-                      <a href="#">Клубная карта</a>
+                      <a href="#">Клубная карта </a>
                     </li>
                     <li>
-                      <a href="#">Пригласить друзей</a>
+                      <a href="#">Пригласить друзей </a>
                     </li>
                   </ul>
                   <div class="signin__footer">
@@ -75,12 +76,13 @@
               </div>
               <!-- end signin -->
               <!-- begin basket -->
-              <div class="basket">
-                <a href="#" class="basket__trigger">
+              <div class="basket js-basket-wrapper" data-dd-wrapper="data-dd-wrapper">
+                <a href="#" class="basket__trigger js-basket-trigger" data-dd-trigger="data-dd-trigger">
                   <svg class="icon icon-shopping-bag">
                     <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
                   </svg>
-                  <span>Корзина</span></a>
+                  <span>1 товар – 1000 ₽</span>
+                </a>
                 <div class="basket__drop">
                   <div class="basket__head">Корзина (1)</div>
                   <div class="basket__product js-basket-product">
@@ -91,18 +93,20 @@
                         <div class="basket__quantity">Кол–во: 2</div>
                       </div>
                       <div class="basket__right">
-                        <div class="basket__price"><span>2000 ₽</span><span class="is-old">2800 ₽</span></div>
+                        <div class="basket__price">
+                          <span>2000 ₽</span><span class="is-old">2800 ₽</span></div>
                         <div class="basket__benefit">Ваша выгода 800 ₽</div>
                       </div>
                     </div>
-                    <button class="basket__remove" type="button">
+                    <button class="basket__remove" type="button" data-dd-close="data-dd-close">
                       <svg class="icon icon-close">
                         <use xlink:href="img/sprite.svg#icon-close"></use>
                       </svg>
                     </button>
                   </div>
                   <div class="basket__footer">
-                    <div class="basket__total"><strong>Итого:</strong> 2000 ₽</div>
+                    <div class="basket__total">
+                      <strong>Итого:</strong> 2000 ₽</div>
                     <div class="basket__button">
                       <a href="#" class="btn btn_md btn_bord btn_anim">
                         <span class="btn__text">Перейти в корзину</span>
@@ -139,38 +143,93 @@
                 <li class="nav__item js-nav-item">
                   <a href="#" class="nav__link">
                     <span class="nav__text">КАТАЛОГ</span>
-                    <span class="nav__line"><span></span></span>
+                    <span class="nav__line">
+                      <span></span></span>
                   </a>
                   <span class="nav__wrap js-nav-wrap">
                     <span class="nav__inner inner">
                       <ul class="nav__items">
-                        <li><a href="#">Изделия из натуральных камней</a></li>
-                        <li><a href="#">Муранское стекло</a></li>
-                        <li><a href="#">Предметы интерьера</a></li>
-                        <li><a href="#">Питьевая посуда, фляжки, <br>бочки для вина</a></li>
-                        <li><a href="#">Подсвечники</a></li>
-                        <li><a href="#">Посуда и сервировка</a></li>
-                        <li><a href="#">Статуэтки, куклы</a></li>
-                        <li><a href="#">Принадлежности для письма</a></li>
-                        <li><a href="#">Кальяны, курительные принадлежности</a></li>
-                        <li><a href="#">Настольные игры</a></li>
-                        <li><a href="#">Сувенирное оружие</a></li>
-                        <li><a href="#">Фэн-шуй</a></li>
-                        <li><a href="#">Религиозные подарки</a></li>
-                        <li><a href="#">Сувенирные изделия, копилки, антистрессы</a></li>
-                        <li><a href="#">Символы г. Омска</a></li>
-                        <li><a href="#">Вазы</a></li>
-                        <li><a href="#">Музыкальные ретро центры, <br>ретро телефоны</a></li>
-                        <li><a href="#">Картины, декоративные тарелки</a></li>
-                        <li><a href="#">Фоторамки</a></li>
-                        <li><a href="#">Светильники</a></li>
-                        <li><a href="#">Подсвечники</a></li>
-                        <li><a href="#">Фонтаны</a></li>
-                        <li><a href="#">Часы</a></li>
-                        <li><a href="#">Шкатулки, книги-сейфы, <br>ключницы</a></li>
-                        <li><a href="#">Мебель, глобус-бары</a></li>
-                        <li><a href="#">Барометры</a></li>
-                        <li><a href="#">Корабли</a></li>
+                        <li>
+                          <a href="#">Изделия из натуральных камней</a>
+                        </li>
+                        <li>
+                          <a href="#">Муранское стекло</a>
+                        </li>
+                        <li>
+                          <a href="#">Предметы интерьера</a>
+                        </li>
+                        <li>
+                          <a href="#">Питьевая посуда, фляжки, <br>бочки для вина</a>
+                        </li>
+                        <li>
+                          <a href="#">Подсвечники</a>
+                        </li>
+                        <li>
+                          <a href="#">Посуда и сервировка</a>
+                        </li>
+                        <li>
+                          <a href="#">Статуэтки, куклы</a>
+                        </li>
+                        <li>
+                          <a href="#">Принадлежности для письма</a>
+                        </li>
+                        <li>
+                          <a href="#">Кальяны, курительные принадлежности</a>
+                        </li>
+                        <li>
+                          <a href="#">Настольные игры</a>
+                        </li>
+                        <li>
+                          <a href="#">Сувенирное оружие</a>
+                        </li>
+                        <li>
+                          <a href="#">Фэн-шуй</a>
+                        </li>
+                        <li>
+                          <a href="#">Религиозные подарки</a>
+                        </li>
+                        <li>
+                          <a href="#">Сувенирные изделия, копилки, антистрессы</a>
+                        </li>
+                        <li>
+                          <a href="#">Символы г. Омска</a>
+                        </li>
+                        <li>
+                          <a href="#">Вазы</a>
+                        </li>
+                        <li>
+                          <a href="#">Музыкальные ретро центры, <br>ретро телефоны</a>
+                        </li>
+                        <li>
+                          <a href="#">Картины, декоративные тарелки</a>
+                        </li>
+                        <li>
+                          <a href="#">Фоторамки</a>
+                        </li>
+                        <li>
+                          <a href="#">Светильники</a>
+                        </li>
+                        <li>
+                          <a href="#">Подсвечники</a>
+                        </li>
+                        <li>
+                          <a href="#">Фонтаны</a>
+                        </li>
+                        <li>
+                          <a href="#">Часы</a>
+                        </li>
+                        <li>
+                          <a href="#">Шкатулки, книги-сейфы, <br>ключницы</a>
+                        </li>
+                        <li>
+                          <a href="#">Мебель, глобус-бары</a>
+                        </li>
+                        <li>
+                          <a href="#">Барометры</a>
+                        </li>
+                        <li>
+                          <a href="#">Корабли</a>
+                        </li>
                       </ul>
                       <span class="nav__img">
                         <img src="./img/nav-img@2x.jpg" alt="img">
@@ -181,20 +240,125 @@
                 <li class="nav__item js-nav-item">
                   <a href="#" class="nav__link">
                     <span class="nav__text">КОЛЛЕКЦИИ</span>
-                    <span class="nav__line"><span></span></span>
+                    <span class="nav__line">
+                      <span></span></span>
                   </a>
                 </li>
                 <li class="nav__item js-nav-item">
                   <a href="#" class="nav__link">
                     <span class="nav__text">АКЦИИ</span>
-                    <span class="nav__line"><span></span></span>
+                    <span class="nav__line">
+                      <span></span></span>
                   </a>
                 </li>
-                <li class="nav__item js-nav-item">
-                  <a href="#" class="nav__link">
-                    <span class="nav__text">ЖУРНАЛ</span>
-                    <span class="nav__line"><span></span></span>
+                <li class="nav__item js-nav-item nav__item_with-bg js-nav-parent-dark">
+                  <a href="#" class="nav__link nav__link_with-bg">
+                    <span class="nav__text nav__text_with-bg">ЖУРНАЛ</span>
+                    <span class="nav__line nav__line_with-bg">
+                      <span></span></span>
                   </a>
+                  <span class="nav__wrap nav__wrap_with-bg js-nav-wrap js-nav-wrap-dark">
+                    <span class="nav__inner inner">
+                      <ul class="nav__items-row">
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Все статьи</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Шото там</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Тай таке</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Впізнали нас?</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Идеи подарков</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Идея 1</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Идея 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Идея 3</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Красота</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Красота 1</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 3</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 4</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Развлечения</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Красота 1</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 3</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 4</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Мода и стиль</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Подраздел</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">При наведении</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Стиль</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                      </ul>
+                    </span>
+                  </span>
                 </li>
               </ul>
             </nav>
