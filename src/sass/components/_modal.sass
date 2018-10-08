@@ -24,8 +24,6 @@
 	display: inline-block
 [data-modal-close]
 	position: absolute
-	top: -20px
-	right: -20px
 	background-color: transparent
 	font-size: 0
 	.icon
@@ -38,6 +36,8 @@
 	.link
 		font-size: inherit
 	&__close
+		top: -20px
+		right: -20px
 		width: 40px
 		height: 40px
 		border-radius: 50% 
@@ -53,6 +53,11 @@
 			transform: translate(-50%, -50%)
 			font-size: 16px
 			transition: color .3s
+	&__off
+		top: 12px
+		right: 12px
+		.icon
+			color: $silver
 	&__title
 		margin-bottom: 40px
 		color: $black 
@@ -69,4 +74,7 @@
 		background-color: $white
 		+xs 
 			padding: 40px 24px 
-		
+	&__feedback
+		max-width: 1008px
+		background-color: $white
+		padding: 43px 104px 40px

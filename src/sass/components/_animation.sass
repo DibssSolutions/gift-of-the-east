@@ -88,3 +88,17 @@
 		transform: translateX(-100%)
 	100% 
 		transform: translateX(100%)
+
+.lama
+	display: inline-block
+	height: 200px
+	width: 300px
+	animation: hello 1s steps(100) reverse 2s
+	background-color: $red
+	// background-size: 50% 100%
+
+@keyframes hello
+	from 
+		background-position: 0 0
+	to 
+		background-position: 100% 0
