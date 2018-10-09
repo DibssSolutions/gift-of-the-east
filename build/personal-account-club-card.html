@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>pickup-shop-selected</title>
+    <title>personal-account-club-card</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
@@ -36,14 +36,12 @@
             <div class="header__cabin">
               <!-- begin signin -->
               <div class="signin js-profile-wrapper" data-dd-wrapper="data-dd-wrapper">
-                <a href="#" class="signin__item" data-modal-control="login">
+                <a href="#" class="signin__item js-profile-trigger" data-dd-trigger="data-dd-trigger">
                   <svg class="icon icon-account">
                     <use xlink:href="img/sprite.svg#icon-account"></use>
                   </svg>
-                  <span>Войти</span></a>
-                <span class="signin__slash">/</span>
-                <a href="#" class="signin__item" data-modal-control="registration">
-                  <span>Регистрация</span></a>
+                  <span>Профиль</span>
+                </a>
                 <div class="signin__drop js-profile-content">
                   <div class="signin__head">Добро пожаловать, Анна</div>
                   <ul class="signin__list">
@@ -83,7 +81,7 @@
                   <svg class="icon icon-shopping-bag">
                     <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
                   </svg>
-                  <span>Корзина</span>
+                  <span>1 товар – 1000 ₽</span>
                 </a>
                 <div class="basket__drop">
                   <div class="basket__head">Корзина (1)</div>
@@ -384,346 +382,80 @@
           </li>
         </ul>
         <!-- end breadcrumbs -->
-        <form action="/">
-          <div class="row">
-            <div class="col col-66 col-md-100">
-              <!-- begin baskethead -->
-              <div class="headsimple">
-                <h2 class="headsimple__title title">Выбор способа получения заказа</h2>
-                <div class="headsimple__right">
-                  <a href="#" class="headsimple__link">Вернуться в корзину</a>
+        <div class="cabinet">
+          <!-- begin baskethead -->
+          <div class="headsimple">
+            <h2 class="headsimple__title title">Добро пожаловать в ваш профиль, Анна</h2>
+          </div>
+          <!-- end baskethead -->
+          <div class="cabinet__row row">
+            <div class="cabinet__col col col-25 col-md-100">
+              <!-- begin sidebar -->
+              <div class="sidebar sidebar_cabinet js-nav-links">
+                <div class="sidebar sidebar_cabinet js-nav-links">
+                  <!-- begin cabinet-list -->
+                  <div class="cabinet-list">
+                    <div class="js-nav-links-current cabinet-list__toggler">
+                      <div class="cabinet-list__item">
+                        <span class="cabinet-list__link"> Клубная карта </span>
+                      </div>
+                    </div>
+                    <ul class="cabinet-list__nav">
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Личные данные</a>
+                      </li>
+                      <li class="cabinet-list__item has-info">
+                        <a href="#" class="cabinet-list__link">Сообщения<span class="cabinet-list__quantity">3</span></a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">История покупок</a>
+                      </li>
+                      <li class="cabinet-list__item has-info">
+                        <a href="#" class="cabinet-list__link">Персональные предложения</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Избранное</a>
+                      </li>
+                      <li class="cabinet-list__item is-active">
+                        <a href="#" class="cabinet-list__link">Клубная карта</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Пригласить друзей</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Выйти</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end cabinet-list -->
                 </div>
               </div>
-              <!-- end baskethead -->
-              <!-- begin basketlist -->
-              <ul class="basketlist">
-                <li class="basketlist__item">
-                  <span class="basketlist__icon">
-                    <svg class="icon icon-shopping-full">
-                      <use xlink:href="img/sprite.svg#icon-shopping-full"></use>
-                    </svg>
-                  </span>
-                  <span class="basketlist__title">КОРЗИНА</span>
-                </li>
-                <li class="basketlist__item is-active">
-                  <span class="basketlist__icon">
-                    <svg class="icon icon-home-map-marker">
-                      <use xlink:href="img/sprite.svg#icon-home-map-marker"></use>
-                    </svg>
-                  </span>
-                  <span class="basketlist__title">САМОВЫВОЗ / ДОСТАВКА</span>
-                </li>
-                <li class="basketlist__item">
-                  <span class="basketlist__icon">
-                    <svg class="icon icon-wallet">
-                      <use xlink:href="img/sprite.svg#icon-wallet"></use>
-                    </svg>
-                  </span>
-                  <span class="basketlist__title">ОПЛАТА</span>
-                </li>
-                <li class="basketlist__item">
-                  <span class="basketlist__icon">
-                    <svg class="icon icon-approval">
-                      <use xlink:href="img/sprite.svg#icon-approval"></use>
-                    </svg>
-                  </span>
-                  <span class="basketlist__title">ПОДТВЕРЖДЕНИЕ</span>
-                </li>
-              </ul>
-              <!-- end basketlist -->
-              <h3 class="title-simple">Заполните контактную информацию</h3>
-              <div class="cont-info">
-                <div class="cont-info__out">
-                  <div class="cont-info__wrap">
-                    <div class="form-control is-checked js-form-control">
-                      <input class="input" type="text" value="Анна" placeholder="Имя">
-                      <svg class="icon icon-check">
-                        <use xlink:href="img/sprite.svg#icon-check"></use>
-                      </svg>
-                    </div>
-                    <div class="form-control is-checked js-form-control">
-                      <input class="input" type="text" value="+7 (961) 678 – 87 – 56" placeholder="Номер телефона" data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder="">
-                      <svg class="icon icon-check">
-                        <use xlink:href="img/sprite.svg#icon-check"></use>
-                      </svg>
-                    </div>
-                    <div class="form-control tooltip-active js-form-control">
-                      <input class="input" type="text" placeholder="Email">
-                      <svg class="icon icon-check">
-                        <use xlink:href="img/sprite.svg#icon-check"></use>
-                      </svg>
-                      <div class="form-tooltip">Мы отправим вам чек на указанный email.</div>
-                    </div>
-                    <div class="form-control">
-                      <button class="btn btn_md btn_bord btn_full" type="button">
-                        <span class="btn__text">Изменить данные</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 class="title-simple">Выберите удобный способ получения заказа</h3>
-              <div class="order-info">
-                <!-- Start radio-tab -->
-                <div class="radio-tab">
-                  <label class="radio-tab__label js-radio-tab is-active">
-                    <input type="radio" name="radio-tab" checked>
-                    <span class="radio-tab__inner">
-                      <span class="radio-tab__title">Самовывоз из магазина</span>
-                      <span class="radio-tab__dscr">Бесплатно</span>
-                    </span>
-                  </label>
-                  <label class="radio-tab__label js-radio-tab">
-                    <input type="radio" name="radio-tab">
-                    <span class="radio-tab__inner">
-                      <span class="radio-tab__title">Доставка домой или в офис</span>
-                      <span class="radio-tab__dscr">от 100 ₽ </span>
-                    </span>
-                  </label>
-                </div>
-                <!-- End radio-tab -->
-                <div class="order-info__out">
-                  <div class="order-info__wrap">
-                    <div class="order-info__row">
-                      <div class="order-info__search">
-                        <!-- Start new-search -->
-                        <div class="new-search">
-                          <label class="new-search__label">
-                            <input class="new-search__input" type="text" name="new-search" placeholder="Город, адрес, название ТЦ">
-                            <button type="button" class="new-search__btn">
-                              <svg class="icon icon-search">
-                                <use xlink:href="img/sprite.svg#icon-search"></use>
-                              </svg>
-                            </button>
-                          </label>
-                        </div>
-                        <!-- End new-search -->
-                      </div>
-                      <div class="order-info__view">
-                        <!-- Start radio-btn -->
-                        <div class="radio-btn">
-                          <label class="radio-btn__label js-radio-tab is-active">
-                            <input type="radio" name="radio-btn">
-                            <span class="radio-btn__icon">
-                              <svg class="icon icon-format-list-bulleted">
-                                <use xlink:href="img/sprite.svg#icon-format-list-bulleted"></use>
-                              </svg>
-                            </span>
-                            <span class="radio-btn__title">Список</span>
-                          </label>
-                          <label class="radio-btn__label js-radio-tab">
-                            <input type="radio" name="radio-btn">
-                            <span class="radio-btn__icon">
-                              <svg class="icon icon-map">
-                                <use xlink:href="img/sprite.svg#icon-map"></use>
-                              </svg>
-                            </span>
-                            <span class="radio-btn__title">Карта</span>
-                          </label>
-                        </div>
-                        <!-- End radio-btn -->
-                      </div>
-                    </div>
-                    <div class="order-info__row">
-                      <!-- Start checkbox -->
-                      <label class="toggler">
-                        <input type="checkbox" name="checkbox">
-                        <span class="toggler__text">С фото</span>
-                      </label>
-                      <!-- End checkbox -->
-                    </div>
-                  </div>
-                  <!-- Start table -->
-                  <div class="table">
-                    <div class="table__head">
-                      <div class="table__row">
-                        <div class="table__cell"> Магазин </div>
-                        <div class="table__cell"> Дата самовывоза </div>
-                        <div class="table__cell">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="table__body">
-                      <div class="table__row">
-                        <div class="table__cell" data-title="Магазин">
-                          <span class="table__text table__text_up"> Континент 2 </span>
-                          <span class="table__text"> 70 лет Октября,25 к.2 </span>
-                        </div>
-                        <div class="table__cell" data-title="Дата самовывоза">
-                          <span class="table__text table__text_up"> Сегодня с 17: 00 </span>
-                          <span class="table__text"> пн–вс 10: 00 –21: 00 </span>
-                        </div>
-                        <div class="table__cell">
-                          <!-- Start checked-btn -->
-                          <label class="checked-btn ">
-                            <input type="radio" name="checkbox-btn" data-validation="required">
-                            <span class="checked-btn__text">Выбрать</span>
-                            <span class="checked-btn__text checked-btn__text_checked">Выбран</span>
-                          </label>
-                          <!-- End checked-btn -->
-                        </div>
-                      </div>
-                      <div class="table__row">
-                        <div class="table__cell" data-title="Магазин">
-                          <span class="table__text table__text_up"> Континент 2 </span>
-                          <span class="table__text"> 70 лет Октября,25 к.2 </span>
-                        </div>
-                        <div class="table__cell" data-title="Дата самовывоза">
-                          <span class="table__text table__text_up"> Сегодня с 17: 00 </span>
-                          <span class="table__text"> пн–вс 10: 00 –21: 00 </span>
-                        </div>
-                        <div class="table__cell">
-                          <!-- Start checked-btn -->
-                          <label class="checked-btn ">
-                            <input type="radio" name="checkbox-btn" data-validation="required">
-                            <span class="checked-btn__text">Выбрать</span>
-                            <span class="checked-btn__text checked-btn__text_checked">Выбран</span>
-                          </label>
-                          <!-- End checked-btn -->
-                        </div>
-                      </div>
-                      <div class="table__row">
-                        <div class="table__cell" data-title="Магазин">
-                          <span class="table__text table__text_up"> Континент 2 </span>
-                          <span class="table__text"> 70 лет Октября,25 к.2 </span>
-                        </div>
-                        <div class="table__cell" data-title="Дата самовывоза">
-                          <span class="table__text table__text_up"> Сегодня с 17: 00 </span>
-                          <span class="table__text"> пн–вс 10: 00 –21: 00 </span>
-                        </div>
-                        <div class="table__cell">
-                          <!-- Start checked-btn -->
-                          <label class="checked-btn ">
-                            <input type="radio" name="checkbox-btn" data-validation="required">
-                            <span class="checked-btn__text">Выбрать</span>
-                            <span class="checked-btn__text checked-btn__text_checked">Выбран</span>
-                          </label>
-                          <!-- End checked-btn -->
-                        </div>
-                      </div>
-                      <div class="table__row">
-                        <div class="table__cell" data-title="Магазин">
-                          <span class="table__text table__text_up"> Континент 2 </span>
-                          <span class="table__text"> 70 лет Октября,25 к.2 </span>
-                        </div>
-                        <div class="table__cell" data-title="Дата самовывоза">
-                          <span class="table__text table__text_up"> Сегодня с 17: 00 </span>
-                          <span class="table__text"> пн–вс 10: 00 –21: 00 </span>
-                        </div>
-                        <div class="table__cell">
-                          <!-- Start checked-btn -->
-                          <label class="checked-btn ">
-                            <input type="radio" name="checkbox-btn" data-validation="required">
-                            <span class="checked-btn__text">Выбрать</span>
-                            <span class="checked-btn__text checked-btn__text_checked">Выбран</span>
-                          </label>
-                          <!-- End checked-btn -->
-                        </div>
-                      </div>
-                      <div class="table__row">
-                        <div class="table__cell" data-title="Магазин">
-                          <span class="table__text table__text_up"> Континент 2 </span>
-                          <span class="table__text"> 70 лет Октября,25 к.2 </span>
-                        </div>
-                        <div class="table__cell" data-title="Дата самовывоза">
-                          <span class="table__text table__text_up"> Сегодня с 17: 00 </span>
-                          <span class="table__text"> пн–вс 10: 00 –21: 00 </span>
-                        </div>
-                        <div class="table__cell">
-                          <!-- Start checked-btn -->
-                          <label class="checked-btn ">
-                            <input type="radio" name="checkbox-btn" data-validation="required">
-                            <span class="checked-btn__text">Выбрать</span>
-                            <span class="checked-btn__text checked-btn__text_checked">Выбран</span>
-                          </label>
-                          <!-- End checked-btn -->
-                        </div>
-                      </div>
-                      <div class="table__row">
-                        <div class="table__cell" data-title="Магазин">
-                          <span class="table__text table__text_up"> Континент 2 </span>
-                          <span class="table__text"> 70 лет Октября,25 к.2 </span>
-                        </div>
-                        <div class="table__cell" data-title="Дата самовывоза">
-                          <span class="table__text table__text_up"> Сегодня с 17: 00 </span>
-                          <span class="table__text"> пн–вс 10: 00 –21: 00 </span>
-                        </div>
-                        <div class="table__cell">
-                          <!-- Start checked-btn -->
-                          <label class="checked-btn ">
-                            <input type="radio" name="checkbox-btn" data-validation="required">
-                            <span class="checked-btn__text">Выбрать</span>
-                            <span class="checked-btn__text checked-btn__text_checked">Выбран</span>
-                          </label>
-                          <!-- End checked-btn -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End table -->
-                </div>
-              </div>
+              <!-- end sidebar -->
             </div>
-            <div class="col col-33 col-md-100">
-              <div class="sidebar sidebar__table">
-                <h4 class="sidebar__title"> Каталог </h4>
-                <div action="" class="order-form">
-                  <div class="order-form__group">
-                    <div class="order-form__row">
-                      <span class="order-form__text"> ТОВАРЫ НА СУММУ </span>
-                      <span class="order-form__text"> 3600 ₽ </span>
+            <div class="cabinet__col col col-75 col-md-100">
+              <h3 class="title-simple cabinet__title">Клубная карта</h3>
+              <div class="cabinet__club-card club-card">
+                <div class="club-card__wrap row">
+                  <div class="club-card__col col">
+                    <div class="club-card__img" style="background-image: url(./img/creditcard.jpg);">
                     </div>
                   </div>
-                  <div class="order-form__group order-form__card-group">
-                    <div class="card">
-                      <div class="card__img-wrap">
-                        <div class="card__img" style="background-image: url(./img/vase-2.jpg);"></div>
-                      </div>
-                      <div class="card__wrap">
-                        <div class="card__vendorcode">Артикул: 45678</div>
-                        <a href="#" class="card__title">Ваза из стекла с разноцветным узором</a>
-                        <div class="card__quantity"> Кол–во: <span>1</span>
-                        </div>
-                        <div class="card__price">
-                          <span>1000 ₽</span>
-                          <span class="is-old">1400 ₽</span>
-                        </div>
-                        <div class="card__benefit">Ваша выгода 400 ₽</div>
-                      </div>
+                  <div class="club-card__col col">
+                    <h5 class="club-card__cont-title"> Карта члена клуба </h5>
+                    <div class="club-card__cont-text">
+                      <p> Заполните данные о себе, чтобы бесплатно получить карту члена клуба. Наши держатели карт получают возможность </p>
                     </div>
-                    <div class="order-form__divider order-form__divider_top"></div>
-                    <a href="#" class="order-form__more">Еще 2 товара</a>
-                    <div class="order-form__divider order-form__divider_bottom"></div>
-                    <div class="order-form__row">
-                      <span class="order-form__text"> РЕФЕРАЛЬНАЯ СКИДКА </span>
-                      <span class="order-form__text order-form__text_red"> -500 ₽ </span>
-                    </div>
-                    <div class="order-form__row">
-                      <span class="order-form__text"> Скидка </span>
-                      <span class="order-form__text order-form__text_red"> -400 ₽ </span>
-                    </div>
-                  </div>
-                  <div class="order-form__group">
-                    <div class="order-form__row">
-                      <span class="order-form__text"> Самовывоз </span>
-                      <span class="order-form__text"> Бесплатно </span>
-                    </div>
-                    <div class="order-form__row"> 70 лет Октября, 25 к.2, сегодня с 17:00 </div>
-                  </div>
-                  <div class="order-form__group">
-                    <div class="order-form__row">
-                      <span class="order-form__text order-form__text_big"> Всего </span>
-                      <span class="order-form__text order-form__text_big"> 400 ₽ </span>
-                    </div>
-                    <div class="order-form__row order-form__row_submit">
-                      <button type="submit" class="btn btn_full" disabled>Перейти к оплате</button>
+                    <div class="club-card__btn">
+                      <a href="#" class="btn btn_md btn_bord" data-modal-control="questionnaire">
+                        <span class="btn__text">Получить карту</span>
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </form>
+        </div>
       </div>
       <!-- begin footer -->
       <footer class="footer">

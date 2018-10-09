@@ -1,4 +1,4 @@
-import {OPEN, ACTIVE, BODY} from './../constants';
+import {OPEN, ACTIVE, BODY, OVERFLOW_HIDDEN} from './../constants';
 
 ;(() => {
 
@@ -14,6 +14,7 @@ import {OPEN, ACTIVE, BODY} from './../constants';
       modal.addClass(OPEN);
       controls.removeClass(ACTIVE);
       control.addClass(ACTIVE);
+      BODY.addClass(OVERFLOW_HIDDEN);
     });
   });
 
@@ -22,12 +23,16 @@ import {OPEN, ACTIVE, BODY} from './../constants';
     const inner = modal.find('[data-modal-container]');
     const close = modal.find('[data-modal-close]');
 
-    const hide = () => modal.removeClass(OPEN);
+    const hide = () => {
+      modal.removeClass(OPEN);
+      BODY.removeClass(OVERFLOW_HIDDEN);
+    };
 
     BODY.on('click', e => {
-      if ($(e.target).closest(inner).length || $(e.target).closest(close).length || $(e.target).closest(controls).length ) return;
-      hide();
-      controls.removeClass(ACTIVE);
+      if (!$(e.target).closest(inner).length && modal.hasClass(OPEN) && !$(e.target).closest(controls).length) {
+        hide();
+        controls.removeClass(ACTIVE);
+      }
     });
 
     close.on('click', e => {

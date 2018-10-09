@@ -1921,6 +1921,129 @@
         </div>
       </div>
       <!-- end modal -->
+      <!-- begin modal -->
+      <div class="modal questionnaire" data-modal="questionnaire">
+        <div class="modal__container questionnaire__container" data-modal-container>
+          <button class="modal__off" type="button" data-modal-close="data-modal-close">
+            <svg class="icon icon-close">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <form action="/" class="modal__form form questionnaire__form">
+            <div class="modal__title questionnaire__title">Анкета члена клуба</div>
+            <span class="modal__hint questionnaire__hint">*поля обязательные для заполнения</span>
+            <div class="questionnaire__top">
+              <div class="row">
+                <div class="col col-42">
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">Фамилия*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">Имя*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">Отчество*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">День рождения*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                </div>
+                <div class="col col-58">
+                  <div class="questionnaire__radio">
+                    <div class="form-radio-group">
+                      <div class="form-radio-label">Пол</div>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+                        <span class="radio__text">Женский</span>
+                      </label>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+                        <span class="radio__text">Мужской</span>
+                      </label>
+                    </div>
+                    <div class="form-radio-group">
+                      <div class="form-radio-label">Наличие автомобиля</div>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+                        <span class="radio__text">Да</span>
+                      </label>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+                        <span class="radio__text">Нет</span>
+                      </label>
+                    </div>
+                    <div class="form-radio-group">
+                      <div class="form-radio-label">Семейное положение</div>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                        <span class="radio__text">Холост/не замужем</span>
+                      </label>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                        <span class="radio__text">Женат/замужем</span>
+                      </label>
+                    </div>
+                    <div class="form-radio-group">
+                      <div class="form-radio-label">Есть дети до 18 лет</div>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                        <span class="radio__text">Да</span>
+                      </label>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                        <span class="radio__text">Нет</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-checkbox">
+              <label class="checkbox">
+                <input type="checkbox" data-validation="required">
+                <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+                </span>
+                <span class="checkbox__icon">
+                  <svg class="icon icon-check">
+                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                  </svg>
+                </span>
+              </label>
+            </div>
+            <div class="form-control">
+              <button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
+            </div>
+            <div class="form-social social">
+              <a href="#" class="social__link social__link_vk">
+                <svg class="icon icon-vk">
+                  <use xlink:href="img/sprite.svg#icon-vk"></use>
+                </svg>
+              </a>
+              <a href="#" class="social__link social__link_facebook">
+                <svg class="icon icon-facebook">
+                  <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                </svg>
+              </a>
+              <a href="#" class="social__link social__link_odnoklassniki">
+                <svg class="icon icon-odnoklassniki">
+                  <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                </svg>
+              </a>
+              <a href="#" class="social__link social__link_google-plus">
+                <svg class="icon icon-google-plus">
+                  <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
+          </form>
+        </div>
+      </div>
+      <!-- end modal -->
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->

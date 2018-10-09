@@ -47,6 +47,8 @@ PageList:
   ready: 100
 - file: personal-account-shopping.html
   ready: 100
+- file: personal-account-club-card.html
+  ready: 50
 - file: loader.html
   ready: 100
 
