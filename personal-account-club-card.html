@@ -524,7 +524,7 @@
         </div>
       </footer>
       <!-- end footer -->
-      <div class="modal" data-modal="feedback-products">
+      <div class="modal" data-modal="feedback">
         <div class="modal__feedback" data-modal-container="data-modal-container">
           <button class="modal__off" type="button" data-modal-close="data-modal-close">
             <svg class="icon icon-close">
@@ -570,14 +570,74 @@
               <div class="feedback__control js-form-control">
                 <div class="file">
                   <label class="file__label" for="file">Прикрепить файл</label>
-                  <input type="file" class="file__input js-file-input" id="file" data-file="feedback-upload" />
-                  <span class="file__previes js-file-preview" data-preview="feedback-upload">
-                  </span>
+                  <input type="file" class="file__input js-file-input" id="file" data-file="feedback-upload" multiple="multiple" />
+                  <span class="file__preview js-file-preview" data-preview="feedback-upload"></span>
                 </div>
               </div>
             </fieldset>
-            <div class="form-control">
-              <button class="btn feedback__submit" type="submit" disabled="disabled">ВОЙТИ</button>
+            <div class="feedback__submit">
+              <button class="btn" type="submit" disabled="disabled">задать вопрос</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal" data-modal="feedback-order">
+        <div class="modal__feedback" data-modal-container="data-modal-container">
+          <button class="modal__off" type="button" data-modal-close="data-modal-close">
+            <svg class="icon icon-close">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <form action="/" class="modal__form feedback">
+            <div class="modal__title">Обратная связь</div>
+            <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
+            <hr class="feedback__divider">
+            <fieldset class="feedback__fieldset">
+              <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="surname">Фамилия</label>
+                <input type="text" class="feedback__input input" id="surname" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="name">Имя</label>
+                <input type="text" class="feedback__input input" id="name" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="middle_name">Отчество</label>
+                <input type="text" class="feedback__input input" id="middle_name">
+              </div>
+            </fieldset>
+            <hr class="feedback__divider">
+            <fieldset class="feedback__fieldset">
+              <legend class="feedback__legend">Задайте вопрос</legend>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="question-theme">Тема вопроса</label>
+                <select class="feedback__select select select_bord js-select" data-width="280px" id="question-theme">
+                  <option value="Товары, акции, скидки">Товары, акции, скидки</option>
+                  <option value="Техническая поддержка">Техническая поддержка</option>
+                  <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
+                  <option value="Возврат товара">Возврат товара</option>
+                  <option value="Другое">Другое</option>
+                </select>
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="order-number">Номер заказа</label>
+                <input type="text" class="feedback__input input" id="order-number" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
+                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 80px"></textarea>
+              </div>
+              <div class="feedback__control js-form-control">
+                <div class="file">
+                  <label class="file__label" for="file">Прикрепить файл</label>
+                  <input type="file" class="file__input js-file-input" id="file" data-file="feedback-upload" multiple="multiple" />
+                  <span class="file__preview js-file-preview" data-preview="feedback-upload"></span>
+                </div>
+              </div>
+            </fieldset>
+            <div class="feedback__submit">
+              <button class="btn" type="submit" disabled="disabled">задать вопрос</button>
             </div>
           </form>
         </div>
