@@ -1,6 +1,12 @@
 {% import "../feedback/_feedback.html" as f %}
 
-{{f.feedback()}}
+{{f.feedback({
+	modal: 'feedback'
+})}}
+{{f.feedback({
+	modal: 'feedback-order',
+	orderNumber: true
+})}}
 
 <!-- begin modal -->
 <div class="modal" data-modal="login">

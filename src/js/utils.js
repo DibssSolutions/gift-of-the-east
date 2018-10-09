@@ -1,3 +1,5 @@
+import { HTMLBODY } from './constants';
+
 export const mediaWidth = width => window.matchMedia(`(max-width: ${width}px)`).matches;
 
 export const isTouch = () => 'ontouchstart' in window;
@@ -10,6 +12,7 @@ export const SCROLL_WIDTH = () => {
     scrollbarWidth = windowsWidth - documentWidth;
   return scrollbarWidth;
 };
+
 export const LOAD_DATA = props => {
   let xhr = new XMLHttpRequest();
 
@@ -20,3 +23,25 @@ export const LOAD_DATA = props => {
   };
   xhr.send();
 };
+
+$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (
+      location.pathname.replace(/^\//, '') ===
+          this.pathname.replace(/^\//, '') &&
+        location.hostname === this.hostname
+    ) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate(
+          {
+            scrollTop: target.offset().top
+          },
+          1000
+        );
+        return false;
+      }
+    }
+  });
+});

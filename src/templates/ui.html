@@ -388,12 +388,19 @@
             </div>
         </div>
         <div class="row" style="margin-top: 20px;">
-            <div class="lama" style="background-image: url(img/transition-loader.png)"></div>
+            <div class="col-100 col" >
+                <div class="lama" style="background-image: url(img/transition-loader.png); --steps: 37; --sprite_width: -29600px;" data-steps="37"></div>
+            </div>
         </div>
-        <div class="row" style="margin-top: 20px;">
-            <div class="col col-25">
-                <a href="#" class="btn" data-modal-control="feedback-products">
-                    <span>Обратная связь - товары</span>
+        <div class="row bg" style="margin-top: 20px; --bg: red;" >
+            <div class="col col-20">
+                <a href="#" class="btn" data-modal-control="feedback">
+                    <span>Обратная связь</span>
+                </a>
+            </div>
+            <div class="col col-33">
+                <a href="#" class="btn" data-modal-control="feedback-order">
+                    <span>Обратная связь(с номером заказа)</span>
                 </a>
             </div>
         </div>

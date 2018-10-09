@@ -287,12 +287,12 @@
 			<span>{{ props.price }}</span>
 			<span class="is-old">{{ props.priceOld }}</span>
 		</div>
-        {% if props.expireTime %}
-            <div class="product__expire">
-                {{icon('clock-outline')}}
-                <span>{{props.expireTime}}</span>
-            </div>
-        {% endif %}
+		{% if props.expireTime %}
+			<div class="product__expire">
+				{{icon('clock-outline')}}
+				<span>{{props.expireTime}}</span>
+			</div>
+		{% endif %}
 		<div class="product__footer">
 			<button type="button" class="product__btn btn" type="button">
 			{{ icon('shopping-bag') }}
@@ -320,9 +320,9 @@
 	</div>
 	<div class="notavailable__wrap js-drop-hidden">
 		{% if props.cardList %}
-            {% for item in props.cardList %}
-                {{ card({
-                	class: item.class,
+			{% for item in props.cardList %}
+				{{ card({
+					class: item.class,
 					img: item.img,
 					price: item.price,
 					priceOld: item.priceOld,
@@ -331,7 +331,7 @@
 					subscribe: item.subscribe,
 					availability: item.availability
 				}) }}
-            {% endfor %}
+			{% endfor %}
 		{% endif %}
 	</div>
 </div>
@@ -657,37 +657,37 @@
 <!-- ------------------------------ END form ------------------------------ -->
 
 {% macro inputRange() %}
-    <div class="dropdown dropdown-range">
-    <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Цена
-    </a>
-    <div class="dropdown-menu dropdown-menu-range js-range-container" aria-labelledby="dropdownRangeLink">
-        <div class="dropdown-menu__row">
-            <span>Диапазон цен</span>
-            <button type="button" class="js-range-reset btn-reset">
-                {{icon('refresh')}}
-                <span>Сбросить</span>
-            </button>
-        </div>
-        <div class="dropdown-menu__row">
-            <div class="dropdown-menu__input">
-                <input type="text" class="input input_range js-range-min js-range-input">
-                <span class="input-addon">
-                    от
-                </span>
-            </div>
-            <div class="dropdown-menu__input">
-                <input type="text" class="input input_range js-range-max js-range-input">
-                <span class="input-addon">
-                    до
-                </span>
-            </div>
+	<div class="dropdown dropdown-range">
+	<a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Цена
+	</a>
+	<div class="dropdown-menu dropdown-menu-range js-range-container" aria-labelledby="dropdownRangeLink">
+		<div class="dropdown-menu__row">
+			<span>Диапазон цен</span>
+			<button type="button" class="js-range-reset btn-reset">
+				{{icon('refresh')}}
+				<span>Сбросить</span>
+			</button>
+		</div>
+		<div class="dropdown-menu__row">
+			<div class="dropdown-menu__input">
+				<input type="text" class="input input_range js-range-min js-range-input">
+				<span class="input-addon">
+					от
+				</span>
+			</div>
+			<div class="dropdown-menu__input">
+				<input type="text" class="input input_range js-range-max js-range-input">
+				<span class="input-addon">
+					до
+				</span>
+			</div>
 
-        </div>
-        <div class="dropdown-menu__row dropdown-menu__row_slider">
-            <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
-        </div>
-    </div>
+		</div>
+		<div class="dropdown-menu__row dropdown-menu__row_slider">
+			<div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
+		</div>
+	</div>
 </div>
 {% endmacro %}
 
@@ -836,14 +836,14 @@
 {% macro cabinetList(props) %}
 <!-- begin cabinet-list -->
 <div class="cabinet-list"> 
-    <div class="js-nav-links-current cabinet-list__toggler">
-        <div class="cabinet-list__item">
-            <span class="cabinet-list__link">
-                {{props.currentText}}
-            </span>
-        </div>
-    </div> 
-    <ul class="cabinet-list__nav">
+	<div class="js-nav-links-current cabinet-list__toggler">
+		<div class="cabinet-list__item">
+			<span class="cabinet-list__link">
+				{{props.currentText}}
+			</span>
+		</div>
+	</div> 
+	<ul class="cabinet-list__nav">
 		{% for item in [
 			{
 				text: 'Личные данные'
@@ -866,10 +866,10 @@
 			{
 				text: 'Клубная карта'
 			},
-            {
+			{
 				text: 'Пригласить друзей'
 			},
-            {
+			{
 				text: 'Выйти'
 			}
 		] %}
@@ -974,3 +974,33 @@
 	</div>
 {% endmacro %}
 
+{% macro infoArticle(props) %}
+	<article class="info-article" {% if props.id %}id="{{props.id}}"{% endif %}>
+		{% if props.articleTitle %}
+			<h2 class="title info-article__title">
+				{{props.articleTitle}}
+			</h2>
+		{% endif %}
+		<div class="info-article__content">
+			{% for section in props.sections %}
+				<section>
+					{% if props.articleTitle %}
+						<h3 class="title-simple info-article__subtitle">
+							{{section.sectionTitle}}
+						</h3>
+					{% endif %}
+					{% for p in section.text %}
+						<p>{{p}}</p>
+					{% endfor %}
+					{% for figure in section.images %}
+						<figure>
+							<div class="info-article__image" style="background-image: url(./img/{{figure.image}});"></div>
+							<figcaption>{{figure.descr}}</figcaption>
+						</figure>
+					{% endfor %}
+				</section>
+			{% endfor %}
+			
+		</div>
+	</article>
+{% endmacro %}

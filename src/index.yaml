@@ -49,4 +49,8 @@ PageList:
   ready: 100
 - file: loader.html
   ready: 100
+- file: club-info-page.html
+  ready: 100
+- file: customers-info-page.html
+  ready: 100
 
