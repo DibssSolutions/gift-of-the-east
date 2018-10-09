@@ -35,13 +35,19 @@
         resize: none
         box-sizing: border-box
     &__submit
-        min-width: 280px
-        &:disabled
-            color: $black 
-            cursor: default
-            background-color: #EFEFEF 
-            +hover
+        text-align: center
+        margin-top: 40px
+        .btn
+            min-width: 280px
+            &:disabled
+                color: $black 
+                cursor: default
                 background-color: #EFEFEF 
+                +hover
+                    background-color: #EFEFEF 
+    .modal__title
+        text-align: center
+
 .file
     &__input 
         position: absolute
@@ -56,5 +62,11 @@
         cursor: pointer
         line-height: 1.5
         text-align: center
+    &__preview
+        display: inline-block
+        font-size: 16px
+        margin-left: 16px
+        strong
+            margin-left: 10px
 
 
