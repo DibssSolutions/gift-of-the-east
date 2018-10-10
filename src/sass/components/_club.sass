@@ -1,0 +1,66 @@
+.info-list
+    padding: 16px 16px 0
+    &__item
+        padding: 9px 0 8px
+        display: block
+        &.current-item 
+            background-color: $silver
+    &__link
+        font-size: 13px
+        font-weight: 500
+        line-height: 1.385
+        color: $black
+        text-transform: uppercase
+        
+
+.info-article
+    margin-bottom: 80px
+    &__image 
+        padding-bottom: 480px
+        background-color: $gallery
+        +cover
+    &__content
+        +f(17px, 400, 1.589)
+        p 
+            margin-bottom: 24px
+    figcaption
+        color: $gray
+
+.company-descr
+    +clr
+    &__illustration
+        position: relative
+        float: left
+        margin-left: -60px
+        +cover
+        padding-bottom: 260px
+        width: 290px
+    &__image
+        display: block
+        +vcenter
+        width: 176px
+        padding-bottom: 176px
+        +cover
+    &__text
+        position: relative
+        font-size: 16px
+        line-height: 1.5
+        padding: 40px 0
+        &:before,
+        &:after
+            position: absolute
+            left: 50%
+            transform: translateX(-50%)
+            color: $lightBrown
+            font-size: 32px
+            font-family: $montserrat
+            line-height: 24px
+        &:before
+            top: 0
+            content: '«'
+        &:after
+            bottom: 0
+            content: '»'
+
+.js-sticky-container
+    will-change: min-height

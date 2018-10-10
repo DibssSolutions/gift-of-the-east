@@ -9,6 +9,9 @@
             margin-top: 0
             border: 1px solid rgba($silver, .5)
             border: none
+    &_sticky
+        transform: translate3d(0, 0, 0)
+        will-change: position, transform
     &__title
         position: relative
         z-index: 1
@@ -37,6 +40,9 @@
             fill: $lightBrown
         +md 
             display: block
+    &__feedback-btn
+        text-align: center
+        margin: 24px 52px
 
 .sidebar-list
     font-family: $montserrat

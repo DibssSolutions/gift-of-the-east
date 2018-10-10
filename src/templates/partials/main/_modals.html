@@ -1,3 +1,13 @@
+{% import "../feedback/_feedback.html" as f %}
+
+{{f.feedback({
+	modal: 'feedback'
+})}}
+{{f.feedback({
+	modal: 'feedback-order',
+	orderNumber: true
+})}}
+
 <!-- begin modal -->
 <div class="modal" data-modal="login">
 	<div class="modal__container" data-modal-container>
@@ -70,6 +80,145 @@
 				{% endfor %}
 			</div>
 			<div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
+		</form>
+	</div>
+</div>
+<!-- end modal -->
+
+
+<!-- begin modal -->
+<div class="modal questionnaire" data-modal="questionnaire">
+	<div class="modal__container questionnaire__container" data-modal-container>
+		<button class="modal__off" type="button" data-modal-close="data-modal-close">{{ mixins.icon('close') }}</button>
+		<form action="/" class="modal__form form questionnaire__form">
+			<div class="modal__title questionnaire__title">Анкета члена клуба</div>
+			<span class="modal__hint questionnaire__hint">*поля обязательные для заполнения</span>
+			<div class="questionnaire__top">
+				<div class="row">
+					<div class="col col-42 col-md-100">
+						<div class="form-control questionnaire__form-control js-form-control">
+							<label for="" class="input-label questionnaire__input-label">Фамилия*</label>
+							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+						</div>
+						<div class="form-control questionnaire__form-control js-form-control">
+							<label for="" class="input-label questionnaire__input-label">Имя*</label>
+							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+						</div>
+						<div class="form-control questionnaire__form-control js-form-control">
+							<label for="" class="input-label questionnaire__input-label">Отчество*</label>
+							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+						</div>
+						<div class="form-control questionnaire__form-control js-form-control">
+							<label for="" class="input-label questionnaire__input-label">День рождения*</label>
+							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+						</div>
+					</div>
+					<div class="col col-58 col-md-100">
+						<div class="questionnaire__radio">
+							<div class="form-radio-group">
+								<div class="form-radio-label">Пол</div>
+								<label class="radio">
+									<input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+									<span class="radio__text">Женский</span>
+								</label>
+								<label class="radio">
+									<input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+									<span class="radio__text">Мужской</span>
+								</label>
+							</div>
+							<div class="form-radio-group">
+								<div class="form-radio-label">Наличие автомобиля</div>
+								<label class="radio">
+									<input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+									<span class="radio__text">Да</span>
+								</label>
+								<label class="radio">
+									<input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+									<span class="radio__text">Нет</span>
+								</label>
+							</div>
+							<div class="form-radio-group">
+								<div class="form-radio-label">Семейное положение</div>
+								<label class="radio">
+									<input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+									<span class="radio__text">Холост/не замужем</span>
+								</label>
+								<label class="radio">
+									<input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+									<span class="radio__text">Женат/замужем</span>
+								</label>
+							</div>
+							<div class="form-radio-group">
+								<div class="form-radio-label">Есть дети до 18 лет</div>
+								<label class="radio">
+									<input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
+									<span class="radio__text">Да</span>
+								</label>
+								<label class="radio">
+									<input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
+									<span class="radio__text">Нет</span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dashed-separator"></div>
+			<div class="questionnaire__bottom">
+				<div class="row">
+					<div class="col col-42 col-md-100">
+						<div class="form-control questionnaire__form-control">
+							<label for="" class="input-label questionnaire__input-label">Почтовый индекс</label>
+							<input type="text" class="input" data-validation-event="keyup change">
+						</div>
+						<div class="form-control questionnaire__form-control js-form-control">
+							<label for="" class="input-label questionnaire__input-label">Контактный телефон*</label>
+							<input class="input" type="text" data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder="">
+						</div>
+						<div class="form-control questionnaire__form-control js-form-control">
+							<label for="" class="input-label questionnaire__input-label">email*</label>
+							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+						</div>
+					</div>
+					<div class="col col-58 col-md-100">
+						<div class="form-control questionnaire__form-control">
+							<label for="" class="input-label questionnaire__input-label">Населенный пункт</label>
+							<input type="text" class="input" data-validation-event="keyup change">
+						</div>
+						<div class="form-control questionnaire__form-control questionnaire__form-control_textarea">
+							<label for="" class="input-label questionnaire__input-label">Мне наиболее интересны темы:</label>
+							<textarea type="text" class="input input_textarea" data-validation-event="keyup change"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="questionnaire__checkbox">
+				<div class="form-checkbox">
+					<label class="checkbox">
+						<input type="checkbox">
+						<span class="checkbox__text">Получать новости об акциях, скидках и спецпредложениях</span>
+						<span class="checkbox__icon">
+							<svg class="icon icon-check">
+							<use xlink:href="img/sprite.svg#icon-check"></use>
+							</svg>
+						</span>
+					</label>
+				</div>
+				<div class="form-checkbox">
+					<label class="checkbox">
+						<input type="checkbox" data-validation="required">
+						<span class="checkbox__text">Настоящим, я даю свое согласие на обработку и хранение моих персональных данных</span>
+						<span class="checkbox__icon">
+							<svg class="icon icon-check">
+							<use xlink:href="img/sprite.svg#icon-check"></use>
+							</svg>
+						</span>
+					</label>
+				</div>
+			</div>
+			<div class="questionnaire__submit">
+				<button class="btn disabled" type="submit" disabled="disabled">ПОЛУЧИТЬ КАРТУ</button>
+			</div>
 		</form>
 	</div>
 </div>

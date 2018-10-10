@@ -24,8 +24,6 @@
 	display: inline-block
 [data-modal-close]
 	position: absolute
-	top: -20px
-	right: -20px
 	background-color: transparent
 	font-size: 0
 	.icon
@@ -38,6 +36,8 @@
 	.link
 		font-size: inherit
 	&__close
+		top: -20px
+		right: -20px
 		width: 40px
 		height: 40px
 		border-radius: 50% 
@@ -53,6 +53,11 @@
 			transform: translate(-50%, -50%)
 			font-size: 16px
 			transition: color .3s
+	&__off
+		top: 12px
+		right: 12px
+		.icon
+			color: $silver
 	&__title
 		margin-bottom: 40px
 		color: $black 
@@ -69,4 +74,95 @@
 		background-color: $white
 		+xs 
 			padding: 40px 24px 
+	&__feedback
+		max-width: 1008px
+		background-color: $white
+		padding: 43px 104px 40px
+
+.questionnaire
+	&__container
+		max-width: 1008px
+		padding: 40px 52px
+	&__form
+		text-align: left
+	&__title
+		text-align: center
+		margin-bottom: 35px
+	&__hint
+		display: block
+		font-size: 13px
+	&__top
+		padding: 17px 0 0
+		+xs
+			padding-top: 5px
+	&__form-control
+		display: flex
+		+xs
+			flex-direction: column
+		&_textarea
+			display: block
+			.input_textarea
+				margin-top: 16px
+				+xs
+					margin-top: 5px
+	.form-control
+		&:not(:first-child)
+			margin-top: 16px
+			+xs
+				margin-top: 5px
+	&__input-label
+		margin-right: 30px
+		min-width: 72px
+		flex-shrink: 0
+	&__radio
+		padding-top: 12px
+		.form-radio-label
+			+sm
+				display: block
+				margin: 0 0 16px
+			&:not(:last-child)
+				margin-right: 30px
+		.form-radio-group
+			&:not(:first-child)
+				margin-top: 40px
+				+xs
+					margin-top: 16px
+	&__checkbox
+		margin: 40px 0
+	&__submit
+		text-align: center
+		.btn
+			min-width: 280px
+			+xs
+				min-width: 180px
+			&:disabled
+				color: $black
+				cursor: default
+				background-color: #efefef
+				+hover
+					background-color: #efefef
+	.col
+		&:not(:first-child)
+			+md
+				margin-top: 16px
+			+xs
+				margin-top: 5px
+.dashed-separator
+	margin: 24px -52px
+	background-image: url("data:image/svg+xml;utf8,<svg viewbox='0 0 1 50' width='100%' height='1px' xmlns='http://www.w3.org/2000/svg'><line x1='0' y1='1' x2='100%' y2='1' stroke='black' stroke-dasharray='4 8'/></svg>")
+	background-repeat: no-repeat
+	background-position: center
+	height: 1px
+	+xs
+		margin: 16px -24px 4px
+
+.input-label
+	display: inline-block
+	vertical-align: top
+	font-size: 14px
+	line-height: 1.285
+	padding: 12px 0 
+	&__info
+		text-align: center
+	&__divider
 		

@@ -17,4 +17,7 @@ import './_radioTab';
 import './_tabs';
 import './_aminOnScroll';
 import './_nav-links';
+import './_file';
+import './_initMenuSpy';
+import './_initSticky';
 // import "./_startingAnimation";

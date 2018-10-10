@@ -35,37 +35,40 @@
             </div>
             <div class="header__cabin">
               <!-- begin signin -->
-              <div class="signin">
+              <div class="signin js-profile-wrapper" data-dd-wrapper="data-dd-wrapper">
                 <a href="#" class="signin__item" data-modal-control="login">
                   <svg class="icon icon-account">
                     <use xlink:href="img/sprite.svg#icon-account"></use>
                   </svg>
                   <span>Войти</span></a>
                 <span class="signin__slash">/</span>
-                <a href="#" class="signin__item" data-modal-control="registration"><span>Регистрация</span></a>
-                <div class="signin__drop">
+                <a href="#" class="signin__item" data-modal-control="registration">
+                  <span>Регистрация</span></a>
+                <div class="signin__drop js-profile-content">
                   <div class="signin__head">Добро пожаловать, Анна</div>
                   <ul class="signin__list">
                     <li>
-                      <a href="#">Личные данные</a>
+                      <a href="#">Личные данные </a>
                     </li>
                     <li class="has-inf">
-                      <a href="#">Сообщения <span class="text-silver">3</span></a>
+                      <a href="#">Сообщения <span class="text-silver">3</span>
+                      </a>
                     </li>
                     <li>
-                      <a href="#">История покупок</a>
+                      <a href="#">История покупок </a>
                     </li>
                     <li class="has-inf">
-                      <a href="#">Персональные предложения <span class="text-silver">4</span></a>
+                      <a href="#">Персональные предложения <span class="text-silver">4</span>
+                      </a>
                     </li>
                     <li>
-                      <a href="#">Избранное</a>
+                      <a href="#">Избранное </a>
                     </li>
                     <li>
-                      <a href="#">Клубная карта</a>
+                      <a href="#">Клубная карта </a>
                     </li>
                     <li>
-                      <a href="#">Пригласить друзей</a>
+                      <a href="#">Пригласить друзей </a>
                     </li>
                   </ul>
                   <div class="signin__footer">
@@ -75,12 +78,13 @@
               </div>
               <!-- end signin -->
               <!-- begin basket -->
-              <div class="basket">
-                <a href="#" class="basket__trigger">
+              <div class="basket js-basket-wrapper" data-dd-wrapper="data-dd-wrapper">
+                <a href="#" class="basket__trigger js-basket-trigger" data-dd-trigger="data-dd-trigger">
                   <svg class="icon icon-shopping-bag">
                     <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
                   </svg>
-                  <span>Корзина</span></a>
+                  <span>Корзина</span>
+                </a>
                 <div class="basket__drop">
                   <div class="basket__head">Корзина (1)</div>
                   <div class="basket__product js-basket-product">
@@ -91,18 +95,20 @@
                         <div class="basket__quantity">Кол–во: 2</div>
                       </div>
                       <div class="basket__right">
-                        <div class="basket__price"><span>2000 ₽</span><span class="is-old">2800 ₽</span></div>
+                        <div class="basket__price">
+                          <span>2000 ₽</span><span class="is-old">2800 ₽</span></div>
                         <div class="basket__benefit">Ваша выгода 800 ₽</div>
                       </div>
                     </div>
-                    <button class="basket__remove" type="button">
+                    <button class="basket__remove" type="button" data-dd-close="data-dd-close">
                       <svg class="icon icon-close">
                         <use xlink:href="img/sprite.svg#icon-close"></use>
                       </svg>
                     </button>
                   </div>
                   <div class="basket__footer">
-                    <div class="basket__total"><strong>Итого:</strong> 2000 ₽</div>
+                    <div class="basket__total">
+                      <strong>Итого:</strong> 2000 ₽</div>
                     <div class="basket__button">
                       <a href="#" class="btn btn_md btn_bord btn_anim">
                         <span class="btn__text">Перейти в корзину</span>
@@ -139,38 +145,93 @@
                 <li class="nav__item js-nav-item">
                   <a href="#" class="nav__link">
                     <span class="nav__text">КАТАЛОГ</span>
-                    <span class="nav__line"><span></span></span>
+                    <span class="nav__line">
+                      <span></span></span>
                   </a>
                   <span class="nav__wrap js-nav-wrap">
                     <span class="nav__inner inner">
                       <ul class="nav__items">
-                        <li><a href="#">Изделия из натуральных камней</a></li>
-                        <li><a href="#">Муранское стекло</a></li>
-                        <li><a href="#">Предметы интерьера</a></li>
-                        <li><a href="#">Питьевая посуда, фляжки, <br>бочки для вина</a></li>
-                        <li><a href="#">Подсвечники</a></li>
-                        <li><a href="#">Посуда и сервировка</a></li>
-                        <li><a href="#">Статуэтки, куклы</a></li>
-                        <li><a href="#">Принадлежности для письма</a></li>
-                        <li><a href="#">Кальяны, курительные принадлежности</a></li>
-                        <li><a href="#">Настольные игры</a></li>
-                        <li><a href="#">Сувенирное оружие</a></li>
-                        <li><a href="#">Фэн-шуй</a></li>
-                        <li><a href="#">Религиозные подарки</a></li>
-                        <li><a href="#">Сувенирные изделия, копилки, антистрессы</a></li>
-                        <li><a href="#">Символы г. Омска</a></li>
-                        <li><a href="#">Вазы</a></li>
-                        <li><a href="#">Музыкальные ретро центры, <br>ретро телефоны</a></li>
-                        <li><a href="#">Картины, декоративные тарелки</a></li>
-                        <li><a href="#">Фоторамки</a></li>
-                        <li><a href="#">Светильники</a></li>
-                        <li><a href="#">Подсвечники</a></li>
-                        <li><a href="#">Фонтаны</a></li>
-                        <li><a href="#">Часы</a></li>
-                        <li><a href="#">Шкатулки, книги-сейфы, <br>ключницы</a></li>
-                        <li><a href="#">Мебель, глобус-бары</a></li>
-                        <li><a href="#">Барометры</a></li>
-                        <li><a href="#">Корабли</a></li>
+                        <li>
+                          <a href="#">Изделия из натуральных камней</a>
+                        </li>
+                        <li>
+                          <a href="#">Муранское стекло</a>
+                        </li>
+                        <li>
+                          <a href="#">Предметы интерьера</a>
+                        </li>
+                        <li>
+                          <a href="#">Питьевая посуда, фляжки, <br>бочки для вина</a>
+                        </li>
+                        <li>
+                          <a href="#">Подсвечники</a>
+                        </li>
+                        <li>
+                          <a href="#">Посуда и сервировка</a>
+                        </li>
+                        <li>
+                          <a href="#">Статуэтки, куклы</a>
+                        </li>
+                        <li>
+                          <a href="#">Принадлежности для письма</a>
+                        </li>
+                        <li>
+                          <a href="#">Кальяны, курительные принадлежности</a>
+                        </li>
+                        <li>
+                          <a href="#">Настольные игры</a>
+                        </li>
+                        <li>
+                          <a href="#">Сувенирное оружие</a>
+                        </li>
+                        <li>
+                          <a href="#">Фэн-шуй</a>
+                        </li>
+                        <li>
+                          <a href="#">Религиозные подарки</a>
+                        </li>
+                        <li>
+                          <a href="#">Сувенирные изделия, копилки, антистрессы</a>
+                        </li>
+                        <li>
+                          <a href="#">Символы г. Омска</a>
+                        </li>
+                        <li>
+                          <a href="#">Вазы</a>
+                        </li>
+                        <li>
+                          <a href="#">Музыкальные ретро центры, <br>ретро телефоны</a>
+                        </li>
+                        <li>
+                          <a href="#">Картины, декоративные тарелки</a>
+                        </li>
+                        <li>
+                          <a href="#">Фоторамки</a>
+                        </li>
+                        <li>
+                          <a href="#">Светильники</a>
+                        </li>
+                        <li>
+                          <a href="#">Подсвечники</a>
+                        </li>
+                        <li>
+                          <a href="#">Фонтаны</a>
+                        </li>
+                        <li>
+                          <a href="#">Часы</a>
+                        </li>
+                        <li>
+                          <a href="#">Шкатулки, книги-сейфы, <br>ключницы</a>
+                        </li>
+                        <li>
+                          <a href="#">Мебель, глобус-бары</a>
+                        </li>
+                        <li>
+                          <a href="#">Барометры</a>
+                        </li>
+                        <li>
+                          <a href="#">Корабли</a>
+                        </li>
                       </ul>
                       <span class="nav__img">
                         <img src="./img/nav-img@2x.jpg" alt="img">
@@ -181,20 +242,125 @@
                 <li class="nav__item js-nav-item">
                   <a href="#" class="nav__link">
                     <span class="nav__text">КОЛЛЕКЦИИ</span>
-                    <span class="nav__line"><span></span></span>
+                    <span class="nav__line">
+                      <span></span></span>
                   </a>
                 </li>
                 <li class="nav__item js-nav-item">
                   <a href="#" class="nav__link">
                     <span class="nav__text">АКЦИИ</span>
-                    <span class="nav__line"><span></span></span>
+                    <span class="nav__line">
+                      <span></span></span>
                   </a>
                 </li>
-                <li class="nav__item js-nav-item">
-                  <a href="#" class="nav__link">
-                    <span class="nav__text">ЖУРНАЛ</span>
-                    <span class="nav__line"><span></span></span>
+                <li class="nav__item js-nav-item nav__item_with-bg js-nav-parent-dark">
+                  <a href="#" class="nav__link nav__link_with-bg">
+                    <span class="nav__text nav__text_with-bg">ЖУРНАЛ</span>
+                    <span class="nav__line nav__line_with-bg">
+                      <span></span></span>
                   </a>
+                  <span class="nav__wrap nav__wrap_with-bg js-nav-wrap js-nav-wrap-dark">
+                    <span class="nav__inner inner">
+                      <ul class="nav__items-row">
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Все статьи</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Шото там</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Тай таке</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Впізнали нас?</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Идеи подарков</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Идея 1</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Идея 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Идея 3</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Красота</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Красота 1</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 3</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 4</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Развлечения</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Красота 1</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 2</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 3</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Красота 4</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                        <li class="nav__item-row  js-nav-item">
+                          <a href="#" class="nav__link-row">
+                            <span class="nav__text-row">Мода и стиль</span>
+                          </a>
+                          <span class="nav__column">
+                            <ul class="nav__elements">
+                              <li>
+                                <a href="#" class="nav__element">Подраздел</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">При наведении</a>
+                              </li>
+                              <li>
+                                <a href="#" class="nav__element">Стиль</a>
+                              </li>
+                            </ul>
+                          </span>
+                        </li>
+                      </ul>
+                    </span>
+                  </span>
                 </li>
               </ul>
             </nav>
@@ -1871,6 +2037,23 @@
             </section>
           </div>
         </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-100 col">
+            <div class="lama" style="background-image: url(img/transition-loader.png); --steps: 37; --sprite_width: -29600px;" data-steps="37"></div>
+          </div>
+        </div>
+        <div class="row bg" style="margin-top: 20px; --bg: red;">
+          <div class="col col-20">
+            <a href="#" class="btn" data-modal-control="feedback">
+              <span>Обратная связь</span>
+            </a>
+          </div>
+          <div class="col col-33">
+            <a href="#" class="btn" data-modal-control="feedback-order">
+              <span>Обратная связь(с номером заказа)</span>
+            </a>
+          </div>
+        </div>
       </div>
       <!-- begin footer -->
       <footer class="footer">
@@ -1939,6 +2122,124 @@
         </div>
       </footer>
       <!-- end footer -->
+      <div class="modal" data-modal="feedback">
+        <div class="modal__feedback" data-modal-container="data-modal-container">
+          <button class="modal__off" type="button" data-modal-close="data-modal-close">
+            <svg class="icon icon-close">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <form action="/" class="modal__form feedback">
+            <div class="modal__title">Обратная связь</div>
+            <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
+            <hr class="feedback__divider">
+            <fieldset class="feedback__fieldset">
+              <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="surname">Фамилия</label>
+                <input type="text" class="feedback__input input" id="surname" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="name">Имя</label>
+                <input type="text" class="feedback__input input" id="name" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="middle_name">Отчество</label>
+                <input type="text" class="feedback__input input" id="middle_name">
+              </div>
+            </fieldset>
+            <hr class="feedback__divider">
+            <fieldset class="feedback__fieldset">
+              <legend class="feedback__legend">Задайте вопрос</legend>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="question-theme">Тема вопроса</label>
+                <select class="feedback__select select select_bord js-select" data-width="280px" id="question-theme">
+                  <option value="Товары, акции, скидки">Товары, акции, скидки</option>
+                  <option value="Техническая поддержка">Техническая поддержка</option>
+                  <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
+                  <option value="Возврат товара">Возврат товара</option>
+                  <option value="Другое">Другое</option>
+                </select>
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
+                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 80px"></textarea>
+              </div>
+              <div class="feedback__control js-form-control">
+                <div class="file">
+                  <label class="file__label" for="file">Прикрепить файл</label>
+                  <input type="file" class="file__input js-file-input" id="file" data-file="feedback-upload" multiple="multiple" />
+                  <span class="file__preview js-file-preview" data-preview="feedback-upload"></span>
+                </div>
+              </div>
+            </fieldset>
+            <div class="feedback__submit">
+              <button class="btn" type="submit" disabled="disabled">задать вопрос</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal" data-modal="feedback-order">
+        <div class="modal__feedback" data-modal-container="data-modal-container">
+          <button class="modal__off" type="button" data-modal-close="data-modal-close">
+            <svg class="icon icon-close">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <form action="/" class="modal__form feedback">
+            <div class="modal__title">Обратная связь</div>
+            <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
+            <hr class="feedback__divider">
+            <fieldset class="feedback__fieldset">
+              <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="surname">Фамилия</label>
+                <input type="text" class="feedback__input input" id="surname" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="name">Имя</label>
+                <input type="text" class="feedback__input input" id="name" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="middle_name">Отчество</label>
+                <input type="text" class="feedback__input input" id="middle_name">
+              </div>
+            </fieldset>
+            <hr class="feedback__divider">
+            <fieldset class="feedback__fieldset">
+              <legend class="feedback__legend">Задайте вопрос</legend>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="question-theme">Тема вопроса</label>
+                <select class="feedback__select select select_bord js-select" data-width="280px" id="question-theme">
+                  <option value="Товары, акции, скидки">Товары, акции, скидки</option>
+                  <option value="Техническая поддержка">Техническая поддержка</option>
+                  <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
+                  <option value="Возврат товара">Возврат товара</option>
+                  <option value="Другое">Другое</option>
+                </select>
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label" for="order-number">Номер заказа</label>
+                <input type="text" class="feedback__input input" id="order-number" data-validation="required" data-validation-event="keyup change">
+              </div>
+              <div class="feedback__control js-form-control">
+                <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
+                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 80px"></textarea>
+              </div>
+              <div class="feedback__control js-form-control">
+                <div class="file">
+                  <label class="file__label" for="file">Прикрепить файл</label>
+                  <input type="file" class="file__input js-file-input" id="file" data-file="feedback-upload" multiple="multiple" />
+                  <span class="file__preview js-file-preview" data-preview="feedback-upload"></span>
+                </div>
+              </div>
+            </fieldset>
+            <div class="feedback__submit">
+              <button class="btn" type="submit" disabled="disabled">задать вопрос</button>
+            </div>
+          </form>
+        </div>
+      </div>
       <!-- begin modal -->
       <div class="modal" data-modal="login">
         <div class="modal__container" data-modal-container>
@@ -2054,6 +2355,147 @@
               </a>
             </div>
             <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
+          </form>
+        </div>
+      </div>
+      <!-- end modal -->
+      <!-- begin modal -->
+      <div class="modal questionnaire" data-modal="questionnaire">
+        <div class="modal__container questionnaire__container" data-modal-container>
+          <button class="modal__off" type="button" data-modal-close="data-modal-close">
+            <svg class="icon icon-close">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <form action="/" class="modal__form form questionnaire__form">
+            <div class="modal__title questionnaire__title">Анкета члена клуба</div>
+            <span class="modal__hint questionnaire__hint">*поля обязательные для заполнения</span>
+            <div class="questionnaire__top">
+              <div class="row">
+                <div class="col col-42 col-md-100">
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">Фамилия*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">Имя*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">Отчество*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">День рождения*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                </div>
+                <div class="col col-58 col-md-100">
+                  <div class="questionnaire__radio">
+                    <div class="form-radio-group">
+                      <div class="form-radio-label">Пол</div>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+                        <span class="radio__text">Женский</span>
+                      </label>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+                        <span class="radio__text">Мужской</span>
+                      </label>
+                    </div>
+                    <div class="form-radio-group">
+                      <div class="form-radio-label">Наличие автомобиля</div>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+                        <span class="radio__text">Да</span>
+                      </label>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+                        <span class="radio__text">Нет</span>
+                      </label>
+                    </div>
+                    <div class="form-radio-group">
+                      <div class="form-radio-label">Семейное положение</div>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                        <span class="radio__text">Холост/не замужем</span>
+                      </label>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                        <span class="radio__text">Женат/замужем</span>
+                      </label>
+                    </div>
+                    <div class="form-radio-group">
+                      <div class="form-radio-label">Есть дети до 18 лет</div>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
+                        <span class="radio__text">Да</span>
+                      </label>
+                      <label class="radio">
+                        <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
+                        <span class="radio__text">Нет</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="dashed-separator"></div>
+            <div class="questionnaire__bottom">
+              <div class="row">
+                <div class="col col-42 col-md-100">
+                  <div class="form-control questionnaire__form-control">
+                    <label for="" class="input-label questionnaire__input-label">Почтовый индекс</label>
+                    <input type="text" class="input" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">Контактный телефон*</label>
+                    <input class="input" type="text" data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder="">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">email*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                </div>
+                <div class="col col-58 col-md-100">
+                  <div class="form-control questionnaire__form-control">
+                    <label for="" class="input-label questionnaire__input-label">Населенный пункт</label>
+                    <input type="text" class="input" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control questionnaire__form-control_textarea">
+                    <label for="" class="input-label questionnaire__input-label">Мне наиболее интересны темы:</label>
+                    <textarea type="text" class="input input_textarea" data-validation-event="keyup change"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="questionnaire__checkbox">
+              <div class="form-checkbox">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox__text">Получать новости об акциях, скидках и спецпредложениях</span>
+                  <span class="checkbox__icon">
+                    <svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg>
+                  </span>
+                </label>
+              </div>
+              <div class="form-checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" data-validation="required">
+                  <span class="checkbox__text">Настоящим, я даю свое согласие на обработку и хранение моих персональных данных</span>
+                  <span class="checkbox__icon">
+                    <svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <div class="questionnaire__submit">
+              <button class="btn disabled" type="submit" disabled="disabled">ПОЛУЧИТЬ КАРТУ</button>
+            </div>
           </form>
         </div>
       </div>

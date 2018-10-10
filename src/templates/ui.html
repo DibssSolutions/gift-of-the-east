@@ -2,79 +2,79 @@
 {% extends "layouts/_layout.html" %}
 {% block content %}
 
-	<div class="inner">
-		<div class="row" style="margin-top: 20px;">
-			{% for slide in [ { img: "art-background-beautiful.png", title: "Уникальные светильники", text: "Наши светильники поразят
-		своим необычным внешним видом и привнесут " }, { img: "sudhith-xavier.png", title: "Ретро-центры", text: "Ретро снова в
-		моде! Не оставайтесь в стороне от уникальной возможности " } ] %}
-				<div class="col col-50">
-					<!-- begin holiday -->
-					<div class="holiday">
-						<div class="holiday__img">
-							<img src="./img/{{slide.img}}" alt="img">
-						</div>
-						<div class="holiday__wrap">
-							<div class="holiday__title title-sm">{{slide.title}}</div>
-							<p>{{slide.text}}</p>
-						</div>
-					</div>
-					<!-- end holiday -->
-				</div>
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col col-100">
-				<div class="tags">
-					{% for tagClass in[
-						'',
-						'orange',
-						'black',
-						'red',
-						'yellow',
-						'beige',
-						'purple',
-						'turquoise',
-						'green',
-						'gallery',
-						'gray'
-					] %}
-						<a href="#" class="tag tag_{{ tagClass }}">text</a>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for cardcatalog in [ 
-				{ 
-					img: "amethyst-1920@2x.jpg", 
-					title: "Изделия из натуральных камней" 
-				}, 
-				{ 
-					img: "thumb_cover_header@2x.jpg",
-					title: "Муранское стекло" 
-				}, 
-				{ 
-					img: "nav-img@2x.jpg", 
-					title: "Предметы интерьера" 
-				} ] %}
-				<div class="col col-33">
-					{{ mixins.cardcatalog({ img: cardcatalog.img, title: cardcatalog.title }) }}
-				</div>
-			{% endfor %}
-		</div>
-		<div class="cardcollection" style="margin-top: 20px;">
-			{{ mixins.cardcollection({ 
-				img: "derek-story-unsplash@2x.jpg", 
-				title: "Коллекция Восточные сказки", 
-				icon: "mixins.icon('arrow-right')"
-			}) }}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col col-50">
+    <div class="inner">
+        <div class="row" style="margin-top: 20px;">
+            {% for slide in [ { img: "art-background-beautiful.png", title: "Уникальные светильники", text: "Наши светильники поразят
+        своим необычным внешним видом и привнесут " }, { img: "sudhith-xavier.png", title: "Ретро-центры", text: "Ретро снова в
+        моде! Не оставайтесь в стороне от уникальной возможности " } ] %}
+                <div class="col col-50">
+                    <!-- begin holiday -->
+                    <div class="holiday">
+                        <div class="holiday__img">
+                            <img src="./img/{{slide.img}}" alt="img">
+                        </div>
+                        <div class="holiday__wrap">
+                            <div class="holiday__title title-sm">{{slide.title}}</div>
+                            <p>{{slide.text}}</p>
+                        </div>
+                    </div>
+                    <!-- end holiday -->
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-100">
+                <div class="tags">
+                    {% for tagClass in[
+                        '',
+                        'orange',
+                        'black',
+                        'red',
+                        'yellow',
+                        'beige',
+                        'purple',
+                        'turquoise',
+                        'green',
+                        'gallery',
+                        'gray'
+                    ] %}
+                        <a href="#" class="tag tag_{{ tagClass }}">text</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            {% for cardcatalog in [ 
+                { 
+                    img: "amethyst-1920@2x.jpg", 
+                    title: "Изделия из натуральных камней" 
+                }, 
+                { 
+                    img: "thumb_cover_header@2x.jpg",
+                    title: "Муранское стекло" 
+                }, 
+                { 
+                    img: "nav-img@2x.jpg", 
+                    title: "Предметы интерьера" 
+                } ] %}
+                <div class="col col-33">
+                    {{ mixins.cardcatalog({ img: cardcatalog.img, title: cardcatalog.title }) }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="cardcollection" style="margin-top: 20px;">
+            {{ mixins.cardcollection({ 
+                img: "derek-story-unsplash@2x.jpg", 
+                title: "Коллекция Восточные сказки", 
+                icon: "mixins.icon('arrow-right')"
+            }) }}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-50">
                 {{ mixins.cardarticle({ 
-					img: "pexels-photo-698171@2x.jpg", 
-					title: "Заголовок статьи, желательно, чтобы это были две–три строчки" 
-				}) }}
+                    img: "pexels-photo-698171@2x.jpg", 
+                    title: "Заголовок статьи, желательно, чтобы это были две–три строчки" 
+                }) }}
             </div>
         </div>
         <div class="block" style="margin-top: 20px;">
@@ -172,19 +172,19 @@
         <div class="row" style="margin-top: 20px;">
             <div class="col col-50">
                 {{ mixins.rating(
-                	[
-    	                {
-    	                	link: true,
-    	                	text: '2 Отзыва'
-    	                },
-    	                {
-    	                	text: '12 просмотров'
-    	                },
-    	                {
-    	                	text: 'Артикул: 45675'
-    	                }
-    	            ]
-            	) }}
+                    [
+                        {
+                            link: true,
+                            text: '2 Отзыва'
+                        },
+                        {
+                            text: '12 просмотров'
+                        },
+                        {
+                            text: 'Артикул: 45675'
+                        }
+                    ]
+                ) }}
             </div>
         </div>
         <div class="row" style="margin-top: 20px;">
@@ -205,10 +205,10 @@
         </div>
         <div class="row" style="margin-top: 20px;">
             {{ mixins.radiotab({ 
-            	title1: "Самовывоз из магазина", 
-            	dscr1: "Бесплатно", 
-            	title2: "Доставка домой или в офис",
-            	dscr2: "от 100 ₽ " 
+                title1: "Самовывоз из магазина", 
+                dscr1: "Бесплатно", 
+                title2: "Доставка домой или в офис",
+                dscr2: "от 100 ₽ " 
             }) }}
         </div>
         <div class="row" style="margin-top: 20px;">
@@ -217,184 +217,194 @@
         <div class="row" style="margin-top: 20px;">
             {{ mixins.newsearch("Город, адрес, название ТЦ") }}
         </div>
-		<div class="row" style="margin-top: 20px;">
-			{{ mixins.likebtn() }}
-		</div>
-		<!-- ******************************* Order ******************************* -->
+        <div class="row" style="margin-top: 20px;">
+            {{ mixins.likebtn() }}
+        </div>
+        <!-- ******************************* Order ******************************* -->
 
-		<div class="title text-center" style="margin-top: 20px;">Order</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for table in [
-				{
-					thTitle1: "Магазин",
-					thTitle2: "Дата самовывоза",
-					listRow: [
-						{
-							tdTitle1: "Континент 2",
-							tdDscpt1: "70 лет Октября,25 к.2 ", 
-							tdTitle2: " Сегодня с 17: 00 ", 
-							tdDscpt2: " пн–вс 10: 00 –21: 00 "
-						},
-						{
-							tdTitle1: "Континент 2",
-							tdDscpt1: "70 лет Октября,25 к.2 ", 
-							tdTitle2: " Сегодня с 17: 00 ", 
-							tdDscpt2: " пн–вс 10: 00 –21: 00 "
-						},
-						{
-							tdTitle1: "Континент 2",
-							tdDscpt1: "70 лет Октября,25 к.2 ", 
-							tdTitle2: " Сегодня с 17: 00 ", 
-							tdDscpt2: " пн–вс 10: 00 –21: 00 "
-						},
-						{
-							tdTitle1: "Континент 2",
-							tdDscpt1: "70 лет Октября,25 к.2 ", 
-							tdTitle2: " Сегодня с 17: 00 ", 
-							tdDscpt2: " пн–вс 10: 00 –21: 00 "
-						},
-						{
-							tdTitle1: "Континент 2",
-							tdDscpt1: "70 лет Октября,25 к.2 ", 
-							tdTitle2: " Сегодня с 17: 00 ", 
-							tdDscpt2: " пн–вс 10: 00 –21: 00 "
-						},
-						{
-							tdTitle1: "Континент 2",
-							tdDscpt1: "70 лет Октября,25 к.2 ", 
-							tdTitle2: " Сегодня с 17: 00 ", 
-							tdDscpt2: " пн–вс 10: 00 –21: 00 "
-						}
-					]
-				}
-			] %}
-				{{ mixins.table({ 
-					thTitle1: table.thTitle1, 
-					thTitle2: table.thTitle2, 
-					listRow: table.listRow
-				}) }}
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for tablepay in[
-				{
-					text: "Наличный расчет при получении в магазине",
-					link: "Подробнее",
-					textBtn: "Выбрать"
-				},
-				{
-					text: "Наличный расчет при получении в магазине",
-					link: "Подробнее",
-					textBtn: "Выбрать"
-				}
-			]%}
-					{{ mixins.tablepay({ 
-				text: tablepay.text, 
-				link: tablepay.link, 
-				textBtn: tablepay.textBtn }) 
-			}}
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			{% for newtablepay in[
-				{
-					text: "Наличный расчет при получении в магазине",
-					link: "Подробнее",
-					textBtn: "Выбрать"
-				},
-				{
-					text: "Наличный расчет при получении в магазине",
-					link: "Подробнее",
-					textBtn: "Выбрать"
-				}
-			]%}
-					{{ mixins.newtablepay({ 
-				text: newtablepay.text, 
-				link: newtablepay.link, 
-				textBtn: newtablepay.textBtn }) 
-			}}
-			{% endfor %}
-		</div>
-		<div class="row">
-			{% for modtablepay in[
-				{
-					text: "Наличный расчет при получении в магазине",
-					link: "Подробнее",
-					textBtn: "Выбрать"
-				},
-				{
-					text: "Наличный расчет при получении в магазине",
-					link: "Подробнее",
-					textBtn: "Выбрать"
-				}
-			]%}
-			{{ mixins.modtablepay({ 
-				text: modtablepay.text, 
-				link: modtablepay.link, 
-				textBtn: modtablepay.textBtn }) 
-			}}
-			{% endfor %}
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col col-100">
-				{{ mixins.price({
-					price: "1000 ₽",
-					text: "Цена для Вас"
-				}) }}
-			</div>
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col col-100">
-				{{ mixins.price({
-			       	class: 'price_old',
-					price: "1000 ₽",
-					text: "Цена для Вас"
-				}) }}
-			</div>
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col col-100">
-				{{ mixins.iconlink('location', 'Розничная цена') }}
-			</div>
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col col-100">
-				{{ mixins.iconlink('share-variant', 'Поделиться с друзьями') }}
-			</div>
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col col-33">
-				{{ mixins.product({
-					action: "true",
-					srcImg: "annie-spratt.jpg",
-					altImg: "annie-spratt",
-					price: "1000 ₽",
-					priceOld: "1400 ₽",
-					nameText: "Наименование товара",
-					textBtn: "В корзину"
-				}) }}
-			</div>	
-		</div>
-		<div class="row" style="margin-top: 20px;">
-			<div class="col col-33" style="margin-top: 20px;">{{order.ordered_shop()}}</div>
-			<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery()}}</div>
-			<div class="col col-33" style="margin-top: 20px;">{{order.basket_ref()}}</div>
-			<div class="col col-33" style="margin-top: 20px;">{{order.basket_1()}}</div>
-			<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(null)}}</div>
-			<div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(type=true)}}</div>
-			<div class="col col-33" style="margin-top: 20px;">{{order.confirmation()}}</div> 
-			<div class="col col-33" style="margin-top: 20px;">{{order.basket_2()}}</div> 
-		</div>
+        <div class="title text-center" style="margin-top: 20px;">Order</div>
+        <div class="row" style="margin-top: 20px;">
+            {% for table in[
+                {
+                    thTitle1: "Магазин",
+                    thTitle2: "Дата самовывоза",
+                    listRow: [
+                        {
+                            tdTitle1: "Континент 2",
+                            tdDscpt1: "70 лет Октября,25 к.2 ",
+                            tdTitle2: " Сегодня с 17: 00 ",
+                            tdDscpt2: " пн–вс 10: 00 –21: 00 "
+                        }, {
+                            tdTitle1: "Континент 2",
+                            tdDscpt1: "70 лет Октября,25 к.2 ",
+                            tdTitle2: " Сегодня с 17: 00 ",
+                            tdDscpt2: " пн–вс 10: 00 –21: 00 "
+                        }, {
+                            tdTitle1: "Континент 2",
+                            tdDscpt1: "70 лет Октября,25 к.2 ",
+                            tdTitle2: " Сегодня с 17: 00 ",
+                            tdDscpt2: " пн–вс 10: 00 –21: 00 "
+                        }, {
+                            tdTitle1: "Континент 2",
+                            tdDscpt1: "70 лет Октября,25 к.2 ",
+                            tdTitle2: " Сегодня с 17: 00 ",
+                            tdDscpt2: " пн–вс 10: 00 –21: 00 "
+                        }, {
+                            tdTitle1: "Континент 2",
+                            tdDscpt1: "70 лет Октября,25 к.2 ",
+                            tdTitle2: " Сегодня с 17: 00 ",
+                            tdDscpt2: " пн–вс 10: 00 –21: 00 "
+                        }, {
+                            tdTitle1: "Континент 2",
+                            tdDscpt1: "70 лет Октября,25 к.2 ",
+                            tdTitle2: " Сегодня с 17: 00 ",
+                            tdDscpt2: " пн–вс 10: 00 –21: 00 "
+                        }
+                    ]
+                }
+            ] %}
+                {{ mixins.table({ 
+                    thTitle1: table.thTitle1, 
+                    thTitle2: table.thTitle2, 
+                    listRow: table.listRow
+                }) }}
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            {% for tablepay in[
+                {
+                    text: "Наличный расчет при получении в магазине",
+                    link: "Подробнее",
+                    textBtn: "Выбрать"
+                },
+                {
+                    text: "Наличный расчет при получении в магазине",
+                    link: "Подробнее",
+                    textBtn: "Выбрать"
+                }
+            ]%}
+                {{ mixins.tablepay({ 
+                text: tablepay.text, 
+                link: tablepay.link, 
+                textBtn: tablepay.textBtn }) 
+            }}
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            {% for newtablepay in[
+                {
+                    text: "Наличный расчет при получении в магазине",
+                    link: "Подробнее",
+                    textBtn: "Выбрать"
+                },
+                {
+                    text: "Наличный расчет при получении в магазине",
+                    link: "Подробнее",
+                    textBtn: "Выбрать"
+                }
+            ]%}
+                {{ mixins.newtablepay({ 
+                text: newtablepay.text, 
+                link: newtablepay.link, 
+                textBtn: newtablepay.textBtn }) 
+            }}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for modtablepay in[
+                {
+                    text: "Наличный расчет при получении в магазине",
+                    link: "Подробнее",
+                    textBtn: "Выбрать"
+                },
+                {
+                    text: "Наличный расчет при получении в магазине",
+                    link: "Подробнее",
+                    textBtn: "Выбрать"
+                }
+            ]%}
+                {{ mixins.modtablepay({ 
+                text: modtablepay.text, 
+                link: modtablepay.link, 
+                textBtn: modtablepay.textBtn }) 
+            }}
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-100">
+                {{ mixins.price({
+                    price: "1000 ₽",
+                    text: "Цена для Вас"
+                }) }}
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-100">
+                {{ mixins.price({
+                       class: 'price_old',
+                    price: "1000 ₽",
+                    text: "Цена для Вас"
+                }) }}
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-100">
+                {{ mixins.iconlink('location', 'Розничная цена') }}
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-100">
+                {{ mixins.iconlink('share-variant', 'Поделиться с друзьями') }}
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-33">
+                {{ mixins.product({
+                    action: "true",
+                    srcImg: "annie-spratt.jpg",
+                    altImg: "annie-spratt",
+                    price: "1000 ₽",
+                    priceOld: "1400 ₽",
+                    nameText: "Наименование товара",
+                    textBtn: "В корзину"
+                }) }}
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col col-33" style="margin-top: 20px;">{{order.ordered_shop()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.self_delivery()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.basket_ref()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.basket_1()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(null)}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.self_delivery_payment(type=true)}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.confirmation()}}</div>
+            <div class="col col-33" style="margin-top: 20px;">{{order.basket_2()}}</div>
+        </div>
 
-		{# ================ CATALOG ==iv>=================== #}
-		<div class="row" style="margin-top: 20px;">
+        {# ================ CATALOG ==iv>=================== #}
+        <div class="row" style="margin-top: 20px;">
             <div class="col-100 col">
-				{% include "partials/catalog/_filter.html" %}
-			</div>
-		</div>
+                {% include "partials/catalog/_filter.html" %}
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-100 col" >
+                <div class="lama" style="background-image: url(img/transition-loader.png); --steps: 37; --sprite_width: -29600px;" data-steps="37"></div>
+            </div>
+        </div>
+        <div class="row bg" style="margin-top: 20px; --bg: red;" >
+            <div class="col col-20">
+                <a href="#" class="btn" data-modal-control="feedback">
+                    <span>Обратная связь</span>
+                </a>
+            </div>
+            <div class="col col-33">
+                <a href="#" class="btn" data-modal-control="feedback-order">
+                    <span>Обратная связь(с номером заказа)</span>
+                </a>
+            </div>
+        </div>
 
-	</div>
+    </div>
 
-
-		
 {% endblock %}

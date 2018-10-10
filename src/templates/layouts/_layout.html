@@ -18,8 +18,8 @@
 
     <!-- BEGIN content -->
     <div class="out">
+      {% if user %}{{ header.block(true, true) }}{% else %}{{ header.block() }}{% endif %}
       
-      {{ header.block() }}
       {% block content %}{% endblock %}
       {% include "partials/_footer.html" %}
       {% include "partials/main/_modals.html" %}

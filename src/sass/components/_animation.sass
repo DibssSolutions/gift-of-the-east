@@ -1,3 +1,4 @@
+
 [data-stagger-show]
 	opacity: 0
 	visibility: hidden
@@ -86,5 +87,19 @@
 @keyframes textAnimation
 	0% 
 		transform: translateX(-100%)
-	100% 
+	100%
 		transform: translateX(100%)
+
+.lama
+	display: inline-block
+	height: 376px
+	width: 800px
+	background-position: right 0
+	animation: hello 2s steps(var(--steps)) 2s both
+	background-color: $red
+
+@keyframes hello
+	from 
+		background-position: 0 0
+	to 
+		background-position: var(--sprite_width) 0

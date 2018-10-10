@@ -1,0 +1,59 @@
+---
+title: personal-account-club-card
+user: true
+basketItems: true
+---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="inner">
+		{{ mixins.breadcrumbs({
+			list: ['Назад','Главная','Корзина']
+		}) }}
+		<div class="cabinet">
+			{{ mixins.theadsimple({ title: 'Добро пожаловать в ваш профиль, Анна' }) }}
+			<div class="cabinet__row row">
+				<div class="cabinet__col col col-25 col-md-100">
+					<!-- begin sidebar -->
+					<div class="sidebar sidebar_cabinet js-nav-links">
+						<div class="sidebar sidebar_cabinet js-nav-links">
+							{{ mixins.cabinetList({ active: 6, currentText: "Клубная карта" }) }}
+						</div>
+					</div>
+					<!-- end sidebar -->
+				</div>
+				<div class="cabinet__col col col-75 col-md-100">
+					<h3 class="title-simple cabinet__title">Клубная карта</h3>
+					<div class="cabinet__club-card club-card">
+						<div class="club-card__wrap row">
+							<div class="club-card__col col">
+								<div class="club-card__img" style="background-image: url(./img/creditcard.jpg);">
+								</div>
+							</div>
+							<div class="club-card__col col">
+								{# <div class="club-card__cont"> #}
+									<h5 class="club-card__cont-title">
+										Карта члена клуба
+									</h5>
+									<div class="club-card__cont-text">
+										<p>
+											Заполните данные о себе, чтобы бесплатно получить карту 
+											члена клуба. Наши держатели карт получают возможность
+										</p>
+									</div>
+									<div class="club-card__btn">
+										<a href="#" class="btn btn_md btn_bord" data-modal-control="questionnaire">
+											<span class="btn__text">Получить карту</span>
+										</a>
+									</div>
+								{# </div> #}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
