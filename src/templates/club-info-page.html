@@ -58,19 +58,23 @@
         {{ mixins.breadcrumbs({
             list: ['Назад','Главная','Клуб Дары Востока']
         }) }}
-        <div class="row js-sticky-container">
+        <div class="row info-container js-sticky-container">
             <div class="col col-66 col-md-100">
-                {{ mixins.theadsimple({ title: 'Добро пожаловать в клуб Дары востока' }) }}
+                {{ mixins.theadsimple({ title: 'Добро пожаловать в клуб Дары востока', modifier: 'club' }) }}
                 <div class="company-descr" id="about">
                     <div class="company-descr__illustration" style="background-image: url(./img/stroke.svg);">
                         <span class="company-descr__image" style="background-image: url(./img/company_descr.png);"></span>
                     </div>
-                    <div class="company-descr__text">Данный текст будет кратким описанием особенностей и преимуществ клуба «Дары Востока» со слов Ольги Туркиной. Описание должно занимать не более трех строк текста и содержать ключевые моменты, которые зацепят пользователя и останутся в его памяти.
+                    <div class="company-descr__text">
+                        <div class="company-descr__content">
+                            Данный текст будет кратким описанием особенностей и преимуществ клуба «Дары Востока» со слов Ольги Туркиной. Описание должно занимать не более трех строк текста и содержать ключевые моменты, которые зацепят пользователя и останутся в его памяти.
+                        </div>
+                        <div class="company-descr__author">
+                            <h5>Ольга Туркина</h5>
+                            <p>Управляющая развитием розничного направления ООО «Дары Востока»</p>
+                        </div>
                     </div>
-                    <div class="company-descr__author">
-                        <h5>Ольга Туркина</h5>
-                        <p>Управляющая развитием розничного направления ООО «Дары Востока»</p>
-                    </div>
+
                 </div>
                 {% for article in [
                     {

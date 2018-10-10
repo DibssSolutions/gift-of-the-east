@@ -40,7 +40,6 @@ import {OPEN, ACTIVE, BODY, OVERFLOW_HIDDEN} from './../constants';
       hide();
     });
   });
-
 })();
 // ----------------------  HTML EXEMPLE ---------------------
 // <a href="#" data-modal-control="modalname"></a> ---- trigger

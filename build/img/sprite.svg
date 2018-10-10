@@ -12,6 +12,10 @@
         </style>
     
         <style>
+            .cls-1{fill:#c8a480}
+        </style>
+    
+        <style>
             .cls-1{fill:silver}
         </style>
     
@@ -91,6 +95,9 @@
 </symbol><symbol id="icon-facebook" viewBox="0 0 9 18">
     
     <path class="a" d="M9 0v3.6H7.2c-.621 0-.9.729-.9 1.35V7.2H9v3.6H6.3V18H2.7v-7.2H0V7.2h2.7V3.6A3.6 3.6 0 0 1 6.3 0z"/>
+</symbol><symbol id="icon-file-download-outline" viewBox="0 0 16 20">
+    
+    <path id="file-download-outline" class="cls-1" d="M14 2l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8m4 18V9h-5V4H6v16h12m-6-1l-4-4h2.5v-3h3v3H16z" transform="translate(-4 -2)"/>
 </symbol><symbol id="icon-format-list-bulleted" viewBox="0 0 14.8 12">
     
     <path id="format-list-bulleted" class="cls-1" d="M6.1 4.9h11.2v1.6H6.1V4.9m0 6.4V9.7h11.2v1.6H6.1M3.7 4.5a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2m0 4.8a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2m2.4 6.8v-1.6h11.2v1.6H6.1m-2.4-2a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2z" transform="translate(-2.5 -4.5)"/>

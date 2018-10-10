@@ -8,7 +8,7 @@ $(document).ready(function() {
     var sidebar = new StickySidebar(sticky, {
       containerSelector: '.js-sticky-container',
       innerWrapperSelector: '.sidebar',
-      topSpacing: 40,
+      topSpacing: 20,
       bottomSpacing: 40
     });
   }
