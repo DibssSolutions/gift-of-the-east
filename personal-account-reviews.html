@@ -815,7 +815,7 @@
             <span class="modal__hint questionnaire__hint">*поля обязательные для заполнения</span>
             <div class="questionnaire__top">
               <div class="row">
-                <div class="col col-42">
+                <div class="col col-42 col-md-100">
                   <div class="form-control questionnaire__form-control js-form-control">
                     <label for="" class="input-label questionnaire__input-label">Фамилия*</label>
                     <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
@@ -833,7 +833,7 @@
                     <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
                   </div>
                 </div>
-                <div class="col col-58">
+                <div class="col col-58 col-md-100">
                   <div class="questionnaire__radio">
                     <div class="form-radio-group">
                       <div class="form-radio-label">Пол</div>
@@ -871,11 +871,11 @@
                     <div class="form-radio-group">
                       <div class="form-radio-label">Есть дети до 18 лет</div>
                       <label class="radio">
-                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                        <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
                         <span class="radio__text">Да</span>
                       </label>
                       <label class="radio">
-                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                        <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
                         <span class="radio__text">Нет</span>
                       </label>
                     </div>
@@ -883,44 +883,62 @@
                 </div>
               </div>
             </div>
-            <div class="form-checkbox">
-              <label class="checkbox">
-                <input type="checkbox" data-validation="required">
-                <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-                </span>
-                <span class="checkbox__icon">
-                  <svg class="icon icon-check">
-                    <use xlink:href="img/sprite.svg#icon-check"></use>
-                  </svg>
-                </span>
-              </label>
+            <div class="dashed-separator"></div>
+            <div class="questionnaire__bottom">
+              <div class="row">
+                <div class="col col-42 col-md-100">
+                  <div class="form-control questionnaire__form-control">
+                    <label for="" class="input-label questionnaire__input-label">Почтовый индекс</label>
+                    <input type="text" class="input" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">Контактный телефон*</label>
+                    <input class="input" type="text" data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder="">
+                  </div>
+                  <div class="form-control questionnaire__form-control js-form-control">
+                    <label for="" class="input-label questionnaire__input-label">email*</label>
+                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                </div>
+                <div class="col col-58 col-md-100">
+                  <div class="form-control questionnaire__form-control">
+                    <label for="" class="input-label questionnaire__input-label">Населенный пункт</label>
+                    <input type="text" class="input" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control questionnaire__form-control questionnaire__form-control_textarea">
+                    <label for="" class="input-label questionnaire__input-label">Мне наиболее интересны темы:</label>
+                    <textarea type="text" class="input input_textarea" data-validation-event="keyup change"></textarea>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-control">
-              <button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
+            <div class="questionnaire__checkbox">
+              <div class="form-checkbox">
+                <label class="checkbox">
+                  <input type="checkbox">
+                  <span class="checkbox__text">Получать новости об акциях, скидках и спецпредложениях</span>
+                  <span class="checkbox__icon">
+                    <svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg>
+                  </span>
+                </label>
+              </div>
+              <div class="form-checkbox">
+                <label class="checkbox">
+                  <input type="checkbox" data-validation="required">
+                  <span class="checkbox__text">Настоящим, я даю свое согласие на обработку и хранение моих персональных данных</span>
+                  <span class="checkbox__icon">
+                    <svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg>
+                  </span>
+                </label>
+              </div>
             </div>
-            <div class="form-social social">
-              <a href="#" class="social__link social__link_vk">
-                <svg class="icon icon-vk">
-                  <use xlink:href="img/sprite.svg#icon-vk"></use>
-                </svg>
-              </a>
-              <a href="#" class="social__link social__link_facebook">
-                <svg class="icon icon-facebook">
-                  <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                </svg>
-              </a>
-              <a href="#" class="social__link social__link_odnoklassniki">
-                <svg class="icon icon-odnoklassniki">
-                  <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                </svg>
-              </a>
-              <a href="#" class="social__link social__link_google-plus">
-                <svg class="icon icon-google-plus">
-                  <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                </svg>
-              </a>
+            <div class="questionnaire__submit">
+              <button class="btn disabled" type="submit" disabled="disabled">ПОЛУЧИТЬ КАРТУ</button>
             </div>
-            <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
           </form>
         </div>
       </div>
