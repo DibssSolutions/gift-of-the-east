@@ -35,7 +35,6 @@ import {OPEN, ACTIVE, BODY} from './../constants';
       hide();
     });
   });
-
 })();
 // ----------------------  HTML EXEMPLE ---------------------
 // <a href="#" data-modal-control="modalname"></a> ---- trigger
