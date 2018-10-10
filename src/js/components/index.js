@@ -1,7 +1,7 @@
 import './_three-dots';
 import './_slider';
 import './_interior';
-import './_modal';
+// import './_modal';
 import './_initScrollbar';
 import './_map';
 import './_show-password';
@@ -20,4 +20,5 @@ import './_nav-links';
 import './_file';
 import './_initMenuSpy';
 import './_initSticky';
+import './_accordion';
 // import "./_startingAnimation";

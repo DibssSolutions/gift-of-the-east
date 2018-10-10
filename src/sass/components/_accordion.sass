@@ -1,0 +1,44 @@
+.accordion
+	background-color: $white 
+	&__topic
+		position: relative
+		padding: 12px 250px 16px 0
+		+f(20px, 400, 1.5)
+		cursor: pointer
+		user-select: none
+		border-bottom: 1px solid rgba($silver, 0.5)
+		transition: color .3s 
+		.is-open & 
+			color: $lightBrown
+		+lg
+			font-size: 18px
+			padding: 10px 160px 10px 0
+		+sm
+			padding: 5px 44px 5px 0
+			font-size: 15px
+		.icon
+			position: absolute
+			top: 50%
+			right: 25px
+			margin-top: -5px
+			font-size: 10px
+			transition: transform .3s ease-in-out
+			color: $silver
+			+sm
+				right: 15px
+				font-size: 8px
+			.accordion.is-open &
+				+rotate(180)
+	&__wrap
+		padding: 13px 0 20px
+		+f(17px, 400, 1.5882)
+		display: none
+		border-bottom: 1px solid rgba($silver, 0.5)
+		p:not(:last-child) 
+			margin-bottom: 0.75em
+		+lg
+			font-size: 15px
+			padding: 10px 0
+		// +sm
+		// 	padding: 0 15px 16px 19px
+		// 	line-height: 1.33

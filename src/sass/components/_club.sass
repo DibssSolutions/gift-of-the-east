@@ -1,7 +1,7 @@
 .info-list
     padding: 16px 16px 0
     &__item
-        padding: 9px 0 8px
+        padding: 6px 0 7px
         display: block
         &.current-item 
             background-color: $silver
@@ -14,17 +14,34 @@
         
 
 .info-article
-    margin-bottom: 80px
+    &__title
+        margin-bottom: 40px
+        .info-article_delivery &
+            margin-bottom: 27px
+        .info-article_faq &
+            margin-bottom: 25px
+    .title-simple:not(:last-child)
+        margin-bottom: 17px
     &__image 
         padding-bottom: 480px
         background-color: $gallery
         +cover
+        margin-bottom: 10px
     &__content
         +f(17px, 400, 1.589)
-        p 
+        p:not(:last-child) 
             margin-bottom: 24px
+    &__section 
+        margin-bottom: 80px
+        &_addon
+            margin-top: -43px
     figcaption
         color: $gray
+        +f(14px, 400, 1.42857)
+    &__search
+        margin-bottom: 40px
+    &__accordions
+        border-top: 1px solid rgba($silver, 0.5)
 
 .company-descr
     +clr

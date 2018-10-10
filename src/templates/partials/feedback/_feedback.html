@@ -17,7 +17,7 @@
 
     {% set selects = ["Товары, акции, скидки", "Техническая поддержка", "Доставка и самовывоз заказа", "Возврат товара", "Другое"] %}
 
-    <div class="modal" data-modal="{{props.modal}}">
+    <div class="modal {% if props.open %} is-open{% endif %}" data-modal="{{props.modal}}">
         <div class="modal__feedback" data-modal-container="data-modal-container">
             <button class="modal__off" type="button" data-modal-close="data-modal-close">{{ mixins.icon('close') }}</button>
             <form action="/" class="modal__form feedback">

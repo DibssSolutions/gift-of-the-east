@@ -975,7 +975,7 @@
 {% endmacro %}
 
 {% macro infoArticle(props) %}
-	<article class="info-article" {% if props.id %}id="{{props.id}}"{% endif %}>
+	<article class="info-article{% if props.modifier %} info-article_{{props.modifier}}{% endif %}" {% if props.id %}id="{{props.id}}"{% endif %}>
 		{% if props.articleTitle %}
 			<h2 class="title info-article__title">
 				{{props.articleTitle}}
@@ -983,7 +983,7 @@
 		{% endif %}
 		<div class="info-article__content">
 			{% for section in props.sections %}
-				<section>
+				<section class="info-article__section{% if section.modifier %} info-article__section_{{section.modifier}}{% endif %}">
 					{% if props.articleTitle %}
 						<h3 class="title-simple info-article__subtitle">
 							{{section.sectionTitle}}
