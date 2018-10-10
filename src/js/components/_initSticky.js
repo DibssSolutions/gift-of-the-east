@@ -1,4 +1,4 @@
-import 'sticky-sidebar';
+import '../lib/sticky-sidebar.js';
 
 $(document).ready(function() {
 
