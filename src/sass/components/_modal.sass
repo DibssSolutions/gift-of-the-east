@@ -7,6 +7,7 @@
 	bottom: 0
 	opacity: 0
 	visibility: hidden
+	min-width: 320px
 	+vertical
 	+gpu
 	overflow: auto
@@ -120,17 +121,17 @@
 		flex-shrink: 0
 	&__radio
 		padding-top: 12px
-		.form-radio-label
-			+sm
-				display: block
-				margin: 0 0 16px
-			&:not(:last-child)
-				margin-right: 30px
-		.form-radio-group
-			&:not(:first-child)
-				margin-top: 40px
-				+xs
-					margin-top: 16px
+		// .form-radio-label
+		// 	+sm
+		// 		display: block
+		// 		margin: 0 0 16px
+		// 	&:not(:last-child)
+		// 		margin-right: 30px
+		// .form-radio-group
+		// 	&:not(:first-child)
+		// 		margin-top: 40px
+		// 		+xs
+		// 			margin-top: 16px
 	&__checkbox
 		margin: 40px 0
 	&__submit
@@ -153,7 +154,7 @@
 				margin-top: 5px
 .dashed-separator
 	margin: 24px -52px
-	background-image: url("data:image/svg+xml;utf8,<svg viewbox='0 0 1 50' width='100%' height='1px' xmlns='http://www.w3.org/2000/svg'><line x1='0' y1='1' x2='100%' y2='1' stroke='black' stroke-dasharray='4 8'/></svg>")
+	background-image: url("data:image/svg+xml;utf8,<svg viewbox='0 0 1 50' width='100%' height='1px' xmlns='http://www.w3.org/2000/svg'><line x1='0' y1='1' x2='100%' y2='1' stroke='#C0C0C0' stroke-dasharray='4 8'/></svg>")
 	background-repeat: no-repeat
 	background-position: center
 	height: 1px
