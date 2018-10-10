@@ -18,6 +18,31 @@
 				margin-bottom: 0
 	&_sm
 		+f(14px,400,1.428)
+	&_horizontal
+		display: flex
+		position: relative
+		+hover
+			.like
+				opacity: 1
+				visibility: visible
+		+sm
+			flex-direction: column
+		.like
+			// margin: 24px 24px 0 35px
+			opacity: 0
+			visibility: hidden
+			transition: opacity .3s, visibility .3s
+			position: absolute
+			top: 24px
+			right: 24px
+			+sm
+				top: 16px
+				right: 0
+		.article__img
+			max-width: 384px
+			width: 100%
+			+sm
+				max-width: none
 	&__img
 		font-size: 0
 		img
@@ -31,6 +56,11 @@
 			padding: 16px 9px 24px 15px
 			+sm
 				padding: 16px 0
+		.article_horizontal &
+			padding: 16px 115px 21px 32px
+			position: relative
+			+md
+				padding-right: 46px
 	&__head
 		width: 100%
 		display: table

@@ -4,7 +4,7 @@
 
 {% macro articleSmall(props) %}
 <!-- begin article -->
-<div class="article article_sm">
+<div class="article article_sm{% if props.horizontal %} article_horizontal{% endif %}">
 	<div class="article__img">
 		<img src="./img/{{ props.img }}" alt="img">
 	</div>
@@ -16,6 +16,9 @@
 		</div>
 		<a href="#" class="article__title-md {{ props.class or 'title-md'}}">{{ props.title }}</a>
 		<div class="article__text">{{ props.text }}</div>
+		{% if props.like %}
+			{{ like("like_bg", true) }}
+		{% endif %}
 	</div>
 </div>
 <!-- end article -->
@@ -147,10 +150,10 @@
 <!-- end basketlist -->
 {% endmacro %}
 
-{% macro like(class) %}
+{% macro like(class, checked) %}
 <!-- begin like -->
 <label class="like{% if class %} {{ class }}{% endif %}">
-	<input type="checkbox">
+	<input type="checkbox" {% if checked %}checked{% endif %}>
 	<svg class="icon icon-heart-outline"><use xlink:href="img/sprite.svg#icon-heart-outline"></use></svg>
 	<svg class="icon icon-heart"><use xlink:href="img/sprite.svg#icon-heart"></use></svg>
 	<span class="like__lines"></span>

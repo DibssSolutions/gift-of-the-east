@@ -1,0 +1,135 @@
+---
+title: personal-account-club-card
+user: true
+basketItems: true
+---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="inner">
+		{{ mixins.breadcrumbs({
+			list: ['Назад','Главная','Корзина']
+		}) }}
+		<div class="cabinet">
+			{{ mixins.theadsimple({ title: 'Добро пожаловать в ваш профиль, Анна' }) }}
+			<div class="cabinet__row row">
+				<div class="cabinet__col col col-25 col-md-100">
+					<!-- begin sidebar -->
+					<div class="sidebar sidebar_cabinet js-nav-links">
+						<div class="sidebar sidebar_cabinet js-nav-links">
+							{{ mixins.cabinetList({ active: 5, currentText: "Избранное" }) }}
+						</div>
+					</div>
+					<!-- end sidebar -->
+				</div>
+				<div class="cabinet__col col col-75 col-md-100">
+					<h3 class="title-simple cabinet__title">Избранное</h3>
+					<div class="cabinet__favorites">
+						<div class="tabs tabs_shopping" data-tabs="data-tabs">
+							<div class="tabs__out">
+								<div class="tabs__current" data-tabs-current="data-tabs-current">
+									<span></span></div>
+								<ul class="tabs__list inner">
+									{% for item in [
+											{
+												id: 'favorite-goods',
+												text: 'Товары',
+												quantity: '4'
+											},
+											{
+												id: 'favorite-articles',
+												text: 'Статьи',
+												quantity: '3'
+											}
+											] %}
+										<li class="tabs__item" data-tabs-control="{{ item.id }}">
+											{{ item.text }}
+											{% if item.quantity %}
+												<span class="tabs__quantity">{{ item.quantity }}</span>{% endif %}
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+							<div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+								<div class="tabs__container" data-tabs-container="favorite-goods">
+									<div class="tabs__inner">
+										<div class="row row_psm">
+											{% for item in range(0,4) %}
+												<div class="col col_psm col-25 col-md-33 col-sm-50 col-xs-100">
+													{{ mixins.product({
+														action: "true",
+														srcImg: "annie-spratt.jpg",
+														altImg: "annie-spratt",
+														price: "1000 ₽",
+														priceOld: "1400 ₽",
+														nameText: "Наименование товара",
+														textBtn: "В корзину"
+													}) }}
+												</div>
+											{% endfor %}
+										</div>
+
+									</div>
+								</div>
+								<div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+									<div class="tabs__container" data-tabs-container="favorite-articles">
+										{% for article in [
+											{
+												img: "businesswoman-call-career-789822@2x.png",
+												tags: [
+													{
+														text: 'РАБОТА'
+													}
+												],
+												title: "Заголовок статьи, желательно, чтобы это были две–три строчки",
+												text: "Здесь будет две строчки текста, который является подзаголовком к статье...",
+												horizontal: true,
+												like: true
+											},
+											{
+												img: "rodolfo-sanches-carvalho-1.jpg",
+												tags: [
+													{
+														class: 'tag_green',
+														text: 'РЕЦЕПТЫ'
+													}
+												],
+												title: "Заголовок статьи, желательно, чтобы это были две–три строчки",
+												text: "Здесь будет две строчки текста, который является подзаголовком к статье...",
+												horizontal: true,
+												like: true
+											},
+											{
+												img: "rodolfo-sanches-carvalho-1.jpg",
+												tags: [
+													{
+														class: 'tag_red',
+														text: 'ПОДАРКИ НА СВАДЬБУ'
+													}
+												],
+												title: "Заголовок статьи, желательно, чтобы это были две–три строчки",
+												text: "Здесь будет две строчки текста, который является подзаголовком к статье...",
+												horizontal: true,
+												like: true
+											}
+										] %}
+										{{ mixins.articleSmall({
+											img: article.img,
+											tags: article.tags,
+											title: article.title,
+											text: article.text,
+											horizontal: article.horizontal,
+											like: article.like
+										}) }}
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+{% endblock %}
+
