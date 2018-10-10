@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Template</title>
+    <title>personal-account-club-card</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
@@ -36,14 +36,12 @@
             <div class="header__cabin">
               <!-- begin signin -->
               <div class="signin js-profile-wrapper" data-dd-wrapper="data-dd-wrapper">
-                <a href="#" class="signin__item" data-modal-control="login">
+                <a href="#" class="signin__item js-profile-trigger" data-dd-trigger="data-dd-trigger">
                   <svg class="icon icon-account">
                     <use xlink:href="img/sprite.svg#icon-account"></use>
                   </svg>
-                  <span>Войти</span></a>
-                <span class="signin__slash">/</span>
-                <a href="#" class="signin__item" data-modal-control="registration">
-                  <span>Регистрация</span></a>
+                  <span>Профиль</span>
+                </a>
                 <div class="signin__drop js-profile-content">
                   <div class="signin__head">Добро пожаловать, Анна</div>
                   <ul class="signin__list">
@@ -83,7 +81,7 @@
                   <svg class="icon icon-shopping-bag">
                     <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
                   </svg>
-                  <span>Корзина</span>
+                  <span>1 товар – 1000 ₽</span>
                 </a>
                 <div class="basket__drop">
                   <div class="basket__head">Корзина (1)</div>
@@ -380,441 +378,85 @@
             <a href="#">Главная</a>
           </li>
           <li class="breadcrumbs__item">
-            <a href="#">Журнал</a>
-          </li>
-          <li class="breadcrumbs__item">
-            <span>Заголовок статьи, желательно, чтобы это были две или одна строчки</span>
+            <span>Корзина</span>
           </li>
         </ul>
         <!-- end breadcrumbs -->
-        <div class="magazine-article">
-          <div class="magazine-top">
-            <div class="magazine-top__tags tags">
-              <a href="#" class="tag tag_orange">ДОБРОЕ УТРО</a>
-              <a href="#" class="tag tag_green">РЕЦЕПТЫ</a>
-            </div>
-            <h1 class="magazine-top__title title text-center">Заголовок статьи, желательно, чтобы это были две или одна строчки</h1>
-            <div class="magazine-top__details">
-              <div class="magazine-top__date magazine-top__item">
-                <svg class="icon icon-calendar-clock">
-                  <use xlink:href="img/sprite.svg#icon-calendar-clock"></use>
-                </svg>
-                <span class="article-date"> 22 МАЯ, 16:50 </span>
-              </div>
-              <div class="magazine-top__comments magazine-top__item">
-                <svg class="icon icon-comment-text-outline">
-                  <use xlink:href="img/sprite.svg#icon-comment-text-outline"></use>
-                </svg>
-                <span class="article-date"> 3 </span>
-              </div>
-              <div class="magazine-top__views magazine-top__item">
-                <svg class="icon icon-eye-outline">
-                  <use xlink:href="img/sprite.svg#icon-eye-outline"></use>
-                </svg>
-                <span class="article-date"> 145 </span>
-              </div>
-              <div class="magazine-top__likes magazine-top__item">
-                <svg class="icon icon-heart-outline">
-                  <use xlink:href="img/sprite.svg#icon-heart-outline"></use>
-                </svg>
-                <span class="article-date"> 124 </span>
-              </div>
-            </div>
-            <div class="magazine-top__text text-center"> Здесь будет текст, который служит подзаголовком к статье, желательно, чтобы это были две–три строчки, как выжимка из последующих слов в статье </div>
-            <div class="magazine-top__social">
-              <div class="social text-center">
-                <a href="#" class="social__link social__link_email">
-                  <svg class="icon icon-email">
-                    <use xlink:href="img/sprite.svg#icon-email"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_vk">
-                  <svg class="icon icon-vk">
-                    <use xlink:href="img/sprite.svg#icon-vk"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_facebook">
-                  <svg class="icon icon-facebook">
-                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_odnoklassniki">
-                  <svg class="icon icon-odnoklassniki">
-                    <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_twitter">
-                  <svg class="icon icon-twitter">
-                    <use xlink:href="img/sprite.svg#icon-twitter"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_google-plus">
-                  <svg class="icon icon-google-plus">
-                    <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_mail-ru">
-                  <svg class="icon icon-mail-ru">
-                    <use xlink:href="img/sprite.svg#icon-mail-ru"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
+        <div class="cabinet">
+          <!-- begin baskethead -->
+          <div class="headsimple">
+            <h2 class="headsimple__title title">Добро пожаловать в ваш профиль, Анна</h2>
           </div>
-          <div class="magazine-img text-center">
-            <img src="./img/penchant-styled-542047-unsplash.jpg" alt="img">
-            <span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
-          </div>
-          <div class="magazine-paragraph">
-            <h2 class="title-simple"> Подзаголовок внутри статьи из нескольких слов </h2>
-            <p> Но высококачественный прототип будущего проекта требует определения и уточнения анализа существующих паттернов поведения. В рамках спецификации современных стандартов, сделанные на базе интернет-аналитики выводы лишь добавляют
-              фракционных разногласий и указаны как претенденты на роль ключевых факторов. И нет сомнений, что сторонники тоталитаризма в науке могут быть превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. </p>
-          </div>
-          <div class="magazine-photos">
-            <div class="row magazine-photos__row">
-              <div class="col col-42 col-md-100 magazine-photos__col">
-                <div class="magazine-img">
-                  <img src="./img/organic-bowl-2262914_1920.jpg" alt="img">
-                  <span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
-                </div>
-              </div>
-              <div class="col col-50 col-md-100 magazine-photos__col magazine-photos__col_right">
-                <div class="magazine-img">
-                  <img src="./img/freestocks-org-596380-unsplash.jpg" alt="img">
-                  <span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="magazine-paragraph">
-            <h2 class="title-simple"> Подзаголовок внутри статьи из нескольких слов </h2>
-            <p> Но высококачественный прототип будущего проекта требует определения и уточнения анализа существующих паттернов поведения. В рамках спецификации современных стандартов, сделанные на базе интернет-аналитики выводы лишь добавляют
-              фракционных разногласий и указаны как претенденты на роль ключевых факторов. И нет сомнений, что сторонники тоталитаризма в науке могут быть превращены в посмешище, хотя само их существование приносит несомненную пользу обществу. </p>
-          </div>
-          <div class="magazine-slider js-magazine-slider-parent">
-            <div class="magazine-slider__wrap">
-              <button class="magazine-slider__prev js-magazine-slider-prev">
-                <svg class="icon icon-arrow-left">
-                  <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
-                </svg>
-              </button>
-              <button class="magazine-slider__next js-magazine-slider-next">
-                <svg class="icon icon-arrow-right">
-                  <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-                </svg>
-              </button>
-              <div class="magazine-slider__inner js-magazine-slider">
-                <div class="magazine-slider__slide">
-                  <div class="magazine-img">
-                    <img src="./img/food-2203732_1920.jpg" alt="img">
-                    <span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
+          <!-- end baskethead -->
+          <div class="cabinet__row row">
+            <div class="cabinet__col col col-25 col-md-100">
+              <!-- begin sidebar -->
+              <div class="sidebar sidebar_cabinet js-nav-links">
+                <div class="sidebar sidebar_cabinet js-nav-links">
+                  <!-- begin cabinet-list -->
+                  <div class="cabinet-list">
+                    <div class="js-nav-links-current cabinet-list__toggler">
+                      <div class="cabinet-list__item">
+                        <span class="cabinet-list__link"> Клубная карта </span>
+                      </div>
+                    </div>
+                    <ul class="cabinet-list__nav">
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Личные данные</a>
+                      </li>
+                      <li class="cabinet-list__item has-info">
+                        <a href="#" class="cabinet-list__link">Сообщения<span class="cabinet-list__quantity">3</span></a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">История покупок</a>
+                      </li>
+                      <li class="cabinet-list__item has-info">
+                        <a href="#" class="cabinet-list__link">Персональные предложения</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Избранное</a>
+                      </li>
+                      <li class="cabinet-list__item is-active">
+                        <a href="#" class="cabinet-list__link">Клубная карта</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Пригласить друзей</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Выйти</a>
+                      </li>
+                    </ul>
                   </div>
+                  <!-- end cabinet-list -->
                 </div>
-                <div class="magazine-slider__slide">
-                  <div class="magazine-img">
-                    <img src="./img/food-2203732_1920.jpg" alt="img">
-                    <span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
+              </div>
+              <!-- end sidebar -->
+            </div>
+            <div class="cabinet__col col col-75 col-md-100">
+              <h3 class="title-simple cabinet__title">Клубная карта</h3>
+              <div class="cabinet__club-card club-card">
+                <div class="club-card__wrap row">
+                  <div class="club-card__col col">
+                    <div class="club-card__img" style="background-image: url(./img/creditcard.jpg);">
+                    </div>
                   </div>
-                </div>
-                <div class="magazine-slider__slide">
-                  <div class="magazine-img">
-                    <img src="./img/food-2203732_1920.jpg" alt="img">
-                    <span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="magazine-paragraph">
-            <h2 class="title-simple"> Подзаголовок внутри статьи из нескольких слов </h2>
-            <p> Лишь независимые государства, превозмогая сложившуюся непростую экономическую ситуацию, преданы социально-демократической анафеме. Равным образом, реализация намеченных плановых заданий создает необходимость включения в
-              производственный план целого ряда внеочередных мероприятий с учетом комплекса распределения внутренних резервов и ресурсов. Банальные, но неопровержимые выводы, а также сделанные на базе интернет-аналитики выводы являются только
-              методом политического участия и рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Современные технологии достигли такого уровня, что сложившаяся структура организации создает необходимость включения в
-              производственный план целого ряда внеочередных мероприятий с учетом комплекса вывода текущих активов. </p>
-            <p> Безусловно, семантический разбор внешних противодействий предполагает независимые способы реализации вывода текущих активов. Значимость этих проблем настолько очевидна, что консультация с широким активом способствует повышению
-              качества соответствующих условий активизации. Противоположная точка зрения подразумевает, что диаграммы связей ограничены исключительно образом мышления. Как принято считать, тщательные исследования конкурентов смешаны с неуникальными
-              данными до степени совершенной неузнаваемости, из-за чего возрастает их статус бесполезности. </p>
-          </div>
-        </div>
-      </div>
-      <div class="inner-sm">
-        <div class="magazine-img">
-          <img src="./img/deborah-diem-541104-unsplash.jpg" alt="img">
-          <span class="magazine-img__text">Здесь возможен какой-то короткий текст пояснение</span>
-        </div>
-        <div class="magazine-bottom">
-          <div class="magazine-bottom__left">
-            <div class="tags">
-              <a href="#" class="tag tag_orange">ДОБРОЕ УТРО</a>
-              <a href="#" class="tag tag_green">РЕЦЕПТЫ</a>
-            </div>
-          </div>
-          <div class="magazine-bottom__right">
-            <span class="article-date"> 22 МАЯ, 16:50 </span>
-            <span class="article-author">
-              <span class="article-author__title">Автор статьи</span> Надежда Поперечная </span>
-          </div>
-        </div>
-      </div>
-      <div class="magazine-footer">
-        <div class="inner-sm">
-          <div class="row magazine-footer__row">
-            <div class="col col-40 col-md-100 magazine-footer__col">
-              <div class="magazine-footer__title"> РАССКАЗАТЬ ДРУЗЬЯМ </div>
-              <div class="social">
-                <a href="#" class="social__link social__link_sm social__link_email">
-                  <svg class="icon icon-email">
-                    <use xlink:href="img/sprite.svg#icon-email"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_sm social__link_vk">
-                  <svg class="icon icon-vk">
-                    <use xlink:href="img/sprite.svg#icon-vk"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_sm social__link_facebook">
-                  <svg class="icon icon-facebook">
-                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_sm social__link_odnoklassniki">
-                  <svg class="icon icon-odnoklassniki">
-                    <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_sm social__link_twitter">
-                  <svg class="icon icon-twitter">
-                    <use xlink:href="img/sprite.svg#icon-twitter"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_sm social__link_google-plus">
-                  <svg class="icon icon-google-plus">
-                    <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_sm social__link_mail-ru">
-                  <svg class="icon icon-mail-ru">
-                    <use xlink:href="img/sprite.svg#icon-mail-ru"></use>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            <div class="col col-30 col-md-100 magazine-footer__col">
-              <div class="magazine-footer__title"> ОЦЕНИТЬ СТАТЬЮ </div>
-              <!-- Start rating -->
-              <div class="rating-stars rating-stars_xl">
-                <div class="rating-stars__input">
-                  <input type="hidden" id="stars" class="rating-stars__input rating js-rating" value="3.6" data-fractions="10" />
-                </div>
-                <span class="rating-stars__value"> 3.6 </span>
-              </div>
-              <!-- End rating -->
-              <div class="magazine-footer__votes"> 4 голоса </div>
-            </div>
-            <div class="col col-30 col-md-100 magazine-footer__col">
-              <div class="magazine-footer__btn">
-                <a href="#" class="btn btn_w-md btn_bord btn_bord-silver">
-                  <svg class="icon icon-heart-outline">
-                    <use xlink:href="img/sprite.svg#icon-heart-outline"></use>
-                  </svg>
-                  <span class="btn__text">ДОБАВИТЬ В ИЗБРАННОЕ</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="inner">
-        <h2 class="title text-center">Похожие статьи</h2>
-        <div class="row">
-          <div class="col col-33 col-sm-100">
-            <!-- begin article -->
-            <div class="article article_sm">
-              <div class="article__img">
-                <img src="./img/businesswoman-call-career-789822@2x.png" alt="img">
-              </div>
-              <div class="article__wrap">
-                <div class="article__tags tags">
-                  <a href="#" class="tag">РАБОТА</a>
-                </div>
-                <a href="#" class="article__title-md title-md">Заголовок статьи, желательно, чтобы это были две–три строчки</a>
-                <div class="article__text">Здесь будет две строчки текста, который является подзаголовком к статье...</div>
-              </div>
-            </div>
-            <!-- end article -->
-          </div>
-          <div class="col col-33 col-sm-100">
-            <!-- begin article -->
-            <div class="article article_sm">
-              <div class="article__img">
-                <img src="./img/rodolfo-sanches-carvalho-1.jpg" alt="img">
-              </div>
-              <div class="article__wrap">
-                <div class="article__tags tags">
-                  <a href="#" class="tag tag_orange">РАЗВЛЕЧЕНИЯ</a>
-                  <a href="#" class="tag tag_orange">ТЕСТЫ</a>
-                </div>
-                <a href="#" class="article__title-md title-md">Заголовок статьи, желательно, чтобы это были две–три строчки</a>
-                <div class="article__text">Здесь будет две строчки текста, который является подзаголовком к статье...</div>
-              </div>
-            </div>
-            <!-- end article -->
-          </div>
-          <div class="col col-33 col-sm-100">
-            <!-- begin article -->
-            <div class="article article_sm">
-              <div class="article__img">
-                <img src="./img/kristina-m-m-156472-unsplash.jpg" alt="img">
-              </div>
-              <div class="article__wrap">
-                <div class="article__tags tags">
-                  <a href="#" class="tag tag_green">САД &amp; ОГОРОД</a>
-                </div>
-                <a href="#" class="article__title-md title-md">Заголовок статьи, желательно, чтобы это были две–три строчки</a>
-                <div class="article__text">Здесь будет две строчки текста, который является подзаголовком к статье...</div>
-              </div>
-            </div>
-            <!-- end article -->
-          </div>
-        </div>
-      </div>
-      <!-- begin reviews -->
-      <div class="reviews reviews_article">
-        <div class="reviews__inner inner-sm">
-          <h3 class="reviews__title title-simple">Комментарии <span class="quantity">3</span></h3>
-          <div class="reviews__input">
-            <input type="text" placeholder="Написать комментарий...">
-          </div>
-        </div>
-        <div class="reviews-filter">
-          <div class="reviews-filter__head">
-            <div class="reviews-filter__inner inner inner_push-left">
-              <div class="reviews-filter__left">
-                <div class="reviews-filter__toggler">
-                  <!-- Start checkbox -->
-                  <label class="toggler">
-                    <input type="checkbox" name="checkbox" checked>
-                    <span class="toggler__text">С фото</span>
-                  </label>
-                  <!-- End checkbox -->
-                </div>
-                <div class="reviews-filter__drop">
-                  <div class="reviews-filter__select-text">Сортировать:</div>
-                  <div class="reviews-filter__select">
-                    <select class="select select_bord js-select" data-width="214px">
-                      <option value="По дате">По дате</option>
-                      <option value="text 1">text 1</option>
-                      <option value="text 2">text 2</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="reviews__inner inner-sm">
-          <div class="reviews__wrap">
-            <!-- begin review -->
-            <div class="review">
-              <div class="review__wrap">
-                <div class="review__head">
-                  <div class="review__name">Анна</div>
-                  <div class="review__date">21 мая в 12:45</div>
-                </div>
-                <p>Равным образом, выбранный нами инновационный путь требует определения и уточнения направлений прогрессивного развития.</p>
-                <div class="review__footer">
-                  <button class="btn-text" type="button">Ответить</button>
-                  <div class="review__likes likes is-positive">
-                    <button class="likes__btn" type="button">
-                      <svg class="icon icon-thumb-up-outline">
-                        <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
-                      </svg>
-                    </button>
-                    <div class="likes__size">5</div>
-                    <button class="likes__btn" type="button">
-                      <svg class="icon icon-thumb-down-outline">
-                        <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="review__attached">
-                  <div class="review__attached-wrap">
-                    <div class="review__img"><img src="./img/apples-birdcage-bowl-724643@2x.jpg" alt="review-img"></div>
-                  </div>
-                </div>
-              </div>
-              <!-- begin review -->
-              <div class="review">
-                <div class="review__wrap">
-                  <div class="review__head">
-                    <div class="review__name">Мария</div>
-                    <div class="review__date">21 мая в 13:05</div>
-                    <button class="review__reply" type="button">
-                      <svg class="icon icon-reply">
-                        <use xlink:href="img/sprite.svg#icon-reply"></use>
-                      </svg> Анне</button>
-                  </div>
-                  <p>Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности не дает нам иного выбора, кроме определения </p>
-                  <div class="review__footer">
-                    <button class="btn-text" type="button">Ответить</button>
-                    <div class="review__likes likes">
-                      <button class="likes__btn" type="button">
-                        <svg class="icon icon-thumb-up-outline">
-                          <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
-                        </svg>
-                      </button>
-                      <div class="likes__size">0</div>
-                      <button class="likes__btn" type="button">
-                        <svg class="icon icon-thumb-down-outline">
-                          <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
-                        </svg>
-                      </button>
+                  <div class="club-card__col col">
+                    <h5 class="club-card__cont-title"> Карта члена клуба </h5>
+                    <div class="club-card__cont-text">
+                      <p> Заполните данные о себе, чтобы бесплатно получить карту члена клуба. Наши держатели карт получают возможность </p>
+                    </div>
+                    <div class="club-card__btn">
+                      <a href="#" class="btn btn_md btn_bord" data-modal-control="questionnaire">
+                        <span class="btn__text">Получить карту</span>
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- end review -->
             </div>
-            <!-- end review -->
-            <!-- begin review -->
-            <div class="review">
-              <div class="review__wrap">
-                <div class="review__head">
-                  <div class="review__name">Лиза</div>
-                  <div class="review__date">25 мая в 9:48</div>
-                </div>
-                <p>Для современного мира повышение уровня гражданского сознания обеспечивает актуальность системы обучения кадров, соответствующей насущным потребностям.</p>
-                <div class="review__footer">
-                  <button class="btn-text" type="button">Ответить</button>
-                  <div class="review__likes likes is-negative">
-                    <button class="likes__btn" type="button">
-                      <svg class="icon icon-thumb-up-outline">
-                        <use xlink:href="img/sprite.svg#icon-thumb-up-outline"></use>
-                      </svg>
-                    </button>
-                    <div class="likes__size">-1</div>
-                    <button class="likes__btn" type="button">
-                      <svg class="icon icon-thumb-down-outline">
-                        <use xlink:href="img/sprite.svg#icon-thumb-down-outline"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="review__attached">
-                  <div class="review__attached-wrap">
-                    <div class="review__img"><img src="./img/girl-1561943_1920@2x.jpg" alt="review-img"></div>
-                    <div class="review__img"><img src="./img/gift-2655558_1920@2x.jpg" alt="review-img"></div>
-                    <div class="review__img"><img src="./img/flower-3201719_1920@2x.jpg" alt="review-img"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end review -->
           </div>
         </div>
       </div>
-      <!-- end reviews -->
       <!-- begin footer -->
       <footer class="footer">
         <div class="footer__inner inner">
