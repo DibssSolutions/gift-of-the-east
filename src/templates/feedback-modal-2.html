@@ -1,0 +1,16 @@
+---
+title: feedback-modal-1
+---
+
+{% import "partials/feedback/_feedback.html" as f %}
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+    {{f.feedback({
+        modal: 'feedback-order',
+        orderNumber: true,
+        open: true
+    })}}
+
+{% endblock %}

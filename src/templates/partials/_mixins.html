@@ -124,7 +124,7 @@
 
 {% macro theadsimple(props) %}
 <!-- begin baskethead -->
-<div class="headsimple">
+<div class="headsimple{% if props.modifier %} headsimple_{{props.modifier}}{% endif %}">
 	<h2 class="headsimple__title title">{{ props.title or 'Ваша корзина' }}{% if props.product %} <span class="headsimple__product">{{ props.product }}</span>{% endif %}</h2>
 	{% if props.link %}
 	<div class="headsimple__right">
@@ -978,7 +978,7 @@
 {% endmacro %}
 
 {% macro infoArticle(props) %}
-	<article class="info-article" {% if props.id %}id="{{props.id}}"{% endif %}>
+	<article class="info-article{% if props.modifier %} info-article_{{props.modifier}}{% endif %}" {% if props.id %}id="{{props.id}}"{% endif %}>
 		{% if props.articleTitle %}
 			<h2 class="title info-article__title">
 				{{props.articleTitle}}
@@ -986,8 +986,8 @@
 		{% endif %}
 		<div class="info-article__content">
 			{% for section in props.sections %}
-				<section>
-					{% if props.articleTitle %}
+				<section class="info-article__section{% if section.modifier %} info-article__section_{{section.modifier}}{% endif %}">
+					{% if section.sectionTitle %}
 						<h3 class="title-simple info-article__subtitle">
 							{{section.sectionTitle}}
 						</h3>

@@ -1,0 +1,26 @@
+--- title: club-page user: true ---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+    <div class="inner">
+        {{ mixins.breadcrumbs({
+            list: ['Назад','Главная','Юридическая информация']
+        }) }}
+        {{ mixins.theadsimple({ title: 'Юридическая информация', modifier: 'club' }) }}
+        <ul class="download-list">
+            <li class="download-list__item">
+                <a href="#" class="download-list__link">
+                    {{mixins.icon('file-download-outline')}}
+                    <span>Политика безопасности</span> 
+                </a>
+            </li>
+            <li class="download-list__item">
+                <a href="#" class="download-list__link">
+                    {{mixins.icon('file-download-outline')}}
+                    <span>Оферта</span> 
+                </a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

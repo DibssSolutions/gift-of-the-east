@@ -59,4 +59,11 @@ PageList:
   ready: 100
 - file: customers-info-page.html
   ready: 100
+- file: legal-information.html
+  ready: 100
+- file: feedback-modal-1.html
+  ready: 100
+- file: feedback-modal-2.html
+  ready: 100
+  
 

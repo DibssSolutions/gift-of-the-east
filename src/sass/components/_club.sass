@@ -1,51 +1,109 @@
 .info-list
-    padding: 16px 16px 0
+    padding: 16px 8px 0
     &__item
-        padding: 9px 0 8px
+        padding: 6px 8px 7px
         display: block
         &.current-item 
-            background-color: $silver
+            background-color: $gallery
     &__link
         font-size: 13px
         font-weight: 500
         line-height: 1.385
         color: $black
         text-transform: uppercase
-        
 
 .info-article
-    margin-bottom: 80px
+    &:not(:first-child)
+        margin-top: 80px
+        +md 
+            margin-top: 40px
+        +sm 
+            margin-top: 24px
+    &__title
+        margin-bottom: 40px
+        +md 
+            margin-bottom: 12px
+        .info-article_delivery &
+            margin-bottom: 27px
+        .info-article_faq &
+            margin-bottom: 25px
+    .title-simple:not(:last-child)
+        margin-bottom: 17px
     &__image 
         padding-bottom: 480px
         background-color: $gallery
         +cover
+        margin-bottom: 10px
+        +md 
+            padding-bottom: 50%
+        // +sm 
+        //     padding-bottom: 240px
     &__content
         +f(17px, 400, 1.589)
-        p 
+        +md 
+            font-size: 15px
+        p:not(:last-child) 
             margin-bottom: 24px
+    &__section 
+        + .info-article__section
+            margin-top: 80px
+            +md 
+                margin-top: 40px
+            +sm 
+                margin-top: 24px
+        + .info-article__section_addon
+            margin-top: 37px
     figcaption
         color: $gray
+        +f(14px, 400, 1.42857)
+    &__search
+        margin-bottom: 40px
+    &__accordions
+        border-top: 1px solid rgba($silver, 0.5)
 
 .company-descr
     +clr
     &__illustration
         position: relative
         float: left
-        margin-left: -60px
+        margin-left: -51px
         +cover
-        padding-bottom: 260px
-        width: 290px
+        padding-bottom: 247px
+        width: 277px
+        +r(1300)
+            margin-left: -15px
+        +sm
+            float: none
+            margin: 0 auto
     &__image
         display: block
         +vcenter
+        top: 47%
         width: 176px
         padding-bottom: 176px
         +cover
     &__text
         position: relative
+        float: left
+        width: calc(100% - 226px)
         font-size: 16px
         line-height: 1.5
-        padding: 40px 0
+        padding-left: 10px
+        padding-top: 35px
+        +r(1300)
+            width: calc(100% - 262px)
+        +md 
+            padding-top: 0
+        +sm 
+            float: none
+            width: 100%
+    &__content
+        position: relative
+        padding: 30px 0 
+        margin-bottom: 20px
+        +sm 
+            padding:  10px 0
+            margin-bottom: 0
         &:before,
         &:after
             position: absolute
@@ -55,12 +113,49 @@
             font-size: 32px
             font-family: $montserrat
             line-height: 24px
+            +sm 
+                display: none
         &:before
-            top: 0
+            top: -6px
             content: '«'
         &:after
-            bottom: 0
+            bottom: -6px
             content: '»'
+    &__author
+        h5
+            +f(16px, 500, 1.5)
+            margin-bottom: 5px
+        p 
+            +f(13px,400,1.38)
+            color: $gray
 
 .js-sticky-container
     will-change: min-height
+
+.info-container
+    margin-bottom: 80px
+    +sm 
+        margin-bottom: 30px
+
+.download-list
+    &__item
+        margin-bottom: 26px
+        +sm 
+            margin-bottom: 16px
+    &__link
+        display: block
+        font-size: 0
+    span 
+        +f(20px, 500, 1.5)
+        display: inline-block
+        vertical-align: middle
+        +sm 
+            font-size: 16px
+    .icon
+        font-size: 20px
+        color: $lightBrown
+        display: inline-block
+        vertical-align: middle
+        margin-right: 16px
+        +sm 
+            font-size: 16px

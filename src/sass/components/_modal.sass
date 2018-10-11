@@ -73,12 +73,18 @@
 		-webkit-box-shadow: 0 6px 12px rgba(#000, .16) 
 		box-shadow: 0 6px 12px rgba(#000, .16) 
 		background-color: $white
+		&_feedback
+			max-width: 1008px
+			background-color: $white
+			padding: 44px 104px 40px
+			+sm 
+				padding: 40px 20px
 		+xs 
 			padding: 40px 24px 
-	&__feedback
-		max-width: 1008px
-		background-color: $white
-		padding: 43px 104px 40px
+	&__info
+		+f(14px,400,1.286)
+		margin-bottom: 40px
+		text-align: center
 
 .questionnaire
 	&__container
@@ -174,6 +180,8 @@
 	background-repeat: no-repeat
 	background-position: center
 	height: 1px
+	&_feedback
+		margin: 0 -102px
 	+xs
 		margin: 16px -24px 4px
 

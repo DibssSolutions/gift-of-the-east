@@ -20,4 +20,5 @@ import './_nav-links';
 import './_file';
 import './_initMenuSpy';
 import './_initSticky';
+import './_accordion';
 // import "./_startingAnimation";

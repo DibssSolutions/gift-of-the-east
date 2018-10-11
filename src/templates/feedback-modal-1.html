@@ -1,0 +1,19 @@
+---
+title: home-registration-phone-text
+---
+
+{% import "partials/feedback/_feedback.html" as f %}
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+    {{f.feedback({
+	modal: 'feedback',
+    open: true
+    })}}
+    {{f.feedback({
+        modal: 'feedback-order',
+        orderNumber: true
+    })}}
+
+{% endblock %}

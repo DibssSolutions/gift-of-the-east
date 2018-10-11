@@ -384,10 +384,10 @@
           </li>
         </ul>
         <!-- end breadcrumbs -->
-        <div class="row js-sticky-container">
+        <div class="row info-container js-sticky-container">
           <div class="col col-66 col-md-100">
             <!-- begin baskethead -->
-            <div class="headsimple">
+            <div class="headsimple headsimple_club">
               <h2 class="headsimple__title title">Добро пожаловать в клуб Дары востока</h2>
             </div>
             <!-- end baskethead -->
@@ -395,16 +395,19 @@
               <div class="company-descr__illustration" style="background-image: url(./img/stroke.svg);">
                 <span class="company-descr__image" style="background-image: url(./img/company_descr.png);"></span>
               </div>
-              <div class="company-descr__text">Данный текст будет кратким описанием особенностей и преимуществ клуба «Дары Востока» со слов Ольги Туркиной. Описание должно занимать не более трех строк текста и содержать ключевые моменты, которые
-                зацепят пользователя и останутся в его памяти. </div>
-              <div class="company-descr__author">
-                <h5>Ольга Туркина</h5>
-                <p>Управляющая развитием розничного направления ООО «Дары Востока»</p>
+              <div class="company-descr__text">
+                <div class="company-descr__content"> Данный текст будет кратким описанием особенностей и преимуществ клуба «Дары Востока» со слов Ольги Туркиной. Описание должно занимать не более трех строк текста и содержать ключевые моменты,
+                  которые зацепят пользователя и останутся в его памяти. </div>
+                <div class="company-descr__author">
+                  <h5>Ольга Туркина</h5>
+                  <p>Управляющая развитием розничного направления ООО «Дары Востока»</p>
+                </div>
               </div>
             </div>
             <article class="info-article">
               <div class="info-article__content">
-                <section>
+                <section class="info-article__section">
+                  <h3 class="title-simple info-article__subtitle"> Подзаголовок внутри раздела из нескольких слов </h3>
                   <p>Задача организации, в особенности же сплоченность команды профессионалов в значительной степени обусловливает важность стандартных подходов! Современные технологии достигли такого уровня, что социально-экономическое развитие
                     предоставляет широкие возможности для анализа существующих паттернов поведения.</p>
                   <p>Господа, семантический разбор внешних противодействий не оставляет шанса для направлений прогрессивного развития. В своем стремлении повысить качество жизни, они забывают, что глубокий уровень погружения создает предпосылки для
@@ -418,7 +421,8 @@
             </article>
             <article class="info-article">
               <div class="info-article__content">
-                <section>
+                <section class="info-article__section">
+                  <h3 class="title-simple info-article__subtitle"> Подзаголовок внутри раздела из нескольких слов </h3>
                   <p>Задача организации, в особенности же сплоченность команды профессионалов в значительной степени обусловливает важность стандартных подходов! Современные технологии достигли такого уровня, что социально-экономическое развитие
                     предоставляет широкие возможности для анализа существующих паттернов поведения.</p>
                   <p>Господа, семантический разбор внешних противодействий не оставляет шанса для направлений прогрессивного развития. В своем стремлении повысить качество жизни, они забывают, что глубокий уровень погружения создает предпосылки для
@@ -433,7 +437,7 @@
             <article class="info-article" id="loyalty">
               <h2 class="title info-article__title"> Наша программа лояльности </h2>
               <div class="info-article__content">
-                <section>
+                <section class="info-article__section">
                   <h3 class="title-simple info-article__subtitle"> Подзаголовок внутри раздела из нескольких слов </h3>
                   <p>Задача организации, в особенности же сплоченность команды профессионалов в значительной степени обусловливает важность стандартных подходов! Современные технологии достигли такого уровня, что социально-экономическое развитие
                     предоставляет широкие возможности для анализа существующих паттернов поведения.</p>
@@ -449,7 +453,7 @@
             <article class="info-article" id="cooperations">
               <h2 class="title info-article__title"> Сотрудничество/оптовым покупателям </h2>
               <div class="info-article__content">
-                <section>
+                <section class="info-article__section">
                   <h3 class="title-simple info-article__subtitle"> Подзаголовок внутри раздела из нескольких слов </h3>
                   <p>Задача организации, в особенности же сплоченность команды профессионалов в значительной степени обусловливает важность стандартных подходов! Современные технологии достигли такого уровня, что социально-экономическое развитие
                     предоставляет широкие возможности для анализа существующих паттернов поведения.</p>
@@ -465,7 +469,7 @@
           </div>
           <div class="col col-33 md-hide">
             <div class="js-sticky-element">
-              <div class="sidebar sidebar_sticky">
+              <div class="sidebar sidebar_sticky sidebar_info">
                 <h4 class="sidebar__title"> Клуб Дары Востока </h4>
                 <ul class="info-list js-menu-spy">
                   <li class="info-list__item">
@@ -553,8 +557,8 @@
         </div>
       </footer>
       <!-- end footer -->
-      <div class="modal" data-modal="feedback">
-        <div class="modal__feedback" data-modal-container="data-modal-container">
+      <div class="modal " data-modal="feedback">
+        <div class="modal__container modal__container_feedback" data-modal-container="data-modal-container">
           <button class="modal__off" type="button" data-modal-close="data-modal-close">
             <svg class="icon icon-close">
               <use xlink:href="img/sprite.svg#icon-close"></use>
@@ -563,7 +567,7 @@
           <form action="/" class="modal__form feedback">
             <div class="modal__title">Обратная связь</div>
             <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
-            <hr class="feedback__divider">
+            <div class="dashed-separator dashed-separator_feedback"></div>
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
               <div class="feedback__control js-form-control">
@@ -579,12 +583,12 @@
                 <input type="text" class="feedback__input input" id="middle_name">
               </div>
             </fieldset>
-            <hr class="feedback__divider">
+            <div class="dashed-separator dashed-separator_feedback"></div>
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Задайте вопрос</legend>
               <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" data-width="280px" id="question-theme">
+                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
+                <select class="feedback__select select select_bord js-select" id="question-theme">
                   <option value="Товары, акции, скидки">Товары, акции, скидки</option>
                   <option value="Техническая поддержка">Техническая поддержка</option>
                   <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
@@ -594,7 +598,7 @@
               </div>
               <div class="feedback__control js-form-control">
                 <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
-                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 80px"></textarea>
+                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 78px"></textarea>
               </div>
               <div class="feedback__control js-form-control">
                 <div class="file">
@@ -610,8 +614,8 @@
           </form>
         </div>
       </div>
-      <div class="modal" data-modal="feedback-order">
-        <div class="modal__feedback" data-modal-container="data-modal-container">
+      <div class="modal " data-modal="feedback-order">
+        <div class="modal__container modal__container_feedback" data-modal-container="data-modal-container">
           <button class="modal__off" type="button" data-modal-close="data-modal-close">
             <svg class="icon icon-close">
               <use xlink:href="img/sprite.svg#icon-close"></use>
@@ -620,7 +624,7 @@
           <form action="/" class="modal__form feedback">
             <div class="modal__title">Обратная связь</div>
             <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
-            <hr class="feedback__divider">
+            <div class="dashed-separator dashed-separator_feedback"></div>
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
               <div class="feedback__control js-form-control">
@@ -636,12 +640,12 @@
                 <input type="text" class="feedback__input input" id="middle_name">
               </div>
             </fieldset>
-            <hr class="feedback__divider">
+            <div class="dashed-separator dashed-separator_feedback"></div>
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Задайте вопрос</legend>
               <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" data-width="280px" id="question-theme">
+                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
+                <select class="feedback__select select select_bord js-select" id="question-theme">
                   <option value="Товары, акции, скидки">Товары, акции, скидки</option>
                   <option value="Техническая поддержка">Техническая поддержка</option>
                   <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
@@ -655,7 +659,7 @@
               </div>
               <div class="feedback__control js-form-control">
                 <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
-                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 80px"></textarea>
+                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 78px"></textarea>
               </div>
               <div class="feedback__control js-form-control">
                 <div class="file">

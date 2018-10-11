@@ -1591,8 +1591,8 @@
         </div>
       </footer>
       <!-- end footer -->
-      <div class="modal" data-modal="feedback">
-        <div class="modal__feedback" data-modal-container="data-modal-container">
+      <div class="modal " data-modal="feedback">
+        <div class="modal__container modal__container_feedback" data-modal-container="data-modal-container">
           <button class="modal__off" type="button" data-modal-close="data-modal-close">
             <svg class="icon icon-close">
               <use xlink:href="img/sprite.svg#icon-close"></use>
@@ -1601,7 +1601,7 @@
           <form action="/" class="modal__form feedback">
             <div class="modal__title">Обратная связь</div>
             <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
-            <hr class="feedback__divider">
+            <div class="dashed-separator dashed-separator_feedback"></div>
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
               <div class="feedback__control js-form-control">
@@ -1617,12 +1617,12 @@
                 <input type="text" class="feedback__input input" id="middle_name">
               </div>
             </fieldset>
-            <hr class="feedback__divider">
+            <div class="dashed-separator dashed-separator_feedback"></div>
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Задайте вопрос</legend>
               <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" data-width="280px" id="question-theme">
+                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
+                <select class="feedback__select select select_bord js-select" id="question-theme">
                   <option value="Товары, акции, скидки">Товары, акции, скидки</option>
                   <option value="Техническая поддержка">Техническая поддержка</option>
                   <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
@@ -1632,7 +1632,7 @@
               </div>
               <div class="feedback__control js-form-control">
                 <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
-                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 80px"></textarea>
+                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 78px"></textarea>
               </div>
               <div class="feedback__control js-form-control">
                 <div class="file">
@@ -1648,8 +1648,8 @@
           </form>
         </div>
       </div>
-      <div class="modal" data-modal="feedback-order">
-        <div class="modal__feedback" data-modal-container="data-modal-container">
+      <div class="modal " data-modal="feedback-order">
+        <div class="modal__container modal__container_feedback" data-modal-container="data-modal-container">
           <button class="modal__off" type="button" data-modal-close="data-modal-close">
             <svg class="icon icon-close">
               <use xlink:href="img/sprite.svg#icon-close"></use>
@@ -1658,7 +1658,7 @@
           <form action="/" class="modal__form feedback">
             <div class="modal__title">Обратная связь</div>
             <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
-            <hr class="feedback__divider">
+            <div class="dashed-separator dashed-separator_feedback"></div>
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
               <div class="feedback__control js-form-control">
@@ -1674,12 +1674,12 @@
                 <input type="text" class="feedback__input input" id="middle_name">
               </div>
             </fieldset>
-            <hr class="feedback__divider">
+            <div class="dashed-separator dashed-separator_feedback"></div>
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Задайте вопрос</legend>
               <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" data-width="280px" id="question-theme">
+                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
+                <select class="feedback__select select select_bord js-select" id="question-theme">
                   <option value="Товары, акции, скидки">Товары, акции, скидки</option>
                   <option value="Техническая поддержка">Техническая поддержка</option>
                   <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
@@ -1693,7 +1693,7 @@
               </div>
               <div class="feedback__control js-form-control">
                 <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
-                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 80px"></textarea>
+                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 78px"></textarea>
               </div>
               <div class="feedback__control js-form-control">
                 <div class="file">

@@ -5,40 +5,64 @@
         background-repeat: repeat-x
         background-size: contain
         background-size: 12px 1px
-        background-image: linear-gradient(90deg, $silver, $silver 66.6%, transparent 66.667%, transparent 100%)
+        background-image: linear-gradient(90deg, $silver, $silver 33.3%, transparent 33.331%, transparent 100%)
         border: none
-        margin: 24px -106px
+        margin: 0 -106px
+    &__fieldset
+        margin: 22px auto 20px
+    &__legend
+        +f(20px, 400, 1.5)
     &__control
         &:not(:first-child)
             font-size: 0
             margin-top: 16px
+            +sm 
+                margin-top: 12px
         > .file
             margin-left: 104px
+            +sm 
+                margin-left: 0
     &__label
         display: inline-block
         width: 104px
         vertical-align: top
         font-size: 14px
-        line-height: 1.285
+        line-height: 1.2
         padding: 12px 0 
+        +sm 
+            width: 100%
+            padding: 6px 0
         &_textarea
             vertical-align: top
+        &_select
+            line-height: 1
     &__input    
         display: inline-block
         width: 280px
+        +sm 
+            width: 100%
     &__select
         display: inline-block
         width: 280px
+        +sm 
+            width: 100%
     &__textarea
         display: inline-block
         width: 592px
         resize: none
         box-sizing: border-box
+        +f(16px, 400, 1.5)
+        color: $gray
+        padding: 13px 16px
+        +sm 
+            width: 100%
     &__submit
         text-align: center
         margin-top: 40px
         .btn
             min-width: 280px
+            +sm 
+                min-width: 180px
             &:disabled
                 color: $black 
                 cursor: default
@@ -47,6 +71,7 @@
                     background-color: #EFEFEF 
     .modal__title
         text-align: center
+        margin-bottom: 16px
 
 .file
     &__input 
@@ -56,7 +81,7 @@
         pointer-events: none
     &__label 
         display: inline-block
-        padding: 10px 24px
+        padding: 9px 24px 6px
         border: 1px solid $lightBrown
         font-size: 16px
         cursor: pointer
@@ -66,7 +91,12 @@
         display: inline-block
         font-size: 16px
         margin-left: 16px
+        +sm 
+            margin-left: 0
+            margin-top: 6px
+            text-align: left
         strong
             margin-left: 10px
+            
 
 
