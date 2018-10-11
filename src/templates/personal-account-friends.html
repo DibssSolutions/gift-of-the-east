@@ -1,0 +1,92 @@
+---
+title: personal-account-friends
+user: true
+basketItems: true
+---
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="inner">
+		{{ mixins.breadcrumbs({
+			list: ['Назад','Главная','Корзина']
+		}) }}
+		<div class="cabinet">
+			{{ mixins.theadsimple({ title: 'Добро пожаловать в ваш профиль, Анна' }) }}
+			<div class="cabinet__row row">
+				<div class="cabinet__col col col-25 col-md-100">
+					<!-- begin sidebar -->
+					<div class="sidebar sidebar_cabinet js-nav-links">
+						<div class="sidebar sidebar_cabinet js-nav-links">
+							{{ mixins.cabinetList({ active: 7, currentText: "Пригласить друзей" }) }}
+						</div>
+					</div>
+					<!-- end sidebar -->
+				</div>
+				<div class="cabinet__col col col-75 col-md-100">
+					<h3 class="title-simple cabinet__title">Пригласить друзей</h3>
+					<div class="cabinet__friends friends">
+						<div class="friends__top">
+							<div class="friends__img">
+								<img src="./img/friends.jpg" alt="img">
+							</div>
+							<div class="friends__link">
+								<a href="#" class="link" data-modal-control="invite">Подробнее</a>
+							</div>
+						</div>
+						<div class="friends__steps">
+							<div class="row">
+								{% for item in [
+									{
+										number: "1",
+										text: "Поделитесь Вашей персональной ссылкой с друзьями и близкими"
+									},
+									{
+										number: "2",
+										text: "Они получат купон на 500 ₽ при регистрации"
+									},
+									{
+										number: "3",
+										text: "Вы получите купон на 500 ₽ при оплате своего заказа"
+									}
+								] %}
+									<div class="col col-33 col-sm-50 col-xs-100">
+										{{ mixins.stepItem(
+											{
+												number: loop.index,
+												text: item.text
+											}
+										) }}
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="friends__bottom">
+							<div class="friends__title">Ваша личная ссылка для приглашения</div>
+							<div class="friends__copy">
+								<div class="friends__input">
+									<input type="text" class="input" disabled placeholder="https://www.DV.ru/i/%D0%95%D0%">
+								</div>
+								<div class="friends__btn">
+									<button class="btn btn_bord btn_sm-copy" type="button">
+										<span class="btn__text">Скопировать ссылку</span>
+									</button>
+								</div>
+							</div>
+							<div class="friends__title friends__title_grey">или</div>
+							<div class="friends__title">Пригласите друзей в соцсетях</div>
+							<div class="friends__social">
+								<div class="social">
+									{% for name in ["vk", "facebook", "odnoklassniki", "twitter", "google-plus", "mail-ru"] %}
+									<a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+

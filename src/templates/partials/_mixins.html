@@ -1007,3 +1007,10 @@
 		</div>
 	</article>
 {% endmacro %}
+
+{% macro stepItem(props) %}
+	<div class="step-item">
+		<div class="step-item__number">{{ props.number }}</div>
+		<div class="step-item__text">{{ props.text }}</div>
+	</div>
+{% endmacro %}

@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Template</title>
+    <title>personal-account-friends</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
@@ -36,14 +36,12 @@
             <div class="header__cabin">
               <!-- begin signin -->
               <div class="signin js-profile-wrapper" data-dd-wrapper="data-dd-wrapper">
-                <a href="#" class="signin__item" data-modal-control="login">
+                <a href="#" class="signin__item js-profile-trigger" data-dd-trigger="data-dd-trigger">
                   <svg class="icon icon-account">
                     <use xlink:href="img/sprite.svg#icon-account"></use>
                   </svg>
-                  <span>Войти</span></a>
-                <span class="signin__slash">/</span>
-                <a href="#" class="signin__item" data-modal-control="registration">
-                  <span>Регистрация</span></a>
+                  <span>Профиль</span>
+                </a>
                 <div class="signin__drop js-profile-content">
                   <div class="signin__head">Добро пожаловать, Анна</div>
                   <ul class="signin__list">
@@ -83,7 +81,7 @@
                   <svg class="icon icon-shopping-bag">
                     <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
                   </svg>
-                  <span>Корзина</span>
+                  <span>1 товар – 1000 ₽</span>
                 </a>
                 <div class="basket__drop">
                   <div class="basket__head">Корзина (1)</div>
@@ -380,106 +378,141 @@
             <a href="#">Главная</a>
           </li>
           <li class="breadcrumbs__item">
-            <span>Клуб Дары Востока</span>
+            <span>Корзина</span>
           </li>
         </ul>
         <!-- end breadcrumbs -->
-        <div class="row js-sticky-container">
-          <div class="col col-66 col-md-100">
-            <!-- begin baskethead -->
-            <div class="headsimple">
-              <h2 class="headsimple__title title">Добро пожаловать в клуб Дары востока</h2>
-            </div>
-            <!-- end baskethead -->
-            <div class="company-descr" id="about">
-              <div class="company-descr__illustration" style="background-image: url(./img/stroke.svg);">
-                <span class="company-descr__image" style="background-image: url(./img/company_descr.png);"></span>
-              </div>
-              <div class="company-descr__text">Данный текст будет кратким описанием особенностей и преимуществ клуба «Дары Востока» со слов Ольги Туркиной. Описание должно занимать не более трех строк текста и содержать ключевые моменты, которые
-                зацепят пользователя и останутся в его памяти. </div>
-              <div class="company-descr__author">
-                <h5>Ольга Туркина</h5>
-                <p>Управляющая развитием розничного направления ООО «Дары Востока»</p>
-              </div>
-            </div>
-            <article class="info-article">
-              <div class="info-article__content">
-                <section>
-                  <p>Задача организации, в особенности же сплоченность команды профессионалов в значительной степени обусловливает важность стандартных подходов! Современные технологии достигли такого уровня, что социально-экономическое развитие
-                    предоставляет широкие возможности для анализа существующих паттернов поведения.</p>
-                  <p>Господа, семантический разбор внешних противодействий не оставляет шанса для направлений прогрессивного развития. В своем стремлении повысить качество жизни, они забывают, что глубокий уровень погружения создает предпосылки для
-                    позиций, занимаемых участниками в отношении поставленных задач. Интерактивные прототипы неоднозначны и будут описаны максимально подробно.</p>
-                  <figure>
-                    <div class="info-article__image" style="background-image: url(./img/);"></div>
-                    <figcaption>Здесь возможен какой-то короткий текст пояснение</figcaption>
-                  </figure>
-                </section>
-              </div>
-            </article>
-            <article class="info-article">
-              <div class="info-article__content">
-                <section>
-                  <p>Задача организации, в особенности же сплоченность команды профессионалов в значительной степени обусловливает важность стандартных подходов! Современные технологии достигли такого уровня, что социально-экономическое развитие
-                    предоставляет широкие возможности для анализа существующих паттернов поведения.</p>
-                  <p>Господа, семантический разбор внешних противодействий не оставляет шанса для направлений прогрессивного развития. В своем стремлении повысить качество жизни, они забывают, что глубокий уровень погружения создает предпосылки для
-                    позиций, занимаемых участниками в отношении поставленных задач. Интерактивные прототипы неоднозначны и будут описаны максимально подробно.</p>
-                  <figure>
-                    <div class="info-article__image" style="background-image: url(./img/);"></div>
-                    <figcaption>Здесь возможен какой-то короткий текст пояснение</figcaption>
-                  </figure>
-                </section>
-              </div>
-            </article>
-            <article class="info-article" id="loyalty">
-              <h2 class="title info-article__title"> Наша программа лояльности </h2>
-              <div class="info-article__content">
-                <section>
-                  <h3 class="title-simple info-article__subtitle"> Подзаголовок внутри раздела из нескольких слов </h3>
-                  <p>Задача организации, в особенности же сплоченность команды профессионалов в значительной степени обусловливает важность стандартных подходов! Современные технологии достигли такого уровня, что социально-экономическое развитие
-                    предоставляет широкие возможности для анализа существующих паттернов поведения.</p>
-                  <p>Господа, семантический разбор внешних противодействий не оставляет шанса для направлений прогрессивного развития. В своем стремлении повысить качество жизни, они забывают, что глубокий уровень погружения создает предпосылки для
-                    позиций, занимаемых участниками в отношении поставленных задач. Интерактивные прототипы неоднозначны и будут описаны максимально подробно.</p>
-                  <figure>
-                    <div class="info-article__image" style="background-image: url(./img/beautiful-book.jpg);"></div>
-                    <figcaption>Здесь возможен какой-то короткий текст пояснение</figcaption>
-                  </figure>
-                </section>
-              </div>
-            </article>
-            <article class="info-article" id="cooperations">
-              <h2 class="title info-article__title"> Сотрудничество/оптовым покупателям </h2>
-              <div class="info-article__content">
-                <section>
-                  <h3 class="title-simple info-article__subtitle"> Подзаголовок внутри раздела из нескольких слов </h3>
-                  <p>Задача организации, в особенности же сплоченность команды профессионалов в значительной степени обусловливает важность стандартных подходов! Современные технологии достигли такого уровня, что социально-экономическое развитие
-                    предоставляет широкие возможности для анализа существующих паттернов поведения.</p>
-                  <p>Господа, семантический разбор внешних противодействий не оставляет шанса для направлений прогрессивного развития. В своем стремлении повысить качество жизни, они забывают, что глубокий уровень погружения создает предпосылки для
-                    позиций, занимаемых участниками в отношении поставленных задач. Интерактивные прототипы неоднозначны и будут описаны максимально подробно.</p>
-                  <figure>
-                    <div class="info-article__image" style="background-image: url(./img/);"></div>
-                    <figcaption>Здесь возможен какой-то короткий текст пояснение</figcaption>
-                  </figure>
-                </section>
-              </div>
-            </article>
+        <div class="cabinet">
+          <!-- begin baskethead -->
+          <div class="headsimple">
+            <h2 class="headsimple__title title">Добро пожаловать в ваш профиль, Анна</h2>
           </div>
-          <div class="col col-33 md-hide">
-            <div class="js-sticky-element">
-              <div class="sidebar sidebar_sticky">
-                <h4 class="sidebar__title"> Клуб Дары Востока </h4>
-                <ul class="info-list js-menu-spy">
-                  <li class="info-list__item">
-                    <a href="#about" class="info-list__link">О КЛУБЕ</a>
-                  </li>
-                  <li class="info-list__item">
-                    <a href="#loyalty" class="info-list__link"> ПРОГРАММА ЛОЯЛЬНОСТИ</a>
-                  </li>
-                  <li class="info-list__item">
-                    <a href="#cooperations" class="info-list__link">СОТРУДНИЧЕСТВО/ОПТОВЫМ ПОКУПАТЕЛЯМ</a>
-                  </li>
-                </ul>
-                <div class="sidebar__feedback-btn">
-                  <button class="btn btn_full">ОБРАТНАЯ СВЯЗЬ</button>
+          <!-- end baskethead -->
+          <div class="cabinet__row row">
+            <div class="cabinet__col col col-25 col-md-100">
+              <!-- begin sidebar -->
+              <div class="sidebar sidebar_cabinet js-nav-links">
+                <div class="sidebar sidebar_cabinet js-nav-links">
+                  <!-- begin cabinet-list -->
+                  <div class="cabinet-list">
+                    <div class="js-nav-links-current cabinet-list__toggler">
+                      <div class="cabinet-list__item">
+                        <span class="cabinet-list__link"> Пригласить друзей </span>
+                      </div>
+                    </div>
+                    <ul class="cabinet-list__nav">
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Личные данные</a>
+                      </li>
+                      <li class="cabinet-list__item has-info">
+                        <a href="#" class="cabinet-list__link">Сообщения<span class="cabinet-list__quantity">3</span></a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">История покупок</a>
+                      </li>
+                      <li class="cabinet-list__item has-info">
+                        <a href="#" class="cabinet-list__link">Персональные предложения</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Избранное</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Клубная карта</a>
+                      </li>
+                      <li class="cabinet-list__item is-active">
+                        <a href="#" class="cabinet-list__link">Пригласить друзей</a>
+                      </li>
+                      <li class="cabinet-list__item">
+                        <a href="#" class="cabinet-list__link">Выйти</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- end cabinet-list -->
+                </div>
+              </div>
+              <!-- end sidebar -->
+            </div>
+            <div class="cabinet__col col col-75 col-md-100">
+              <h3 class="title-simple cabinet__title">Пригласить друзей</h3>
+              <div class="cabinet__friends friends">
+                <div class="friends__top">
+                  <div class="friends__img">
+                    <img src="./img/friends.jpg" alt="img">
+                  </div>
+                  <div class="friends__link">
+                    <a href="#" class="link" data-modal-control="invite">Подробнее</a>
+                  </div>
+                </div>
+                <div class="friends__steps">
+                  <div class="row">
+                    <div class="col col-33 col-sm-50 col-xs-100">
+                      <div class="step-item">
+                        <div class="step-item__number">1</div>
+                        <div class="step-item__text">Поделитесь Вашей персональной ссылкой с друзьями и близкими</div>
+                      </div>
+                    </div>
+                    <div class="col col-33 col-sm-50 col-xs-100">
+                      <div class="step-item">
+                        <div class="step-item__number">2</div>
+                        <div class="step-item__text">Они получат купон на 500 ₽ при регистрации</div>
+                      </div>
+                    </div>
+                    <div class="col col-33 col-sm-50 col-xs-100">
+                      <div class="step-item">
+                        <div class="step-item__number">3</div>
+                        <div class="step-item__text">Вы получите купон на 500 ₽ при оплате своего заказа</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="friends__bottom">
+                  <div class="friends__title">Ваша личная ссылка для приглашения</div>
+                  <div class="friends__copy">
+                    <div class="friends__input">
+                      <input type="text" class="input" disabled placeholder="https://www.DV.ru/i/%D0%95%D0%">
+                    </div>
+                    <div class="friends__btn">
+                      <button class="btn btn_bord btn_sm-copy" type="button">
+                        <span class="btn__text">Скопировать ссылку</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="friends__title friends__title_grey">или</div>
+                  <div class="friends__title">Пригласите друзей в соцсетях</div>
+                  <div class="friends__social">
+                    <div class="social">
+                      <a href="#" class="social__link social__link_vk">
+                        <svg class="icon icon-vk">
+                          <use xlink:href="img/sprite.svg#icon-vk"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_facebook">
+                        <svg class="icon icon-facebook">
+                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_odnoklassniki">
+                        <svg class="icon icon-odnoklassniki">
+                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_twitter">
+                        <svg class="icon icon-twitter">
+                          <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_google-plus">
+                        <svg class="icon icon-google-plus">
+                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_mail-ru">
+                        <svg class="icon icon-mail-ru">
+                          <use xlink:href="img/sprite.svg#icon-mail-ru"></use>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

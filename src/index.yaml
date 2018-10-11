@@ -51,6 +51,8 @@ PageList:
   ready: 100
 - file: personal-account-favorites.html
   ready: 50
+- file: personal-account-friends.html
+  ready: 50
 - file: loader.html
   ready: 100
 - file: club-info-page.html
