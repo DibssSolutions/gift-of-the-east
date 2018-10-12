@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>pickup-shop-selected</title>
+    <title> pickup-shop-selected </title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" media="all" href="css/app.css">
   </head>
 
-  <body data-lazy>
+  <body data-lazy="data-lazy">
     <!-- BEGIN content -->
     <div class="out">
       <!-- begin header -->
@@ -129,15 +129,154 @@
         <div class="header__bottom">
           <div class="header__inner inner">
             <!-- begin search -->
-            <div class="header__search search">
-              <form action="/" class="search__form">
-                <button class="search__btn" type="button">
+            <div class="header__search search" data-dd-wrapper="data-dd-wrapper">
+              <button class="search__btn" type="button" data-dd-trigger="data-dd-trigger">
+                <span class="search__open">
                   <svg class="icon icon-search">
                     <use xlink:href="img/sprite.svg#icon-search"></use>
                   </svg>
-                </button>
-                <input type="text" class="search__input" placeholder="Поиск">
-              </form>
+                  <span class="search__text">Поиск</span>
+                </span>
+                <span class="search__close">
+                  <svg class="icon icon-close">
+                    <use xlink:href="img/sprite.svg#icon-close"></use>
+                  </svg>
+                  <span class="search__text">Закрыть</span>
+                </span>
+              </button>
+              <div class="search__dropdown">
+                <form action="/" class="search__form inner">
+                  <input type="text" class="search__input" placeholder="Поиск по сайту" />
+                  <button class="btn btn_md btn_bord btn_anim">
+                    <span class="btn__text">Поиск</span>
+                    <span class="btn__icon">
+                      <svg class="icon icon-arrow-right">
+                        <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                      </svg>
+                    </span>
+                  </button>
+                </form>
+                <div class="search__results js-search-scroll">
+                  <div class="search-list">
+                    <div class="search-list__inner inner">
+                      <h4 class="search-list__title"> КАТЕГОРИИ <span class="search-list__quantity">3</span>
+                      </h4>
+                    </div>
+                    <ul class="search-list__items">
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/evie-shaffer-500190-unsplash@2x.jpg);"></span>
+                          <span class="search-list__text">
+                            <span></span><span class="search-list__highlighted">Ваз</span><span>ы напольные</span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/chairs-contemporary-design-271696@2x.jpg);"></span>
+                          <span class="search-list__text">
+                            <span></span><span class="search-list__highlighted">Ваз</span><span>ы настольные</span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/ancient-1494672_1920@2x.jpg);"></span>
+                          <span class="search-list__text">
+                            <span></span><span class="search-list__highlighted"></span><span>Сухоцветы</span>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="search-list">
+                    <div class="search-list__inner inner">
+                      <h4 class="search-list__title"> ТОВАРЫ <span class="search-list__quantity">378</span>
+                      </h4>
+                    </div>
+                    <ul class="search-list__items">
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/vase-2.jpg);"></span>
+                          <span class="search-list__text">
+                            <span></span><span class="search-list__highlighted">Ваз</span><span>а &quot;Ажур&quot;</span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/vase-4.jpg);"></span>
+                          <span class="search-list__text">
+                            <span></span><span class="search-list__highlighted">Ваз</span><span>а &quot;Аурика&quot; 45см</span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/vase.jpg);"></span>
+                          <span class="search-list__text">
+                            <span></span><span class="search-list__highlighted">Ваз</span><span>а из стекла с разноцветным узором</span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/annie-spratt.jpg);"></span>
+                          <span class="search-list__text">
+                            <span></span><span class="search-list__highlighted">Ваз</span><span>а &quot;Марика-Росса&quot; 40см </span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/vase-2.jpg);"></span>
+                          <span class="search-list__text">
+                            <span></span><span class="search-list__highlighted">Ваз</span><span>а &quot;Мерри&quot; </span>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="inner search__show-more">
+                    <div class="show-more">
+                      <a href="#" class="show-more__link"> Показать еще </a>
+                      <span class="show-more__details"> Показано 5 из 378 </span>
+                    </div>
+                  </div>
+                  <div class="search-list">
+                    <div class="search-list__inner inner">
+                      <h4 class="search-list__title"> СТАТЬИ <span class="search-list__quantity">3</span>
+                      </h4>
+                    </div>
+                    <ul class="search-list__items">
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/jose-ignacio-gonzalez-pansiera-480627-unsplash.jpg);"></span>
+                          <span class="search-list__text">
+                            <span>Заголовок статьи о </span><span class="search-list__highlighted">Ваз</span><span>е. Желательно, чтобы это были две - три строчки</span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/Mask-Group-13@2x.jpg);"></span>
+                          <span class="search-list__text">
+                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptates?</span><span class="search-list__highlighted">Ваз</span><span> Lorem, ipsum dolor sit amet</span>
+                          </span>
+                        </a>
+                      </li>
+                      <li class="search-list__item">
+                        <a href="#" class="search-list__link inner">
+                          <span class="search-list__image" style="background-image: url(./img/Mask-Group-14@2x.jpg);"></span>
+                          <span class="search-list__text">
+                            <span></span><span class="search-list__highlighted">Ваз</span><span>а из стекла с разноцветным узором</span>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- end search -->
             <nav class="header__nav nav">

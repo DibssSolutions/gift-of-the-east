@@ -1,0 +1,131 @@
+{% import "partials/_mixins.html" as mixins %}
+
+{% set results = [
+{
+    sectionTitle: 'КАТЕГОРИИ', 
+    sectionItems: 3,
+    sectionElements: [
+        {
+            image: 'evie-shaffer-500190-unsplash@2x.jpg',
+            result: 'Ваз',
+            anotherText: 'ы напольные'
+        },
+        {
+            image: 'chairs-contemporary-design-271696@2x.jpg',
+            result: 'Ваз',
+            anotherText: 'ы настольные'
+        },
+        {
+            image: 'ancient-1494672_1920@2x.jpg',
+            anotherText: 'Сухоцветы'
+        }
+    ]
+},
+{
+    sectionTitle: 'ТОВАРЫ', 
+    sectionItems: 378,
+    sectionElements: [
+        {
+            image: 'vase-2.jpg',
+            result: 'Ваз',
+            anotherText: 'а "Ажур"'
+        },
+        {
+            image: 'vase-4.jpg',
+            result: 'Ваз',
+            anotherText: 'а "Аурика" 45см'
+        },
+        {
+            image: 'vase.jpg',
+            result: 'Ваз',
+            anotherText: 'а из стекла с разноцветным узором'
+        },
+        {
+            image: 'annie-spratt.jpg',
+            result: 'Ваз',
+            anotherText: 'а "Марика-Росса" 40см '
+        },
+        {
+            image: 'vase-2.jpg',
+            result: 'Ваз',
+            anotherText: 'а "Мерри" '
+        }
+    ]
+},
+{
+    sectionTitle: 'СТАТЬИ', 
+    sectionItems: 3,
+    sectionElements: [
+        {
+            image: 'jose-ignacio-gonzalez-pansiera-480627-unsplash.jpg',
+            beginningText: 'Заголовок статьи о ',
+            result: 'Ваз',
+            anotherText: 'е. Желательно, чтобы это были две - три строчки'
+        },
+        {
+            image: 'Mask-Group-13@2x.jpg',
+            beginningText: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptates?',
+            result: 'Ваз',
+            anotherText: ' Lorem, ipsum dolor sit amet'
+        },
+        {
+            image: 'Mask-Group-14@2x.jpg',
+            result: 'Ваз',
+            anotherText: 'а из стекла с разноцветным узором'
+        }
+    ]
+}
+
+
+
+
+] %}
+
+{% macro searchList(list) %}
+    <div class="search-list">
+        <div class="search-list__inner inner">
+            <h4 class="search-list__title">
+                {{list.sectionTitle}}
+                <span class="search-list__quantity">{{list.sectionItems}}</span>
+            </h4>
+        </div>
+        <ul class="search-list__items">
+            {% for item in list.sectionElements %}
+                <li class="search-list__item">
+                    <a href="#" class="search-list__link inner">
+                        <span class="search-list__image" style="background-image: url(./img/{{item.image}});"></span>
+                        <span class="search-list__text">
+                            <span>{{item.beginningText or ''}}</span><span class="search-list__highlighted">{{item.result}}</span><span>{{item.anotherText}}</span>
+                        </span>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}
+
+{% macro search(props) %}
+    <div class="search__dropdown">
+        <form action="/" class="search__form inner">
+            <input type="text" class="search__input" placeholder="Поиск по сайту"/>
+            <button class="btn btn_md btn_bord btn_anim">
+                <span class="btn__text">Поиск</span>
+                <span class="btn__icon">
+                    {{mixins.icon('arrow-right')}}
+                </span>
+            </button>
+        </form>
+        <div class="search__results js-search-scroll">
+            {{searchList(results[0])}}
+            {{searchList(results[1])}}
+            <div class="inner search__show-more">
+                {{mixins.showMore({
+                        link: 'Показать еще',
+                        details: 'Показано 5 из 378 '
+                    })}}
+            </div>
+            {{searchList(results[2])}}
+
+        </div>
+    </div>
+{% endmacro %}

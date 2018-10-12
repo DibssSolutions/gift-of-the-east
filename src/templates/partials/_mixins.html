@@ -1014,3 +1014,14 @@
 		<div class="step-item__text">{{ props.text }}</div>
 	</div>
 {% endmacro %}
+
+{% macro showMore(props) %}
+	<div class="show-more">
+        <a href="#" class="show-more__link">
+            {{props.link}}
+        </a>
+        <span class="show-more__details">
+            {{props.details}}
+        </span>
+    </div>
+{% endmacro %}
