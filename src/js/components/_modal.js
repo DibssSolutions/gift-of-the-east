@@ -10,11 +10,19 @@ import {OPEN, ACTIVE, BODY, OVERFLOW_HIDDEN} from './../constants';
 
     control.on('click', e => {
       e.preventDefault();
-      modals.removeClass(OPEN);
-      modal.addClass(OPEN);
-      controls.removeClass(ACTIVE);
-      control.addClass(ACTIVE);
-      BODY.addClass(OVERFLOW_HIDDEN);
+      // BODY.addClass(OVERFLOW_HIDDEN);
+      if (!control.hasClass(ACTIVE)) {
+        modals.removeClass(OPEN);
+        modal.addClass(OPEN);
+        controls.removeClass(ACTIVE);
+        control.addClass(ACTIVE);
+        console.log('has');
+      }
+      else {
+        modal.removeClass(OPEN);
+        control.removeClass(ACTIVE);
+        console.log('has no');
+      }
     });
   });
 
@@ -25,14 +33,13 @@ import {OPEN, ACTIVE, BODY, OVERFLOW_HIDDEN} from './../constants';
 
     const hide = () => {
       modal.removeClass(OPEN);
-      BODY.removeClass(OVERFLOW_HIDDEN);
+      // BODY.removeClass(OVERFLOW_HIDDEN);
+      controls.removeClass(ACTIVE);
     };
 
     BODY.on('click', e => {
-      if (!$(e.target).closest(inner).length && modal.hasClass(OPEN) && !$(e.target).closest(controls).length) {
-        hide();
-        controls.removeClass(ACTIVE);
-      }
+      if ($(e.target).closest(inner).length || $(e.target).closest(close).length || $(e.target).closest(controls).length ) return;
+      hide();
     });
 
     close.on('click', e => {

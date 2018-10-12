@@ -64,12 +64,12 @@ buttons.each((i,el) => {
     path: path,
     callback: data => { 
       that.on('click', () => {
-        buttons.removeClass(ACTIVE);
-        that.addClass(ACTIVE);
+        // buttons.removeClass(ACTIVE);
+        // that.addClass(ACTIVE);
         popupWrap.html(template(data));
       } );
       
     }
   });
 });
-popupClose.on('click', () => {buttons.removeClass(ACTIVE);});
+// popupClose.on('click', () => {buttons.removeClass(ACTIVE);});
