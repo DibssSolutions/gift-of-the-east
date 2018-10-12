@@ -1,5 +1,6 @@
 import validate from '../lib/jquery.form-validator.js';
 import '../lib/toggleDisabled.js';
+import '../lib/security.js';
 import Inputmask from 'inputmask';
 import { BODY } from '../constants';
 
@@ -22,8 +23,29 @@ number.each((i,el) => {
 const form = 'form';
 if ($(form).length) {
   $.validate({
-    modules : 'toggleDisabled',
-    disabledFormFilter : form,
-    showErrorDialogs : false
+    modules: 'security, toggleDisabled',
+    disabledFormFilter: form,
+    showErrorDialogs: true,
+    onModulesLoaded: function($form) {
+      var optionalConfig = {
+        fontSize: '12pt',
+        padding: '4px',
+        bad: 'Very bad',
+        weak: 'Weak',
+        good: 'Good',
+        strong: 'Strong'
+      };
+      $('input[name="111111111111"]').displayPasswordStrength(optionalConfig);
+    }
   });
 };
+
+// const formMessage = 'js-form-message';
+// if ($(formMessage).length) {
+//   $.validate({
+//     modules : 'toggleDisabled',
+//     disabledFormFilter : formMessage,
+//     showErrorDialogs : true
+//   });
+//   console.log($(formMessage));
+// };
