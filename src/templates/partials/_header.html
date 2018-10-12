@@ -1,4 +1,6 @@
 {% import "partials/_mixins.html" as mixins %}
+{% import "partials/main/_search.html" as searchBuilder %}
+
 {% macro block(user, basket) %}
     <!-- begin header -->
     <header class="header">
@@ -128,11 +130,19 @@
         <div class="header__bottom">
             <div class="header__inner inner">
                 <!-- begin search -->
-                <div class="header__search search">
-                    <form action="/" class="search__form">
-                        <button class="search__btn" type="button">{{ mixins.icon('search') }}</button>
-                        <input type="text" class="search__input" placeholder="Поиск">
-                    </form>
+                <div class="header__search search" data-dd-wrapper="data-dd-wrapper">
+                    <button class="search__btn" type="button" data-dd-trigger="data-dd-trigger">
+                        <span class="search__open">
+                            {{ mixins.icon('search') }}
+                            <span class="search__text">Поиск</span>
+                        </span>
+                        <span class="search__close">
+                            {{ mixins.icon('close') }}
+                            <span class="search__text">Закрыть</span>
+                        </span>
+                    </button>
+                
+                    {{searchBuilder.search()}}
                 </div>
                 <!-- end search -->
                 <nav class="header__nav nav">

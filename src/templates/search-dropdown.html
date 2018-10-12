@@ -1,0 +1,15 @@
+--- title: Basket ---
+
+{% set searchActive = true %}
+
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+    <div class="inner">
+		{{ mixins.breadcrumbs({
+
+			list: ['Назад','Главная','Корзина']
+		}) }}
+		
+    </div>
+{% endblock %}

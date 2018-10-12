@@ -1,7 +1,13 @@
 import PerfectScrollbar from 'perfect-scrollbar';
-import { DOC } from '../constants'; 
+import { DOC } from '../constants';
 DOC.ready(() => {
-  const containers = document.querySelectorAll('.js-scroll-wrap, .js-interior-popup-wrap');
+  const containers = document.querySelectorAll(
+    '.js-scroll-wrap, .js-interior-popup-wrap'
+  );
+  const search = document.querySelector('.js-search-scroll');
+  const ps = new PerfectScrollbar(search, {
+    useBothWheelAxes: false
+  });
 
   if (!containers) return;
   for (var i = 0; i <= containers.length - 1; i++) {

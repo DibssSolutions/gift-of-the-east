@@ -65,5 +65,9 @@ PageList:
   ready: 100
 - file: feedback-modal-2.html
   ready: 100
+- file: search-dropdown.html
+  ready: 100
+- file: search-dropdown-results.html
+  ready: 100
   
 

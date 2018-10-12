@@ -37,3 +37,151 @@
 			margin: -10px 0 0 -10px
 			vertical-align: middle
 			fill: $silver
+
+// .js-scroll-wrapper
+// 	position: relative
+// 	overflow: auto
+	
+// .ps__thumb-y 
+// 	background-color: $red !important
+// 	border-radius: 0px !important
+// 	width: 10px !important
+// 	background-color: $red
+// 	right: -3px !important
+// 	position: absolute
+
+// .ps__rail-y 
+// 	display: block !important
+// 	opacity: 1 !important
+// 	width: 4px !important
+// 	background-color: #cacad0 !important
+// 	right: 0
+// 	margin-right: 4px
+
+.search
+	&__btn
+		position: absolute
+		top: 22px
+		left: 15px
+		color: $silver
+		font-size: 0
+		background-color: transparent 
+		.icon
+			line-height: 20px
+			vertical-align: middle
+			display: inline-block
+	&__open
+		.is-open & 
+			display: none
+		.icon
+			font-size: 20px
+	&__close 
+		display: none
+		.is-open & 
+			display: inline-block
+		.icon
+			font-size: 16px
+	&__text
+		font-family: $montserrat
+		+f(13px, 400, 1.4)
+		color: $gray
+		display: inline-block
+		vertical-align: middle
+		margin-left: 12px
+	&__dropdown 
+		position: absolute
+		top: 64px
+		left: 50%
+		right: 0
+		width: 100vw
+		margin-left: -50vw
+		visibility: hidden
+		opacity: 0
+		transition: 0.4s
+		// z-index: 100
+		background-color: $white
+		// border-bottom: 2px solid $silver
+		
+		&:after
+			position: absolute
+			top: 100%
+			left: 0
+			right: 0
+			content: ''
+			background-color: rgba($black, 0.2)
+			height: 1000vh
+		.is-open &
+			visibility: visible
+			opacity: 1
+	&__form
+		display: flex
+		justify-content: space-between
+		padding:  21px 15px 17px
+		position: relative
+		margin-bottom: 24px
+		&:after
+			position: absolute
+			bottom: -2px
+			left: -50%
+			right: -50%
+			width: 200%
+			content: ''
+			height: 2px
+			background-color: $silver
+		.btn 
+			margin-left: auto
+	&__input
+		font-family: $montserrat
+		color: $black
+		+f(28px, 400, 1.38)
+		&:placeholder 
+			color: $silver
+	&__show-more
+		text-align: center
+	&__results
+		max-height: 500px
+
+.search-list
+	margin-bottom: 40px
+	&__title
+		margin-bottom: 16px
+		+f(13px, 500, 1.23)
+		text-transform: uppercase
+		color: rgba($black, .8)
+	&__quantity
+		color: rgba($silver, .8)
+		margin-left: 3px
+	&__item
+		display: block
+		&:not(:last-child)
+			margin-bottom: 8px
+		+hover 
+			background-color: rgba($gallery, 0.5)
+	&__link
+		display: flex
+		align-items: center
+	&__image
+		display: block
+		+cover 
+		width: 72px
+		padding-bottom: 72px
+		margin-right: 16px
+	&__text
+		font-size: 16px
+		+f(16px,400,1.125)
+	&__highlighted
+		font-weight: 600
+
+
+.show-more
+	& > *
+		display: inline-block
+		vertical-align: middle
+	&__link
+		font-size: 16px
+		border-bottom: 1px solid #707070
+		line-height: 1
+		margin-right: 4px
+
+.ps__rail-x
+	display: none
