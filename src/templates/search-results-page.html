@@ -1,0 +1,244 @@
+--- title: personal-account-shoppings user: true ---
+{% import "partials/catalog/_filter.html" as filterBuilder %}
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+    <div class="inner">
+        {{ mixins.breadcrumbs({
+            list: ['Назад','Главная','Поиск']
+        }) }}
+        <div class="search-page">
+            {{ mixins.theadsimple({ modifier: 'search', title: 'По запросу «Ваз»', product: '386 результатов поиска' }) }}
+            <div class="search-page__tabs tabs tabs_search" data-tabs="data-tabs">
+                <div class="tabs__out">
+                    <div class="tabs__current" data-tabs-current="data-tabs-current">
+                        <span></span></div>
+                    <ul class="tabs__list">
+                        {% for item in[
+                            {
+                                id: 'categories',
+                                text: 'Категории',
+                                quantity: '3'
+                            }, {
+                                id: 'products',
+                                text: 'Товары',
+                                quantity: '378'
+                            }, {
+                                id: 'articles',
+                                text: 'Статьи',
+                                quantity: '3'
+                            }
+                        ] %}
+                            <li class="tabs__item" data-tabs-control="{{ item.id }}">
+                                {{ item.text }}
+                                {% if item.quantity %}
+                                    <span class="tabs__quantity">{{ item.quantity }}</span>{% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                    <div class="tabs__container" data-tabs-container="categories">
+                        <div class="tabs__inner">
+                            <div class="row">
+                                {% for cardcatalog in [
+                                    {
+                                        img: "ancient-1494672_1920@2x.jpg",
+                                        title: "ВАЗЫ НАПОЛЬНЫЕ"
+                                    },
+                                    {
+                                        img: "chairs-contemporary-design-271696@2x.jpg",
+                                        title: "ВАЗЫ НАПОЛЬНЫЕ"
+                                    },
+                                    {
+                                        img: "evie-shaffer-500190-unsplash@2x.jpg",
+                                        title: "Сухоцветы"
+                                    }
+                                ] %}
+                                    <div class="col col-25 col-md-33 col-sm-50 col-xs-100">
+                                        {{ mixins.cardcatalog({
+                                            img: cardcatalog.img,
+                                            title: cardcatalog.title
+                                        }) }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                    <div class="tabs__container" data-tabs-container="products">
+                        {{filterBuilder.filter(
+                            {number: '378 результатов', checkModifier: "checked-btn_small", width_2 : '195', width_3 : '222'}
+                            )}}
+                        <div class="row">
+                            {% for item in[
+                                1,
+                                2,
+                                3,
+                                4,
+                                5,
+                                6,
+                                7,
+                                8,
+                                9,
+                                10
+                            ] %}
+                                {% for cardproduct in [
+                                    {
+                                        action: "true",
+                                        srcImg: "vase-1.jpg",
+                                        altImg: "annie-spratt",
+                                        price: "1000 ₽",
+                                        priceOld: "1400 ₽",
+                                        nameText: "Наименование товара",
+                                        textBtn: "В корзину"
+                                    },
+                                    {
+                                        srcImg: "5512046302_1_1_2@2x.jpg",
+                                        altImg: "annie-spratt",
+                                        price: "1000 ₽",
+                                        priceOld: "1400 ₽",
+                                        nameText: "Наименование товара",
+                                        textBtn: "В корзину"
+                                    },
+                                    {
+                                        srcImg: "vase-2.jpg",
+                                        altImg: "annie-spratt",
+                                        price: "1000 ₽",
+                                        priceOld: "1400 ₽",
+                                        nameText: "Наименование товара",
+                                        textBtn: "В корзину"
+                                    },
+                                    {
+                                        srcImg: "vase-4.jpg",
+                                        altImg: "annie-spratt",
+                                        price: "1000 ₽",
+                                        priceOld: "1400 ₽",
+                                        nameText: "Наименование товара",
+                                        textBtn: "В корзину"
+                                    },
+                                    {
+                                        action: "true",
+                                        srcImg: "vase.jpg",
+                                        altImg: "annie-spratt",
+                                        price: "1000 ₽",
+                                        priceOld: "1400 ₽",
+                                        nameText: "Наименование товара",
+                                        textBtn: "В корзину"
+                                    }
+                                    ] %}
+                                    <div class="search-page__card col col-20 col-md-33 col-sm-50 col-xs-100" data-stagger-show="data-stagger-show">
+                                        {{ mixins.product({
+                                            class: cardproduct.class,
+                                            action: cardproduct.action,
+                                            srcImg: cardproduct.srcImg,
+                                            altImg: cardproduct.altimg,
+                                            price: cardproduct.price,
+                                            priceOld: cardproduct.priceOld,
+                                            textBtn: cardproduct.textBtn,
+                                            nameText: cardproduct.nameText
+                                        }) }}
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+
+                        </div>
+                        <div class='search-page__show-more'>
+                            {{mixins.showMore({
+                                link: 'Показать еще',
+                                details: 'Показано 50 из 378',
+                                pagination: true
+                            })}}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                    <div class="tabs__container" data-tabs-container="articles">
+                        <section class="search-page__filter filter js-drop">
+                            <div class="filter__top js-drop-shows">
+                                <div class="filter__top-select">
+                                    <span class="md-hide">Упорядочить</span>
+                                    <select class="select select_bord js-select" data-width="216">
+                                        <option value="Cначала новинки">сначала новые</option>
+                                        <option value="Цена по возрастанию">по дате</option>
+                                        <option value="Цена по убыванию">по популярности</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="row">
+                            {% for item in [
+                                        {
+                                            img: "jose-ignacio-gonzalez-pansiera-480627-unsplash@2x.jpg",
+                                            tags: [
+                                                {
+                                                    class: 'tag_orange',
+                                                    text: 'уют дома'
+                                                }, 
+                                                {
+                                                    class: 'tag_turquoise',
+                                                    text: 'досуг'
+                                                }
+                                            ],
+                                            title: "Заголовок статьи о вазе, желательно, чтобы это 
+                                            были две–три строчки",
+                                            text: "Здесь будет две строчки текста, который 
+                                            является подзаголовком к статье..."
+                                        },
+                                        {
+                                            img: "penchant-styled-542047.jpg",
+                                            tags: [
+                                                {
+                                                    class: 'tag_orange',
+                                                    text: 'доброе утро'
+                                                }, 
+                                                {
+                                                    class: 'tag_green',
+                                                    text: 'рецепты'
+                                                }
+                                            ],
+                                            title: "Заголовок статьи, 
+                                            желательно, чтобы это были 
+                                            две–три строчки",
+                                            text: "Здесь будет две строчки текста, который 
+                                            является подзаголовком к статье..."
+                                        },
+                                        {
+                                            img: "haley-rivera-540464-unsplash@2x.jpg",
+                                            tags: [
+                                                {
+                                                    class: 'tag_turquoise',
+                                                    text: 'красота'
+                                                }, 
+                                                {
+                                                    class: 'tag_red',
+                                                    text: 'макияж'
+                                                }
+                                            ],
+                                            title: "Заголовок статьи, 
+                                            желательно, чтобы это были 
+                                            две–три строчки",
+                                            text: "Здесь будет две строчки текста, который 
+                                            является подзаголовком к статье..."
+                                        }
+                                    ] %}
+                                <div class="col col-25 col-sm-100">
+                                    {{ mixins.articleSmall({
+                                            img: item.img,
+                                            tags: item.tags,
+                                            title: item.title,
+                                            text: item.text, 
+                                            class: 'title-sm-article'
+                                        }) }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

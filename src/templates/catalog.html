@@ -1,6 +1,7 @@
 --- title: Catalog ---
 {% import "data/data.html" as data %}
 {% extends "layouts/_layout.html" %}
+{% import "partials/catalog/_filter.html" as filterBuilder %}
 {% block content %}
 	<div class="inner">
 		{{ mixins.breadcrumbs({ list: ['Назад','Главная','Каталог'] }) }}
@@ -111,7 +112,7 @@
 					</div>
 				</div>
 				<div data-stagger-show>
-					{% include "partials/catalog/_filter.html" %}
+					{{filterBuilder.filter({number: '48 товаров', checkModifier: "checked-btn_border-grey"})}}
 				</div>
 				<div class="catalog-cards">
 					<div class="row catalog-cards__row">

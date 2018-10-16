@@ -4,11 +4,6 @@ DOC.ready(() => {
   const containers = document.querySelectorAll(
     '.js-scroll-wrap, .js-interior-popup-wrap'
   );
-  const search = document.querySelector('.js-search-scroll');
-  const ps = new PerfectScrollbar(search, {
-    useBothWheelAxes: false
-  });
-
   if (!containers) return;
   for (var i = 0; i <= containers.length - 1; i++) {
     containers[i].perfectScrollbar = new PerfectScrollbar(containers[i], {
@@ -16,4 +11,10 @@ DOC.ready(() => {
       useBothWheelAxes: true
     });
   }
+
+  const search = document.querySelector('.js-search-scroll');
+  if (!search) return;
+  const ps = new PerfectScrollbar(search, {
+    useBothWheelAxes: false
+  });
 });

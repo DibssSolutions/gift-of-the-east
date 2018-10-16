@@ -69,5 +69,6 @@ PageList:
   ready: 100
 - file: search-dropdown-results.html
   ready: 100
-  
+- file: search-results-page.html
+  ready: 100
 

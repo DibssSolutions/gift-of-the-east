@@ -145,7 +145,7 @@
               <div class="search__dropdown">
                 <form action="/" class="search__form inner">
                   <input type="text" class="search__input" placeholder="Поиск по сайту" />
-                  <button class="btn btn_md btn_bord btn_anim">
+                  <button class="btn btn_md btn_bord btn_anim btn_search">
                     <span class="btn__text">Поиск</span>
                     <span class="btn__icon">
                       <svg class="icon icon-arrow-right">
@@ -237,8 +237,10 @@
                   </div>
                   <div class="inner search__show-more">
                     <div class="show-more">
-                      <a href="#" class="show-more__link"> Показать еще </a>
-                      <span class="show-more__details"> Показано 5 из 378 </span>
+                      <div class="show-more__text">
+                        <a href="#" class="show-more__link"> Показать еще </a>
+                        <span class="show-more__details"> Показано 5 из 378 </span>
+                      </div>
                     </div>
                   </div>
                   <div class="search-list">
@@ -274,6 +276,7 @@
                     </ul>
                   </div>
                 </div>
+                <div class="search__overlay js-search-overlay"></div>
               </div>
             </div>
             <!-- end search -->

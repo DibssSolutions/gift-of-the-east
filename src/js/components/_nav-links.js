@@ -10,7 +10,7 @@ triggers.each((i, trigger) => {
   trigger = $(trigger);
   const parent = trigger.parents('[data-dd-wrapper]');
   const close = parent.find('[data-dd-close]');
-
+  const overlay = parent.find('.js-search-overlay');
   trigger.on('click', function() {
     if (parent.hasClass(OPEN)) {
       parent.removeClass(OPEN);
@@ -29,6 +29,10 @@ triggers.each((i, trigger) => {
 
   close.on('click', e => {
     e.preventDefault();
+    hide();
+  });
+  
+  overlay.on('click', e => {
     hide();
   });
 });

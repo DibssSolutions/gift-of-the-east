@@ -1,7 +1,7 @@
 {% import "partials/_mixins.html" as mixins %}
 {% import "partials/main/_search.html" as searchBuilder %}
 
-{% macro block(user, basket) %}
+{% macro block(user, basket, searchState) %}
     <!-- begin header -->
     <header class="header">
         <div class="header__top">
@@ -141,8 +141,7 @@
                             <span class="search__text">Закрыть</span>
                         </span>
                     </button>
-                
-                    {{searchBuilder.search()}}
+                    {{searchBuilder.search(searchState)}}
                 </div>
                 <!-- end search -->
                 <nav class="header__nav nav">
