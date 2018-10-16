@@ -1,4 +1,4 @@
-import { BODY, SHOW, INIT, OPEN } from '../constants';
+import { BODY, SHOW, INIT, OPEN, ACTIVE } from '../constants';
 const trigger = $('.js-nav-links-current');
 const navLinks = $('.js-nav-links');
 const parentLink = $('.js-nav-parent-dark');
@@ -31,7 +31,7 @@ triggers.each((i, trigger) => {
     e.preventDefault();
     hide();
   });
-  
+
   overlay.on('click', e => {
     hide();
   });

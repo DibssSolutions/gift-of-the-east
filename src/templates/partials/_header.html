@@ -3,10 +3,15 @@
 
 {% macro block(user, basket, searchState) %}
     <!-- begin header -->
-    <header class="header">
+    <header class="header js-menu">
         <div class="header__top">
             <div class="header__inner inner">
-                <div class="header__contact">
+                <div class="header__open desktop-hidden">
+                    <button type="button" class="js-open-mob-menu">
+                        {{mixins.icon('bars')}}
+                    </button>
+                </div>
+                <div class="header__contact md-hide">
                     <a href="#" class="header__shops">{{ mixins.icon('location') }}
                         <span>Магазины</span></a>
                     <a href="tel:+74565678795" class="header__phone">+7 (456) 567 87 95</a>
@@ -23,13 +28,13 @@
                     <div class="signin js-profile-wrapper" data-dd-wrapper="data-dd-wrapper">
                         {% if not user %}
                             <a href="#" class="signin__item" data-modal-control="login">{{mixins.icon('account')}}
-                                <span>Войти</span></a>
+                                <span class="mob-hide">Войти</span></a>
                             <span class="signin__slash">/</span>
                             <a href="#" class="signin__item" data-modal-control="registration-tab">
-                                <span>Регистрация</span></a>
+                                <span class="mob-hide">Регистрация</span></a>
                         {% else %}
                             <a href="#" class="signin__item js-profile-trigger" data-dd-trigger="data-dd-trigger">{{mixins.icon('account')}}
-                                <span>Профиль</span>
+                                <span class="mob-hide">Профиль</span>
                             </a>
                         {% endif %}
 
@@ -82,15 +87,14 @@
                         {% if not basket %}
                             <a href="#" class="basket__trigger js-basket-trigger" data-dd-trigger="data-dd-trigger">
                                 {{mixins.icon('shopping-bag')}}
-                                <span>Корзина</span>
+                                <span class="mob-hide">Корзина</span>
                             </a>
                         {% else %}
                             <a href="#" class="basket__trigger js-basket-trigger" data-dd-trigger="data-dd-trigger">
                                 {{mixins.icon('shopping-bag')}}
-                                <span>1 товар – 1000 ₽</span>
+                                <span class="mob-hide">1 товар – 1000 ₽</span>
                             </a>
                         {% endif %}
-
                         <div class="basket__drop">
                             <div class="basket__head">Корзина (1)</div>
                             <div class="basket__product js-basket-product">
@@ -145,6 +149,11 @@
                 </div>
                 <!-- end search -->
                 <nav class="header__nav nav">
+                    <div class="header__close">
+                        <button type="button" class="js-close-mob-menu">
+                            {{mixins.icon('close')}}
+                        </button>
+                    </div>
                     <ul class="nav__list">
                         {% for item in [
                         {
@@ -193,10 +202,18 @@
                                 <a href="#" class="nav__link{% if item.modifier %} nav__link_{{item.modifier}}{% endif %}">
                                     <span class="nav__text{% if item.modifier %} nav__text_{{item.modifier}}{% endif %}">{{ item.text }}</span>
                                     <span class="nav__line{% if item.modifier %} nav__line_{{item.modifier}}{% endif %}">
-                                        <span></span></span>
+                                        <span></span>
+                                    </span>
+                                    {% if item.inner or item.innerWithSubset %}
+                                        <span class="nav__mob-next js-submenu-toggler">
+                                            <button type="button">
+                                                {{mixins.icon('chevron-right')}}
+                                            </button>
+                                        </span>
+                                    {% endif %}
                                 </a>
                                 {% if item.inner %}
-                                    <span class="nav__wrap js-nav-wrap">
+                                    <span class="nav__wrap js-nav-item">
                                         <span class="nav__inner inner">
                                             <ul class="nav__items">
                                                 {% for text in item.inner.list %}
@@ -212,7 +229,7 @@
                                     </span>
                                 {% endif %}
                                 {% if item.innerWithSubset %}
-                                    <span class="nav__wrap nav__wrap_with-bg js-nav-wrap js-nav-wrap-dark">
+                                    <span class="nav__wrap nav__wrap_with-bg js-nav-item js-nav-wrap-dark">
                                         <span class="nav__inner inner">
                                             <ul class="nav__items-row">
                                                 {% for links in item.innerWithSubset.list %}
@@ -221,7 +238,7 @@
                                                             <span class="nav__text-row">{{ links.mainLink }}</span>
                                                         </a>
                                                         {% if links.secondaryLinks %}
-                                                            <span class="nav__column">
+                                                            <span class="nav__column js-nav-item">
                                                                 <ul class="nav__elements">
                                                                     {% for text in links.secondaryLinks %}
                                                                         <li>
