@@ -90,7 +90,7 @@
 		margin-left: 12px
 	&__dropdown 
 		position: absolute
-		top: 64px
+		top: 65px
 		left: 50%
 		right: 0
 		width: 100vw
@@ -105,6 +105,8 @@
 		.is-open &
 			visibility: visible
 			opacity: 1
+		+md 
+			position: fixed
 	&__overlay
 		position: absolute
 		top: 72px
@@ -113,6 +115,8 @@
 		background-color: rgba($black, 0.2)
 		height: 1000vh
 		z-index: -1
+		+md 
+			top: 60px
 	&__form
 		display: flex
 		justify-content: space-between
@@ -120,6 +124,8 @@
 		position: relative
 		z-index: 5
 		background-color: $white
+		+md 
+			padding: 10px 15px
 		&:after
 			position: absolute
 			bottom: 0
@@ -135,10 +141,17 @@
 		font-family: $montserrat
 		color: $black
 		+f(28px, 400, 1.38)
-		+sm 
+		+md
 			font-size: 16px
 		&:placeholder 
 			color: $silver
+	&__btn-mob
+		background-color: transparent
+		font-size: 0
+		display: inline-block
+		.icon
+			font-size: 24px
+			color: $lightBrown
 	&__show-more
 		text-align: center
 		margin-top: 32px
@@ -150,6 +163,7 @@
 		padding-bottom: 40px
 		z-index: 2
 		background-color: $white
+
 
 .search-list
 	+ .search-list 

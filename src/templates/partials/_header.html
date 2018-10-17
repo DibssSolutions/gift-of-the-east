@@ -5,8 +5,8 @@
     <!-- begin header -->
     <header class="header js-menu">
         <div class="header__top">
-            <div class="header__inner inner">
-                <div class="header__open desktop-hidden">
+            <div class="header__inner header__mobile inner">
+                <div class="header__open md-show">
                     <button type="button" class="js-open-mob-menu">
                         {{mixins.icon('bars')}}
                     </button>
@@ -25,74 +25,105 @@
                 </div>
                 <div class="header__cabin">
                     <!-- begin signin -->
+                    <div class="mobile-search md-show">
+                        <button class="mobile-search__button js-open-mob-search">
+                            <span class="mobile-search__open">{{ mixins.icon('search') }}</span>
+                            <span class="mobile-search__close">{{ mixins.icon('close') }}</span>
+                        </button>
+                    </div>
                     <div class="signin js-profile-wrapper" data-dd-wrapper="data-dd-wrapper">
                         {% if not user %}
-                            <a href="#" class="signin__item" data-modal-control="login">{{mixins.icon('account')}}
-                                <span class="mob-hide">Войти</span></a>
-                            <span class="signin__slash">/</span>
-                            <a href="#" class="signin__item" data-modal-control="registration-tab">
-                                <span class="mob-hide">Регистрация</span></a>
-                        {% else %}
-                            <a href="#" class="signin__item js-profile-trigger" data-dd-trigger="data-dd-trigger">{{mixins.icon('account')}}
-                                <span class="mob-hide">Профиль</span>
-                            </a>
-                        {% endif %}
-
-                        <div class="signin__drop js-profile-content">
-                            <div class="signin__head">Добро пожаловать, Анна</div>
-                            <ul class="signin__list">
-                                {% for item in [
-                                {
-                                    text: "Личные данные"
-                                },
-                                {
-                                    class: "has-inf",
-                                    text: "Сообщения",
-                                    sub: "3"
-                                },
-                                {
-                                    text: "История покупок"
-                                },
-                                {
-                                    class: "has-inf",
-                                    text: "Персональные предложения",
-                                    sub: "4"
-                                },
-                                {
-                                    text: "Избранное"
-                                },
-                                {
-                                    text: "Клубная карта"
-                                },
-                                {
-                                    text: "Пригласить друзей"
-                                }
-                            ] %}
-                                    <li {% if item.class %} class="{{ item.class }}" {% endif %}>
-                                        <a href="#">{{ item.text }}
-                                            {% if item.sub %}
-                                                <span class="text-silver">{{ item.sub }}</span>{% endif %}
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                            <div class="signin__footer">
-                                <a href="#" class="signin__exit">Выйти</a>
+                            <div class="signin__anonymus">
+                                <button class="signin__button" data-dd-trigger="data-dd-trigger">
+                                    {{mixins.icon('account')}}
+                                </button>
+                                <div class="signin__variants">
+                                    <div class="signin__close">
+                                        <button type="button" data-dd-close="data-dd-close">
+                                            {{ mixins.icon('close') }}
+                                        </button>
+                                    </div>
+                                    <ul>
+                                        <li><a href="#" data-modal-control="login">
+                                            <span>Войти</span>
+                                            <span class="header__mob-next">
+                                                    {{mixins.icon('chevron-right')}}
+                                            </span>
+                                        </a></li>
+                                        <li><a href="#" data-modal-control="registration-tab">
+                                            <span>Регистрация</span>
+                                            <span class="header__mob-next">
+                                                {{mixins.icon('chevron-right')}}
+                                            </span></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                            <a href="#" class="signin__item" data-modal-control="login">
+                                <span class="md-hide">Войти</span></a>
+                            <span class="signin__slash md-hide">/</span>
+                            <a href="#" class="signin__item" data-modal-control="registration-tab">
+                                <span class="md-hide">Регистрация</span></a>
+                        {% else %}
+                            <a href="#" class="signin__item" data-dd-trigger="data-dd-trigger">{{mixins.icon('account')}}
+                                <span class="sm-hide">Профиль</span>
+                            </a>
+                            <div class="signin__drop">
+                                <div class="signin__head">Добро пожаловать, Анна</div>
+                                <ul class="signin__list">
+                                    {% for item in [
+                                        {
+                                            text: "Личные данные"
+                                        },
+                                        {
+                                            class: "has-inf",
+                                            text: "Сообщения",
+                                            sub: "3"
+                                        },
+                                        {
+                                            text: "История покупок"
+                                        },
+                                        {
+                                            class: "has-inf",
+                                            text: "Персональные предложения",
+                                            sub: "4"
+                                        },
+                                        {
+                                            text: "Избранное"
+                                        },
+                                        {
+                                            text: "Клубная карта"
+                                        },
+                                        {
+                                            text: "Пригласить друзей"
+                                        }
+                                    ] %}
+                                        <li {% if item.class %} class="{{ item.class }}" {% endif %}>
+                                            <a href="#">{{ item.text }}
+                                                {% if item.sub %}
+                                                    <span class="text-silver">{{ item.sub }}</span>{% endif %}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <div class="signin__footer">
+                                    <a href="#" class="signin__exit">Выйти</a>
+                                </div>
+                            </div>
+                        {% endif %}
                     </div>
                     <!-- end signin -->
                     <!-- begin basket -->
                     <div class="basket js-basket-wrapper" data-dd-wrapper="data-dd-wrapper">
                         {% if not basket %}
-                            <a href="#" class="basket__trigger js-basket-trigger" data-dd-trigger="data-dd-trigger">
+                            <a href="#" class="basket__trigger" data-dd-trigger="data-dd-trigger">
                                 {{mixins.icon('shopping-bag')}}
-                                <span class="mob-hide">Корзина</span>
+                                <span class="md-hide">Корзина</span>
                             </a>
                         {% else %}
-                            <a href="#" class="basket__trigger js-basket-trigger" data-dd-trigger="data-dd-trigger">
+                            <a href="#" class="basket__trigger" data-dd-trigger="data-dd-trigger">
                                 {{mixins.icon('shopping-bag')}}
-                                <span class="mob-hide">1 товар – 1000 ₽</span>
+                                <span class="sm-hide">1 товар – 1000 ₽</span>
                             </a>
                         {% endif %}
                         <div class="basket__drop">
@@ -135,7 +166,7 @@
             <div class="header__inner inner">
                 <!-- begin search -->
                 <div class="header__search search" data-dd-wrapper="data-dd-wrapper">
-                    <button class="search__btn" type="button" data-dd-trigger="data-dd-trigger">
+                    <button class="search__btn md-hide" type="button" data-dd-trigger="data-dd-trigger">
                         <span class="search__open">
                             {{ mixins.icon('search') }}
                             <span class="search__text">Поиск</span>
@@ -197,28 +228,39 @@
                                         }
                                     ]
                             }
-                        }] %}
-                            <li class="nav__item js-nav-item{% if item.modifier %} nav__item_{{item.modifier}}{% endif %}{% if item.jsModifier %} {{item.jsModifier}}{% endif %}">
-                                <a href="#" class="nav__link{% if item.modifier %} nav__link_{{item.modifier}}{% endif %}">
-                                    <span class="nav__text{% if item.modifier %} nav__text_{{item.modifier}}{% endif %}">{{ item.text }}</span>
+                        },
+                        {
+                            text: 'Магазины<span class="header__phone header__phone_mob">+7 (456) 567 87 95</span>', 
+                            modifier: "md-show"
+                        }
+                        
+                        
+                        ] %}
+                            <li class="nav__item{% if item.inner or item.innerWithSubset %} js-nav-item{% endif %}{% if item.modifier %} nav__item_{{item.modifier}}{% endif %}{% if item.jsModifier %} {{item.jsModifier}}{% endif %}">
+                                <a href="#" class="nav__link{% if item.modifier %} nav__link_{{item.modifier}}{% endif %} js-nav-link">
+                                    <span class="nav__text{% if item.modifier %} nav__text_{{item.modifier}}{% endif %}">{{ item.text | safe}}</span>
                                     <span class="nav__line{% if item.modifier %} nav__line_{{item.modifier}}{% endif %}">
                                         <span></span>
                                     </span>
                                     {% if item.inner or item.innerWithSubset %}
-                                        <span class="nav__mob-next js-submenu-toggler">
-                                            <button type="button">
-                                                {{mixins.icon('chevron-right')}}
-                                            </button>
+                                        <span class="header__mob-next">
+                                            {{mixins.icon('chevron-right')}}
                                         </span>
                                     {% endif %}
                                 </a>
                                 {% if item.inner %}
-                                    <span class="nav__wrap js-nav-item">
+                                    <span class="nav__wrap js-nav-child">
+                                        <h4 class="nav__mob-title">
+                                            {{item.text}}
+                                        </h4>
+                                        <button class="nav__back js-mob-back">
+                                            {{mixins.icon('arrow-left')}}
+                                        </button>
                                         <span class="nav__inner inner">
                                             <ul class="nav__items">
                                                 {% for text in item.inner.list %}
                                                     <li>
-                                                        <a href="#">{{ text | safe }}</a>
+                                                        <a href="1.html">{{ text | safe }}</a>
                                                     </li>
                                                 {% endfor %}
                                             </ul>
@@ -229,20 +271,37 @@
                                     </span>
                                 {% endif %}
                                 {% if item.innerWithSubset %}
-                                    <span class="nav__wrap nav__wrap_with-bg js-nav-item js-nav-wrap-dark">
+                                    <span class="nav__wrap nav__wrap_with-bg js-nav-wrap-dark">
+                                        <h4 class="nav__mob-title">
+                                            {{item.text}}
+                                        </h4>
+                                        <button class="nav__back js-mob-back">
+                                            {{mixins.icon('arrow-left')}}
+                                        </button>
                                         <span class="nav__inner inner">
                                             <ul class="nav__items-row">
                                                 {% for links in item.innerWithSubset.list %}
                                                     <li class="nav__item-row  js-nav-item">
-                                                        <a href="#" class="nav__link-row">
+                                                        <a href="#" class="nav__link-row js-nav-link">
                                                             <span class="nav__text-row">{{ links.mainLink }}</span>
+                                                            {% if links.secondaryLinks %}
+                                                                <span class="header__mob-next">
+                                                                    {{mixins.icon('chevron-right')}}
+                                                                </span>
+                                                            {% endif %}
                                                         </a>
                                                         {% if links.secondaryLinks %}
-                                                            <span class="nav__column js-nav-item">
-                                                                <ul class="nav__elements">
+                                                            <span class="nav__column">
+                                                                <h4 class="nav__mob-title">
+                                                                    {{links.mainLink}}
+                                                                </h4>
+                                                                <button class="nav__back js-mob-back">
+                                                                    {{mixins.icon('arrow-left')}}
+                                                                </button>
+                                                                <ul class="nav__elements js-nav-child">
                                                                     {% for text in links.secondaryLinks %}
                                                                         <li>
-                                                                            <a href="#" class="nav__element">{{ text | safe }}</a>
+                                                                            <a href="1.html" class="nav__element">{{ text | safe }}</a>
                                                                         </li>
                                                                     {% endfor %}
                                                                 </ul>

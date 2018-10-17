@@ -1,0 +1,29 @@
+.mailing
+	height: 300px
+	position: relative
+	+cover
+	+vertical
+	text-align: center
+	&:after
+		content: ''
+		+coverdiv
+		background-color: rgba($white, 0.5)
+		// z-index: -1
+	&__form
+		display: inline-block
+		vertical-align: middle
+		padding: 32px 40px
+		background-color: $white
+		position: relative
+		z-index: 2
+	&__title
+		margin-bottom: 18px
+	&__details
+		margin-bottom: 24px
+		+f(16px, 400, 1.25)
+		color: $gray
+	.input
+		width: 280px
+		height: 44px
+		margin-right: 16px
+		display: inline-block
