@@ -288,7 +288,9 @@
 		</div>
 		<div class="product__price{% if props.priceRed %} product__price_red{% endif %}">
 			<span>{{ props.price }}</span>
-			<span class="is-old">{{ props.priceOld }}</span>
+			{% if props.priceOld %}
+				<span class="is-old">{{ props.priceOld }}</span>
+			{% endif %}
 		</div>
 		{% if props.expireTime %}
 			<div class="product__expire">

@@ -4,12 +4,14 @@ import { buildIcon } from '../utils';
 
 const mainSlider = $('.js-main-slider');
 
-mainSlider.each((i,el) => {
+mainSlider.each((i, el) => {
   let slider = $(el);
   let sliderParent = slider.parents('.js-main-slider-wrap');
   let prevBtn = $('.js-main-slider-prev', sliderParent);
   let nextBtn = $('.js-main-slider-next', sliderParent);
-  slider.on('init', () => { sliderParent.addClass(INIT); });
+  slider.on('init', () => {
+    sliderParent.addClass(INIT);
+  });
   slider.slick({
     dots: true,
     infinite: true,
@@ -33,12 +35,14 @@ mainSlider.each((i,el) => {
 });
 
 const slider = $('.js-slider');
-slider.each((i,el) => {
+slider.each((i, el) => {
   let slider = $(el);
   let sliderParent = slider.parents('.js-slider-parent');
   let prevBtn = $('.js-slider-prev', sliderParent);
   let nextBtn = $('.js-slider-next', sliderParent);
-  slider.on('init', () => { sliderParent.addClass(INIT); });
+  slider.on('init', () => {
+    sliderParent.addClass(INIT);
+  });
   slider.slick({
     dots: true,
     infinite: false,
@@ -76,7 +80,7 @@ slider.each((i,el) => {
 });
 
 const sliderWrap = $('.js-slider-wrap');
-sliderWrap.each((i,el) => {
+sliderWrap.each((i, el) => {
   let that = $(el);
   let sliderProducts = that.find('.js-slider-products');
   let sliderNav = that.find('.js-slider-products-nav');
@@ -113,10 +117,7 @@ sliderWrap.each((i,el) => {
       }
     ]
   });
-
 });
-
-
 
 const sliderWatched = $('.js-slider-watched');
 
@@ -126,8 +127,12 @@ sliderWatched.slick({
   speed: 300,
   slidesToShow: 4,
   slidesToScroll: 1,
-  prevArrow: `<button class="slider-watched__prev" type="button">${buildIcon('arrow-left')}</button>`,
-  nextArrow: `<button class="slider-watched__next" type="button">${buildIcon('arrow-right')}</button>`,
+  prevArrow: `<button class="slider-watched__prev" type="button">${buildIcon(
+    'arrow-left'
+  )}</button>`,
+  nextArrow: `<button class="slider-watched__next" type="button">${buildIcon(
+    'arrow-right'
+  )}</button>`,
   responsive: [
     {
       breakpoint: 1023,
@@ -154,12 +159,14 @@ sliderWatched.slick({
 });
 
 const magazineSlider = $('.js-magazine-slider');
-magazineSlider.each((i,el) => {
+magazineSlider.each((i, el) => {
   let slider = $(el);
   let sliderParent = slider.parents('.js-magazine-slider-parent');
   let prevBtn = $('.js-magazine-slider-prev', sliderParent);
   let nextBtn = $('.js-magazine-slider-next', sliderParent);
-  slider.on('init', () => { sliderParent.addClass(INIT); });
+  slider.on('init', () => {
+    sliderParent.addClass(INIT);
+  });
   slider.slick({
     dots: true,
     infinite: false,
@@ -184,16 +191,63 @@ DOC.ready(() => {
   let timeOut;
   let arrayHref = [];
   const sliderIcons = $('.slick-slider .icon use');
-  sliderIcons.each((i,el) => {
+  sliderIcons.each((i, el) => {
     const atr = $(el).attr('xlink:href');
     arrayHref.push(atr);
   });
   WIN.on('resize', () => {
     clearTimeout(timeOut);
     timeOut = setTimeout(() => {
-      for(let i = 0; i <= sliderIcons.length-1; i++) {
-        $(sliderIcons[i]).attr('xlink:href', `${arrayHref[i]}`); 
+      for (let i = 0; i <= sliderIcons.length - 1; i++) {
+        $(sliderIcons[i]).attr('xlink:href', `${arrayHref[i]}`);
       }
-    },100);
+    }, 100);
+  });
+});
+
+const productSlider = $('.js-offers-slider');
+
+productSlider.each((i, el) => {
+  let slider = $(el);
+  // let sliderParent = slider.parents('.js-slider-parent');
+  // let prevBtn = $('.js-slider-prev', slider);
+  // let nextBtn = $('.js-slider-next', slider);
+  slider.on('init', () => {
+    slider.addClass(INIT);
+    const video = $('video', slider)[0];
+    video.play();
+  });
+  slider.slick({
+    dots: true,
+    infinite: false,
+    speed: 1800,
+    fade: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // autoplay: true,
+    prevArrow: `<button class="offers-slider__prev js-slider-prev">${buildIcon(
+      'arrow-left'
+    )}</button>`,
+    nextArrow: `<button class="offers-slider__next js-slider-next">${buildIcon(
+      'arrow-right'
+    )}</button>`,
+    customPaging: (slider, pageIndex) => {
+      return $(`<button class="offers-slider__dot">
+    <svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle stroke="#000" stroke-width="2" cx="17" cy="17" r="16"></circle>
+      </g>
+    </svg>
+    </button>`);
+    },
+    responsive: [
+      {
+        breakpoint: widthSM,
+        settings: {
+          fade: false,
+          arrows: false
+        }
+      }
+    ]
   });
 });

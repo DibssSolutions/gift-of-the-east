@@ -1,0 +1,162 @@
+{% import "partials/_mixins.html" as mixins %}
+
+{% set slides = [
+{
+        video: {
+            poster: 'video_poster.jpg',
+            src: 'loading_animation.webm'
+        },
+        title: "Отпуск у себя дома",
+        btnText: "Все акции",
+        descrText: "Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац 
+        считается каноническим во всех справочниках по типографике и предлагается к использованию в 
+        статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов.",
+        cardProducts: [{
+			srcImg: "evie-shaffer-500190-unsplash@2x.jpg",
+			altImg: "vase",
+			price: "1000 ₽",
+			nameText: "Ваза из стекла с разноцветным узором",
+			textBtn: "В корзину"
+        }, 
+        {
+			srcImg: "fontain@2x.jpg",
+			altImg: "fontain",
+			price: "6000 ₽",
+			nameText: "Фонтан в форме цветка",
+			textBtn: "В корзину"
+        }, 
+        {
+			srcImg: "elephant_2.jpg",
+			altImg: "elephant",
+			price: "11000 ₽",
+			nameText: "Слон коричневый с позолотой",
+			textBtn: "В корзину"
+		}]
+    },
+    {
+        image: "alternative-aroma-aromatherapy-161599.jpg",
+        title: "Отпуск у себя дома",
+        btnText: "Все акции",
+        descrText: "Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац 
+        считается каноническим во всех справочниках по типографике и предлагается к использованию в 
+        статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов.",
+        cardProducts: [{
+			srcImg: "vase.jpg",
+			altImg: "vase",
+			price: "1000 ₽",
+			nameText: "Ваза из стекла с разноцветным узором",
+			textBtn: "В корзину"
+        }, 
+        {
+			srcImg: "fontain@2x.jpg",
+			altImg: "fontain",
+			price: "6000 ₽",
+			nameText: "Фонтан в форме цветка",
+			textBtn: "В корзину"
+        }, 
+        {
+			srcImg: "elephant_2.jpg",
+			altImg: "elephant",
+			price: "11000 ₽",
+			nameText: "Слон коричневый с позолотой",
+			textBtn: "В корзину"
+		}]
+    }, 
+     
+    {
+        image: "alternative-aroma-aromatherapy-161599.jpg",
+        title: "Отпуск у себя дома",
+        btnText: "Все акции",
+        descrText: "Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац 
+        считается каноническим во всех справочниках по типографике и предлагается к использованию в 
+        статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов.",
+        cardProducts: [{
+			srcImg: "vase.jpg",
+			altImg: "vase",
+			price: "1000 ₽",
+			nameText: "Ваза из стекла с разноцветным узором",
+			textBtn: "В корзину"
+        }, 
+        {
+			srcImg: "fontain@2x.jpg",
+			altImg: "fontain",
+			price: "6000 ₽",
+			nameText: "Фонтан в форме цветка",
+			textBtn: "В корзину"
+        }, 
+        {
+			srcImg: "elephant_2.jpg",
+			altImg: "elephant",
+			price: "11000 ₽",
+			nameText: "Слон коричневый с позолотой",
+			textBtn: "В корзину"
+		}]
+    }
+    
+] %}
+
+<div class="offers-slider-wrapper inner">
+    <div class="js-offers-slider offers-slider">
+        {% for slide in slides %}
+            <div class="offers-slider__slide">
+                <div class="package-offer">
+                    {% if slide.video %}
+                        <div class="package-offer__video-wrapper">
+                            <video class="package-offer__video" autoplay="autoplay" loop="true" poster="img/{{slide.video.poster}}">
+                                <source src="video/{{slide.video.src}}" type="video/webm">
+                                Your browser doesn't support HTML5 video tag.
+                            </video>
+                            <div class="package-offer__video-buttons">
+                                <button class="video-play" type="button">
+                                    {{mixins.icon('play-circle')}}
+                                </button>
+                                <button class="video-expand" type="button">
+                                    {{mixins.icon('expand')}}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="package-offer__cover"></div>
+                    {% endif %}
+                    <div class="package-offer__media-wrapper">
+                        {% if not slide.video %}
+                            <div class="package-offer__image" style="background-image: url(./img/{{slide.image}});"></div>
+                        {% endif %}
+                    </div>
+                    <div class="package-offer__descr">
+                        <div class="package-offer__descr-top">
+                            <h3 class="package-offer__title title">
+                                {{slide.title}}
+                            </h3>
+                            <button class="package-offer__button btn btn_md btn_offers btn_anim btn_bord">
+                                <span class="btn__text">
+                                    {{slide.btnText}}
+                                </span>
+                                <span class="btn__icon">
+                                    {{mixins.icon('arrow-right')}}
+                                </span>
+                            </button>
+                        </div>
+                        <div class="package-offer__text js-dots">
+                            {{slide.descrText}}
+                        </div>
+                    </div>
+                    <div class="package-offer__cards">
+                        {% for card in slide.cardProducts %}
+                            <div class="package-offer__card">
+                                {{ mixins.product({
+                                action: true,
+                                srcImg: card.srcImg,
+                                altImg: card.altimg,
+                                price: card.price,
+                                textBtn: "В корзину",
+                                nameText: card.nameText,
+                                likebtn: false
+                                }) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
