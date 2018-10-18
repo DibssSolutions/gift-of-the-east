@@ -100,50 +100,55 @@
         {% for slide in slides %}
             <div class="offers-slider__slide">
                 <div class="package-offer">
-                    {% if slide.video %}
-                        <div class="package-offer__video-wrapper">
-                            <video class="package-offer__video" autoplay="autoplay" loop="true" poster="img/{{slide.video.poster}}">
-                                <source src="video/{{slide.video.src}}" type="video/webm">
-                                Your browser doesn't support HTML5 video tag.
-                            </video>
-                            <div class="package-offer__video-buttons">
-                                <button class="video-play" type="button">
-                                    {{mixins.icon('play-circle')}}
-                                </button>
-                                <button class="video-expand" type="button">
-                                    {{mixins.icon('expand')}}
-                                </button>
-                            </div>
-                        </div>
-                        <div class="package-offer__cover"></div>
-                    {% endif %}
                     <div class="package-offer__media-wrapper">
-                        {% if not slide.video %}
+                        {% if slide.video %}
+                            <div class="package-offer__video-wrapper">
+                                <video class="package-offer__video" autoplay="autoplay" loop="true" poster="img/{{slide.video.poster}}">
+                                    <source src="video/{{slide.video.src}}" type="video/webm">
+                                    Your browser doesn't support HTML5 video tag.
+                                </video>
+                                <div class="package-offer__video-buttons">
+                                    <button class="video-play" type="button">
+                                        {{mixins.icon('play-circle')}}
+                                    </button>
+                                    <button class="video-pause" type="button">
+                                        {{mixins.icon('pause-circle')}}
+                                    </button>
+                                    <button class="video-expand" type="button">
+                                        {{mixins.icon('expand')}}
+                                    </button>
+                                    <button class="video-compress" type="button">
+                                        {{mixins.icon('compress')}}
+                                    </button>
+                                </div>
+                            </div>
+                        {% else  %}
                             <div class="package-offer__image" style="background-image: url(./img/{{slide.image}});"></div>
                         {% endif %}
                     </div>
-                    <div class="package-offer__descr">
-                        <div class="package-offer__descr-top">
-                            <h3 class="package-offer__title title">
-                                {{slide.title}}
-                            </h3>
-                            <button class="package-offer__button btn btn_md btn_offers btn_anim btn_bord">
-                                <span class="btn__text">
-                                    {{slide.btnText}}
-                                </span>
-                                <span class="btn__icon">
-                                    {{mixins.icon('arrow-right')}}
-                                </span>
-                            </button>
+                    <div class="package-offer__content">
+                        <div class="package-offer__descr">
+                            <div class="package-offer__descr-top">
+                                <h3 class="package-offer__title title">
+                                    {{slide.title}}
+                                </h3>
+                                <button class="package-offer__button btn btn_md btn_offers btn_anim btn_bord">
+                                    <span class="btn__text">
+                                        {{slide.btnText}}
+                                    </span>
+                                    <span class="btn__icon">
+                                        {{mixins.icon('arrow-right')}}
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="package-offer__text js-dots">
+                                {{slide.descrText}}
+                            </div>
                         </div>
-                        <div class="package-offer__text js-dots">
-                            {{slide.descrText}}
-                        </div>
-                    </div>
-                    <div class="package-offer__cards">
-                        {% for card in slide.cardProducts %}
-                            <div class="package-offer__card">
-                                {{ mixins.product({
+                        <div class="package-offer__cards">
+                            {% for card in slide.cardProducts %}
+                                <div class="package-offer__card">
+                                    {{ mixins.product({
                                 action: true,
                                 srcImg: card.srcImg,
                                 altImg: card.altimg,
@@ -152,8 +157,9 @@
                                 nameText: card.nameText,
                                 likebtn: false
                                 }) }}
-                            </div>
-                        {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
