@@ -584,7 +584,7 @@
 			padding-top: 80px
 			padding-bottom: 40px
 	.slick-slide
-		+sm 
+		+md 
 			margin: 0 15px
 	.slick-list
 		overflow: visible
@@ -599,9 +599,11 @@
 		color: $black
 		top: 273px
 		text-align: center
-		transition: color .3s, border-color .3s
+		transition: color .3s, border-color .3s, z-index 0.3s
 		line-height: 10px
 		z-index: 100
+		.is-fullscreen &
+			z-index: -1
 		+lg 
 			top: 215px
 		+md
@@ -645,11 +647,12 @@
 		top: 50%
 		transform: translateY(-50%)
 		+md 
-			top: 150px
+			top: auto
+			bottom: -70px
 			left: 50%
 			transform: translateX(-50%)
 		+sm 
-			top: 174px
+			bottom: -20px
 		li 
 			+md 
 				display: inline-block
@@ -679,6 +682,8 @@
 			opacity: 0
 			transition: opacity .5s
 			transition-delay: 0.8s
+			+md 
+				border: 1px solid $gray
 			+sm
 				display: none
 			.slick-initialized li.slick-active &
@@ -698,6 +703,8 @@
 			background-color: $white 
 			.slick-initialized li.slick-active &
 				opacity: 1
+			+md 
+				background-color: $gray
 		svg
 			position: absolute
 			top: 0
@@ -707,6 +714,8 @@
 				display: none
 			circle
 				stroke: $white
+				+md 
+					stroke: $gray
 				.slick-initialized &
 					stroke-dasharray: 100
 					stroke-dashoffset: 0
@@ -717,21 +726,31 @@
 .package-offer
 	display: flex
 	position: relative
+	align-items: stretch
 	&__media-wrapper
-		flex: 0 0 42%
+		flex: 0 0 440px
 		height: 100%
-		
+		overflow: hidden
 		+md 
-			width: 100%
+			display: none
 	&__image
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 440px
 		+cover
-		padding-bottom: 159%
-		background-color: hsla(0,0%,0%, 0.5)
-		background-blend-mode: color-dodge
+		background-color: hsla(0,0%,0%, 0.2)
+		background-blend-mode: multiply
 		+md 
 			padding-bottom: 200px
 	&__content
 		flex: 0 0 58%
+		flex: 0 0 calc(100% - 440px)
+		position: relative
+		z-index: 2
+		+md 
+			flex: 0 0 100%
 	&__descr
 		width: calc(100% + 176px)
 		margin: 48px 0 48px -176px
@@ -770,9 +789,8 @@
 		z-index: 10
 		+md 
 			width: 100%
-			float: none
 			padding-left: 0
-			margin: 80px 0 0
+			margin: 20px 0 0
 		+sm 
 			display: none
 	&__card
@@ -783,17 +801,27 @@
 	&__video-wrapper
 		+coverdiv
 		overflow: hidden
-		max-width: 500px
+		max-width: 440px
 		transition: z-index 0.8s, max-width 0.8s 
 		z-index: 1
-		
-		// +hover
-		// 	max-width: 1260px
-		// 	z-index: 1000
+		&:after
+			+coverdiv
+			content: ''
+			background-color: rgba($black, 0.2)
+			opacity: 0
+			visibility: hidden
+			transition: opacity 0.4s, visibility 0.4s
+			z-index: 10
 		+hover
 			.package-offer__video-buttons
 				opacity: 1
 				visibility: visible
+			&:after
+				opacity: 1
+				visibility: visible
+		.is-fullscreen &
+			max-width: 1300px
+			z-index: 10000
 	&__video
 		display: block
 		object-fit: cover
@@ -805,20 +833,25 @@
 		transition: z-index 0.8s, max-width 0.8s 
 		z-index: 1
 		box-shadow: 0 0 1px 0 $red
+		opacity: 0
+		visibility: hidden
+		transition: opacity 0.4s, visibility 0.4s
+		.slick-current &
+			visibility: visible
+			opacity: 1
 	&__video-buttons
 		position: absolute
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
 		z-index: 10000
-		width: 200px
-		height: 100px
 		display: flex
 		justify-content: center
 		align-items: center
 		opacity: 0
 		visibility: hidden
 		transition: visility 0.4s, opacity 0.4s
+
 
 .video-play,
 .video-expand,
@@ -829,13 +862,27 @@
 	width: 40px
 	height: 40px
 	position: relative
-
 	.icon
 		+vcenter
 		font-size: 32px
 		color: $white
 
+
 .video-play,
 .video-compress
 	display: none
+
+.is-fullscreen
+	.video-expand
+		display: none
+	.video-compress
+		display: block
+
+.is-paused
+	~ .package-offer__video-buttons .video-play
+		display: block
+	~ .package-offer__video-buttons .video-pause
+		display: none
+	
+
 

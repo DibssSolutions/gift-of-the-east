@@ -8,6 +8,8 @@ export const SHOW = 'is-show';
 export const LOADED = 'is-loaded';
 export const DISABLED = 'is-disabled';
 export const OVERFLOW_HIDDEN = 'is-overflow-hidden';
+export const FULLSCREEN = 'is-fullscreen';
+export const PAUSED = 'is-paused';
 
 export const widthMD = 1024;
 export const widthSM = 768;

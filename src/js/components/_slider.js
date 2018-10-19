@@ -1,5 +1,14 @@
 import slick from 'slick-carousel';
-import { BODY, DOC, WIN, INIT, widthMD, widthSM } from '../constants';
+import {
+  BODY,
+  DOC,
+  WIN,
+  INIT,
+  widthMD,
+  widthSM,
+  PAUSED,
+  FULLSCREEN
+} from '../constants';
 import { buildIcon } from '../utils';
 
 const mainSlider = $('.js-main-slider');
@@ -205,49 +214,99 @@ DOC.ready(() => {
   });
 });
 
-const productSlider = $('.js-offers-slider');
+DOC.ready(() => {
+  const productSlider = $('.js-offers-slider');
 
-productSlider.each((i, el) => {
-  let slider = $(el);
-  // let sliderParent = slider.parents('.js-slider-parent');
-  // let prevBtn = $('.js-slider-prev', slider);
-  // let nextBtn = $('.js-slider-next', slider);
-  slider.on('init', () => {
-    slider.addClass(INIT);
-    const video = $('video', slider)[0];
-    video.play();
-  });
-  slider.slick({
-    dots: true,
-    infinite: false,
-    speed: 1800,
-    fade: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    // autoplay: true,
-    prevArrow: `<button class="offers-slider__prev js-slider-prev">${buildIcon(
-      'arrow-left'
-    )}</button>`,
-    nextArrow: `<button class="offers-slider__next js-slider-next">${buildIcon(
-      'arrow-right'
-    )}</button>`,
-    customPaging: (slider, pageIndex) => {
-      return $(`<button class="offers-slider__dot">
+  productSlider.each((i, el) => {
+    let slider = $(el);
+
+    slider.on('init', () => {
+      slider.addClass(INIT);
+      const video = $('video', slider)[0];
+      video.play();
+      initControls();
+    });
+
+    slider.on('afterChange', (event, slick, currentSlide) => {
+      // PAUSE ALL VIDEOS
+      const videos = $('.offers-slider__slide video');
+      videos.each((i, el) => {
+        $(el)[0].pause();
+      });
+      // PLAY CURRENT
+      let slides = $('.offers-slider__slide');
+      const videoCurrent = $(slides[currentSlide]).find('video')[0];
+      videoCurrent ? videoCurrent.play() : false;
+    });
+
+    slider.slick({
+      dots: true,
+      infinite: false,
+      speed: 1800,
+      fade: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      // autoplay: true,
+      prevArrow: `<button class="offers-slider__prev js-slider-prev">${buildIcon(
+        'arrow-left'
+      )}</button>`,
+      nextArrow: `<button class="offers-slider__next js-slider-next">${buildIcon(
+        'arrow-right'
+      )}</button>`,
+      customPaging: (slider, pageIndex) => {
+        return $(`<button class="offers-slider__dot">
     <svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <circle stroke="#000" stroke-width="2" cx="17" cy="17" r="16"></circle>
       </g>
     </svg>
     </button>`);
-    },
-    responsive: [
-      {
-        breakpoint: widthSM,
-        settings: {
-          fade: false,
-          arrows: false
+      },
+      responsive: [
+        {
+          breakpoint: widthMD,
+          settings: {
+            arrows: false,
+            fade: false
+          }
         }
-      }
-    ]
+      ]
+    });
   });
 });
+
+function initControls() {
+  const playBtn = $('.js-video-play');
+  const pauseBtn = $('.js-video-pause');
+  const expandBtn = $('.js-video-expand');
+  const compressBtn = $('.js-video-compress');
+  const slider = playBtn.closest('.js-offers-slider');
+
+  expandBtn.each((i, el) =>
+    $(el).on('click', function(e) {
+      slider.addClass(FULLSCREEN);
+    })
+  );
+
+  compressBtn.each((i, el) =>
+    $(el).on('click', function(e) {
+      slider.removeClass(FULLSCREEN);
+    })
+  );
+
+  pauseBtn.on('click', function(e) {
+    const video = $(this)
+      .closest('.package-offer__video-wrapper')
+      .find('video')[0];
+    video.pause();
+    $(video).addClass(PAUSED);
+  });
+
+  playBtn.on('click', function(e) {
+    const video = $(this)
+      .closest('.package-offer__video-wrapper')
+      .find('video')[0];
+    video.play();
+    $(video).removeClass(PAUSED);
+  });
+}
