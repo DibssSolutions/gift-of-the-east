@@ -15,17 +15,6 @@
 	height: 100vh
 	z-index: 100000
 	&__inner
-		// position: absolute
-		// top: 50%
-		// left: -68.75%
-		// // transform: translate(-50%, -50%)
-		// margin: -16px 0 0 -111px
-		// font-size: 70px
-		// color: $silver
-		// font-weight: 700
-		// z-index: 15
-		// animation: textAnimation 3s cubic-bezier(.37,.01,.81,1)
-		// // background-color: #fff
 		animation: textAnimation 3s cubic-bezier(.37,.01,.81,1)
 		will-change: left
 		padding: 20px
@@ -78,17 +67,14 @@
 	100%
 		transform: translateX(-115%)
 
-// @keyframes textAnimation
-// 	0% 
-// 		left: -68.75%
-// 	100% 
-// 		left: 131.25%
 
 @keyframes textAnimation
 	0% 
 		transform: translateX(-100%)
 	100%
 		transform: translateX(100%)
+
+
 
 .lama
 	display: inline-block
@@ -99,7 +85,20 @@
 	background-color: $red
 
 @keyframes hello
-	from 
+	0%
 		background-position: 0 0
-	to 
+		opacity: 0
+	0.5% 
+		opacity: 1
+	100% 
 		background-position: var(--sprite_width) 0
+
+.main-animation
+	display: inline-block
+	// height: 500px
+	// width: 1000px
+	height: 702px
+	width: 1248px
+	// background-position: right 0
+	animation: hello 3s steps(var(--steps)) 2s both
+	// background-color: $red

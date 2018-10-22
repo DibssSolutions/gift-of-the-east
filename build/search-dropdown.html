@@ -780,7 +780,7 @@
               <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
             </div>
             <div class="form-control js-form-control">
-              <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change">
+              <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change" data-validation-strength="1">
               <button class="password-show js-password-show" type="button">
                 <svg class="icon icon-eye-closed">
                   <use xlink:href="img/sprite.svg#icon-eye-closed"></use>
@@ -1025,8 +1025,9 @@
                     <div class="form-control form-control_sm js-form-control">
                       <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
                     </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change">
+                    <div class="form-control form-control_sm js-form-control js-password" data-validation-strength="1">
+                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="strength" name="password" data-validation-strength="1" />
+                      <span class="strength-meter"></span>
                     </div>
                     <div class="form-checkbox form-checkbox_lg">
                       <label class="checkbox">
@@ -1082,7 +1083,7 @@
                       <input type="text" class="input input_password" placeholder="Email" data-validation="required" data-validation-event="keyup change">
                     </div>
                     <div class="form-control form-control_sm js-form-control">
-                      <input type="password" class="input input_password" name="111111111111" placeholder="Создать пароль" data-validation="strength" data-validation-strength="2">
+                      <input type="password" class="input input_password" placeholder="Создать пароль" name="password" data-validation="required strength" data-validation-event="keyup change" data-validation-strength="1" />
                       <span class="strength-meter"></span>
                     </div>
                     <div class="form-checkbox form-checkbox_lg">
