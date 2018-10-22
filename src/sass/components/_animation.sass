@@ -93,12 +93,19 @@
 	100% 
 		background-position: var(--sprite_width) 0
 
-.main-animation
-	display: inline-block
-	// height: 500px
-	// width: 1000px
-	height: 702px
-	width: 1248px
-	// background-position: right 0
-	animation: hello 3s steps(var(--steps)) 2s both
-	// background-color: $red
+// .main-animation
+// 	display: inline-block
+// 	// height: 500px
+// 	// width: 1000px
+// 	height: 702px
+// 	width: 1248px
+// 	// background-position: right 0
+// 	animation: hello 3s steps(var(--steps)) 2s both
+// 	// background-color: $red
+
+canvas
+	display: none
+	width: 510px !important
+	height: 510px !important
+	&.is-active
+		display: block

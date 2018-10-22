@@ -132,24 +132,27 @@ export default class Sequence {
 }
 console.log('canvas!');
 const sequence = new Sequence({
-  canvas: document.querySelector('.js-canvas'),
+  canvas: document.querySelector('.js-canvas-1'),
   width: 1920,
   height: 1080,
   imageSrc: [
-    // 'img/s_1.png',
-    // 'img/s_2.png',
-    // 'img/s_3.png',
-    // 'img/s_4.png',
-    'img/s_5.png',
-    'img/s_6.png',
-    'img/s_7.png',
-    'img/s_8.png',
-    'img/s_9.png',
-    'img/s_10.png'
+    'img/s_1.png',
+    'img/s_2.png',
+    'img/s_3.png',
+    'img/s_4.png'
+    // 'img/s_5.png',
+    // 'img/s_6.png',
+    // 'img/s_7.png',
+    // 'img/s_8.png',
+    // 'img/s_9.png',
+    // 'img/s_10.png'
   ],
   ticksPerFrame: 3,
   onComplete: () => {
-    console.log('canvas!');
+    sequence2.play();
+    console.log(234234);
+    $('canvas').removeClass('is-active');
+    $('.js-canvas-2').addClass('is-active');
   }
 });
 // sequence.play();
@@ -157,3 +160,27 @@ const sequence = new Sequence({
 setTimeout(() => {
   sequence.play();
 }, 2000);
+
+const sequence2 = new Sequence({
+  canvas: document.querySelector('.js-canvas-2'),
+  width: 1920,
+  height: 1080,
+  imageSrc: ['img/s_5.png', 'img/s_6.png', 'img/s_7.png'],
+  ticksPerFrame: 3,
+  onComplete: () => {
+    sequence3.play();
+    $('canvas').removeClass('is-active');
+    $('.js-canvas-3').addClass('is-active');
+  }
+});
+
+const sequence3 = new Sequence({
+  canvas: document.querySelector('.js-canvas-3'),
+  width: 1920,
+  height: 1080,
+  imageSrc: ['img/s_8.png', 'img/s_9.png', 'img/s_10.png'],
+  ticksPerFrame: 3,
+  onComplete: () => {
+    console.log('canvas!');
+  }
+});
