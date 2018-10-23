@@ -17,35 +17,32 @@ number.each((i, el) => {
   };
 });
 
-const form = 'form';
-if ($(form).length) {
+$(document).ready(function() {
+  const form = 'form';
+  var myLanguage = {
+    notConfirmed: 'Введенные значения не совпадают',
+    lengthTooShortStart: 'Введенное значение короче ',
+    lengthBadEnd: ' символов'
+  };
+  // if ($(form).length) {
   $(form).each((index, el) => {
     $.validate({
       form: $(el),
+      language: myLanguage,
       modules: 'date, security, location',
       disabledFormFilter: form,
-      showErrorDialogs: true,
-      onModulesLoaded: function($form) {
+      showErrorDialogs: false,
+      onModulesLoaded: function(form) {
         var optionalConfig = {
           fontSize: '12pt',
           padding: '4px',
-          bad: 'Very bad',
-          weak: 'Weak',
-          good: 'Good',
-          strong: 'Strong'
+          bad: 'Очень легкий пароль. Нужно ввести более сложный.',
+          weak: 'Легкий пароль. Рекомендуем повысить сложность',
+          good: 'Пароль средней сложности',
+          strong: 'Пароль высокой сложности'
         };
-        $('input[name="password"]').displayPasswordStrength(optionalConfig);
+        $('input[name*="password"]').displayPasswordStrength(optionalConfig);
       }
     });
   });
-}
-
-// const formMessage = 'js-form-message';
-// if ($(formMessage).length) {
-//   $.validate({
-//     modules : 'toggleDisabled',
-//     disabledFormFilter : formMessage,
-//     showErrorDialogs : true
-//   });
-//   console.log($(formMessage));
-// };
+});

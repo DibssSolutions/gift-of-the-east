@@ -2,12 +2,12 @@ const EasyGoogleMaps = require('easygooglemaps');
 import { LOAD_DATA, buildIcon } from './../utils';
 const mapNode = $('.js-map');
 if (mapNode.length) {
-  mapNode.each((i,container) => {
+  mapNode.each((i, container) => {
     let path = $(container).data('json');
     let data;
     LOAD_DATA({
       path: path,
-      callback: data => { 
+      callback: data => {
         let mapOptions = {
           map: {
             APIKEY: 'AIzaSyDMWIxCN9ijYRfiH7bmQN-LNRDtoboLZqY',
@@ -26,281 +26,281 @@ if (mapNode.length) {
               fullscreenControl: false,
               styles: [
                 {
-                  'featureType': 'administrative',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'administrative',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'landscape',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'landscape',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'landscape.man_made',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'landscape.man_made',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'on'
+                      visibility: 'on'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'poi',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.attraction',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'poi.attraction',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.attraction',
-                  'elementType': 'labels.icon',
-                  'stylers': [
+                  featureType: 'poi.attraction',
+                  elementType: 'labels.icon',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.business',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'poi.business',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.government',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'poi.government',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.medical',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'poi.medical',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.park',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'poi.park',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'on'
+                      visibility: 'on'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.park',
-                  'elementType': 'geometry',
-                  'stylers': [
+                  featureType: 'poi.park',
+                  elementType: 'geometry',
+                  stylers: [
                     {
-                      'visibility': 'on'
+                      visibility: 'on'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.park',
-                  'elementType': 'labels',
-                  'stylers': [
+                  featureType: 'poi.park',
+                  elementType: 'labels',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.park',
-                  'elementType': 'labels.text',
-                  'stylers': [
+                  featureType: 'poi.park',
+                  elementType: 'labels.text',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.park',
-                  'elementType': 'labels.icon',
-                  'stylers': [
+                  featureType: 'poi.park',
+                  elementType: 'labels.icon',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.place_of_worship',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'poi.place_of_worship',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.school',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'poi.school',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.school',
-                  'elementType': 'geometry',
-                  'stylers': [
+                  featureType: 'poi.school',
+                  elementType: 'geometry',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.school',
-                  'elementType': 'geometry.fill',
-                  'stylers': [
+                  featureType: 'poi.school',
+                  elementType: 'geometry.fill',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.school',
-                  'elementType': 'geometry.stroke',
-                  'stylers': [
+                  featureType: 'poi.school',
+                  elementType: 'geometry.stroke',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.school',
-                  'elementType': 'labels',
-                  'stylers': [
+                  featureType: 'poi.school',
+                  elementType: 'labels',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     },
                     {
-                      'gamma': '0.80'
+                      gamma: '0.80'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.school',
-                  'elementType': 'labels.text',
-                  'stylers': [
+                  featureType: 'poi.school',
+                  elementType: 'labels.text',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.school',
-                  'elementType': 'labels.text.fill',
-                  'stylers': [
+                  featureType: 'poi.school',
+                  elementType: 'labels.text.fill',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.school',
-                  'elementType': 'labels.icon',
-                  'stylers': [
+                  featureType: 'poi.school',
+                  elementType: 'labels.icon',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'poi.sports_complex',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'poi.sports_complex',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'road',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'road',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'road.highway',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'road.highway',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'road.arterial',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'road.arterial',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'simplified'
+                      visibility: 'simplified'
                     },
                     {
-                      'gamma': '2.00'
+                      gamma: '2.00'
                     }
                   ]
                 },
                 {
-                  'featureType': 'road.local',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'road.local',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'simplified'
+                      visibility: 'simplified'
                     },
                     {
-                      'gamma': '2.00'
+                      gamma: '2.00'
                     }
                   ]
                 },
                 {
-                  'featureType': 'transit',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'transit',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'off'
+                      visibility: 'off'
                     }
                   ]
                 },
                 {
-                  'featureType': 'water',
-                  'elementType': 'all',
-                  'stylers': [
+                  featureType: 'water',
+                  elementType: 'all',
+                  stylers: [
                     {
-                      'visibility': 'on'
+                      visibility: 'on'
                     }
                   ]
                 }
@@ -316,9 +316,8 @@ if (mapNode.length) {
         };
         let map = new EasyGoogleMaps(mapOptions);
         map.init();
+        
       }
     });
-
-    
   });
 }

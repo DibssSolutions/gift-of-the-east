@@ -1,0 +1,42 @@
+[
+  {
+    "marker": {
+      "position": {
+        "lat": 54.978061,
+        "lng": 73.324601
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 56,
+          "y": 56
+        },
+        "centering": {
+          "x": 56,
+          "y": 56
+        }
+      }
+    }
+  },
+  {
+    "marker": {
+      "position": {
+        "lat": 54.981354,
+        "lng": 73.321461
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 56,
+          "y": 56
+        },
+        "centering": {
+          "x": 56,
+          "y": 56
+        }
+      }
+    }
+  }
+]

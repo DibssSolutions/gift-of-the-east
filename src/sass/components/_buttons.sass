@@ -260,6 +260,10 @@
 	font-size: 0
 	line-height: 20px
 	background-color: transparent
+	&_brown 
+		color: $lightBrown
+		text-decoration: underline
+		padding-bottom: 0
 	+sm
 		padding: 10px 8px 8px
 	span 
@@ -272,6 +276,15 @@
 		fill: $silver
 		font-size: 20px
 		margin-right: 8px
+
+.btn-reset_brown 
+	padding: 0
+	.icon
+		fill: $lightBrown
+		font-size: 15px
+		margin-left: 9px
+		margin-top: 2px
+
 
 .vertical-line-animation
 	position: relative
@@ -298,6 +311,7 @@
 			+gpu
 		&:before
 			+gpu
+
 .btn-text
 	font-family: $montserrat
 	color: $gray 
@@ -308,3 +322,12 @@
 	display: inline-block
 	+hover
 		color: $silver
+
+.btn-link
+	display: inline-block
+	background-color: transparent
+	font-family: $montserrat
+	+f(14px, 400, 1.42857)
+	letter-spacing: -0.01em 
+	&__gold
+		color: $lightBrown

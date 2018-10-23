@@ -130,7 +130,7 @@ export default class Sequence {
     });
   }
 }
-console.log('canvas!');
+
 const sequence = new Sequence({
   canvas: document.querySelector('.js-canvas-1'),
   width: 1920,
@@ -140,22 +140,14 @@ const sequence = new Sequence({
     'img/s_2.png',
     'img/s_3.png',
     'img/s_4.png'
-    // 'img/s_5.png',
-    // 'img/s_6.png',
-    // 'img/s_7.png',
-    // 'img/s_8.png',
-    // 'img/s_9.png',
-    // 'img/s_10.png'
   ],
   ticksPerFrame: 3,
   onComplete: () => {
     sequence2.play();
-    console.log(234234);
     $('canvas').removeClass('is-active');
     $('.js-canvas-2').addClass('is-active');
   }
 });
-// sequence.play();
 
 setTimeout(() => {
   sequence.play();

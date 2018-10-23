@@ -9,6 +9,14 @@ PageList:
   ready: 100
 - file: home-registration-phone-text.html
   ready: 100
+- file: restore-password.html
+  ready: 100
+- file: restore-password-phone.html
+  ready: 100
+- file: change-password.html
+  ready: 100
+- file: change-password-success.html
+  ready: 100
 - file: basket.html
   ready: 100
 - file: basket-1.html
@@ -70,5 +78,7 @@ PageList:
 - file: search-dropdown-results.html
   ready: 100
 - file: search-results-page.html
+  ready: 100
+- file: shops.html
   ready: 100
 

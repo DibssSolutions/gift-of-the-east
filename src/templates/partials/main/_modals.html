@@ -1,363 +1,381 @@
-{% import "../feedback/_feedback.html" as f %}
-
-{{f.feedback({
-	modal: 'feedback'
-})}}
-{{f.feedback({
-	modal: 'feedback-order',
-	orderNumber: true
-})}}
+{% import "../feedback/_feedback.html" as f %} {{f.feedback({ modal: 'feedback' })}} {{f.feedback({ modal: 'feedback-order',
+orderNumber: true })}}
 
 <!-- begin modal -->
 <div class="modal" data-modal="login">
-	<div class="modal__container" data-modal-container>
-		<form action="/" class="modal__form form">
-			<div class="modal__title">Вход в аккаунт</div>
-			<div class="form-control js-form-control">
-				<input type="text" class="input" placeholder="Номер телефона или email" data-validation="required" data-validation-event="keyup change">
-			</div>
-			<div class="form-control js-form-control">
-				<input type="password" class="input input_password" placeholder="Пароль" data-validation="required" data-validation-event="keyup change">
-				<button class="password-show js-password-show" type="button">
-					{{ mixins.icon('eye-closed') }}
-					{{ mixins.icon('eye-opened') }}
-				</button>
-			</div>
-			<div class="form-question">
-				<a href="#" class="link link_current">Забыли пароль?</a>
-			</div>
-			<div class="form-control">
-				<button class="btn btn_full" type="submit" disabled>ВОЙТИ</button>
-			</div>
-			<div class="form-social social">
-				{% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
-				<a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
-				{% endfor %}
-			</div>
-			<div class="form-footer">Еще не член клуба? <a href="#" class="link link_current">Зарегистрироваться</a></div>
-		</form>
-	</div>
+    <div class="modal__container" data-modal-container="data-modal-container">
+        <form action="/" class="modal__form form">
+            <div class="modal__title">Вход в аккаунт</div>
+            <div class="form-control js-form-control">
+                <input type="text" class="input" placeholder="Номер телефона или email" data-validation="required" data-validation-event="keyup change">
+            </div>
+            <div class="form-control js-form-control">
+                <input type="password" class="input input_password" placeholder="Пароль" data-validation="required" data-validation-event="keyup change">
+                <button class="password-show js-password-show" type="button">
+                    {{ mixins.icon('eye-closed') }} {{ mixins.icon('eye-opened') }}
+                </button>
+            </div>
+            <div class="form-question">
+                <a href="#" class="link link_current">Забыли пароль?</a>
+            </div>
+            <div class="form-control">
+                <button class="btn btn_full" type="submit" disabled="disabled">ВОЙТИ</button>
+            </div>
+            <div class="form-social social">
+                {% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
+                <a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
+                {% endfor %}
+            </div>
+            <div class="form-footer">Еще не член клуба?
+                <a href="#" class="link link_current">Зарегистрироваться</a>
+            </div>
+        </form>
+    </div>
 </div>
 <!-- end modal -->
 <!-- begin modal -->
 <div class="modal" data-modal="registration">
-	<div class="modal__container" data-modal-container>
-		<form action="/" class="modal__form form">
-			<div class="modal__title">Регистрация</div>
-			<div class="form-control js-form-control">
-				<input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
-			</div>
-			<div class="form-control js-form-control">
-				<input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
-			</div>
-			<div class="form-control js-form-control">
-				<input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change" data-validation-strength="1">
-				<button class="password-show js-password-show" type="button">
-					{{ mixins.icon('eye-closed') }}
-					{{ mixins.icon('eye-opened') }}
-				</button>
-			</div>
-			<div class="form-question">
-				<a href="#" class="link">Использовать email для регистрации</a>
-			</div>
-			<div class="form-checkbox">
-				<label class="checkbox">
-					<input type="checkbox" data-validation="required">
-					<span class="checkbox__text">
-						Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-					</span>
-					<span class="checkbox__icon">
-						{{ mixins.icon('check') }}
-					</span>
-				</label>
-			</div>
-			<div class="form-control">
-				<button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
-			</div>
-			<div class="form-social social">
-				{% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
-				<a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
-				{% endfor %}
-			</div>
-			<div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
-		</form>
-	</div>
+    <div class="modal__container" data-modal-container="data-modal-container">
+        <form action="/" class="modal__form form">
+            <div class="modal__title">Регистрация</div>
+            <div class="form-control js-form-control">
+                <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+            </div>
+            <div class="form-control js-form-control">
+                <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change"
+                    data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
+            </div>
+            <div class="form-control js-form-control">
+                <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change"
+                    data-validation-strength="1">
+                <button class="password-show js-password-show" type="button">
+                    {{ mixins.icon('eye-closed') }} {{ mixins.icon('eye-opened') }}
+                </button>
+            </div>
+            <div class="form-question">
+                <a href="#" class="link">Использовать email для регистрации</a>
+            </div>
+            <div class="form-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" data-validation="required">
+                    <span class="checkbox__text">
+                        Я подтверждаю согласие на обработку своих персональных данных и с
+                        <a href="#" class="link">Условиями использования сервиса.</a>
+                    </span>
+                    <span class="checkbox__icon">
+                        {{ mixins.icon('check') }}
+                    </span>
+                </label>
+            </div>
+            <div class="form-control">
+                <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+            </div>
+            <div class="form-social social">
+                {% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
+                <a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
+                {% endfor %}
+            </div>
+            <div class="form-footer">Уже зарегистрированы?
+                <a href="#" class="link link_current">Войти</a>
+            </div>
+        </form>
+    </div>
 </div>
 <!-- end modal -->
 
+<!-- begin modal -->
+<div class="modal registration-tab" data-modal="registration-tab">
+    <div class="modal__container registration-tab__container" data-modal-container="data-modal-container">
+        <div class="modal__title registration-tab__title">Регистрация</div>
+        <div class="tabs tabs_registration" data-tabs="data-tabs">
+            <div class="tabs__out">
+                <div class="tabs__current" data-tabs-current="data-tabs-current">
+                    <span></span>
+                </div>
+                <ul class="tabs__list">
+                    {% for item in [ { id: 'by-telephone', text: 'По телефону' }, { id: 'by-email', text: 'По email' } ] %}
+                    <li class="tabs__item" data-tabs-control="{{ item.id }}">
+                        {{ item.text }} {% if item.quantity %}
+                        <span class="tabs__quantity">{{ item.quantity }}</span>{% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                <div class="tabs__container" data-tabs-container="by-telephone">
+                    <div class="tabs__inner">
+
+                        <form action="/" class="modal__form form js-form-message">
+                            <div class="form-control form-control_sm js-form-control">
+                                <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+                            </div>
+                            <div class="form-control form-control_sm js-form-control">
+                                <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change"
+                                    data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
+                            </div>
+                            <div class="form-control form-control_sm js-form-control js-password">
+                                <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password"
+                                    data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
+                                    data-validation-error-msg="Пароль должен содержать не менее 10 символов" /> {{mixins.icon('check')}}
+                                <span class="strength-meter"></span>
+                            </div>
+
+                            <div class="form-checkbox form-checkbox_lg">
+                                <label class="checkbox">
+                                    <input type="checkbox" data-validation="required">
+                                    <span class="checkbox__text">
+                                        Я подтверждаю согласие на обработку своих персональных данных и с
+                                        <a href="#" class="link">Условиями использования сервиса.</a>
+                                    </span>
+                                    <span class="checkbox__icon">
+                                        {{ mixins.icon('check') }}
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-control form-control_sm">
+                                <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                            </div>
+                            <div class="form-separator">Зарегистрироваться через</div>
+                            <div class="form-social form-social_sm social">
+                                {% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
+                                <a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
+                                {% endfor %}
+                            </div>
+                            <div class="form-footer form-footer_lg">Уже зарегистрированы?
+                                <a href="#" class="link link_current">Войти</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+                <div class="tabs__container" data-tabs-container="by-email">
+                    <div class="tabs__inner">
+
+                        <form action="/" class="modal__form form js-form-message">
+                            <div class="form-control form-control_sm js-form-control">
+                                <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+                            </div>
+                            <div class="form-control form-control_sm js-form-control">
+                                <input type="text" class="input input_password" placeholder="Email" data-validation="required" data-validation-event="keyup change">
+                            </div>
+                            <div class="form-control form-control_sm js-form-control js-password">
+                                <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password"
+                                    data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
+                                    data-validation-error-msg="Пароль должен содержать не менее 10 символов" /> {{mixins.icon('check')}}
+                                <span class="strength-meter"></span>
+                            </div>
+
+                            <div class="form-checkbox form-checkbox_lg">
+                                <label class="checkbox">
+                                    <input type="checkbox" data-validation="required">
+                                    <span class="checkbox__text">
+                                        Я подтверждаю согласие на обработку своих персональных данных и с
+                                        <a href="#" class="link">Условиями использования сервиса.</a>
+                                    </span>
+                                    <span class="checkbox__icon">
+                                        {{ mixins.icon('check') }}
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-control form-control_sm">
+                                <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                            </div>
+                            <div class="form-separator">Зарегистрироваться через</div>
+                            <div class="form-social form-social_sm social">
+                                {% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
+                                <a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
+                                {% endfor %}
+                            </div>
+                            <div class="form-footer form-footer_lg">Уже зарегистрированы?
+                                <a href="#" class="link link_current">Войти</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end modal -->
 
 <!-- begin modal -->
 <div class="modal questionnaire" data-modal="questionnaire">
-	<div class="modal__container questionnaire__container" data-modal-container>
-		<button class="modal__off" type="button" data-modal-close="data-modal-close">{{ mixins.icon('close') }}</button>
-		<form action="/" class="modal__form form questionnaire__form">
-			<div class="modal__title questionnaire__title">Анкета члена клуба</div>
-			<span class="modal__hint questionnaire__hint">*поля обязательные для заполнения</span>
-			<div class="questionnaire__top">
-				<div class="row">
-					<div class="col col-42 col-md-100">
-						<div class="form-control questionnaire__form-control js-form-control">
-							<label for="" class="input-label questionnaire__input-label">Фамилия*</label>
-							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-						</div>
-						<div class="form-control questionnaire__form-control js-form-control">
-							<label for="" class="input-label questionnaire__input-label">Имя*</label>
-							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-						</div>
-						<div class="form-control questionnaire__form-control js-form-control">
-							<label for="" class="input-label questionnaire__input-label">Отчество*</label>
-							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-						</div>
-						<div class="form-control questionnaire__form-control js-form-control">
-							<label for="" class="input-label questionnaire__input-label">День рождения*</label>
-							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-						</div>
-					</div>
-					<div class="col col-58 col-md-100">
-						<div class="questionnaire__radio">
-							<div class="form-radio-group form-radio-group_vertical">
-								<div class="form-radio-label">Пол</div>
-								<label class="radio">
-									<input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
-									<span class="radio__text">Женский</span>
-								</label>
-								<label class="radio">
-									<input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
-									<span class="radio__text">Мужской</span>
-								</label>
-							</div>
-							<div class="form-radio-group form-radio-group_vertical">
-								<div class="form-radio-label">Наличие автомобиля</div>
-								<label class="radio">
-									<input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
-									<span class="radio__text">Да</span>
-								</label>
-								<label class="radio">
-									<input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
-									<span class="radio__text">Нет</span>
-								</label>
-							</div>
-							<div class="form-radio-group form-radio-group_vertical">
-								<div class="form-radio-label">Семейное положение</div>
-								<label class="radio">
-									<input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
-									<span class="radio__text">Холост/не замужем</span>
-								</label>
-								<label class="radio">
-									<input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
-									<span class="radio__text">Женат/замужем</span>
-								</label>
-							</div>
-							<div class="form-radio-group form-radio-group_vertical">
-								<div class="form-radio-label">Есть дети до 18 лет</div>
-								<label class="radio">
-									<input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
-									<span class="radio__text">Да</span>
-								</label>
-								<label class="radio">
-									<input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
-									<span class="radio__text">Нет</span>
-								</label>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="dashed-separator"></div>
-			<div class="questionnaire__bottom">
-				<div class="row">
-					<div class="col col-42 col-md-100">
-						<div class="form-control questionnaire__form-control">
-							<label for="" class="input-label questionnaire__input-label">Почтовый индекс</label>
-							<input type="text" class="input" data-validation-event="keyup change">
-						</div>
-						<div class="form-control questionnaire__form-control js-form-control">
-							<label for="" class="input-label questionnaire__input-label">Контактный телефон*</label>
-							<input class="input" type="text" data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder="">
-						</div>
-						<div class="form-control questionnaire__form-control js-form-control">
-							<label for="" class="input-label questionnaire__input-label">email*</label>
-							<input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-						</div>
-					</div>
-					<div class="col col-58 col-md-100">
-						<div class="form-control questionnaire__form-control">
-							<label for="" class="input-label questionnaire__input-label">Населенный пункт</label>
-							<input type="text" class="input" data-validation-event="keyup change">
-						</div>
-						<div class="form-control questionnaire__form-control questionnaire__form-control_textarea">
-							<label for="" class="input-label questionnaire__input-label">Мне наиболее интересны темы:</label>
-							<textarea type="text" class="input input_textarea" data-validation-event="keyup change"></textarea>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="questionnaire__checkbox">
-				<div class="form-checkbox">
-					<label class="checkbox">
-						<input type="checkbox">
-						<span class="checkbox__text">Получать новости об акциях, скидках и спецпредложениях</span>
-						<span class="checkbox__icon">
-							<svg class="icon icon-check">
-							<use xlink:href="img/sprite.svg#icon-check"></use>
-							</svg>
-						</span>
-					</label>
-				</div>
-				<div class="form-checkbox">
-					<label class="checkbox">
-						<input type="checkbox" data-validation="required">
-						<span class="checkbox__text">Настоящим, я даю свое согласие на обработку и хранение моих персональных данных</span>
-						<span class="checkbox__icon">
-							<svg class="icon icon-check">
-							<use xlink:href="img/sprite.svg#icon-check"></use>
-							</svg>
-						</span>
-					</label>
-				</div>
-			</div>
-			<div class="questionnaire__submit">
-				<button class="btn disabled" type="submit" disabled="disabled">ПОЛУЧИТЬ КАРТУ</button>
-			</div>
-		</form>
-	</div>
+    <div class="modal__container questionnaire__container" data-modal-container="data-modal-container">
+        <button class="modal__off" type="button" data-modal-close="data-modal-close">{{ mixins.icon('close') }}</button>
+        <form action="/" class="modal__form form questionnaire__form">
+            <div class="modal__title questionnaire__title">Анкета члена клуба</div>
+            <span class="modal__hint questionnaire__hint">*поля обязательные для заполнения</span>
+            <div class="questionnaire__top">
+                <div class="row">
+                    <div class="col col-42 col-md-100">
+                        <div class="form-control questionnaire__form-control js-form-control">
+                            <label for="" class="input-label questionnaire__input-label">Фамилия*</label>
+                            <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                        </div>
+                        <div class="form-control questionnaire__form-control js-form-control">
+                            <label for="" class="input-label questionnaire__input-label">Имя*</label>
+                            <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                        </div>
+                        <div class="form-control questionnaire__form-control js-form-control">
+                            <label for="" class="input-label questionnaire__input-label">Отчество*</label>
+                            <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                        </div>
+                        <div class="form-control questionnaire__form-control js-form-control">
+                            <label for="" class="input-label questionnaire__input-label">День рождения*</label>
+                            <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                        </div>
+                    </div>
+                    <div class="col col-58 col-md-100">
+                        <div class="questionnaire__radio">
+                            <div class="form-radio-group form-radio-group_vertical">
+                                <div class="form-radio-label">Пол</div>
+                                <label class="radio">
+                                    <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+                                    <span class="radio__text">Женский</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+                                    <span class="radio__text">Мужской</span>
+                                </label>
+                            </div>
+                            <div class="form-radio-group form-radio-group_vertical">
+                                <div class="form-radio-label">Наличие автомобиля</div>
+                                <label class="radio">
+                                    <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+                                    <span class="radio__text">Да</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+                                    <span class="radio__text">Нет</span>
+                                </label>
+                            </div>
+                            <div class="form-radio-group form-radio-group_vertical">
+                                <div class="form-radio-label">Семейное положение</div>
+                                <label class="radio">
+                                    <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                                    <span class="radio__text">Холост/не замужем</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                                    <span class="radio__text">Женат/замужем</span>
+                                </label>
+                            </div>
+                            <div class="form-radio-group form-radio-group_vertical">
+                                <div class="form-radio-label">Есть дети до 18 лет</div>
+                                <label class="radio">
+                                    <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
+                                    <span class="radio__text">Да</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
+                                    <span class="radio__text">Нет</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashed-separator"></div>
+            <div class="questionnaire__bottom">
+                <div class="row">
+                    <div class="col col-42 col-md-100">
+                        <div class="form-control questionnaire__form-control">
+                            <label for="" class="input-label questionnaire__input-label">Почтовый индекс</label>
+                            <input type="text" class="input" data-validation-event="keyup change">
+                        </div>
+                        <div class="form-control questionnaire__form-control js-form-control">
+                            <label for="" class="input-label questionnaire__input-label">Контактный телефон*</label>
+                            <input class="input" type="text" data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder="">
+                        </div>
+                        <div class="form-control questionnaire__form-control js-form-control">
+                            <label for="" class="input-label questionnaire__input-label">email*</label>
+                            <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                        </div>
+                    </div>
+                    <div class="col col-58 col-md-100">
+                        <div class="form-control questionnaire__form-control">
+                            <label for="" class="input-label questionnaire__input-label">Населенный пункт</label>
+                            <input type="text" class="input" data-validation-event="keyup change">
+                        </div>
+                        <div class="form-control questionnaire__form-control questionnaire__form-control_textarea">
+                            <label for="" class="input-label questionnaire__input-label">Мне наиболее интересны темы:</label>
+                            <textarea type="text" class="input input_textarea" data-validation-event="keyup change"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="questionnaire__checkbox">
+                <div class="form-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span class="checkbox__text">Получать новости об акциях, скидках и спецпредложениях</span>
+                        <span class="checkbox__icon">
+                            <svg class="icon icon-check">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                            </svg>
+                        </span>
+                    </label>
+                </div>
+                <div class="form-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" data-validation="required">
+                        <span class="checkbox__text">Настоящим, я даю свое согласие на обработку и хранение моих персональных данных</span>
+                        <span class="checkbox__icon">
+                            <svg class="icon icon-check">
+                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                            </svg>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="questionnaire__submit">
+                <button class="btn disabled" type="submit" disabled="disabled">ПОЛУЧИТЬ КАРТУ</button>
+            </div>
+        </form>
+    </div>
 </div>
 <!-- end modal -->
 
 <!-- begin modal -->
 <div class="modal invite" data-modal="invite">
-		<div class="modal__container invite__container" data-modal-container>
-			<button class="modal__off" type="button" data-modal-close="data-modal-close">{{ mixins.icon('close') }}</button>
-			<div class="invite__content">
-				<div class="modal__title invite__title">Как работает система приглашений</div>
-				<p>
-					Прежде всего, базовый вектор развития предполагает независимые способы реализации благоприятных перспектив. С другой стороны, повышение уровня гражданского сознания напрямую зависит от поставленных обществом задач.
-				</p>
-				<p>
-					В своем стремлении улучшить пользовательский опыт мы упускаем, что диаграммы связей призваны к ответу. В своем стремлении улучшить пользовательский опыт мы упускаем, что предприниматели в сети интернет заблокированы в рамках своих собственных рациональных ограничений. Приятно, граждане, наблюдать, как стремящиеся вытеснить традиционное производство, нанотехнологии описаны максимально подробно. Имеется спорная точка зрения, гласящая примерно следующее: диаграммы связей рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Базовые сценарии поведения пользователей, вне зависимости от их уровня, должны быть заблокированы в рамках своих собственных рациональных ограничений. Значимость этих проблем настолько очевидна, что граница обучения кадров предоставляет широкие возможности для поэтапного и последовательного развития общества.
-				</p>
-				<p>
-					Кстати, сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом - объективно рассмотрены соответствующими инстанциями. Учитывая ключевые сценарии поведения, консультация с широким активом требует определения и уточнения поставленных обществом задач. Имеется спорная точка зрения, гласящая примерно следующее: реплицированные с зарубежных источников, современные исследования, вне зависимости от их уровня, должны быть преданы социально-демократической анафеме. Господа, экономическая повестка сегодняшнего дня обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: существующая теория способствует повышению качества укрепления моральных ценностей. Прежде всего, высокотехнологичная концепция общественного уклада не дает нам иного выбора, кроме определения модели развития.
-				</p>
-				<p>
-					Таким образом, семантический разбор внешних противодействий играет важную роль в формировании экспериментов, поражающих по своей масштабности и грандиозности. Задача организации, в особенности же высококачественный прототип будущего проекта выявляет срочную потребность новых принципов формирования материально-технической и кадровой базы.
-				</p>
-			</div>
-		</div>
-	</div>
-	<!-- end modal -->
-
-
-<!-- begin modal -->
-<div class="modal registration-tab" data-modal="registration-tab">
-	<div class="modal__container registration-tab__container" data-modal-container>
-			<div class="modal__title registration-tab__title">Регистрация</div>
-			<div class="tabs tabs_registration" data-tabs="data-tabs">
-				<div class="tabs__out">
-					<div class="tabs__current" data-tabs-current="data-tabs-current">
-						<span></span></div>
-					<ul class="tabs__list">
-						{% for item in [
-								{
-									id: 'by-telephone',
-									text: 'По телефону'
-								},
-								{
-									id: 'by-email',
-									text: 'По email'
-								}
-								] %}
-							<li class="tabs__item" data-tabs-control="{{ item.id }}">
-								{{ item.text }}
-								{% if item.quantity %}
-									<span class="tabs__quantity">{{ item.quantity }}</span>{% endif %}
-							</li>
-						{% endfor %}
-					</ul>
-				</div>
-				<div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
-					<div class="tabs__container" data-tabs-container="by-telephone">
-						<div class="tabs__inner">
-
-							<form action="/" class="modal__form form js-form-message">
-								<div class="form-control form-control_sm js-form-control">
-									<input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
-								</div>
-								<div class="form-control form-control_sm js-form-control">
-									<input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
-								</div>
-								<div class="form-control form-control_sm js-form-control js-password" data-validation-strength="1">
-									<input type="password" class="input input_password" placeholder="Создать пароль" data-validation="strength" name="password" data-validation-strength="1" />
-									<span class="strength-meter"></span>
-								</div>
-								<div class="form-checkbox form-checkbox_lg">
-									<label class="checkbox">
-										<input type="checkbox" data-validation="required">
-										<span class="checkbox__text">
-											Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-										</span>
-										<span class="checkbox__icon">
-											{{ mixins.icon('check') }}
-										</span>
-									</label>
-								</div>
-								<div class="form-control form-control_sm">
-									<button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
-								</div>
-								<div class="form-separator">Зарегистрироваться через</div>
-								<div class="form-social form-social_sm social">
-									{% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
-									<a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
-									{% endfor %}
-								</div>
-								<div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
-							</form>
-
-						</div>
-					</div>
-				</div>
-				<div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
-					<div class="tabs__container" data-tabs-container="by-email">
-						<div class="tabs__inner">
-
-							<form action="/" class="modal__form form js-form-message">
-								<div class="form-control form-control_sm js-form-control">
-									<input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
-								</div>
-								<div class="form-control form-control_sm js-form-control">
-									<input type="text" class="input input_password" placeholder="Email" data-validation="required" data-validation-event="keyup change">
-								</div>
-								<div class="form-control form-control_sm js-form-control">
-									<input type="password" class="input input_password" placeholder="Создать пароль" name="password" data-validation="required strength" data-validation-event="keyup change" data-validation-strength="1" />
-									<span class="strength-meter"></span>
-								</div>
-								<div class="form-checkbox form-checkbox_lg">
-									<label class="checkbox">
-										<input type="checkbox" data-validation="required">
-										<span class="checkbox__text">
-											Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-										</span>
-										<span class="checkbox__icon">
-											{{ mixins.icon('check') }}
-										</span>
-									</label>
-								</div>
-								<div class="form-control form-control_sm">
-									<button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
-								</div>
-								<div class="form-separator">Зарегистрироваться через</div>
-								<div class="form-social form-social_sm social">
-									{% for name in ['vk', 'facebook','odnoklassniki','google-plus'] %}
-									<a href="#" class="social__link social__link_{{name}}">{{ mixins.icon(name) }}</a>
-									{% endfor %}
-								</div>
-								<div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
-							</form>	
-
-						</div>
-					</div>
-				</div>
-			</div>
-	</div>
+    <div class="modal__container invite__container" data-modal-container="data-modal-container">
+        <button class="modal__off" type="button" data-modal-close="data-modal-close">{{ mixins.icon('close') }}</button>
+        <div class="invite__content">
+            <div class="modal__title invite__title">Как работает система приглашений</div>
+            <p>
+                Прежде всего, базовый вектор развития предполагает независимые способы реализации благоприятных перспектив. С другой стороны,
+                повышение уровня гражданского сознания напрямую зависит от поставленных обществом задач.
+            </p>
+            <p>
+                В своем стремлении улучшить пользовательский опыт мы упускаем, что диаграммы связей призваны к ответу. В своем стремлении
+                улучшить пользовательский опыт мы упускаем, что предприниматели в сети интернет заблокированы в рамках своих
+                собственных рациональных ограничений. Приятно, граждане, наблюдать, как стремящиеся вытеснить традиционное
+                производство, нанотехнологии описаны максимально подробно. Имеется спорная точка зрения, гласящая примерно
+                следующее: диаграммы связей рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Базовые
+                сценарии поведения пользователей, вне зависимости от их уровня, должны быть заблокированы в рамках своих
+                собственных рациональных ограничений. Значимость этих проблем настолько очевидна, что граница обучения кадров
+                предоставляет широкие возможности для поэтапного и последовательного развития общества.
+            </p>
+            <p>
+                Кстати, сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом - объективно рассмотрены соответствующими
+                инстанциями. Учитывая ключевые сценарии поведения, консультация с широким активом требует определения и уточнения
+                поставленных обществом задач. Имеется спорная точка зрения, гласящая примерно следующее: реплицированные
+                с зарубежных источников, современные исследования, вне зависимости от их уровня, должны быть преданы социально-демократической
+                анафеме. Господа, экономическая повестка сегодняшнего дня обеспечивает широкому кругу (специалистов) участие
+                в формировании дальнейших направлений развития. Высокий уровень вовлечения представителей целевой аудитории
+                является четким доказательством простого факта: существующая теория способствует повышению качества укрепления
+                моральных ценностей. Прежде всего, высокотехнологичная концепция общественного уклада не дает нам иного выбора,
+                кроме определения модели развития.
+            </p>
+            <p>
+                Таким образом, семантический разбор внешних противодействий играет важную роль в формировании экспериментов, поражающих по
+                своей масштабности и грандиозности. Задача организации, в особенности же высококачественный прототип будущего
+                проекта выявляет срочную потребность новых принципов формирования материально-технической и кадровой базы.
+            </p>
+        </div>
+    </div>
 </div>
 <!-- end modal -->

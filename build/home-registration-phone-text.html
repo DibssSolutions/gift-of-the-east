@@ -1473,7 +1473,7 @@
       </div>
       <!-- begin modal -->
       <div class="modal" data-modal="login">
-        <div class="modal__container" data-modal-container>
+        <div class="modal__container" data-modal-container="data-modal-container">
           <form action="/" class="modal__form form">
             <div class="modal__title">Вход в аккаунт</div>
             <div class="form-control js-form-control">
@@ -1494,7 +1494,7 @@
               <a href="#" class="link link_current">Забыли пароль?</a>
             </div>
             <div class="form-control">
-              <button class="btn btn_full" type="submit" disabled>ВОЙТИ</button>
+              <button class="btn btn_full" type="submit" disabled="disabled">ВОЙТИ</button>
             </div>
             <div class="form-social social">
               <a href="#" class="social__link social__link_vk">
@@ -1518,14 +1518,15 @@
                 </svg>
               </a>
             </div>
-            <div class="form-footer">Еще не член клуба? <a href="#" class="link link_current">Зарегистрироваться</a></div>
+            <div class="form-footer">Еще не член клуба? <a href="#" class="link link_current">Зарегистрироваться</a>
+            </div>
           </form>
         </div>
       </div>
       <!-- end modal -->
       <!-- begin modal -->
       <div class="modal" data-modal="registration">
-        <div class="modal__container" data-modal-container>
+        <div class="modal__container" data-modal-container="data-modal-container">
           <form action="/" class="modal__form form">
             <div class="modal__title">Регистрация</div>
             <div class="form-control js-form-control">
@@ -1561,7 +1562,7 @@
               </label>
             </div>
             <div class="form-control">
-              <button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
+              <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
             </div>
             <div class="form-social social">
               <a href="#" class="social__link social__link_vk">
@@ -1585,14 +1586,157 @@
                 </svg>
               </a>
             </div>
-            <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
+            <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
+            </div>
           </form>
         </div>
       </div>
       <!-- end modal -->
       <!-- begin modal -->
+      <div class="modal registration-tab" data-modal="registration-tab">
+        <div class="modal__container registration-tab__container" data-modal-container="data-modal-container">
+          <div class="modal__title registration-tab__title">Регистрация</div>
+          <div class="tabs tabs_registration" data-tabs="data-tabs">
+            <div class="tabs__out">
+              <div class="tabs__current" data-tabs-current="data-tabs-current">
+                <span></span>
+              </div>
+              <ul class="tabs__list">
+                <li class="tabs__item" data-tabs-control="by-telephone"> По телефону </li>
+                <li class="tabs__item" data-tabs-control="by-email"> По email </li>
+              </ul>
+            </div>
+            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+              <div class="tabs__container" data-tabs-container="by-telephone">
+                <div class="tabs__inner">
+                  <form action="/" class="modal__form form js-form-message">
+                    <div class="form-control form-control_sm js-form-control">
+                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+                    </div>
+                    <div class="form-control form-control_sm js-form-control">
+                      <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
+                    </div>
+                    <div class="form-control form-control_sm js-form-control js-password">
+                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password" data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
+                        data-validation-error-msg="Пароль должен содержать не менее 10 символов" />
+                      <svg class="icon icon-check">
+                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                      </svg>
+                      <span class="strength-meter"></span>
+                    </div>
+                    <div class="form-checkbox form-checkbox_lg">
+                      <label class="checkbox">
+                        <input type="checkbox" data-validation="required">
+                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+                        </span>
+                        <span class="checkbox__icon">
+                          <svg class="icon icon-check">
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-control form-control_sm">
+                      <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                    </div>
+                    <div class="form-separator">Зарегистрироваться через</div>
+                    <div class="form-social form-social_sm social">
+                      <a href="#" class="social__link social__link_vk">
+                        <svg class="icon icon-vk">
+                          <use xlink:href="img/sprite.svg#icon-vk"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_facebook">
+                        <svg class="icon icon-facebook">
+                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_odnoklassniki">
+                        <svg class="icon icon-odnoklassniki">
+                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_google-plus">
+                        <svg class="icon icon-google-plus">
+                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+              <div class="tabs__container" data-tabs-container="by-email">
+                <div class="tabs__inner">
+                  <form action="/" class="modal__form form js-form-message">
+                    <div class="form-control form-control_sm js-form-control">
+                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+                    </div>
+                    <div class="form-control form-control_sm js-form-control">
+                      <input type="text" class="input input_password" placeholder="Email" data-validation="required" data-validation-event="keyup change">
+                    </div>
+                    <div class="form-control form-control_sm js-form-control js-password">
+                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password" data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
+                        data-validation-error-msg="Пароль должен содержать не менее 10 символов" />
+                      <svg class="icon icon-check">
+                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                      </svg>
+                      <span class="strength-meter"></span>
+                    </div>
+                    <div class="form-checkbox form-checkbox_lg">
+                      <label class="checkbox">
+                        <input type="checkbox" data-validation="required">
+                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+                        </span>
+                        <span class="checkbox__icon">
+                          <svg class="icon icon-check">
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-control form-control_sm">
+                      <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                    </div>
+                    <div class="form-separator">Зарегистрироваться через</div>
+                    <div class="form-social form-social_sm social">
+                      <a href="#" class="social__link social__link_vk">
+                        <svg class="icon icon-vk">
+                          <use xlink:href="img/sprite.svg#icon-vk"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_facebook">
+                        <svg class="icon icon-facebook">
+                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_odnoklassniki">
+                        <svg class="icon icon-odnoklassniki">
+                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_google-plus">
+                        <svg class="icon icon-google-plus">
+                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+      <!-- begin modal -->
       <div class="modal questionnaire" data-modal="questionnaire">
-        <div class="modal__container questionnaire__container" data-modal-container>
+        <div class="modal__container questionnaire__container" data-modal-container="data-modal-container">
           <button class="modal__off" type="button" data-modal-close="data-modal-close">
             <svg class="icon icon-close">
               <use xlink:href="img/sprite.svg#icon-close"></use>
@@ -1733,7 +1877,7 @@
       <!-- end modal -->
       <!-- begin modal -->
       <div class="modal invite" data-modal="invite">
-        <div class="modal__container invite__container" data-modal-container>
+        <div class="modal__container invite__container" data-modal-container="data-modal-container">
           <button class="modal__off" type="button" data-modal-close="data-modal-close">
             <svg class="icon icon-close">
               <use xlink:href="img/sprite.svg#icon-close"></use>
@@ -1753,137 +1897,6 @@
               кроме определения модели развития. </p>
             <p> Таким образом, семантический разбор внешних противодействий играет важную роль в формировании экспериментов, поражающих по своей масштабности и грандиозности. Задача организации, в особенности же высококачественный прототип будущего
               проекта выявляет срочную потребность новых принципов формирования материально-технической и кадровой базы. </p>
-          </div>
-        </div>
-      </div>
-      <!-- end modal -->
-      <!-- begin modal -->
-      <div class="modal registration-tab" data-modal="registration-tab">
-        <div class="modal__container registration-tab__container" data-modal-container>
-          <div class="modal__title registration-tab__title">Регистрация</div>
-          <div class="tabs tabs_registration" data-tabs="data-tabs">
-            <div class="tabs__out">
-              <div class="tabs__current" data-tabs-current="data-tabs-current">
-                <span></span></div>
-              <ul class="tabs__list">
-                <li class="tabs__item" data-tabs-control="by-telephone"> По телефону </li>
-                <li class="tabs__item" data-tabs-control="by-email"> По email </li>
-              </ul>
-            </div>
-            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
-              <div class="tabs__container" data-tabs-container="by-telephone">
-                <div class="tabs__inner">
-                  <form action="/" class="modal__form form js-form-message">
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control js-password" data-validation-strength="1">
-                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="strength" name="password" data-validation-strength="1" />
-                      <span class="strength-meter"></span>
-                    </div>
-                    <div class="form-checkbox form-checkbox_lg">
-                      <label class="checkbox">
-                        <input type="checkbox" data-validation="required">
-                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-                        </span>
-                        <span class="checkbox__icon">
-                          <svg class="icon icon-check">
-                            <use xlink:href="img/sprite.svg#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="form-control form-control_sm">
-                      <button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
-                    </div>
-                    <div class="form-separator">Зарегистрироваться через</div>
-                    <div class="form-social form-social_sm social">
-                      <a href="#" class="social__link social__link_vk">
-                        <svg class="icon icon-vk">
-                          <use xlink:href="img/sprite.svg#icon-vk"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_facebook">
-                        <svg class="icon icon-facebook">
-                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_odnoklassniki">
-                        <svg class="icon icon-odnoklassniki">
-                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_google-plus">
-                        <svg class="icon icon-google-plus">
-                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                        </svg>
-                      </a>
-                    </div>
-                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
-              <div class="tabs__container" data-tabs-container="by-email">
-                <div class="tabs__inner">
-                  <form action="/" class="modal__form form js-form-message">
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input input_password" placeholder="Email" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="password" class="input input_password" placeholder="Создать пароль" name="password" data-validation="required strength" data-validation-event="keyup change" data-validation-strength="1" />
-                      <span class="strength-meter"></span>
-                    </div>
-                    <div class="form-checkbox form-checkbox_lg">
-                      <label class="checkbox">
-                        <input type="checkbox" data-validation="required">
-                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-                        </span>
-                        <span class="checkbox__icon">
-                          <svg class="icon icon-check">
-                            <use xlink:href="img/sprite.svg#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="form-control form-control_sm">
-                      <button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
-                    </div>
-                    <div class="form-separator">Зарегистрироваться через</div>
-                    <div class="form-social form-social_sm social">
-                      <a href="#" class="social__link social__link_vk">
-                        <svg class="icon icon-vk">
-                          <use xlink:href="img/sprite.svg#icon-vk"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_facebook">
-                        <svg class="icon icon-facebook">
-                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_odnoklassniki">
-                        <svg class="icon icon-odnoklassniki">
-                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_google-plus">
-                        <svg class="icon icon-google-plus">
-                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                        </svg>
-                      </a>
-                    </div>
-                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
-                  </form>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

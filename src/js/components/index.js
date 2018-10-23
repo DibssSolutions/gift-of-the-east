@@ -21,5 +21,6 @@ import './_file';
 import './_initMenuSpy';
 import './_initSticky';
 import './_accordion';
-import './_sequence';
+import './_mp';
+// import './_sequence';
 // import "./_startingAnimation";
