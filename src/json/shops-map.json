@@ -1,6 +1,10 @@
 [
   {
+    "content": {
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, consequatur."
+    },
     "marker": {
+      "id": "continent",
       "position": {
         "lat": 54.978061,
         "lng": 73.324601
@@ -21,9 +25,94 @@
   },
   {
     "marker": {
+      "id": "mega",
       "position": {
-        "lat": 54.981354,
-        "lng": 73.321461
+        "lat": 54.972670,
+        "lng": 73.281238
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 56,
+          "y": 56
+        },
+        "centering": {
+          "x": 56,
+          "y": 56
+        }
+      }
+    }
+  },
+  {
+    "marker": {
+      "id": "fest",
+      "position": {
+        "lat": 54.981155,
+        "lng": 73.320316
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 56,
+          "y": 56
+        },
+        "centering": {
+          "x": 56,
+          "y": 56
+        }
+      }
+    }
+  },
+  {
+    "marker": {
+      "id": "mayak",
+      "position": {
+        "lat": 54.998328, 
+        "lng": 73.282189
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 56,
+          "y": 56
+        },
+        "centering": {
+          "x": 56,
+          "y": 56
+        }
+      }
+    }
+  },
+  { 
+    "marker": {
+      "id": "privokzal",
+      "position": {
+        "lat": 54.941454, 
+        "lng": 73.382802
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 56,
+          "y": 56
+        },
+        "centering": {
+          "x": 56,
+          "y": 56
+        }
+      }
+    }
+  },
+  {
+    "marker": {
+      "id": "kaskad",
+      "position": {
+        "lat": 54.963058,
+        "lng": 73.384639
       },
       "icon": {
         "default": "img/marker.svg",

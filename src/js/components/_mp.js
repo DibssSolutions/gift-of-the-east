@@ -1,5 +1,6 @@
 const EasyGoogleMaps = require('easygooglemaps');
 import { LOAD_DATA, buildIcon } from './../utils';
+import { ACTIVE, OPEN } from './../constants';
 const mapNode = $('.js-shops-map');
 if (mapNode.length) {
   mapNode.each((i, container) => {
@@ -10,7 +11,7 @@ if (mapNode.length) {
       callback: data => {
         let mapOptions = {
           map: {
-            APIKEY: 'AIzaSyDMWIxCN9ijYRfiH7bmQN-LNRDtoboLZqY',
+            APIKEY: '&amp;',
             container: '.js-shops-map',
             options: {
               center: {
@@ -308,7 +309,16 @@ if (mapNode.length) {
             }
           },
           infobox: {
-            template: null
+            template: '#infobox',
+            onlyOneBox: true,
+            style: {
+              width: '300px'
+            },
+            position: {
+              x: 'left',
+              y: 'center'
+            },
+            closeButton: '.js-infobox-close'
           },
           markers: {
             items: data
@@ -316,12 +326,55 @@ if (mapNode.length) {
         };
         let map = new EasyGoogleMaps(mapOptions);
         map.init();
+
         map.onload(function() {
-          console.log(22323);
-          console.log(map.realmap);
+          const shop = $('.js-shop');
+          const shops = $('.js-shops');
+
+          setTimeout(() => {
+            map._markers.forEach(marker => {
+              marker.addListener('click', function(e) {
+                console.log(marker.id);
+                const targetShop = $(shops).find(`[data-id=${marker.id}]`);
+                toggleShopsOnClick($(targetShop));
+                // $(targetShop).addClass(ACTIVE);
+              });
+            });
+          }, 100);
+
+          $(shop).each((index, el) => {
+            const shop = $(el);
+            const data = $(shop).data();
+            const myLatlng = { lat: data.lat, lng: data.lng };
+            const id = data.id;
+            const gMap = map.realmap;
+            var newCenter = new google.maps.LatLng(myLatlng);
+
+            $(shop).on('click', function(e) {
+              if ($(e.target).hasClass('js-photo-gallery-trigger')) return;
+              // === SHOPS-LIST ===
+              toggleShopsOnClick($(this));
+
+              // === MAP ===
+              for (let k = 0; k < map._markers.length; k++) {
+                map._markers[k].icon.url = 'img/marker.svg';
+                if (map._markers[k].id === `${id}`) {
+                  map._markers[k].icon.url = 'img/active-marker.svg';
+                }
+              }
+              gMap.panTo(newCenter);
+            });
+          });
         });
-        
       }
     });
   });
+}
+
+function toggleShopsOnClick(el) {
+  $(el)
+    .parents('.js-shops')
+    .addClass(OPEN);
+  $('.js-shop').each((i, el) => $(el).removeClass(ACTIVE));
+  $(el).addClass(ACTIVE);
 }

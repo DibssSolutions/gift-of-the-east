@@ -8,6 +8,10 @@
         body: [
             [
                 {
+                    lat: 54.978061,
+                    lng: 73.322601,
+                    id: "continent"
+                }, {
                     title: 'Континент 2',
                     addres: '70 лет Октября, 25 к.2 '
                 }, {
@@ -19,9 +23,14 @@
                     modal: '3D',
                     modalText: '3D тур'
                 }
+
             ],
             [
                 {
+                    lat: 54.972670,
+                    lng: 73.281238,
+                    id: "mega"
+                }, {
                     title: 'Мега',
                     addres: 'Бульвар Архитекторов, 35'
                 }, {
@@ -35,8 +44,13 @@
             ],
             [
                 {
+                    lat: 54.981155,
+                    lng: 73.320316,
+                    id: "fest"
+                }, {
                     title: 'Фестиваль',
                     addres: 'ул.70 лет Октября, 19'
+
                 }, {
                     text: '10:00–21:00',
                     day: 'пн–вс'
@@ -49,6 +63,10 @@
             ],
             [
                 {
+                    lat: 54.998328,
+                    lng: 73.282189,
+                    id: "mayak"
+                }, {
                     title: 'Маяк–3',
                     addres: 'пр.Комарова, 6 к.1'
                 }, {
@@ -62,6 +80,10 @@
             ],
             [
                 {
+                    lat: 54.941454,
+                    lng: 73.382802,
+                    id: "privokzal"
+                }, {
                     title: 'Привокзальный',
                     addres: 'ул.Карла Маркса, 84'
                 }, {
@@ -76,6 +98,10 @@
             ],
             [
                 {
+                    lat: 54.963058,
+                    lng: 73.384639,
+                    id: "kaskad"
+                }, {
                     title: 'Каскад',
                     addres: 'ул.Карла Маркса, 24'
                 }, {
@@ -135,67 +161,106 @@
                             {% for row in table.body %}
                                 <div class="shops-table__row">
                                     {% for item in row %}
-                                        <div class="shops-table__cell">
-                                            {% if item.title %}
-                                                <div class="shops-table__title">{{ item.title }}</div>
-                                            {% endif %}
-                                            {% if item.day %}
-                                                <div class="shops-table__day">{{ item.day }}</div>
-                                            {% endif %}
-                                            {% if item.text %}
-                                                <div class="shops-table__text shops-table__text_gray">{{ item.text }}</div>
-                                            {% endif %}
-                                            {% if item.addres %}
-                                                <div class="shops-table__addres">{{ item.addres }}</div>
-                                            {% endif %}
-                                            {% if item.modal %}
-                                                <a href="#" class="shops-table__link" data-modal-control="{{item.modal}}">{{ item.modalText }}</a>
-                                            {% endif %}
-                                            {% if item.empty %}
-                                                <div class="shops-table__text">Готовится</div>
-                                            {% endif %}
-                                        </div>
+                                        {% if loop.index !== 1 %}
+                                            <div class="shops-table__cell">
+                                                {% if item.title %}
+                                                    <div class="shops-table__title">{{ item.title }}</div>
+                                                {% endif %}
+                                                {% if item.day %}
+                                                    <div class="shops-table__day">{{ item.day }}</div>
+                                                {% endif %}
+                                                {% if item.text %}
+                                                    <div class="shops-table__text shops-table__text_gray">{{ item.text }}</div>
+                                                {% endif %}
+                                                {% if item.addres %}
+                                                    <div class="shops-table__addres">{{ item.addres }}</div>
+                                                {% endif %}
+                                                {% if item.modal %}
+                                                    <a href="#" class="shops-table__link" data-modal-control="{{item.modal}}">{{ item.modalText }}</a>
+                                                {% endif %}
+                                                {% if item.empty %}
+                                                    <div class="shops-table__text">Готовится</div>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+
                                     {% endfor %}
                                 </div>
                             {% endfor %}
                         </div>
                     {% endfor %}
                 </div>
-                <article class="shops">
+                <article class="shops js-shops">
                     <section class="shops-list js-scroll-wrap">
                         {% for row in tables[0].body %}
-                            <a href="#" class="shops-list__shop js-marker-{{loop.index}}">
+                            <a href="#" class="shops-list__shop js-shop{% if loop.first %} is-active{% endif %}" data-lat="{{row[0].lat}}" data-lng="{{row[0].lng}}" data-id="{{row[0].id}}">
                                 {% for item in row %}
-                                    <div class="shops-list__row">
-                                        {% if item.title %}
-                                            <h5 class="shops-list__title">{{ item.title }}</h5>
-                                        {% endif %}
-                                        {% if item.day %}
-                                            <span class="shops-list__day">{{ item.day }}</span>
-                                        {% endif %}
-                                        {% if item.text %}
-                                            <span class="shops-list__text shops-list__text_gray">{{ item.text }}</span>
-                                        {% endif %}
-                                        {% if item.addres %}
-                                            <span class="shops-list__addres">{{ item.addres }}</span>
-                                        {% endif %}
-                                        {% if item.modal %}
-                                            <button type="button" href="#" class="shops-list__link" data-modal-control="{{item.modal}}">{{ item.modalText }}</button>
-                                        {% endif %}
-                                        {% if item.empty %}
-                                            <div class="shops-list__text">Готовится</div>
-                                        {% endif %}
-                                    </div>
+                                    {% if loop.index !== 1 %}
+                                        <div class="shops-list__row">
+                                            {% if item.title %}
+                                                <h5 class="shops-list__title">{{ item.title }}</h5>
+                                            {% endif %}
+                                            {% if item.day %}
+                                                <span class="shops-list__day">{{ item.day }}</span>
+                                            {% endif %}
+                                            {% if item.text %}
+                                                <span class="shops-list__text shops-list__text_gray">{{ item.text }}</span>
+                                            {% endif %}
+                                            {% if item.addres %}
+                                                <span class="shops-list__addres">{{ item.addres }}</span>
+                                            {% endif %}
+                                            {% if item.modal %}
+                                                <button type="button" href="#" class="shops-list__link js-photo-gallery-trigger" data-modal-control="{{item.modal}}">{{ item.modalText }}</button>
+                                            {% endif %}
+                                            {% if item.empty %}
+                                                <div class="shops-list__text">Готовится</div>
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
                                 {% endfor %}
                             </a>
                         {% endfor %}
                     </section>
                     <div class="shops__map-container">
                         <div class="shops__map js-shops-map" data-json="./json/shops-map.json" data-center-lat="54.987658" data-center-lng="73.345368"></div>
+                        <div class="shops__slider">
+                            {% include "partials/main/_photo-gallery.html" %}
+                        </div>
                     </div>
+
                 </article>
             </div>
         </div>
     </div>
+    
+    <div id="demo-test-gallery" class="demo-gallery">
 
+        <a href="https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg" data-size="1600x1600" data-med="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg" data-med-size="1024x1024" data-author="Folkert Gorter" class="demo-gallery__img--main">
+            <img src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" alt=""/>
+            <figure>This is dummy caption.</figure>
+        </a>
+
+        <a href="https://farm6.staticflickr.com/5591/15008867125_b61960af01_h.jpg" data-size="1600x1068" data-med="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg" data-med-size="1024x683" data-author="Samuel Rohl">
+            <img src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg" alt=""/>
+            <figure>This is dummy caption. It has been placed here solely to demonstrate the look and feel of finished, typeset text.</figure>
+        </a>
+
+        <a href="https://farm4.staticflickr.com/3902/14985871946_24f47d4b53_h.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg" data-med-size="1024x683" data-author="Ales Krivec">
+            <img src="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" alt=""/>
+            <figure>This is dummy caption. It is not meant to be read.</figure>
+        </a>
+
+        <a href="https://farm6.staticflickr.com/5584/14985868676_b51baa4071_h.jpg" data-size="1600x1067" data-med="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_b.jpg" data-med-size="1024x683" data-author="Michael Hull">
+            <img src="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_m.jpg" alt=""/>
+            <figure>Dummy caption. It's Greek to you. Unless, of course, you're Greek, in which case, it really makes no sense.</figure>
+        </a>
+
+        <a href="https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3920/15008465772_383e697089_b.jpg" data-med-size="1024x683" data-author="Thomas Lefebvre">
+            <img src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" alt=""/>
+            <figure>It's a dummy caption. He who searches for meaning here will be sorely disappointed.</figure>
+        </a>
+
+    </div>
+
+    <script id="infobox"></script>
 {% endblock %}

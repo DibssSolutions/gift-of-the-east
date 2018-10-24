@@ -214,6 +214,7 @@ DOC.ready(() => {
   });
 });
 
+// ============== OFFERS SLIDER ====================
 DOC.ready(() => {
   const productSlider = $('.js-offers-slider');
 
@@ -310,3 +311,55 @@ function initControls() {
     $(video).removeClass(PAUSED);
   });
 }
+
+// =================== GALLERY SLIDER ============================
+
+DOC.ready(() => {
+  const gallerySlider = $('.js-photo-gallery-slider');
+
+  gallerySlider.each((i, el) => {
+    let slider = $(el);
+
+    slider.on('init', () => {
+      slider.addClass(INIT);
+    });
+
+    // slider.on("afterChange", (event, slick, currentSlide) => {
+    //   // PAUSE ALL VIDEOS
+    //   const videos = $(".offers-slider__slide video");
+    //   videos.each((i, el) => {
+    //     $(el)[0].pause();
+    //   });
+    //   // PLAY CURRENT
+    //   let slides = $(".offers-slider__slide");
+    //   const videoCurrent = $(slides[currentSlide]).find("video")[0];
+    //   videoCurrent ? videoCurrent.play() : false;
+    // });
+
+    slider.slick({
+      dots: false,
+      infinite: false,
+      speed: 1800,
+      // fade: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      // autoplay: true,
+      prevArrow: `<button class="offers-slider__prev js-slider-prev">${buildIcon(
+        'arrow-left'
+      )}</button>`,
+      nextArrow: `<button class="offers-slider__next js-slider-next">${buildIcon(
+        'arrow-right'
+      )}</button>`,
+
+      responsive: [
+        {
+          breakpoint: widthMD,
+          settings: {
+            arrows: false,
+            fade: false
+          }
+        }
+      ]
+    });
+  });
+});

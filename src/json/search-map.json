@@ -7,7 +7,7 @@
             },
             "icon": {
                 "default": "img/marker.svg",
-                "active": "img/marker.svg",
+                "active": "img/active-marker.svg",
                 "size": {
                     "x": 56,
                     "y": 56
@@ -27,7 +27,7 @@
             },
             "icon": {
                 "default": "img/marker.svg",
-                "active": "img/marker.svg",
+                "active": "img/active-marker.svg",
                 "size": {
                     "x": 56,
                     "y": 56

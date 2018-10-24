@@ -680,9 +680,9 @@
                 </div>
               </div>
             </div>
-            <article class="shops">
+            <article class="shops js-shops">
               <section class="shops-list js-scroll-wrap">
-                <a href="#" class="shops-list__shop js-marker-1">
+                <a href="#" class="shops-list__shop js-shop is-active" data-lat="54.978061" data-lng="73.322601" data-id="continent">
                   <div class="shops-list__row">
                     <h5 class="shops-list__title">Континент 2</h5>
                     <span class="shops-list__addres">70 лет Октября, 25 к.2 </span>
@@ -695,10 +695,10 @@
                     <span class="shops-list__text shops-list__text_gray">+7 (678) 678 87 67</span>
                   </div>
                   <div class="shops-list__row">
-                    <button type="button" href="#" class="shops-list__link" data-modal-control="3D">3D тур</button>
+                    <button type="button" href="#" class="shops-list__link js-photo-gallery-trigger" data-modal-control="3D">3D тур</button>
                   </div>
                 </a>
-                <a href="#" class="shops-list__shop js-marker-2">
+                <a href="#" class="shops-list__shop js-shop" data-lat="54.97267" data-lng="73.281238" data-id="mega">
                   <div class="shops-list__row">
                     <h5 class="shops-list__title">Мега</h5>
                     <span class="shops-list__addres">Бульвар Архитекторов, 35</span>
@@ -714,7 +714,7 @@
                     <div class="shops-list__text">Готовится</div>
                   </div>
                 </a>
-                <a href="#" class="shops-list__shop js-marker-3">
+                <a href="#" class="shops-list__shop js-shop" data-lat="54.981155" data-lng="73.320316" data-id="fest">
                   <div class="shops-list__row">
                     <h5 class="shops-list__title">Фестиваль</h5>
                     <span class="shops-list__addres">ул.70 лет Октября, 19</span>
@@ -727,10 +727,10 @@
                     <span class="shops-list__text shops-list__text_gray">+7 (678) 678 87 67</span>
                   </div>
                   <div class="shops-list__row">
-                    <button type="button" href="#" class="shops-list__link" data-modal-control="Photo">Фотографии</button>
+                    <button type="button" href="#" class="shops-list__link js-photo-gallery-trigger" data-modal-control="Photo">Фотографии</button>
                   </div>
                 </a>
-                <a href="#" class="shops-list__shop js-marker-4">
+                <a href="#" class="shops-list__shop js-shop" data-lat="54.998328" data-lng="73.282189" data-id="mayak">
                   <div class="shops-list__row">
                     <h5 class="shops-list__title">Маяк–3</h5>
                     <span class="shops-list__addres">пр.Комарова, 6 к.1</span>
@@ -746,7 +746,7 @@
                     <div class="shops-list__text">Готовится</div>
                   </div>
                 </a>
-                <a href="#" class="shops-list__shop js-marker-5">
+                <a href="#" class="shops-list__shop js-shop" data-lat="54.941454" data-lng="73.382802" data-id="privokzal">
                   <div class="shops-list__row">
                     <h5 class="shops-list__title">Привокзальный</h5>
                     <span class="shops-list__addres">ул.Карла Маркса, 84</span>
@@ -759,10 +759,10 @@
                     <span class="shops-list__text shops-list__text_gray">+7 (678) 678 87 67</span>
                   </div>
                   <div class="shops-list__row">
-                    <button type="button" href="#" class="shops-list__link" data-modal-control="Photo">Фотографии</button>
+                    <button type="button" href="#" class="shops-list__link js-photo-gallery-trigger" data-modal-control="Photo">Фотографии</button>
                   </div>
                 </a>
-                <a href="#" class="shops-list__shop js-marker-6">
+                <a href="#" class="shops-list__shop js-shop" data-lat="54.963058" data-lng="73.384639" data-id="kaskad">
                   <div class="shops-list__row">
                     <h5 class="shops-list__title">Каскад</h5>
                     <span class="shops-list__addres">ул.Карла Маркса, 24</span>
@@ -775,17 +775,122 @@
                     <span class="shops-list__text shops-list__text_gray">+7 (678) 678 87 67</span>
                   </div>
                   <div class="shops-list__row">
-                    <button type="button" href="#" class="shops-list__link" data-modal-control="3D">3D тур</button>
+                    <button type="button" href="#" class="shops-list__link js-photo-gallery-trigger" data-modal-control="3D">3D тур</button>
                   </div>
                 </a>
               </section>
               <div class="shops__map-container">
                 <div class="shops__map js-shops-map" data-json="./json/shops-map.json" data-center-lat="54.987658" data-center-lng="73.345368"></div>
+                <div class="shops__slider">
+                  <div class="js-photo-gallery shops__gallery">
+                    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                    <!-- <div class="shops-gallery js-photo-gallery-slider">
+        <div data-size="1024x1024">
+            <img class="shops-gallery__slide" src="./img/about-img.jpg">
+        </div>
+        <div data-size="1024x1024">
+            <img class="shops-gallery__slide" src='./img/penchant-styled-542047-unsplash.jpg'>
+        </div>
+        <div data-size="1024x1024">
+            <img class="shops-gallery__slide" src='./img/haley-rivera-540464-unsplash@2x.jpg'>
+        </div>
+    </div> -->
+                    <div class="gall">
+                      <figure>
+                        <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" itemprop="contentUrl" data-size="1024x1024">
+                          <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" itemprop="thumbnail" alt="Image description" />
+                        </a>
+                        <figcaption>Image caption 1</figcaption>
+                      </figure>
+                      <figure>
+                        <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" itemprop="contentUrl" data-size="964x1024">
+                          <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" itemprop="thumbnail" alt="Image description" />
+                        </a>
+                        <figcaption>Image caption 2</figcaption>
+                      </figure>
+                      <figure>
+                        <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" itemprop="contentUrl" data-size="1024x683">
+                          <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" itemprop="thumbnail" alt="Image description" />
+                        </a>
+                        <figcaption>Image caption 3</figcaption>
+                      </figure>
+                    </div>
+                    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+                      <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+                      <div class="pswp__bg"></div>
+                      <!-- Slides wrapper with overflow:hidden. -->
+                      <div class="pswp__scroll-wrap">
+                        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+                        <div class="pswp__container">
+                          <div class="pswp__item"></div>
+                          <div class="pswp__item"></div>
+                          <div class="pswp__item"></div>
+                        </div>
+                        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                        <div class="pswp__ui pswp__ui--hidden">
+                          <div class="pswp__top-bar">
+                            <!--  Controls are self-explanatory. Order can be changed. -->
+                            <div class="pswp__counter"></div>
+                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                            <button class="pswp__button pswp__button--share" title="Share"></button>
+                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                            <!-- element will get class pswp__preloader--active when preloader is running -->
+                            <div class="pswp__preloader">
+                              <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                  <div class="pswp__preloader__donut"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                            <div class="pswp__share-tooltip"></div>
+                          </div>
+                          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                          </button>
+                          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                          </button>
+                          <div class="pswp__caption">
+                            <div class="pswp__caption__center"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </article>
           </div>
         </div>
       </div>
+      <div id="demo-test-gallery" class="demo-gallery">
+        <a href="https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg" data-size="1600x1600" data-med="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg" data-med-size="1024x1024" data-author="Folkert Gorter" class="demo-gallery__img--main">
+          <img src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" alt="" />
+          <figure>This is dummy caption.</figure>
+        </a>
+        <a href="https://farm6.staticflickr.com/5591/15008867125_b61960af01_h.jpg" data-size="1600x1068" data-med="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg" data-med-size="1024x683" data-author="Samuel Rohl">
+          <img src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg" alt="" />
+          <figure>This is dummy caption. It has been placed here solely to demonstrate the look and feel of finished, typeset text.</figure>
+        </a>
+        <a href="https://farm4.staticflickr.com/3902/14985871946_24f47d4b53_h.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg" data-med-size="1024x683" data-author="Ales Krivec">
+          <img src="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" alt="" />
+          <figure>This is dummy caption. It is not meant to be read.</figure>
+        </a>
+        <a href="https://farm6.staticflickr.com/5584/14985868676_b51baa4071_h.jpg" data-size="1600x1067" data-med="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_b.jpg" data-med-size="1024x683" data-author="Michael Hull">
+          <img src="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_m.jpg" alt="" />
+          <figure>Dummy caption. It's Greek to you. Unless, of course, you're Greek, in which case, it really makes no sense.</figure>
+        </a>
+        <a href="https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3920/15008465772_383e697089_b.jpg" data-med-size="1024x683" data-author="Thomas Lefebvre">
+          <img src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" alt="" />
+          <figure>It's a dummy caption. He who searches for meaning here will be sorely disappointed.</figure>
+        </a>
+      </div>
+      <script id="infobox"></script>
       <!-- begin footer -->
       <footer class="footer">
         <div class="footer__inner inner">
