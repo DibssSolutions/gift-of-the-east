@@ -136,6 +136,19 @@
 			visibility: visible
 			z-index: 1000
 			background-color: $white
+	&__fancy-image
+		display: block
+		+cover
+		padding-bottom: 800px
+		min-width: 1000px
+	&__buttons
+		position: absolute
+		bottom: 10px
+		left: 50%	
+		transform: translateX(-50%)
+		button
+			margin-left: 20px
+
 	
 .shops-list 
 	flex: 0 0 280px
@@ -146,8 +159,6 @@
 	&__shop
 		padding: 24px 16px 
 		display: block
-		// .is-open & 
-		// 	opacity: 0.5
 		&:not(:nth-last-child(3))
 			border-bottom: 1px solid rgba($silver, 0.5)
 		&.is-active
@@ -168,11 +179,26 @@
 	.is-active & 
 		opacity: 1
 
-.shops-gallery
+.shops-slider
 	&__slide
+		display: block
 		+cover
-		height: 500px
+		padding-bottom: 634px
 		width: 100%
-
+		transform: scale(1.5)
+		transform-origin: center
+	.slick-slide
+		height: 100%
+		overflow: hidden
+		pointer-events: none
+	&__prev
+		position: absolute
+		bottom: 20px
+		left: 20%
+		z-index: 10
+	&__next
+		position: absolute
+		bottom: 20px
+		left: calc(20% + 30px)
 
 	

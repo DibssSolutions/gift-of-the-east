@@ -337,6 +337,14 @@ if (mapNode.length) {
                 console.log(marker.id);
                 const targetShop = $(shops).find(`[data-id=${marker.id}]`);
                 toggleShopsOnClick($(targetShop));
+                scrollShop($(targetShop));
+                // $(targetShop).animate(
+                //   {
+                //     scrollTop: 0
+                //   },
+                //   700
+                // );
+
                 // $(targetShop).addClass(ACTIVE);
               });
             });
@@ -351,6 +359,7 @@ if (mapNode.length) {
             var newCenter = new google.maps.LatLng(myLatlng);
 
             $(shop).on('click', function(e) {
+              e.preventDefault();
               if ($(e.target).hasClass('js-photo-gallery-trigger')) return;
               // === SHOPS-LIST ===
               toggleShopsOnClick($(this));
@@ -377,4 +386,21 @@ function toggleShopsOnClick(el) {
     .addClass(OPEN);
   $('.js-shop').each((i, el) => $(el).removeClass(ACTIVE));
   $(el).addClass(ACTIVE);
+}
+
+function scrollShop(targetShop) {
+  const targetPosition = $(targetShop).position().top;
+  const targetHeight = $(targetShop).innerHeight();
+  const shopsList = $('.js-shops-list');
+  const shopsScroll = $(shopsList).scrollTop();
+  const shopsInner = $(shopsList).innerHeight();
+
+  if (targetPosition - shopsInner > 0)
+    shopsList.animate(
+      {
+        scrollTop: targetPosition - shopsInner + targetPosition
+      },
+      500
+    );
+  console.log(targetPosition, shopsScroll, shopsInner);
 }

@@ -681,7 +681,7 @@
               </div>
             </div>
             <article class="shops js-shops">
-              <section class="shops-list js-scroll-wrap">
+              <section class="shops-list js-scroll-wrap js-shops-list">
                 <a href="#" class="shops-list__shop js-shop is-active" data-lat="54.978061" data-lng="73.322601" data-id="continent">
                   <div class="shops-list__row">
                     <h5 class="shops-list__title">Континент 2</h5>
@@ -784,324 +784,86 @@
                 <div class="shops__slider">
                   <div class="js-photo-gallery shops__gallery">
                     <!-- Root element of PhotoSwipe. Must have class pswp. -->
-                    <!-- <div class="shops-gallery js-photo-gallery-slider">
-        <div data-size="1024x1024">
-            <img class="shops-gallery__slide" src="./img/about-img.jpg">
-        </div>
-        <div data-size="1024x1024">
-            <img class="shops-gallery__slide" src='./img/penchant-styled-542047-unsplash.jpg'>
-        </div>
-        <div data-size="1024x1024">
-            <img class="shops-gallery__slide" src='./img/haley-rivera-540464-unsplash@2x.jpg'>
-        </div>
-    </div> -->
-                    <div class="gall">
-                      <figure>
-                        <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" itemprop="contentUrl" data-size="1024x1024">
-                          <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" itemprop="thumbnail" alt="Image description" />
-                        </a>
-                        <figcaption>Image caption 1</figcaption>
-                      </figure>
-                      <figure>
-                        <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" itemprop="contentUrl" data-size="964x1024">
-                          <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" itemprop="thumbnail" alt="Image description" />
-                        </a>
-                        <figcaption>Image caption 2</figcaption>
-                      </figure>
-                      <figure>
-                        <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" itemprop="contentUrl" data-size="1024x683">
-                          <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" itemprop="thumbnail" alt="Image description" />
-                        </a>
-                        <figcaption>Image caption 3</figcaption>
-                      </figure>
-                    </div>
-                    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-                      <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-                      <div class="pswp__bg"></div>
-                      <!-- Slides wrapper with overflow:hidden. -->
-                      <div class="pswp__scroll-wrap">
-                        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-                        <div class="pswp__container">
-                          <div class="pswp__item"></div>
-                          <div class="pswp__item"></div>
-                          <div class="pswp__item"></div>
-                        </div>
-                        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-                        <div class="pswp__ui pswp__ui--hidden">
-                          <div class="pswp__top-bar">
-                            <!--  Controls are self-explanatory. Order can be changed. -->
-                            <div class="pswp__counter"></div>
-                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                            <button class="pswp__button pswp__button--share" title="Share"></button>
-                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                            <!-- element will get class pswp__preloader--active when preloader is running -->
-                            <div class="pswp__preloader">
-                              <div class="pswp__preloader__icn">
-                                <div class="pswp__preloader__cut">
-                                  <div class="pswp__preloader__donut"></div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                            <div class="pswp__share-tooltip"></div>
-                          </div>
-                          <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                          </button>
-                          <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                          </button>
-                          <div class="pswp__caption">
-                            <div class="pswp__caption__center"></div>
-                          </div>
-                        </div>
+                    <div class="shops-slider js-gallery-slider">
+                      <div>
+                        <a class="shops-slider__slide" data-fancybox="data-fancybox" data-src="#photo-1" href="javascript:;" style="background-image: url(./img/businesswoman-call-career-789822.jpg)"></a>
                       </div>
+                      <div>
+                        <a class="shops-slider__slide" data-fancybox="data-fancybox" data-src="#photo-2" href="javascript:;" style="background-image: url(./img/living-room-3164434_1920.jpg)"></a>
+                      </div>
+                    </div>
+                    <div class="shops__buttons">
+                      <button type="button" class="shops-btn shops-btn_plus js-slide-zoom">
+                        <svg class="icon icon-plus">
+                          <use xlink:href="img/sprite.svg#icon-plus"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="shops-btn shops-btn_plus js-slide-decrease">
+                        <svg class="icon icon-minus">
+                          <use xlink:href="img/sprite.svg#icon-minus"></use>
+                        </svg>
+                      </button>
+                      <button type="button" class="shops-btn shops-btn_plus js-slide-expand">
+                        <svg class="icon icon-fullscreen">
+                          <use xlink:href="img/sprite.svg#icon-fullscreen"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div style="display: none;" id="photo-1">
+                      <span class="shops__fancy-image" style="background-image: url(./img/businesswoman-call-career-789822@2x.jpg)"></span>
+                    </div>
+                    <div style="display: none;" id="photo-2">
+                      <span class="shops__fancy-image" style="background-image: url(./img/living-room-3164434_1920@2x.jpg)"></span>
                     </div>
                   </div>
                 </div>
               </div>
-            </article>
           </div>
+          </article>
         </div>
       </div>
-      <div id="demo-test-gallery" class="demo-gallery">
-        <a href="https://farm4.staticflickr.com/3894/15008518202_c265dfa55f_h.jpg" data-size="1600x1600" data-med="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_b.jpg" data-med-size="1024x1024" data-author="Folkert Gorter" class="demo-gallery__img--main">
-          <img src="https://farm4.staticflickr.com/3894/15008518202_b016d7d289_m.jpg" alt="" />
-          <figure>This is dummy caption.</figure>
-        </a>
-        <a href="https://farm6.staticflickr.com/5591/15008867125_b61960af01_h.jpg" data-size="1600x1068" data-med="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg" data-med-size="1024x683" data-author="Samuel Rohl">
-          <img src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg" alt="" />
-          <figure>This is dummy caption. It has been placed here solely to demonstrate the look and feel of finished, typeset text.</figure>
-        </a>
-        <a href="https://farm4.staticflickr.com/3902/14985871946_24f47d4b53_h.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg" data-med-size="1024x683" data-author="Ales Krivec">
-          <img src="https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg" alt="" />
-          <figure>This is dummy caption. It is not meant to be read.</figure>
-        </a>
-        <a href="https://farm6.staticflickr.com/5584/14985868676_b51baa4071_h.jpg" data-size="1600x1067" data-med="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_b.jpg" data-med-size="1024x683" data-author="Michael Hull">
-          <img src="https://farm6.staticflickr.com/5584/14985868676_4b802b932a_m.jpg" alt="" />
-          <figure>Dummy caption. It's Greek to you. Unless, of course, you're Greek, in which case, it really makes no sense.</figure>
-        </a>
-        <a href="https://farm4.staticflickr.com/3920/15008465772_d50c8f0531_h.jpg" data-size="1600x1067" data-med="https://farm4.staticflickr.com/3920/15008465772_383e697089_b.jpg" data-med-size="1024x683" data-author="Thomas Lefebvre">
-          <img src="https://farm4.staticflickr.com/3920/15008465772_383e697089_m.jpg" alt="" />
-          <figure>It's a dummy caption. He who searches for meaning here will be sorely disappointed.</figure>
-        </a>
-      </div>
-      <script id="infobox"></script>
-      <!-- begin footer -->
-      <footer class="footer">
-        <div class="footer__inner inner">
-          <div class="footer__row row">
-            <div class="footer__col col col-25 col-md-50 col-sm-100">
-              <a href="#" class="footer__title">КЛУБ ДАРЫ ВОСТОКА</a>
-              <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">О клубе</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Каталог</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Программа лояльности</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Адреса магазинов</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Сотрудничество/Оптовым</a></li>
-              </ul>
-            </div>
-            <div class="footer__col col col-25 col-md-50 col-sm-100">
-              <a href="#" class="footer__title">ДЛЯ ПОКУПАТЕЛЕЙ</a>
-              <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">Доставка и самовывоз</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Оплата</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Обратная связь</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Общие вопросы</a></li>
-              </ul>
-            </div>
-            <div class="footer__col col col-25 col-md-50 col-sm-100">
-              <a href="#" class="footer__title">ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ</a>
-              <ul class="footer__list">
-                <li class="footer__item"><a href="#" class="footer__link">Политика безопасности</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Оферта</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Обмен/Возврат товара</a></li>
-              </ul>
-            </div>
-            <div class="footer__col col col-25 col-md-50 col-sm-100">
-              <a href="#" class="footer__title">КОНТАКТЫ</a>
-              <div class="footer__item"><a href="#" class="footer__tel">+7 (495) 661 - 0101</a></div>
-              <ul class="footer__list footer__list_contact">
-                <li class="footer__item">Служба клиентской поддержки</li>
-                <li class="footer__item">пн–вс 9:00 до 18:00</li>
-                <li class="footer__item">сб 9:00 до 16:00</li>
-              </ul>
-              <div class="footer__social social">
-                <a href="#" class="social__link social__link_vk">
-                  <svg class="icon icon-vk">
-                    <use xlink:href="img/sprite.svg#icon-vk"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_facebook">
-                  <svg class="icon icon-facebook">
-                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_odnoklassniki">
-                  <svg class="icon icon-odnoklassniki">
-                    <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                  </svg>
-                </a>
-                <a href="#" class="social__link social__link_instagram">
-                  <svg class="icon icon-instagram">
-                    <use xlink:href="img/sprite.svg#icon-instagram"></use>
-                  </svg>
-                </a>
-              </div>
-              <a href="#" class="footer__hashtag">#Дары_Востока</a>
-            </div>
+    </div>
+    <script id="infobox"></script>
+    <!-- begin footer -->
+    <footer class="footer">
+      <div class="footer__inner inner">
+        <div class="footer__row row">
+          <div class="footer__col col col-25 col-md-50 col-sm-100">
+            <a href="#" class="footer__title">КЛУБ ДАРЫ ВОСТОКА</a>
+            <ul class="footer__list">
+              <li class="footer__item"><a href="#" class="footer__link">О клубе</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Каталог</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Программа лояльности</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Адреса магазинов</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Сотрудничество/Оптовым</a></li>
+            </ul>
           </div>
-        </div>
-      </footer>
-      <!-- end footer -->
-      <div class="modal " data-modal="feedback">
-        <div class="modal__container modal__container_feedback" data-modal-container="data-modal-container">
-          <button class="modal__off" type="button" data-modal-close="data-modal-close">
-            <svg class="icon icon-close">
-              <use xlink:href="img/sprite.svg#icon-close"></use>
-            </svg>
-          </button>
-          <form action="/" class="modal__form feedback">
-            <div class="modal__title">Обратная связь</div>
-            <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
-            <div class="dashed-separator dashed-separator_feedback"></div>
-            <fieldset class="feedback__fieldset">
-              <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="surname">Фамилия</label>
-                <input type="text" class="feedback__input input" id="surname" data-validation="required" data-validation-event="keyup change">
-              </div>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="name">Имя</label>
-                <input type="text" class="feedback__input input" id="name" data-validation="required" data-validation-event="keyup change">
-              </div>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="middle_name">Отчество</label>
-                <input type="text" class="feedback__input input" id="middle_name">
-              </div>
-            </fieldset>
-            <div class="dashed-separator dashed-separator_feedback"></div>
-            <fieldset class="feedback__fieldset">
-              <legend class="feedback__legend">Задайте вопрос</legend>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" id="question-theme">
-                  <option value="Товары, акции, скидки">Товары, акции, скидки</option>
-                  <option value="Техническая поддержка">Техническая поддержка</option>
-                  <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
-                  <option value="Возврат товара">Возврат товара</option>
-                  <option value="Другое">Другое</option>
-                </select>
-              </div>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
-                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 78px"></textarea>
-              </div>
-              <div class="feedback__control js-form-control">
-                <div class="file">
-                  <label class="file__label" for="file">Прикрепить файл</label>
-                  <input type="file" class="file__input js-file-input" id="file" data-file="feedback-upload" multiple="multiple" />
-                  <span class="file__preview js-file-preview" data-preview="feedback-upload"></span>
-                </div>
-              </div>
-            </fieldset>
-            <div class="feedback__submit">
-              <button class="btn" type="submit" disabled="disabled">задать вопрос</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="modal " data-modal="feedback-order">
-        <div class="modal__container modal__container_feedback" data-modal-container="data-modal-container">
-          <button class="modal__off" type="button" data-modal-close="data-modal-close">
-            <svg class="icon icon-close">
-              <use xlink:href="img/sprite.svg#icon-close"></use>
-            </svg>
-          </button>
-          <form action="/" class="modal__form feedback">
-            <div class="modal__title">Обратная связь</div>
-            <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
-            <div class="dashed-separator dashed-separator_feedback"></div>
-            <fieldset class="feedback__fieldset">
-              <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="surname">Фамилия</label>
-                <input type="text" class="feedback__input input" id="surname" data-validation="required" data-validation-event="keyup change">
-              </div>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="name">Имя</label>
-                <input type="text" class="feedback__input input" id="name" data-validation="required" data-validation-event="keyup change">
-              </div>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="middle_name">Отчество</label>
-                <input type="text" class="feedback__input input" id="middle_name">
-              </div>
-            </fieldset>
-            <div class="dashed-separator dashed-separator_feedback"></div>
-            <fieldset class="feedback__fieldset">
-              <legend class="feedback__legend">Задайте вопрос</legend>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" id="question-theme">
-                  <option value="Товары, акции, скидки">Товары, акции, скидки</option>
-                  <option value="Техническая поддержка">Техническая поддержка</option>
-                  <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
-                  <option value="Возврат товара">Возврат товара</option>
-                  <option value="Другое">Другое</option>
-                </select>
-              </div>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label" for="order-number">Номер заказа</label>
-                <input type="text" class="feedback__input input" id="order-number" data-validation="required" data-validation-event="keyup change">
-              </div>
-              <div class="feedback__control js-form-control">
-                <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
-                <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 78px"></textarea>
-              </div>
-              <div class="feedback__control js-form-control">
-                <div class="file">
-                  <label class="file__label" for="file">Прикрепить файл</label>
-                  <input type="file" class="file__input js-file-input" id="file" data-file="feedback-upload" multiple="multiple" />
-                  <span class="file__preview js-file-preview" data-preview="feedback-upload"></span>
-                </div>
-              </div>
-            </fieldset>
-            <div class="feedback__submit">
-              <button class="btn" type="submit" disabled="disabled">задать вопрос</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- begin modal -->
-      <div class="modal" data-modal="login">
-        <div class="modal__container" data-modal-container="data-modal-container">
-          <form action="/" class="modal__form form">
-            <div class="modal__title">Вход в аккаунт</div>
-            <div class="form-control js-form-control">
-              <input type="text" class="input" placeholder="Номер телефона или email" data-validation="required" data-validation-event="keyup change">
-            </div>
-            <div class="form-control js-form-control">
-              <input type="password" class="input input_password" placeholder="Пароль" data-validation="required" data-validation-event="keyup change">
-              <button class="password-show js-password-show" type="button">
-                <svg class="icon icon-eye-closed">
-                  <use xlink:href="img/sprite.svg#icon-eye-closed"></use>
-                </svg>
-                <svg class="icon icon-eye-opened">
-                  <use xlink:href="img/sprite.svg#icon-eye-opened"></use>
-                </svg>
-              </button>
-            </div>
-            <div class="form-question">
-              <a href="#" class="link link_current">Забыли пароль?</a>
-            </div>
-            <div class="form-control">
-              <button class="btn btn_full" type="submit" disabled="disabled">ВОЙТИ</button>
-            </div>
-            <div class="form-social social">
+          <div class="footer__col col col-25 col-md-50 col-sm-100">
+            <a href="#" class="footer__title">ДЛЯ ПОКУПАТЕЛЕЙ</a>
+            <ul class="footer__list">
+              <li class="footer__item"><a href="#" class="footer__link">Доставка и самовывоз</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Оплата</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Обратная связь</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Общие вопросы</a></li>
+            </ul>
+          </div>
+          <div class="footer__col col col-25 col-md-50 col-sm-100">
+            <a href="#" class="footer__title">ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ</a>
+            <ul class="footer__list">
+              <li class="footer__item"><a href="#" class="footer__link">Политика безопасности</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Оферта</a></li>
+              <li class="footer__item"><a href="#" class="footer__link">Обмен/Возврат товара</a></li>
+            </ul>
+          </div>
+          <div class="footer__col col col-25 col-md-50 col-sm-100">
+            <a href="#" class="footer__title">КОНТАКТЫ</a>
+            <div class="footer__item"><a href="#" class="footer__tel">+7 (495) 661 - 0101</a></div>
+            <ul class="footer__list footer__list_contact">
+              <li class="footer__item">Служба клиентской поддержки</li>
+              <li class="footer__item">пн–вс 9:00 до 18:00</li>
+              <li class="footer__item">сб 9:00 до 16:00</li>
+            </ul>
+            <div class="footer__social social">
               <a href="#" class="social__link social__link_vk">
                 <svg class="icon icon-vk">
                   <use xlink:href="img/sprite.svg#icon-vk"></use>
@@ -1117,48 +879,514 @@
                   <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
                 </svg>
               </a>
-              <a href="#" class="social__link social__link_google-plus">
-                <svg class="icon icon-google-plus">
-                  <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+              <a href="#" class="social__link social__link_instagram">
+                <svg class="icon icon-instagram">
+                  <use xlink:href="img/sprite.svg#icon-instagram"></use>
                 </svg>
               </a>
             </div>
-            <div class="form-footer">Еще не член клуба? <a href="#" class="link link_current">Зарегистрироваться</a>
-            </div>
-          </form>
+            <a href="#" class="footer__hashtag">#Дары_Востока</a>
+          </div>
         </div>
       </div>
-      <!-- end modal -->
-      <!-- begin modal -->
-      <div class="modal" data-modal="registration">
-        <div class="modal__container" data-modal-container="data-modal-container">
-          <form action="/" class="modal__form form">
-            <div class="modal__title">Регистрация</div>
-            <div class="form-control js-form-control">
-              <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+    </footer>
+    <!-- end footer -->
+    <div class="modal " data-modal="feedback">
+      <div class="modal__container modal__container_feedback" data-modal-container="data-modal-container">
+        <button class="modal__off" type="button" data-modal-close="data-modal-close">
+          <svg class="icon icon-close">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <form action="/" class="modal__form feedback">
+          <div class="modal__title">Обратная связь</div>
+          <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
+          <div class="dashed-separator dashed-separator_feedback"></div>
+          <fieldset class="feedback__fieldset">
+            <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label" for="surname">Фамилия</label>
+              <input type="text" class="feedback__input input" id="surname" data-validation="required" data-validation-event="keyup change">
             </div>
-            <div class="form-control js-form-control">
-              <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label" for="name">Имя</label>
+              <input type="text" class="feedback__input input" id="name" data-validation="required" data-validation-event="keyup change">
             </div>
-            <div class="form-control js-form-control">
-              <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change" data-validation-strength="1">
-              <button class="password-show js-password-show" type="button">
-                <svg class="icon icon-eye-closed">
-                  <use xlink:href="img/sprite.svg#icon-eye-closed"></use>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label" for="middle_name">Отчество</label>
+              <input type="text" class="feedback__input input" id="middle_name">
+            </div>
+          </fieldset>
+          <div class="dashed-separator dashed-separator_feedback"></div>
+          <fieldset class="feedback__fieldset">
+            <legend class="feedback__legend">Задайте вопрос</legend>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
+              <select class="feedback__select select select_bord js-select" id="question-theme">
+                <option value="Товары, акции, скидки">Товары, акции, скидки</option>
+                <option value="Техническая поддержка">Техническая поддержка</option>
+                <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
+                <option value="Возврат товара">Возврат товара</option>
+                <option value="Другое">Другое</option>
+              </select>
+            </div>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
+              <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 78px"></textarea>
+            </div>
+            <div class="feedback__control js-form-control">
+              <div class="file">
+                <label class="file__label" for="file">Прикрепить файл</label>
+                <input type="file" class="file__input js-file-input" id="file" data-file="feedback-upload" multiple="multiple" />
+                <span class="file__preview js-file-preview" data-preview="feedback-upload"></span>
+              </div>
+            </div>
+          </fieldset>
+          <div class="feedback__submit">
+            <button class="btn" type="submit" disabled="disabled">задать вопрос</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal " data-modal="feedback-order">
+      <div class="modal__container modal__container_feedback" data-modal-container="data-modal-container">
+        <button class="modal__off" type="button" data-modal-close="data-modal-close">
+          <svg class="icon icon-close">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <form action="/" class="modal__form feedback">
+          <div class="modal__title">Обратная связь</div>
+          <div class="modal__info"> Здесь вы можете задать интересующий вас вопрос. Также можете ознакомиться с разделом сайта <a href="#" class="link">общие вопросы</a>, возможно, на ваш вопрос мы уже ответили ранее. </div>
+          <div class="dashed-separator dashed-separator_feedback"></div>
+          <fieldset class="feedback__fieldset">
+            <legend class="feedback__legend">Представьтесь, пожалуйста</legend>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label" for="surname">Фамилия</label>
+              <input type="text" class="feedback__input input" id="surname" data-validation="required" data-validation-event="keyup change">
+            </div>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label" for="name">Имя</label>
+              <input type="text" class="feedback__input input" id="name" data-validation="required" data-validation-event="keyup change">
+            </div>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label" for="middle_name">Отчество</label>
+              <input type="text" class="feedback__input input" id="middle_name">
+            </div>
+          </fieldset>
+          <div class="dashed-separator dashed-separator_feedback"></div>
+          <fieldset class="feedback__fieldset">
+            <legend class="feedback__legend">Задайте вопрос</legend>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
+              <select class="feedback__select select select_bord js-select" id="question-theme">
+                <option value="Товары, акции, скидки">Товары, акции, скидки</option>
+                <option value="Техническая поддержка">Техническая поддержка</option>
+                <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
+                <option value="Возврат товара">Возврат товара</option>
+                <option value="Другое">Другое</option>
+              </select>
+            </div>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label" for="order-number">Номер заказа</label>
+              <input type="text" class="feedback__input input" id="order-number" data-validation="required" data-validation-event="keyup change">
+            </div>
+            <div class="feedback__control js-form-control">
+              <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
+              <textarea class="feedback__textarea input" placeholder="Пожалуйста, наиболее подробно опишите ваш вопрос. Вы также можете прикрепить файл со снимком экрана." style="height: 78px"></textarea>
+            </div>
+            <div class="feedback__control js-form-control">
+              <div class="file">
+                <label class="file__label" for="file">Прикрепить файл</label>
+                <input type="file" class="file__input js-file-input" id="file" data-file="feedback-upload" multiple="multiple" />
+                <span class="file__preview js-file-preview" data-preview="feedback-upload"></span>
+              </div>
+            </div>
+          </fieldset>
+          <div class="feedback__submit">
+            <button class="btn" type="submit" disabled="disabled">задать вопрос</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- begin modal -->
+    <div class="modal" data-modal="login">
+      <div class="modal__container" data-modal-container="data-modal-container">
+        <form action="/" class="modal__form form">
+          <div class="modal__title">Вход в аккаунт</div>
+          <div class="form-control js-form-control">
+            <input type="text" class="input" placeholder="Номер телефона или email" data-validation="required" data-validation-event="keyup change">
+          </div>
+          <div class="form-control js-form-control">
+            <input type="password" class="input input_password" placeholder="Пароль" data-validation="required" data-validation-event="keyup change">
+            <button class="password-show js-password-show" type="button">
+              <svg class="icon icon-eye-closed">
+                <use xlink:href="img/sprite.svg#icon-eye-closed"></use>
+              </svg>
+              <svg class="icon icon-eye-opened">
+                <use xlink:href="img/sprite.svg#icon-eye-opened"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="form-question">
+            <a href="#" class="link link_current">Забыли пароль?</a>
+          </div>
+          <div class="form-control">
+            <button class="btn btn_full" type="submit" disabled="disabled">ВОЙТИ</button>
+          </div>
+          <div class="form-social social">
+            <a href="#" class="social__link social__link_vk">
+              <svg class="icon icon-vk">
+                <use xlink:href="img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+            <a href="#" class="social__link social__link_facebook">
+              <svg class="icon icon-facebook">
+                <use xlink:href="img/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+            <a href="#" class="social__link social__link_odnoklassniki">
+              <svg class="icon icon-odnoklassniki">
+                <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+              </svg>
+            </a>
+            <a href="#" class="social__link social__link_google-plus">
+              <svg class="icon icon-google-plus">
+                <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="form-footer">Еще не член клуба? <a href="#" class="link link_current">Зарегистрироваться</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end modal -->
+    <!-- begin modal -->
+    <div class="modal" data-modal="registration">
+      <div class="modal__container" data-modal-container="data-modal-container">
+        <form action="/" class="modal__form form">
+          <div class="modal__title">Регистрация</div>
+          <div class="form-control js-form-control">
+            <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+          </div>
+          <div class="form-control js-form-control">
+            <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
+          </div>
+          <div class="form-control js-form-control">
+            <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change" data-validation-strength="1">
+            <button class="password-show js-password-show" type="button">
+              <svg class="icon icon-eye-closed">
+                <use xlink:href="img/sprite.svg#icon-eye-closed"></use>
+              </svg>
+              <svg class="icon icon-eye-opened">
+                <use xlink:href="img/sprite.svg#icon-eye-opened"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="form-question">
+            <a href="#" class="link">Использовать email для регистрации</a>
+          </div>
+          <div class="form-checkbox">
+            <label class="checkbox">
+              <input type="checkbox" data-validation="required">
+              <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+              </span>
+              <span class="checkbox__icon">
+                <svg class="icon icon-check">
+                  <use xlink:href="img/sprite.svg#icon-check"></use>
                 </svg>
-                <svg class="icon icon-eye-opened">
-                  <use xlink:href="img/sprite.svg#icon-eye-opened"></use>
-                </svg>
-              </button>
+              </span>
+            </label>
+          </div>
+          <div class="form-control">
+            <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+          </div>
+          <div class="form-social social">
+            <a href="#" class="social__link social__link_vk">
+              <svg class="icon icon-vk">
+                <use xlink:href="img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+            <a href="#" class="social__link social__link_facebook">
+              <svg class="icon icon-facebook">
+                <use xlink:href="img/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+            <a href="#" class="social__link social__link_odnoklassniki">
+              <svg class="icon icon-odnoklassniki">
+                <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+              </svg>
+            </a>
+            <a href="#" class="social__link social__link_google-plus">
+              <svg class="icon icon-google-plus">
+                <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+              </svg>
+            </a>
+          </div>
+          <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end modal -->
+    <!-- begin modal -->
+    <div class="modal registration-tab" data-modal="registration-tab">
+      <div class="modal__container registration-tab__container" data-modal-container="data-modal-container">
+        <div class="modal__title registration-tab__title">Регистрация</div>
+        <div class="tabs tabs_registration" data-tabs="data-tabs">
+          <div class="tabs__out">
+            <div class="tabs__current" data-tabs-current="data-tabs-current">
+              <span></span>
             </div>
-            <div class="form-question">
-              <a href="#" class="link">Использовать email для регистрации</a>
+            <ul class="tabs__list">
+              <li class="tabs__item" data-tabs-control="by-telephone"> По телефону </li>
+              <li class="tabs__item" data-tabs-control="by-email"> По email </li>
+            </ul>
+          </div>
+          <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+            <div class="tabs__container" data-tabs-container="by-telephone">
+              <div class="tabs__inner">
+                <form action="/" class="modal__form form js-form-message">
+                  <div class="form-control form-control_sm js-form-control">
+                    <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control form-control_sm js-form-control">
+                    <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
+                  </div>
+                  <div class="form-control form-control_sm js-form-control js-password">
+                    <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password" data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
+                      data-validation-error-msg="Пароль должен содержать не менее 10 символов" />
+                    <svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg>
+                    <span class="strength-meter"></span>
+                  </div>
+                  <div class="form-checkbox form-checkbox_lg">
+                    <label class="checkbox">
+                      <input type="checkbox" data-validation="required">
+                      <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+                      </span>
+                      <span class="checkbox__icon">
+                        <svg class="icon icon-check">
+                          <use xlink:href="img/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="form-control form-control_sm">
+                    <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                  </div>
+                  <div class="form-separator">Зарегистрироваться через</div>
+                  <div class="form-social form-social_sm social">
+                    <a href="#" class="social__link social__link_vk">
+                      <svg class="icon icon-vk">
+                        <use xlink:href="img/sprite.svg#icon-vk"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="social__link social__link_facebook">
+                      <svg class="icon icon-facebook">
+                        <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="social__link social__link_odnoklassniki">
+                      <svg class="icon icon-odnoklassniki">
+                        <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="social__link social__link_google-plus">
+                      <svg class="icon icon-google-plus">
+                        <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
+          <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+            <div class="tabs__container" data-tabs-container="by-email">
+              <div class="tabs__inner">
+                <form action="/" class="modal__form form js-form-message">
+                  <div class="form-control form-control_sm js-form-control">
+                    <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control form-control_sm js-form-control">
+                    <input type="text" class="input input_password" placeholder="Email" data-validation="required" data-validation-event="keyup change">
+                  </div>
+                  <div class="form-control form-control_sm js-form-control js-password">
+                    <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password" data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
+                      data-validation-error-msg="Пароль должен содержать не менее 10 символов" />
+                    <svg class="icon icon-check">
+                      <use xlink:href="img/sprite.svg#icon-check"></use>
+                    </svg>
+                    <span class="strength-meter"></span>
+                  </div>
+                  <div class="form-checkbox form-checkbox_lg">
+                    <label class="checkbox">
+                      <input type="checkbox" data-validation="required">
+                      <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+                      </span>
+                      <span class="checkbox__icon">
+                        <svg class="icon icon-check">
+                          <use xlink:href="img/sprite.svg#icon-check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                  <div class="form-control form-control_sm">
+                    <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                  </div>
+                  <div class="form-separator">Зарегистрироваться через</div>
+                  <div class="form-social form-social_sm social">
+                    <a href="#" class="social__link social__link_vk">
+                      <svg class="icon icon-vk">
+                        <use xlink:href="img/sprite.svg#icon-vk"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="social__link social__link_facebook">
+                      <svg class="icon icon-facebook">
+                        <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="social__link social__link_odnoklassniki">
+                      <svg class="icon icon-odnoklassniki">
+                        <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                      </svg>
+                    </a>
+                    <a href="#" class="social__link social__link_google-plus">
+                      <svg class="icon icon-google-plus">
+                        <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end modal -->
+    <!-- begin modal -->
+    <div class="modal questionnaire" data-modal="questionnaire">
+      <div class="modal__container questionnaire__container" data-modal-container="data-modal-container">
+        <button class="modal__off" type="button" data-modal-close="data-modal-close">
+          <svg class="icon icon-close">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <form action="/" class="modal__form form questionnaire__form">
+          <div class="modal__title questionnaire__title">Анкета члена клуба</div>
+          <span class="modal__hint questionnaire__hint">*поля обязательные для заполнения</span>
+          <div class="questionnaire__top">
+            <div class="row">
+              <div class="col col-42 col-md-100">
+                <div class="form-control questionnaire__form-control js-form-control">
+                  <label for="" class="input-label questionnaire__input-label">Фамилия*</label>
+                  <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                </div>
+                <div class="form-control questionnaire__form-control js-form-control">
+                  <label for="" class="input-label questionnaire__input-label">Имя*</label>
+                  <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                </div>
+                <div class="form-control questionnaire__form-control js-form-control">
+                  <label for="" class="input-label questionnaire__input-label">Отчество*</label>
+                  <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                </div>
+                <div class="form-control questionnaire__form-control js-form-control">
+                  <label for="" class="input-label questionnaire__input-label">День рождения*</label>
+                  <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                </div>
+              </div>
+              <div class="col col-58 col-md-100">
+                <div class="questionnaire__radio">
+                  <div class="form-radio-group form-radio-group_vertical">
+                    <div class="form-radio-label">Пол</div>
+                    <label class="radio">
+                      <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+                      <span class="radio__text">Женский</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
+                      <span class="radio__text">Мужской</span>
+                    </label>
+                  </div>
+                  <div class="form-radio-group form-radio-group_vertical">
+                    <div class="form-radio-label">Наличие автомобиля</div>
+                    <label class="radio">
+                      <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+                      <span class="radio__text">Да</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
+                      <span class="radio__text">Нет</span>
+                    </label>
+                  </div>
+                  <div class="form-radio-group form-radio-group_vertical">
+                    <div class="form-radio-label">Семейное положение</div>
+                    <label class="radio">
+                      <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                      <span class="radio__text">Холост/не замужем</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
+                      <span class="radio__text">Женат/замужем</span>
+                    </label>
+                  </div>
+                  <div class="form-radio-group form-radio-group_vertical">
+                    <div class="form-radio-label">Есть дети до 18 лет</div>
+                    <label class="radio">
+                      <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
+                      <span class="radio__text">Да</span>
+                    </label>
+                    <label class="radio">
+                      <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
+                      <span class="radio__text">Нет</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dashed-separator"></div>
+          <div class="questionnaire__bottom">
+            <div class="row">
+              <div class="col col-42 col-md-100">
+                <div class="form-control questionnaire__form-control">
+                  <label for="" class="input-label questionnaire__input-label">Почтовый индекс</label>
+                  <input type="text" class="input" data-validation-event="keyup change">
+                </div>
+                <div class="form-control questionnaire__form-control js-form-control">
+                  <label for="" class="input-label questionnaire__input-label">Контактный телефон*</label>
+                  <input class="input" type="text" data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder="">
+                </div>
+                <div class="form-control questionnaire__form-control js-form-control">
+                  <label for="" class="input-label questionnaire__input-label">email*</label>
+                  <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
+                </div>
+              </div>
+              <div class="col col-58 col-md-100">
+                <div class="form-control questionnaire__form-control">
+                  <label for="" class="input-label questionnaire__input-label">Населенный пункт</label>
+                  <input type="text" class="input" data-validation-event="keyup change">
+                </div>
+                <div class="form-control questionnaire__form-control questionnaire__form-control_textarea">
+                  <label for="" class="input-label questionnaire__input-label">Мне наиболее интересны темы:</label>
+                  <textarea type="text" class="input input_textarea" data-validation-event="keyup change"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="questionnaire__checkbox">
             <div class="form-checkbox">
               <label class="checkbox">
-                <input type="checkbox" data-validation="required">
-                <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-                </span>
+                <input type="checkbox">
+                <span class="checkbox__text">Получать новости об акциях, скидках и спецпредложениях</span>
                 <span class="checkbox__icon">
                   <svg class="icon icon-check">
                     <use xlink:href="img/sprite.svg#icon-check"></use>
@@ -1166,346 +1394,51 @@
                 </span>
               </label>
             </div>
-            <div class="form-control">
-              <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
-            </div>
-            <div class="form-social social">
-              <a href="#" class="social__link social__link_vk">
-                <svg class="icon icon-vk">
-                  <use xlink:href="img/sprite.svg#icon-vk"></use>
-                </svg>
-              </a>
-              <a href="#" class="social__link social__link_facebook">
-                <svg class="icon icon-facebook">
-                  <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                </svg>
-              </a>
-              <a href="#" class="social__link social__link_odnoklassniki">
-                <svg class="icon icon-odnoklassniki">
-                  <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                </svg>
-              </a>
-              <a href="#" class="social__link social__link_google-plus">
-                <svg class="icon icon-google-plus">
-                  <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                </svg>
-              </a>
-            </div>
-            <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- end modal -->
-      <!-- begin modal -->
-      <div class="modal registration-tab" data-modal="registration-tab">
-        <div class="modal__container registration-tab__container" data-modal-container="data-modal-container">
-          <div class="modal__title registration-tab__title">Регистрация</div>
-          <div class="tabs tabs_registration" data-tabs="data-tabs">
-            <div class="tabs__out">
-              <div class="tabs__current" data-tabs-current="data-tabs-current">
-                <span></span>
-              </div>
-              <ul class="tabs__list">
-                <li class="tabs__item" data-tabs-control="by-telephone"> По телефону </li>
-                <li class="tabs__item" data-tabs-control="by-email"> По email </li>
-              </ul>
-            </div>
-            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
-              <div class="tabs__container" data-tabs-container="by-telephone">
-                <div class="tabs__inner">
-                  <form action="/" class="modal__form form js-form-message">
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control js-password">
-                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password" data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
-                        data-validation-error-msg="Пароль должен содержать не менее 10 символов" />
-                      <svg class="icon icon-check">
-                        <use xlink:href="img/sprite.svg#icon-check"></use>
-                      </svg>
-                      <span class="strength-meter"></span>
-                    </div>
-                    <div class="form-checkbox form-checkbox_lg">
-                      <label class="checkbox">
-                        <input type="checkbox" data-validation="required">
-                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-                        </span>
-                        <span class="checkbox__icon">
-                          <svg class="icon icon-check">
-                            <use xlink:href="img/sprite.svg#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="form-control form-control_sm">
-                      <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
-                    </div>
-                    <div class="form-separator">Зарегистрироваться через</div>
-                    <div class="form-social form-social_sm social">
-                      <a href="#" class="social__link social__link_vk">
-                        <svg class="icon icon-vk">
-                          <use xlink:href="img/sprite.svg#icon-vk"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_facebook">
-                        <svg class="icon icon-facebook">
-                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_odnoklassniki">
-                        <svg class="icon icon-odnoklassniki">
-                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_google-plus">
-                        <svg class="icon icon-google-plus">
-                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                        </svg>
-                      </a>
-                    </div>
-                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
-              <div class="tabs__container" data-tabs-container="by-email">
-                <div class="tabs__inner">
-                  <form action="/" class="modal__form form js-form-message">
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input input_password" placeholder="Email" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control js-password">
-                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password" data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
-                        data-validation-error-msg="Пароль должен содержать не менее 10 символов" />
-                      <svg class="icon icon-check">
-                        <use xlink:href="img/sprite.svg#icon-check"></use>
-                      </svg>
-                      <span class="strength-meter"></span>
-                    </div>
-                    <div class="form-checkbox form-checkbox_lg">
-                      <label class="checkbox">
-                        <input type="checkbox" data-validation="required">
-                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-                        </span>
-                        <span class="checkbox__icon">
-                          <svg class="icon icon-check">
-                            <use xlink:href="img/sprite.svg#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="form-control form-control_sm">
-                      <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
-                    </div>
-                    <div class="form-separator">Зарегистрироваться через</div>
-                    <div class="form-social form-social_sm social">
-                      <a href="#" class="social__link social__link_vk">
-                        <svg class="icon icon-vk">
-                          <use xlink:href="img/sprite.svg#icon-vk"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_facebook">
-                        <svg class="icon icon-facebook">
-                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_odnoklassniki">
-                        <svg class="icon icon-odnoklassniki">
-                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_google-plus">
-                        <svg class="icon icon-google-plus">
-                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                        </svg>
-                      </a>
-                    </div>
-                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
-                    </div>
-                  </form>
-                </div>
-              </div>
+            <div class="form-checkbox">
+              <label class="checkbox">
+                <input type="checkbox" data-validation="required">
+                <span class="checkbox__text">Настоящим, я даю свое согласие на обработку и хранение моих персональных данных</span>
+                <span class="checkbox__icon">
+                  <svg class="icon icon-check">
+                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                  </svg>
+                </span>
+              </label>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- end modal -->
-      <!-- begin modal -->
-      <div class="modal questionnaire" data-modal="questionnaire">
-        <div class="modal__container questionnaire__container" data-modal-container="data-modal-container">
-          <button class="modal__off" type="button" data-modal-close="data-modal-close">
-            <svg class="icon icon-close">
-              <use xlink:href="img/sprite.svg#icon-close"></use>
-            </svg>
-          </button>
-          <form action="/" class="modal__form form questionnaire__form">
-            <div class="modal__title questionnaire__title">Анкета члена клуба</div>
-            <span class="modal__hint questionnaire__hint">*поля обязательные для заполнения</span>
-            <div class="questionnaire__top">
-              <div class="row">
-                <div class="col col-42 col-md-100">
-                  <div class="form-control questionnaire__form-control js-form-control">
-                    <label for="" class="input-label questionnaire__input-label">Фамилия*</label>
-                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-                  </div>
-                  <div class="form-control questionnaire__form-control js-form-control">
-                    <label for="" class="input-label questionnaire__input-label">Имя*</label>
-                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-                  </div>
-                  <div class="form-control questionnaire__form-control js-form-control">
-                    <label for="" class="input-label questionnaire__input-label">Отчество*</label>
-                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-                  </div>
-                  <div class="form-control questionnaire__form-control js-form-control">
-                    <label for="" class="input-label questionnaire__input-label">День рождения*</label>
-                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-                  </div>
-                </div>
-                <div class="col col-58 col-md-100">
-                  <div class="questionnaire__radio">
-                    <div class="form-radio-group form-radio-group_vertical">
-                      <div class="form-radio-label">Пол</div>
-                      <label class="radio">
-                        <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
-                        <span class="radio__text">Женский</span>
-                      </label>
-                      <label class="radio">
-                        <input type="radio" data-validation="required" name="sex" data-validation-event="keyup change">
-                        <span class="radio__text">Мужской</span>
-                      </label>
-                    </div>
-                    <div class="form-radio-group form-radio-group_vertical">
-                      <div class="form-radio-label">Наличие автомобиля</div>
-                      <label class="radio">
-                        <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
-                        <span class="radio__text">Да</span>
-                      </label>
-                      <label class="radio">
-                        <input type="radio" data-validation="required" name="car" data-validation-event="keyup change">
-                        <span class="radio__text">Нет</span>
-                      </label>
-                    </div>
-                    <div class="form-radio-group form-radio-group_vertical">
-                      <div class="form-radio-label">Семейное положение</div>
-                      <label class="radio">
-                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
-                        <span class="radio__text">Холост/не замужем</span>
-                      </label>
-                      <label class="radio">
-                        <input type="radio" data-validation="required" name="family" data-validation-event="keyup change">
-                        <span class="radio__text">Женат/замужем</span>
-                      </label>
-                    </div>
-                    <div class="form-radio-group form-radio-group_vertical">
-                      <div class="form-radio-label">Есть дети до 18 лет</div>
-                      <label class="radio">
-                        <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
-                        <span class="radio__text">Да</span>
-                      </label>
-                      <label class="radio">
-                        <input type="radio" data-validation="required" name="children" data-validation-event="keyup change">
-                        <span class="radio__text">Нет</span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="dashed-separator"></div>
-            <div class="questionnaire__bottom">
-              <div class="row">
-                <div class="col col-42 col-md-100">
-                  <div class="form-control questionnaire__form-control">
-                    <label for="" class="input-label questionnaire__input-label">Почтовый индекс</label>
-                    <input type="text" class="input" data-validation-event="keyup change">
-                  </div>
-                  <div class="form-control questionnaire__form-control js-form-control">
-                    <label for="" class="input-label questionnaire__input-label">Контактный телефон*</label>
-                    <input class="input" type="text" data-inputmask="'mask': '+7 (999) 999 – 99 – 99'" data-inputmask-placeholder="">
-                  </div>
-                  <div class="form-control questionnaire__form-control js-form-control">
-                    <label for="" class="input-label questionnaire__input-label">email*</label>
-                    <input type="text" class="input" data-validation="required" data-validation-event="keyup change">
-                  </div>
-                </div>
-                <div class="col col-58 col-md-100">
-                  <div class="form-control questionnaire__form-control">
-                    <label for="" class="input-label questionnaire__input-label">Населенный пункт</label>
-                    <input type="text" class="input" data-validation-event="keyup change">
-                  </div>
-                  <div class="form-control questionnaire__form-control questionnaire__form-control_textarea">
-                    <label for="" class="input-label questionnaire__input-label">Мне наиболее интересны темы:</label>
-                    <textarea type="text" class="input input_textarea" data-validation-event="keyup change"></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="questionnaire__checkbox">
-              <div class="form-checkbox">
-                <label class="checkbox">
-                  <input type="checkbox">
-                  <span class="checkbox__text">Получать новости об акциях, скидках и спецпредложениях</span>
-                  <span class="checkbox__icon">
-                    <svg class="icon icon-check">
-                      <use xlink:href="img/sprite.svg#icon-check"></use>
-                    </svg>
-                  </span>
-                </label>
-              </div>
-              <div class="form-checkbox">
-                <label class="checkbox">
-                  <input type="checkbox" data-validation="required">
-                  <span class="checkbox__text">Настоящим, я даю свое согласие на обработку и хранение моих персональных данных</span>
-                  <span class="checkbox__icon">
-                    <svg class="icon icon-check">
-                      <use xlink:href="img/sprite.svg#icon-check"></use>
-                    </svg>
-                  </span>
-                </label>
-              </div>
-            </div>
-            <div class="questionnaire__submit">
-              <button class="btn disabled" type="submit" disabled="disabled">ПОЛУЧИТЬ КАРТУ</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- end modal -->
-      <!-- begin modal -->
-      <div class="modal invite" data-modal="invite">
-        <div class="modal__container invite__container" data-modal-container="data-modal-container">
-          <button class="modal__off" type="button" data-modal-close="data-modal-close">
-            <svg class="icon icon-close">
-              <use xlink:href="img/sprite.svg#icon-close"></use>
-            </svg>
-          </button>
-          <div class="invite__content">
-            <div class="modal__title invite__title">Как работает система приглашений</div>
-            <p> Прежде всего, базовый вектор развития предполагает независимые способы реализации благоприятных перспектив. С другой стороны, повышение уровня гражданского сознания напрямую зависит от поставленных обществом задач. </p>
-            <p> В своем стремлении улучшить пользовательский опыт мы упускаем, что диаграммы связей призваны к ответу. В своем стремлении улучшить пользовательский опыт мы упускаем, что предприниматели в сети интернет заблокированы в рамках своих
-              собственных рациональных ограничений. Приятно, граждане, наблюдать, как стремящиеся вытеснить традиционное производство, нанотехнологии описаны максимально подробно. Имеется спорная точка зрения, гласящая примерно следующее: диаграммы
-              связей рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Базовые сценарии поведения пользователей, вне зависимости от их уровня, должны быть заблокированы в рамках своих собственных рациональных ограничений.
-              Значимость этих проблем настолько очевидна, что граница обучения кадров предоставляет широкие возможности для поэтапного и последовательного развития общества. </p>
-            <p> Кстати, сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом - объективно рассмотрены соответствующими инстанциями. Учитывая ключевые сценарии поведения, консультация с широким активом требует
-              определения и уточнения поставленных обществом задач. Имеется спорная точка зрения, гласящая примерно следующее: реплицированные с зарубежных источников, современные исследования, вне зависимости от их уровня, должны быть преданы
-              социально-демократической анафеме. Господа, экономическая повестка сегодняшнего дня обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Высокий уровень вовлечения представителей целевой
-              аудитории является четким доказательством простого факта: существующая теория способствует повышению качества укрепления моральных ценностей. Прежде всего, высокотехнологичная концепция общественного уклада не дает нам иного выбора,
-              кроме определения модели развития. </p>
-            <p> Таким образом, семантический разбор внешних противодействий играет важную роль в формировании экспериментов, поражающих по своей масштабности и грандиозности. Задача организации, в особенности же высококачественный прототип будущего
-              проекта выявляет срочную потребность новых принципов формирования материально-технической и кадровой базы. </p>
+          <div class="questionnaire__submit">
+            <button class="btn disabled" type="submit" disabled="disabled">ПОЛУЧИТЬ КАРТУ</button>
           </div>
+        </form>
+      </div>
+    </div>
+    <!-- end modal -->
+    <!-- begin modal -->
+    <div class="modal invite" data-modal="invite">
+      <div class="modal__container invite__container" data-modal-container="data-modal-container">
+        <button class="modal__off" type="button" data-modal-close="data-modal-close">
+          <svg class="icon icon-close">
+            <use xlink:href="img/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="invite__content">
+          <div class="modal__title invite__title">Как работает система приглашений</div>
+          <p> Прежде всего, базовый вектор развития предполагает независимые способы реализации благоприятных перспектив. С другой стороны, повышение уровня гражданского сознания напрямую зависит от поставленных обществом задач. </p>
+          <p> В своем стремлении улучшить пользовательский опыт мы упускаем, что диаграммы связей призваны к ответу. В своем стремлении улучшить пользовательский опыт мы упускаем, что предприниматели в сети интернет заблокированы в рамках своих
+            собственных рациональных ограничений. Приятно, граждане, наблюдать, как стремящиеся вытеснить традиционное производство, нанотехнологии описаны максимально подробно. Имеется спорная точка зрения, гласящая примерно следующее: диаграммы
+            связей рассмотрены исключительно в разрезе маркетинговых и финансовых предпосылок. Базовые сценарии поведения пользователей, вне зависимости от их уровня, должны быть заблокированы в рамках своих собственных рациональных ограничений.
+            Значимость этих проблем настолько очевидна, что граница обучения кадров предоставляет широкие возможности для поэтапного и последовательного развития общества. </p>
+          <p> Кстати, сторонники тоталитаризма в науке формируют глобальную экономическую сеть и при этом - объективно рассмотрены соответствующими инстанциями. Учитывая ключевые сценарии поведения, консультация с широким активом требует определения
+            и уточнения поставленных обществом задач. Имеется спорная точка зрения, гласящая примерно следующее: реплицированные с зарубежных источников, современные исследования, вне зависимости от их уровня, должны быть преданы
+            социально-демократической анафеме. Господа, экономическая повестка сегодняшнего дня обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Высокий уровень вовлечения представителей целевой
+            аудитории является четким доказательством простого факта: существующая теория способствует повышению качества укрепления моральных ценностей. Прежде всего, высокотехнологичная концепция общественного уклада не дает нам иного выбора,
+            кроме определения модели развития. </p>
+          <p> Таким образом, семантический разбор внешних противодействий играет важную роль в формировании экспериментов, поражающих по своей масштабности и грандиозности. Задача организации, в особенности же высококачественный прототип будущего
+            проекта выявляет срочную потребность новых принципов формирования материально-технической и кадровой базы. </p>
         </div>
       </div>
-      <!-- end modal -->
+    </div>
+    <!-- end modal -->
     </div>
     <!-- END content -->
     <!-- BEGIN scripts -->

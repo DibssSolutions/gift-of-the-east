@@ -1,4 +1,5 @@
 import slick from 'slick-carousel';
+
 import {
   BODY,
   DOC,
@@ -10,6 +11,7 @@ import {
   FULLSCREEN
 } from '../constants';
 import { buildIcon } from '../utils';
+import { initSliderButtonsEvents } from './_photo-gallery';
 
 const mainSlider = $('.js-main-slider');
 
@@ -315,51 +317,40 @@ function initControls() {
 // =================== GALLERY SLIDER ============================
 
 DOC.ready(() => {
-  const gallerySlider = $('.js-photo-gallery-slider');
+  const gallerySlider = $('.js-gallery-slider');
 
   gallerySlider.each((i, el) => {
     let slider = $(el);
 
     slider.on('init', () => {
       slider.addClass(INIT);
+      initSliderButtonsEvents();
     });
-
-    // slider.on("afterChange", (event, slick, currentSlide) => {
-    //   // PAUSE ALL VIDEOS
-    //   const videos = $(".offers-slider__slide video");
-    //   videos.each((i, el) => {
-    //     $(el)[0].pause();
-    //   });
-    //   // PLAY CURRENT
-    //   let slides = $(".offers-slider__slide");
-    //   const videoCurrent = $(slides[currentSlide]).find("video")[0];
-    //   videoCurrent ? videoCurrent.play() : false;
-    // });
 
     slider.slick({
       dots: false,
       infinite: false,
       speed: 1800,
-      // fade: true,
+      fade: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       // autoplay: true,
-      prevArrow: `<button class="offers-slider__prev js-slider-prev">${buildIcon(
+      prevArrow: `<button class="shops-slider__prev shops-btn shops-btn_arrow">${buildIcon(
         'arrow-left'
       )}</button>`,
-      nextArrow: `<button class="offers-slider__next js-slider-next">${buildIcon(
+      nextArrow: `<button class="shops-slider__next shops-btn shops-btn_arrow">${buildIcon(
         'arrow-right'
-      )}</button>`,
+      )}</button>`
 
-      responsive: [
-        {
-          breakpoint: widthMD,
-          settings: {
-            arrows: false,
-            fade: false
-          }
-        }
-      ]
+      // responsive: [
+      //   {
+      //     breakpoint: widthMD,
+      //     settings: {
+      //       arrows: false,
+      //       fade: false
+      //     }
+      //   }
+      // ]
     });
   });
 });

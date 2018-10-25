@@ -1,101 +1,29 @@
 <div class="js-photo-gallery shops__gallery">
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
-    <!-- <div class="shops-gallery js-photo-gallery-slider">
-        <div data-size="1024x1024">
-            <img class="shops-gallery__slide" src="./img/about-img.jpg">
+    <div class="shops-slider js-gallery-slider">
+        <div>
+            <a class="shops-slider__slide" data-fancybox="data-fancybox" data-src="#photo-1" href="javascript:;" style="background-image: url(./img/businesswoman-call-career-789822.jpg)"></a>
         </div>
-        <div data-size="1024x1024">
-            <img class="shops-gallery__slide" src='./img/penchant-styled-542047-unsplash.jpg'>
+        <div>
+            <a class="shops-slider__slide" data-fancybox="data-fancybox" data-src="#photo-2" href="javascript:;" style="background-image: url(./img/living-room-3164434_1920.jpg)"></a>
         </div>
-        <div data-size="1024x1024">
-            <img class="shops-gallery__slide" src='./img/haley-rivera-540464-unsplash@2x.jpg'>
-        </div>
-    </div> -->
-    <div class="gall">
-        <figure>
-            <a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" itemprop="contentUrl" data-size="1024x1024">
-                <img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" itemprop="thumbnail" alt="Image description" />
-            </a>
-            <figcaption>Image caption 1</figcaption>
-        </figure>
-        <figure>
-            <a href="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg" itemprop="contentUrl" data-size="964x1024">
-                <img src="https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_m.jpg" itemprop="thumbnail" alt="Image description" />
-            </a>
-            <figcaption>Image caption 2</figcaption>
-        </figure>
-        <figure>
-            <a href="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg" itemprop="contentUrl" data-size="1024x683">
-                <img src="https://farm7.staticflickr.com/6175/6176698785_7dee72237e_m.jpg" itemprop="thumbnail" alt="Image description" />
-            </a>
-            <figcaption>Image caption 3</figcaption>
-        </figure>
     </div>
-
-
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-        <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-        <div class="pswp__bg"></div>
-
-        <!-- Slides wrapper with overflow:hidden. -->
-        <div class="pswp__scroll-wrap">
-
-            <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-
-            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-            <div class="pswp__ui pswp__ui--hidden">
-
-                <div class="pswp__top-bar">
-
-                    <!--  Controls are self-explanatory. Order can be changed. -->
-
-                    <div class="pswp__counter"></div>
-
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                    <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                    <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                    <!-- element will get class pswp__preloader--active when preloader is running -->
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
-                            <div class="pswp__preloader__cut">
-                                <div class="pswp__preloader__donut"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div>
-                </div>
-
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                </button>
-
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                </button>
-
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="shops__buttons">
+        <button type="button" class="shops-btn shops-btn_plus js-slide-zoom">
+            {{mixins.icon('plus')}}
+        </button>
+        <button type="button" class="shops-btn shops-btn_plus js-slide-decrease">
+            {{mixins.icon('minus')}}
+        </button>
+        <button type="button" class="shops-btn shops-btn_plus js-slide-expand">
+            {{mixins.icon('fullscreen')}}
+        </button>
     </div>
+    <div style="display: none;" id="photo-1">
+        <span class="shops__fancy-image" style="background-image: url(./img/businesswoman-call-career-789822@2x.jpg)"></span>
+    </div>
+    <div style="display: none;" id="photo-2">
+        <span class="shops__fancy-image" style="background-image: url(./img/living-room-3164434_1920@2x.jpg)"></span>
+    </div>
+</div>
 </div>
