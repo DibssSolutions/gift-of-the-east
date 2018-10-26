@@ -1,115 +1,115 @@
 .order-form
-	font-size: 13px
-	+md
-		border: 1px solid rgba($silver, .5) 
-	&__group
-		padding: 24px 16px
-		text-align: center
-		&:not(:last-of-type)
-			border-bottom: 1px solid rgba($silver, .5)
-			+sm 
-				padding: 16px 12px
-	&__row
-		display: flex
-		justify-content: space-between
-		flex-wrap: wrap
-		color: $black
-		&:not(:first-of-type)
-			margin-top: 17px
-			+sm 
-				margin-top: 10px
-		&_submit
-			margin: 24px auto 0
-			max-width: 280px
-		&_highlighted
-			background-color: $lightYellow
-			padding: 17px 8px 10px
-			margin: 0 -8px 24px
-			color: $gray 
-		&_silverbg
-			background-color: rgba($gallery,.5)
-			padding: 17px 8px 10px
-			margin: 0 -8px 24px
-	&__text
-		text-transform: uppercase
-		font-weight: 500
-		line-height: 1
-		&_red 
-			color: $red
-		&_gray
-			color: $gray    
-		&_big 
-			font-size: 16px
-		&_full
-			flex: 0 0 100%
-			text-align: left
-			margin-top: 10px
-		&-lower
-			font-size: 14px
-			display: inline-block
-			&_bold
-				font-weight: 500
-				min-width: 100px
-		&-dark 
-			color: $gray
-				
-	&__submit
-		margin-top: 24px
-		padding-left: 64px
-		padding-right: 64px
-		&_delivery
-			background-color: $gallery
-			color: $black
-			cursor: default
-			+hover
-				background-color: $gallery
-	&__card-group
-		.card
-			font-size: 14px
-			text-align: left
-			padding: 0
-			&__img-wrap
-				width: 40.2%
-				+md
-					width: 140px
-				+ms
-					width: 100%
-			&__wrap
-				padding-left: 20px
-				padding-bottom: 0
-				+ms
-					padding-left: 0
-			&__vendorcode
-				font-size: 11px
-				color: $gray
-				margin-bottom: 4px
-			&__title
-				font-size: 14px
-				line-height: 1.3
-			&__quantity
-				font-size: 13px
-				line-height: 1.4
-				margin-top: 
-				margin-bottom: 8px
-			&__benefit
-				font-size: 
-	&__card-group
-		text-align: left
-	&__more
-		text-decoration: underline
-		font-size: 14px
-		color: $gray
-		line-height: 1.5
-		margin: 15px auto
-		display: block
-	&__divider
-		height: 1px
-		background-color: rgba($silver, .5)
-		&_top 
-			margin-top: 16px
-		&_bottom 
-			margin-bottom: 24px
-			
+    font-size: 13px
+    +md
+        border: 1px solid rgba($silver, .5) 
+    &__group
+        padding: 24px 16px
+        text-align: center
+        &:not(:last-of-type)
+            border-bottom: 1px solid rgba($silver, .5)
+            +sm 
+                padding: 16px 12px
+    &__row
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        color: $black
+        &:not(:first-of-type)
+            margin-top: 17px
+            +sm 
+                margin-top: 10px
+        &_submit
+            margin: 24px auto 0
+            max-width: 280px
+        &_highlighted
+            background-color: $lightYellow
+            padding: 17px 8px 10px
+            margin: 0 -8px 24px
+            color: $gray 
+        &_silverbg
+            background-color: rgba($gallery,.5)
+            padding: 17px 8px 10px
+            margin: 0 -8px 24px
+    &__text
+        text-transform: uppercase
+        font-weight: 500
+        line-height: 1
+        &_red 
+            color: $red
+        &_gray
+            color: $gray    
+        &_big 
+            font-size: 16px
+        &_full
+            flex: 0 0 100%
+            text-align: left
+            margin-top: 10px
+        &-lower
+            font-size: 14px
+            display: inline-block
+            &_bold
+                font-weight: 500
+                min-width: 100px
+        &-dark 
+            color: $gray
+                
+    &__submit
+        margin-top: 24px
+        padding-left: 64px
+        padding-right: 64px
+        &_delivery
+            background-color: $gallery
+            color: $black
+            cursor: default
+            +hover
+                background-color: $gallery
+    &__card-group
+        .card
+            font-size: 14px
+            text-align: left
+            padding: 0
+            &__img-wrap
+                width: 40.2%
+                +md
+                    width: 140px
+                +ms
+                    width: 100%
+            &__wrap
+                padding-left: 20px
+                padding-bottom: 0
+                +ms
+                    padding-left: 0
+            &__vendorcode
+                font-size: 11px
+                color: $gray
+                margin-bottom: 4px
+            &__title
+                font-size: 14px
+                line-height: 1.3
+            &__quantity
+                font-size: 13px
+                line-height: 1.4
+                margin-top: 
+                margin-bottom: 8px
+            &__benefit
+                font-size: 
+    &__card-group
+        text-align: left
+    &__more
+        text-decoration: underline
+        font-size: 14px
+        color: $gray
+        line-height: 1.5
+        margin: 15px auto
+        display: block
+    &__divider
+        height: 1px
+        background-color: rgba($silver, .5)
+        &_top 
+            margin-top: 16px
+        &_bottom 
+            margin-bottom: 24px
+            
 .order-info
     border: 1px solid rgba($silver, .5)
     &:not(:last-child)
@@ -118,8 +118,9 @@
             margin-bottom: 32px 
     &__out
         padding: 0 8px
+        position: relative
     &__indentation
-    	margin: 0 8px    
+        margin: 0 8px    
     &__wrap
         margin-top: 24px
         padding: 0 16px
@@ -138,105 +139,147 @@
         text-align: right
         +xs
             width: 94px 
+    &__map
+        position: relative
+        left: 0 
+        right: 0
+        height: 800px
+        top: 0
+
        
 .order-checkbox
-	margin-top: 16px
-	margin-bottom: 24px
+    margin-top: 16px
+    margin-bottom: 24px
 
 .order-calculation
-	&__btn
-		border-bottom: 1px solid $silver
-		border-top: 1px solid $silver
-		width: 100%
-		text-transform: uppercase 
-		vertical-align: top
-		display: flex
-		justify-content: space-between
-		align-items: center
-		font-size: 0
-		font-weight: 500
-		padding: 14px 
-		background-color: transparent
-		transition: 0.4s background-color
-		position: relative
-		span 
-			font-size: 13px
-		.icon
-			font-size: 8px
-			fill: $silver
-			transition: transform 0.4s
-		&.is-open 
-			// border-left: 1px solid $silver
-			// border-right: 1px solid $silver
-			&:after,
-			&:before
-				position: absolute
-				content: ''
-				height: 100%
-				background-color: $silver
-				width: 1px
-			&:after
-				right: 0
-				top: 0
-				+gpu
-			&:before
-				left: 0
-				bottom: 0
-				+gpu
-			+hover
-				background-color: $gallery
-			.icon
-				+rotate(180)
-	&__form
-		border: 1px solid $silver
-		border-top: none
+    &__btn
+        border-bottom: 1px solid $silver
+        border-top: 1px solid $silver
+        width: 100%
+        text-transform: uppercase 
+        vertical-align: top
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-size: 0
+        font-weight: 500
+        padding: 14px 
+        background-color: transparent
+        transition: 0.4s background-color
+        position: relative
+        span 
+            font-size: 13px
+        .icon
+            font-size: 8px
+            fill: $silver
+            transition: transform 0.4s
+        &.is-open 
+            // border-left: 1px solid $silver
+            // border-right: 1px solid $silver
+            &:after,
+            &:before
+                position: absolute
+                content: ''
+                height: 100%
+                background-color: $silver
+                width: 1px
+            &:after
+                right: 0
+                top: 0
+                +gpu
+            &:before
+                left: 0
+                bottom: 0
+                +gpu
+            +hover
+                background-color: $gallery
+            .icon
+                +rotate(180)
+    &__form
+        border: 1px solid $silver
+        border-top: none
 
 
 .delivery-calculation
-	&__control
-		margin-bottom: 16px
-	&__filter
-		display: flex
-		align-items: center
-		padding: 14px 7px 10px 16px
-		justify-content: space-between
+    &__control
+        margin-bottom: 16px
+    &__filter
+        display: flex
+        align-items: center
+        padding: 14px 7px 10px 16px
+        justify-content: space-between
 
-	&__city
-		font-size: 16px
-		color: $black
-		padding-left: 16px
-		margin-bottom: 16px
-	&__input-group
-		margin: 0 auto
-		padding: 24px 16px
-		max-width: 312px
-	&__check-group
-		padding: 0 16px 0
-		margin-bottom: -16px
-	.radio-tab
-		background-color: transparent
-		justify-content: flex-start
-		&__label
-			padding: 0 0 16px 0
-			text-align: left
-			&.is-active
-				background-color: transparent
-		&__title
-			position: relative
-			font-size: 14px
-			margin-bottom: 0
-			color: $black
-			&:before
-				top: 0
-				left: -28px
-			&:after
-				top: 4px
-				left: -24px
-		&__dscr
-			font-size: 14px
-			color: $black
+    &__city
+        font-size: 16px
+        color: $black
+        padding-left: 16px
+        margin-bottom: 16px
+    &__input-group
+        margin: 0 auto
+        padding: 24px 16px
+        max-width: 312px
+    &__check-group
+        padding: 0 16px 0
+        margin-bottom: -16px
+    .radio-tab
+        background-color: transparent
+        justify-content: flex-start
+        &__label
+            padding: 0 0 16px 0
+            text-align: left
+            &.is-active
+                background-color: transparent
+        &__title
+            position: relative
+            font-size: 14px
+            margin-bottom: 0
+            color: $black
+            &:before
+                top: 0
+                left: -28px
+            &:after
+                top: 4px
+                left: -24px
+        &__dscr
+            font-size: 14px
+            color: $black
 
 .order-container
-	&__wrap
-		padding: 0 8px
-		border: 1px solid rgba($silver,.5)
+    &__wrap
+        padding: 0 8px
+        border: 1px solid rgba($silver,.5)
+
+.awesome-infobox 
+    padding: 10px
+    position: relative
+    overflow: hidden !important
+    // margin-bottom: 15px
+    &:before
+        content: ""
+        position: absolute
+        width: 10px
+        height: 10px
+        transform: rotate(-45deg) translate(-50%, -50%)
+        transform-origin: center
+        background: #fff
+        bottom: 5px
+        left: 50%
+        z-index: 10
+        position: absolute
+
+  
+.order-marker
+    position: relative
+    padding: 20px
+    border-radius: 5px
+    background: #fff
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1)
+    font-size: 14px
+    line-height: 1.5
+    &__title
+        +f(16px, 400, 1.5)
+        margin-bottom: 15px
+        color: $black
+    &__btn
+        text-align: center
+

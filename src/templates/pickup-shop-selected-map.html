@@ -1,0 +1,112 @@
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+    <div class="inner">
+        {{ mixins.breadcrumbs({
+
+			list: ['Назад','Главная','Корзина']
+		}) }}
+        <form action="/">
+            <div class="row">
+                <div class="col col-66 col-md-100">
+                    {{ mixins.theadsimple({ title: 'Выбор способа получения заказа', link: 'Вернуться в корзину' }) }}
+                    {{ mixins.basketlist({ 
+						active: 2,
+						list: [
+							{
+								icon: 'shopping-full',
+								title: 'КОРЗИНА'
+							},
+							{
+								icon: 'home-map-marker',
+								title: 'САМОВЫВОЗ / ДОСТАВКА'
+							},
+							{
+								icon: 'wallet',
+								title: 'ОПЛАТА'
+							},
+							{
+								icon: 'approval',
+								title: 'ПОДТВЕРЖДЕНИЕ'
+							}
+						]
+					}) }}
+                    <h3 class="title-simple">Заполните контактную информацию</h3>
+                    <div class="cont-info">
+                        <div class="cont-info__out">
+                            <div class="cont-info__wrap">
+                                {% for field in [
+		                			{
+		                				class: 'is-checked',
+		                				value: 'Анна',
+		                				placeholder: 'Имя'
+		                			},
+		                			{
+		                				class: 'is-checked',
+		                				value: '+7 (961) 678 – 87 – 56',
+		                				placeholder: 'Номер телефона',
+		                				phoneMask: "true"
+		                			},
+		                			{
+		                				class: 'tooltip-active',
+		                				placeholder: 'Email',
+		                				tooltip: 'Мы отправим вам чек на указанный email.'
+		                			}
+		                		] %}
+                                    {{ mixins.control({
+		                			class: field.class,
+		                			value: field.value,
+									placeholder: field.placeholder,
+									tooltip: field.tooltip,
+									phoneMask: field.phoneMask
+		                		}) }}
+                                {% endfor %}
+                                <div class="form-control">
+                                    <button class="btn btn_md btn_bord btn_full" type="button">
+                                        <span class="btn__text">Изменить данные</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="title-simple">Выберите удобный способ получения заказа</h3>
+                    <div class="order-info">
+                        {% for radiotab in[
+                            {
+                                title1: "Самовывоз из магазина",
+                                dscr1: "Бесплатно",
+                                title2: "Доставка домой или в офис",
+                                dscr2: "от 100 ₽ "
+                            }
+                        ] %}
+                            {{ mixins.radiotab({ title1: radiotab.title1, dscr1: radiotab.dscr1, title2: radiotab.title2, dscr2: radiotab.dscr2
+    						}) }}
+                        {% endfor %}
+                        <div class="order-info__out">
+                            <div class="order-info__wrap">
+                                <div class="order-info__row">
+                                    <div class="order-info__search">
+                                        {{ mixins.newsearch('Город, адрес, название ТЦ') }}
+                                    </div>
+                                    <div class="order-info__view">
+                                        {{ mixins.radiobtn({ title1: 'Список', title2: 'Карта' }) }}
+                                    </div>
+                                </div>
+                                <div class="order-info__row">
+                                    {{ mixins.checkbox("Забрать сегодня") }}
+                                </div>
+                            </div>
+                            <div class="order-info__map">
+                                <div class="shops__map js-order-map" data-json="./json/shops-map.json" data-center-lat="54.987658" data-center-lng="73.345368"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-33 col-md-100">
+                    {{order.ordered_shop()}}
+                </div>
+            </div>
+        </form>
+        {% include "partials/main/_template.html" %}
+    </div>
+{% endblock %}

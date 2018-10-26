@@ -334,18 +334,11 @@ if (mapNode.length) {
           setTimeout(() => {
             map._markers.forEach(marker => {
               marker.addListener('click', function(e) {
-                console.log(marker.id);
                 const targetShop = $(shops).find(`[data-id=${marker.id}]`);
                 toggleShopsOnClick($(targetShop));
-                scrollShop($(targetShop));
-                // $(targetShop).animate(
-                //   {
-                //     scrollTop: 0
-                //   },
-                //   700
-                // );
-
-                // $(targetShop).addClass(ACTIVE);
+                const container = document.querySelector('.js-shops-list');
+                scrollIfNeeded(targetShop[0], container);
+                // scrollShop($(targetShop));
               });
             });
           }, 100);
@@ -363,7 +356,6 @@ if (mapNode.length) {
               if ($(e.target).hasClass('js-photo-gallery-trigger')) return;
               // === SHOPS-LIST ===
               toggleShopsOnClick($(this));
-
               // === MAP ===
               for (let k = 0; k < map._markers.length; k++) {
                 map._markers[k].icon.url = 'img/marker.svg';
@@ -372,6 +364,9 @@ if (mapNode.length) {
                 }
               }
               gMap.panTo(newCenter);
+              setTimeout(() => {
+                gMap.setCenter(newCenter);
+              }, 500);
             });
           });
         });
@@ -381,26 +376,18 @@ if (mapNode.length) {
 }
 
 function toggleShopsOnClick(el) {
-  $(el)
-    .parents('.js-shops')
-    .addClass(OPEN);
   $('.js-shop').each((i, el) => $(el).removeClass(ACTIVE));
   $(el).addClass(ACTIVE);
 }
 
-function scrollShop(targetShop) {
-  const targetPosition = $(targetShop).position().top;
-  const targetHeight = $(targetShop).innerHeight();
-  const shopsList = $('.js-shops-list');
-  const shopsScroll = $(shopsList).scrollTop();
-  const shopsInner = $(shopsList).innerHeight();
-
-  if (targetPosition - shopsInner > 0)
-    shopsList.animate(
-      {
-        scrollTop: targetPosition - shopsInner + targetPosition
-      },
-      500
-    );
-  console.log(targetPosition, shopsScroll, shopsInner);
+function scrollIfNeeded(element, container) {
+  if (element.offsetTop < container.scrollTop) {
+    container.scrollTop = element.offsetTop;
+  } else {
+    const offsetBottom = element.offsetTop + element.offsetHeight;
+    const scrollBottom = container.scrollTop + container.offsetHeight;
+    if (offsetBottom > scrollBottom) {
+      container.scrollTop = offsetBottom - container.offsetHeight;
+    }
+  }
 }

@@ -191,41 +191,44 @@
                     {% endfor %}
                 </div>
                 <article class="shops js-shops">
-                    <section class="shops-list js-scroll-wrap js-shops-list">
-                        {% for row in tables[0].body %}
-                            <a href="#" class="shops-list__shop js-shop{% if loop.first %} is-active{% endif %}" data-lat="{{row[0].lat}}" data-lng="{{row[0].lng}}" data-id="{{row[0].id}}">
-                                {% for item in row %}
-                                    {% if loop.index !== 1 %}
-                                        <div class="shops-list__row">
-                                            {% if item.title %}
-                                                <h5 class="shops-list__title">{{ item.title }}</h5>
-                                            {% endif %}
-                                            {% if item.day %}
-                                                <span class="shops-list__day">{{ item.day }}</span>
-                                            {% endif %}
-                                            {% if item.text %}
-                                                <span class="shops-list__text shops-list__text_gray">{{ item.text }}</span>
-                                            {% endif %}
-                                            {% if item.addres %}
-                                                <span class="shops-list__addres">{{ item.addres }}</span>
-                                            {% endif %}
-                                            {% if item.modal %}
-                                                <button type="button" href="#" class="shops-list__link js-photo-gallery-trigger" data-modal-control="{{item.modal}}">{{ item.modalText }}</button>
-                                            {% endif %}
-                                            {% if item.empty %}
-                                                <div class="shops-list__text">Готовится</div>
-                                            {% endif %}
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
-                            </a>
-                        {% endfor %}
+
+                    <section class="shops-list js-shops-scroll js-shops-list">
+                        <div class="js-shop-scroll-inner">
+                            {% for row in tables[0].body %}
+                                <a href="#" class="shops-list__shop js-shop{% if loop.first %} is-active{% endif %}" data-lat="{{row[0].lat}}" data-lng="{{row[0].lng}}" data-id="{{row[0].id}}">
+                                    {% for item in row %}
+                                        {% if loop.index !== 1 %}
+                                            <div class="shops-list__row">
+                                                {% if item.title %}
+                                                    <h5 class="shops-list__title">{{ item.title }}</h5>
+                                                {% endif %}
+                                                {% if item.day %}
+                                                    <span class="shops-list__day">{{ item.day }}</span>
+                                                {% endif %}
+                                                {% if item.text %}
+                                                    <span class="shops-list__text shops-list__text_gray">{{ item.text }}</span>
+                                                {% endif %}
+                                                {% if item.addres %}
+                                                    <span class="shops-list__addres">{{ item.addres }}</span>
+                                                {% endif %}
+                                                {% if item.modal %}
+                                                    <button type="button" href="#" class="shops-list__link js-photo-gallery-trigger" data-modal-control="{{item.modal}}">{{ item.modalText }}</button>
+                                                {% endif %}
+                                                {% if item.empty %}
+                                                    <div class="shops-list__text">Готовится</div>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </a>
+                            {% endfor %}
+                        </div>
                     </section>
                     <div class="shops__map-container">
                         <div class="shops__map js-shops-map" data-json="./json/shops-map.json" data-center-lat="54.987658" data-center-lng="73.345368"></div>
-                        <div class="shops__slider">
-                            {% include "partials/main/_photo-gallery.html" %}
-                        </div>
+
+                        {% include "partials/main/_photo-gallery.html" %}
+
                     </div>
 
                 </article>

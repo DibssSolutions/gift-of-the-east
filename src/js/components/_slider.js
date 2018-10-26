@@ -340,17 +340,17 @@ DOC.ready(() => {
       )}</button>`,
       nextArrow: `<button class="shops-slider__next shops-btn shops-btn_arrow">${buildIcon(
         'arrow-right'
-      )}</button>`
+      )}</button>`,
 
-      // responsive: [
-      //   {
-      //     breakpoint: widthMD,
-      //     settings: {
-      //       arrows: false,
-      //       fade: false
-      //     }
-      //   }
-      // ]
+      responsive: [
+        {
+          breakpoint: widthMD,
+          settings: {
+            arrows: false,
+            fade: false
+          }
+        }
+      ]
     });
   });
 });

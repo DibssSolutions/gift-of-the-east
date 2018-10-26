@@ -25,6 +25,8 @@ PageList:
   ready: 100
 - file: pickup-shop-selected.html
   ready: 100
+- file: pickup-shop-selected-map.html
+  ready: 100
 - file: pay-order.html
   ready: 100
 - file: confirmation-order.html

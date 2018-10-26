@@ -1,7 +1,10 @@
 [
   {
     "content": {
-      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, consequatur."
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
     },
     "marker": {
       "id": "continent",
@@ -24,10 +27,16 @@
     }
   },
   {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
     "marker": {
       "id": "mega",
       "position": {
-        "lat": 54.972670,
+        "lat": 54.97267,
         "lng": 73.281238
       },
       "icon": {
@@ -45,6 +54,12 @@
     }
   },
   {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
     "marker": {
       "id": "fest",
       "position": {
@@ -66,10 +81,16 @@
     }
   },
   {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
     "marker": {
       "id": "mayak",
       "position": {
-        "lat": 54.998328, 
+        "lat": 54.998328,
         "lng": 73.282189
       },
       "icon": {
@@ -86,11 +107,17 @@
       }
     }
   },
-  { 
+  {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
     "marker": {
       "id": "privokzal",
       "position": {
-        "lat": 54.941454, 
+        "lat": 54.941454,
         "lng": 73.382802
       },
       "icon": {
@@ -108,6 +135,12 @@
     }
   },
   {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
     "marker": {
       "id": "kaskad",
       "position": {
