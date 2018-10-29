@@ -631,13 +631,12 @@ if (orderMap.length) {
           markers: {
             items: data
           },
-
           infobox: {
             template: '#order-map-infobox',
             class: 'awesome-infobox',
             onlyOneBox: true,
             style: {
-              width: '400px'
+              width: '300px'
             },
             position: {
               x: 'center',

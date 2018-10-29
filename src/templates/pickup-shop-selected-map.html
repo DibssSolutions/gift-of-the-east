@@ -88,8 +88,17 @@
                                     <div class="order-info__search">
                                         {{ mixins.newsearch('Город, адрес, название ТЦ') }}
                                     </div>
-                                    <div class="order-info__view">
-                                        {{ mixins.radiobtn({ title1: 'Список', title2: 'Карта' }) }}
+                                    <div class="radio-btn">
+                                        <label class="radio-btn__label js-radio-tab">
+                                            <input type="radio" name="radio-btn">
+                                            <span class="radio-btn__icon">{{ mixins.icon('format-list-bulleted') }}</span>
+                                            <span class="radio-btn__title">Список</span>
+                                        </label>
+                                        <label class="radio-btn__label js-radio-tab is-active">
+                                            <input type="radio" name="radio-btn">
+                                            <span class="radio-btn__icon">{{ mixins.icon('map') }}</span>
+                                            <span class="radio-btn__title">Карта</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <div class="order-info__row">

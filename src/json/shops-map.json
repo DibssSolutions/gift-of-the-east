@@ -2,7 +2,7 @@
   {
     "content": {
       "title": "Континент 2",
-      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "adress": "г.Омск, 70 лет Октября, 25 к.2",
       "workTime": "пн–вс 10:00–21:00",
       "phone": "+7 (678) 678 87 67"
     },
@@ -16,12 +16,12 @@
         "default": "img/marker.svg",
         "active": "img/active-marker.svg",
         "size": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         },
         "centering": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         }
       }
     }
@@ -43,12 +43,12 @@
         "default": "img/marker.svg",
         "active": "img/active-marker.svg",
         "size": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         },
         "centering": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         }
       }
     }
@@ -70,12 +70,12 @@
         "default": "img/marker.svg",
         "active": "img/active-marker.svg",
         "size": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         },
         "centering": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         }
       }
     }
@@ -97,12 +97,12 @@
         "default": "img/marker.svg",
         "active": "img/active-marker.svg",
         "size": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         },
         "centering": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         }
       }
     }
@@ -124,12 +124,12 @@
         "default": "img/marker.svg",
         "active": "img/active-marker.svg",
         "size": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         },
         "centering": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         }
       }
     }
@@ -151,12 +151,12 @@
         "default": "img/marker.svg",
         "active": "img/active-marker.svg",
         "size": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         },
         "centering": {
-          "x": 56,
-          "y": 56
+          "x": 64,
+          "y": 64
         }
       }
     }

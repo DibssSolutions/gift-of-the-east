@@ -127,6 +127,8 @@
     &__row
         margin-bottom: 24px
         +clr
+        .radio-btn
+            float: right
     &__search
         float: left
         width: calc(100% - 288px)
@@ -143,8 +145,9 @@
         position: relative
         left: 0 
         right: 0
-        height: 800px
+        height: 590px
         top: 0
+        margin: 0 -8px
 
        
 .order-checkbox
@@ -254,6 +257,7 @@
     position: relative
     overflow: hidden !important
     // margin-bottom: 15px
+    margin-bottom: 14px
     &:before
         content: ""
         position: absolute
@@ -270,16 +274,24 @@
   
 .order-marker
     position: relative
-    padding: 20px
-    border-radius: 5px
+    padding: 16px 
     background: #fff
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1)
     font-size: 14px
     line-height: 1.5
+    font-family: $montserrat
+    
     &__title
         +f(16px, 400, 1.5)
         margin-bottom: 15px
         color: $black
+    &__adress
+        margin-bottom: 5px
+    &__work-time
+        margin-bottom: 5px
+    &__phone
+        margin-bottom: 15px
     &__btn
         text-align: center
-
+        .btn
+            
