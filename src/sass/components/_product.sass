@@ -96,15 +96,20 @@
 			opacity: 1
 		+sm
 			margin-top: 20px
+			justify-content: flex-end
 	&__btn
 		padding: 15px 5px 14px
 		width: 100%
 		display: block
+		+sm 
+			width: 48px
 		.product_simple &
 			padding: 15px 10px 14px 
 			+xl
 				font-size: 13px
 		.icon
+			+sm 
+				font-size: 22px
 			.product_simple &
 				margin-left: 0
 				+xl
@@ -117,8 +122,12 @@
 					display: none
 				+md
 					display: inline-block
+	&__btn-text
+		+sm 
+			display: none
 	&__like
 		margin-left: 8px
+
 	.action-block
 		+md
 			top: 20px

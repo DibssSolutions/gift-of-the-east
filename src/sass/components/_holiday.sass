@@ -1,12 +1,18 @@
 .holiday
 	position: relative
+	display: block
 	&__img
 		font-size: 0
+		overflow: hidden
 		img
 			width: 100%
 			object-fit: cover
 			height: 520px
 			display: block
+			transition: transform 1.4s
+			+hover 
+				transform: scale(1.3)
+				transform-origin: center
 	&__wrap
 		position: relative
 		margin: -32px 16px 0

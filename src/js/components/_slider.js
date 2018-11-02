@@ -58,6 +58,8 @@ slider.each((i, el) => {
     dots: true,
     infinite: false,
     speed: 800,
+    autoplay: true,
+    autoplaySpeed: 4000,
     slidesToShow: 3,
     slidesToScroll: 1,
     prevArrow: prevBtn,

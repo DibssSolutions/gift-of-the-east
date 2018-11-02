@@ -25,6 +25,9 @@
 		+md
 			margin: -1px 5px -1px 0
 			font-size: 16px
+		+sm 
+			margin: -2px 0 -1px 0
+			
 	.icon-arrow-right
 		font-size: 12px
 	&_full
@@ -269,6 +272,10 @@
 		color: $lightBrown
 		text-decoration: underline
 		padding-bottom: 0
+	+hover
+		.icon
+			+rotate(360)
+			transition: transform 0.3s
 	+sm
 		padding: 10px 8px 8px
 	span 
@@ -281,6 +288,7 @@
 		fill: $silver
 		font-size: 20px
 		margin-right: 8px
+		transition: transform 0s
 
 .btn-reset_brown 
 	padding: 0

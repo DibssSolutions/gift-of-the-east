@@ -35,11 +35,9 @@
     },
     {
         image: "alternative-aroma-aromatherapy-161599.jpg",
-        title: "Отпуск у себя дома",
+        title: "Слоны! Слоны! Слоны!",
         btnText: "Все акции",
-        descrText: "Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац 
-        считается каноническим во всех справочниках по типографике и предлагается к использованию в 
-        статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов.",
+        descrText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis cupiditate sequi vel exercitationem assumenda sit a blanditiis minima aliquid quas, fugit dolorum sapiente corrupti recusandae at id ut facilis ducimus voluptate! Molestias in nulla aperiam beatae tempore, qui repellendus dolor eaque iste officiis nobis facilis, ab, omnis eligendi reiciendis perspiciatis hic dignissimos ipsum distinctio provident modi ratione nam. Nobis doloremque, autem distinctio amet deleniti est officia provident, labore officiis sapiente ullam mollitia magni! A quod nostrum id ab quo aperiam aliquid, impedit mollitia iure possimus debitis minima dolorum vel eaque. Explicabo asperiores dolore consectetur fugiat incidunt mollitia quos corrupti rem.", 
         cardProducts: [{
 			srcImg: "vase.jpg",
 			altImg: "vase",
@@ -155,14 +153,16 @@
                                 </div>
                             </div>
                         {% else  %}
-                            <div class="package-offer__image" style="background-image: url(./img/{{slide.image}});"></div>
+                        <div class="package-offer__image-wrapper">
+                            <a href="#" class="package-offer__image" style="background-image: url(./img/{{slide.image}});"></a>
+                        </div>
                         {% endif %}
                     </div>
                     <div class="package-offer__content">
                         <div class="package-offer__descr">
                             <div class="package-offer__descr-top">
                                 <h3 class="package-offer__title title">
-                                    {{slide.title}}
+                                    <a href="#">{{slide.title}}</a>
                                 </h3>
                                 <button class="package-offer__button btn btn_md btn_offers btn_anim btn_bord">
                                     <span class="btn__text">
