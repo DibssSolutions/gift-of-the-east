@@ -1,0 +1,240 @@
+--- title: Basket ---
+
+{% set tables = [
+    {
+        head: [
+            "Адрес магазина", "Телефон", "Время работы", "Экскурсия по магазину"
+        ],
+        body: [
+            [
+                {
+                    lat: 54.978061,
+                    lng: 73.322601,
+                    id: "continent"
+                }, {
+                    title: 'Континент 2',
+                    addres: '70 лет Октября, 25 к.2 '
+                }, {
+                    text: '10:00–21:00',
+                    day: 'пн–вс'
+                }, {
+                    text: '+7 (678) 678 87 67'
+                }, {
+                    modal: '3D',
+                    modalText: '3D тур'
+                }
+
+            ],
+            [
+                {
+                    lat: 54.972670,
+                    lng: 73.281238,
+                    id: "mega"
+                }, {
+                    title: 'Мега',
+                    addres: 'Бульвар Архитекторов, 35'
+                }, {
+                    text: '10:00–21:00',
+                    day: 'пн–вс'
+                }, {
+                    text: '+7 (678) 678 87 67'
+                }, {
+                    empty: true
+                }
+            ],
+            [
+                {
+                    lat: 54.981155,
+                    lng: 73.320316,
+                    id: "fest"
+                }, {
+                    title: 'Фестиваль',
+                    addres: 'ул.70 лет Октября, 19'
+
+                }, {
+                    text: '10:00–21:00',
+                    day: 'пн–вс'
+                }, {
+                    text: '+7 (678) 678 87 67'
+                }, {
+                    modal: 'Photo',
+                    modalText: 'Фотографии'
+                }
+            ],
+            [
+                {
+                    lat: 54.998328,
+                    lng: 73.282189,
+                    id: "mayak"
+                }, {
+                    title: 'Маяк–3',
+                    addres: 'пр.Комарова, 6 к.1'
+                }, {
+                    text: '10:00–21:00',
+                    day: 'пн–вс'
+                }, {
+                    text: '+7 (678) 678 87 67'
+                }, {
+                    empty: true
+                }
+            ],
+            [
+                {
+                    lat: 54.941454,
+                    lng: 73.382802,
+                    id: "privokzal"
+                }, {
+                    title: 'Привокзальный',
+                    addres: 'ул.Карла Маркса, 84'
+                }, {
+                    text: '10:00–21:00',
+                    day: 'пн–вс'
+                }, {
+                    text: '+7 (678) 678 87 67'
+                }, {
+                    modal: 'Photo',
+                    modalText: 'Фотографии'
+                }
+            ],
+            [
+                {
+                    lat: 54.963058,
+                    lng: 73.384639,
+                    id: "kaskad"
+                }, {
+                    title: 'Каскад',
+                    addres: 'ул.Карла Маркса, 24'
+                }, {
+                    text: '10:00–21:00',
+                    day: 'пн–вс'
+                }, {
+                    text: '+7 (678) 678 87 67'
+                }, {
+                    modal: '3D',
+                    modalText: '3D тур'
+                }
+            ]
+        ]
+    }
+] %}
+
+{% import "data/data.html" as data %}
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+    <div class="shops-page">
+        <div class="shops__inner inner">
+            {{ mixins.breadcrumbs({
+                    list: ['Назад','Главная','Магазины']
+            }) }}
+            <h2 class="title text-center">
+                Магазины
+            </h2>
+            <h3 class="title-simple">
+                Доступно 6 магазинов в городе
+            </h3>
+            {# <div class="row">
+                <div class="col col-50">
+                    {{ mixins.newsearch("Найти ближайший магазин по адресу") }}
+                </div>
+                {# <div class="col col-50 shops__checkboxes">
+                    {{ mixins.radiobtn({ title1: 'Список', title2: 'Карта' }) }}
+                </div> 
+            </div> #}
+            <div class="shops-info">
+                <div class="shops-info__head">
+                    <div class="shops-info__search">
+                        {{ mixins.newsearch('Найти ближайший магазин по адресу') }}
+                    </div>
+                    <div class="shops-info__view">
+                        {{ mixins.radiobtn({ title1: 'Список', title2: 'Карта' }) }}
+                    </div>
+                </div>
+                <div class="shops-table" style="display: none">
+                    {% for table in tables %}
+                        <div class="shops-table__head">
+                            {% for text in table.head %}
+                                <div class="shops-table__th">{{text}}</div>
+                            {% endfor %}
+                        </div>
+                        <div class="shops-table__body">
+                            {% for row in table.body %}
+                                <div class="shops-table__row">
+                                    {% for item in row %}
+                                        {% if loop.index !== 1 %}
+                                            <div class="shops-table__cell">
+                                                {% if item.title %}
+                                                    <div class="shops-table__title">{{ item.title }}</div>
+                                                {% endif %}
+                                                {% if item.day %}
+                                                    <div class="shops-table__day">{{ item.day }}</div>
+                                                {% endif %}
+                                                {% if item.text %}
+                                                    <div class="shops-table__text shops-table__text_gray">{{ item.text }}</div>
+                                                {% endif %}
+                                                {% if item.addres %}
+                                                    <div class="shops-table__addres">{{ item.addres }}</div>
+                                                {% endif %}
+                                                {% if item.modal %}
+                                                    <a href="#" class="shops-table__link" data-modal-control="{{item.modal}}">{{ item.modalText }}</a>
+                                                {% endif %}
+                                                {% if item.empty %}
+                                                    <div class="shops-table__text">Готовится</div>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <article class="shops js-shops">
+
+                    <section class="shops-list js-shops-scroll js-shops-list">
+                        <div class="js-shop-scroll-inner">
+                            {% for row in tables[0].body %}
+                                <a href="#" class="shops-list__shop js-shop{% if loop.first %} is-active{% endif %}" data-lat="{{row[0].lat}}" data-lng="{{row[0].lng}}" data-id="{{row[0].id}}">
+                                    {% for item in row %}
+                                        {% if loop.index !== 1 %}
+                                            <div class="shops-list__row">
+                                                {% if item.title %}
+                                                    <h5 class="shops-list__title">{{ item.title }}</h5>
+                                                {% endif %}
+                                                {% if item.day %}
+                                                    <span class="shops-list__day">{{ item.day }}</span>
+                                                {% endif %}
+                                                {% if item.text %}
+                                                    <span class="shops-list__text shops-list__text_gray">{{ item.text }}</span>
+                                                {% endif %}
+                                                {% if item.addres %}
+                                                    <span class="shops-list__addres">{{ item.addres }}</span>
+                                                {% endif %}
+                                                {% if item.modal %}
+                                                    <button type="button" href="#" class="shops-list__link js-photo-gallery-trigger" data-modal-control="{{item.modal}}">{{ item.modalText }}</button>
+                                                {% endif %}
+                                                {% if item.empty %}
+                                                    <div class="shops-list__text">Готовится</div>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    <div class="shops__map-container">
+                        <div class="shops__map js-shops-map" data-json="./json/shops-map.json" data-center-lat="54.987658" data-center-lng="73.345368"></div>
+
+                        {% include "partials/main/_photo-gallery.html" %}
+
+                    </div>
+
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script id="infobox"></script>
+{% endblock %}

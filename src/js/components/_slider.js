@@ -1,15 +1,28 @@
 import slick from 'slick-carousel';
-import { BODY, DOC, WIN, INIT, widthMD, widthSM } from '../constants';
+
+import {
+  BODY,
+  DOC,
+  WIN,
+  INIT,
+  widthMD,
+  widthSM,
+  PAUSED,
+  FULLSCREEN
+} from '../constants';
 import { buildIcon } from '../utils';
+import { initSliderButtonsEvents } from './_photo-gallery';
 
 const mainSlider = $('.js-main-slider');
 
-mainSlider.each((i,el) => {
+mainSlider.each((i, el) => {
   let slider = $(el);
   let sliderParent = slider.parents('.js-main-slider-wrap');
   let prevBtn = $('.js-main-slider-prev', sliderParent);
   let nextBtn = $('.js-main-slider-next', sliderParent);
-  slider.on('init', () => { sliderParent.addClass(INIT); });
+  slider.on('init', () => {
+    sliderParent.addClass(INIT);
+  });
   slider.slick({
     dots: true,
     infinite: true,
@@ -33,16 +46,20 @@ mainSlider.each((i,el) => {
 });
 
 const slider = $('.js-slider');
-slider.each((i,el) => {
+slider.each((i, el) => {
   let slider = $(el);
   let sliderParent = slider.parents('.js-slider-parent');
   let prevBtn = $('.js-slider-prev', sliderParent);
   let nextBtn = $('.js-slider-next', sliderParent);
-  slider.on('init', () => { sliderParent.addClass(INIT); });
+  slider.on('init', () => {
+    sliderParent.addClass(INIT);
+  });
   slider.slick({
     dots: true,
     infinite: false,
     speed: 800,
+    autoplay: true,
+    autoplaySpeed: 4000,
     slidesToShow: 3,
     slidesToScroll: 1,
     prevArrow: prevBtn,
@@ -76,7 +93,7 @@ slider.each((i,el) => {
 });
 
 const sliderWrap = $('.js-slider-wrap');
-sliderWrap.each((i,el) => {
+sliderWrap.each((i, el) => {
   let that = $(el);
   let sliderProducts = that.find('.js-slider-products');
   let sliderNav = that.find('.js-slider-products-nav');
@@ -113,10 +130,7 @@ sliderWrap.each((i,el) => {
       }
     ]
   });
-
 });
-
-
 
 const sliderWatched = $('.js-slider-watched');
 
@@ -126,8 +140,12 @@ sliderWatched.slick({
   speed: 300,
   slidesToShow: 4,
   slidesToScroll: 1,
-  prevArrow: `<button class="slider-watched__prev" type="button">${buildIcon('arrow-left')}</button>`,
-  nextArrow: `<button class="slider-watched__next" type="button">${buildIcon('arrow-right')}</button>`,
+  prevArrow: `<button class="slider-watched__prev" type="button">${buildIcon(
+    'arrow-left'
+  )}</button>`,
+  nextArrow: `<button class="slider-watched__next" type="button">${buildIcon(
+    'arrow-right'
+  )}</button>`,
   responsive: [
     {
       breakpoint: 1023,
@@ -154,12 +172,14 @@ sliderWatched.slick({
 });
 
 const magazineSlider = $('.js-magazine-slider');
-magazineSlider.each((i,el) => {
+magazineSlider.each((i, el) => {
   let slider = $(el);
   let sliderParent = slider.parents('.js-magazine-slider-parent');
   let prevBtn = $('.js-magazine-slider-prev', sliderParent);
   let nextBtn = $('.js-magazine-slider-next', sliderParent);
-  slider.on('init', () => { sliderParent.addClass(INIT); });
+  slider.on('init', () => {
+    sliderParent.addClass(INIT);
+  });
   slider.slick({
     dots: true,
     infinite: false,
@@ -184,16 +204,155 @@ DOC.ready(() => {
   let timeOut;
   let arrayHref = [];
   const sliderIcons = $('.slick-slider .icon use');
-  sliderIcons.each((i,el) => {
+  sliderIcons.each((i, el) => {
     const atr = $(el).attr('xlink:href');
     arrayHref.push(atr);
   });
   WIN.on('resize', () => {
     clearTimeout(timeOut);
     timeOut = setTimeout(() => {
-      for(let i = 0; i <= sliderIcons.length-1; i++) {
-        $(sliderIcons[i]).attr('xlink:href', `${arrayHref[i]}`); 
+      for (let i = 0; i <= sliderIcons.length - 1; i++) {
+        $(sliderIcons[i]).attr('xlink:href', `${arrayHref[i]}`);
       }
-    },100);
+    }, 100);
+  });
+});
+
+// ============== OFFERS SLIDER ====================
+DOC.ready(() => {
+  const productSlider = $('.js-offers-slider');
+
+  productSlider.each((i, el) => {
+    let slider = $(el);
+
+    slider.on('init', () => {
+      slider.addClass(INIT);
+      const video = $('video', slider)[0];
+      video.play();
+      initControls();
+    });
+
+    slider.on('afterChange', (event, slick, currentSlide) => {
+      // PAUSE ALL VIDEOS
+      const videos = $('.offers-slider__slide video');
+      videos.each((i, el) => {
+        $(el)[0].pause();
+      });
+      // PLAY CURRENT
+      let slides = $('.offers-slider__slide');
+      const videoCurrent = $(slides[currentSlide]).find('video')[0];
+      videoCurrent ? videoCurrent.play() : false;
+    });
+
+    slider.slick({
+      dots: true,
+      infinite: false,
+      speed: 1800,
+      fade: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      // autoplay: true,
+      prevArrow: `<button class="offers-slider__prev js-slider-prev">${buildIcon(
+        'arrow-left'
+      )}</button>`,
+      nextArrow: `<button class="offers-slider__next js-slider-next">${buildIcon(
+        'arrow-right'
+      )}</button>`,
+      customPaging: (slider, pageIndex) => {
+        return $(`<button class="offers-slider__dot">
+    <svg width="34px" height="34px" viewBox="0 0 34 34" version="1.1" xmlns="http://www.w3.org/2000/svg"> 
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle stroke="#000" stroke-width="2" cx="17" cy="17" r="16"></circle>
+      </g>
+    </svg>
+    </button>`);
+      },
+      responsive: [
+        {
+          breakpoint: widthMD,
+          settings: {
+            arrows: false,
+            fade: false
+          }
+        }
+      ]
+    });
+  });
+});
+
+function initControls() {
+  const playBtn = $('.js-video-play');
+  const pauseBtn = $('.js-video-pause');
+  const expandBtn = $('.js-video-expand');
+  const compressBtn = $('.js-video-compress');
+  const slider = playBtn.closest('.js-offers-slider');
+
+  expandBtn.each((i, el) =>
+    $(el).on('click', function(e) {
+      slider.addClass(FULLSCREEN);
+    })
+  );
+
+  compressBtn.each((i, el) =>
+    $(el).on('click', function(e) {
+      slider.removeClass(FULLSCREEN);
+    })
+  );
+
+  pauseBtn.on('click', function(e) {
+    const video = $(this)
+      .closest('.package-offer__video-wrapper')
+      .find('video')[0];
+    video.pause();
+    $(video).addClass(PAUSED);
+  });
+
+  playBtn.on('click', function(e) {
+    const video = $(this)
+      .closest('.package-offer__video-wrapper')
+      .find('video')[0];
+    video.play();
+    $(video).removeClass(PAUSED);
+  });
+}
+
+// =================== GALLERY SLIDER ============================
+
+DOC.ready(() => {
+  const gallerySlider = $('.js-gallery-slider');
+
+  gallerySlider.each((i, el) => {
+    let slider = $(el);
+
+    slider.on('init', () => {
+      slider.addClass(INIT);
+      initSliderButtonsEvents();
+    });
+
+    slider.slick({
+      dots: false,
+      infinite: false,
+      speed: 1800,
+      fade: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      // autoplay: true,
+      prevArrow: `<button class="shops-slider__prev shops-btn shops-btn_arrow">${buildIcon(
+        'arrow-left'
+      )}</button>`,
+      nextArrow: `<button class="shops-slider__next shops-btn shops-btn_arrow">${buildIcon(
+        'arrow-right'
+      )}</button>`,
+
+      responsive: [
+        {
+          breakpoint: widthMD,
+          settings: {
+            arrows: false,
+            fade: false
+          }
+        }
+      ]
+    });
   });
 });

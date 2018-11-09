@@ -21,4 +21,7 @@ import './_file';
 import './_initMenuSpy';
 import './_initSticky';
 import './_accordion';
+import './_mp';
+import './_photo-gallery';
+// import './_sequence';
 // import "./_startingAnimation";

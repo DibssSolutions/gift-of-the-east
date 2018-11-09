@@ -21,7 +21,7 @@
 
     <!-- BEGIN content -->
     <div class="out">
-      {% if user %}{{ header.block(true, true) }}
+      {% if user %}{{ header.block(true, true, true) }}
       {% else %}{{ header.block() }}
       {% endif %}
 
@@ -34,6 +34,6 @@
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="js/app.js"></script>
     <!-- END scripts -->
-
+    
   </body>
 </html>

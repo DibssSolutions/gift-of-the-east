@@ -1,0 +1,164 @@
+[
+  {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
+    "marker": {
+      "id": "continent",
+      "position": {
+        "lat": 54.978061,
+        "lng": 73.324601
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 64,
+          "y": 64
+        },
+        "centering": {
+          "x": 64,
+          "y": 64
+        }
+      }
+    }
+  },
+  {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
+    "marker": {
+      "id": "mega",
+      "position": {
+        "lat": 54.97267,
+        "lng": 73.281238
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 64,
+          "y": 64
+        },
+        "centering": {
+          "x": 64,
+          "y": 64
+        }
+      }
+    }
+  },
+  {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
+    "marker": {
+      "id": "fest",
+      "position": {
+        "lat": 54.981155,
+        "lng": 73.320316
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 64,
+          "y": 64
+        },
+        "centering": {
+          "x": 64,
+          "y": 64
+        }
+      }
+    }
+  },
+  {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
+    "marker": {
+      "id": "mayak",
+      "position": {
+        "lat": 54.998328,
+        "lng": 73.282189
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 64,
+          "y": 64
+        },
+        "centering": {
+          "x": 64,
+          "y": 64
+        }
+      }
+    }
+  },
+  {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
+    "marker": {
+      "id": "privokzal",
+      "position": {
+        "lat": 54.941454,
+        "lng": 73.382802
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 64,
+          "y": 64
+        },
+        "centering": {
+          "x": 64,
+          "y": 64
+        }
+      }
+    }
+  },
+  {
+    "content": {
+      "title": "Континент 2",
+      "adress": "г.Омск, ул. 70 лет Октября, 25 к.2",
+      "workTime": "пн–вс 10:00–21:00",
+      "phone": "+7 (678) 678 87 67"
+    },
+    "marker": {
+      "id": "kaskad",
+      "position": {
+        "lat": 54.963058,
+        "lng": 73.384639
+      },
+      "icon": {
+        "default": "img/marker.svg",
+        "active": "img/active-marker.svg",
+        "size": {
+          "x": 64,
+          "y": 64
+        },
+        "centering": {
+          "x": 64,
+          "y": 64
+        }
+      }
+    }
+  }
+]

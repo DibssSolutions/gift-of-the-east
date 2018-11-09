@@ -1,4 +1,4 @@
-import { BODY, SHOW, INIT, OPEN } from '../constants';
+import { BODY, SHOW, INIT, OPEN, ACTIVE } from '../constants';
 const trigger = $('.js-nav-links-current');
 const navLinks = $('.js-nav-links');
 const parentLink = $('.js-nav-parent-dark');
@@ -10,7 +10,7 @@ triggers.each((i, trigger) => {
   trigger = $(trigger);
   const parent = trigger.parents('[data-dd-wrapper]');
   const close = parent.find('[data-dd-close]');
-
+  const overlay = parent.find('.js-search-overlay');
   trigger.on('click', function() {
     if (parent.hasClass(OPEN)) {
       parent.removeClass(OPEN);
@@ -25,11 +25,21 @@ triggers.each((i, trigger) => {
     if ($(e.target).closest(close).length || $(e.target).closest(parent).length)
       return;
     parent.removeClass(OPEN);
+    if ($('.js-open-mob-search').hasClass(OPEN)) {
+      $('.js-open-mob-search').removeClass(OPEN);
+    }
   });
 
   close.on('click', e => {
     e.preventDefault();
     hide();
+  });
+
+  overlay.on('click', e => {
+    hide();
+    if ($('.js-open-mob-search').hasClass(OPEN)) {
+      $('.js-open-mob-search').removeClass(OPEN);
+    }
   });
 });
 

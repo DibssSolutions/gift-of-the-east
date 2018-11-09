@@ -1,3 +1,5 @@
+$delay: 3s
+	
 .main-slider
 	position: relative
 	overflow: hidden
@@ -7,7 +9,6 @@
 		opacity: 1
 	
 	$delay: 0.4s
-
 	&__prev,
 	&__next
 		position: absolute
@@ -26,7 +27,8 @@
 				circle
 					stroke-dashoffset: 0
 			.main-slider__text
-				transform: translateX(0)
+				transform: translateY(0)
+
 			.main-slider__direction
 				transform: translateX(0)
 				opacity: 1
@@ -45,10 +47,11 @@
 		position: relative
 		transition: transform $delay ease-in-out
 		display: block
+		transform: translateY(calc(-50% - 24px))
 	&__circle
 		position: relative
-		width: 34px
-		height: 34px
+		width: 56px
+		height: 56px
 		font-size: 0
 		display: inline-block
 		.main-slider__next &
@@ -58,29 +61,30 @@
 	&__svg
 		position: relative
 		transition: transform $delay ease-in-out
+		
 		display: block
 		svg
 			.main-slider__next &
 				transform: scale(-1)
 		circle
-			stroke-dasharray: 100
-			stroke-dashoffset: 100
+			stroke-dasharray: 170
+			stroke-dashoffset: 170
 			transition: stroke-dashoffset $delay ease-in-out
 	&__direction
 		position: absolute
 		top: 50%
-		margin-top: -6px
+		margin-top: -8px
 		font-size: 0
 		opacity: 0
 		transition: transform $delay ease-in-out, opacity $delay ease-in-out
 		.main-slider__next &
-			right: 10px
-			transform: translateX(-20px)
+			right: 20px
+			transform: translateX(-30px)
 		.main-slider__prev &
-			left: 10px
-			transform: translateX(20px)
+			left: 20px
+			transform: translateX(30px)
 		.icon
-			font-size: 12px
+			font-size: 16px
 	&__inner
 		margin: 0 auto
 		width: 70%
@@ -166,6 +170,7 @@
 					animation: dashRevers 0.8s ease alternate forwards
 				.slick-initialized li.slick-active &
 					animation: dashPlay 4s ease alternate forwards
+
 @keyframes dashPlay
 	from
 		stroke-dashoffset: 100
@@ -572,3 +577,364 @@
 					
 	&__slide
 		padding: 0 16px
+
+.offers-slider
+	position: relative
+	+sm 
+		margin: 0 -15px
+	&-wrapper 
+		padding-top: 144px
+		padding-bottom: 89px
+		+sm 
+			padding-top: 80px
+			padding-bottom: 40px
+	.slick-slide
+		+md 
+			margin: 0 15px
+	.slick-list
+		overflow: visible
+	&__prev,
+	&__next
+		position: absolute
+		width: 55px 
+		height: 55px
+		border: 1px solid $silver
+		border-radius: 50%
+		background:  none
+		color: $black
+		top: 273px
+		text-align: center
+		transition: color .3s, border-color .3s, z-index 0.3s
+		line-height: 10px
+		z-index: 100
+		.is-fullscreen &
+			z-index: -1
+		+hover
+			.icon-arrow-right
+				animation: arrowRight 0.5s ease alternate forwards
+				animation-delay: .31s
+			.icon-arrow-left
+				animation: arrowLeft 0.5s ease forwards alternate
+				animation-delay: .31s
+		+lg 
+			top: 215px
+		+md
+			top: 386px
+			height: 40px
+			width: 40px
+			background-color: $white
+		+hover
+			color: $lightBrown
+			// border-color: $lightBrown
+		+md
+			&:hover
+				color: $black
+		.icon
+			font-size: 16px
+			display: inline-block
+			vertical-align: middle
+			+sm
+				font-size: 14px
+		&.slick-disabled
+			color: $silver
+			cursor: default
+			+hover
+				color: $silver
+				border-color: $silver
+				.icon-arrow-right
+					animation: none
+				.icon-arrow-left
+					animation: none
+					
+	
+		
+	&__prev
+		right: 103px
+		+md 
+			right: 50%
+		+sm
+			display: none
+	&__next
+		right: 32px
+		+md 
+			right: calc(50% - 60px)
+		+sm 
+			display: none
+	.slick-dots
+		position: absolute
+		left: 20px
+		top: 50%
+		transform: translateY(-50%)
+		+md 
+			top: auto
+			bottom: -70px
+			left: 50%
+			transform: translateX(-50%)
+		+sm 
+			bottom: -20px
+		li 
+			+md 
+				display: inline-block
+				vertical-align: top
+				font-size: 0
+			+sm 
+				&:not(:first-child)
+				margin-left: 5px
+	&__dot
+		position: relative
+		width: 34px
+		height: 34px
+		background-color: transparent
+		+sm
+			width: 10px
+			height: 10px
+			
+		&:before
+			position: absolute
+			content: "" 
+			top: 1px
+			left: 1px
+			width: 32px
+			height: 32px
+			border: 1px solid $white
+			border-radius: 50% 
+			opacity: 0
+			transition: opacity .5s
+			transition-delay: 0.8s
+			+md 
+				border: 1px solid $gray
+			+sm
+				display: none
+			.slick-initialized li.slick-active &
+				transition-delay: 0
+				opacity: 1
+		&:after
+			position: absolute
+			content: "" 
+			top: 50%
+			left: 50%
+			margin: -4px 0 0 -4px
+			width: 8px
+			height: 8px
+			opacity: 0.7
+			transition: opacity .5s
+			border-radius: 50%
+			background-color: $white 
+			.slick-initialized li.slick-active &
+				opacity: 1
+			+md 
+				background-color: $gray
+		svg
+			position: absolute
+			top: 0
+			left: 0
+			+rotate(-90)
+			+sm
+				display: none
+			circle
+				stroke: $white
+				+md 
+					stroke: $gray
+				.slick-initialized &
+					stroke-dasharray: 100
+					stroke-dashoffset: 0
+					animation: dashRevers 0.8s ease alternate forwards
+				.slick-initialized li.slick-active &
+					animation: dashPlay 4s ease alternate forwards
+
+.package-offer
+	display: flex
+	position: relative
+	align-items: stretch
+	&__media-wrapper
+		flex: 0 0 440px
+		height: 100%
+		overflow: hidden
+		+md 
+			display: none
+	&__image-wrapper
+		+coverdiv
+		overflow: hidden
+		max-width: 440px
+		height: 100%
+	&__image
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 440px
+		+cover
+		background-color: hsla(0,0%,0%, 0.2)
+		background-blend-mode: multiply
+		transition: transform 1s
+		+scale(1)
+		+hover 
+			+scale(1.3)
+			transform-origin: center
+			
+		+md 
+			padding-bottom: 200px
+	&__content
+		flex: 0 0 58%
+		flex: 0 0 calc(100% - 440px)
+		position: relative
+		z-index: 2
+		+md 
+			flex: 0 0 100%
+	&__descr
+		width: calc(100% + 176px)
+		margin: 48px 0 48px -176px
+		padding: 40px 32px 112px
+		background-color: $white
+		position: relative
+		z-index: 10
+		+lg 
+			margin-top: 24px
+			padding: 32px 32px 90px
+		+md 
+			float: none
+			width: 100%
+			margin: 0
+			padding: 20px 0
+	&__descr-top
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 22px
+	&__title
+		margin-bottom: 0
+		transition: color 0.4s
+		+hover
+			color: $lightBrown
+		+sm
+			margin-bottom: 0
+	&__text
+		+f(17px, 400, 1.588)
+		max-height: 80px
+		overflow: hidden
+	&__cards
+		position: relative
+		width: calc(100% + 24px)
+		padding-left: 44px
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -12px 
+		z-index: 10
+		+md 
+			width: 100%
+			padding-left: 0
+			margin: 20px 0 0
+		+sm 
+			display: none
+	&__card
+		flex: 33.333%
+		padding: 0 12px
+		.product
+			height: 100%
+	&__video-wrapper
+		+coverdiv
+		overflow: hidden
+		max-width: 440px
+		transition: z-index 0.8s, max-width 0.8s 
+		z-index: 1
+		&:after
+			+coverdiv
+			content: ''
+			background-color: rgba($black, 0.2)
+			opacity: 0
+			visibility: hidden
+			transition: opacity 0.4s, visibility 0.4s
+			z-index: 10
+		+hover
+			.package-offer__video-buttons
+				opacity: 1
+				visibility: visible
+			&:after
+				opacity: 1
+				visibility: visible
+		.is-fullscreen &
+			max-width: 1300px
+			z-index: 10000
+	&__video
+		display: block
+		object-fit: cover
+		position: absolute
+		top: 0
+		left: 0
+		width: 100% 
+		height: 100%
+		transition: z-index 0.8s, max-width 0.8s 
+		z-index: 1
+		box-shadow: 0 0 1px 0 $red
+		opacity: 0
+		visibility: hidden
+		transition: opacity 0.4s, visibility 0.4s
+		.slick-current &
+			visibility: visible
+			opacity: 1
+	&__video-buttons
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		z-index: 10000
+		display: flex
+		justify-content: center
+		align-items: center
+		opacity: 0
+		visibility: hidden
+		transition: visility 0.4s, opacity 0.4s
+
+
+.video-play,
+.video-expand,
+.video-pause,
+.video-compress
+	display: inline-block
+	background-color: transparent 
+	width: 40px
+	height: 40px
+	position: relative
+	.icon
+		+vcenter
+		font-size: 32px
+		color: $white
+
+
+.video-play,
+.video-compress
+	display: none
+
+.is-fullscreen
+	.video-expand
+		display: none
+	.video-compress
+		display: block
+
+.is-paused
+	~ .package-offer__video-buttons .video-play
+		display: block
+	~ .package-offer__video-buttons .video-pause
+		display: none
+	
+@keyframes arrowLeft
+	0%
+		transform: translateX(105%)
+		opacity: 0
+	2%
+		transform: translateX(0)
+		opacity: 1
+	50%
+		transform: translateX(-105%)
+		opacity: 1
+	51%
+		transform: translateX(-105%)
+		opacity: 0
+	52%
+		transform: translateX(105%)
+		opacity: 0
+	100%
+		transform: translateX(0)
+		opacity: 1
+

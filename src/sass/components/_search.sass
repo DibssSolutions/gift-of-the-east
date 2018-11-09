@@ -90,7 +90,7 @@
 		margin-left: 12px
 	&__dropdown 
 		position: absolute
-		top: 64px
+		top: 65px
 		left: 50%
 		right: 0
 		width: 100vw
@@ -98,30 +98,37 @@
 		visibility: hidden
 		opacity: 0
 		transition: 0.4s
-		// z-index: 100
 		background-color: $white
-		// border-bottom: 2px solid $silver
-		
-		&:after
-			position: absolute
-			top: 100%
-			left: 0
-			right: 0
-			content: ''
-			background-color: rgba($black, 0.2)
-			height: 1000vh
+		z-index: 5
+		+r(1246)
+			padding: 0 7px
 		.is-open &
 			visibility: visible
 			opacity: 1
+		+md 
+			position: fixed
+	&__overlay
+		position: absolute
+		top: 72px
+		left: 0
+		right: 0
+		background-color: rgba($black, 0.2)
+		height: 1000vh
+		z-index: -1
+		+md 
+			top: 40px
 	&__form
 		display: flex
 		justify-content: space-between
-		padding:  21px 15px 17px
+		padding:  15px 15px 13px
 		position: relative
-		margin-bottom: 24px
+		z-index: 5
+		background-color: $white
+		+md 
+			padding: 10px 15px
 		&:after
 			position: absolute
-			bottom: -2px
+			bottom: 0
 			left: -50%
 			right: -50%
 			width: 200%
@@ -134,15 +141,33 @@
 		font-family: $montserrat
 		color: $black
 		+f(28px, 400, 1.38)
+		+md
+			font-size: 16px
 		&:placeholder 
 			color: $silver
+	&__btn-mob
+		background-color: transparent
+		font-size: 0
+		display: inline-block
+		.icon
+			font-size: 24px
+			color: $lightBrown
 	&__show-more
 		text-align: center
+		margin-top: 32px
+		margin-bottom: 41px
 	&__results
+		position: relative
 		max-height: 500px
+		padding-top: 24px
+		padding-bottom: 40px
+		z-index: 2
+		background-color: $white
+
 
 .search-list
-	margin-bottom: 40px
+	+ .search-list 
+		margin-top: 43px
 	&__title
 		margin-bottom: 16px
 		+f(13px, 500, 1.23)
@@ -154,7 +179,7 @@
 	&__item
 		display: block
 		&:not(:last-child)
-			margin-bottom: 8px
+			margin-bottom: 16px
 		+hover 
 			background-color: rgba($gallery, 0.5)
 	&__link
@@ -163,7 +188,8 @@
 	&__image
 		display: block
 		+cover 
-		width: 72px
+		flex: 0 0 72px
+		min-width: 72px
 		padding-bottom: 72px
 		margin-right: 16px
 	&__text
@@ -172,16 +198,75 @@
 	&__highlighted
 		font-weight: 600
 
+.search-page
+	&__tabs.tabs:not(:first-child)
+		margin-top: 0
+	&__filter
+		margin-bottom: 30px
+	.filter__top-select
+		+sm 
+			margin-top: 12px
+		&:first-child
+			margin-top: 0px
+	&__card
+		margin-top: 24px
+	.filter__top-select span 
+		margin-right: 16px
+	.card-catalog
+		margin-bottom: 24px
+	&__show-more
+		margin-top: 24px
+
+.ps .ps__rail-x.ps--clicking, 
+.ps .ps__rail-x:focus,
+.ps .ps__rail-x:hover, 
+.ps .ps__rail-y.ps--clicking,
+.ps .ps__rail-y:focus, 
+.ps .ps__rail-y:hover
+	background: none
 
 .show-more
-	& > *
+	position: relative
+	text-align: center
+	&__text > *
 		display: inline-block
 		vertical-align: middle
 	&__link
 		font-size: 16px
-		border-bottom: 1px solid #707070
 		line-height: 1
-		margin-right: 4px
+		text-decoration: underline
+	&__details
+		color: $gray
+	&__pagination
+		position: absolute
+		right: 0
+		bottom: 0
+		+sm 
+			position: static
+			margin: 12px auto 0
 
-.ps__rail-x
-	display: none
+.pagination
+	display: flex
+	align-items: center
+	justify-content: center
+	color: $gray
+	&__item
+		&_next, 
+		&_prev
+			&.is-hidden 
+				opacity: 0
+				visibility: hidden
+				transition: opacity 0.4s, visibility 0.4s
+				pointer-events: none
+			.pagination__link
+				font-size: 0
+				.icon
+					font-size: 12px
+					margin-bottom: 2px
+	&__link
+		display: block
+		padding: 0 8px
+		+f(16px,400,1.5)
+		.is-active &
+			color: $lightBrown
+	

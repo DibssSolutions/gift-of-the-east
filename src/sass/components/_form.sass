@@ -4,6 +4,8 @@
 		font-size: 14px
 		&_gray
 			color: $gray 
+		&_success
+			margin: 20px -40px 30px
 .form-control
 	position: relative
 	&:not(:first-child)
@@ -11,6 +13,9 @@
 	&_sm
 		&:not(:first-child)
 			margin-top: 16px
+	&_restore-password
+		.form-error
+			display: block !important
 	&.is-checked
 		.icon-check
 			visibility: visible
@@ -24,6 +29,14 @@
 		color: $green 
 		visibility: hidden
 		opacity: 0
+	
+
+.form-control.has-success 
+	.icon-check
+		opacity: 1
+		visibility: visible
+		margin-top: -18px
+
 .form-label
 	+f(16px,400,1.5)
 	display: block
@@ -79,7 +92,7 @@
 			font-size: 20px
 			color: $lightBrown 
 .form-question
-	margin-right: -16px
+	// margin-right: -16px
 	text-align: right
 	+sm
 		margin-right: 0
@@ -179,6 +192,7 @@
 	&_textarea
 		resize: none
 		padding: 10px
+	
 .password-show
 	position: absolute
 	top: 50%
@@ -200,6 +214,7 @@
 			display: none
 			.form-control.is-show &
 				display: block
+
 .form-social
 	text-align: center
 	&:not(:first-child)
@@ -213,18 +228,21 @@
 	&_lg
 		&:not(:first-child)
 			margin-top: 30px
+	.btn-link
+		display: none
 
 .form-checkbox
-	margin-right: -60px
+	// margin-right: -60px
 	text-align: right
 	+sm
 		margin-right: 0
 	&:not(:first-child)
 		margin-top: 20px
 	&_lg
-		margin-right: -29px
+		// margin-right: -29px
 		&:not(:first-child)
 			margin-top: 24px
+
 .checkbox
 	position: relative
 	padding-left: 28px
@@ -315,3 +333,14 @@
 		text-align: left
 .valid-message
 	display: none
+
+
+
+.has-success ~ .form-footer
+	.btn-reset
+		display: none
+	.btn-link
+		display: block
+
+.form-error
+	text-align: left

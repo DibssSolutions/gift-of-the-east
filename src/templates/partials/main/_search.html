@@ -104,28 +104,38 @@
     </div>
 {% endmacro %}
 
-{% macro search(props) %}
+{% macro search(result) %}
     <div class="search__dropdown">
         <form action="/" class="search__form inner">
             <input type="text" class="search__input" placeholder="Поиск по сайту"/>
-            <button class="btn btn_md btn_bord btn_anim">
-                <span class="btn__text">Поиск</span>
-                <span class="btn__icon">
-                    {{mixins.icon('arrow-right')}}
-                </span>
-            </button>
+            <div class="md-hide">
+                <button class="btn btn_md btn_bord btn_anim btn_search">
+                    <span class="btn__text">Поиск</span>
+                    <span class="btn__icon">
+                        {{mixins.icon('arrow-right')}}
+                    </span>
+                </button>
+            </div>
+            <div class="md-show">
+                <button class="search__btn-mob">
+                    {{mixins.icon('search')}}
+                </button>
+            </div>
+
         </form>
-        <div class="search__results js-search-scroll">
-            {{searchList(results[0])}}
-            {{searchList(results[1])}}
-            <div class="inner search__show-more">
-                {{mixins.showMore({
+        {% if result %}
+            <div class="search__results js-scroll-wrap">
+                {{searchList(results[0])}}
+                {{searchList(results[1])}}
+                <div class="inner search__show-more">
+                    {{mixins.showMore({
                         link: 'Показать еще',
                         details: 'Показано 5 из 378 '
                     })}}
+                </div>
+                {{searchList(results[2])}}
             </div>
-            {{searchList(results[2])}}
-
-        </div>
+        {% endif %}
+        <div class="search__overlay js-search-overlay"></div>
     </div>
 {% endmacro %}

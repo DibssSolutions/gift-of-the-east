@@ -1,0 +1,30 @@
+<div class="js-photo-gallery shops__gallery">
+    <div class='shops__overlay js-gallery-overlay'></div>
+    <div class="shops__slider shops-slider js-gallery-slider">
+        <div>
+            <a class="shops-slider__slide" data-fancybox="data-fancybox" data-src="#photo-1" href="javascript:;" style="background-image: url(./img/businesswoman-call-career-789822.jpg)"></a>
+        </div>
+        <div>
+            <a class="shops-slider__slide" data-fancybox="data-fancybox" data-src="#photo-2" href="javascript:;" style="background-image: url(./img/living-room-3164434_1920.jpg)"></a>
+        </div>
+    </div>
+    <div class="shops__buttons">
+        <button type="button" class="shops-btn js-slide-zoom">
+            {{mixins.icon('plus')}}
+        </button>
+        <button type="button" class="shops-btn js-slide-decrease">
+            {{mixins.icon('minus')}}
+        </button>
+        <button type="button" class="shops-btn js-slide-expand md-hide">
+            {{mixins.icon('fullscreen')}}
+        </button>
+    </div>
+    <div style="display: none;" id="photo-1">
+        <span class="shops__fancy-image" style="background-image: url(./img/businesswoman-call-career-789822@2x.jpg)"></span>
+    </div>
+    <div style="display: none;" id="photo-2">
+        <span class="shops__fancy-image" style="background-image: url(./img/living-room-3164434_1920@2x.jpg)"></span>
+    </div>
+    
+</div>
+</div>

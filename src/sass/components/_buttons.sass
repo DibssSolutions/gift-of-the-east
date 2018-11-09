@@ -25,6 +25,9 @@
 		+md
 			margin: -1px 5px -1px 0
 			font-size: 16px
+		+sm 
+			margin: -2px 0 -1px 0
+			
 	.icon-arrow-right
 		font-size: 12px
 	&_full
@@ -165,6 +168,19 @@
 		background-color: transparent
 		+md 
 			padding: 0
+	&_search
+		padding-left: 24px
+		text-transform: none
+		font-size: 16px
+		line-height: 1.2
+	&_offers
+		text-transform: none
+		font-size: 16px
+	&_infobox 
+		width: 126px
+		text-transform: none
+		font-size: 16px
+		padding: 12px 16px 10px 20px
 	&__text
 		position: relative
 		z-index: 1
@@ -252,6 +268,14 @@
 	font-size: 0
 	line-height: 20px
 	background-color: transparent
+	&_brown 
+		color: $lightBrown
+		text-decoration: underline
+		padding-bottom: 0
+	+hover
+		.icon
+			+rotate(360)
+			transition: transform 0.3s
 	+sm
 		padding: 10px 8px 8px
 	span 
@@ -264,6 +288,16 @@
 		fill: $silver
 		font-size: 20px
 		margin-right: 8px
+		transition: transform 0s
+
+.btn-reset_brown 
+	padding: 0
+	.icon
+		fill: $lightBrown
+		font-size: 15px
+		margin-left: 9px
+		margin-top: 2px
+
 
 .vertical-line-animation
 	position: relative
@@ -290,6 +324,7 @@
 			+gpu
 		&:before
 			+gpu
+
 .btn-text
 	font-family: $montserrat
 	color: $gray 
@@ -300,3 +335,23 @@
 	display: inline-block
 	+hover
 		color: $silver
+
+.btn-link
+	display: inline-block
+	background-color: transparent
+	font-family: $montserrat
+	+f(14px, 400, 1.42857)
+	letter-spacing: -0.01em 
+	&__gold
+		color: $lightBrown
+
+.shops-btn
+	display: inline-block
+	// background-color: rgba($black, 0.4)
+	background-color: transparent
+	.icon
+		font-size: 24px
+		color: $white
+	&_arrow
+		.icon
+			font-size: 16px

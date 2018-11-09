@@ -288,7 +288,9 @@
 		</div>
 		<div class="product__price{% if props.priceRed %} product__price_red{% endif %}">
 			<span>{{ props.price }}</span>
-			<span class="is-old">{{ props.priceOld }}</span>
+			{% if props.priceOld %}
+				<span class="is-old">{{ props.priceOld }}</span>
+			{% endif %}
 		</div>
 		{% if props.expireTime %}
 			<div class="product__expire">
@@ -299,7 +301,7 @@
 		<div class="product__footer">
 			<button type="button" class="product__btn btn" type="button">
 			{{ icon('shopping-bag') }}
-			{{ props.textBtn }}
+			<span class="product__btn-text">{{ props.textBtn }}</span>
 			</button>
 			{% if props.likebtn !== false %}
 			<div class="product__like">
@@ -1017,11 +1019,30 @@
 
 {% macro showMore(props) %}
 	<div class="show-more">
-        <a href="#" class="show-more__link">
-            {{props.link}}
-        </a>
-        <span class="show-more__details">
-            {{props.details}}
-        </span>
+		<div class="show-more__text">
+				<a href="#" class="show-more__link">
+					{{props.link}}
+				</a>
+				<span class="show-more__details">
+					{{props.details}}
+				</span>
+		</div>
+       	{% if props.pagination %}
+			<nav class="show-more__pagination">
+				<ul class="pagination">
+					<li class="pagination__item pagination__item_prev is-hidden"><a href="#" class="pagination__link">
+						{{icon('arrow-left')}}
+					</a></li>
+					<li class="pagination__item is-active"><span class="pagination__link">1</span></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">2</a></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+					<li class="pagination__item"><span class="pagination__link">...</span></li>
+					<li class="pagination__item"><a href="#" class="pagination__link">8</a></li>
+					<li class="pagination__item pagination__item_next"><a href="#" class="pagination__link">
+						{{icon('arrow-right')}}
+					</a></li>
+				</ul>
+			</nav>
+		{% endif %}
     </div>
 {% endmacro %}

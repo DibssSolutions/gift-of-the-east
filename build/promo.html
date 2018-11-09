@@ -15,10 +15,17 @@
     <!-- BEGIN content -->
     <div class="out">
       <!-- begin header -->
-      <header class="header">
+      <header class="header js-menu">
         <div class="header__top">
-          <div class="header__inner inner">
-            <div class="header__contact">
+          <div class="header__inner header__mobile inner">
+            <div class="header__open md-show">
+              <button type="button" class="js-open-mob-menu">
+                <svg class="icon icon-bars">
+                  <use xlink:href="img/sprite.svg#icon-bars"></use>
+                </svg>
+              </button>
+            </div>
+            <div class="header__contact md-hide">
               <a href="#" class="header__shops">
                 <svg class="icon icon-location">
                   <use xlink:href="img/sprite.svg#icon-location"></use>
@@ -35,55 +42,69 @@
             </div>
             <div class="header__cabin">
               <!-- begin signin -->
+              <div class="mobile-search md-show">
+                <button class="mobile-search__button js-open-mob-search">
+                  <span class="mobile-search__open">
+                    <svg class="icon icon-search">
+                      <use xlink:href="img/sprite.svg#icon-search"></use>
+                    </svg>
+                  </span>
+                  <span class="mobile-search__close">
+                    <svg class="icon icon-close">
+                      <use xlink:href="img/sprite.svg#icon-close"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
               <div class="signin js-profile-wrapper" data-dd-wrapper="data-dd-wrapper">
-                <a href="#" class="signin__item" data-modal-control="login">
-                  <svg class="icon icon-account">
-                    <use xlink:href="img/sprite.svg#icon-account"></use>
-                  </svg>
-                  <span>Войти</span></a>
-                <span class="signin__slash">/</span>
-                <a href="#" class="signin__item" data-modal-control="registration-tab">
-                  <span>Регистрация</span></a>
-                <div class="signin__drop js-profile-content">
-                  <div class="signin__head">Добро пожаловать, Анна</div>
-                  <ul class="signin__list">
-                    <li>
-                      <a href="#">Личные данные </a>
-                    </li>
-                    <li class="has-inf">
-                      <a href="#">Сообщения <span class="text-silver">3</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">История покупок </a>
-                    </li>
-                    <li class="has-inf">
-                      <a href="#">Персональные предложения <span class="text-silver">4</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">Избранное </a>
-                    </li>
-                    <li>
-                      <a href="#">Клубная карта </a>
-                    </li>
-                    <li>
-                      <a href="#">Пригласить друзей </a>
-                    </li>
-                  </ul>
-                  <div class="signin__footer">
-                    <a href="#" class="signin__exit">Выйти</a>
+                <div class="signin__anonymus">
+                  <button class="signin__button" data-dd-trigger="data-dd-trigger">
+                    <svg class="icon icon-account">
+                      <use xlink:href="img/sprite.svg#icon-account"></use>
+                    </svg>
+                  </button>
+                  <div class="signin__variants">
+                    <div class="signin__close">
+                      <button type="button" data-dd-close="data-dd-close">
+                        <svg class="icon icon-close">
+                          <use xlink:href="img/sprite.svg#icon-close"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <ul>
+                      <li><a href="#" data-modal-control="login">
+                          <span>Войти</span>
+                          <span class="header__mob-next">
+                            <svg class="icon icon-chevron-right">
+                              <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                            </svg>
+                          </span>
+                        </a></li>
+                      <li><a href="#" data-modal-control="registration-tab">
+                          <span>Регистрация</span>
+                          <span class="header__mob-next">
+                            <svg class="icon icon-chevron-right">
+                              <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                            </svg>
+                          </span></a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+                <a href="#" class="signin__item" data-modal-control="login">
+                  <span class="md-hide">Войти</span></a>
+                <span class="signin__slash md-hide">/</span>
+                <a href="#" class="signin__item" data-modal-control="registration-tab">
+                  <span class="md-hide">Регистрация</span></a>
               </div>
               <!-- end signin -->
               <!-- begin basket -->
               <div class="basket js-basket-wrapper" data-dd-wrapper="data-dd-wrapper">
-                <a href="#" class="basket__trigger js-basket-trigger" data-dd-trigger="data-dd-trigger">
+                <a href="#" class="basket__trigger" data-dd-trigger="data-dd-trigger">
                   <svg class="icon icon-shopping-bag">
                     <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
                   </svg>
-                  <span>Корзина</span>
+                  <span class="md-hide">Корзина</span>
                 </a>
                 <div class="basket__drop">
                   <div class="basket__head">Корзина (1)</div>
@@ -130,7 +151,7 @@
           <div class="header__inner inner">
             <!-- begin search -->
             <div class="header__search search" data-dd-wrapper="data-dd-wrapper">
-              <button class="search__btn" type="button" data-dd-trigger="data-dd-trigger">
+              <button class="search__btn md-hide" type="button" data-dd-trigger="data-dd-trigger">
                 <span class="search__open">
                   <svg class="icon icon-search">
                     <use xlink:href="img/sprite.svg#icon-search"></use>
@@ -147,147 +168,56 @@
               <div class="search__dropdown">
                 <form action="/" class="search__form inner">
                   <input type="text" class="search__input" placeholder="Поиск по сайту" />
-                  <button class="btn btn_md btn_bord btn_anim">
-                    <span class="btn__text">Поиск</span>
-                    <span class="btn__icon">
-                      <svg class="icon icon-arrow-right">
-                        <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                  <div class="md-hide">
+                    <button class="btn btn_md btn_bord btn_anim btn_search">
+                      <span class="btn__text">Поиск</span>
+                      <span class="btn__icon">
+                        <svg class="icon icon-arrow-right">
+                          <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="md-show">
+                    <button class="search__btn-mob">
+                      <svg class="icon icon-search">
+                        <use xlink:href="img/sprite.svg#icon-search"></use>
                       </svg>
-                    </span>
-                  </button>
+                    </button>
+                  </div>
                 </form>
-                <div class="search__results js-search-scroll">
-                  <div class="search-list">
-                    <div class="search-list__inner inner">
-                      <h4 class="search-list__title"> КАТЕГОРИИ <span class="search-list__quantity">3</span>
-                      </h4>
-                    </div>
-                    <ul class="search-list__items">
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/evie-shaffer-500190-unsplash@2x.jpg);"></span>
-                          <span class="search-list__text">
-                            <span></span><span class="search-list__highlighted">Ваз</span><span>ы напольные</span>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/chairs-contemporary-design-271696@2x.jpg);"></span>
-                          <span class="search-list__text">
-                            <span></span><span class="search-list__highlighted">Ваз</span><span>ы настольные</span>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/ancient-1494672_1920@2x.jpg);"></span>
-                          <span class="search-list__text">
-                            <span></span><span class="search-list__highlighted"></span><span>Сухоцветы</span>
-                          </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="search-list">
-                    <div class="search-list__inner inner">
-                      <h4 class="search-list__title"> ТОВАРЫ <span class="search-list__quantity">378</span>
-                      </h4>
-                    </div>
-                    <ul class="search-list__items">
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/vase-2.jpg);"></span>
-                          <span class="search-list__text">
-                            <span></span><span class="search-list__highlighted">Ваз</span><span>а &quot;Ажур&quot;</span>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/vase-4.jpg);"></span>
-                          <span class="search-list__text">
-                            <span></span><span class="search-list__highlighted">Ваз</span><span>а &quot;Аурика&quot; 45см</span>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/vase.jpg);"></span>
-                          <span class="search-list__text">
-                            <span></span><span class="search-list__highlighted">Ваз</span><span>а из стекла с разноцветным узором</span>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/annie-spratt.jpg);"></span>
-                          <span class="search-list__text">
-                            <span></span><span class="search-list__highlighted">Ваз</span><span>а &quot;Марика-Росса&quot; 40см </span>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/vase-2.jpg);"></span>
-                          <span class="search-list__text">
-                            <span></span><span class="search-list__highlighted">Ваз</span><span>а &quot;Мерри&quot; </span>
-                          </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="inner search__show-more">
-                    <div class="show-more">
-                      <a href="#" class="show-more__link"> Показать еще </a>
-                      <span class="show-more__details"> Показано 5 из 378 </span>
-                    </div>
-                  </div>
-                  <div class="search-list">
-                    <div class="search-list__inner inner">
-                      <h4 class="search-list__title"> СТАТЬИ <span class="search-list__quantity">3</span>
-                      </h4>
-                    </div>
-                    <ul class="search-list__items">
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/jose-ignacio-gonzalez-pansiera-480627-unsplash.jpg);"></span>
-                          <span class="search-list__text">
-                            <span>Заголовок статьи о </span><span class="search-list__highlighted">Ваз</span><span>е. Желательно, чтобы это были две - три строчки</span>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/Mask-Group-13@2x.jpg);"></span>
-                          <span class="search-list__text">
-                            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, voluptates?</span><span class="search-list__highlighted">Ваз</span><span> Lorem, ipsum dolor sit amet</span>
-                          </span>
-                        </a>
-                      </li>
-                      <li class="search-list__item">
-                        <a href="#" class="search-list__link inner">
-                          <span class="search-list__image" style="background-image: url(./img/Mask-Group-14@2x.jpg);"></span>
-                          <span class="search-list__text">
-                            <span></span><span class="search-list__highlighted">Ваз</span><span>а из стекла с разноцветным узором</span>
-                          </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                <div class="search__overlay js-search-overlay"></div>
               </div>
             </div>
             <!-- end search -->
             <nav class="header__nav nav">
+              <div class="header__close">
+                <button type="button" class="js-close-mob-menu">
+                  <svg class="icon icon-close">
+                    <use xlink:href="img/sprite.svg#icon-close"></use>
+                  </svg>
+                </button>
+              </div>
               <ul class="nav__list">
                 <li class="nav__item js-nav-item">
-                  <a href="#" class="nav__link">
+                  <a href="#" class="nav__link js-nav-link">
                     <span class="nav__text">КАТАЛОГ</span>
                     <span class="nav__line">
-                      <span></span></span>
+                      <span></span>
+                    </span>
+                    <span class="header__mob-next">
+                      <svg class="icon icon-chevron-right">
+                        <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                      </svg>
+                    </span>
                   </a>
-                  <span class="nav__wrap js-nav-wrap">
+                  <span class="nav__wrap js-nav-child">
+                    <h4 class="nav__mob-title"> КАТАЛОГ </h4>
+                    <button class="nav__back js-mob-back">
+                      <svg class="icon icon-arrow-left">
+                        <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                      </svg>
+                    </button>
                     <span class="nav__inner inner">
                       <ul class="nav__items">
                         <li>
@@ -378,35 +308,60 @@
                     </span>
                   </span>
                 </li>
-                <li class="nav__item js-nav-item">
-                  <a href="#" class="nav__link">
+                <li class="nav__item">
+                  <a href="#" class="nav__link js-nav-link">
                     <span class="nav__text">КОЛЛЕКЦИИ</span>
                     <span class="nav__line">
-                      <span></span></span>
+                      <span></span>
+                    </span>
                   </a>
                 </li>
-                <li class="nav__item js-nav-item">
-                  <a href="#" class="nav__link">
+                <li class="nav__item">
+                  <a href="#" class="nav__link js-nav-link">
                     <span class="nav__text">АКЦИИ</span>
                     <span class="nav__line">
-                      <span></span></span>
+                      <span></span>
+                    </span>
                   </a>
                 </li>
                 <li class="nav__item js-nav-item nav__item_with-bg js-nav-parent-dark">
-                  <a href="#" class="nav__link nav__link_with-bg">
+                  <a href="#" class="nav__link nav__link_with-bg js-nav-link">
                     <span class="nav__text nav__text_with-bg">ЖУРНАЛ</span>
                     <span class="nav__line nav__line_with-bg">
-                      <span></span></span>
+                      <span></span>
+                    </span>
+                    <span class="header__mob-next">
+                      <svg class="icon icon-chevron-right">
+                        <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                      </svg>
+                    </span>
                   </a>
-                  <span class="nav__wrap nav__wrap_with-bg js-nav-wrap js-nav-wrap-dark">
+                  <span class="nav__wrap nav__wrap_with-bg js-nav-wrap-dark">
+                    <h4 class="nav__mob-title"> ЖУРНАЛ </h4>
+                    <button class="nav__back js-mob-back">
+                      <svg class="icon icon-arrow-left">
+                        <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                      </svg>
+                    </button>
                     <span class="nav__inner inner">
                       <ul class="nav__items-row">
                         <li class="nav__item-row  js-nav-item">
-                          <a href="#" class="nav__link-row">
+                          <a href="#" class="nav__link-row js-nav-link">
                             <span class="nav__text-row">Все статьи</span>
+                            <span class="header__mob-next">
+                              <svg class="icon icon-chevron-right">
+                                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                              </svg>
+                            </span>
                           </a>
                           <span class="nav__column">
-                            <ul class="nav__elements">
+                            <h4 class="nav__mob-title"> Все статьи </h4>
+                            <button class="nav__back js-mob-back">
+                              <svg class="icon icon-arrow-left">
+                                <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                              </svg>
+                            </button>
+                            <ul class="nav__elements js-nav-child">
                               <li>
                                 <a href="#" class="nav__element">Шото там</a>
                               </li>
@@ -420,11 +375,22 @@
                           </span>
                         </li>
                         <li class="nav__item-row  js-nav-item">
-                          <a href="#" class="nav__link-row">
+                          <a href="#" class="nav__link-row js-nav-link">
                             <span class="nav__text-row">Идеи подарков</span>
+                            <span class="header__mob-next">
+                              <svg class="icon icon-chevron-right">
+                                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                              </svg>
+                            </span>
                           </a>
                           <span class="nav__column">
-                            <ul class="nav__elements">
+                            <h4 class="nav__mob-title"> Идеи подарков </h4>
+                            <button class="nav__back js-mob-back">
+                              <svg class="icon icon-arrow-left">
+                                <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                              </svg>
+                            </button>
+                            <ul class="nav__elements js-nav-child">
                               <li>
                                 <a href="#" class="nav__element">Идея 1</a>
                               </li>
@@ -438,11 +404,22 @@
                           </span>
                         </li>
                         <li class="nav__item-row  js-nav-item">
-                          <a href="#" class="nav__link-row">
+                          <a href="#" class="nav__link-row js-nav-link">
                             <span class="nav__text-row">Красота</span>
+                            <span class="header__mob-next">
+                              <svg class="icon icon-chevron-right">
+                                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                              </svg>
+                            </span>
                           </a>
                           <span class="nav__column">
-                            <ul class="nav__elements">
+                            <h4 class="nav__mob-title"> Красота </h4>
+                            <button class="nav__back js-mob-back">
+                              <svg class="icon icon-arrow-left">
+                                <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                              </svg>
+                            </button>
+                            <ul class="nav__elements js-nav-child">
                               <li>
                                 <a href="#" class="nav__element">Красота 1</a>
                               </li>
@@ -459,11 +436,22 @@
                           </span>
                         </li>
                         <li class="nav__item-row  js-nav-item">
-                          <a href="#" class="nav__link-row">
+                          <a href="#" class="nav__link-row js-nav-link">
                             <span class="nav__text-row">Развлечения</span>
+                            <span class="header__mob-next">
+                              <svg class="icon icon-chevron-right">
+                                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                              </svg>
+                            </span>
                           </a>
                           <span class="nav__column">
-                            <ul class="nav__elements">
+                            <h4 class="nav__mob-title"> Развлечения </h4>
+                            <button class="nav__back js-mob-back">
+                              <svg class="icon icon-arrow-left">
+                                <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                              </svg>
+                            </button>
+                            <ul class="nav__elements js-nav-child">
                               <li>
                                 <a href="#" class="nav__element">Красота 1</a>
                               </li>
@@ -480,11 +468,22 @@
                           </span>
                         </li>
                         <li class="nav__item-row  js-nav-item">
-                          <a href="#" class="nav__link-row">
+                          <a href="#" class="nav__link-row js-nav-link">
                             <span class="nav__text-row">Мода и стиль</span>
+                            <span class="header__mob-next">
+                              <svg class="icon icon-chevron-right">
+                                <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                              </svg>
+                            </span>
                           </a>
                           <span class="nav__column">
-                            <ul class="nav__elements">
+                            <h4 class="nav__mob-title"> Мода и стиль </h4>
+                            <button class="nav__back js-mob-back">
+                              <svg class="icon icon-arrow-left">
+                                <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                              </svg>
+                            </button>
+                            <ul class="nav__elements js-nav-child">
                               <li>
                                 <a href="#" class="nav__element">Подраздел</a>
                               </li>
@@ -500,6 +499,14 @@
                       </ul>
                     </span>
                   </span>
+                </li>
+                <li class="nav__item nav__item_md-show">
+                  <a href="#" class="nav__link nav__link_md-show js-nav-link">
+                    <span class="nav__text nav__text_md-show">Магазины<span class="header__phone header__phone_mob">+7 (456) 567 87 95</span></span>
+                    <span class="nav__line nav__line_md-show">
+                      <span></span>
+                    </span>
+                  </a>
                 </li>
               </ul>
             </nav>
@@ -776,135 +783,6 @@
             </div>
             <div class="col col-75 col-md-100">
               <div data-stagger-show>
-                <section class="filter js-drop">
-                  <div class="filter__top js-drop-shows">
-                    <button class="filter-btn js-open-drop">
-                      <span>Фильтры</span>
-                      <svg class="icon icon-chevron-up">
-                        <use xlink:href="img/sprite.svg#icon-chevron-up"></use>
-                      </svg>
-                    </button>
-                    <button class="btn-reset js-filter-reset">
-                      <svg class="icon icon-refresh">
-                        <use xlink:href="img/sprite.svg#icon-refresh"></use>
-                      </svg>
-                      <span>Сбросить фильтры</span>
-                    </button>
-                    <div class="filter__top-select">
-                      <span class="md-hide">Упорядочить</span>
-                      <select class="select select_bord js-select" data-width="216">
-                        <option value="Cначала новинки">Cначала новинки</option>
-                        <option value="Цена по возрастанию">Цена по возрастанию</option>
-                        <option value="Цена по убыванию">Цена по убыванию</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="filter__bottom js-drop-hidden js-main-filter" style="display: none;">
-                    <div class="filter__range">
-                      <div class="dropdown dropdown-range">
-                        <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Цена </a>
-                        <div class="dropdown-menu dropdown-menu-range js-range-container" aria-labelledby="dropdownRangeLink">
-                          <div class="dropdown-menu__row">
-                            <span>Диапазон цен</span>
-                            <button type="button" class="js-range-reset btn-reset">
-                              <svg class="icon icon-refresh">
-                                <use xlink:href="img/sprite.svg#icon-refresh"></use>
-                              </svg>
-                              <span>Сбросить</span>
-                            </button>
-                          </div>
-                          <div class="dropdown-menu__row">
-                            <div class="dropdown-menu__input">
-                              <input type="text" class="input input_range js-range-min js-range-input">
-                              <span class="input-addon"> от </span>
-                            </div>
-                            <div class="dropdown-menu__input">
-                              <input type="text" class="input input_range js-range-max js-range-input">
-                              <span class="input-addon"> до </span>
-                            </div>
-                          </div>
-                          <div class="dropdown-menu__row dropdown-menu__row_slider">
-                            <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="filter__select">
-                      <select class="select js-select select_bord" data-width="232" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Категория товара">
-                        <option value="Вазы" data-subtext="321">Вазы</option>
-                        <option value="Музыкальные ретро центры, ретро телефоны" data-subtext="19">Музыкальные ретро центры, ретро телефоны</option>
-                        <option value="Картины, декоративные тарелки" data-subtext="24">Картины, декоративные тарелки</option>
-                        <option value="Фоторамки" data-subtext="11">Фоторамки</option>
-                        <option value="Подсвечники" data-subtext="21">Подсвечники</option>
-                        <option value="Фонтаны" data-subtext="8">Фонтаны</option>
-                        <option value="Шкатулки, книги-сейфы, ключницы" data-subtext="45">Шкатулки, книги-сейфы, ключницы</option>
-                        <option value="Мебель, глобус-бары" data-subtext="17">Мебель, глобус-бары</option>
-                        <option value="Барометры" data-subtext="5">Барометры</option>
-                        <option value="Корабли" data-subtext="4">Корабли</option>
-                      </select>
-                    </div>
-                    <div class="filter__select">
-                      <select class="select js-select select_bord" data-width="232" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
-                        <option value="70 лет Октября, 25 к.2 (Континент 2)">70 лет Октября, 25 к.2 (Континент 2)</option>
-                        <option value="Бульвар Архитекторов, 35 (Мега)">Бульвар Архитекторов, 35 (Мега)</option>
-                        <option value="ул.70 лет Октября, 19 (Фестиваль)">ул.70 лет Октября, 19 (Фестиваль)</option>
-                        <option value="пр.Комарова, 6 к.1 (Маяк–3)">пр.Комарова, 6 к.1 (Маяк–3)</option>
-                        <option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
-                        <option value="ул.Карла Маркса, 24 (Каскад)">ул.Карла Маркса, 24 (Каскад)</option>
-                      </select>
-                    </div>
-                    <div class="filter__select">
-                      <select class="select select_color js-select select_bord" data-width="101" multiple="multiple" title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} из {1}" data-actions-box="true"
-                        data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все">
-                        <option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
-                        <option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
-                        <option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
-                        <option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
-                        <option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
-                        <option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
-                        <option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
-                        <option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
-                        <option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
-                        <option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
-                      </select>
-                    </div>
-                    <div class="filter__select">
-                      <select class="select js-select select_bord" data-width="145" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Коллекция">
-                        <option value="Коллекция красная">Коллекция красная</option>
-                        <option value="Коллекция синяя">Коллекция синяя</option>
-                        <option value="Коллекция зеленая">Коллекция зеленая</option>
-                      </select>
-                    </div>
-                    <div class="filter__check">
-                      <!-- Start checked-btn -->
-                      <label class="checked-btn checked-btn_border-grey">
-                        <input type="checkbox" name="checkbox-btn" data-validation="required">
-                        <span class="checked-btn__text">Редкая находка</span>
-                        <span class="checked-btn__text checked-btn__text_checked">Редкая находка</span>
-                      </label>
-                      <!-- End checked-btn -->
-                    </div>
-                    <div class="filter__check">
-                      <!-- Start checked-btn -->
-                      <label class="checked-btn checked-btn_border-grey">
-                        <input type="checkbox" name="checkbox-btn" data-validation="required">
-                        <span class="checked-btn__text">Товары со скидкой</span>
-                        <span class="checked-btn__text checked-btn__text_checked">Товары со скидкой</span>
-                      </label>
-                      <!-- End checked-btn -->
-                    </div>
-                    <div class="filter__check">
-                      <!-- Start checked-btn -->
-                      <label class="checked-btn checked-btn_border-grey">
-                        <input type="checkbox" name="checkbox-btn" data-validation="required">
-                        <span class="checked-btn__text">Новинка</span>
-                        <span class="checked-btn__text checked-btn__text_checked">Новинка</span>
-                      </label>
-                      <!-- End checked-btn -->
-                    </div>
-                    <div class="filter__products-number"> 48 товаров </div>
-                  </div>
-                </section>
               </div>
               <div class="catalog-cards">
                 <div class="row catalog-cards__row">
@@ -940,7 +818,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -993,7 +873,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1029,7 +911,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1065,7 +949,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1118,7 +1004,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1171,7 +1059,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1207,7 +1097,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1243,7 +1135,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1296,7 +1190,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1349,7 +1245,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1385,7 +1283,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1421,7 +1321,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1474,7 +1376,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1527,7 +1431,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1563,7 +1469,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1599,7 +1507,9 @@
                           <button type="button" class="product__btn btn" type="button">
                             <svg class="icon icon-shopping-bag">
                               <use xlink:href="img/sprite.svg#icon-shopping-bag"></use>
-                            </svg> В корзину </button>
+                            </svg>
+                            <span class="product__btn-text">В корзину</span>
+                          </button>
                           <div class="product__like">
                             <!-- begin likebtn -->
                             <label class="btn-like">
@@ -1813,7 +1723,7 @@
       </div>
       <!-- begin modal -->
       <div class="modal" data-modal="login">
-        <div class="modal__container" data-modal-container>
+        <div class="modal__container" data-modal-container="data-modal-container">
           <form action="/" class="modal__form form">
             <div class="modal__title">Вход в аккаунт</div>
             <div class="form-control js-form-control">
@@ -1834,7 +1744,7 @@
               <a href="#" class="link link_current">Забыли пароль?</a>
             </div>
             <div class="form-control">
-              <button class="btn btn_full" type="submit" disabled>ВОЙТИ</button>
+              <button class="btn btn_full" type="submit" disabled="disabled">ВОЙТИ</button>
             </div>
             <div class="form-social social">
               <a href="#" class="social__link social__link_vk">
@@ -1858,14 +1768,15 @@
                 </svg>
               </a>
             </div>
-            <div class="form-footer">Еще не член клуба? <a href="#" class="link link_current">Зарегистрироваться</a></div>
+            <div class="form-footer">Еще не член клуба? <a href="#" class="link link_current">Зарегистрироваться</a>
+            </div>
           </form>
         </div>
       </div>
       <!-- end modal -->
       <!-- begin modal -->
       <div class="modal" data-modal="registration">
-        <div class="modal__container" data-modal-container>
+        <div class="modal__container" data-modal-container="data-modal-container">
           <form action="/" class="modal__form form">
             <div class="modal__title">Регистрация</div>
             <div class="form-control js-form-control">
@@ -1875,7 +1786,7 @@
               <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
             </div>
             <div class="form-control js-form-control">
-              <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change">
+              <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change" data-validation-strength="1">
               <button class="password-show js-password-show" type="button">
                 <svg class="icon icon-eye-closed">
                   <use xlink:href="img/sprite.svg#icon-eye-closed"></use>
@@ -1901,7 +1812,7 @@
               </label>
             </div>
             <div class="form-control">
-              <button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
+              <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
             </div>
             <div class="form-social social">
               <a href="#" class="social__link social__link_vk">
@@ -1925,14 +1836,157 @@
                 </svg>
               </a>
             </div>
-            <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
+            <div class="form-footer">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
+            </div>
           </form>
         </div>
       </div>
       <!-- end modal -->
       <!-- begin modal -->
+      <div class="modal registration-tab" data-modal="registration-tab">
+        <div class="modal__container registration-tab__container" data-modal-container="data-modal-container">
+          <div class="modal__title registration-tab__title">Регистрация</div>
+          <div class="tabs tabs_registration" data-tabs="data-tabs">
+            <div class="tabs__out">
+              <div class="tabs__current" data-tabs-current="data-tabs-current">
+                <span></span>
+              </div>
+              <ul class="tabs__list">
+                <li class="tabs__item" data-tabs-control="by-telephone"> По телефону </li>
+                <li class="tabs__item" data-tabs-control="by-email"> По email </li>
+              </ul>
+            </div>
+            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+              <div class="tabs__container" data-tabs-container="by-telephone">
+                <div class="tabs__inner">
+                  <form action="/" class="modal__form form js-form-message">
+                    <div class="form-control form-control_sm js-form-control">
+                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+                    </div>
+                    <div class="form-control form-control_sm js-form-control">
+                      <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
+                    </div>
+                    <div class="form-control form-control_sm js-form-control js-password">
+                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password" data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
+                        data-validation-error-msg="Пароль должен содержать не менее 10 символов" />
+                      <svg class="icon icon-check">
+                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                      </svg>
+                      <span class="strength-meter"></span>
+                    </div>
+                    <div class="form-checkbox form-checkbox_lg">
+                      <label class="checkbox">
+                        <input type="checkbox" data-validation="required">
+                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+                        </span>
+                        <span class="checkbox__icon">
+                          <svg class="icon icon-check">
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-control form-control_sm">
+                      <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                    </div>
+                    <div class="form-separator">Зарегистрироваться через</div>
+                    <div class="form-social form-social_sm social">
+                      <a href="#" class="social__link social__link_vk">
+                        <svg class="icon icon-vk">
+                          <use xlink:href="img/sprite.svg#icon-vk"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_facebook">
+                        <svg class="icon icon-facebook">
+                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_odnoklassniki">
+                        <svg class="icon icon-odnoklassniki">
+                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_google-plus">
+                        <svg class="icon icon-google-plus">
+                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
+              <div class="tabs__container" data-tabs-container="by-email">
+                <div class="tabs__inner">
+                  <form action="/" class="modal__form form js-form-message">
+                    <div class="form-control form-control_sm js-form-control">
+                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
+                    </div>
+                    <div class="form-control form-control_sm js-form-control">
+                      <input type="text" class="input input_password" placeholder="Email" data-validation="required" data-validation-event="keyup change">
+                    </div>
+                    <div class="form-control form-control_sm js-form-control js-password">
+                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="length" name="password" data-validation-length="min10" data-validation-strength="1" data-validation-event="keyup change"
+                        data-validation-error-msg="Пароль должен содержать не менее 10 символов" />
+                      <svg class="icon icon-check">
+                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                      </svg>
+                      <span class="strength-meter"></span>
+                    </div>
+                    <div class="form-checkbox form-checkbox_lg">
+                      <label class="checkbox">
+                        <input type="checkbox" data-validation="required">
+                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
+                        </span>
+                        <span class="checkbox__icon">
+                          <svg class="icon icon-check">
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </span>
+                      </label>
+                    </div>
+                    <div class="form-control form-control_sm">
+                      <button class="btn btn_full" type="submit" disabled="disabled">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+                    </div>
+                    <div class="form-separator">Зарегистрироваться через</div>
+                    <div class="form-social form-social_sm social">
+                      <a href="#" class="social__link social__link_vk">
+                        <svg class="icon icon-vk">
+                          <use xlink:href="img/sprite.svg#icon-vk"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_facebook">
+                        <svg class="icon icon-facebook">
+                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_odnoklassniki">
+                        <svg class="icon icon-odnoklassniki">
+                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="social__link social__link_google-plus">
+                        <svg class="icon icon-google-plus">
+                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end modal -->
+      <!-- begin modal -->
       <div class="modal questionnaire" data-modal="questionnaire">
-        <div class="modal__container questionnaire__container" data-modal-container>
+        <div class="modal__container questionnaire__container" data-modal-container="data-modal-container">
           <button class="modal__off" type="button" data-modal-close="data-modal-close">
             <svg class="icon icon-close">
               <use xlink:href="img/sprite.svg#icon-close"></use>
@@ -2073,7 +2127,7 @@
       <!-- end modal -->
       <!-- begin modal -->
       <div class="modal invite" data-modal="invite">
-        <div class="modal__container invite__container" data-modal-container>
+        <div class="modal__container invite__container" data-modal-container="data-modal-container">
           <button class="modal__off" type="button" data-modal-close="data-modal-close">
             <svg class="icon icon-close">
               <use xlink:href="img/sprite.svg#icon-close"></use>
@@ -2093,135 +2147,6 @@
               кроме определения модели развития. </p>
             <p> Таким образом, семантический разбор внешних противодействий играет важную роль в формировании экспериментов, поражающих по своей масштабности и грандиозности. Задача организации, в особенности же высококачественный прототип будущего
               проекта выявляет срочную потребность новых принципов формирования материально-технической и кадровой базы. </p>
-          </div>
-        </div>
-      </div>
-      <!-- end modal -->
-      <!-- begin modal -->
-      <div class="modal registration-tab" data-modal="registration-tab">
-        <div class="modal__container registration-tab__container" data-modal-container>
-          <div class="modal__title registration-tab__title">Регистрация</div>
-          <div class="tabs tabs_registration" data-tabs="data-tabs">
-            <div class="tabs__out">
-              <div class="tabs__current" data-tabs-current="data-tabs-current">
-                <span></span></div>
-              <ul class="tabs__list">
-                <li class="tabs__item" data-tabs-control="by-telephone"> По телефону </li>
-                <li class="tabs__item" data-tabs-control="by-email"> По email </li>
-              </ul>
-            </div>
-            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
-              <div class="tabs__container" data-tabs-container="by-telephone">
-                <div class="tabs__inner">
-                  <form action="/" class="modal__form form js-form-message">
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input input_password" placeholder="Номер телефона" data-validation="required" data-validation-event="keyup change" data-inputmask="'mask': '+7 (999) 999 99 99'" data-inputmask-placeholder="+7 (   )          ">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="password" class="input input_password" placeholder="Создать пароль" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-checkbox form-checkbox_lg">
-                      <label class="checkbox">
-                        <input type="checkbox" data-validation="required">
-                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-                        </span>
-                        <span class="checkbox__icon">
-                          <svg class="icon icon-check">
-                            <use xlink:href="img/sprite.svg#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="form-control form-control_sm">
-                      <button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
-                    </div>
-                    <div class="form-separator">Зарегистрироваться через</div>
-                    <div class="form-social form-social_sm social">
-                      <a href="#" class="social__link social__link_vk">
-                        <svg class="icon icon-vk">
-                          <use xlink:href="img/sprite.svg#icon-vk"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_facebook">
-                        <svg class="icon icon-facebook">
-                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_odnoklassniki">
-                        <svg class="icon icon-odnoklassniki">
-                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_google-plus">
-                        <svg class="icon icon-google-plus">
-                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                        </svg>
-                      </a>
-                    </div>
-                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="tabs__wrap" data-tabs-wrapper="data-tabs-wrapper">
-              <div class="tabs__container" data-tabs-container="by-email">
-                <div class="tabs__inner">
-                  <form action="/" class="modal__form form js-form-message">
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input" placeholder="Имя" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="text" class="input input_password" placeholder="Email" data-validation="required" data-validation-event="keyup change">
-                    </div>
-                    <div class="form-control form-control_sm js-form-control">
-                      <input type="password" class="input input_password" name="111111111111" placeholder="Создать пароль" data-validation="strength" data-validation-strength="1">
-                    </div>
-                    <div class="form-checkbox form-checkbox_lg">
-                      <label class="checkbox">
-                        <input type="checkbox" data-validation="required">
-                        <span class="checkbox__text"> Я подтверждаю согласие на обработку своих персональных данных и с <a href="#" class="link">Условиями использования сервиса.</a>
-                        </span>
-                        <span class="checkbox__icon">
-                          <svg class="icon icon-check">
-                            <use xlink:href="img/sprite.svg#icon-check"></use>
-                          </svg>
-                        </span>
-                      </label>
-                    </div>
-                    <div class="form-control form-control_sm">
-                      <button class="btn btn_full" type="submit" disabled>ЗАРЕГИСТРИРОВАТЬСЯ</button>
-                    </div>
-                    <div class="form-separator">Зарегистрироваться через</div>
-                    <div class="form-social form-social_sm social">
-                      <a href="#" class="social__link social__link_vk">
-                        <svg class="icon icon-vk">
-                          <use xlink:href="img/sprite.svg#icon-vk"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_facebook">
-                        <svg class="icon icon-facebook">
-                          <use xlink:href="img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_odnoklassniki">
-                        <svg class="icon icon-odnoklassniki">
-                          <use xlink:href="img/sprite.svg#icon-odnoklassniki"></use>
-                        </svg>
-                      </a>
-                      <a href="#" class="social__link social__link_google-plus">
-                        <svg class="icon icon-google-plus">
-                          <use xlink:href="img/sprite.svg#icon-google-plus"></use>
-                        </svg>
-                      </a>
-                    </div>
-                    <div class="form-footer form-footer_lg">Уже зарегистрированы? <a href="#" class="link link_current">Войти</a></div>
-                  </form>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

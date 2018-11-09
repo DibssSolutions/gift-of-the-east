@@ -65,6 +65,10 @@
 		+f(28px,400,1)
 		+xs
 			margin-bottom: 24px
+		&_wide
+			margin: 0 -100px 40px
+		&_success
+			margin: 0 -100px 10px
 	&__container
 		width: 100%
 		max-width: 440px
@@ -79,6 +83,8 @@
 			padding: 44px 104px 40px
 			+sm 
 				padding: 40px 20px
+		&_success
+			padding: 44px 80px 40px
 		+xs 
 			padding: 40px 24px 
 	&__info
@@ -173,11 +179,22 @@
 	&__title
 		text-align: center
 		margin-bottom: 35px
+
 .registration-tab
 	&__container
 		padding: 43px 80px 40px
 	&__title
 		margin-bottom: 32px
+	.form-error
+		display: block
+		margin-right: -10px
+		margin-top: 6px
+		color: $red
+		+f(11px, 400, 1.273)
+		text-align: left
+	input[name*='password'] ~ .form-error
+		display: block !important
+		
 
 .dashed-separator
 	margin: 24px -52px
@@ -200,3 +217,17 @@
 		text-align: center
 	&__divider
 		
+
+.strength-meter
+	border: none !important
+	background: none !important
+	font-weight: 400 !important
+	font-size: 11px !important
+	padding: 4px 0 !important
+	display: block !important
+	text-align: left
+	color: $gray !important
+	display: none !important
+	margin-right: -20px
+	.has-success & 
+		display: block !important
