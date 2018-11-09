@@ -56,5 +56,10 @@ backBtn.each((index, el) => {
 openSearchBtn.click(e => {
   $('.search[data-dd-wrapper]').toggleClass(OPEN);
   openSearchBtn.toggleClass(OPEN);
+  if ($('.search[data-dd-wrapper]').hasClass(OPEN)) {
+    setTimeout(() => {
+      $('.js-search-input').focus();
+    }, 100);
+  }
   e.stopPropagation();
 });

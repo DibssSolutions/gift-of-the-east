@@ -167,7 +167,7 @@
               </button>
               <div class="search__dropdown">
                 <form action="/" class="search__form inner">
-                  <input type="text" class="search__input" placeholder="Поиск по сайту" />
+                  <input type="text" class="search__input js-search-input" placeholder="Поиск по сайту" />
                   <div class="md-hide">
                     <button class="btn btn_md btn_bord btn_anim btn_search">
                       <span class="btn__text">Поиск</span>
@@ -520,6 +520,16 @@
           <!-- begin quick-infos -->
           <div class="quick-info">
             <div class="quick-info__wrap">
+              <span class="quick-info__open-quote">
+                <svg class="icon icon-«">
+                  <use xlink:href="img/sprite.svg#icon-«"></use>
+                </svg>
+              </span>
+              <span class="quick-info__close-quote">
+                <svg class="icon icon-»">
+                  <use xlink:href="img/sprite.svg#icon-»"></use>
+                </svg>
+              </span>
               <h1 class="tquick-info__title-md title-md">Добро пожаловать в клуб Дары востока</h1>
               <p>Данный текст будет кратким описанием особенностей и преимуществ клуба «Дары Востока» со слов Ольги Туркиной. Описание должно занимать не более трех строк текста и содержать ключевые моменты, которые зацепят пользователя </p>
             </div>
@@ -592,28 +602,32 @@
             <div class="package-offer">
               <div class="package-offer__media-wrapper">
                 <div class="package-offer__video-wrapper">
-                  <video class="package-offer__video" loop="true" poster="img/video_poster.jpg">
+                  <video class="package-offer__video" loop="true" muted poster="img/video_poster.jpg">
                     <source src="video/loading_animation.webm" type="video/webm"> Your browser doesn't support HTML5 video tag. </video>
                   <div class="package-offer__video-buttons">
                     <button class="video-play js-video-play" type="button">
                       <svg class="icon icon-play-button">
                         <use xlink:href="img/sprite.svg#icon-play-button"></use>
                       </svg>
+                      <span class="video-hint">играть</span>
                     </button>
                     <button class="video-pause js-video-pause" type="button">
                       <svg class="icon icon-two-lines">
                         <use xlink:href="img/sprite.svg#icon-two-lines"></use>
                       </svg>
+                      <span class="video-hint">пауза</span>
                     </button>
                     <button class="video-expand js-video-expand" type="button">
                       <svg class="icon icon-fullscreen">
                         <use xlink:href="img/sprite.svg#icon-fullscreen"></use>
                       </svg>
+                      <span class="video-hint">развернуть</span>
                     </button>
                     <button class="video-compress js-video-compress" type="button">
                       <svg class="icon icon-fullscreen-exit">
                         <use xlink:href="img/sprite.svg#icon-fullscreen-exit"></use>
                       </svg>
+                      <span class="video-hint">свернуть</span>
                     </button>
                   </div>
                 </div>
@@ -1049,28 +1063,32 @@
             <div class="package-offer">
               <div class="package-offer__media-wrapper">
                 <div class="package-offer__video-wrapper">
-                  <video class="package-offer__video" loop="true" poster="img/video_poster.jpg">
+                  <video class="package-offer__video" loop="true" muted poster="img/video_poster.jpg">
                     <source src="video/loading_animation.webm" type="video/webm"> Your browser doesn't support HTML5 video tag. </video>
                   <div class="package-offer__video-buttons">
                     <button class="video-play js-video-play" type="button">
                       <svg class="icon icon-play-button">
                         <use xlink:href="img/sprite.svg#icon-play-button"></use>
                       </svg>
+                      <span class="video-hint">играть</span>
                     </button>
                     <button class="video-pause js-video-pause" type="button">
                       <svg class="icon icon-two-lines">
                         <use xlink:href="img/sprite.svg#icon-two-lines"></use>
                       </svg>
+                      <span class="video-hint">пауза</span>
                     </button>
                     <button class="video-expand js-video-expand" type="button">
                       <svg class="icon icon-fullscreen">
                         <use xlink:href="img/sprite.svg#icon-fullscreen"></use>
                       </svg>
+                      <span class="video-hint">развернуть</span>
                     </button>
                     <button class="video-compress js-video-compress" type="button">
                       <svg class="icon icon-fullscreen-exit">
                         <use xlink:href="img/sprite.svg#icon-fullscreen-exit"></use>
                       </svg>
+                      <span class="video-hint">свернуть</span>
                     </button>
                   </div>
                 </div>

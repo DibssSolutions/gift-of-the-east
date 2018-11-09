@@ -213,4 +213,18 @@
     <path d="M18 15v1c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h14c1.1 0 2 .9 2 2v1H9c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2m0-2h10V5H9m4 5.5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5z"/>
 </symbol><symbol id="icon-warning" viewBox="0 0 20 20">
     <path d="M9 13h2v2H9v-2m0-8h2v6H9V5m1-5C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0m0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/>
+</symbol><symbol id="icon-&#xAB;" viewBox="0 0 37.3 35.3">
+    <style>
+        .st0{enable-background:new}.st1{fill:#efefef}
+    </style>
+    <g class="st0">
+        <path class="st1" d="M11.9 0h8.3L9 17.7l11.1 17.6h-8.3L0 17.7 11.9 0zM29 0h8.3L26.2 17.7l11.1 17.6H29L17.2 17.7 29 0z"/>
+    </g>
+</symbol><symbol id="icon-&#xBB;" viewBox="0 0 37.3 35.3">
+    <style>
+        .st0{enable-background:new}.st1{fill:#efefef}
+    </style>
+    <g class="st0">
+        <path class="st1" d="M8.3 35.3H0l11.1-17.7L0 0h8.3l11.9 17.6L8.3 35.3zm17.2 0h-8.3l11.1-17.7L17.2 0h8.3l11.9 17.6-11.9 17.7z"/>
+    </g>
 </symbol></svg>

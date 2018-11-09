@@ -133,22 +133,26 @@
                     <div class="package-offer__media-wrapper">
                         {% if slide.video %}
                             <div class="package-offer__video-wrapper">
-                                <video class="package-offer__video" loop="true" poster="img/{{slide.video.poster}}">
+                                <video class="package-offer__video" loop="true" muted poster="img/{{slide.video.poster}}">
                                     <source src="video/{{slide.video.src}}" type="video/webm">
                                     Your browser doesn't support HTML5 video tag.
                                 </video>
                                 <div class="package-offer__video-buttons">
                                     <button class="video-play js-video-play" type="button">
                                         {{mixins.icon('play-button')}}
+                                        <span class="video-hint">играть</span>
                                     </button>
                                     <button class="video-pause js-video-pause" type="button">
                                         {{mixins.icon('two-lines')}}
+                                        <span class="video-hint">пауза</span>
                                     </button>
                                     <button class="video-expand js-video-expand" type="button">
                                         {{mixins.icon('fullscreen')}}
+                                        <span class="video-hint">развернуть</span>
                                     </button>
                                     <button class="video-compress js-video-compress" type="button">
                                         {{mixins.icon('fullscreen-exit')}}
+                                        <span class="video-hint">свернуть</span>
                                     </button>
                                 </div>
                             </div>

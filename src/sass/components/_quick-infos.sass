@@ -15,23 +15,36 @@
 		max-width: 810px
 		+sm
 			padding: 0
-		&:before
-			content: "«" 
-			top: -36px
-			left: 0
-		&:after
-			content: "»" 
-			bottom: -26px
-			right: 0
-			line-height: 1
-		&:before,
-		&:after
-			position: absolute
-			font-weight: 400 
-			color: $gallery 
-			font-size: 105px
-			+sm
-				display: none
+		// &:before
+		// 	content: "«" 
+		// 	top: -36px
+		// 	left: 0
+		// &:after
+		// 	content: "»" 
+		// 	bottom: -26px
+		// 	right: 0
+		// 	line-height: 1
+		// &:before,
+		// &:after
+		// 	position: absolute
+		// 	font-weight: 400 
+		// 	color: $gallery 
+		// 	font-size: 105px
+		// 	+sm
+		// 		display: none
+	&__open-quote,
+	&__close-quote
+		position: absolute
+		font-size: 36px
+		color: $gallery
+		.icon
+			display: block
+	&__open-quote
+		top: 40px
+		left: 0
+	&__close-quote
+		bottom: -1px
+		right: 0
 	&__collaborator
 		&:not(:first-child)
 			margin-top: 27px

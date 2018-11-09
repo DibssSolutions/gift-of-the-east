@@ -841,7 +841,7 @@ $delay: 3s
 		&:after
 			+coverdiv
 			content: ''
-			background-color: rgba($black, 0.2)
+			background-color: rgba($gray, 0.5)
 			opacity: 0
 			visibility: hidden
 			transition: opacity 0.4s, visibility 0.4s
@@ -900,7 +900,22 @@ $delay: 3s
 		+vcenter
 		font-size: 32px
 		color: $white
-
+	&:hover
+		.video-hint
+			opacity: 1
+			visibility: visible
+.video-hint
+	position: absolute
+	left: 50%
+	top: calc(100% + 3px)
+	transform: translateX(-50%)
+	color: $white
+	font-size: 12px
+	opacity: 0
+	visibility: hidden
+	transition: visility 0.4s, opacity 0.4s
+	font-family: $prata
+	text-transform: uppercase
 
 .video-play,
 .video-compress

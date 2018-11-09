@@ -11,11 +11,16 @@ triggers.each((i, trigger) => {
   const parent = trigger.parents('[data-dd-wrapper]');
   const close = parent.find('[data-dd-close]');
   const overlay = parent.find('.js-search-overlay');
+  const input = parent.find('.js-search-input');
   trigger.on('click', function() {
     if (parent.hasClass(OPEN)) {
       parent.removeClass(OPEN);
     } else {
       parent.addClass(OPEN);
+      setTimeout(() => {
+        input.focus();
+      }, 300);
+      console.log(input);
     }
   });
 
