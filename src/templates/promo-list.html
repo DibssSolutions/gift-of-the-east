@@ -37,7 +37,8 @@
 							duration: "",
 							title: "Заголовок акции, желательно, чтобы это были две строчки, иначе три то...",
 							text: "Здесь будет одна–две строчки текста, который является подзаголовком к акции...",
-							counter: true
+							counter: true,
+							isEnding: true
 						},
 						{
 							img: "main-slide.jpg",
@@ -85,8 +86,11 @@
 				<div class="row promo-list__row">
 					{% for item in row %}
 						<div class="col col-50 col-md-100 promo-list__col">
-							<a href="#" class="promo-card">
+							<a href="#" class="promo-card{% if item.isEnding %} is-ending{% endif %}">
 								<div class="promo-card__img img-bg" style="background-image: url(./img/{{ item.img }})">
+									<div class="promo-card__tags">
+										<span class="tag tag_red">ЗАКАНЧИВАЕТСЯ</span>
+									</div>
 								</div>
 								<div class="promo-card__descr">
 									{% if item.counter %}

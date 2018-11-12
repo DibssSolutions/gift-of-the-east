@@ -1,6 +1,7 @@
 --- title: Basket ---
 
 {% import "data/data.html" as data %}
+{% import "partials/catalog/_filter.html" as filterBuilder %}
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
@@ -90,7 +91,7 @@
 		
 		<div class="catalog-single">
 			<div class="row">
-				<div class="col col-25 md-hide">
+				<!-- <div class="col col-25 md-hide">
 					<aside class="sidebar">
 						<h4 class="sidebar__title" data-stagger-show>Каталог</h4>
 						<div class="sidebar__list js-sidebar-container">
@@ -116,10 +117,10 @@
 							</ul>
 						</div>
 					</aside>
-				</div>
-				<div class="col col-75 col-md-100">
+				</div> -->
+				<div class="col col-md-100">
 					<div data-stagger-show>
-						{% include "partials/catalog/_filter.html" %}
+						{{filterBuilder.filter({number: '378 товаров', checkModifier: "checked-btn_small"})}}
 					</div>
 					<div class="catalog-cards">
 						<div class="row catalog-cards__row">
@@ -275,6 +276,13 @@
 								</div>
 							{% endfor %}
 						</div>
+					</div>
+					<div class="catalog-navigation catalog-navigation_center">
+						{{mixins.showMore({
+							link: 'Показать еще',
+							details: 'Показано 50 из 378'
+						})}}
+						{{ mixins.pagination() }}
 					</div>
 				</div>
 			</div>

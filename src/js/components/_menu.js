@@ -38,9 +38,11 @@ closeMenuBtn.click(function(e) {
 
 navLinks.each((index, el) => {
   $(el).click(function(e) {
-    var subMenu = $(el).closest('.js-nav-item');
-    e.preventDefault();
-    subMenu.addClass(OPEN);
+    var subMenu = $(el).closest('.js-nav-item.has-list');
+    if (subMenu.length) {
+      e.preventDefault();
+      subMenu.addClass(OPEN);
+    }
   });
 });
 

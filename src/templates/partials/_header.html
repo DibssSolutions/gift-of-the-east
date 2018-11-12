@@ -7,7 +7,7 @@
         <div class="header__top">
             <div class="header__inner header__mobile inner">
                 <div class="header__open md-show">
-                    <button type="button" class="js-open-mob-menu">
+                    <button type="button" class="js-open-mob-menu open-mob-menu">
                         {{mixins.icon('bars')}}
                     </button>
                 </div>
@@ -59,10 +59,10 @@
                                     </ul>
                                 </div>
                             </div>
-                            <a href="#" class="signin__item" data-modal-control="login">
+                            <a href="#" class="signin__item md-hide" data-modal-control="login">
                                 <span class="md-hide">Войти</span></a>
                             <span class="signin__slash md-hide">/</span>
-                            <a href="#" class="signin__item" data-modal-control="registration-tab">
+                            <a href="#" class="signin__item md-hide" data-modal-control="registration-tab">
                                 <span class="md-hide">Регистрация</span></a>
                         {% else %}
                             <a href="#" class="signin__item" data-dd-trigger="data-dd-trigger">{{mixins.icon('account')}}

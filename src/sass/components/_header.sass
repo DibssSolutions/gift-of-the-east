@@ -107,9 +107,9 @@
 		z-index: 200
 		+md 
 			display: block
-			padding: 10px 
 		button 
 			background-color: transparent
+			padding: 10px
 			.icon
 				font-size: 10px
 				color: $gray
@@ -146,6 +146,10 @@
 	position: relative
 	vertical-align: top
 	display: inline-block
+	+md
+		margin-right: 20px
+	+xs
+		margin-right: 14px
 	&:before
 		position: absolute
 		content: ""
@@ -166,6 +170,9 @@
 			border-bottom: 1px solid transparent 
 	&__button
 		background-color: transparent
+		+md
+			display: block
+
 	&__button,
 	&__item
 		.icon
@@ -175,6 +182,8 @@
 			color: $lightBrown 
 			vertical-align: text-bottom
 			display: inline-block 
+			+md
+				margin-right: 0
 	&__slash
 		color: $silver 
 	&__drop
@@ -191,7 +200,8 @@
 		transition: visibility .3s, opacity .3s
 		box-shadow: 0 6px 12px rgba(#000, .2) 
 		background-color: $white 
-		.is-open &
+		.is-open &,
+		.signin:hover &
 			opacity: 1
 			visibility: visible
 		a
@@ -423,6 +433,10 @@
 		display: table-cell
 
 .mobile-search
+	+md
+		margin-right: 20px
+	+xs
+		margin-right: 14px
 	&__button
 		display: inline-block
 		vertical-align: middle
@@ -435,6 +449,9 @@
 			font-size: 24px
 			color: $lightBrown
 			margin-right: 8px
+			+md
+				display: block
+				margin-right: 0
 
 	&__close
 		display: none
@@ -462,7 +479,7 @@
 		display: inline-block
 		margin: 0 29px
 		+md 
-			padding: 10px 
+			// padding: 10px 
 			margin: 0
 			display: inline-block
 			vertical-align: middle
@@ -477,7 +494,7 @@
 				&:before,
 				&:after
 					opacity: 1
-					+sm 
+					+md
 						opacity: 0
 	&__item-row
 		position: relative
@@ -489,7 +506,7 @@
 		+md 
 			display: block
 			width: 100%
-			padding: 10px
+			padding: 0
 			&:not(:first-child)
 				border-top: 1px solid rgba($silver, 0.5)
 			&:first-child
@@ -503,7 +520,7 @@
 		transition: border-color .3s
 		display: block
 		+md 
-			padding: 0
+			padding: 10px
 		&-row 
 			font-size: 17px
 			font-weight: 500 
@@ -520,7 +537,7 @@
 						color: $gray
 			+md
 				font-size: 14px
-				padding: 0
+				padding: 10px
 		&:before
 			position: absolute
 			content: "" 
@@ -703,7 +720,9 @@
 		a
 			transition: color .3s
 			&:hover
-				color: $lightBrown 
+				color: $lightBrown
+			+md 
+				padding: 11px 0  
 	&__img
 		float: left
 		width: 40%
@@ -782,9 +801,10 @@
 		line-height: 50px
 		+md 
 			display: block
-	
-
-		
+.open-mob-menu
+	width: 40px
+	height: 40px
+	background-color: transparent
 
 @keyframes lineOn
 	0%

@@ -19,7 +19,7 @@
         <div class="header__top">
           <div class="header__inner header__mobile inner">
             <div class="header__open md-show">
-              <button type="button" class="js-open-mob-menu">
+              <button type="button" class="js-open-mob-menu open-mob-menu">
                 <svg class="icon icon-bars">
                   <use xlink:href="img/sprite.svg#icon-bars"></use>
                 </svg>
@@ -91,10 +91,10 @@
                     </ul>
                   </div>
                 </div>
-                <a href="#" class="signin__item" data-modal-control="login">
+                <a href="#" class="signin__item md-hide" data-modal-control="login">
                   <span class="md-hide">Войти</span></a>
                 <span class="signin__slash md-hide">/</span>
-                <a href="#" class="signin__item" data-modal-control="registration-tab">
+                <a href="#" class="signin__item md-hide" data-modal-control="registration-tab">
                   <span class="md-hide">Регистрация</span></a>
               </div>
               <!-- end signin -->
@@ -825,8 +825,8 @@
                 <div class="filter__top js-drop-shows">
                   <button class="filter-btn js-open-drop">
                     <span>Фильтры</span>
-                    <svg class="icon icon-chevron-up">
-                      <use xlink:href="img/sprite.svg#icon-chevron-up"></use>
+                    <svg class="icon icon-chevron-down">
+                      <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
                     </svg>
                   </button>
                   <button class="btn-reset js-filter-reset">
@@ -1699,6 +1699,37 @@
                 </div>
               </div>
             </div>
+            <div class="catalog-navigation">
+              <div class="show-more">
+                <div class="show-more__text">
+                  <a href="#" class="show-more__link"> Показать еще </a>
+                  <span class="show-more__details"> Показано 50 из 378 </span>
+                </div>
+              </div>
+              <nav class="pagination-wrap">
+                <ul class="pagination">
+                  <li class="pagination__item pagination__item_prev is-hidden">
+                    <a href="#" class="pagination__link">
+                      <svg class="icon icon-arrow-left">
+                        <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="pagination__item is-active"><span class="pagination__link">1</span></li>
+                  <li class="pagination__item"><a href="#" class="pagination__link">2</a></li>
+                  <li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+                  <li class="pagination__item"><span class="pagination__link">...</span></li>
+                  <li class="pagination__item"><a href="#" class="pagination__link">8</a></li>
+                  <li class="pagination__item pagination__item_next">
+                    <a href="#" class="pagination__link">
+                      <svg class="icon icon-arrow-right">
+                        <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </div>
@@ -1738,8 +1769,6 @@
               <div class="footer__item"><a href="#" class="footer__tel">+7 (495) 661 - 0101</a></div>
               <ul class="footer__list footer__list_contact">
                 <li class="footer__item">Служба клиентской поддержки</li>
-                <li class="footer__item">пн–вс 9:00 до 18:00</li>
-                <li class="footer__item">сб 9:00 до 16:00</li>
               </ul>
               <div class="footer__social social">
                 <a href="#" class="social__link social__link_vk">
@@ -1799,14 +1828,14 @@
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Задайте вопрос</legend>
               <div class="feedback__control js-form-control">
-                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" id="question-theme">
+                <label class="feedback__label feedback__label_select"">Тема вопроса</label>
+                        <select class=" feedback__select select select_bord js-select">
                   <option value="Товары, акции, скидки">Товары, акции, скидки</option>
                   <option value="Техническая поддержка">Техническая поддержка</option>
                   <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
                   <option value="Возврат товара">Возврат товара</option>
                   <option value="Другое">Другое</option>
-                </select>
+                  </select>
               </div>
               <div class="feedback__control js-form-control">
                 <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
@@ -1856,14 +1885,14 @@
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Задайте вопрос</legend>
               <div class="feedback__control js-form-control">
-                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" id="question-theme">
+                <label class="feedback__label feedback__label_select"">Тема вопроса</label>
+                        <select class=" feedback__select select select_bord js-select">
                   <option value="Товары, акции, скидки">Товары, акции, скидки</option>
                   <option value="Техническая поддержка">Техническая поддержка</option>
                   <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
                   <option value="Возврат товара">Возврат товара</option>
                   <option value="Другое">Другое</option>
-                </select>
+                  </select>
               </div>
               <div class="feedback__control js-form-control">
                 <label class="feedback__label" for="order-number">Номер заказа</label>

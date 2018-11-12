@@ -7,6 +7,10 @@
 	+sm
 		padding-bottom: 8px
 		text-align: center
+	&_low
+		margin-top: 0
+		+md
+			margin-top: 0
 	&__col
 		+md
 			margin-bottom: 32px
@@ -39,12 +43,18 @@
 		+hover
 			color: $black
 	&__social
-		margin-top: 12px
+		margin-top: 22px
+		.social__link
+			background: none
+			color: $black
 	&__hashtag
 		margin-top: 12px
+		margin-left: -10px
 		color: $black 
 		+f(20px,400,1)
 		display: block
+		+sm
+			margin-left: 0
 .social
 	font-size: 0
 	&__link
@@ -81,7 +91,7 @@
 		.icon-vk
 			font-size: 12px
 		.icon-facebook
-			font-size: 18px
+			// font-size: 18px
 		.icon-google-plus
 			font-size: 14px
 		&_sm

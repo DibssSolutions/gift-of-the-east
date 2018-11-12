@@ -269,6 +269,13 @@
 						{% endfor %}
 					</div>
 				</div>
+				<div class="catalog-navigation">
+					{{mixins.showMore({
+						link: 'Показать еще',
+						details: 'Показано 50 из 378'
+					})}}
+					{{ mixins.pagination() }}
+				</div>
 			</div>
 		</div>
 	</div>

@@ -1,5 +1,5 @@
 <!-- begin footer -->
-<footer class="footer">
+<footer class="footer{% if footerClass %} footer_low {% endif %}">
 	<div class="footer__inner inner">
 		<div class="footer__row row">
 			{% for col in [
@@ -18,7 +18,7 @@
 				{
 					title: "КОНТАКТЫ",
 					tel: "+7 (495) 661 - 0101",
-					listCont: ["Служба клиентской поддержки", "пн–вс 9:00 до 18:00", "сб 9:00 до 16:00"],
+					listCont: ["Служба клиентской поддержки"],
 					soc: ['vk', 'facebook','odnoklassniki','instagram'],
 					hashtag: "#Дары_Востока"
 				}

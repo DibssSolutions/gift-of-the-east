@@ -19,7 +19,7 @@
         <div class="header__top">
           <div class="header__inner header__mobile inner">
             <div class="header__open md-show">
-              <button type="button" class="js-open-mob-menu">
+              <button type="button" class="js-open-mob-menu open-mob-menu">
                 <svg class="icon icon-bars">
                   <use xlink:href="img/sprite.svg#icon-bars"></use>
                 </svg>
@@ -91,10 +91,10 @@
                     </ul>
                   </div>
                 </div>
-                <a href="#" class="signin__item" data-modal-control="login">
+                <a href="#" class="signin__item md-hide" data-modal-control="login">
                   <span class="md-hide">Войти</span></a>
                 <span class="signin__slash md-hide">/</span>
-                <a href="#" class="signin__item" data-modal-control="registration-tab">
+                <a href="#" class="signin__item md-hide" data-modal-control="registration-tab">
                   <span class="md-hide">Регистрация</span></a>
               </div>
               <!-- end signin -->
@@ -663,126 +663,327 @@
         </div>
         <div class="catalog-single">
           <div class="row">
-            <div class="col col-25 md-hide">
-              <aside class="sidebar">
-                <h4 class="sidebar__title" data-stagger-show>Каталог</h4>
-                <div class="sidebar__list js-sidebar-container">
-                  <ul class="sidebar-list">
-                    <li class="sidebar-list__item">
-                      <a href="#">ИЗДЕЛИЯ ИЗ НАТУРАЛЬНЫХ КАМНЕЙ</a>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">МУРАНСКОЕ СТЕКЛО</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item is-open">
-                      <a href="#">ПРЕДМЕТЫ ИНТЕРЬЕРА</a>
-                      <ul class="sidebar-list__secondary-list">
-                        <li class="sidebar-list__item is-active">
-                          <a href="#">Вазы</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Музыкальные ретро центры, ретро телефоны </a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Картины, декоративные тарелки</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Фоторамки</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Светильники</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Подсвечники</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Фонтаны</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Часы</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Шкатулки, книги-сейфы, ключницы</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Мебель, глобус-бары</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Барометры</a>
-                        </li>
-                        <li class="sidebar-list__item ">
-                          <a href="#">Корабли</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">ПИТЕВАЯ ПОСУДА, ФЛЯЖКИ, БОЧКИ ДЛЯ ВИНА</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">ПОСУДА И СЕРВИРОВКА</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">СТАТУЭТКИ, КУКЛЫ</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">ПРИНАДЛЕЖНОСТИ ДЛЯ ПИСЬМА</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">КАЛЬЯНЫ, <br> КУРИТЕЛЬНЫЕ ПРИНАДЛЕЖНОСТИ</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">ПИТЕВАЯ ПОСУДА, ФЛЯЖКИ, БОЧКИ ДЛЯ ВИНА</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">НАСТОЛЬНЫЕ ИГРЫ</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">СУВЕНИРНОЕ ОРУЖИЕ</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">ФЭН–ШУЙ</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">РЕЛИГИОЗНЫЕ ПОДАРКИ</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">СУВЕНИРНЫЕ ИЗДЕЛИЯ, КОПИЛКИ, АНТИСТРЕССЫ</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                    <li class="sidebar-list__item ">
-                      <a href="#">СИМВОЛЫ ГОРОДА ОМСКА</a>
-                      <ul class="sidebar-list__secondary-list">
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </aside>
-            </div>
-            <div class="col col-75 col-md-100">
+            <!-- <div class="col col-25 md-hide">
+					<aside class="sidebar">
+						<h4 class="sidebar__title" data-stagger-show>Каталог</h4>
+						<div class="sidebar__list js-sidebar-container">
+							<ul class="sidebar-list">
+								
+									
+										<li class="sidebar-list__item">
+											<a href="#">ИЗДЕЛИЯ ИЗ НАТУРАЛЬНЫХ КАМНЕЙ</a>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">МУРАНСКОЕ СТЕКЛО</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item is-open">
+											<a href="#">ПРЕДМЕТЫ ИНТЕРЬЕРА</a>
+											<ul class="sidebar-list__secondary-list">
+												
+													<li class="sidebar-list__item is-active">
+														<a href="#">Вазы</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Музыкальные ретро центры, ретро телефоны </a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Картины, декоративные тарелки</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Фоторамки</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Светильники</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Подсвечники</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Фонтаны</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Часы</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Шкатулки, книги-сейфы, ключницы</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Мебель, глобус-бары</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Барометры</a>
+													</li>
+												
+													<li class="sidebar-list__item ">
+														<a href="#">Корабли</a>
+													</li>
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">ПИТЕВАЯ ПОСУДА, ФЛЯЖКИ, БОЧКИ ДЛЯ ВИНА</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">ПОСУДА И СЕРВИРОВКА</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">СТАТУЭТКИ, КУКЛЫ</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">ПРИНАДЛЕЖНОСТИ ДЛЯ ПИСЬМА</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">КАЛЬЯНЫ, <br> КУРИТЕЛЬНЫЕ ПРИНАДЛЕЖНОСТИ</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">ПИТЕВАЯ ПОСУДА, ФЛЯЖКИ, БОЧКИ ДЛЯ ВИНА</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">НАСТОЛЬНЫЕ ИГРЫ</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">СУВЕНИРНОЕ ОРУЖИЕ</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">ФЭН–ШУЙ</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">РЕЛИГИОЗНЫЕ ПОДАРКИ</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">СУВЕНИРНЫЕ ИЗДЕЛИЯ, КОПИЛКИ, АНТИСТРЕССЫ</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+									
+										<li class="sidebar-list__item ">
+											<a href="#">СИМВОЛЫ ГОРОДА ОМСКА</a>
+											<ul class="sidebar-list__secondary-list">
+												
+											</ul>
+										</li>
+									
+								
+							</ul>
+						</div>
+					</aside>
+				</div> -->
+            <div class="col col-md-100">
               <div data-stagger-show>
+                <section class="filter js-drop">
+                  <div class="filter__top js-drop-shows">
+                    <button class="filter-btn js-open-drop">
+                      <span>Фильтры</span>
+                      <svg class="icon icon-chevron-down">
+                        <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
+                      </svg>
+                    </button>
+                    <button class="btn-reset js-filter-reset">
+                      <svg class="icon icon-refresh">
+                        <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                      </svg>
+                      <span>Сбросить фильтры</span>
+                    </button>
+                    <div class="filter__top-select">
+                      <span class="md-hide">Упорядочить</span>
+                      <select class="select select_bord js-select" data-width="216">
+                        <option value="Cначала новинки">Cначала новинки</option>
+                        <option value="Цена по возрастанию">Цена по возрастанию</option>
+                        <option value="Цена по убыванию">Цена по убыванию</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="filter__bottom js-drop-hidden js-main-filter" style="display: none;">
+                    <div class="filter__range">
+                      <div class="dropdown dropdown-range">
+                        <a class="dropdown-toggle btn-light" href="#" role="button" id="dropdownRangeLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Цена </a>
+                        <div class="dropdown-menu dropdown-menu-range js-range-container" aria-labelledby="dropdownRangeLink">
+                          <div class="dropdown-menu__row">
+                            <span>Диапазон цен</span>
+                            <button type="button" class="js-range-reset btn-reset">
+                              <svg class="icon icon-refresh">
+                                <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                              </svg>
+                              <span>Сбросить</span>
+                            </button>
+                          </div>
+                          <div class="dropdown-menu__row">
+                            <div class="dropdown-menu__input">
+                              <input type="text" class="input input_range js-range-min js-range-input">
+                              <span class="input-addon"> от </span>
+                            </div>
+                            <div class="dropdown-menu__input">
+                              <input type="text" class="input input_range js-range-max js-range-input">
+                              <span class="input-addon"> до </span>
+                            </div>
+                          </div>
+                          <div class="dropdown-menu__row dropdown-menu__row_slider">
+                            <div class="js-range-slider range-slider" data-range-max="48900" data-range-min="199" data-range-start="199" data-range-end="48900"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter__select">
+                      <select class="select js-select select_bord" data-width="232" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Категория товара">
+                        <option value="Вазы" data-subtext="321">Вазы</option>
+                        <option value="Музыкальные ретро центры, ретро телефоны" data-subtext="19">Музыкальные ретро центры, ретро телефоны</option>
+                        <option value="Картины, декоративные тарелки" data-subtext="24">Картины, декоративные тарелки</option>
+                        <option value="Фоторамки" data-subtext="11">Фоторамки</option>
+                        <option value="Подсвечники" data-subtext="21">Подсвечники</option>
+                        <option value="Фонтаны" data-subtext="8">Фонтаны</option>
+                        <option value="Шкатулки, книги-сейфы, ключницы" data-subtext="45">Шкатулки, книги-сейфы, ключницы</option>
+                        <option value="Мебель, глобус-бары" data-subtext="17">Мебель, глобус-бары</option>
+                        <option value="Барометры" data-subtext="5">Барометры</option>
+                        <option value="Корабли" data-subtext="4">Корабли</option>
+                      </select>
+                    </div>
+                    <div class="filter__select">
+                      <select class="select js-select select_bord" data-width="232" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Наличие в магазинах">
+                        <option value="70 лет Октября, 25 к.2 (Континент 2)">70 лет Октября, 25 к.2 (Континент 2)</option>
+                        <option value="Бульвар Архитекторов, 35 (Мега)">Бульвар Архитекторов, 35 (Мега)</option>
+                        <option value="ул.70 лет Октября, 19 (Фестиваль)">ул.70 лет Октября, 19 (Фестиваль)</option>
+                        <option value="пр.Комарова, 6 к.1 (Маяк–3)">пр.Комарова, 6 к.1 (Маяк–3)</option>
+                        <option value="ул.Карла Маркса, 84 (Привокзальный)">ул.Карла Маркса, 84 (Привокзальный)</option>
+                        <option value="ул.Карла Маркса, 24 (Каскад)">ул.Карла Маркса, 24 (Каскад)</option>
+                      </select>
+                    </div>
+                    <div class="filter__select">
+                      <select class="select select_color js-select select_bord" data-width="101" multiple="multiple" title="Цвет" data-selected-text-format="count" data-count-selected-text="{0} из {1}" data-actions-box="true"
+                        data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все">
+                        <option value="#FBC55A" data-icon="icon-color icon-color-yellow">Желтый / Золотой</option>
+                        <option value="#E6CDA9" data-icon="icon-color icon-color-brown">Бежевый / Коричневый</option>
+                        <option value="#FF7043" data-icon="icon-color icon-color-orange">Оранжевый</option>
+                        <option value="#E61739" data-icon="icon-color icon-color-red">Красный</option>
+                        <option value="#7A43DA" data-icon="icon-color icon-color-purple">Фиолетовый / Пурпурный</option>
+                        <option value="#2371CB" data-icon="icon-color icon-color-blue">Синий</option>
+                        <option value="#16B9C5" data-icon="icon-color icon-color-turquoise">Бирюзовый</option>
+                        <option value="#23B684" data-icon="icon-color icon-color-green">Зеленый</option>
+                        <option value="multiple" data-icon="icon-color icon-color-multiple">Мультиколор</option>
+                        <option value="#272727" data-icon="icon-color icon-color-black">Черный</option>
+                      </select>
+                    </div>
+                    <div class="filter__select">
+                      <select class="select js-select select_bord" data-width="145" multiple="multiple" data-actions-box="true" data-actions-selected-all-text="Выбрано" data-actions-deselected-all-text="Все" title="Коллекция">
+                        <option value="Коллекция красная">Коллекция красная</option>
+                        <option value="Коллекция синяя">Коллекция синяя</option>
+                        <option value="Коллекция зеленая">Коллекция зеленая</option>
+                      </select>
+                    </div>
+                    <div class="filter__check">
+                      <!-- Start checked-btn -->
+                      <label class="checked-btn checked-btn_small">
+                        <input type="checkbox" name="checkbox-btn" data-validation="required">
+                        <span class="checked-btn__text">Редкая находка</span>
+                        <span class="checked-btn__text checked-btn__text_checked">Редкая находка</span>
+                      </label>
+                      <!-- End checked-btn -->
+                    </div>
+                    <div class="filter__check">
+                      <!-- Start checked-btn -->
+                      <label class="checked-btn checked-btn_small">
+                        <input type="checkbox" name="checkbox-btn" data-validation="required">
+                        <span class="checked-btn__text">Товары со скидкой</span>
+                        <span class="checked-btn__text checked-btn__text_checked">Товары со скидкой</span>
+                      </label>
+                      <!-- End checked-btn -->
+                    </div>
+                    <div class="filter__check">
+                      <!-- Start checked-btn -->
+                      <label class="checked-btn checked-btn_small">
+                        <input type="checkbox" name="checkbox-btn" data-validation="required">
+                        <span class="checked-btn__text">Новинка</span>
+                        <span class="checked-btn__text checked-btn__text_checked">Новинка</span>
+                      </label>
+                      <!-- End checked-btn -->
+                    </div>
+                    <div class="filter__products-number"> 378 товаров </div>
+                  </div>
+                </section>
               </div>
               <div class="catalog-cards">
                 <div class="row catalog-cards__row">
@@ -1532,6 +1733,37 @@
                   </div>
                 </div>
               </div>
+              <div class="catalog-navigation catalog-navigation_center">
+                <div class="show-more">
+                  <div class="show-more__text">
+                    <a href="#" class="show-more__link"> Показать еще </a>
+                    <span class="show-more__details"> Показано 50 из 378 </span>
+                  </div>
+                </div>
+                <nav class="pagination-wrap">
+                  <ul class="pagination">
+                    <li class="pagination__item pagination__item_prev is-hidden">
+                      <a href="#" class="pagination__link">
+                        <svg class="icon icon-arrow-left">
+                          <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                        </svg>
+                      </a>
+                    </li>
+                    <li class="pagination__item is-active"><span class="pagination__link">1</span></li>
+                    <li class="pagination__item"><a href="#" class="pagination__link">2</a></li>
+                    <li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
+                    <li class="pagination__item"><span class="pagination__link">...</span></li>
+                    <li class="pagination__item"><a href="#" class="pagination__link">8</a></li>
+                    <li class="pagination__item pagination__item_next">
+                      <a href="#" class="pagination__link">
+                        <svg class="icon icon-arrow-right">
+                          <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
@@ -1572,8 +1804,6 @@
               <div class="footer__item"><a href="#" class="footer__tel">+7 (495) 661 - 0101</a></div>
               <ul class="footer__list footer__list_contact">
                 <li class="footer__item">Служба клиентской поддержки</li>
-                <li class="footer__item">пн–вс 9:00 до 18:00</li>
-                <li class="footer__item">сб 9:00 до 16:00</li>
               </ul>
               <div class="footer__social social">
                 <a href="#" class="social__link social__link_vk">
@@ -1633,14 +1863,14 @@
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Задайте вопрос</legend>
               <div class="feedback__control js-form-control">
-                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" id="question-theme">
+                <label class="feedback__label feedback__label_select"">Тема вопроса</label>
+                        <select class=" feedback__select select select_bord js-select">
                   <option value="Товары, акции, скидки">Товары, акции, скидки</option>
                   <option value="Техническая поддержка">Техническая поддержка</option>
                   <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
                   <option value="Возврат товара">Возврат товара</option>
                   <option value="Другое">Другое</option>
-                </select>
+                  </select>
               </div>
               <div class="feedback__control js-form-control">
                 <label class="feedback__label feedback__label_textarea" for="question">Вопрос</label>
@@ -1690,14 +1920,14 @@
             <fieldset class="feedback__fieldset">
               <legend class="feedback__legend">Задайте вопрос</legend>
               <div class="feedback__control js-form-control">
-                <label class="feedback__label feedback__label_select" for="question-theme">Тема вопроса</label>
-                <select class="feedback__select select select_bord js-select" id="question-theme">
+                <label class="feedback__label feedback__label_select"">Тема вопроса</label>
+                        <select class=" feedback__select select select_bord js-select">
                   <option value="Товары, акции, скидки">Товары, акции, скидки</option>
                   <option value="Техническая поддержка">Техническая поддержка</option>
                   <option value="Доставка и самовывоз заказа">Доставка и самовывоз заказа</option>
                   <option value="Возврат товара">Возврат товара</option>
                   <option value="Другое">Другое</option>
-                </select>
+                  </select>
               </div>
               <div class="feedback__control js-form-control">
                 <label class="feedback__label" for="order-number">Номер заказа</label>

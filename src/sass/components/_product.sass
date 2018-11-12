@@ -8,6 +8,7 @@
 	+md
 		padding: 16px 16px 79px
 		margin-bottom: 12px
+		border: 1px solid $gallery
 	// &.is-active
 	// 	z-index: 10
 	&_simple
@@ -16,6 +17,7 @@
 	.catalog-cards &
 		height: 100%
 	&:hover
+		border-color: transparent
 		&:before
 			opacity: 1
 		.product__footer
@@ -43,8 +45,8 @@
 			left: 0
 			right: 0
 			bottom: 0
-			visibility: visible
-			opacity: 1
+			// visibility: visible
+			// opacity: 1
 	&__img
 		position: relative
 		font-size: 0
@@ -88,6 +90,8 @@
 		visibility: hidden
 		transition: opacity .3s ease-in-out, visibility .3s ease-in-out
 		display: flex
+		+lg
+			justify-content: flex-end
 		+md
 			left: 16px
 			right: 16px
@@ -96,12 +100,12 @@
 			opacity: 1
 		+sm
 			margin-top: 20px
-			justify-content: flex-end
+			// justify-content: flex-end
 	&__btn
 		padding: 15px 5px 14px
 		width: 100%
 		display: block
-		+sm 
+		+lg 
 			width: 48px
 		.product_simple &
 			padding: 15px 10px 14px 
@@ -118,12 +122,12 @@
 			.catalog-cards &
 				margin-left: 0
 				margin-right: 3px
-				+lg
-					display: none
+				// +lg
+				// 	display: none
 				+md
 					display: inline-block
 	&__btn-text
-		+sm 
+		+lg 
 			display: none
 	&__like
 		margin-left: 8px
