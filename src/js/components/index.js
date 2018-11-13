@@ -23,5 +23,6 @@ import './_initSticky';
 import './_accordion';
 import './_mp';
 import './_photo-gallery';
+import './_breadcrumbs';
 // import './_sequence';
 // import "./_startingAnimation";

@@ -107,12 +107,30 @@
 		</li>
 		{% else %}
 			{% if loop.last %}
-			<li class="breadcrumbs__item">
-				<span>{{ item }}</span>
+			<li class="breadcrumbs__item js-breadcrumbs-item{% if item.subList %} has-list{% endif %}">
+				<span>{{ item }}{% if item.subList %} <svg class="icon icon-chevron-down"><use xlink:href="img/sprite.svg#icon-chevron-left"></use></svg>{% endif %}</span>
+				{% if item.subList %}
+					<div class="breadcrumbs__drop">
+						<ul class="breadcrumbs__sublist">
+							{% for link in item.subList %}
+								<li><a href="#">{{ link }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
 			</li>
 			{% else %}
-			<li class="breadcrumbs__item">
-				<a href="#">{{ item }}</a>
+			<li class="breadcrumbs__item js-breadcrumbs-item{% if item.subList %} has-list{% endif %}">
+				<a href="#">{{ item }}{% if item.subList %} <svg class="icon icon-chevron-down"><use xlink:href="img/sprite.svg#icon-chevron-left"></use></svg>{% endif %}</a>
+				{% if item.subList %}
+					<div class="breadcrumbs__drop">
+						<ul class="breadcrumbs__sublist">
+							{% for link in item.subList %}
+								<li><a href="#">{{ link }}</a></li>
+							{% endfor %}
+						</ul>
+					</div>
+				{% endif %}
 			</li>
 			{% endif %}
 		{% endif %}

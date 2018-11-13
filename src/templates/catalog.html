@@ -4,7 +4,29 @@
 {% import "partials/catalog/_filter.html" as filterBuilder %}
 {% block content %}
 	<div class="inner">
-		{{ mixins.breadcrumbs({ list: ['Назад','Главная','Каталог'] }) }}
+		<ul class="breadcrumbs">
+			<li class="breadcrumbs__item">
+				<a href="#"><svg class="icon icon-chevron-left"><use xlink:href="img/sprite.svg#icon-chevron-left"></use></svg>Назад</a>
+			</li>
+			<li class="breadcrumbs__item js-breadcrumbs-item">
+				<a href="#">Главная</a>
+			</li>
+			<li class="breadcrumbs__item js-breadcrumbs-item has-list">
+				<span class="js-breadcrumbs-link">Каталог {{ mixins.icon('chevron-down') }}</span>
+				<div class="breadcrumbs__drop js-breadcrumbs-drop">
+					<ul class="breadcrumbs__sublist">
+						{% for link in [
+								"Подкатегория при наведении",
+								"Подкатегория",
+								"Подкатегория",
+								"Подкатегория"
+							] %}
+							<li><a href="#">{{ link }}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</li>
+		</ul>
 		<div class="catalog-head">
 			<div class="row">
 				<div class="col col-25 md-hide"></div>

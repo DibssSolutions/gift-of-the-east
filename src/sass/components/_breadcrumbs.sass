@@ -11,6 +11,7 @@
 		vertical-align: top
 		display: inline-block
 		color: $gray
+		user-select: none
 		&:not(:first-child)
 			padding-left: 21px
 			+md
@@ -46,3 +47,42 @@
 			transition: color .3s
 			vertical-align: top
 			display: inline-block
+		.icon-chevron-down
+			margin-left: 10px
+			margin-top: 6px
+			font-size: 7px
+			color: $silver 
+			transition: color .3s, transform .3s
+			vertical-align: top
+			display: inline-block
+			.breadcrumbs__item.is-open &
+				transform: rotate(180deg)
+		&.has-list
+			cursor: pointer
+
+	&__drop
+		opacity: 0
+		visibility: hidden
+		position: absolute
+		top: calc(100% + 8px)
+		left: -15px
+		background-color: $white
+		width: 225px
+		transition: opacity .3s, visibility .3s
+		box-shadow: 0 6px 12px rgba(#000, .16)
+		.breadcrumbs__item.is-open &
+			opacity: 1
+			visibility: visible
+			z-index: 2
+	&__sublist
+		display: flex
+		flex-direction: column
+	.breadcrumbs__sublist
+		a
+			padding: 9px 0 8px 16px
+			&:hover
+				color: initial
+		li
+			transition: background-color .3s
+			&:hover
+				background-color: $gallery

@@ -515,21 +515,30 @@
       </header>
       <!-- end header -->
       <div class="inner">
-        <!-- begin breadcrumbs -->
         <ul class="breadcrumbs">
           <li class="breadcrumbs__item">
             <a href="#"><svg class="icon icon-chevron-left">
                 <use xlink:href="img/sprite.svg#icon-chevron-left"></use>
               </svg>Назад</a>
           </li>
-          <li class="breadcrumbs__item">
+          <li class="breadcrumbs__item js-breadcrumbs-item">
             <a href="#">Главная</a>
           </li>
-          <li class="breadcrumbs__item">
-            <span>Каталог</span>
+          <li class="breadcrumbs__item js-breadcrumbs-item has-list">
+            <span class="js-breadcrumbs-link">Каталог <svg class="icon icon-chevron-down">
+                <use xlink:href="img/sprite.svg#icon-chevron-down"></use>
+              </svg>
+            </span>
+            <div class="breadcrumbs__drop js-breadcrumbs-drop">
+              <ul class="breadcrumbs__sublist">
+                <li><a href="#">Подкатегория при наведении</a></li>
+                <li><a href="#">Подкатегория</a></li>
+                <li><a href="#">Подкатегория</a></li>
+                <li><a href="#">Подкатегория</a></li>
+              </ul>
+            </div>
           </li>
         </ul>
-        <!-- end breadcrumbs -->
         <div class="catalog-head">
           <div class="row">
             <div class="col col-25 md-hide"></div>
