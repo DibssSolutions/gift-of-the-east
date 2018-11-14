@@ -55,7 +55,8 @@
 			transition: color .3s, transform .3s
 			vertical-align: top
 			display: inline-block
-			.breadcrumbs__item.is-open &
+		&.is-open
+			.icon-chevron-down
 				transform: rotate(180deg)
 		&.has-list
 			cursor: pointer
