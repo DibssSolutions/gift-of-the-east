@@ -1,4 +1,4 @@
-import { MENU_OPEN, OPEN } from '../constants';
+import { MENU_OPEN, OPEN, ACTIVE } from '../constants';
 import { buildIcon } from '../utils';
 
 const navItem = $('.js-nav-item');
@@ -51,6 +51,12 @@ backBtn.each((index, el) => {
     const subMenuParent = $(el).closest('.js-nav-item');
     subMenuParent.removeClass(OPEN);
     // e.stopPropagation();
+    const mainParent = $(el).closest('[data-tabs]');
+    const tabsControls = mainParent.find('[data-tabs-control]');
+    tabsControls.each((i, el) => {
+      console.log(111);
+      $(el).removeClass(ACTIVE);
+    });
     return false;
   });
 });

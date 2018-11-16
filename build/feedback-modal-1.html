@@ -211,99 +211,356 @@
                       </svg>
                     </span>
                   </a>
-                  <span class="nav__wrap js-nav-child">
+                  <span class="nav__wrap js-nav-wrap-dark">
                     <h4 class="nav__mob-title"> КАТАЛОГ </h4>
                     <button class="nav__back js-mob-back">
                       <svg class="icon icon-arrow-left">
                         <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
                       </svg>
                     </button>
-                    <span class="nav__inner inner">
-                      <ul class="nav__items">
-                        <li>
-                          <a href="#">Изделия из натуральных камней</a>
-                        </li>
-                        <li>
-                          <a href="#">Муранское стекло</a>
-                        </li>
-                        <li>
-                          <a href="#">Предметы интерьера</a>
-                        </li>
-                        <li>
-                          <a href="#">Питьевая посуда, фляжки, <br>бочки для вина</a>
-                        </li>
-                        <li>
-                          <a href="#">Подсвечники</a>
-                        </li>
-                        <li>
-                          <a href="#">Посуда и сервировка</a>
-                        </li>
-                        <li>
-                          <a href="#">Статуэтки, куклы</a>
-                        </li>
-                        <li>
-                          <a href="#">Принадлежности для письма</a>
-                        </li>
-                        <li>
-                          <a href="#">Кальяны, курительные принадлежности</a>
-                        </li>
-                        <li>
-                          <a href="#">Настольные игры</a>
-                        </li>
-                        <li>
-                          <a href="#">Сувенирное оружие</a>
-                        </li>
-                        <li>
-                          <a href="#">Фэн-шуй</a>
-                        </li>
-                        <li>
-                          <a href="#">Религиозные подарки</a>
-                        </li>
-                        <li>
-                          <a href="#">Сувенирные изделия, копилки, антистрессы</a>
-                        </li>
-                        <li>
-                          <a href="#">Символы г. Омска</a>
-                        </li>
-                        <li>
-                          <a href="#">Вазы</a>
-                        </li>
-                        <li>
-                          <a href="#">Музыкальные ретро центры, <br>ретро телефоны</a>
-                        </li>
-                        <li>
-                          <a href="#">Картины, декоративные тарелки</a>
-                        </li>
-                        <li>
-                          <a href="#">Фоторамки</a>
-                        </li>
-                        <li>
-                          <a href="#">Светильники</a>
-                        </li>
-                        <li>
-                          <a href="#">Подсвечники</a>
-                        </li>
-                        <li>
-                          <a href="#">Фонтаны</a>
-                        </li>
-                        <li>
-                          <a href="#">Часы</a>
-                        </li>
-                        <li>
-                          <a href="#">Шкатулки, книги-сейфы, <br>ключницы</a>
-                        </li>
-                        <li>
-                          <a href="#">Мебель, глобус-бары</a>
-                        </li>
-                        <li>
-                          <a href="#">Барометры</a>
-                        </li>
-                        <li>
-                          <a href="#">Корабли</a>
-                        </li>
-                      </ul>
-                      <span class="nav__img">
-                        <img src="./img/nav-img@2x.jpg" alt="img">
+                    <span class="nav__inner inner" data-tabs="data-tabs">
+                      <span class="nav__items-wrap">
+                        <span class="nav__items-current" data-tabs-current="data-tabs-current"></span>
+                        <ul class="nav__items">
+                          <li class="nav__item-column" data-tabs-control="natural-stones">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Изделия из натуральных камней</span>
+                              <span class="header__mob-next">
+                                <svg class="icon icon-chevron-right">
+                                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                                </svg>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column" data-tabs-control="murano-class">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Муранское стекло</span>
+                              <span class="header__mob-next">
+                                <svg class="icon icon-chevron-right">
+                                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                                </svg>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column" data-tabs-control="interior-items">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Предметы интерьера</span>
+                              <span class="header__mob-next">
+                                <svg class="icon icon-chevron-right">
+                                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                                </svg>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column" data-tabs-control="drinking-ware">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Питьевая посуда, фляжки, <br>бочки для вина</span>
+                              <span class="header__mob-next">
+                                <svg class="icon icon-chevron-right">
+                                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                                </svg>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Подсвечники</span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Посуда и сервировка</span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Статуэтки, куклы</span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Принадлежности для письма</span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Кальяны, курительные принадлежности</span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Настольные игры</span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Сувенирное оружие</span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Фэн-шуй</span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column" data-tabs-control="religious-gifts">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Религиозные подарки</span>
+                              <span class="header__mob-next">
+                                <svg class="icon icon-chevron-right">
+                                  <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+                                </svg>
+                              </span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Сувенирные изделия, копилки, антистрессы</span>
+                            </a>
+                          </li>
+                          <li class="nav__item-column">
+                            <a href="#" class="nav__link-column js-nav-link">
+                              <span class="nav__text-column">Символы г. Омска</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </span>
+                      <span class="nav__tabs-wrapper" data-tabs-wrapper="data-tabs-wrapper">
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=natural-stones>
+                          <h4 class="nav__mob-title"> Изделия из натуральных камней </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                            <li>
+                              <a href="#" class="nav__sublink">Вазы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Музыкальные ретро центры, <br>ретро телефоны</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Картины, декоративные тарелки</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Фоторамки</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Светильники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Подсвечники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Фонтаны</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Часы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Шкатулки, книги-сейфы, <br>ключницы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Мебель, глобус-бары</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Барометры</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Корабли</a>
+                            </li>
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=murano-class>
+                          <h4 class="nav__mob-title"> Муранское стекло </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                            <li>
+                              <a href="#" class="nav__sublink">Вазы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Музыкальные ретро центры, <br>ретро телефоны</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Картины, декоративные тарелки</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Фоторамки</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Светильники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Подсвечники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Фонтаны</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Часы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Шкатулки, книги-сейфы, <br>ключницы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Мебель, глобус-бары</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Барометры</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Корабли</a>
+                            </li>
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=interior-items>
+                          <h4 class="nav__mob-title"> Предметы интерьера </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                            <li>
+                              <a href="#" class="nav__sublink">Вазы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Музыкальные ретро центры, <br>ретро телефоны</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Картины, декоративные тарелки</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Фоторамки</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Светильники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Подсвечники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Фонтаны</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Часы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Шкатулки, книги-сейфы, <br>ключницы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Мебель, глобус-бары</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Барометры</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Корабли</a>
+                            </li>
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=drinking-ware>
+                          <h4 class="nav__mob-title"> Питьевая посуда, фляжки, <br>бочки для вина </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                            <li>
+                              <a href="#" class="nav__sublink">Фоторамки</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Светильники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Подсвечники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Фонтаны</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Часы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Шкатулки, книги-сейфы, <br>ключницы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Мебель, глобус-бары</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Барометры</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Корабли</a>
+                            </li>
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=religious-gifts>
+                          <h4 class="nav__mob-title"> Религиозные подарки </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                            <li>
+                              <a href="#" class="nav__sublink">Вазы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Музыкальные ретро центры, <br>ретро телефоны</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Картины, декоративные тарелки</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Фоторамки</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Светильники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Подсвечники</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Фонтаны</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Часы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Шкатулки, книги-сейфы, <br>ключницы</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Мебель, глобус-бары</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Барометры</a>
+                            </li>
+                            <li>
+                              <a href="#" class="nav__sublink">Корабли</a>
+                            </li>
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
                       </span>
                     </span>
                   </span>

@@ -8,7 +8,8 @@ import {
   widthMD,
   widthSM,
   PAUSED,
-  FULLSCREEN
+  FULLSCREEN,
+  WIN_WIDTH
 } from '../constants';
 import { buildIcon } from '../utils';
 import { initSliderButtonsEvents } from './_photo-gallery';
@@ -227,21 +228,29 @@ DOC.ready(() => {
 
     slider.on('init', () => {
       slider.addClass(INIT);
-      const video = $('video', slider)[0];
-      video.play();
       initControls();
     });
 
     slider.on('afterChange', (event, slick, currentSlide) => {
       // PAUSE ALL VIDEOS
-      const videos = $('.offers-slider__slide video');
-      videos.each((i, el) => {
-        $(el)[0].pause();
-      });
-      // PLAY CURRENT
-      let slides = $('.offers-slider__slide');
-      const videoCurrent = $(slides[currentSlide]).find('video')[0];
-      videoCurrent ? videoCurrent.play() : false;
+      if (WIN_WIDTH > widthMD) {
+        const videos = $('.offers-slider__slide video');
+        videos.each((i, el) => {
+          $(el)[0].pause();
+        });
+        // PLAY CURRENT
+        let slides = $('.offers-slider__slide');
+        const videoCurrent = $(slides[currentSlide]).find('video')[0];
+        if (videoCurrent) {
+          $(video).removeClass(PAUSED);
+          videoCurrent.play();
+        }
+      }
+    });
+
+    const video = $('.js-video');
+    video.each((i, el) => {
+      if(el.paused) $(el).addClass(PAUSED);
     });
 
     slider.slick({

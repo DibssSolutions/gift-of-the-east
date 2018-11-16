@@ -1,4 +1,4 @@
-import {ACTIVE, OPEN, DISABLED, BODY} from '../constants';
+import {ACTIVE, OPEN, DISABLED, BODY,WIN_WIDTH,widthMD} from '../constants';
 
 export default (() => {
 
@@ -39,6 +39,7 @@ export default (() => {
           control.addClass(DISABLED);
           continue;
         }
+        if(container.hasClass('js-no-init-active') && (WIN_WIDTH < widthMD)) continue;
         this.setActiveTab(control, container);
         break;
       }

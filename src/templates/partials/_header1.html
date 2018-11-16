@@ -192,23 +192,27 @@
                             inner: {
                                 list: [
                                     {
+                                        id: 'natural-stones',
                                         mainLink: 'Изделия из натуральных камней',
                                         subList: ['Вазы', 'Музыкальные ретро центры, <br>ретро телефоны', 'Картины, декоративные тарелки', 'Фоторамки', 'Светильники', 'Подсвечники', 'Фонтаны', 'Часы', 'Шкатулки, книги-сейфы, <br>ключницы', 'Мебель, глобус-бары', 'Барометры', 'Корабли'],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'murano-class',
                                         mainLink: 'Муранское стекло',
                                         subList: ['Вазы', 'Музыкальные ретро центры, <br>ретро телефоны', 'Картины, декоративные тарелки', 'Фоторамки', 'Светильники', 'Подсвечники', 'Фонтаны', 'Часы', 'Шкатулки, книги-сейфы, <br>ключницы', 'Мебель, глобус-бары', 'Барометры', 'Корабли'],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'interior-items',
                                         mainLink: 'Предметы интерьера',
                                         subList: ['Вазы', 'Музыкальные ретро центры, <br>ретро телефоны', 'Картины, декоративные тарелки', 'Фоторамки', 'Светильники', 'Подсвечники', 'Фонтаны', 'Часы', 'Шкатулки, книги-сейфы, <br>ключницы', 'Мебель, глобус-бары', 'Барометры', 'Корабли'],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'drinking-ware',
                                         mainLink: 'Питьевая посуда, фляжки, <br>бочки для вина',
-                                        subList: ['Вазы', 'Музыкальные ретро центры, <br>ретро телефоны', 'Картины, декоративные тарелки', 'Фоторамки', 'Светильники', 'Подсвечники', 'Фонтаны', 'Часы', 'Шкатулки, книги-сейфы, <br>ключницы', 'Мебель, глобус-бары', 'Барометры', 'Корабли'],
+                                        subList: ['Фоторамки', 'Светильники', 'Подсвечники', 'Фонтаны', 'Часы', 'Шкатулки, книги-сейфы, <br>ключницы', 'Мебель, глобус-бары', 'Барометры', 'Корабли'],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
@@ -244,6 +248,7 @@
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'religious-gifts',
                                         mainLink: 'Религиозные подарки',
                                         subList: ['Вазы', 'Музыкальные ретро центры, <br>ретро телефоны', 'Картины, декоративные тарелки', 'Фоторамки', 'Светильники', 'Подсвечники', 'Фонтаны', 'Часы', 'Шкатулки, книги-сейфы, <br>ключницы', 'Мебель, глобус-бары', 'Барометры', 'Корабли'],
                                         img: 'nav-img@2x.jpg'
@@ -313,48 +318,56 @@
                                     {% endif %}
                                 </a>
                                 {% if item.inner %}
-                                    <span class="nav__wrap js-nav-child">
+                                    <span class="nav__wrap js-nav-wrap-dark">
                                         <h4 class="nav__mob-title">
                                             {{item.text}}
                                         </h4>
                                         <button class="nav__back js-mob-back">
                                             {{mixins.icon('arrow-left')}}
                                         </button>
-                                        <span class="nav__inner inner">
-                                            <ul class="nav__items">
-                                                {% for links in item.inner.list %}
-                                                    <li class="nav__item-column js-nav-item">
-                                                        <a href="#" class="nav__link-column js-nav-link">
-                                                            <span class="nav__text-column">{{ links.mainLink | safe }}</span>
-                                                            {% if links.subList %}
-                                                                <span class="header__mob-next">
-                                                                    {{mixins.icon('chevron-right')}}
-                                                                </span>
-                                                            {% endif %}
-                                                        </a>
-                                                        {% if links.subList %}
-                                                            <span class="nav__sublist-wrap">
-                                                                <h4 class="nav__mob-title">
-                                                                    {{links.mainLink}}
-                                                                </h4>
-                                                                <button class="nav__back js-mob-back">
-                                                                    {{mixins.icon('arrow-left')}}
-                                                                </button>
-                                                                <ul class="nav__sublist js-nav-child">
-                                                                    {% for text in links.subList %}
-                                                                        <li>
-                                                                            <a href="#" class="nav__element">{{ text | safe }}</a>
-                                                                        </li>
-                                                                    {% endfor %}
-                                                                </ul>
-                                                                <span class="nav__img">
-                                                                    <img src="./img/{{ item.inner.img }}" alt="img">
-                                                                </span>
-                                                            </span>
-                                                        {% endif %}
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
+                                        <span class="nav__inner inner" data-tabs="data-tabs">
+                                            <span class="nav__items-wrap">
+                                                <span class="nav__items-current" data-tabs-current="data-tabs-current"></span>
+                                                <ul class="nav__items">
+                                                    {% for links in item.inner.list %}
+                                                        <li class="nav__item-column" {% if links.id %} data-tabs-control="{{ links.id }}"{% endif %}>
+                                                            <a href="#" class="nav__link-column js-nav-link">
+                                                                <span class="nav__text-column">{{ links.mainLink | safe }}</span>
+                                                                {% if links.subList %}
+                                                                    <span class="header__mob-next">
+                                                                        {{mixins.icon('chevron-right')}}
+                                                                    </span>
+                                                                {% endif %}
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </span>
+                                            <span class="nav__tabs-wrapper" data-tabs-wrapper="data-tabs-wrapper">
+                                            {% for links in item.inner.list %}
+                                                
+                                                {% if links.subList %}
+                                                    <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container={{ links.id }}>
+                                                        <h4 class="nav__mob-title">
+                                                            {{links.mainLink | safe}}
+                                                        </h4>
+                                                        <button class="nav__back js-mob-back">
+                                                            {{mixins.icon('arrow-left')}}
+                                                        </button>
+                                                        <ul class="nav__sublist js-nav-child">
+                                                            {% for text in links.subList %}
+                                                                <li>
+                                                                    <a href="#" class="nav__sublink">{{ text | safe }}</a>
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                        <span class="nav__img">
+                                                            <img src="./img/{{ links.img }}" alt="img">
+                                                        </span>
+                                                    </span>
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                </span>
                                         </span>
                                     </span>
                                 {% endif %}
