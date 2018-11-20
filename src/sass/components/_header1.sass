@@ -716,6 +716,11 @@
 			+md 
 				flex-direction: column
 				align-items: flex-start
+		&-current
+			+md
+				.header__mob-next
+					opacity: 0
+					visibility: hidden
 		&:before
 			position: absolute
 			content: ""
@@ -837,6 +842,7 @@
 			transition: transform 0.4s
 			&.is-open
 				transform: translateX(0)
+				height: 100%
 
 	&__sublist
 		width: 39%
