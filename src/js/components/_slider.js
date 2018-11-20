@@ -228,6 +228,8 @@ DOC.ready(() => {
 
     slider.on('init', () => {
       slider.addClass(INIT);
+      const video = $('video', slider)[0];
+      video.play();
       initControls();
     });
 
@@ -246,11 +248,6 @@ DOC.ready(() => {
           videoCurrent.play();
         }
       }
-    });
-
-    const video = $('.js-video');
-    video.each((i, el) => {
-      if(el.paused) $(el).addClass(PAUSED);
     });
 
     slider.slick({
@@ -286,6 +283,11 @@ DOC.ready(() => {
         }
       ]
     });
+
+    const video = $('.js-video');
+    video.each((i, el) => {
+      if(el.paused) $(el).addClass(PAUSED);
+    });
   });
 });
 
@@ -299,12 +301,20 @@ function initControls() {
   expandBtn.each((i, el) =>
     $(el).on('click', function(e) {
       slider.addClass(FULLSCREEN);
+      const video = $(this)
+        .closest('.package-offer__video-wrapper')
+        .find('video')[0];
+      $(video).prop('muted', false);
     })
   );
 
   compressBtn.each((i, el) =>
     $(el).on('click', function(e) {
       slider.removeClass(FULLSCREEN);
+      const video = $(this)
+        .closest('.package-offer__video-wrapper')
+        .find('video')[0];
+      $(video).prop('muted', true);
     })
   );
 

@@ -279,55 +279,58 @@
 
 {% macro product(props) %}
 <div class="product{% if props.class %} {{props.class}}{% endif %}">
-	<div class="product__img">
-		{% if props.action %}
-		<div class="price-below price-below_action js-drop js-price-below">
-			<div class="action-block js-open-drop">%</div>
-			<div class="price-below__drop js-drop-hidden">
-				<div class="price-below__info">
-					<p>Наши держатели карт получают возможность покупать товар по акциям.</p>
-					<p>Совершите первую покупку на любую сумму и получите карту Члена Клуба в подарок.</p>
+	
+	<a href="#" class="product__link">
+		<div class="product__img">
+			{% if props.action %}
+			<div class="price-below price-below_action js-drop js-price-below">
+				<div class="action-block js-open-drop">%</div>
+				<div class="price-below__drop js-drop-hidden">
+					<div class="price-below__info">
+						<p>Наши держатели карт получают возможность покупать товар по акциям.</p>
+						<p>Совершите первую покупку на любую сумму и получите карту Члена Клуба в подарок.</p>
+					</div>
+					<div class="price-below__fotter">
+						{{ price({
+							class: "price_red",
+							price: "1000 ₽",
+							text: "Розничная цена"
+						}) }}
+					</div>
 				</div>
-				<div class="price-below__fotter">
-					{{ price({
-						class: "price_red",
-						price: "1000 ₽",
-						text: "Розничная цена"
-					}) }}
-				</div>
-			</div>
-		</div>
-		{% endif %}
-		<img src="img/{{ props.srcImg }}" alt="{{ altImg }}">
-	</div>
-	<div class="product__wrap">
-		<div class="product__name">
-			{{ props.nameText }}
-		</div>
-		<div class="product__price{% if props.priceRed %} product__price_red{% endif %}">
-			<span>{{ props.price }}</span>
-			{% if props.priceOld %}
-				<span class="is-old">{{ props.priceOld }}</span>
-			{% endif %}
-		</div>
-		{% if props.expireTime %}
-			<div class="product__expire">
-				{{icon('clock-outline')}}
-				<span>{{props.expireTime}}</span>
-			</div>
-		{% endif %}
-		<div class="product__footer">
-			<button type="button" class="product__btn btn" type="button">
-			{{ icon('shopping-bag') }}
-			<span class="product__btn-text">{{ props.textBtn }}</span>
-			</button>
-			{% if props.likebtn !== false %}
-			<div class="product__like">
-				{{ likebtn() }}
 			</div>
 			{% endif %}
-		</div>	
-	</div>
+			<img src="img/{{ props.srcImg }}" alt="{{ altImg }}">
+		</div>
+		<div class="product__wrap">
+			<div class="product__name">
+				{{ props.nameText }}
+			</div>
+			<div class="product__price{% if props.priceRed %} product__price_red{% endif %}">
+				<span>{{ props.price }}</span>
+				{% if props.priceOld %}
+					<span class="is-old">{{ props.priceOld }}</span>
+				{% endif %}
+			</div>
+			{% if props.expireTime %}
+				<div class="product__expire">
+					{{icon('clock-outline')}}
+					<span>{{props.expireTime}}</span>
+				</div>
+			{% endif %}
+		</div>
+	</a>
+	<div class="product__footer">
+		<button type="button" class="product__btn btn" type="button">
+		{{ icon('shopping-bag') }}
+		<span class="product__btn-text">{{ props.textBtn }}</span>
+		</button>
+		{% if props.likebtn !== false %}
+		<div class="product__like">
+			{{ likebtn() }}
+		</div>
+		{% endif %}
+	</div>	
 </div>
 {% endmacro %}
 

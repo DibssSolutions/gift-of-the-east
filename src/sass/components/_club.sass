@@ -6,11 +6,15 @@
         &.current-item 
             background-color: $gallery
     &__link
+        display: block
         font-size: 13px
         font-weight: 500
         line-height: 1.385
         color: $black
         text-transform: uppercase
+        transition: color 0.4s
+        +hover
+            color: $lightBrown
 
 .info-article
     &:not(:first-child)

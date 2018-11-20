@@ -802,13 +802,13 @@ $delay: 3s
 		justify-content: space-between
 		align-items: center
 		margin-bottom: 22px
+		+sm
+			flex-direction: column
 	&__title
 		margin-bottom: 0
 		transition: color 0.4s
 		+hover
 			color: $lightBrown
-		+sm
-			margin-bottom: 0
 	&__text
 		+f(17px, 400, 1.588)
 		max-height: 80px

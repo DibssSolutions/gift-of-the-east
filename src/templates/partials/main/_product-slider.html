@@ -93,7 +93,7 @@
     {
         video: {
             poster: 'video_poster.jpg',
-            src: 'loading_animation.webm'
+            src: 'red-hot-chili-peppers-otherside.mp4'
         },
         title: "Отпуск у себя дома",
         btnText: "Все акции",
@@ -133,7 +133,7 @@
                     <div class="package-offer__media-wrapper">
                         {% if slide.video %}
                             <div class="package-offer__video-wrapper">
-                                <video class="package-offer__video js-video" loop="true" poster="img/{{slide.video.poster}}">
+                                <video class="package-offer__video js-video" loop="true" muted poster="img/{{slide.video.poster}}">
                                     <source src="video/{{slide.video.src}}" type="video/webm">
                                     Your browser doesn't support HTML5 video tag.
                                 </video>
