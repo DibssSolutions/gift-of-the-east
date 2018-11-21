@@ -54,7 +54,6 @@ backBtn.each((index, el) => {
     const mainParent = $(el).closest('[data-tabs]');
     const tabsControls = mainParent.find('[data-tabs-control]');
     tabsControls.each((i, el) => {
-      console.log(111);
       $(el).removeClass(ACTIVE);
     });
     return false;

@@ -173,6 +173,5 @@ const sequence3 = new Sequence({
   imageSrc: ['img/s_8.png', 'img/s_9.png', 'img/s_10.png'],
   ticksPerFrame: 3,
   onComplete: () => {
-    console.log('canvas!');
   }
 });

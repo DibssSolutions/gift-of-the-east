@@ -16,12 +16,10 @@ import {OPEN, ACTIVE, BODY, OVERFLOW_HIDDEN} from './../constants';
         modal.addClass(OPEN);
         controls.removeClass(ACTIVE);
         control.addClass(ACTIVE);
-        console.log('has');
       }
       else {
         modal.removeClass(OPEN);
         control.removeClass(ACTIVE);
-        console.log('has no');
       }
     });
   });

@@ -20,7 +20,6 @@ triggers.each((i, trigger) => {
       setTimeout(() => {
         input.focus();
       }, 300);
-      console.log(input);
     }
   });
 
