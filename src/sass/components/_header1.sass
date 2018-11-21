@@ -778,6 +778,8 @@
 		flex-direction: column
 		+md 
 			padding: 0 15px
+			height: calc(100vh - 50px)
+			overflow: auto
 			li:not(:first-child)
 				border-top: 1px solid rgba($silver, 0.5)
 	&__column
@@ -877,13 +879,13 @@
 		li
 			display: block
 			+md 
-				padding: 11px 0 
+				// padding: 11px 0 
 			&:not(:first-child)
 				margin-top: 17px
 				+md 
 					margin-top: 0
 					border-top: 1px solid rgba($silver, 0.5)
-					padding: 11px 0 10px
+					// padding: 11px 0 10px
 					
 		a
 			transition: color .3s
@@ -893,6 +895,7 @@
 				padding: 11px 0  
 	&__sublink
 		color: rgba($black, .8)
+		display: block
 .open-mob-menu
 	width: 40px
 	height: 40px
