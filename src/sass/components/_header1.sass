@@ -672,6 +672,7 @@
 			visibility: visible
 			width: 100%
 			pointer-events: initial
+			overflow: initial
 			.is-open &
 				transform: translateX(0)
 				z-index: 100
@@ -841,9 +842,12 @@
 		background-color: rgba($silver, 0.3)
 		height: 50px
 		font-size: 14px
-		line-height: 50px
+		line-height: 1
+		padding: 0 50px
 		+md 
-			display: block
+			display: flex
+			justify-content: center
+			align-items: center
 	.nav__sublist-wrap
 		display: flex
 		padding-left: 8.5%
@@ -858,8 +862,8 @@
 			transition: transform 0.4s
 			&.is-open
 				transform: translateX(0)
-				height: 100vh
-				overflow: auto
+				// height: 100vh
+				// overflow: auto
 
 	&__sublist
 		width: 39%
@@ -868,6 +872,8 @@
 		+md
 			padding: 0 15px
 			width: 100%
+			height: calc(100vh - 50px)
+			overflow: auto
 		li
 			display: block
 			+md 
