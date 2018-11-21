@@ -58,6 +58,13 @@ export default (() => {
           containers.removeClass(OPEN);
           this.setActiveTab(control, container);
         });
+        control.on('touchend', e => {
+          e.preventDefault();
+          if (this.checkTabState(control, container)|| control.hasClass(ACTIVE)) return;
+          controls.removeClass(ACTIVE);
+          containers.removeClass(OPEN);
+          this.setActiveTab(control, container);
+        });
       });
     }
 
