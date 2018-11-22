@@ -347,7 +347,7 @@
                                             {% for links in item.inner.list %}
                                                 
                                                 {% if links.subList %}
-                                                    <span class="nav__sublist-wrap js-no-init-active" data-tabs-container={{ links.id }}>
+                                                    <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container={{ links.id }}>
                                                         <h4 class="nav__mob-title">
                                                             {{links.mainLink | safe}}
                                                         </h4>

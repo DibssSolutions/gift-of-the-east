@@ -32,13 +32,13 @@ openMenuBtn.click(function(e) {
 
 closeMenuBtn.click(function(e) {
   $(menu).removeClass(MENU_OPEN);
-  setTimeout(() => {
-    subMenus.each((index, el) => {
-      if ($(el).hasClass(OPEN)) {
-        $(el).removeClass(OPEN);
-      }
-    });
-  }, 400);
+  // setTimeout(() => {
+  //   subMenus.each((index, el) => {
+  //     if ($(el).hasClass(OPEN)) {
+  //       $(el).removeClass(OPEN);
+  //     }
+  //   });
+  // }, 400);
 });
 
 navLinks.each((index, el) => {
