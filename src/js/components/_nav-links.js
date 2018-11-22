@@ -23,7 +23,10 @@ triggers.each((i, trigger) => {
     }
   });
 
-  const hide = () => parent.removeClass(OPEN);
+  const hide = () => {
+    parent.removeClass(OPEN);
+    BODY.removeClass('is-fixed');
+  };
 
   BODY.on('click', e => {
     if ($(e.target).closest(close).length || $(e.target).closest(parent).length)

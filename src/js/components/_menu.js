@@ -1,4 +1,4 @@
-import { MENU_OPEN, OPEN, ACTIVE } from '../constants';
+import { MENU_OPEN, OPEN, ACTIVE, BODY } from '../constants';
 import { buildIcon } from '../utils';
 
 const navItem = $('.js-nav-item');
@@ -28,9 +28,11 @@ openMenuBtn.click(function(e) {
   $(tabsCtrl).removeClass(ACTIVE);
   $(tabsContainer).removeClass(OPEN);
   $(menu).addClass(MENU_OPEN);
+  BODY.addClass('is-fixed');
 });
 
 closeMenuBtn.click(function(e) {
+  BODY.removeClass('is-fixed');
   $(menu).removeClass(MENU_OPEN);
   // setTimeout(() => {
   //   subMenus.each((index, el) => {
@@ -68,6 +70,7 @@ backBtn.each((index, el) => {
 openSearchBtn.click(e => {
   $('.search[data-dd-wrapper]').toggleClass(OPEN);
   openSearchBtn.toggleClass(OPEN);
+  BODY.toggleClass('is-fixed');
   if ($('.search[data-dd-wrapper]').hasClass(OPEN)) {
     setTimeout(() => {
       $('.js-search-input').focus();
