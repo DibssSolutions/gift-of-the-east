@@ -325,7 +325,7 @@
                                         <button class="nav__back js-mob-back">
                                             {{mixins.icon('arrow-left')}}
                                         </button>
-                                        <span class="nav__inner inner" data-tabs="data-tabs">
+                                        <span class="nav__inner nav__inner_flex inner" data-tabs="data-tabs">
                                             <span class="nav__items-wrap">
                                                 <span class="nav__items-current" data-tabs-current="data-tabs-current"></span>
                                                 <ul class="nav__items">
@@ -347,7 +347,7 @@
                                             {% for links in item.inner.list %}
                                                 
                                                 {% if links.subList %}
-                                                    <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container={{ links.id }}>
+                                                    <span class="nav__sublist-wrap js-no-init-active" data-tabs-container={{ links.id }}>
                                                         <h4 class="nav__mob-title">
                                                             {{links.mainLink | safe}}
                                                         </h4>

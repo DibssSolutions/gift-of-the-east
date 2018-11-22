@@ -20,8 +20,13 @@ const openSearchBtn = $('.js-open-mob-search');
 const menu = $('.js-menu');
 const subMenus = $('.js-nav-item');
 const navLinks = $('.js-nav-link');
+const tabsCtrl = menu.find('[data-tabs-control]');
+const tabsContainer = menu.find('[data-tabs-container]');
 
 openMenuBtn.click(function(e) {
+  $(subMenus).removeClass(OPEN);
+  $(tabsCtrl).removeClass(ACTIVE);
+  $(tabsContainer).removeClass(OPEN);
   $(menu).addClass(MENU_OPEN);
 });
 

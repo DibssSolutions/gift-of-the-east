@@ -39,7 +39,7 @@ export default (() => {
           control.addClass(DISABLED);
           continue;
         }
-        if(container.hasClass('js-no-init-active') && (WIN_WIDTH < widthMD)) continue;
+        // if(container.hasClass('js-no-init-active') && (WIN_WIDTH < widthMD)) continue;
         this.setActiveTab(control, container);
         break;
       }

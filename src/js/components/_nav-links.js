@@ -29,9 +29,9 @@ triggers.each((i, trigger) => {
     if ($(e.target).closest(close).length || $(e.target).closest(parent).length)
       return;
     parent.removeClass(OPEN);
-    if ($('.js-open-mob-search').hasClass(OPEN)) {
-      $('.js-open-mob-search').removeClass(OPEN);
-    }
+    // if ($('.js-open-mob-search').hasClass(OPEN)) {
+    //   $('.js-open-mob-search').removeClass(OPEN);
+    // }
   });
 
   close.on('click', e => {

@@ -656,7 +656,7 @@
 		z-index: -10
 		pointer-events: none
 		max-height: 583px
-		overflow: auto
+		// overflow: auto
 		+gpu
 		+md 
 			// top: 50px
@@ -672,7 +672,7 @@
 			visibility: visible
 			width: 100%
 			pointer-events: initial
-			overflow: initial
+			// overflow: initial
 			.is-open &
 				transform: translateX(0)
 				z-index: 100
@@ -694,11 +694,15 @@
 						color: $gray
 	&__inner
 		text-align: left
-		display: flex
+		display: block
 		+md 
-			display: block
+			// display: block
 			height: calc(100vh - 50px)
 			overflow: auto
+		&_flex
+			display: flex
+			+md
+				display: block
 	&__items-wrap
 		width: 25.66%
 		+md
