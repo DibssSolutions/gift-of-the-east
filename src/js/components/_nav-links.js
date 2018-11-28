@@ -1,4 +1,4 @@
-import { BODY, SHOW, INIT, OPEN, ACTIVE } from '../constants';
+import { BODY, SHOW, INIT, OPEN, ACTIVE, WIN_WIDTH } from '../constants';
 const trigger = $('.js-nav-links-current');
 const navLinks = $('.js-nav-links');
 const parentLink = $('.js-nav-parent-dark');
@@ -70,3 +70,20 @@ darkWrapper.hover(function() {
     .closest(parentLink)
     .toggleClass(INIT);
 });
+/**
+ * Changing color of bg depending of what element of js-nav-parent-dark menu was hovered
+ */
+const bgLine = $('.js-line-bg');
+const bgItem = $('[data-color]');
+const bgTriangle = $('.js-line-triangle');
+if(WIN_WIDTH > 1023) {
+  bgItem.hover( function() {
+    const color = $(this).data('color');
+    $(this).closest(bgLine).css('backgroundColor', color);
+    $(this).closest(parentLink).find(bgTriangle).css('color', color);
+  },
+  function() {
+    $(this).closest(bgLine).css('backgroundColor', '#efefef');
+    $(this).closest(parentLink).find(bgTriangle).css('color', '#efefef');
+  });
+}

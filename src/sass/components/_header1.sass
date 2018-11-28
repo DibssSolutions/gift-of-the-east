@@ -510,6 +510,10 @@
 					opacity: 1
 					+md
 						opacity: 0
+			.nav__text_with-bg-triangle
+				opacity: 1
+				+md
+					opacity: 0
 	&__item-row
 		position: relative
 		padding: 12px 0
@@ -601,23 +605,24 @@
 		&_with-bg
 			.nav__item.has-list &
 				&:before,
-				&:after
+				&-triangle
 					position: absolute
 					content: ''
 					transition: opacity .4s
-				&:before
-					display: none
+				&:before,
 				&:after
+					display: none
+				&-triangle
 					top: 30px
 					left: 50%
 					margin-left: -8px
 					opacity: 0
 					+arr(16,11,$gallery,t)
 					z-index: 100
-					transition: border-color 0.4s
+					transition: border-color 0.4s, color .4s
 			.is-init.nav__item.has-list &
-				&:after
-					+arr(16,11,$black,t)
+				&-triangle
+					+arr(16,11,currentColor,t)
 	&__line
 		position: absolute
 		left: 0
@@ -683,7 +688,7 @@
 			background-color: $gallery
 			transition: opacity .3s, visibility .4s, background-color 0.4s
 			+hover
-				background-color: $black
+				// background-color: $black
 				.nav__link-row
 					color: rgba($white, 0.8)
 			+md 

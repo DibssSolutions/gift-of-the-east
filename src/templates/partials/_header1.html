@@ -277,23 +277,28 @@
                                 list: [
                                         {
                                             mainLink: 'Все статьи', 
-                                            secondaryLinks: ['Шото там', 'Тай таке', 'Впізнали нас?']
+                                            secondaryLinks: ['Шото там', 'Тай таке', 'Впізнали нас?'],
+                                            color: '#272727'
                                         }, 
                                         {
                                             mainLink: 'Идеи подарков', 
-                                            secondaryLinks: ['Идея 1', 'Идея 2', 'Идея 3']
+                                            secondaryLinks: ['Идея 1', 'Идея 2', 'Идея 3'],
+                                            color: '#C8A480'
                                         },
                                         {
                                             mainLink: 'Красота', 
-                                            secondaryLinks: ['Красота 1', 'Красота 2', 'Красота 3', 'Красота 4']
+                                            secondaryLinks: ['Красота 1', 'Красота 2', 'Красота 3', 'Красота 4'],
+                                            color: '#e61739'
                                         },
                                         {
                                             mainLink: 'Развлечения', 
-                                            secondaryLinks: ['Красота 1', 'Красота 2', 'Красота 3', 'Красота 4']
+                                            secondaryLinks: ['Красота 1', 'Красота 2', 'Красота 3', 'Красота 4'],
+                                            color: '#ff7043'
                                         },
                                         {
                                             mainLink: 'Мода и стиль', 
-                                            secondaryLinks: ['Подраздел', 'При наведении', 'Стиль']
+                                            secondaryLinks: ['Подраздел', 'При наведении', 'Стиль'],
+                                            color: '#2371cb'
                                         }
                                     ]
                             }
@@ -307,7 +312,7 @@
                         ] %}
                             <li class="nav__item{% if item.inner or item.innerWithSubset %} js-nav-item{% endif %}{% if item.modifier %} nav__item_{{item.modifier}}{% endif %}{% if item.jsModifier %} {{item.jsModifier}}{% endif %}">
                                 <a href="#" class="nav__link{% if item.modifier %} nav__link_{{item.modifier}}{% endif %} js-nav-link">
-                                    <span class="nav__text{% if item.modifier %} nav__text_{{item.modifier}}{% endif %}">{{ item.text | safe}}</span>
+                                    <span class="nav__text{% if item.modifier %} nav__text_{{item.modifier}}{% endif %}">{{ item.text | safe}}{% if item.innerWithSubset %}<span class="nav__text_with-bg-triangle js-line-triangle"></span>{% endif %}</span>
                                     <span class="nav__line{% if item.modifier %} nav__line_{{item.modifier}}{% endif %}">
                                         <span></span>
                                     </span>
@@ -372,7 +377,7 @@
                                     </span>
                                 {% endif %}
                                 {% if item.innerWithSubset %}
-                                    <span class="nav__wrap nav__wrap_with-bg js-nav-wrap-dark">
+                                    <span class="nav__wrap nav__wrap_with-bg js-nav-wrap-dark js-line-bg">
                                         <h4 class="nav__mob-title">
                                             {{item.text}}
                                         </h4>
@@ -382,7 +387,7 @@
                                         <span class="nav__inner inner">
                                             <ul class="nav__items-row">
                                                 {% for links in item.innerWithSubset.list %}
-                                                    <li class="nav__item-row  js-nav-item">
+                                                    <li class="nav__item-row js-nav-item" data-color="{{ links.color }}">
                                                         <a href="#" class="nav__link-row js-nav-link">
                                                             <span class="nav__text-row">{{ links.mainLink }}</span>
                                                             {% if links.secondaryLinks %}
