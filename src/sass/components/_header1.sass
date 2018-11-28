@@ -163,9 +163,12 @@
 		font-size: 13px
 		color: $black 
 		display: inline-block
+		transition: color .3s
 		+hover
 			span
 				border-color: currentColor 
+		.signin:hover &
+			color: $gray
 		span
 			transition: border-color .3s
 			border-bottom: 1px solid transparent 
@@ -183,8 +186,11 @@
 			color: $lightBrown 
 			vertical-align: text-bottom
 			display: inline-block 
+			transition: color .3s
 			+md
 				margin-right: 0
+			.signin:hover &
+				color: $hoverBrown
 	&__slash
 		color: $silver 
 	&__drop
@@ -292,15 +298,20 @@
 		right: 0
 		height: 22px  
 	+hover
-		.basket__trigger span
-			border-color: currentColor 
+		.basket__trigger
+			color: $gray
+			span
+				border-color: currentColor
+			.icon
+				color: $hoverBrown
 	&:not(:first-child) 
 		margin-left: 6px
 		+md 
 			margin-left: 0
 	&__trigger
 		font-size: 13px
-		color: $black 
+		color: $black
+		transition: color .3s
 		span
 			transition: border-color .3s
 			border-bottom: 1px solid transparent 
@@ -311,6 +322,7 @@
 			color: $lightBrown 
 			vertical-align: text-bottom
 			display: inline-block 
+			transition: color .3s
 			+md 
 				margin-right: 0
 	&__drop
@@ -617,12 +629,10 @@
 					left: 50%
 					margin-left: -8px
 					opacity: 0
-					+arr(16,11,$gallery,t)
-					z-index: 100
-					transition: border-color 0.4s, color .4s
-			.is-init.nav__item.has-list &
-				&-triangle
+					color: $gallery
 					+arr(16,11,currentColor,t)
+					z-index: 100
+					transition: color .4s
 	&__line
 		position: absolute
 		left: 0
