@@ -655,7 +655,7 @@
 		background-color: $white 
 		z-index: -10
 		pointer-events: none
-		max-height: 583px
+		// max-height: 583px
 		// overflow: auto
 		+gpu
 		+md 
@@ -856,7 +856,8 @@
 			align-items: center
 	.nav__sublist-wrap
 		display: flex
-		padding-left: 8.5%
+		justify-content: space-between
+		padding-left: 11.5%
 		+md
 			padding-left: 0
 			display: block
@@ -875,9 +876,11 @@
 		width: 39%
 		font-size: 14px
 		line-height: 1.29
+		max-width: 210px
 		+md
 			padding: 0 15px
 			width: 100%
+			max-width: none
 			height: calc(100vh - 50px)
 			overflow: auto
 		li
