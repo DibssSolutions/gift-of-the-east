@@ -1,9 +1,14 @@
 <!-- begin section -->
 <div class="section text-center">
-        <div class="section__bg">
-            <img src="./img/strokeon-the-main.svg" alt="img">
-        </div>
+	<div class="section__bg">
+		<img src="./img/strokeon-the-main.svg" alt="img">
+    </div>
+    <div class="holiday-slider js-holiday-slider">
+        {% for i in [1,2,3] %}
+            
         <div class="inner text-gray">
+            <h2 class="title">Каждый день—праздник</h2>
+            <div class="description">Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов.</div>
             <div class="slider js-slider-parent">
                 <div class="slider__wrap">
                     <button class="slider__prev js-slider-prev">
@@ -13,11 +18,6 @@
                         {{ mixins.icon('arrow-right') }}
                     </button>
                     <div class="slider__inner js-slider">
-                        {% for i in [1,2,3,4,5] %}
-                        <div class="slider__slide">
-                            <h2 class="title">Каждый день—праздник</h2>
-                            <div class="description">Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов.</div>
-                            <div class="sloder__slide-wrap" style="display: flex; justify-content: space-between;">
                         {% for slide in [
                             {
                                 img: "art-background-beautiful.png",
@@ -35,8 +35,9 @@
                                 text: "Возможно, ничто так не радует глаз как живописная картина. Вдохновение вам и"
                             }
                             ] %}
+                        <div class="slider__slide">
                             <!-- begin holiday -->
-                            <a href="#" class="holiday" style="width: 30%;">
+                            <a href="#" class="holiday">
                                 <div class="holiday__img">
                                     <img src="./img/{{slide.img}}" alt="img">
                                 </div>
@@ -46,12 +47,14 @@
                                 </div>
                             </a>
                             <!-- end holiday -->
-                            {% endfor %}</div>
                         </div>
                         {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
+        
+        {% endfor %}
     </div>
-    <!-- end section -->
+</div>
+<!-- end section -->

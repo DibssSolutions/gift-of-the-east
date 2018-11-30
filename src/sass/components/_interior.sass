@@ -1,5 +1,7 @@
 .interior
 	position: relative
+	&-section
+		z-index: 2
 	&__bg
 		max-width: 100%
 		display: block
@@ -70,10 +72,17 @@
 		overflow: visible
 		background-color: rgba($white, 0.9) 
 		+sm
-			top: 0
-			left: 0
-			bottom: 0
-			width: 260px 
+			// top: 0
+			// left: 0
+			// bottom: 0
+			// width: 260px 
+		&.is-open
+			+sm
+				position: fixed
+				top: 0
+				left: 0
+				height: 100vh
+				width: 100%
 		&:before
 			display: none
 	&__wrap
@@ -96,6 +105,8 @@
 		background-color: $white 
 		+hover
 			color: #c8a480 
+		+sm
+			right: 0
 	&__product
 		&:not(:last-child)
 			margin-bottom: 60px

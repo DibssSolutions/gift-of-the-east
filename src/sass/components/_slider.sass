@@ -110,13 +110,14 @@ $delay: 3s
 			overflow: visible
 	&__slide
 		float: left
-		height: 567px
+		// height: 567px
+		padding-bottom: 56.3%
 		background-size: cover
 		background-position: 50% 50%
 		background-repeat: no-repeat
-		+md
-			height: auto
-			padding-bottom: 50%
+		// +md
+		// 	height: auto
+		// 	padding-bottom: 50%
 	&__dot
 		position: relative
 		width: 34px
@@ -186,6 +187,9 @@ $delay: 3s
 .slider
 	opacity: 0
 	transition: opacity .35s ease-in-out
+	padding: 0 29px
+	+md
+		padding: 0
 	&.is-init
 		opacity: 1
 	&__wrap
@@ -305,6 +309,19 @@ $delay: 3s
 	&__slide
 		padding: 0 16px
 
+.holiday-slider
+	.slick-dots
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		font-size: 0
+		text-align: center
+		li
+			vertical-align: top
+			display: inline-block
+			&:not(:first-child)
+				margin-left: 5px
 
 .slider-products
 	position: relative
@@ -916,7 +933,8 @@ $delay: 3s
 	visibility: hidden
 	transition: visility 0.4s, opacity 0.4s
 	font-family: $montserrat
-	text-transform: uppercase
+	&:first-letter
+		text-transform: uppercase
 
 .video-play,
 .video-compress
