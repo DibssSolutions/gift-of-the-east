@@ -13,7 +13,7 @@ const template = data => {
         <div class="product__name">${data.current.name}</div>
         <div class="product__price">${data.current.price}</div>
         <div class="product__footer">
-          <button type="button" class="product__btn btn js-add-to-basket">${buildIcon('shopping-bag')}${data.current.btnText}</button>
+          <button type="button" class="product__btn btn js-add-to-basket">${buildIcon('shopping-bag')}<span class="product__btn-text">${data.current.btnText}</span></button>
           <label class="product__like btn-like">
             <span class="like">
               <input type="checkbox">
@@ -37,7 +37,7 @@ const template = data => {
           <div class="product__name">${data.similar.list[i].name}</div>
           <div class="product__price">${data.similar.list[i].price}</div>
           <div class="product__footer">
-            <button type="button" class="product__btn btn js-add-to-basket">${buildIcon('shopping-bag')}${data.similar.list[i].btnText}</button>
+            <button type="button" class="product__btn btn js-add-to-basket">${buildIcon('shopping-bag')}<span class="product__btn-text">${data.similar.list[i].btnText}</span></button>
             <label class="product__like btn-like">
               <span class="like">
                 <input type="checkbox">

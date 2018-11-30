@@ -1,0 +1,57 @@
+<!-- begin section -->
+<div class="section text-center">
+        <div class="section__bg">
+            <img src="./img/strokeon-the-main.svg" alt="img">
+        </div>
+        <div class="inner text-gray">
+            <div class="slider js-slider-parent">
+                <div class="slider__wrap">
+                    <button class="slider__prev js-slider-prev">
+                        {{ mixins.icon('arrow-left') }}
+                    </button>
+                    <button class="slider__next js-slider-next">
+                        {{ mixins.icon('arrow-right') }}
+                    </button>
+                    <div class="slider__inner js-slider">
+                        {% for i in [1,2,3,4,5] %}
+                        <div class="slider__slide">
+                            <h2 class="title">Каждый день—праздник</h2>
+                            <div class="description">Сегодня этот текст используют практически все дизайнеры, набирающие рыбу латиницей. Абзац считается каноническим во всех справочниках по типографике и предлагается к использованию в статьях, посвященных изготовлению макета верстки при отсутствии финальных текстов.</div>
+                            <div class="sloder__slide-wrap" style="display: flex; justify-content: space-between;">
+                        {% for slide in [
+                            {
+                                img: "art-background-beautiful.png",
+                                title: "Уникальные светильники",
+                                text: "Наши светильники поразят своим необычным внешним видом и привнесут "
+                            },
+                            {
+                                img: "sudhith-xavier.png",
+                                title: "Ретро-центры",
+                                text: "Ретро снова в моде! Не оставайтесь в стороне от уникальной возможности "
+                            },
+                            {
+                                img: "ember-ivory.png",
+                                title: "Вдохновляющие картины",
+                                text: "Возможно, ничто так не радует глаз как живописная картина. Вдохновение вам и"
+                            }
+                            ] %}
+                            <!-- begin holiday -->
+                            <a href="#" class="holiday" style="width: 30%;">
+                                <div class="holiday__img">
+                                    <img src="./img/{{slide.img}}" alt="img">
+                                </div>
+                                <div class="holiday__wrap">
+                                    <div class="holiday__title title-sm">{{slide.title}}</div>
+                                    <p>{{slide.text}}</p>
+                                </div>
+                            </a>
+                            <!-- end holiday -->
+                            {% endfor %}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->

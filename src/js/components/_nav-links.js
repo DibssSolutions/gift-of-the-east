@@ -76,14 +76,18 @@ darkWrapper.hover(function() {
 const bgLine = $('.js-line-bg');
 const bgItem = $('[data-color]');
 const bgTriangle = $('.js-line-triangle');
+const bgLink = $('.js-bg-link');
 if(WIN_WIDTH > 1023) {
   bgItem.hover( function() {
     const color = $(this).data('color');
     $(this).closest(bgLine).css('backgroundColor', color);
     $(this).closest(parentLink).find(bgTriangle).css('color', color);
+    bgLink.css('color','rgba(255,255,255,.8)');
+    $(this).find(bgLink).css('color','#fff');
   },
   function() {
     $(this).closest(bgLine).css('backgroundColor', '#efefef');
     $(this).closest(parentLink).find(bgTriangle).css('color', '#efefef');
+    bgLink.css('color','#808080');
   });
 }

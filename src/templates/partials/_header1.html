@@ -8,7 +8,7 @@
             <div class="header__inner header__mobile inner">
                 <div class="header__open md-show">
                     <button type="button" class="js-open-mob-menu open-mob-menu">
-                        {{mixins.icon('bars')}}
+                        {{mixins.icon('menu')}}
                     </button>
                 </div>
                 <div class="header__contact md-hide">
@@ -277,8 +277,7 @@
                                 list: [
                                         {
                                             mainLink: 'Все статьи', 
-                                            secondaryLinks: ['Шото там', 'Тай таке', 'Впізнали нас?'],
-                                            color: '#272727'
+                                            secondaryLinks: ['Шото там', 'Тай таке', 'Впізнали нас?']
                                         }, 
                                         {
                                             mainLink: 'Идеи подарков', 
@@ -387,8 +386,8 @@
                                         <span class="nav__inner inner">
                                             <ul class="nav__items-row">
                                                 {% for links in item.innerWithSubset.list %}
-                                                    <li class="nav__item-row js-nav-item" data-color="{{ links.color }}">
-                                                        <a href="#" class="nav__link-row js-nav-link">
+                                                    <li class="nav__item-row js-nav-item"{% if links.color %} data-color="{{ links.color }}"{% endif %}>
+                                                        <a href="#" class="nav__link-row js-nav-link js-bg-link">
                                                             <span class="nav__text-row">{{ links.mainLink }}</span>
                                                             {% if links.secondaryLinks %}
                                                                 <span class="header__mob-next">

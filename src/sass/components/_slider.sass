@@ -48,6 +48,7 @@ $delay: 3s
 		transition: transform $delay ease-in-out
 		display: block
 		transform: translateY(calc(-50% - 24px))
+		font-family: $montserrat
 	&__circle
 		position: relative
 		width: 56px
@@ -265,7 +266,7 @@ $delay: 3s
 			border-radius: 50% 
 			opacity: 0
 			transition: opacity .5s
-			transition-delay: 1s
+			transition-delay: .3s
 			+sm
 				display: none
 			.slick-initialized li.slick-active &
@@ -700,7 +701,7 @@ $delay: 3s
 			border-radius: 50% 
 			opacity: 0
 			transition: opacity .5s
-			transition-delay: 0.8s
+			transition-delay: 0.3s
 			+md 
 				border: 1px solid $gray
 			+sm
@@ -910,11 +911,11 @@ $delay: 3s
 	top: calc(100% + 3px)
 	transform: translateX(-50%)
 	color: $white
-	font-size: 12px
+	font-size: 13px
 	opacity: 0
 	visibility: hidden
 	transition: visility 0.4s, opacity 0.4s
-	font-family: $prata
+	font-family: $montserrat
 	text-transform: uppercase
 
 .video-play,

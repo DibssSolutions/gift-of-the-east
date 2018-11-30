@@ -70,17 +70,23 @@
 			line-height: 20px
 			vertical-align: middle
 			display: inline-block
+			transition: color .3s
 	&__open
 		.is-open & 
 			display: none
 		.icon
 			font-size: 20px
+			.search__btn:hover &
+				color: $lightBrown
 	&__close 
 		display: none
 		.is-open & 
 			display: inline-block
 		.icon
 			font-size: 16px
+			transition: color .3s
+			.search__btn:hover &
+				color: $lightBrown
 	&__text
 		font-family: $montserrat
 		+f(13px, 400, 1.4)
@@ -88,6 +94,9 @@
 		display: inline-block
 		vertical-align: middle
 		margin-left: 12px
+		transition: color .3s
+		.search__btn:hover &
+			color: $black
 	&__dropdown 
 		position: absolute
 		top: 65px
