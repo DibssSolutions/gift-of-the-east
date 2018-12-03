@@ -7,7 +7,11 @@ export default (() => {
     constructor(options) {
       this.cache = {};
       this.options = options || {};
-      this.init();
+      if (options.hover) {
+        this.initHover();
+      } else {
+        this.init();
+      }
     }
 
     init() {
@@ -16,10 +20,17 @@ export default (() => {
       this.mobDrop();
     }
 
+    initHover() {
+      this.initializeCache();
+      this.initializeEventsHover();
+      this.mobDrop();
+    }
+
     initializeCache() {
       const {main} = this.options;
       this.cache.main = main;
       this.cache.controls = main.find('[data-tabs-control]');
+      this.cache.mobileControls = main.find('[data-mobile-control]');
       this.cache.containers = main.find('[data-tabs-container]');
       this.cache.current = main.find('[data-tabs-current]');
     }
@@ -27,6 +38,11 @@ export default (() => {
     initializeEvents() {
       this.setActiveOnLoad();
       this.setActiveOnClick();
+    }
+
+    initializeEventsHover() {
+      this.setActiveOnLoad();
+      this.setActiveOnHover();
     }
 
     setActiveOnLoad() {
@@ -52,6 +68,7 @@ export default (() => {
         const container = this.getTabContainer(control, containers);
 
         control.on('click', e => {
+          console.log(222);
           e.preventDefault();
           if (this.checkTabState(control, container)|| control.hasClass(ACTIVE)) return;
           controls.removeClass(ACTIVE);
@@ -68,9 +85,47 @@ export default (() => {
       });
     }
 
+    setActiveOnHover() {
+      const {controls, containers} = this.cache;
+      controls.each((i, control) => {
+        control = $(control);
+        const container = this.getTabContainer(control, containers);
+
+        control.on('mouseenter', e => {
+          let winWidth = this.getWindowWidth();
+          if (winWidth > widthMD) {
+            if (this.checkTabState(control, container)|| control.hasClass(ACTIVE)) return;
+            controls.removeClass(ACTIVE);
+            containers.removeClass(OPEN);
+            this.setActiveTab(control, container);
+          }
+        });
+        control.on('mouseleave', e => {
+          controls.removeClass(ACTIVE);
+        });
+        control.on('click', e => {
+          let winWidth = this.getWindowWidth();
+          if (winWidth < widthMD) {
+            if (control.hasClass('js-mobile-control')) {
+              e.preventDefault();
+              if (this.checkTabState(control, container)|| control.hasClass(ACTIVE)) return;
+              controls.removeClass(ACTIVE);
+              containers.removeClass(OPEN);
+              this.setActiveTab(control, container);
+            }
+          }
+        });
+      });
+
+    }
+
     //utils
     checkTabState(control, container) {
       return control.hasClass(DISABLED) || control.attr('disabled') || !container.length;
+    }
+
+    getWindowWidth() {
+      return $(window).width();
     }
 
     getTabContainer(control, containers) {
@@ -100,5 +155,6 @@ export default (() => {
   };
 
   $('[data-tabs]').each((i, main) => new Tabs({ main: $(main) }) );
+  $('[data-tabshover]').each((i, main) => new Tabs({ main: $(main), hover: true}) );
 
 })();

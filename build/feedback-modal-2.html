@@ -218,12 +218,12 @@
                         <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
                       </svg>
                     </button>
-                    <span class="nav__inner nav__inner_flex inner" data-tabs="data-tabs">
+                    <span class="nav__inner nav__inner_flex inner" data-tabshover="data-tabs">
                       <span class="nav__items-wrap">
                         <span class="nav__items-current" data-tabs-current="data-tabs-current"></span>
                         <ul class="nav__items">
-                          <li class="nav__item-column" data-tabs-control="natural-stones">
-                            <a href="#" class="nav__link-column js-nav-link">
+                          <li class="nav__item-column  js-mobile-control" data-tabs-control="natural-stones">
+                            <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Изделия из натуральных камней</span>
                               <span class="header__mob-next">
                                 <svg class="icon icon-chevron-right">
@@ -232,8 +232,8 @@
                               </span>
                             </a>
                           </li>
-                          <li class="nav__item-column" data-tabs-control="murano-class">
-                            <a href="#" class="nav__link-column js-nav-link">
+                          <li class="nav__item-column  js-mobile-control" data-tabs-control="murano-class">
+                            <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Муранское стекло</span>
                               <span class="header__mob-next">
                                 <svg class="icon icon-chevron-right">
@@ -242,8 +242,8 @@
                               </span>
                             </a>
                           </li>
-                          <li class="nav__item-column" data-tabs-control="interior-items">
-                            <a href="#" class="nav__link-column js-nav-link">
+                          <li class="nav__item-column  js-mobile-control" data-tabs-control="interior-items">
+                            <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Предметы интерьера</span>
                               <span class="header__mob-next">
                                 <svg class="icon icon-chevron-right">
@@ -252,8 +252,8 @@
                               </span>
                             </a>
                           </li>
-                          <li class="nav__item-column" data-tabs-control="drinking-ware">
-                            <a href="#" class="nav__link-column js-nav-link">
+                          <li class="nav__item-column  js-mobile-control" data-tabs-control="drinking-ware">
+                            <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Питьевая посуда, фляжки, бочки для вина</span>
                               <span class="header__mob-next">
                                 <svg class="icon icon-chevron-right">
@@ -262,48 +262,48 @@
                               </span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="candlestick">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Подсвечники</span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="dishes">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Посуда и сервировка</span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="statuette">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Статуэтки, куклы</span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="writing-accessory">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Принадлежности для письма</span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="hookahs">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Кальяны, курительные принадлежности</span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="board-games">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Настольные игры</span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="souvenir-weapon">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Сувенирное оружие</span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="feng-shui">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Фэн-шуй</span>
                             </a>
                           </li>
-                          <li class="nav__item-column" data-tabs-control="religious-gifts">
-                            <a href="#" class="nav__link-column js-nav-link">
+                          <li class="nav__item-column  js-mobile-control" data-tabs-control="religious-gifts">
+                            <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Религиозные подарки</span>
                               <span class="header__mob-next">
                                 <svg class="icon icon-chevron-right">
@@ -312,12 +312,12 @@
                               </span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="souvenirs">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Сувенирные изделия, копилки, антистрессы</span>
                             </a>
                           </li>
-                          <li class="nav__item-column">
+                          <li class="nav__item-column " data-tabs-control="symbols">
                             <a href="#" class="nav__link-column">
                               <span class="nav__text-column">Символы г. Омска</span>
                             </a>
@@ -512,6 +512,110 @@
                             <img src="./img/nav-img@2x.jpg" alt="img">
                           </span>
                         </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=candlestick>
+                          <h4 class="nav__mob-title"> Подсвечники </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=dishes>
+                          <h4 class="nav__mob-title"> Посуда и сервировка </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/organic-bowl-2262914_1920.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=statuette>
+                          <h4 class="nav__mob-title"> Статуэтки, куклы </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=writing-accessory>
+                          <h4 class="nav__mob-title"> Принадлежности для письма </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=hookahs>
+                          <h4 class="nav__mob-title"> Кальяны, курительные принадлежности </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=board-games>
+                          <h4 class="nav__mob-title"> Настольные игры </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=souvenir-weapon>
+                          <h4 class="nav__mob-title"> Сувенирное оружие </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=feng-shui>
+                          <h4 class="nav__mob-title"> Фэн-шуй </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
                         <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=religious-gifts>
                           <h4 class="nav__mob-title"> Религиозные подарки </h4>
                           <button class="nav__back js-mob-back">
@@ -559,6 +663,32 @@
                           </ul>
                           <span class="nav__img">
                             <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=souvenirs>
+                          <h4 class="nav__mob-title"> Сувенирные изделия, копилки, антистрессы </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/nav-img@2x.jpg" alt="img">
+                          </span>
+                        </span>
+                        <span class="nav__sublist-wrap js-no-init-active js-nav-item" data-tabs-container=symbols>
+                          <h4 class="nav__mob-title"> Символы г. Омска </h4>
+                          <button class="nav__back js-mob-back">
+                            <svg class="icon icon-arrow-left">
+                              <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
+                            </svg>
+                          </button>
+                          <ul class="nav__sublist js-nav-child">
+                          </ul>
+                          <span class="nav__img">
+                            <img src="./img/" alt="img">
                           </span>
                         </span>
                       </span>

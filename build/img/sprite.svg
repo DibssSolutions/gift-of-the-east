@@ -147,8 +147,8 @@
 </symbol><symbol id="icon-map" viewBox="0 0 14 14">
     
     <path id="map" class="cls-1" d="M12.333 15.444L7.667 13.8V4.556L12.333 6.2M16.611 3h-.124l-4.154 1.633L7.667 3 3.28 4.478a.392.392 0 0 0-.28.373v11.76a.389.389 0 0 0 .389.389.237.237 0 0 0 .124-.023l4.153-1.61L12.333 17l4.387-1.478a.415.415 0 0 0 .28-.373V3.389A.389.389 0 0 0 16.611 3z" transform="translate(-3 -3)"/>
-</symbol><symbol id="icon-menu" viewBox="0 0 24 24">
-    <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/>
+</symbol><symbol id="icon-menu" viewBox="0 0 18 12">
+    <path d="M0 0h18v2H0V0m0 5h18v2H0V5m0 5h18v2H0v-2z"/>
 </symbol><symbol id="icon-minus" viewBox="0 0 24 24">
     <path d="M19 13H5v-2h14v2z"/>
 </symbol><symbol id="icon-odnoklassniki" viewBox="0 0 12.025 20">

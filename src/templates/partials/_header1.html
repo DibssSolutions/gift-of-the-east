@@ -216,35 +216,51 @@
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'candlestick',
                                         mainLink: 'Подсвечники',
+                                        subList: [],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'dishes',
                                         mainLink: 'Посуда и сервировка',
-                                        img: 'nav-img@2x.jpg'
+                                        subList: [],
+                                        img: 'organic-bowl-2262914_1920.jpg'
                                     },
                                     {
+                                        id: 'statuette',
                                         mainLink: 'Статуэтки, куклы',
+                                        subList: [],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'writing-accessory',
                                         mainLink: 'Принадлежности для письма',
+                                        subList: [],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'hookahs',
                                         mainLink: 'Кальяны, курительные принадлежности',
+                                        subList: [],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'board-games',
                                         mainLink: 'Настольные игры',
+                                        subList: [],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'souvenir-weapon',
                                         mainLink: 'Сувенирное оружие',
+                                        subList: [],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'feng-shui',
                                         mainLink: 'Фэн-шуй',
+                                        subList: [],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
@@ -254,10 +270,14 @@
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'souvenirs',
                                         mainLink: 'Сувенирные изделия, копилки, антистрессы',
+                                        subList: [],
                                         img: 'nav-img@2x.jpg'
                                     },
                                     {
+                                        id: 'symbols',
+                                        subList: [],
                                         mainLink: 'Символы г. Омска'
                                     }
                                 ]
@@ -329,15 +349,15 @@
                                         <button class="nav__back js-mob-back">
                                             {{mixins.icon('arrow-left')}}
                                         </button>
-                                        <span class="nav__inner nav__inner_flex inner" data-tabs="data-tabs">
+                                        <span class="nav__inner nav__inner_flex inner" data-tabshover="data-tabs">
                                             <span class="nav__items-wrap">
                                                 <span class="nav__items-current" data-tabs-current="data-tabs-current"></span>
                                                 <ul class="nav__items">
                                                     {% for links in item.inner.list %}
-                                                        <li class="nav__item-column" {% if links.id %} data-tabs-control="{{ links.id }}"{% endif %}>
-                                                            <a href="#" class="nav__link-column{% if links.id %} js-nav-link{% endif %}">
+                                                        <li class="nav__item-column {% if links.subList.length > 0 %} js-mobile-control{% endif %}" data-tabs-control="{{ links.id }}">
+                                                            <a href="#" class="nav__link-column">
                                                                 <span class="nav__text-column">{{ links.mainLink | safe }}</span>
-                                                                {% if links.subList %}
+                                                                {% if links.subList.length > 0 %}
                                                                     <span class="header__mob-next">
                                                                         {{mixins.icon('chevron-right')}}
                                                                     </span>
