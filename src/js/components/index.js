@@ -25,5 +25,5 @@ import './_mp';
 import './_photo-gallery';
 import './_breadcrumbs';
 import './_promoTimer';
-// import './_sequence';
-// import "./_startingAnimation";
+import './_sequence';
+// import './_startingAnimation';
