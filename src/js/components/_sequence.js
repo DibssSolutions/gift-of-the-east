@@ -1,3 +1,5 @@
+import { ACTIVE, WIN } from '../constants';
+
 export default class Sequence {
   constructor(options) {
     this._canvas = options.canvas;
@@ -131,47 +133,74 @@ export default class Sequence {
   }
 }
 
-const sequence = new Sequence({
-  canvas: document.querySelector('.js-canvas-1'),
-  width: 1920,
-  height: 1080,
-  imageSrc: [
-    'img/s_1.png',
-    'img/s_2.png',
-    'img/s_3.png',
-    'img/s_4.png'
-  ],
-  ticksPerFrame: 3,
-  onComplete: () => {
-    sequence2.play();
-    $('canvas').removeClass('is-active');
-    $('.js-canvas-2').addClass('is-active');
-  }
-});
+// const sequence = new Sequence({
+//   canvas: document.querySelector('.js-canvas-1'),
+//   width: 1920,
+//   height: 1080,
+//   imageSrc: [
+//     'img/s_1.png',
+//     'img/s_2.png',
+//     'img/s_3.png',
+//     'img/s_4.png'
+//   ],
+//   ticksPerFrame: 3,
+//   onComplete: () => {
+//     sequence2.play();
+//     $('canvas').removeClass('is-active');
+//     $('.js-canvas-2').addClass('is-active');
+//   }
+// });
 
-setTimeout(() => {
-  sequence.play();
-}, 2000);
+// setTimeout(() => {
+//   sequence.play();
+// }, 2000);
 
-const sequence2 = new Sequence({
-  canvas: document.querySelector('.js-canvas-2'),
-  width: 1920,
-  height: 1080,
-  imageSrc: ['img/s_5.png', 'img/s_6.png', 'img/s_7.png'],
-  ticksPerFrame: 3,
-  onComplete: () => {
-    sequence3.play();
-    $('canvas').removeClass('is-active');
-    $('.js-canvas-3').addClass('is-active');
-  }
-});
+// const sequence2 = new Sequence({
+//   canvas: document.querySelector('.js-canvas-2'),
+//   width: 1920,
+//   height: 1080,
+//   imageSrc: ['img/s_5.png', 'img/s_6.png', 'img/s_7.png'],
+//   ticksPerFrame: 3,
+//   onComplete: () => {
+//     sequence3.play();
+//     $('canvas').removeClass('is-active');
+//     $('.js-canvas-3').addClass('is-active');
+//   }
+// });
 
-const sequence3 = new Sequence({
-  canvas: document.querySelector('.js-canvas-3'),
-  width: 1920,
-  height: 1080,
-  imageSrc: ['img/s_8.png', 'img/s_9.png', 'img/s_10.png'],
-  ticksPerFrame: 3,
-  onComplete: () => {
+// const sequence3 = new Sequence({
+//   canvas: document.querySelector('.js-canvas-3'),
+//   width: 1920,
+//   height: 1080,
+//   imageSrc: ['img/s_8.png', 'img/s_9.png', 'img/s_10.png'],
+//   ticksPerFrame: 3,
+//   onComplete: () => {
+//   }
+// });
+
+if (document.querySelector('.js-canvas-sequence')) {
+  const el = document.querySelector('.js-canvas-sequence');
+  const sequence = new Sequence({
+    canvas: el,
+    width: 1920,
+    height: 1080,
+    imageSrc: [
+      'img/sprite_1_low.png',
+      'img/sprite_2_low.png',
+      'img/sprite_3_low.png'
+    ]
+  });
+
+  function scrollCanvas() {
+    const parent = document.querySelector('.js-canvas-trigger');
+    let parentPos = parent.getBoundingClientRect().top;
+    let height = $(window).innerHeight();
+    if (parentPos < height * 0.75) {
+      $('.js-canvas-sequence').addClass(ACTIVE);
+      sequence.play();
+      WIN.off('scroll', scrollCanvas);
+    }
   }
-});
+
+  WIN.on('scroll', scrollCanvas);
+}
