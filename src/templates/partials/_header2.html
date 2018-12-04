@@ -1,0 +1,689 @@
+{% import "partials/_mixins.html" as mixins %}
+{% import "partials/main/_search.html" as searchBuilder %}
+
+{% macro block(user, basket, searchState) %}
+    <!-- begin header -->
+    <header class="header js-menu">
+        <div class="header__top">
+            <div class="header__inner header__mobile inner">
+                <div class="header__open md-show">
+                    <button type="button" class="js-open-mob-menu open-mob-menu">
+                        {{mixins.icon('menu')}}
+                    </button>
+                </div>
+                <div class="header__contact md-hide">
+                    <a href="#" class="header__shops">{{ mixins.icon('location') }}
+                        <span>Магазины</span></a>
+                    <a href="tel:+74565678795" class="header__phone">+7 (456) 567 87 95</a>
+                </div>
+                <div class="header__logo">
+                    <!-- begin logo -->
+                    <a href="./index.html" class="logo">
+                        <img src="./img/logo.png" alt="logo">
+                    </a>
+                    <!-- end logo -->
+                </div>
+                <div class="header__cabin">
+                    <!-- begin signin -->
+                    <div class="mobile-search md-show">
+                        <button class="mobile-search__button js-open-mob-search">
+                            <span class="mobile-search__open">{{ mixins.icon('search') }}</span>
+                            <span class="mobile-search__close">{{ mixins.icon('close') }}</span>
+                        </button>
+                    </div>
+                    <div class="signin js-profile-wrapper" data-dd-wrapper="data-dd-wrapper">
+                        {% if not user %}
+                            <div class="signin__anonymus">
+                                <button class="signin__button" data-dd-trigger="data-dd-trigger">
+                                    {{mixins.icon('account')}}
+                                </button>
+                                <div class="signin__variants">
+                                    <div class="signin__close">
+                                        <button type="button" data-dd-close="data-dd-close">
+                                            {{ mixins.icon('close') }}
+                                        </button>
+                                    </div>
+                                    <ul>
+                                        <li><a href="#" data-modal-control="login">
+                                            <span>Войти</span>
+                                            <span class="header__mob-next">
+                                                    {{mixins.icon('chevron-right')}}
+                                            </span>
+                                        </a></li>
+                                        <li><a href="#" data-modal-control="registration-tab">
+                                            <span>Регистрация</span>
+                                            <span class="header__mob-next">
+                                                {{mixins.icon('chevron-right')}}
+                                            </span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="#" class="signin__item md-hide" data-modal-control="login">
+                                <span class="md-hide">Войти</span></a>
+                            <span class="signin__slash md-hide">/</span>
+                            <a href="#" class="signin__item md-hide" data-modal-control="registration-tab">
+                                <span class="md-hide">Регистрация</span></a>
+                        {% else %}
+                            <a href="#" class="signin__item" data-dd-trigger="data-dd-trigger">{{mixins.icon('account')}}
+                                <span class="sm-hide">Профиль</span>
+                            </a>
+                            <div class="signin__drop">
+                                <div class="signin__head">Добро пожаловать, Анна</div>
+                                <ul class="signin__list">
+                                    {% for item in [
+                                        {
+                                            text: "Личные данные"
+                                        },
+                                        {
+                                            class: "has-inf",
+                                            text: "Сообщения",
+                                            sub: "3"
+                                        },
+                                        {
+                                            text: "История покупок"
+                                        },
+                                        {
+                                            class: "has-inf",
+                                            text: "Персональные предложения",
+                                            sub: "4"
+                                        },
+                                        {
+                                            text: "Избранное"
+                                        },
+                                        {
+                                            text: "Клубная карта"
+                                        },
+                                        {
+                                            text: "Пригласить друзей"
+                                        }
+                                    ] %}
+                                        <li {% if item.class %} class="{{ item.class }}" {% endif %}>
+                                            <a href="#">{{ item.text }}
+                                                {% if item.sub %}
+                                                    <span class="text-silver">{{ item.sub }}</span>{% endif %}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <div class="signin__footer">
+                                    <a href="#" class="signin__exit">Выйти</a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <!-- end signin -->
+                    <!-- begin basket -->
+                    <div class="basket js-basket-wrapper" data-dd-wrapper="data-dd-wrapper">
+                        {% if not basket %}
+                            <a href="#" class="basket__trigger" data-dd-trigger="data-dd-trigger">
+                                {{mixins.icon('shopping-bag')}}
+                                <span class="md-hide">Корзина</span>
+                            </a>
+                        {% else %}
+                            <a href="#" class="basket__trigger" data-dd-trigger="data-dd-trigger">
+                                {{mixins.icon('shopping-bag')}}
+                                <span class="sm-hide">1 товар – 1000 ₽</span>
+                            </a>
+                        {% endif %}
+                        <div class="basket__drop">
+                            <div class="basket__head">Корзина (1)</div>
+                            <div class="basket__product js-basket-product">
+                                <div class="basket__product-inner">
+                                    <div class="basket__img" style="background-image: url(./img/vase.jpg);"></div>
+                                    <div class="basket__text">
+                                        <a href="#" class="basket__name">Ваза из стекла с разноцветным узором</a>
+                                        <div class="basket__quantity">Кол–во: 2</div>
+                                    </div>
+                                    <div class="basket__right">
+                                        <div class="basket__price">
+                                            <span>2000 ₽</span><span class="is-old">2800 ₽</span></div>
+                                        <div class="basket__benefit">Ваша выгода 800 ₽</div>
+                                    </div>
+                                </div>
+                                <button class="basket__remove" type="button" data-dd-close="data-dd-close">{{ mixins.icon('close') }}</button>
+                            </div>
+                            <div class="basket__footer">
+                                <div class="basket__total">
+                                    <strong>Итого:</strong>
+                                    2000 ₽</div>
+                                <div class="basket__button">
+                                    <a href="#" class="btn btn_md btn_bord btn_anim">
+                                        <span class="btn__text">Перейти в корзину</span>
+                                        <span class="btn__icon">
+                                            {{mixins.icon('arrow-right')}}
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end basket -->
+                </div>
+            </div>
+        </div>
+        <div class="header__bottom">
+            <div class="header__inner inner">
+                <!-- begin search -->
+                <div class="header__search search" data-dd-wrapper="data-dd-wrapper">
+                    <button class="search__btn md-hide" type="button" data-dd-trigger="data-dd-trigger">
+                        <span class="search__open">
+                            {{ mixins.icon('search') }}
+                            <span class="search__text">Поиск</span>
+                        </span>
+                        <span class="search__close">
+                            {{ mixins.icon('close') }}
+                            <span class="search__text">Закрыть</span>
+                        </span>
+                    </button>
+                    {{searchBuilder.search(searchState)}}
+                </div>
+                <!-- end search -->
+                <nav class="header__nav nav">
+                    <div class="header__close">
+                        <button type="button" class="js-close-mob-menu">
+                            {{mixins.icon('close')}}
+                        </button>
+                    </div>
+                    <ul class="nav__list">
+                        {% for item in [
+                        {
+                            text: 'КАТАЛОГ',
+                            inner: {
+                                list: [
+                                    {
+                                        id: 'natural-stones',
+                                        mainLink: 'Изделия из натуральных камней',
+                                        subList: [
+                                            {
+                                                text: 'Вазы',
+                                                id: 'vases'
+                                            },
+                                            {
+                                                text: 'Музыкальные ретро центры, ретро телефоны',
+                                                id: 'retro'
+                                            },
+                                            {
+                                                text: 'Картины, декоративные тарелки',
+                                                id: 'picture'
+                                            },
+                                            {
+                                                text: 'Фоторамки',
+                                                id: 'photoframes'
+                                            },
+                                            {
+                                                text: 'Светильники',
+                                                id: 'lamp'
+                                            },
+                                            {
+                                                text: 'Подсвечники',
+                                                id: 'candlesticks'
+                                            },
+                                            {
+                                                text: 'Фонтаны',
+                                                id: 'fountains'
+                                            },
+                                            {
+                                                text: 'Часы',
+                                                id: 'clock'
+                                            },
+                                            {
+                                                text: 'Шкатулки, книги-сейфы, ключницы',
+                                                id: 'caskets'
+                                            },
+                                            {
+                                                text: 'Мебель, глобус-бары',
+                                                id: 'furniture'
+                                            },
+                                            {
+                                                text: 'Барометры',
+                                                id: 'barometers'
+                                            },
+                                            {
+                                                text: 'Корабли',
+                                                id: 'ships'
+                                            }
+                                        ],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'murano-class',
+                                        mainLink: 'Муранское стекло',
+                                        subList: [
+                                            {
+                                                text: 'Вазы',
+                                                id: 'vases'
+                                            },
+                                            {
+                                                text: 'Музыкальные ретро центры, ретро телефоны',
+                                                id: 'retro'
+                                            },
+                                            {
+                                                text: 'Картины, декоративные тарелки',
+                                                id: 'picture'
+                                            },
+                                            {
+                                                text: 'Фоторамки',
+                                                id: 'photoframes'
+                                            },
+                                            {
+                                                text: 'Светильники',
+                                                id: 'lamp'
+                                            },
+                                            {
+                                                text: 'Подсвечники',
+                                                id: 'candlesticks'
+                                            },
+                                            {
+                                                text: 'Фонтаны',
+                                                id: 'fountains'
+                                            },
+                                            {
+                                                text: 'Часы',
+                                                id: 'clock'
+                                            },
+                                            {
+                                                text: 'Шкатулки, книги-сейфы, ключницы',
+                                                id: 'caskets'
+                                            },
+                                            {
+                                                text: 'Мебель, глобус-бары',
+                                                id: 'furniture'
+                                            },
+                                            {
+                                                text: 'Барометры',
+                                                id: 'barometers'
+                                            },
+                                            {
+                                                text: 'Корабли',
+                                                id: 'ships'
+                                            }
+                                        ],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'interior-items',
+                                        mainLink: 'Предметы интерьера',
+                                        subList: [
+                                            {
+                                                text: 'Вазы',
+                                                id: 'vases'
+                                            },
+                                            {
+                                                text: 'Музыкальные ретро центры, ретро телефоны',
+                                                id: 'retro'
+                                            },
+                                            {
+                                                text: 'Картины, декоративные тарелки',
+                                                id: 'picture'
+                                            },
+                                            {
+                                                text: 'Фоторамки',
+                                                id: 'photoframes'
+                                            },
+                                            {
+                                                text: 'Светильники',
+                                                id: 'lamp'
+                                            },
+                                            {
+                                                text: 'Подсвечники',
+                                                id: 'candlesticks'
+                                            },
+                                            {
+                                                text: 'Фонтаны',
+                                                id: 'fountains'
+                                            },
+                                            {
+                                                text: 'Часы',
+                                                id: 'clock'
+                                            },
+                                            {
+                                                text: 'Шкатулки, книги-сейфы, ключницы',
+                                                id: 'caskets'
+                                            },
+                                            {
+                                                text: 'Мебель, глобус-бары',
+                                                id: 'furniture'
+                                            },
+                                            {
+                                                text: 'Барометры',
+                                                id: 'barometers'
+                                            },
+                                            {
+                                                text: 'Корабли',
+                                                id: 'ships'
+                                            }
+                                        ],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'drinking-ware',
+                                        mainLink: 'Питьевая посуда, фляжки, бочки для вина',
+                                        subList: [
+                                            {
+                                                text: 'Фоторамки',
+                                                id: 'photoframes'
+                                            },
+                                            {
+                                                text: 'Светильники',
+                                                id: 'lamp'
+                                            },
+                                            {
+                                                text: 'Подсвечники',
+                                                id: 'candlesticks'
+                                            },
+                                            {
+                                                text: 'Фонтаны',
+                                                id: 'fountains'
+                                            },
+                                            {
+                                                text: 'Часы',
+                                                id: 'clock'
+                                            },
+                                            {
+                                                text: 'Шкатулки, книги-сейфы, ключницы',
+                                                id: 'caskets'
+                                            },
+                                            {
+                                                text: 'Мебель, глобус-бары',
+                                                id: 'furniture'
+                                            },
+                                            {
+                                                text: 'Барометры',
+                                                id: 'barometers'
+                                            },
+                                            {
+                                                text: 'Корабли',
+                                                id: 'ships'
+                                            }
+                                        ],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'candlestick',
+                                        mainLink: 'Подсвечники',
+                                        subList: [],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'dishes',
+                                        mainLink: 'Посуда и сервировка',
+                                        subList: [],
+                                        img: 'organic-bowl-2262914_1920.jpg'
+                                    },
+                                    {
+                                        id: 'statuette',
+                                        mainLink: 'Статуэтки, куклы',
+                                        subList: [],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'writing-accessory',
+                                        mainLink: 'Принадлежности для письма',
+                                        subList: [],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'hookahs',
+                                        mainLink: 'Кальяны, курительные принадлежности',
+                                        subList: [],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'board-games',
+                                        mainLink: 'Настольные игры',
+                                        subList: [],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'souvenir-weapon',
+                                        mainLink: 'Сувенирное оружие',
+                                        subList: [],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'feng-shui',
+                                        mainLink: 'Фэн-шуй',
+                                        subList: [],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'religious-gifts',
+                                        mainLink: 'Религиозные подарки',
+                                        subList: [
+                                            {
+                                                text: 'Вазы',
+                                                id: 'vases'
+                                            },
+                                            {
+                                                text: 'Музыкальные ретро центры, ретро телефоны',
+                                                id: 'retro'
+                                            },
+                                            {
+                                                text: 'Картины, декоративные тарелки',
+                                                id: 'picture'
+                                            },
+                                            {
+                                                text: 'Фоторамки',
+                                                id: 'photoframes'
+                                            },
+                                            {
+                                                text: 'Светильники',
+                                                id: 'lamp'
+                                            },
+                                            {
+                                                text: 'Подсвечники',
+                                                id: 'candlesticks'
+                                            },
+                                            {
+                                                text: 'Фонтаны',
+                                                id: 'fountains'
+                                            },
+                                            {
+                                                text: 'Часы',
+                                                id: 'clock'
+                                            },
+                                            {
+                                                text: 'Шкатулки, книги-сейфы, ключницы',
+                                                id: 'caskets'
+                                            },
+                                            {
+                                                text: 'Мебель, глобус-бары',
+                                                id: 'furniture'
+                                            },
+                                            {
+                                                text: 'Барометры',
+                                                id: 'barometers'
+                                            },
+                                            {
+                                                text: 'Корабли',
+                                                id: 'ships'
+                                            }
+                                        ],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'souvenirs',
+                                        mainLink: 'Сувенирные изделия, копилки, антистрессы',
+                                        subList: [],
+                                        img: 'nav-img@2x.jpg'
+                                    },
+                                    {
+                                        id: 'symbols',
+                                        subList: [],
+                                        mainLink: 'Символы г. Омска'
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            text: 'КОЛЛЕКЦИИ'
+                        },
+                        {
+                            text: 'АКЦИИ'
+                        },
+                        {
+                            text: 'ЖУРНАЛ', 
+                            modifier: 'with-bg',
+                            jsModifier: 'js-nav-parent-dark',
+                            innerWithSubset: {
+                                list: [
+                                        {
+                                            mainLink: 'Все статьи', 
+                                            secondaryLinks: ['Шото там', 'Тай таке', 'Впізнали нас?']
+                                        }, 
+                                        {
+                                            mainLink: 'Идеи подарков', 
+                                            secondaryLinks: ['Идея 1', 'Идея 2', 'Идея 3'],
+                                            color: '#C8A480'
+                                        },
+                                        {
+                                            mainLink: 'Красота', 
+                                            secondaryLinks: ['Красота 1', 'Красота 2', 'Красота 3', 'Красота 4'],
+                                            color: '#e61739'
+                                        },
+                                        {
+                                            mainLink: 'Развлечения', 
+                                            secondaryLinks: ['Красота 1', 'Красота 2', 'Красота 3', 'Красота 4'],
+                                            color: '#ff7043'
+                                        },
+                                        {
+                                            mainLink: 'Мода и стиль', 
+                                            secondaryLinks: ['Подраздел', 'При наведении', 'Стиль'],
+                                            color: '#2371cb'
+                                        }
+                                    ]
+                            }
+                        },
+                        {
+                            text: 'Магазины<span class="header__phone header__phone_mob">+7 (456) 567 87 95</span>', 
+                            modifier: "md-show"
+                        }
+                        
+                        
+                        ] %}
+                            <li class="nav__item{% if item.inner or item.innerWithSubset %} js-nav-item{% endif %}{% if item.modifier %} nav__item_{{item.modifier}}{% endif %}{% if item.jsModifier %} {{item.jsModifier}}{% endif %}">
+                                <a href="#" class="nav__link{% if item.modifier %} nav__link_{{item.modifier}}{% endif %} js-nav-link">
+                                    <span class="nav__text{% if item.modifier %} nav__text_{{item.modifier}}{% endif %}">{{ item.text | safe}}{% if item.innerWithSubset %}<span class="nav__text_with-bg-triangle js-line-triangle"></span>{% endif %}</span>
+                                    <span class="nav__line{% if item.modifier %} nav__line_{{item.modifier}}{% endif %}">
+                                        <span></span>
+                                    </span>
+                                    {% if item.inner or item.innerWithSubset %}
+                                        <span class="header__mob-next">
+                                            {{mixins.icon('chevron-right')}}
+                                        </span>
+                                    {% endif %}
+                                </a>
+                                {% if item.inner %}
+                                    <span class="nav__wrap js-nav-wrap-dark">
+                                        <h4 class="nav__mob-title">
+                                            {{item.text}}
+                                        </h4>
+                                        <button class="nav__back js-mob-back">
+                                            {{mixins.icon('arrow-left')}}
+                                        </button>
+                                        <span class="nav__inner nav__inner_flex inner" data-tabshover="data-tabs">
+                                            <span class="nav__items-wrap">
+                                                <span class="nav__items-current" data-tabs-current="data-tabs-current"></span>
+                                                <ul class="nav__items">
+                                                    {% for links in item.inner.list %}
+                                                        <li class="nav__item-column {% if links.subList.length > 0 %} js-mobile-control{% endif %}" data-tabs-control="{{ links.id }}">
+                                                            <a href="#" class="nav__link-column">
+                                                                <span class="nav__text-column">{{ links.mainLink | safe }}</span>
+                                                                {% if links.subList.length > 0 %}
+                                                                    <span class="header__mob-next">
+                                                                        {{mixins.icon('chevron-right')}}
+                                                                    </span>
+                                                                {% endif %}
+                                                            </a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </span>
+                                            <span class="nav__tabs-wrapper" data-tabs-wrapper="data-tabs-wrapper">
+                                            {% for links in item.inner.list %}
+                                                
+                                                {% if links.subList %}
+                                                    <span class="nav__sublist-wrap js-nav-item" data-tabs-container={{ links.id }} data-tabshover>
+                                                        <h4 class="nav__mob-title">
+                                                            {{links.mainLink | safe}}
+                                                        </h4>
+                                                        <button class="nav__back js-mob-back">
+                                                            {{mixins.icon('arrow-left')}}
+                                                        </button>
+                                                        <ul class="nav__sublist js-nav-child">
+                                                            {% for item in links.subList %}
+                                                                <li data-tabs-control="{{ item.id }}">
+                                                                    <a href="#" class="nav__sublink">{{ item.text | safe }}</a>
+                                                                </li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                        <span class="nav__hovertabs-wrap" data-tabs-wrapper="data-tabs-wrapper">
+                                                            {% for item in links.subList %}
+                                                                <span class="nav__hovertabs-container js-last-level js-no-init-active" data-tabs-container="{{ item.id }}">
+                                                                    <img src="./img/living-room-3.png" alt="img">
+                                                                </span>
+                                                            {% endfor %}
+                                                        </span>
+                                                        <span class="nav__img">
+                                                            <img src="./img/{{ links.img }}" alt="img">
+                                                        </span>
+                                                    </span>
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                </span>
+                                        </span>
+                                    </span>
+                                {% endif %}
+                                {% if item.innerWithSubset %}
+                                    <span class="nav__wrap nav__wrap_with-bg js-nav-wrap-dark js-line-bg">
+                                        <h4 class="nav__mob-title">
+                                            {{item.text}}
+                                        </h4>
+                                        <button class="nav__back js-mob-back">
+                                            {{mixins.icon('arrow-left')}}
+                                        </button>
+                                        <span class="nav__inner inner">
+                                            <ul class="nav__items-row">
+                                                {% for links in item.innerWithSubset.list %}
+                                                    <li class="nav__item-row js-nav-item"{% if links.color %} data-color="{{ links.color }}"{% endif %}>
+                                                        <a href="#" class="nav__link-row js-nav-link js-bg-link">
+                                                            <span class="nav__text-row">{{ links.mainLink }}</span>
+                                                            {% if links.secondaryLinks %}
+                                                                <span class="header__mob-next">
+                                                                    {{mixins.icon('chevron-right')}}
+                                                                </span>
+                                                            {% endif %}
+                                                        </a>
+                                                        {% if links.secondaryLinks %}
+                                                            <span class="nav__column">
+                                                                <h4 class="nav__mob-title">
+                                                                    {{links.mainLink}}
+                                                                </h4>
+                                                                <button class="nav__back js-mob-back">
+                                                                    {{mixins.icon('arrow-left')}}
+                                                                </button>
+                                                                <ul class="nav__elements js-nav-child">
+                                                                    {% for text in links.secondaryLinks %}
+                                                                        <li>
+                                                                            <a href="#" class="nav__element">{{ text | safe }}</a>
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            </span>
+                                                        {% endif %}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </span>
+                                    </span>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+{% endmacro %}

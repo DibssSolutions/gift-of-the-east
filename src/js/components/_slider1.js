@@ -49,36 +49,36 @@ mainSlider.each((i, el) => {
 const holidaySlider = $('.js-holiday-slider');
 holidaySlider.each((i, el) => {
   let holidaySlider = $(el);
-  let prevBtn = holidaySlider.find('.js-slider-prev');
-  let nextBtn = holidaySlider.find('.js-slider-next');
-  prevBtn.each((i,el) => {
-    let prevBtn = $(el);
-    prevBtn.on('click', () => {
-      if (prevBtn.hasClass('slick-disabled')) {
-        holidaySlider.slick('slickPrev');
-      }
-    });
+  // let prevBtn = holidaySlider.find('.js-slider-prev');
+  // let nextBtn = holidaySlider.find('.js-slider-next');
+  // prevBtn.each((i,el) => {
+  //   let prevBtn = $(el);
+  //   prevBtn.on('click', () => {
+  //     if (prevBtn.hasClass('slick-disabled')) {
+  //       holidaySlider.slick('slickPrev');
+  //     }
+  //   });
 
-  });
-  nextBtn.each((i,el) => {
-    let nextBtn = $(el);
-    nextBtn.on('click', () => {
-      if (nextBtn.hasClass('slick-disabled')) {
-        holidaySlider.slick('slickNext');
-      }
-    });
+  // });
+  // nextBtn.each((i,el) => {
+  //   let nextBtn = $(el);
+  //   nextBtn.on('click', () => {
+  //     if (nextBtn.hasClass('slick-disabled')) {
+  //       holidaySlider.slick('slickNext');
+  //     }
+  //   });
 
-  });
+  // });
   holidaySlider.on('init', () => {
     $(this).addClass(INIT);
   });
   holidaySlider.slick({
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 800,
     autoplay: false,
+    adaptiveHeight: true,
     autoplaySpeed: 8000,
-    touchThreshold: 1,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -102,11 +102,59 @@ slider.each((i, el) => {
   let sliderParent = slider.parents('.js-slider-parent');
   let prevBtn = $('.js-slider-prev', sliderParent);
   let nextBtn = $('.js-slider-next', sliderParent);
+  nextBtn.on('click', () => {
+    if($(window).width() > widthMD) {
+      holidaySlider.slick('slickNext');
+    }
+  });
+  prevBtn.on('click', () => {
+    if($(window).width() > widthMD) {
+      holidaySlider.slick('slickPrev');
+    }
+  });
   slider.on('init', () => {
     sliderParent.addClass(INIT);
   });
+  // slider.on('beforeChange', function(event, slick, currentSlide, nextSlide, direction) {
+  //   if($(window).width() < widthMD) {
+  //     console.log(currentSlide);
+  //     // console.log(direction);
+  //     if(((currentSlide + 1) % 3) === 0) {
+  //       holidaySlider.slick('slickNext');
+  //     }
+  //   }
+  // });
+  let slideCounter = 0;
+  slider.on('swipe', function(event, slick, direction) {
+    if($(window).width() < widthMD) {
+      console.log(direction);
+      if(direction === 'left') {
+        slideCounter++;
+        if((slideCounter % 3) === 0) {
+          holidaySlider.slick('slickNext');
+          console.log(slideCounter);
+          console.log(slideCounter);
+        }
+      }
+      if(direction === 'right') {
+        if((slideCounter % 3) === 0) {
+          holidaySlider.slick('slickPrev');
+        }
+        slideCounter--;
+      }
+    }
+    else {
+      if(direction === 'left') {
+        holidaySlider.slick('slickNext');
+      }
+      if(direction === 'right') {
+        holidaySlider.slick('slickPrev');
+      }
+
+    }
+  });
   slider.slick({
-    dots: false,
+    dots: true,
     infinite: false,
     speed: 800,
     autoplay: false,
@@ -128,8 +176,8 @@ slider.each((i, el) => {
       {
         breakpoint: widthMD,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       },
       {

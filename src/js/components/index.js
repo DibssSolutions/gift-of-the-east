@@ -1,5 +1,5 @@
 import './_three-dots';
-import './_slider';
+import './_slider1';
 import './_interior';
 import './_modal';
 import './_initScrollbar';
@@ -14,7 +14,7 @@ import './_filter-reset';
 import './_range-slider';
 import './_input-mask';
 import './_radioTab';
-import './_tabs';
+import './_tabs1';
 import './_aminOnScroll';
 import './_nav-links';
 import './_file';
