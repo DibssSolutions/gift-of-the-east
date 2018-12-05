@@ -189,6 +189,7 @@
                         {% for item in [
                         {
                             text: 'КАТАЛОГ',
+                            modifier: 'with-bg',
                             inner: {
                                 list: [
                                     {
@@ -511,7 +512,8 @@
                                     {
                                         id: 'symbols',
                                         subList: [],
-                                        mainLink: 'Символы г. Омска'
+                                        mainLink: 'Символы г. Омска',
+                                        img: 'nav-img@2x.jpg'
                                     }
                                 ]
                             }
@@ -564,7 +566,7 @@
                         ] %}
                             <li class="nav__item{% if item.inner or item.innerWithSubset %} js-nav-item{% endif %}{% if item.modifier %} nav__item_{{item.modifier}}{% endif %}{% if item.jsModifier %} {{item.jsModifier}}{% endif %}">
                                 <a href="#" class="nav__link{% if item.modifier %} nav__link_{{item.modifier}}{% endif %} js-nav-link">
-                                    <span class="nav__text{% if item.modifier %} nav__text_{{item.modifier}}{% endif %}">{{ item.text | safe}}{% if item.innerWithSubset %}<span class="nav__text_with-bg-triangle js-line-triangle"></span>{% endif %}</span>
+                                    <span class="nav__text{% if item.modifier and item.innerWithSubset %} nav__text_{{item.modifier}}{% endif %}">{{ item.text | safe}}{% if item.innerWithSubset %}<span class="nav__text_with-bg-triangle js-line-triangle"></span>{% endif %}</span>
                                     <span class="nav__line{% if item.modifier %} nav__line_{{item.modifier}}{% endif %}">
                                         <span></span>
                                     </span>
