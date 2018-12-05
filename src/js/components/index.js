@@ -1,5 +1,5 @@
 import './_three-dots';
-import './_slider1';
+import './_slider2';
 import './_interior';
 import './_modal';
 import './_initScrollbar';

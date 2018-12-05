@@ -310,6 +310,49 @@ $delay: 3s
 		padding: 0 16px
 
 .holiday-slider
+	opacity: 0
+	transition: opacity .35s ease-in-out
+	+md
+		padding: 0
+	&.is-init
+		opacity: 1
+	&__wrap
+		position: relative
+	&__prev,
+	&__next
+		position: absolute
+		content: "" 
+		z-index: 2
+		top: 51%
+		width: 56px
+		height: 56px
+		color: $black
+		margin-top: -28px
+		border-radius: 50%
+		background-color: rgba($white, 0.5) 
+		transition: background-color .3s ease-in-out
+		+md
+			display: none !important
+		+hover
+			color: $lightBrown 
+			background-color: $white 
+		&.slick-disabled
+			cursor: default
+			+hover
+				background-color: rgba($white, 0.5) 
+			.icon
+				color: $gray
+		.icon
+			position: absolute
+			top: 50%
+			left: 50%
+			margin: -8px 0 0 -8px
+			font-size: 16px 
+			transition: color .3s ease-in-out
+	&__prev
+		left: 0
+	&__next
+		right: 0
 	.slick-dots
 		position: absolute
 		bottom: 0
