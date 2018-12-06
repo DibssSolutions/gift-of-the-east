@@ -350,12 +350,18 @@ DOC.ready(() => {
         videos.each((i, el) => {
           $(el)[0].pause();
         });
+        console.log('pause');
+        console.log(currentSlide);
+        console.log(slick);
         // PLAY CURRENT
+        let currentSlide = slider.slick('slickCurrentSlide');
         let slides = $('.offers-slider__slide');
         const videoCurrent = $(slides[currentSlide]).find('video')[0];
+        console.log(slider);
         if (videoCurrent) {
           $(video).removeClass(PAUSED);
           videoCurrent.play();
+          console.log('play');
         }
       }
     });
@@ -365,6 +371,8 @@ DOC.ready(() => {
       infinite: false,
       speed: 1800,
       fade: true,
+      draggable: false,
+      swipe: false,
       slidesToShow: 1,
       slidesToScroll: 1,
       // autoplay: true,
@@ -485,3 +493,90 @@ DOC.ready(() => {
     });
   });
 });
+
+// =================== PRODUCT CARD SLIDER ============================
+
+setTimeout(() => {
+  const cardSlider = $('.js-product-slider');
+  const productSlider = cardSlider.closest('.js-offers-slider');
+  console.log(productSlider);
+  cardSlider.each((i, el) => {
+    let slider = $(el);
+    slider.on('init', () => {
+      slider.addClass(INIT);
+    });
+    slider.on('edge', function(event, slick, direction) {
+      if($(window).width() < widthMD) {
+        console.log('edge');
+        //     console.log(direction);
+        //     if(direction === 'left') {
+        //       slideCounter++;
+        //       if((slideCounter % 3) === 0) {
+        //         holidaySlider.slick('slickNext');
+        //         console.log(slideCounter);
+        //         console.log(slideCounter);
+        //       }
+        //     }
+        //     if(direction === 'right') {
+        //       if((slideCounter % 3) === 0) {
+        //         holidaySlider.slick('slickPrev');
+        //       }
+        //       slideCounter--;
+        //     }
+        //   }
+        //   else {
+        if(direction === 'left') {
+          productSlider.slick('slickNext');
+        }
+        if(direction === 'right') {
+          productSlider.slick('slickPrev');
+        }
+  
+      }
+    });
+    slider.slick({
+      dots: false,
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      variableWidth: true,
+      // centerMode: true,
+      // centerPadding: '10px'
+      // responsive: [
+      //   {
+      //     breakpoint: 1259,
+      //     settings: {
+      //       slidesToShow: 2,
+      //       slidesToScroll: 1,
+      //       variableWidth: true
+      //     }
+      //   },
+      //   {
+      //     breakpoint: widthMD,
+      //     settings: {
+      //       slidesToShow: 3,
+      //       slidesToScroll: 1,
+      //       draggable: true,
+      //       swipe: true
+      //     }
+      //   },
+      //   {
+      //     breakpoint: 840,
+      //     settings: {
+      //       slidesToShow: 2
+      //     }
+      //   },
+      //   {
+      //     breakpoint: 593,
+      //     settings: {
+      //       slidesToShow: 1,
+      //       slidesToScroll: 1,
+      //       draggable: true,
+      //       swipe: true
+      //     }
+      //   }
+      // ]
+    });
+  });
+}, 1000);
