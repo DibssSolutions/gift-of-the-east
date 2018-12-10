@@ -332,38 +332,39 @@ DOC.ready(() => {
 // ============== OFFERS SLIDER ====================
 DOC.ready(() => {
   const productSlider = $('.js-offers-slider');
-
   productSlider.each((i, el) => {
     let slider = $(el);
+    // console.log(slider);
 
-    slider.on('init', () => {
+    slider.on('init', (event, slick) => {
       slider.addClass(INIT);
       const video = $('video', slider)[0];
       video.play();
       initControls();
+      initCardSlider(slider);
     });
 
-    slider.on('afterChange', (event, slick, currentSlide) => {
+    slider.on('afterChange', (event, slick) => {
       // PAUSE ALL VIDEOS
-      if (WIN_WIDTH > widthMD) {
-        const videos = $('.offers-slider__slide video');
-        videos.each((i, el) => {
-          $(el)[0].pause();
-        });
-        console.log('pause');
-        console.log(currentSlide);
-        console.log(slick);
-        // PLAY CURRENT
-        let currentSlide = slider.slick('slickCurrentSlide');
-        let slides = $('.offers-slider__slide');
-        const videoCurrent = $(slides[currentSlide]).find('video')[0];
-        console.log(slider);
-        if (videoCurrent) {
-          $(video).removeClass(PAUSED);
-          videoCurrent.play();
-          console.log('play');
-        }
+      // if (WIN_WIDTH > widthSM) {
+      const videos = $('.offers-slider__slide video');
+      videos.each((i, el) => {
+        $(el)[0].pause();
+      });
+      // console.log('pause');
+      // console.log(currentSlide);
+      // console.log(slick);
+      // PLAY CURRENT
+      let currentSlide = slider.slick('slickCurrentSlide');
+      let slides = $('.offers-slider__slide');
+      const videoCurrent = $(slides[currentSlide]).find('video')[0];
+      // console.log(slider);
+      if (videoCurrent) {
+        $(video).removeClass(PAUSED);
+        videoCurrent.play();
+        // console.log('play');
       }
+      // }
     });
 
     slider.slick({
@@ -372,7 +373,7 @@ DOC.ready(() => {
       speed: 1800,
       fade: true,
       draggable: false,
-      swipe: false,
+      // swipe: false,
       slidesToShow: 1,
       slidesToScroll: 1,
       // autoplay: true,
@@ -495,15 +496,29 @@ DOC.ready(() => {
 });
 
 // =================== PRODUCT CARD SLIDER ============================
-
-setTimeout(() => {
-  const cardSlider = $('.js-product-slider');
-  const productSlider = cardSlider.closest('.js-offers-slider');
-  console.log(productSlider);
+function initCardSlider(container) {
+  // setTimeout(() => {
+  // const cardSlider = $('.js-product-slider');
+  // const productSlider = cardSlider.closest('.js-offers-slider');
+  const productSlider = container;
+  const cardSlider = productSlider.find('.js-product-slider');
+  const cursor = productSlider.find('.js-cursor');
+  // console.log(cardSlider);
+  // console.log(productSlider);
+  // console.log(cardSlider);
   cardSlider.each((i, el) => {
-    let slider = $(el);
+    const slider = $(el);
     slider.on('init', () => {
       slider.addClass(INIT);
+      return false;
+    });
+    slider.on('touchstart', () => {
+      productSlider.slick('slickSetOption', 'swipe', false);
+      console.log('swipe false');
+    });
+    slider.on('touchend', () => {
+      productSlider.slick('slickSetOption', 'swipe', true);
+      console.log('swipe true');
     });
     slider.on('edge', function(event, slick, direction) {
       if($(window).width() < widthMD) {
@@ -532,6 +547,29 @@ setTimeout(() => {
           productSlider.slick('slickPrev');
         }
   
+      }
+    });
+    // slider.on('beforeChange', (event, slick, currentSlide, nextSlide) => {
+    //   // console.log(currentSlide);
+    //   if (currentSlide === 0) {
+    //     cursor.addClass('leftEnd');
+    //   }
+    //   else {
+    //     cursor.removeClass('leftEnd');
+    //   }
+    // });
+    slider.on('setPosition', (event, slick) => {
+      if (slick.currentSlide === 0) {
+        cursor.addClass('leftEnd');
+      }
+      else {
+        cursor.removeClass('leftEnd');
+      }
+      if (slick.currentSlide === (slick.slideCount - 1)) {
+        cursor.addClass('rightEnd');
+      }
+      else {
+        cursor.removeClass('rightEnd');
       }
     });
     slider.slick({
@@ -579,4 +617,5 @@ setTimeout(() => {
       // ]
     });
   });
-}, 1000);
+  // }, 500);
+}

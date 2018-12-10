@@ -181,7 +181,12 @@
                                 {{slide.descrText}}
                             </div>
                         </div>
-                        <div class="package-offer__cards">
+                        <div class="package-offer__cards js-cursor-parent">
+                            <div class="cursor js-cursor">
+                                {{ mixins.icon('chevron-left') }}
+                                {{ mixins.icon('circle-outline') }}
+                                {{ mixins.icon('chevron-right') }}
+                            </div>
                             <div class="js-product-slider product-slider">
                                 {% for card in slide.cardProducts %}
                                 <div class="product-slider__slide">

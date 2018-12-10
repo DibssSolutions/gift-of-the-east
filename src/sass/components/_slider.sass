@@ -732,7 +732,7 @@ $delay: 3s
 			left: 50%
 			transform: translateX(-50%)
 		+sm 
-			bottom: -20px
+			bottom: -40px
 		li 
 			+md 
 				display: inline-block
@@ -807,17 +807,25 @@ $delay: 3s
 	display: flex
 	position: relative
 	align-items: stretch
+	+sm
+		flex-direction: column
 	&__media-wrapper
 		flex: 0 0 440px
 		height: 100%
 		overflow: hidden
-		+md 
-			display: none
+		// +md 
+		// 	display: none
+		+sm
+			flex-basis: 100%
+			height: 567px
 	&__image-wrapper
 		+coverdiv
 		overflow: hidden
 		max-width: 440px
 		height: 100%
+		+sm
+			position: relative
+			max-width: 100%
 	&__image
 		display: block
 		position: absolute
@@ -836,15 +844,22 @@ $delay: 3s
 			
 		+md 
 			padding-bottom: 200px
+		+sm
+			position: relative
+			width: 100%
 	&__content
 		flex: 0 0 58%
 		flex: 0 0 calc(100% - 440px)
 		max-width: calc(100% - 440px)
 		position: relative
 		z-index: 2
-		+md 
+		+md
+			padding-left: 20px
+		+sm
 			flex: 0 0 100%
 			max-width: 100%
+			padding: 0 8px
+			margin-top: -30px
 	&__descr
 		width: calc(100% + 176px)
 		margin: 48px 0 48px -176px
@@ -860,18 +875,32 @@ $delay: 3s
 			width: 100%
 			margin: 0
 			padding: 20px 0
+		+sm
+			padding: 24px 8px
 	&__descr-top
 		display: flex
 		justify-content: space-between
 		align-items: center
 		margin-bottom: 22px
+		+md
+			flex-direction: column
+			align-items: flex-start
 		+sm
+			flex-direction: row
+			align-items: center
+		+xs
 			flex-direction: column
 	&__title
 		margin-bottom: 0
 		transition: color 0.4s
 		+hover
 			color: $lightBrown
+		+md
+			margin-bottom: 16px
+		+sm
+			margin-bottom: 0
+		+xs
+			margin-bottom: 16px
 	&__text
 		+f(17px, 400, 1.588)
 		max-height: 80px
@@ -885,13 +914,12 @@ $delay: 3s
 		// flex-wrap: wrap
 		margin: 0 -12px 
 		z-index: 10
-		+md 
+		+md
+			padding-left: 0
+		+sm 
 			width: 100%
 			max-width: 100%
-			padding-left: 0
-			margin: 20px 0 0
-		+sm 
-			// display: none
+			margin: 24px 0 0
 	&__card
 		// flex: 33.333%
 		padding: 0 12px
@@ -912,6 +940,8 @@ $delay: 3s
 			visibility: hidden
 			transition: opacity 0.4s, visibility 0.4s
 			z-index: 10
+			+sm
+				display: none
 		+hover
 			.package-offer__video-buttons
 				opacity: 1
@@ -919,6 +949,9 @@ $delay: 3s
 			&:after
 				opacity: 1
 				visibility: visible
+		+sm
+			position: relative
+			max-width: 100%
 		.is-fullscreen &
 			max-width: 1300px
 			z-index: 10000
@@ -936,6 +969,8 @@ $delay: 3s
 		opacity: 0
 		visibility: hidden
 		transition: opacity 0.4s, visibility 0.4s
+		+sm
+			position: relative
 		.slick-current &
 			visibility: visible
 			opacity: 1
@@ -951,6 +986,9 @@ $delay: 3s
 		opacity: 0
 		visibility: hidden
 		transition: visility 0.4s, opacity 0.4s
+		+md
+			opacity: 1
+			visibility: visible
 
 
 .video-play,
@@ -1022,9 +1060,16 @@ $delay: 3s
 
 .product-slider
 	// width: 100%
+	cursor: grab
 	display: flex
+	.package-offer__cards.is-focused &
+		// cursor: url('../img/cursor-hide.png'), none
+		cursor: none
+		.product__link
+			cursor: none
 	&__slide
 		// width: 256px
+		height: 100%
 		.product
 			width: 224px
 			+md
@@ -1036,13 +1081,44 @@ $delay: 3s
 			align-items: center
 	.slick-list
 		overflow: hidden
+		display: flex
+		padding: 20px 0
+		margin: -20px 0
 	.slick-slide
 		// float: none
 		+md
 			margin: 0
+		&>div
+			height: 100%
 	.slick-track
-		padding: 20px 0
+		display: flex
 	// 	display: flex
 	// 	&:before,
 	// 	&:after
 	// 		display: none
+
+.cursor
+	display: flex
+	align-items: center
+	font-size: 20px
+	color: $red
+	position: absolute
+	z-index: 100
+	top: 0
+	left: 0
+	transform: translate(-50%, -50%)
+	pointer-events: none
+	opacity: 0
+	visibility: hidden
+	&.leftEnd
+		.icon-chevron-left
+			display: none
+	&.rightEnd
+		.icon-chevron-right
+			display: none
+	.icon-circle-outline
+		font-size: 25px
+
+	.package-offer__cards.is-focused &
+		opacity: 1
+		visibility: visible

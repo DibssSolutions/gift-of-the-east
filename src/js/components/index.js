@@ -26,4 +26,5 @@ import './_photo-gallery';
 import './_breadcrumbs';
 import './_promoTimer';
 import './_sequence';
+import './_cursor';
 // import './_startingAnimation';
