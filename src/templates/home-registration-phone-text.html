@@ -24,7 +24,17 @@ title: home-registration-phone-text
 				<div class="modal__title">Регистрация</div>
 				<div class="form__text">На anna_neanna@mail.ru отправлено письмо. Перейдите по ссылке из письма, чтобы начать получать привилегии члена Клуба</div>
 				<div class="form__text form__text_gray">Письмо не пришло? <br>Убедитесь,что письмо не попало в спам</div>
-				<div class="form-footer"><a href="#" class="link">Отправить еще раз</a></div>
+				<div class="form-footer">
+                    <button class="btn-reset btn-reset_brown">
+                        <span>Перезвонить еще раз</span>
+                        {{mixins.icon('refresh-two-arrows')}}
+                    </button>
+                    <button class="btn-link">
+                        Позвонить повторно через
+                        <span class="btn-link__gold js-phone-time">28</span>
+                        секунд
+					</button>
+				</div>
 			</form>
 		</div>
 	</div>
