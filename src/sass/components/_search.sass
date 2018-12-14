@@ -251,9 +251,15 @@
 	&__link
 		font-size: 16px
 		line-height: 1
-		text-decoration: underline
+		border-bottom: 1px solid currentColor
+		transition: color .3s, border-color .3s
+		+hover
+			color: $lightBrown
+			border-color: transparent
 	&__details
 		color: $gray
+		&:not(:first-child)
+			margin-left: 16px
 	&__pagination
 		position: absolute
 		right: 0
