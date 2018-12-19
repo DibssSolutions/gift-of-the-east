@@ -8,7 +8,7 @@ title: Product card-Product description - Registered user with club card - Speci
 	<!-- begin goods -->
 	<div class="goods">
 		<div class="goods__card">
-			<div class="goods__inner inner">
+		    <div class="goods__inner inner">
 				{{ mixins.breadcrumbs({
 					list: ['Назад','Главная','Каталог', 'Предметы интерьера', 'Вазы', 'Вазы настольные', 'Ваза из стекла с разноцветным узором']
 				}) }}
@@ -18,89 +18,78 @@ title: Product card-Product description - Registered user with club card - Speci
 					</div>
 					<div class="goods__col col col-42 col-md-100">
 						<h3 class="goods__title title-md">Ваза из стекла с разноцветным узором</h3>
-						{{ mixins.rating(
-	   						[
-	   							{
-	   								link: true,
-	   								text: '2 отзыва'
-	   							},
-	   							{
-	   								text: '12 просмотров'
-	   							},
-	   							{
-	   								text: 'Артикул: 45675'
-	   							}
-	   						]
-	   					) }}
-						<div class="goods__price">
-							{{ mixins.price({
-								class: 'price_red',
-								price: "900 ₽",
-								text: "Цена для Вас"
-							}) }}
-						</div>
-						<div class="goods__price-old">
-							{{ mixins.price({
-								class: 'price_old',
-								price: "1400 ₽",
-								text: "Цена без скидки"
-							}) }}
-						</div>
-						<div class="goods__controls">
-							<div class="goods__field">
-								<div class="goods__buy">
-									<button class="btn btn_full" type="button">ДОБАВИТЬ В КОРЗИНУ</button>
-									{{ mixins.likebtn() }}
-								</div>
-							</div>
-						</div>
-						<div class="goods__share">
-							<div class="goods__field">
-								{{ mixins.iconlink('location', 'В наличии в 3 магазинах') }}
-							</div>
-							<div class="goods__field">
-								{{ mixins.iconlink('share-variant', 'Поделиться с друзьями') }}
-							</div>
-						</div>
+			        	{{ mixins.rating(
+       		            	[
+       			                {
+       			                	link: true,
+       			                	text: '2 отзыва'
+       			                },
+       			                {
+       			                	text: '12 просмотров'
+       			                },
+       			                {
+       			                	text: 'Артикул: 45675'
+       			                }
+       			            ]
+       		        	) }}
+			        	<div class="goods__price">
+				        	{{ mixins.price({
+				        		class: 'price_red',
+				        		price: "900 ₽",
+				        		text: "Цена для Вас"
+				        	}) }}
+			        	</div>
+			        	<div class="goods__price-old">
+			        		{{ mixins.price({
+			        			class: 'price_old',
+			        			price: "1400 ₽",
+			        			text: "Цена без скидки"
+			        		}) }}
+			        	</div>
+			        	<div class="goods__controls">
+				        	<div class="goods__field">
+				        		<div class="goods__buy">
+				        			<button class="btn btn_full" type="button">ДОБАВИТЬ В КОРЗИНУ</button>
+				        			{{ mixins.likebtn() }}
+				        		</div>
+				        	</div>
+			        	</div>
+			        	<div class="goods__share">
+			        		<div class="goods__field">
+			        			{{ mixins.iconlink('location', 'В наличии в 3 магазинах') }}
+			        		</div>
+			        		<div class="goods__field">
+			        			{{ mixins.iconlink('share-variant', 'Поделиться с друзьями') }}
+			        		</div>
+			        	</div>
 					</div>
 				</div>
-			</div>
+		    </div>
 		</div>
 		<div class="goods__tabs">
 			{% include "partials/product-card/_tabs.html" %}
 			<div class="goods__filter">
 				<div class="goods__inner inner-sm">
-					<div class="goods__tags-wrap js-goods-tags-wrap">
-						<div class="goods__tags tags js-goods-tags">
-							<div class="tags__wrap">
-								{% for text in [
-									'ПОДАРКИ ДЛЯ ЖЕНЩИН',
-									'НЕОБЫЧНЫЕ ПОДАРКИ',
-									'ВОСТОЧНЫЙ ИНТЕРЬЕР',
-									'ВОСТОЧНЫЙ ИНТЕРЬЕР',
-									'ЭЛЕГАНТНОСТЬ',
-									'ВОСТОЧНЫЙ ИНТЕРЬЕР',
-									'ПОДАРКИ ДЛЯ ЖЕНЩИН',
-									'ВОСТОЧНЫЙ ИНТЕРЬЕР',
-									'ЭЛЕГАНТНОСТЬ',
-									'НЕОБЫЧНЫЕ ПОДАРКИ',
-									'1',
-									'1231',
-									'5345',
-									'9830495340875'
-								] %}
-									<a href="#" class="tag tag_gallery">{{text}}</a>
-								{% endfor %}
-							</div>
-						</div>
-						<div class="goods__filter-select">
-							<button class="goods__tags-trigger tags-trigger js-tags-trigger">
-								<div class="tags-trigger__text">Показать все</div>
-								<div class="tags-trigger__text-active">Скрыть</div>
-								{{ mixins.icon('chevron-down') }}
-							</button>
+					<div class="goods__tags tags">
+						<div class="tags__wrap">
+							{% for text in [
+								'ПОДАРКИ ДЛЯ ЖЕНЩИН',
+								'НЕОБЫЧНЫЕ ПОДАРКИ',
+								'ВОСТОЧНЫЙ ИНТЕРЬЕР',
+								'ВОСТОЧНЫЙ ИНТЕРЬЕР',
+								'ЭЛЕГАНТНОСТЬ'
+							] %}
+								<a href="#" class="tag tag_gallery">{{text}}</a>
+							{% endfor %}
 						</div>
 					</div>
+					<select class="js-select select select_bord select_sm select_icon" data-icon-arrow="chevron-down" data-width="144">
+						<option value="ПОКАЗАТЬ ВСЕ">ПОКАЗАТЬ ВСЕ</option>
+						<option value="item">item</option>
+						<option value="item">item</option>
+						<option value="item">item</option>
+						<option value="item">item</option>
+					</select>
 				</div>
 			</div>
 		</div>

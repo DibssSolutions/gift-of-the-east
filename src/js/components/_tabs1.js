@@ -17,13 +17,13 @@ export default (() => {
     init() {
       this.initializeCache();
       this.initializeEvents();
-      this.mobDrop();
+      // this.mobDrop();
     }
 
     initHover() {
       this.initializeCacheHover();
       this.initializeEventsHover();
-      this.mobDrop();
+      // this.mobDrop();
     }
 
     initializeCache() {
@@ -111,10 +111,13 @@ export default (() => {
           }
         });
         control.on('mouseleave', e => {
-          controls.removeClass(ACTIVE);
-          if (container.hasClass('js-last-level')) {
-            container.removeClass(OPEN);
-          }
+          let winWidth = this.getWindowWidth();
+          if (winWidth > widthMD) {
+            controls.removeClass(ACTIVE);
+            if (container.hasClass('js-last-level')) {
+              container.removeClass(OPEN);
+            };
+          };
         });
         control.on('click', e => {
           let winWidth = this.getWindowWidth();

@@ -338,8 +338,26 @@ DOC.ready(() => {
 
     slider.on('init', (event, slick) => {
       slider.addClass(INIT);
-      const video = $('video', slider)[0];
-      video.play();
+      // const video = $('video', slider)[0];
+      // const source = $(video).find('source');
+      // const src = source.attr('data');
+      // source.attr('src', src);
+      // console.log(src);
+      setTimeout(() => {
+        let currentSlide = slider.slick('slickCurrentSlide');
+        let slides = $('.offers-slider__slide');
+        const videoCurrent = $(slides[currentSlide]).find('video')[0];
+        // console.log(slider);
+        if (videoCurrent) {
+          $(video).removeClass(PAUSED);
+          videoCurrent.play();
+        // console.log('play');
+        }
+      }, 1000);
+      // setTimeout(() => {
+      //   video.play();
+      //   $(video).removeClass(PAUSED);
+      // }, 3000);
       initControls();
       initCardSlider(slider);
     });
@@ -348,6 +366,7 @@ DOC.ready(() => {
       // PAUSE ALL VIDEOS
       // if (WIN_WIDTH > widthSM) {
       const videos = $('.offers-slider__slide video');
+      // slider.removeClass(FULLSCREEN);
       videos.each((i, el) => {
         $(el)[0].pause();
       });
@@ -366,11 +385,18 @@ DOC.ready(() => {
       }
       // }
     });
+    slider.on('beforeChange', () => {
+      slider.removeClass(FULLSCREEN);
+      let currentSlide = slider.slick('slickCurrentSlide');
+      let slides = $('.offers-slider__slide');
+      const videoCurrent = $(slides[currentSlide]).find('video')[0];
+      $(videoCurrent).prop('muted', true);
+    });
 
     slider.slick({
       dots: true,
       infinite: false,
-      speed: 1800,
+      speed: 800,
       fade: true,
       draggable: false,
       // swipe: false,
@@ -417,25 +443,21 @@ function initControls() {
   const compressBtn = $('.js-video-compress');
   const slider = playBtn.closest('.js-offers-slider');
 
-  expandBtn.each((i, el) =>
-    $(el).on('click', function(e) {
-      slider.addClass(FULLSCREEN);
-      const video = $(this)
-        .closest('.package-offer__video-wrapper')
-        .find('video')[0];
-      $(video).prop('muted', false);
-    })
-  );
+  expandBtn.on('click', function(e) {
+    slider.addClass(FULLSCREEN);
+    const video = $(this)
+      .closest('.package-offer__video-wrapper')
+      .find('video')[0];
+    $(video).prop('muted', false);
+  });
 
-  compressBtn.each((i, el) =>
-    $(el).on('click', function(e) {
-      slider.removeClass(FULLSCREEN);
-      const video = $(this)
-        .closest('.package-offer__video-wrapper')
-        .find('video')[0];
-      $(video).prop('muted', true);
-    })
-  );
+  compressBtn.on('click', function(e) {
+    slider.removeClass(FULLSCREEN);
+    const video = $(this)
+      .closest('.package-offer__video-wrapper')
+      .find('video')[0];
+    $(video).prop('muted', true);
+  });
 
   pauseBtn.on('click', function(e) {
     const video = $(this)
@@ -501,121 +523,118 @@ function initCardSlider(container) {
   // const cardSlider = $('.js-product-slider');
   // const productSlider = cardSlider.closest('.js-offers-slider');
   const productSlider = container;
-  const cardSlider = productSlider.find('.js-product-slider');
+  const slider = productSlider.find('.js-product-slider');
   const cursor = productSlider.find('.js-cursor');
   // console.log(cardSlider);
   // console.log(productSlider);
   // console.log(cardSlider);
-  cardSlider.each((i, el) => {
-    const slider = $(el);
-    slider.on('init', () => {
-      slider.addClass(INIT);
-      return false;
-    });
-    slider.on('touchstart', () => {
-      productSlider.slick('slickSetOption', 'swipe', false);
-      console.log('swipe false');
-    });
-    slider.on('touchend', () => {
-      productSlider.slick('slickSetOption', 'swipe', true);
-      console.log('swipe true');
-    });
-    slider.on('edge', function(event, slick, direction) {
-      if($(window).width() < widthMD) {
-        console.log('edge');
-        //     console.log(direction);
-        //     if(direction === 'left') {
-        //       slideCounter++;
-        //       if((slideCounter % 3) === 0) {
-        //         holidaySlider.slick('slickNext');
-        //         console.log(slideCounter);
-        //         console.log(slideCounter);
-        //       }
-        //     }
-        //     if(direction === 'right') {
-        //       if((slideCounter % 3) === 0) {
-        //         holidaySlider.slick('slickPrev');
-        //       }
-        //       slideCounter--;
-        //     }
-        //   }
-        //   else {
-        if(direction === 'left') {
-          productSlider.slick('slickNext');
-        }
-        if(direction === 'right') {
-          productSlider.slick('slickPrev');
-        }
-  
-      }
-    });
-    // slider.on('beforeChange', (event, slick, currentSlide, nextSlide) => {
-    //   // console.log(currentSlide);
-    //   if (currentSlide === 0) {
-    //     cursor.addClass('leftEnd');
-    //   }
-    //   else {
-    //     cursor.removeClass('leftEnd');
-    //   }
-    // });
-    slider.on('setPosition', (event, slick) => {
-      if (slick.currentSlide === 0) {
-        cursor.addClass('leftEnd');
-      }
-      else {
-        cursor.removeClass('leftEnd');
-      }
-      if (slick.currentSlide === (slick.slideCount - 1)) {
-        cursor.addClass('rightEnd');
-      }
-      else {
-        cursor.removeClass('rightEnd');
-      }
-    });
-    slider.slick({
-      dots: false,
-      infinite: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      variableWidth: true,
-      // centerMode: true,
-      // centerPadding: '10px'
-      // responsive: [
-      //   {
-      //     breakpoint: 1259,
-      //     settings: {
-      //       slidesToShow: 2,
-      //       slidesToScroll: 1,
-      //       variableWidth: true
+  slider.on('init', () => {
+    slider.addClass(INIT);
+    return false;
+  });
+  slider.on('touchstart', () => {
+    productSlider.slick('slickSetOption', 'swipe', false);
+    console.log('swipe false');
+  });
+  slider.on('touchend', () => {
+    productSlider.slick('slickSetOption', 'swipe', true);
+    console.log('swipe true');
+  });
+  slider.on('edge', function(event, slick, direction) {
+    if($(window).width() < widthMD) {
+      console.log('edge');
+      //     console.log(direction);
+      //     if(direction === 'left') {
+      //       slideCounter++;
+      //       if((slideCounter % 3) === 0) {
+      //         holidaySlider.slick('slickNext');
+      //         console.log(slideCounter);
+      //         console.log(slideCounter);
+      //       }
       //     }
-      //   },
-      //   {
-      //     breakpoint: widthMD,
-      //     settings: {
-      //       slidesToShow: 3,
-      //       slidesToScroll: 1,
-      //       draggable: true,
-      //       swipe: true
-      //     }
-      //   },
-      //   {
-      //     breakpoint: 840,
-      //     settings: {
-      //       slidesToShow: 2
-      //     }
-      //   },
-      //   {
-      //     breakpoint: 593,
-      //     settings: {
-      //       slidesToShow: 1,
-      //       slidesToScroll: 1,
-      //       draggable: true,
-      //       swipe: true
+      //     if(direction === 'right') {
+      //       if((slideCounter % 3) === 0) {
+      //         holidaySlider.slick('slickPrev');
+      //       }
+      //       slideCounter--;
       //     }
       //   }
-      // ]
-    });
+      //   else {
+      if(direction === 'left') {
+        productSlider.slick('slickNext');
+      }
+      if(direction === 'right') {
+        productSlider.slick('slickPrev');
+      }
+  
+    }
+  });
+  // slider.on('beforeChange', (event, slick, currentSlide, nextSlide) => {
+  //   // console.log(currentSlide);
+  //   if (currentSlide === 0) {
+  //     cursor.addClass('leftEnd');
+  //   }
+  //   else {
+  //     cursor.removeClass('leftEnd');
+  //   }
+  // });
+  slider.on('setPosition', (event, slick) => {
+    if (slick.currentSlide === 0) {
+      cursor.addClass('leftEnd');
+    }
+    else {
+      cursor.removeClass('leftEnd');
+    }
+    if (slick.currentSlide === (slick.slideCount - 1)) {
+      cursor.addClass('rightEnd');
+    }
+    else {
+      cursor.removeClass('rightEnd');
+    }
+  });
+  slider.slick({
+    dots: false,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    variableWidth: true,
+    // centerMode: true,
+    // centerPadding: '10px'
+    // responsive: [
+    //   {
+    //     breakpoint: 1259,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 1,
+    //       variableWidth: true
+    //     }
+    //   },
+    //   {
+    //     breakpoint: widthMD,
+    //     settings: {
+    //       slidesToShow: 3,
+    //       slidesToScroll: 1,
+    //       draggable: true,
+    //       swipe: true
+    //     }
+    //   },
+    //   {
+    //     breakpoint: 840,
+    //     settings: {
+    //       slidesToShow: 2
+    //     }
+    //   },
+    //   {
+    //     breakpoint: 593,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //       draggable: true,
+    //       swipe: true
+    //     }
+    //   }
+    // ]
   });
   // }, 500);
 }

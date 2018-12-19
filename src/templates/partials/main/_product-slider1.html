@@ -133,8 +133,8 @@
                     <div class="package-offer__media-wrapper">
                         {% if slide.video %}
                             <div class="package-offer__video-wrapper">
-                                <video class="package-offer__video js-video" loop="true" muted poster="img/{{slide.video.poster}}">
-                                    <source src="video/{{slide.video.src}}" type="video/webm">
+                                <video class="package-offer__video js-video" loop="true" muted playsinline poster="img/{{slide.video.poster}}">
+                                    <source src="video/{{slide.video.src}}" data="video/{{slide.video.src}}" type="video/mp4">
                                     Your browser doesn't support HTML5 video tag.
                                 </video>
                                 <div class="package-offer__video-buttons">

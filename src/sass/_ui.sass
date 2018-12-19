@@ -25,6 +25,59 @@
 		margin: 0 -4px -8px 0
 		+md
 			margin: 0
+	&-trigger
+		position: relative
+		padding: 5px 35px 4px 15px
+		text-transform: uppercase
+		background-color: transparent
+		font-family: $montserrat
+		display: flex
+		align-items: center
+		border: 1px solid $silver
+		outline: none
+		max-width: 150px
+		overflow: hidden
+		&__text,
+		&__text-active
+			font-size: 11px
+			line-height: 1.5
+			overflow: hidden
+			white-space: nowrap
+			text-overflow: ellipsis
+			transition: opacity .2s, visibility .2s, transform .3s ease-in-out
+		&__text
+			position: relative
+			opacity: 1
+			visibility: visible
+			transform: translateX(0)
+			.tags-trigger.is-active &
+				position: absolute
+				opacity: 0
+				visibility: hidden
+				left: 0
+				transform: translateX(100%)
+		&__text-active
+			position: absolute
+			opacity: 0
+			visibility: hidden
+			transform: translateX(-100%)
+			.tags-trigger.is-active &
+				position: relative
+				opacity: 1
+				visibility: visible
+				transform: translateX(0)
+		.icon
+			position: absolute
+			top: 50%
+			right: 14px
+			margin-top: -3px
+			font-size: 7px
+			color: silver
+			transition: transform .3s ease-in-out
+		&.is-active
+			.icon
+				transform: rotate(180deg)
+
 
 .tag
 	margin: 0 4px 8px 0

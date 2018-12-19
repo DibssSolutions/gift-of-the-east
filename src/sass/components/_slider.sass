@@ -952,7 +952,7 @@ $delay: 3s
 		+sm
 			position: relative
 			max-width: 100%
-		.is-fullscreen &
+		.is-fullscreen .slick-active &
 			max-width: 1300px
 			z-index: 10000
 	&__video
@@ -1027,10 +1027,15 @@ $delay: 3s
 	display: none
 
 .is-fullscreen
-	.video-expand
-		display: none
-	.video-compress
-		display: block
+	.slick-active
+		.video-expand
+			display: none
+		.video-compress
+			display: block
+	.slick-dots
+		z-index: -1
+		+md
+			z-index: auto
 
 .is-paused
 	~ .package-offer__video-buttons .video-play

@@ -35,9 +35,24 @@
 	&__filter
 		margin-bottom: 40px 
 	&__tags
+		max-height: 28px
+		transition: max-height .8s ease-in-out
+		+md
+			max-height: 36px
 		&:not(:last-child)
 			margin-right: 13px
+		&.is-open
+			max-height: 300px
+			+sm
+				max-height: 600px
+		&-wrap
+			display: flex
+			+md
+				flex-direction: column
 	&__filter-select,
 	&__tags
 		vertical-align: top
 		display: inline-block
+	// &__filter-select
+	// 	+sm
+	// 		margin-top: 8px

@@ -27,4 +27,6 @@ import './_breadcrumbs';
 import './_promoTimer';
 import './_sequence';
 import './_cursor';
+import './_tags-trigger';
 // import './_startingAnimation';
+import './_video';

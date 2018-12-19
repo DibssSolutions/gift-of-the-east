@@ -16,7 +16,14 @@
 		// 	padding: 0
 	.catalog-cards &
 		height: 100%
-	&:hover
+	+hover
+		border-color: transparent
+		&:before
+			opacity: 1
+		.product__footer
+			opacity: 1
+			visibility: visible
+	&:active
 		border-color: transparent
 		&:before
 			opacity: 1
